@@ -1,0 +1,27 @@
+name: Apex Automated Tests 
+on: 
+  schedule:
+    # Runs every day at 09:00 AM IST (03:30 UTC)
+   - cron: "30 3 * * *"
+
+jobs:
+  test:
+    runs-on: windows-latest  # or macos-latest / ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright tests
+        run: npx playwright test --reporter=html
