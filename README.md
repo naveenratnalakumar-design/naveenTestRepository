@@ -1,8 +1,11 @@
 # Playwright Tests (JavaScript)
 
-This repository contains end-to-end (E2E) tests using playwright with JAvaScript.
----
+## This repository contains end-to-end (E2E) tests using playwright with JAvaScript.
+
 # Setup
+
+Clone the repository:
+git clone https://github.com/your-username/your-repo.git
 Install dependencies:
 npm install
 Install Playwright browsers:
