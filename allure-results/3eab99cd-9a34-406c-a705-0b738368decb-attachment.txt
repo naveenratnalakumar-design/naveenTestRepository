@@ -1,0 +1,2 @@
+Expand icons found: 3
+Clicked expand icon index: 0

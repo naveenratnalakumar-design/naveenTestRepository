@@ -1,0 +1,270 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - navigation [ref=e5]:
+    - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+      - /url: /
+      - img "Revflow logo" [ref=e7] [cursor=pointer]
+      - img "Revflow" [ref=e9] [cursor=pointer]
+    - generic [ref=e11]:
+      - link "Dashboard" [ref=e13] [cursor=pointer]:
+        - /url: /dashboard
+        - img [ref=e16] [cursor=pointer]
+        - generic [ref=e18] [cursor=pointer]: Dashboard
+      - link "Task List" [ref=e20] [cursor=pointer]:
+        - /url: /tasks
+        - img [ref=e23] [cursor=pointer]
+        - generic [ref=e25] [cursor=pointer]: Task List
+      - link "AR Aging" [ref=e27] [cursor=pointer]:
+        - /url: /ar-aging
+        - img [ref=e30] [cursor=pointer]
+        - generic [ref=e32] [cursor=pointer]: AR Aging
+      - link "Settings" [ref=e34] [cursor=pointer]:
+        - /url: /settings
+        - img [ref=e37] [cursor=pointer]
+        - generic [ref=e40] [cursor=pointer]: Settings
+        - img [ref=e43] [cursor=pointer]
+    - button [ref=e49] [cursor=pointer]:
+      - img [ref=e53] [cursor=pointer]
+  - generic [ref=e55]:
+    - generic [ref=e56]:
+      - generic [ref=e62]:
+        - img [ref=e65]
+        - textbox "Search for a Case" [ref=e67]
+      - generic [ref=e68]:
+        - button "Selected Facilities (44)" [ref=e70] [cursor=pointer]:
+          - text: Selected Facilities (44)
+          - img [ref=e73] [cursor=pointer]
+        - button "KK" [ref=e76] [cursor=pointer]:
+          - generic [ref=e79] [cursor=pointer]: KK
+          - img [ref=e82] [cursor=pointer]
+    - generic [ref=e84]:
+      - generic [ref=e85]:
+        - generic [ref=e86]:
+          - button [ref=e88] [cursor=pointer]:
+            - img [ref=e92] [cursor=pointer]
+          - textbox [ref=e97]: Task Update 0605test
+          - generic [ref=e98]:
+            - button "Close" [ref=e100] [cursor=pointer]:
+              - generic [ref=e101] [cursor=pointer]: Close
+            - button [ref=e103] [cursor=pointer]:
+              - img [ref=e107] [cursor=pointer]
+        - generic [ref=e109]:
+          - generic [ref=e113]:
+            - generic [ref=e114]:
+              - generic [ref=e118] [cursor=pointer]: Facility
+              - text: Landmark of Louisville
+            - generic [ref=e119]:
+              - generic [ref=e123] [cursor=pointer]: Resident
+              - link "Gaines, Johnette" [ref=e124] [cursor=pointer]:
+                - /url: /cases/details/2036609
+            - generic [ref=e125]:
+              - generic [ref=e129] [cursor=pointer]: Balance
+              - generic [ref=e130]:
+                - generic [ref=e131]: $0.00
+                - button "(0 Charges)" [ref=e133] [cursor=pointer]:
+                  - generic [ref=e134] [cursor=pointer]: (0 Charges)
+            - generic [ref=e135]:
+              - generic [ref=e139] [cursor=pointer]: Payer
+              - text: United Health
+            - generic [ref=e143]:
+              - toolbar:
+                - generic [ref=e144]:
+                  - button "bold" [ref=e145] [cursor=pointer]:
+                    - img [ref=e146] [cursor=pointer]
+                  - button "italic" [ref=e148] [cursor=pointer]:
+                    - img [ref=e149] [cursor=pointer]
+                  - button "underline" [ref=e151] [cursor=pointer]:
+                    - img [ref=e152] [cursor=pointer]
+                  - button "strike" [ref=e154] [cursor=pointer]:
+                    - img [ref=e155] [cursor=pointer]
+                - generic [ref=e157]:
+                  - 'button "list: bullet" [ref=e158] [cursor=pointer]':
+                    - img [ref=e159] [cursor=pointer]
+                  - 'button "list: ordered" [ref=e161] [cursor=pointer]':
+                    - img [ref=e162] [cursor=pointer]
+                - button "link" [ref=e166] [cursor=pointer]:
+                  - img [ref=e167] [cursor=pointer]
+              - generic [ref=e169]:
+                - generic [ref=e170]:
+                  - text: Add a description...
+                  - paragraph [ref=e171]
+                - text: "Visit URL: EditRemove"
+            - generic [ref=e173]:
+              - generic [ref=e176] [cursor=pointer]:
+                - generic [ref=e177] [cursor=pointer]: Balance Status
+                - generic [ref=e178] [cursor=pointer]: "*"
+              - combobox "Rejected" [ref=e180]:
+                - generic [ref=e187] [cursor=pointer]:
+                  - img [ref=e190] [cursor=pointer]
+                  - generic [ref=e192] [cursor=pointer]: Rejected
+            - generic [ref=e194]:
+              - generic [ref=e197] [cursor=pointer]:
+                - generic [ref=e198] [cursor=pointer]: Root Issue
+                - generic [ref=e199] [cursor=pointer]: "*"
+              - combobox "Invalid Claim Info" [ref=e201]:
+                - generic [ref=e207] [cursor=pointer]: Invalid Claim Info
+            - generic [ref=e209]:
+              - generic [ref=e213] [cursor=pointer]: Assigned To
+              - combobox "KK Keshava Karri" [ref=e215]:
+                - button "KK Keshava Karri" [ref=e223] [cursor=pointer]:
+                  - generic [ref=e228] [cursor=pointer]: KK
+                  - generic [ref=e229] [cursor=pointer]: Keshava Karri
+            - generic [ref=e231]:
+              - generic [ref=e234] [cursor=pointer]:
+                - generic [ref=e235] [cursor=pointer]: Due Date
+                - generic [ref=e236] [cursor=pointer]: "*"
+              - textbox "Due Date *" [ref=e239]: 5/7/2025
+            - generic [ref=e240]:
+              - generic [ref=e244] [cursor=pointer]: Task Status
+              - combobox "Not Started" [ref=e246]:
+                - generic [ref=e254] [cursor=pointer]: Not Started
+            - generic [ref=e256]:
+              - generic [ref=e257]:
+                - img [ref=e260]
+                - generic [ref=e262]: Files
+                - text: (5)
+              - button "Add File" [ref=e265] [cursor=pointer]:
+                - generic [ref=e266] [cursor=pointer]:
+                  - text: Add File
+                  - img [ref=e269] [cursor=pointer]
+            - generic [ref=e271]:
+              - img [ref=e274]
+              - generic [ref=e279]: 1mb.pdf
+              - generic [ref=e280]:
+                - button [ref=e282] [cursor=pointer]:
+                  - img [ref=e286] [cursor=pointer]
+                - button [ref=e289] [cursor=pointer]:
+                  - img [ref=e293] [cursor=pointer]
+                - button [ref=e296] [cursor=pointer]:
+                  - img [ref=e300] [cursor=pointer]
+                - button [ref=e303] [cursor=pointer]:
+                  - img [ref=e307] [cursor=pointer]
+            - generic [ref=e309]:
+              - img [ref=e312]
+              - generic [ref=e317]: 499MBDOC.doc
+              - generic [ref=e318]:
+                - button [disabled] [ref=e320]:
+                  - img [ref=e324]
+                - button [ref=e327] [cursor=pointer]:
+                  - img [ref=e331] [cursor=pointer]
+                - button [ref=e334] [cursor=pointer]:
+                  - img [ref=e338] [cursor=pointer]
+                - button [ref=e341] [cursor=pointer]:
+                  - img [ref=e345] [cursor=pointer]
+            - generic [ref=e347]:
+              - img [ref=e350]
+              - generic [ref=e355]: file-sample_100kB.docx
+              - generic [ref=e356]:
+                - button [disabled] [ref=e358]:
+                  - img [ref=e362]
+                - button [ref=e365] [cursor=pointer]:
+                  - img [ref=e369] [cursor=pointer]
+                - button [ref=e372] [cursor=pointer]:
+                  - img [ref=e376] [cursor=pointer]
+                - button [ref=e379] [cursor=pointer]:
+                  - img [ref=e383] [cursor=pointer]
+            - generic [ref=e385]:
+              - img [ref=e388]
+              - generic [ref=e393]: ARW-886.docx
+              - generic [ref=e394]:
+                - button [disabled] [ref=e396]:
+                  - img [ref=e400]
+                - button [ref=e403] [cursor=pointer]:
+                  - img [ref=e407] [cursor=pointer]
+                - button [ref=e410] [cursor=pointer]:
+                  - img [ref=e414] [cursor=pointer]
+                - button [ref=e417] [cursor=pointer]:
+                  - img [ref=e421] [cursor=pointer]
+            - generic [ref=e423]:
+              - img [ref=e426]
+              - generic [ref=e431]: 475 mB sample pdf file 1 (1).pdf
+              - generic [ref=e432]:
+                - button [ref=e434] [cursor=pointer]:
+                  - img [ref=e438] [cursor=pointer]
+                - button [ref=e441] [cursor=pointer]:
+                  - img [ref=e445] [cursor=pointer]
+                - button [ref=e448] [cursor=pointer]:
+                  - img [ref=e452] [cursor=pointer]
+                - button [ref=e455] [cursor=pointer]:
+                  - img [ref=e459] [cursor=pointer]
+          - generic [ref=e467]:
+            - tablist [ref=e472]:
+              - generic [ref=e473]:
+                - tab "Comments 1" [ref=e474] [cursor=pointer]:
+                  - generic [ref=e476] [cursor=pointer]:
+                    - text: Comments
+                    - generic [ref=e477] [cursor=pointer]: "1"
+                - tab "Charges 0" [ref=e478] [cursor=pointer]:
+                  - generic [ref=e480] [cursor=pointer]:
+                    - text: Charges
+                    - generic [ref=e481] [cursor=pointer]: "0"
+                - tab "Activity 4" [selected] [ref=e482] [cursor=pointer]:
+                  - generic [ref=e484] [cursor=pointer]:
+                    - text: Activity
+                    - generic [ref=e485] [cursor=pointer]: "4"
+            - generic [ref=e486]:
+              - tabpanel [ref=e487]
+              - tabpanel [ref=e488]
+              - tabpanel "Activity 4" [ref=e489]:
+                - generic [ref=e493]:
+                  - generic [ref=e494]: Activity History
+                  - generic [ref=e498]:
+                    - generic [ref=e499]:
+                      - generic [ref=e504] [cursor=pointer]: Dates
+                      - generic [ref=e509] [cursor=pointer]: Updated
+                      - generic [ref=e514] [cursor=pointer]: Changed By
+                    - generic [ref=e518]:
+                      - generic [ref=e520]:
+                        - button [active] [ref=e525] [cursor=pointer]:
+                          - img [ref=e529] [cursor=pointer]
+                        - generic [ref=e534]: 9/8/2025
+                        - generic [ref=e538]: Root Issue
+                        - button "RM Rivky Meguira" [ref=e544] [cursor=pointer]:
+                          - generic [ref=e548] [cursor=pointer]: RM
+                          - generic [ref=e549] [cursor=pointer]: Rivky Meguira
+                      - generic [ref=e555]:
+                        - generic [ref=e556]:
+                          - text: "Root Issue:"
+                          - generic [ref=e557]: from
+                          - generic [ref=e558]: Invalid NPI
+                          - generic [ref=e559]: to
+                          - generic [ref=e560]: Invalid Claim Info
+                        - generic [ref=e561]: 11:44 pm
+                      - generic [ref=e566]:
+                        - generic [ref=e567]:
+                          - text: "Root Issue:"
+                          - generic [ref=e568]: from
+                          - generic [ref=e569]: Detailed Statement Needed
+                          - generic [ref=e570]: to
+                          - generic [ref=e571]: Invalid NPI
+                        - generic [ref=e572]: 11:44 pm
+                      - generic [ref=e574]:
+                        - button [ref=e579] [cursor=pointer]:
+                          - img [ref=e583] [cursor=pointer]
+                        - generic [ref=e588]: 8/28/2025
+                        - generic [ref=e592]: Balance Status
+                        - button "KK Keshava Karri" [ref=e598] [cursor=pointer]:
+                          - generic [ref=e603] [cursor=pointer]: KK
+                          - generic [ref=e604] [cursor=pointer]: Keshava Karri
+                      - generic [ref=e606]:
+                        - button [ref=e611] [cursor=pointer]:
+                          - img [ref=e615] [cursor=pointer]
+                        - generic [ref=e620]: 8/26/2025
+                        - generic [ref=e624]: Multiple Fields
+                        - button "RM Rivky Meguira" [ref=e630] [cursor=pointer]:
+                          - generic [ref=e634] [cursor=pointer]: RM
+                          - generic [ref=e635] [cursor=pointer]: Rivky Meguira
+                      - generic [ref=e637]:
+                        - button [ref=e642] [cursor=pointer]:
+                          - img [ref=e646] [cursor=pointer]
+                        - generic [ref=e651]: 6/12/2025
+                        - generic [ref=e655]: Assigned To
+                        - button "SR Santosh Rongali" [ref=e661] [cursor=pointer]:
+                          - generic [ref=e665] [cursor=pointer]: SR
+                          - generic [ref=e666] [cursor=pointer]: Santosh Rongali
+      - generic [ref=e672]:
+        - generic [ref=e673]: "*"
+        - text: Required fields
+```

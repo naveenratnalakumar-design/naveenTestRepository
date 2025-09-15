@@ -1,0 +1,2 @@
+Number of expand icons: 9
+Rows found in expand 0: 12

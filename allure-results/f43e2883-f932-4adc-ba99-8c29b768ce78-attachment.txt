@@ -1,0 +1,4 @@
+cont= 40
+26
+26
+DocxFile.doc
