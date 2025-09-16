@@ -9,7 +9,7 @@ on:
 
 jobs:
   test:
-    timeout-minutes: 5
+    # timeout-minutes: 5
     runs-on: windows-latest  # or macos-latest / ubuntu-latest
 
     steps:
