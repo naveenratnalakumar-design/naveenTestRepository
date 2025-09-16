@@ -9,6 +9,7 @@ on:
 
 jobs:
   test:
+    timeout-minutes: 5
     runs-on: windows-latest  # or macos-latest / ubuntu-latest
 
     steps:
@@ -27,4 +28,4 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: npx playwright test tests/CreateTaskWithAging.spec.js 
+        run: npx playwright test tests/CreateTaskWithAging.spec.js --trace=on
