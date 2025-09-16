@@ -7,10 +7,12 @@ on:
 #     # Runs every day at 09:00 AM IST (03:30 UTC)
 #    - cron: "30 3 * * *"
 
+
 jobs:
   test:
     # timeout-minutes: 5
-    runs-on: windows-latest  # or macos-latest / ubuntu-latest
+   # runs-on: windows-latest  # or macos-latest / ubuntu-latest
+    runs-on: [self-hosted, linux]
 
     steps:
       - name: Checkout repository
