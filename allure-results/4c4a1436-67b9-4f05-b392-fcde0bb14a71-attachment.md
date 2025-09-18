@@ -1,0 +1,55 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - navigation [ref=e5]:
+    - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+      - /url: /
+      - img "Revflow logo" [ref=e7] [cursor=pointer]
+      - img "Revflow" [ref=e9] [cursor=pointer]
+    - generic [ref=e11]:
+      - link "Dashboard" [ref=e13] [cursor=pointer]:
+        - /url: /dashboard
+        - img [ref=e16] [cursor=pointer]
+        - generic [ref=e18] [cursor=pointer]: Dashboard
+      - link "Task List" [ref=e20] [cursor=pointer]:
+        - /url: /tasks
+        - img [ref=e23] [cursor=pointer]
+        - generic [ref=e25] [cursor=pointer]: Task List
+      - link "AR Aging" [ref=e27] [cursor=pointer]:
+        - /url: /ar-aging
+        - img [ref=e30] [cursor=pointer]
+        - generic [ref=e32] [cursor=pointer]: AR Aging
+      - link "Settings" [ref=e34] [cursor=pointer]:
+        - /url: /settings
+        - img [ref=e37] [cursor=pointer]
+        - generic [ref=e40] [cursor=pointer]: Settings
+        - img [ref=e43] [cursor=pointer]
+    - button [ref=e49] [cursor=pointer]:
+      - img [ref=e53] [cursor=pointer]
+  - generic [ref=e55]:
+    - generic [ref=e56]:
+      - generic [ref=e61]:
+        - img [ref=e64]
+        - textbox "Search for a Case" [ref=e66]
+      - generic [ref=e67]:
+        - button "Selected Facilities (44)" [ref=e69] [cursor=pointer]:
+          - text: Selected Facilities (44)
+          - img [ref=e72] [cursor=pointer]
+        - button "KK" [ref=e75] [cursor=pointer]:
+          - generic [ref=e78] [cursor=pointer]: KK
+          - img [ref=e81] [cursor=pointer]
+    - generic [ref=e84]:
+      - generic [ref=e85]:
+        - heading "Hi Keshava," [level=2] [ref=e86]
+        - paragraph [ref=e87]: Welcome to RevFlow! RevFlow is designed to help you manage your aging tasks, surface issues with balances, and bring transparency to the status of all balances.
+      - generic [ref=e88]:
+        - generic [ref=e89] [cursor=pointer]:
+          - img "Task List Icon"
+          - heading "Task List" [level=2] [ref=e90] [cursor=pointer]
+          - paragraph [ref=e91] [cursor=pointer]: Tasks are created by a user from the AR Aging view. Tasks can also be created automatically by the system for an aged balance with no recent update.
+        - generic [ref=e92] [cursor=pointer]:
+          - img "AR Aging Icon"
+          - heading "AR Aging" [level=2] [ref=e93] [cursor=pointer]
+          - paragraph [ref=e94] [cursor=pointer]: AR Aging is a snapshot of all unpaid balances to be worked. Tasks can be created and updated directly from the aging.
+```

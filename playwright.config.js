@@ -1,6 +1,6 @@
 // @ts-check
-import { defineConfig, devices } from '@playwright/test';
-const path = require('path');
+import { defineConfig, devices } from "@playwright/test";
+const path = require("path");
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -8,16 +8,21 @@ const path = require('path');
 // import dotenv from 'dotenv';
 // import path from 'path';
 // dotenv.config({ path: path.resolve(__dirname, '.env') });
- const timestamp = new Date()
-  .toLocaleString('en-GB', { timeZone: 'Asia/Kolkata' })              // Get local time in 'en-GB' format
-  .replace(/[/, ]/g, '-')                // Replace slashes and spaces with dashes
-  .replace(/:/g, '-');  
+const timestamp = new Date()
+  .toLocaleString("en-GB", { timeZone: "Asia/Kolkata" }) // Get local time in 'en-GB' format
+  .replace(/[/, ]/g, "-") // Replace slashes and spaces with dashes
+  .replace(/:/g, "-");
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
-  testDir: './tests',
-  timeout: 6* 60 * 1000,
+  testDir: "./tests",
+ timeout: 60 * 1000, // 60 seconds per test
+
+  expect: {
+    // ⏳ Time Playwright waits for assertions (like expect(...).toBeVisible())
+    timeout: 5 * 1000, // 5 seconds
+  },
   /* Run tests in files in parallel */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -27,7 +32,21 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [["html",{outputFolder: path.join(__dirname, 'playwright-report', `html-report-${timestamp}`),open: 'always',}], ["allure-playwright"],["./utilities/customHtmlReporter.js"]],
+  reporter: [
+    [
+      "html",
+      {
+        outputFolder: path.join(
+          __dirname,
+          "playwright-report",
+          `html-report-${timestamp}`
+        ),
+        open: "always",
+      },
+    ],
+    ["allure-playwright"],
+    ["./utilities/customHtmlReporter.js"],
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
@@ -35,16 +54,18 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
-    headless: false,
+    headless: true,
     screenshot: "only-on-failure",
     video: "retain-on-failure",
   },
-
+  outputDir: "test-results/",
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: "chromium",
+      use: {
+        ...devices["Desktop Chrome"],
+      },
     },
 
     // {
@@ -85,4 +106,3 @@ export default defineConfig({
   //   reuseExistingServer: !process.env.CI,
   // },
 });
-

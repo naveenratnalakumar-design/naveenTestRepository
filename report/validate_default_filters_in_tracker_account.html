@@ -30,8 +30,18 @@
       </head>
       <body>
         <h2>Validate Default Filters in Tracker Account</h2>
-        <a href="index.html?t=1757599070616">⬅️ Back to Summary</a>
-        
+        <a href="index.html?t=1758181015756">⬅️ Back to Summary</a>
+        <h3 style="color:red;">❌ Reason: Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m()[22m failed
+
+Locator:  locator('xpath=(//mat-select[@role=\'combobox\' ])[3]')
+Expected: visible
+Received: <element(s) not found>
+Timeout:  5000ms
+
+Call log:
+[2m  - Expect "toBeVisible" with timeout 5000ms[22m
+[2m  - waiting for locator('xpath=(//mat-select[@role=\'combobox\' ])[3]')[22m
+</h3>
         <h3>📝 Steps:</h3>
         <ul>
           
@@ -43,12 +53,10 @@
           
             <li>Expect "toBeVisible" </li>
           
-            <li>Expect "toBeVisible" </li>
-          
-            <li>Click on Apply Filter </li>
+            <li>Expect "toBeVisible" <span style="color:red;">(Failed)</span></li>
           
         </ul>
-        
+        <h3>📸 Screenshot</h3><img src="validate_default_filters_in_tracker_account_screenshot.png?t=1758181015756" width="600" />
         
       </body>
     </html>

@@ -30,8 +30,20 @@
       </head>
       <body>
         <h2>Validate details (Balance, Payer, Balance Status, Root Issue, Due Date, Charges) match Task List view; Update fields in Task View</h2>
-        <a href="index.html?t=1757593152183">⬅️ Back to Summary</a>
-        
+        <a href="index.html?t=1758180697762">⬅️ Back to Summary</a>
+        <h3 style="color:red;">❌ Reason: Error: Verify that an Activity Log is recorded when updating a required field on a task
+
+[2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m()[22m failed
+
+Locator:  locator('xpath=(//span[text()=\'Denied\'])[1]')
+Expected: visible
+Received: <element(s) not found>
+Timeout:  5000ms
+
+Call log:
+[2m  - Verify that an Activity Log is recorded when updating a required field on a task with timeout 5000ms[22m
+[2m  - waiting for locator('xpath=(//span[text()=\'Denied\'])[1]')[22m
+</h3>
         <h3>📝 Steps:</h3>
         <ul>
           
@@ -40,8 +52,6 @@
             <li>Click on the Task list button </li>
           
             <li>Wait for timeout </li>
-          
-            <li>Pause </li>
           
             <li>Wait for timeout </li>
           
@@ -73,10 +83,10 @@
           
             <li>Click locator('xpath=(//div[@data-column-definition-name=\'_hierarchyColumn\'])[2]') </li>
           
-            <li>Verify that an Activity Log is recorded when updating a required field on a task </li>
+            <li>Verify that an Activity Log is recorded when updating a required field on a task <span style="color:red;">(Failed)</span></li>
           
         </ul>
-        
+        <h3>📸 Screenshot</h3><img src="validate_details_(balance,_payer,_balance_status,_root_issue,_due_date,_charges)_match_task_list_view;_update_fields_in_task_view_screenshot.png?t=1758180697762" width="600" />
         
       </body>
     </html>

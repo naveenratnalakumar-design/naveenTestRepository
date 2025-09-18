@@ -1,0 +1,61 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - navigation [ref=e5]:
+    - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+      - /url: /
+      - img "Revflow logo" [ref=e7] [cursor=pointer]
+      - img "Revflow" [ref=e9] [cursor=pointer]
+    - generic [ref=e11]:
+      - link "Dashboard" [ref=e13] [cursor=pointer]:
+        - /url: /dashboard
+        - img [ref=e16] [cursor=pointer]
+        - generic [ref=e18] [cursor=pointer]: Dashboard
+      - link "Task List" [ref=e20] [cursor=pointer]:
+        - /url: /tasks
+        - img [ref=e23] [cursor=pointer]
+        - generic [ref=e25] [cursor=pointer]: Task List
+      - link "AR Aging" [ref=e27] [cursor=pointer]:
+        - /url: /ar-aging
+        - img [ref=e30] [cursor=pointer]
+        - generic [ref=e32] [cursor=pointer]: AR Aging
+      - link "Settings" [ref=e34] [cursor=pointer]:
+        - /url: /settings
+        - img [ref=e37] [cursor=pointer]
+        - generic [ref=e40] [cursor=pointer]: Settings
+        - img [ref=e43] [cursor=pointer]
+    - button [ref=e49] [cursor=pointer]:
+      - img [ref=e53] [cursor=pointer]
+  - generic [ref=e55]:
+    - generic [ref=e56]:
+      - generic [ref=e61]:
+        - img [ref=e64]
+        - textbox "Search for a Case" [ref=e66]
+      - generic [ref=e67]:
+        - button "Selected Facilities (44)" [ref=e69] [cursor=pointer]:
+          - text: Selected Facilities (44)
+          - img [ref=e72] [cursor=pointer]
+        - button "KK" [ref=e75] [cursor=pointer]:
+          - generic [ref=e78] [cursor=pointer]: KK
+          - img [ref=e81] [cursor=pointer]
+    - generic [ref=e84]:
+      - generic [ref=e85]:
+        - heading "Tasks" [level=2] [ref=e88]
+        - generic [ref=e90]:
+          - button "Sort" [ref=e92] [cursor=pointer]:
+            - generic [ref=e93] [cursor=pointer]: Sort
+            - img [ref=e96] [cursor=pointer]
+          - button "Filters" [active] [ref=e99] [cursor=pointer]:
+            - img [ref=e102] [cursor=pointer]
+            - generic [ref=e104] [cursor=pointer]: Filters
+      - generic [ref=e115]:
+        - img [ref=e118]
+        - generic [ref=e120]: Something went wrong...
+        - generic [ref=e121]: We had some trouble loading this page. Please refresh the page or get in touch for support.
+        - generic [ref=e122]:
+          - button "Contact support" [ref=e124] [cursor=pointer]:
+            - generic [ref=e125] [cursor=pointer]: Contact support
+          - button "Refresh page" [ref=e127] [cursor=pointer]:
+            - generic [ref=e128] [cursor=pointer]: Refresh page
+```
