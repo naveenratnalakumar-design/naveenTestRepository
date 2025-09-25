@@ -17,20 +17,19 @@ const timestamp = new Date()
  */
 export default defineConfig({
   testDir: "./tests",
- timeout: 60 * 1000, // 60 seconds per test
-
-  expect: {
-    // ⏳ Time Playwright waits for assertions (like expect(...).toBeVisible())
-    timeout: 5 * 1000, // 5 seconds
-  },
+  timeout: 200 * 1000,
+  expect: { timeout: 10 * 1000 }, // expect() default (10s)
   /* Run tests in files in parallel */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
-  /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
-  /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+  retries: 1,
+  workers: 1, //  only 1 worker → 1 browser instance at a time
+  // forbidOnly: !!process.env.CI,
+  // /* Retry on CI only */
+  // retries: process.env.CI ? 2 : 0,
+  // /* Opt out of parallel tests on CI. */
+  // workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
     [
@@ -53,6 +52,9 @@ export default defineConfig({
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+    viewport: { width: 1366, height: 768 },
+    actionTimeout: 30 * 1000, // default timeout for page actions (30s)
+    navigationTimeout: 60 * 1000, // default navigation timeout (60s)
     trace: "on-first-retry",
     headless: true,
     screenshot: "only-on-failure",

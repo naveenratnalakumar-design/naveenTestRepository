@@ -85,6 +85,56 @@ exports.TaskListPage = class TaskListPage {
     this.hoverOut = page.locator(
       "//div[contains(@class,'cdk-overlay-backdrop')]"
     );
+    this.caseSearchInput = page.locator(
+      "//input[@placeholder='Search for a Case']"
+    );
+    this.residentDob = page.locator(
+      "(//span[text()='DOB'])[1]/following-sibling::span"
+    );
+    this.residentSSNNunber = page.locator(
+      "(//span[text()='SSN'])[1]/following-sibling::span"
+    );
+    this.billingSystemId = page.locator(
+      "(//span[text()='Billing System ID'])[1]/following-sibling::span"
+    );
+    this.billingSystemType = page.locator(
+      "(//span[text()='Billing System ID'])[1]/following-sibling::div"
+    );
+    this.residentFacilityName = page.locator(
+      "(//span[contains(@class, 'web-subtitle-1')])[1]/following-sibling::span"
+    );
+    this.caseViewResidentName = page.locator(
+      "//span[contains(@class, 'web-title-2')]"
+    );
+    this.caseViewResidentFacility = page.locator(
+      "//div[contains(@class, 'web-title-2')]"
+    );
+    this.caseViewBillingSystemId = page.locator(
+      "(//div[contains(@class,'arw-control')])[6]"
+    );
+    this.caseviewDob = page.locator(
+      "(//div[contains(@class,'arw-control')])[9]"
+    );
+    this.caseViewSSNNumber = page.locator(
+      "(//div[contains(@class,'arw-control')])[10]"
+    );
+    this.caseViewBillingSystemType = page.locator(
+      "(//div[contains(@class, 'text-foreground-medium')])[2]"
+    );
+    this.residentNameInSearchList = page.locator(
+      "(//span[contains(@class, 'web-subtitle-1')])[1]"
+    );
+    this.clearCaseSearchBtn = page.locator("//arw-icon[@name='x']");
+    this.residentOptionList = page.locator("(//div[@role='link'])[1]");
+    this.globalFacilityDropdown = page.locator(
+      "//button[contains(text(),'Selected Facilities')]"
+    );
+    this.selectAllBtn = page.locator("//label[contains(text(),'All')]");
+    this.globalSearchInput = page.locator("//input[@placeholder='Search']");
+    this.facilityCheckBox = page.locator("(//input[@type='checkbox'])[2]");
+    this.globalFacilityfilterApplyBtn = page.locator(
+      "//span[normalize-space(text())='Apply']"
+    );
   }
   clickOnFilterBtn = async () => {
     await excuteSteps(
@@ -235,6 +285,72 @@ exports.TaskListPage = class TaskListPage {
       `Click on Filters DropDown in AR Aging`
     );
   };
+  searchCaseName = async (txt) => {
+    await excuteSteps(
+      this.test,
+      this.caseSearchInput,
+      "fill",
+      `Search for a resident's name in case of search input`,
+      txt
+    );
+  };
+  clickOnClearcaseSearchBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.clearCaseSearchBtn,
+      "click",
+      `Click on the Clear button to clear the search field`
+    );
+  };
+  clickOnResidentOption = async () => {
+    await excuteSteps(
+      this.test,
+      this.residentOptionList,
+      "click",
+      `Navigate to case view detials`
+    );
+  };
+  clickOnGlobalSearchdropdown = async () => {
+    await excuteSteps(
+      this.test,
+      this.globalFacilityDropdown,
+      "click",
+      `Click on global facility dropdown`
+    );
+  };
+  deselectAllFacilities = async () => {
+    await excuteSteps(
+      this.test,
+      this.selectAllBtn,
+      "click",
+      `Deselect all facilities in the global facility dropdown`
+    );
+  };
+  searchGlobalFacilty = async (txt) => {
+    await excuteSteps(
+      this.test,
+      this.globalSearchInput,
+      "fill",
+      `Search for a facility name in the search input field`,
+      txt
+    );
+  };
+  selectSearchFacilityInDropdown = async () => {
+    await excuteSteps(
+      this.test,
+      this.facilityCheckBox,
+      "click",
+      `Select a facility from the global facility dropdown`
+    );
+  };
+  clickOnGloabalFacilityApplyBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.globalFacilityfilterApplyBtn,
+      "click",
+      `Click on Apply button`
+    );
+  };
   verifyDefaultFiltersInTaskList = async () => {
     await this.page.waitForTimeout(parseInt(process.env.largeWait));
     const dueDateDropDown = await this.dueDateDropDown;
@@ -284,9 +400,15 @@ exports.TaskListPage = class TaskListPage {
   };
   verifyFirstFilterNameAndOption = async () => {
     let textOnFirstFilter = await this.firstFilter.innerText();
-   await expect(textOnFirstFilter.trim(),"Verify that the Resident  filters is applied correctly on the View view aging page").toBe("Resident");
+    await expect(
+      textOnFirstFilter.trim(),
+      "Verify that the Resident  filters is applied correctly on the View view aging page"
+    ).toBe("Resident");
     let nameOnFirstFilterInput = await this.firstFilterInput.innerText();
-    await expect(nameOnFirstFilterInput.trim(),"Verify that the Resident  filters is applied correctly on the View aging page").toBe("Wells, Eleanor");
+    await expect(
+      nameOnFirstFilterInput.trim(),
+      "Verify that the Resident  filters is applied correctly on the View aging page"
+    ).toBe("Wells, Eleanor");
   };
   hoverOutFromFilterDropDown = async () => {
     await excuteSteps(
@@ -393,5 +515,103 @@ exports.TaskListPage = class TaskListPage {
     });
     await this.verifyFirstFilterNameAndOption();
     await this.hoverOutFromFilterDropDown();
+  };
+  validateCaseDetailsUsingCaseSearch = async () => {
+    await this.searchCaseName([test_Data.RevflowData.taskListData.resident]);
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
+    await expect(
+      this.residentNameInSearchList,
+      "Verify that the resident name is correctly displayed for the searched name"
+    ).toHaveText([test_Data.RevflowData.taskListData.resident]);
+    let residentNameSearchList =
+      await this.residentNameInSearchList.innerText();
+    console.log("residentName==", residentNameSearchList);
+    let getResidentfacility = await this.residentFacilityName.innerText();
+    let residentFacility = getResidentfacility.split(" ")[0];
+    console.log("facilityName==", residentFacility);
+    let residentDoB = await this.residentDob.innerText();
+    console.log("searchlistDOB==", residentDoB);
+    let ssnNoForResident = await this.residentSSNNunber.innerText();
+    console.log("SSNNoSearchlist==", ssnNoForResident);
+    let billinsysNo = await this.billingSystemId.innerText();
+    console.log("billinsysNoSearchlist==", billinsysNo);
+    let billingsysType = await this.billingSystemType.innerText();
+    console.log("billingsysTypeSearchlist==", billingsysType);
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    await this.clickOnResidentOption();
+    await expect(
+      this.caseViewResidentName,
+      "Verify the resident name is displayed correctly on the case view screen"
+    ).toHaveText(test_Data.RevflowData.taskListData.resident);
+    await expect(
+      this.caseViewResidentFacility,
+      "Verify the facility name is displayed correctly on the case view screen"
+    ).toHaveText(residentFacility);
+    let dob = await this.caseviewDob.innerText();
+    let caseViewResidentDOB = dob.trim().replace("DOB", "").trim();
+    console.log("CasedOB==", caseViewResidentDOB);
+    let ssnNo = await this.caseViewSSNNumber.innerText();
+    let caseviewResidentSSNNo = ssnNo.replace("SSN", "").trim();
+    console.log("SSN==", caseviewResidentSSNNo);
+    let getBillingsysID = await this.caseViewBillingSystemId.innerText();
+    let caseviewResidentBillingSysId = getBillingsysID
+      .replace("Billing System ID", "")
+      .replace("PCC", "")
+      .trim();
+    console.log("Case-BillingsysNo==", caseviewResidentBillingSysId);
+    await expect(
+      caseViewResidentDOB,
+      "Verify the DOB is displayed correctly on the case view screen"
+    ).toBe(residentDoB);
+    await expect(
+      caseviewResidentSSNNo,
+      "Verify the SSN number is displaying correctly on the case view screen"
+    ).toBe(ssnNoForResident);
+    await expect(
+      caseviewResidentBillingSysId,
+      "Verify the Billing systemID is displaying correctly on the case view screen"
+    ).toBe(billinsysNo);
+    await expect(
+      this.caseViewBillingSystemType,
+      "Verify the Billing System Type is correctly displaying on the case view screen"
+    ).toHaveText(billingsysType);
+  };
+  validateResidentNameAndFacilityForSelectedCaseOnGlobalFacility = async () => {
+    await this.clickOnGlobalSearchdropdown();
+    await this.deselectAllFacilities();
+    await this.searchGlobalFacilty([
+      test_Data.RevflowData.taskListData.facility,
+    ]);
+    await this.selectSearchFacilityInDropdown();
+    await this.clickOnGloabalFacilityApplyBtn();
+    await this.searchCaseName([
+      test_Data.RevflowData.taskListData.residentName,
+    ]);
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
+    let getresidentFacility = await this.residentFacilityName.innerText();
+    let residentFacility = getresidentFacility.replace("The ", "")
+    await this.clickOnResidentOption();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
+    let caseResidentFacilityName = await this.caseViewResidentFacility.innerText();
+    let facilityName = caseResidentFacilityName.replace(/[-–—]?\s*st\s*mary\b/ig, '')
+    .replace(/\s{2,}/g, ' ')              
+    .trim();
+    console.log("Facility@==",facilityName)
+    await expect(
+      this.caseViewResidentName,
+      "Verify the resident name is displayed correctly on the case view screen"
+    ).toHaveText(test_Data.RevflowData.taskListData.residentName);
+    await expect(
+      facilityName,
+      "Verify the facility name is displayed correctly on the case view screen"
+    ).toBe(residentFacility);
   };
 };

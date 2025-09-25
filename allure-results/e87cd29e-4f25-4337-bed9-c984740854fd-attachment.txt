@@ -1,0 +1,5 @@
+residentName== Wells, Eleanor
+searchlistDOB== 6/1/1938
+SSNNoSearchlist== 192-24-7694
+billinsysNoSearchlist== 24015978
+billingsysTypeSearchlist== PCC

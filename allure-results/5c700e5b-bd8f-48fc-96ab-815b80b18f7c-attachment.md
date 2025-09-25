@@ -1,0 +1,99 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - navigation [ref=e5]:
+    - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+      - /url: /
+      - img "Revflow logo" [ref=e7] [cursor=pointer]
+      - img "Revflow" [ref=e9] [cursor=pointer]
+    - generic [ref=e11]:
+      - link "Dashboard" [ref=e13] [cursor=pointer]:
+        - /url: /dashboard
+        - img [ref=e16] [cursor=pointer]
+        - generic [ref=e18] [cursor=pointer]: Dashboard
+      - link "Task List" [ref=e20] [cursor=pointer]:
+        - /url: /tasks
+        - img [ref=e23] [cursor=pointer]
+        - generic [ref=e25] [cursor=pointer]: Task List
+      - link "AR Aging" [ref=e27] [cursor=pointer]:
+        - /url: /ar-aging
+        - img [ref=e30] [cursor=pointer]
+        - generic [ref=e32] [cursor=pointer]: AR Aging
+      - link "Settings" [ref=e34] [cursor=pointer]:
+        - /url: /settings
+        - img [ref=e37] [cursor=pointer]
+        - generic [ref=e40] [cursor=pointer]: Settings
+        - img [ref=e43] [cursor=pointer]
+    - button [ref=e49] [cursor=pointer]:
+      - img [ref=e53] [cursor=pointer]
+  - generic [ref=e55]:
+    - generic [ref=e56]:
+      - generic [ref=e61]:
+        - img [ref=e64]
+        - textbox "Search for a Case" [ref=e66]
+      - generic [ref=e67]:
+        - button "Selected Facilities (44)" [ref=e69] [cursor=pointer]:
+          - text: Selected Facilities (44)
+          - img [ref=e72] [cursor=pointer]
+        - button "KK" [ref=e75] [cursor=pointer]:
+          - generic [ref=e78] [cursor=pointer]: KK
+          - img [ref=e81] [cursor=pointer]
+    - generic [ref=e84]:
+      - generic [ref=e85]:
+        - generic [ref=e86]:
+          - button [ref=e88] [cursor=pointer]:
+            - img [ref=e92] [cursor=pointer]
+          - generic [ref=e94]: Wells, Eleanor
+        - generic [ref=e95]:
+          - img [ref=e98]
+          - text: Achieve
+        - generic [ref=e100]:
+          - button "View Aging" [ref=e102] [cursor=pointer]:
+            - generic [ref=e103] [cursor=pointer]: View Aging
+          - button "View Task List" [ref=e105] [cursor=pointer]:
+            - generic [ref=e106] [cursor=pointer]: View Task List
+      - generic [ref=e111]:
+        - generic [ref=e112]:
+          - generic [ref=e113]:
+            - generic [ref=e117] [cursor=pointer]: Resident Status
+            - generic [ref=e119]: Discharged
+          - generic [ref=e120]:
+            - generic [ref=e124] [cursor=pointer]: Medicare
+            - generic [ref=e125]: 1AT4T45VH79
+          - generic [ref=e126]:
+            - generic [ref=e130] [cursor=pointer]: Original Admission Date
+            - text: 3/20/2025
+          - generic [ref=e131]:
+            - generic [ref=e135] [cursor=pointer]: Billing System ID
+            - text: "5020"
+            - generic [ref=e136]: DKS
+          - generic [ref=e141] [cursor=pointer]: Medicaid
+          - generic [ref=e142]:
+            - generic [ref=e146] [cursor=pointer]: Current Admission Date
+            - text: 3/20/2025
+          - generic [ref=e147]:
+            - generic [ref=e151] [cursor=pointer]: DOB
+            - text: 6/1/1938
+          - generic [ref=e152]:
+            - generic [ref=e156] [cursor=pointer]: SSN
+            - text: 192-24-7694
+          - generic [ref=e157]:
+            - generic [ref=e161] [cursor=pointer]: Current Discharge Date
+            - text: 7/23/2025
+          - generic [ref=e162]:
+            - generic [ref=e166] [cursor=pointer]: DOD
+            - text: "-"
+          - generic [ref=e167]:
+            - generic [ref=e171] [cursor=pointer]: Bedhold Days
+            - text: "0"
+        - generic [ref=e173]:
+          - generic [ref=e174]:
+            - img [ref=e177]
+            - generic [ref=e179]: Files
+            - text: (0)
+          - button "Add File" [ref=e183] [cursor=pointer]:
+            - generic [ref=e184] [cursor=pointer]:
+              - text: Add File
+              - img [ref=e187] [cursor=pointer]
+```

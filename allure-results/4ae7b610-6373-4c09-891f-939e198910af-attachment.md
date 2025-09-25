@@ -1,0 +1,362 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Revflow logo" [ref=e7] [cursor=pointer]
+        - img "Revflow" [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link "Task List" [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link "AR Aging" [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - link "Biller Activity Report" [ref=e34] [cursor=pointer]:
+          - /url: /biller-report
+          - img [ref=e37] [cursor=pointer]
+          - generic [ref=e39] [cursor=pointer]: Biller Activity Report
+        - link "Settings" [ref=e41] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e44] [cursor=pointer]
+          - generic [ref=e47] [cursor=pointer]: Settings
+          - img [ref=e50] [cursor=pointer]
+      - button [ref=e56] [cursor=pointer]:
+        - img [ref=e60] [cursor=pointer]
+    - generic [ref=e62]:
+      - generic [ref=e63]:
+        - generic [ref=e68]:
+          - img [ref=e71]
+          - textbox "Search for a Case" [ref=e73]
+        - generic [ref=e74]:
+          - button "Selected Facilities (27)" [ref=e76] [cursor=pointer]:
+            - text: Selected Facilities (27)
+            - img [ref=e79] [cursor=pointer]
+          - button "VG" [ref=e82] [cursor=pointer]:
+            - generic [ref=e85] [cursor=pointer]: VG
+            - img [ref=e88] [cursor=pointer]
+      - generic [ref=e91]:
+        - generic [ref=e92]:
+          - heading "Tasks" [level=2] [ref=e95]
+          - generic [ref=e97]:
+            - button "Custom Sort (2)" [ref=e99] [cursor=pointer]:
+              - generic [ref=e100] [cursor=pointer]:
+                - text: Custom Sort
+                - generic [ref=e101] [cursor=pointer]: (2)
+              - img [ref=e104] [cursor=pointer]
+            - button "Filters 2" [expanded] [active] [ref=e107] [cursor=pointer]:
+              - img [ref=e110] [cursor=pointer]
+              - generic [ref=e112] [cursor=pointer]:
+                - text: Filters
+                - generic [ref=e113] [cursor=pointer]: "2"
+        - generic [ref=e116]:
+          - generic [ref=e119]:
+            - generic [ref=e120]: "234"
+            - text: Results
+          - generic [ref=e122]:
+            - generic [ref=e126] [cursor=pointer]: Task Name
+            - generic [ref=e131] [cursor=pointer]: Facility
+            - generic [ref=e136] [cursor=pointer]: Resident
+            - generic [ref=e141] [cursor=pointer]: Payer
+            - generic [ref=e145] [cursor=pointer]:
+              - generic [ref=e146] [cursor=pointer]: Balance
+              - button [ref=e148] [cursor=pointer]:
+                - img [ref=e151] [cursor=pointer]
+            - generic [ref=e157] [cursor=pointer]: Balance Status
+            - generic [ref=e161] [cursor=pointer]:
+              - generic [ref=e162] [cursor=pointer]: Due Date
+              - generic [ref=e163] [cursor=pointer]:
+                - button [ref=e164] [cursor=pointer]:
+                  - img [ref=e167] [cursor=pointer]
+                - button [ref=e169] [cursor=pointer]:
+                  - img [ref=e172] [cursor=pointer]
+            - generic [ref=e177] [cursor=pointer]:
+              - generic [ref=e178] [cursor=pointer]: Task Status
+              - generic [ref=e179] [cursor=pointer]:
+                - button [ref=e180] [cursor=pointer]:
+                  - img [ref=e183] [cursor=pointer]
+                - button [ref=e185] [cursor=pointer]:
+                  - img [ref=e188] [cursor=pointer]
+            - generic [ref=e194] [cursor=pointer]: Assigned To
+            - generic [ref=e199] [cursor=pointer]: Root Issue
+          - generic [ref=e205]:
+            - generic [ref=e207]:
+              - link "Repro comments issue" [ref=e211] [cursor=pointer]:
+                - /url: /tasks/details/470
+              - generic [ref=e215]: Ivy at Davenport-St Mary
+              - link "Gaines, Johnette" [ref=e219] [cursor=pointer]:
+                - /url: /cases/details/2036609
+              - generic [ref=e223]: Humana
+              - generic [ref=e227]: "100.00"
+              - generic [ref=e231]:
+                - img [ref=e234]
+                - generic [ref=e236]: Rejected
+              - generic [ref=e240]: 6/23/2025
+              - generic [ref=e245]: In Progress
+              - generic [ref=e249]:
+                - generic [ref=e254]: RM
+                - generic [ref=e255]: Rivky Meguira
+              - generic [ref=e259]: Primary Insurance Info Needed
+            - generic [ref=e261]:
+              - link "Task new Facility" [ref=e265] [cursor=pointer]:
+                - /url: /tasks/details/460
+              - generic [ref=e269]: Coronado-Henderson
+              - link "Gaines, Johnette" [ref=e273] [cursor=pointer]:
+                - /url: /cases/details/2036609
+              - generic [ref=e277]: Humana
+              - generic [ref=e281]: "100.00"
+              - generic [ref=e285]:
+                - img [ref=e288]
+                - generic [ref=e290]: Rejected
+              - generic [ref=e294]: 6/23/2025
+              - generic [ref=e299]: Not Started
+              - generic [ref=e303]:
+                - generic [ref=e308]: VG
+                - generic [ref=e309]: Vikesh Gaikawad
+              - generic [ref=e313]: Invalid NPI
+            - generic [ref=e315]:
+              - link "NewTask Activity002" [ref=e319] [cursor=pointer]:
+                - /url: /tasks/details/454
+              - generic [ref=e323]: Coronado-Henderson
+              - link "Gaines, Johnette" [ref=e327] [cursor=pointer]:
+                - /url: /cases/details/2036609
+              - generic [ref=e331]: Humana
+              - generic [ref=e335]: "100.00"
+              - generic [ref=e339]:
+                - img [ref=e342]
+                - generic [ref=e344]: Rejected
+              - generic [ref=e348]: 6/23/2025
+              - generic [ref=e353]: In Progress
+              - generic [ref=e357]:
+                - generic [ref=e362]: MD
+                - generic [ref=e363]: Marlena Deren
+              - generic [ref=e367]: Missing Initial Auth
+            - generic [ref=e369]:
+              - link "testing task" [ref=e373] [cursor=pointer]:
+                - /url: /tasks/details/478
+              - generic [ref=e377]: Ivy at Davenport-St Mary
+              - link "Gaines, Johnette" [ref=e381] [cursor=pointer]:
+                - /url: /cases/details/2036609
+              - generic [ref=e385]: Horizon Bcbs Commercial
+              - generic [ref=e389]: "1.00"
+              - generic [ref=e393]:
+                - img [ref=e396]
+                - generic [ref=e398]: Rejected
+              - generic [ref=e402]: 6/25/2025
+              - generic [ref=e407]: In Progress
+              - generic [ref=e411]:
+                - generic [ref=e416]: NW
+                - generic [ref=e417]: Nicolas Wagner
+              - generic [ref=e421]: Additional Info Needed
+            - generic [ref=e423]:
+              - link "testing task2" [ref=e427] [cursor=pointer]:
+                - /url: /tasks/details/479
+              - generic [ref=e431]: Ivy at Davenport-St Mary
+              - link "Gaines, Johnette" [ref=e435] [cursor=pointer]:
+                - /url: /cases/details/2036609
+              - generic [ref=e439]: Horizon Bcbs Commercial
+              - generic [ref=e443]: "1.00"
+              - generic [ref=e447]:
+                - img [ref=e450]
+                - generic [ref=e452]: Rejected
+              - generic [ref=e456]: 6/25/2025
+              - generic [ref=e461]: In Progress
+              - generic [ref=e465]:
+                - generic [ref=e470]: NW
+                - generic [ref=e471]: Nicolas Wagner
+              - generic [ref=e475]: Additional Info Needed
+            - generic [ref=e477]:
+              - link "Task Activity new" [ref=e481] [cursor=pointer]:
+                - /url: /tasks/details/465
+              - generic [ref=e485]: Ivy at Davenport-St Mary
+              - link "Gaines, Johnette" [ref=e489] [cursor=pointer]:
+                - /url: /cases/details/2036609
+              - generic [ref=e493]: Humana
+              - generic [ref=e497]: "1.00"
+              - generic [ref=e501]:
+                - img [ref=e504]
+                - generic [ref=e506]: Rejected
+              - generic [ref=e510]: 6/30/2025
+              - generic [ref=e515]: In Progress
+              - generic [ref=e519]:
+                - generic [ref=e524]: KK
+                - generic [ref=e525]: Keshava Karri
+              - generic [ref=e529]: Additional Info Needed
+            - generic [ref=e531]:
+              - link "Task New 2006" [ref=e535] [cursor=pointer]:
+                - /url: /tasks/details/457
+              - generic [ref=e539]: Coronado-Henderson
+              - link "Gaines, Johnette" [ref=e543] [cursor=pointer]:
+                - /url: /cases/details/2036609
+              - generic [ref=e547]: Humana
+              - generic [ref=e551]: "1.00"
+              - generic [ref=e555]:
+                - img [ref=e558]
+                - generic [ref=e560]: Unbilled
+              - generic [ref=e564]: 6/30/2025
+              - generic [ref=e569]: In Progress
+              - generic [ref=e573]:
+                - generic [ref=e578]: AH
+                - generic [ref=e579]: Abigail Hamada
+              - generic [ref=e583]: Attorney Case
+            - generic [ref=e585]:
+              - link "Task Facility" [ref=e589] [cursor=pointer]:
+                - /url: /tasks/details/459
+              - generic [ref=e593]: Coronado-Henderson
+              - link "Gaines, Johnette" [ref=e597] [cursor=pointer]:
+                - /url: /cases/details/2036609
+              - generic [ref=e601]: Humana
+              - generic [ref=e605]: "1.00"
+              - generic [ref=e609]:
+                - img [ref=e612]
+                - generic [ref=e614]: Rejected
+              - generic [ref=e618]: 6/30/2025
+              - generic [ref=e623]: In Progress
+              - generic [ref=e627]:
+                - generic [ref=e632]: AH
+                - generic [ref=e633]: Abigail Hamada
+              - generic [ref=e637]: ADR
+            - generic [ref=e639]:
+              - link "Task Activity Test" [ref=e643] [cursor=pointer]:
+                - /url: /tasks/details/453
+              - generic [ref=e647]: Coronado-Henderson
+              - link "Gaines, Johnette" [ref=e651] [cursor=pointer]:
+                - /url: /cases/details/2036609
+              - generic [ref=e655]: Humana
+              - generic [ref=e659]: "1.00"
+              - generic [ref=e663]:
+                - img [ref=e666]
+                - generic [ref=e668]: Appealed
+              - generic [ref=e672]: 6/30/2025
+              - generic [ref=e677]: In Progress
+              - generic [ref=e681]:
+                - generic [ref=e686]: RM
+                - generic [ref=e687]: Rivky Meguira
+              - generic [ref=e691]: Additional Info Needed
+            - generic [ref=e693]:
+              - link "NewTask Activity" [ref=e697] [cursor=pointer]:
+                - /url: /tasks/details/452
+              - generic [ref=e701]: Coronado-Henderson
+              - link "Gaines, Johnette" [ref=e705] [cursor=pointer]:
+                - /url: /cases/details/2036609
+              - generic [ref=e709]: Humana
+              - generic [ref=e713]: "1.00"
+              - generic [ref=e717]:
+                - img [ref=e720]
+                - generic [ref=e722]: Rejected
+              - generic [ref=e726]: 6/30/2025
+              - generic [ref=e731]: Not Started
+              - generic [ref=e735]:
+                - generic [ref=e740]: SR
+                - generic [ref=e741]: Santosh Rongali
+              - generic [ref=e745]: Invalid NPI
+            - generic [ref=e747]:
+              - link "Test" [ref=e751] [cursor=pointer]:
+                - /url: /tasks/details/484
+              - generic [ref=e755]: Coronado-Henderson
+              - link "Gaines, Johnette" [ref=e759] [cursor=pointer]:
+                - /url: /cases/details/2036609
+              - generic [ref=e763]: Humana
+              - generic [ref=e767]: "100.00"
+              - generic [ref=e771]:
+                - img [ref=e774]
+                - generic [ref=e776]: Corrected Claim
+              - generic [ref=e780]: 7/1/2025
+              - generic [ref=e785]: In Progress
+              - generic [ref=e789]:
+                - generic [ref=e794]: SR
+                - generic [ref=e795]: Santosh Rongali
+              - generic [ref=e799]: Additional Info Needed
+            - generic [ref=e801]:
+              - link "Sun&^Qjio-03-07-2025" [ref=e805] [cursor=pointer]:
+                - /url: /tasks/details/502
+              - generic [ref=e809]: Coronado-Henderson
+              - link "Gaines, Johnette" [ref=e813] [cursor=pointer]:
+                - /url: /cases/details/2036609
+              - generic [ref=e817]: Humana
+              - generic [ref=e821]: "55.00"
+              - generic [ref=e825]:
+                - img [ref=e828]
+                - generic [ref=e830]: Payment not Posted
+              - generic [ref=e834]: 7/3/2025
+              - generic [ref=e839]: Not Started
+              - generic [ref=e843]:
+                - generic [ref=e848]: SR
+                - generic [ref=e849]: Santosh Rongali
+              - generic [ref=e853]: Retro Payer Change
+            - generic [ref=e855]:
+              - link "TⅣ[(<‹ABCDEFGHijklmnopq›>>)]" [ref=e859] [cursor=pointer]:
+                - /url: /tasks/details/521
+              - generic [ref=e863]: Coronado-Henderson
+              - link "Gaines, Johnette" [ref=e867] [cursor=pointer]:
+                - /url: /cases/details/2036609
+              - generic [ref=e871]: Humana
+              - generic [ref=e875]: "1.00"
+              - generic [ref=e879]:
+                - img [ref=e882]
+                - generic [ref=e884]: Recently Billed
+              - generic [ref=e888]: 7/8/2025
+              - generic [ref=e893]: In Progress
+              - generic [ref=e897]:
+                - generic [ref=e902]: SR
+                - generic [ref=e903]: Santosh Rongali
+              - generic [ref=e907]: LOC Issue
+            - generic [ref=e909]:
+              - link "ChargesTest◣◤◥1" [ref=e913] [cursor=pointer]:
+                - /url: /tasks/details/530
+              - generic [ref=e917]: Ivy at Davenport-St Mary
+              - link "Gaines, Johnette" [ref=e921] [cursor=pointer]:
+                - /url: /cases/details/2036609
+              - generic [ref=e925]: Molina Ia
+              - generic [ref=e929]: "100.00"
+              - generic [ref=e933]:
+                - img [ref=e936]
+                - generic [ref=e938]: Corrected Claim
+              - generic [ref=e942]: 7/10/2025
+              - generic [ref=e947]: Not Started
+              - generic [ref=e951]:
+                - generic [ref=e956]: SR
+                - generic [ref=e957]: Santosh Rongali
+              - generic [ref=e961]: Invalid Claim Info
+  - menu [ref=e976]:
+    - generic [ref=e978]:
+      - generic [ref=e979]:
+        - generic [ref=e980]: Filter by
+        - button "Clear Filter" [ref=e982] [cursor=pointer]:
+          - generic [ref=e983] [cursor=pointer]: Clear Filter
+      - generic [ref=e986]:
+        - generic [ref=e987]:
+          - generic [ref=e988]:
+            - combobox "Due Date" [ref=e991]:
+              - generic [ref=e997] [cursor=pointer]: Due Date
+            - button "Overdue, Today" [ref=e1002] [cursor=pointer]:
+              - generic [ref=e1003] [cursor=pointer]: Overdue, Today
+              - img [ref=e1007] [cursor=pointer]
+          - button [ref=e1010] [cursor=pointer]:
+            - img [ref=e1014] [cursor=pointer]
+        - generic [ref=e1016]:
+          - generic [ref=e1017]:
+            - combobox "Task Status" [ref=e1020]:
+              - generic [ref=e1026] [cursor=pointer]: Task Status
+            - button "Not Started, In Progress" [ref=e1031] [cursor=pointer]:
+              - generic [ref=e1032] [cursor=pointer]: Not Started, In Progress
+              - img [ref=e1036] [cursor=pointer]
+          - button [ref=e1039] [cursor=pointer]:
+            - img [ref=e1043] [cursor=pointer]
+      - generic [ref=e1045]:
+        - button "Add Filter" [ref=e1047] [cursor=pointer]:
+          - generic [ref=e1048] [cursor=pointer]:
+            - img [ref=e1051] [cursor=pointer]
+            - text: Add Filter
+        - button "Apply Filter" [ref=e1054] [cursor=pointer]:
+          - generic [ref=e1055] [cursor=pointer]: Apply Filter
+```
