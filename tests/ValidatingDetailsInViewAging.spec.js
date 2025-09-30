@@ -20,8 +20,12 @@ test.describe("Navigate to View Aging and validate Resident and Facility Name", 
   test("Validating Details in View Aging", async () => {
     const createTaskPage = new sections.CreateTaskPage(test, page);
     await createTaskPage.clickOnTaskList();
+      await test.step("The page is loading, please wait", async () => {
+      await page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
     await createTaskPage.clickOnCustomSortFilter();
     const taskListPage = new sections.TaskListPage(test, page);
+    // await page.pause();
     await taskListPage.validateFiltersInViewAging();
   });
 

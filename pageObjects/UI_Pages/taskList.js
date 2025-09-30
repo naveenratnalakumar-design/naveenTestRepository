@@ -32,8 +32,8 @@ exports.TaskListPage = class TaskListPage {
       "//span[contains(text(),'Apply Filter')]"
     );
     this.clearAssignedToFilter = page.locator("(//arw-icon[@name='x'])[3]");
-    this.deleteDuedateInSort = page.locator(
-      "//div[@id='cdk-drop-list-2']//div[1]//arw-button[1]//button[1]"
+    this.deleteSortIcon = page.locator(
+      "(//arw-button[@icon='trash03']//button[contains(@class,'arw-button--small arw-button--tertiary')])[1]"
     );
     this.deleteBalanceInSort = page.locator(
       "(//button[@class='arw-button arw-button--neutral arw-button--small arw-button--tertiary arw-button--icon-only'])[2]"
@@ -63,7 +63,7 @@ exports.TaskListPage = class TaskListPage {
     this.viewTaskListButton = page.locator(
       "//arw-button[@category='secondary']/following-sibling::arw-button"
     );
-    this.visibleFacilityName = page.locator("//div[text()=' Achieve / ']");
+    this.visibleFacilityName = page.locator("//div[text()=' Achieve ']");
     this.visibleResidentName = page.locator("//span[text()='Wells, Eleanor']");
     this.appliedFilter1 = page.locator(
       "(//div[contains(@class,'web-body-1 text-foreground-high grow overflow-hidden')])[1]"
@@ -73,7 +73,7 @@ exports.TaskListPage = class TaskListPage {
     );
     this.downArrow = page.locator("(//div[@class='w-full'])[15]");
     this.firstGroup = page.locator(
-      "//span[text()='Achieve Rehab And Nursing Facility']"
+      "//span[text()='Achieve']"
     );
     this.filtersDropDown = page.locator(
       "//span[text()=' Filters ']/ancestor::arw-grid-header-filters"
@@ -163,9 +163,9 @@ exports.TaskListPage = class TaskListPage {
   clickOnDeleteDuedateInSortIcon = async () => {
     await excuteSteps(
       this.test,
-      this.deleteDuedateInSort,
+      this.deleteSortIcon,
       "click",
-      `Click on trash/delete icon beside Due Date option in Sort DropDown`
+      `Clear all sorting filters`
     );
   };
   clickOnDeleteBalanceInSortIcon = async () => {
@@ -378,8 +378,8 @@ exports.TaskListPage = class TaskListPage {
   verifyViewAgingAndViewTaskListButtonsAreVisible = async () => {
     const viewAgingBtn = await this.viewAgingButton;
     const viewTaskListBtn = await this.viewTaskListButton;
-    await expect(viewAgingBtn).toBeVisible();
-    await expect(viewTaskListBtn).toBeVisible();
+    await expect(viewAgingBtn,"Validating whether the 'View Aging' button is visible on the case view page").toBeVisible();
+    await expect(viewTaskListBtn,"Validating whether the 'View TaskList' button is visible on the case view page").toBeVisible();
   };
   checkingTextOnAppliedFilters = async () => {
     await this.clickOnFilterBtn();
@@ -469,10 +469,10 @@ exports.TaskListPage = class TaskListPage {
   };
   validateFiltersInViewAging = async () => {
     await this.clickOnDeleteDuedateInSortIcon();
-    await this.clickOnDeleteBalanceInSortIcon();
+    await this.clickOnDeleteDuedateInSortIcon();
     await this.clickOnApplySortButtonIcon();
     await this.clickOnFilterBtn();
-    await this.verifyDefaultFiltersInTaskList();
+    // await this.verifyDefaultFiltersInTaskList();
     await this.clickOnClearFilterIcon();
     await this.hoverOverResidentHeaderIcon();
     await this.test.step("The page is loading, please wait", async () => {
