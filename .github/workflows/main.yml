@@ -1,10 +1,11 @@
 name: Apex Automated Tests
 
 on:
-  schedule:
+  workflow_dispatch:
+#on:
+ # schedule:
     #Run every day at 7:00 AM EST (11:00 AM UTC)
-    - cron: '30 11 * * *'
-
+    #- cron: '30 11 * * *'
 jobs:
   test:
     runs-on: [self-hosted, linux]
