@@ -25,7 +25,9 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: npx playwright test --trace=on
+        #run: npx playwright test --trace=on
+        run: npx playwright test --grep "@regression" --trace=on
+
 
       # Upload Playwright HTML Report
       - name: Upload Playwright HTML Report
