@@ -15,11 +15,11 @@ test.describe("Creating Task from Aging with file attachment", () => {
     );
   });
 
-  test("Verify that the resident name is correctly displayed for the searched name", async () => {
+  test("@regression Verify that the resident name is correctly displayed for the searched name", async () => {
     const tasklistPage = new sections.TaskListPage(test, page);
     await tasklistPage.validateCaseDetailsUsingCaseSearch();
   });
-  test("Verify the resident name is correctly displayed after searching a case using the Global Facility filter", async () => {
+  test("@regression Verify the resident name is correctly displayed after searching a case using the Global Facility filter", async () => {
     const tasklistPage = new sections.TaskListPage(test, page);
     const createTaskpage = new sections.CreateTaskPage(test, page);
     await createTaskpage.clickOnTaskList();

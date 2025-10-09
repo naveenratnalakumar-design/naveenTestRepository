@@ -1,0 +1,57 @@
+
+    <html>
+      <head>
+        <title>Verify default toggles</title>
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+          }
+          h2, h3 {
+            color: #444;
+          }
+          ul {
+            padding-left: 20px;
+          }
+          li {
+            margin-bottom: 8px;
+          }
+          a {
+            text-decoration: none;
+            color: #007bff;
+          }
+          a:hover {
+            text-decoration: underline;
+          }
+        </style>
+      </head>
+      <body>
+        <h2>Verify default toggles</h2>
+        <a href="index.html?t=1760013040551">⬅️ Back to Summary</a>
+        <h3 style="color:red;">❌ Reason: Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m()[22m failed
+
+Locator:  locator('//span[text()=\'Current Month\']/parent::label/preceding-sibling::button')
+Expected: visible
+Received: <element(s) not found>
+Timeout:  10000ms
+
+Call log:
+[2m  - Expect "toBeVisible" with timeout 10000ms[22m
+[2m  - waiting for locator('//span[text()=\'Current Month\']/parent::label/preceding-sibling::button')[22m
+</h3>
+        <h3>📝 Steps:</h3>
+        <ul>
+          
+            <li>Click on Ar aging button </li>
+          
+            <li>Expect "toBeVisible" <span style="color:red;">(Failed)</span></li>
+          
+        </ul>
+        <h3>📸 Screenshot</h3><img src="verify_default_toggles_screenshot.png?t=1760013040551" width="600" />
+        
+      </body>
+    </html>
+  

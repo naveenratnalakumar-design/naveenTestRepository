@@ -83,6 +83,19 @@
       "userEmail":"vgaikawad@axgsolutions.com",
       "password":"April@202%"
     },
+     "userManagementData": {
+      "existingUserNames": [
+        "Vikesh",
+        "Kesava",
+        "Santosh"
+      ],
+      "nonExistingUserNames": [
+        "Harsha",
+        "Naveen",
+        "Harika"
+      ],
+      "addRoleAssignmentUsername": "Srongali@apexhct.onmicrosoft.com"
+    },
     "documentTypeOptionsList": [
       "ACH/CC",
       "Appeal",

@@ -1,0 +1,105 @@
+
+    <html>
+      <head>
+        <title>Validate Deactivate Facility Role Assignment</title>
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+          }
+          h2, h3 {
+            color: #444;
+          }
+          ul {
+            padding-left: 20px;
+          }
+          li {
+            margin-bottom: 8px;
+          }
+          a {
+            text-decoration: none;
+            color: #007bff;
+          }
+          a:hover {
+            text-decoration: underline;
+          }
+        </style>
+      </head>
+      <body>
+        <h2>Validate Deactivate Facility Role Assignment</h2>
+        <a href="index.html?t=1760012080080">⬅️ Back to Summary</a>
+        
+        <h3>📝 Steps:</h3>
+        <ul>
+          
+            <li>Click Settings Button in HomePage/Dashboard </li>
+          
+            <li>Click on User Management Option in Settings </li>
+          
+            <li>The Page is loading, please wait </li>
+          
+            <li>Click on Select Users Dropdown </li>
+          
+            <li>Enter Srongali@apexhct.onmicrosoft.com in searchBox </li>
+          
+            <li>The Page is loading, please wait </li>
+          
+            <li>Select 'All' Checkbox </li>
+          
+            <li>Click on Apply Button </li>
+          
+            <li>The Page is loading, please wait </li>
+          
+            <li>Query count locator('//div[@role=\'link\']') </li>
+          
+            <li>Click on the UserView Search Result Link </li>
+          
+            <li>Wait for selector locator('//span[text()=\'Active\']/parent::button').first() </li>
+          
+            <li>Query count locator('//span[text()=\'Active\']/parent::button') </li>
+          
+            <li>Wait for timeout </li>
+          
+            <li>Click on Inactive Toggle </li>
+          
+            <li>Wait for timeout </li>
+          
+            <li>Click on Close Button </li>
+          
+            <li>Click on Inactive Toggle </li>
+          
+            <li>Wait for timeout </li>
+          
+            <li>Click on Inactive Toggle </li>
+          
+            <li>Wait for timeout </li>
+          
+            <li>Click on Deactivate and Reassign Tasks Button </li>
+          
+            <li>The Page is loading, please wait </li>
+          
+            <li>Click on chevron left button to return to User Management Page </li>
+          
+            <li>Click on User View Button </li>
+          
+            <li>The Page is loading, please wait </li>
+          
+            <li>Query count locator('//div[@role=\'link\']') </li>
+          
+            <li>Click on the UserView Search Result Link </li>
+          
+            <li>The Page is loading, please wait </li>
+          
+            <li>Wait for selector locator('//span[text()=\'Beacon\']/ancestor::div[@data-column-definition-name=\'facilityName\']/following-sibling::div[@data-column-definition-name=\'roleName\']//div[text()=\' Manager \']/ancestor::div[@data-column-definition-name=\'roleName\']/following-sibling::div[@data-column-definition-name=\'isActive\']//span[text()=\'Active\']/parent::button') </li>
+          
+            <li>Expect "toBe" </li>
+          
+        </ul>
+        
+        
+      </body>
+    </html>
+  

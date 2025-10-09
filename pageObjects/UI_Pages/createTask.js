@@ -1123,12 +1123,13 @@ exports.CreateTaskPage = class CreateTaskPage {
     }
     const linkfileselector = this.checkedLinkFiles;
     const linkFilename = await linkfileselector.innerText();
-    await console.log(linkFilename);
+    console.log(linkFilename);
     await this.clickOnLinkBtn();
+    // await this.page.pause()
     await expect(
       this.files.filter({ hasText: linkFilename }),
       `verifying file ${linkFilename} is linked to task or not`
-    ).toHaveCount(1);
+    ).toBeVisible();
     await this.test.step("The page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.mediumWait));
     });
@@ -1564,60 +1565,132 @@ exports.CreateTaskPage = class CreateTaskPage {
     ).toBeVisible();
   };
 
+  // residentPayerRowCheck = async () => {
+  //   let flag = 0;
+  //   await this.page.waitForSelector(
+  //     "(//div[@data-column-definition-name='_groupColumn']//arw-icon[@name='arrowNarrowDown'])",
+  //     { state: "visible" }
+  //   );
+  //   // const thumb = this.page.locator("(//div[@class='ng-scrollbar-thumb'])[1]");
+  //   // await thumb.evaluate(el => el.scrollIntoView({ behavior: 'smooth', block: 'center' }));
+  //   const expandIcons = await this.arAgingExpandIcon;
+  //   await this.test.step("The Page is loading, please wait", async () => {
+  //     await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+  //   });
+  //   const noOfExpandIcons = await expandIcons.count();
+  //   console.log(noOfExpandIcons);
+  //   for (let j = 0; j < noOfExpandIcons; j++) {
+  //     const arAgingExpandIcon = expandIcons.nth(j);
+  //     console.log(arAgingExpandIcon);
+  //     await arAgingExpandIcon.click();
+  //     await this.page.waitForSelector(
+  //       "(//div[contains(@data-row-id,'resident_payer_payerCategory_facility_facilityGroup')])",
+  //       { state: "visible" }
+  //     );
+  //     await this.test.step("The Page is loading, please wait", async () => {
+  //       await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+  //     });
+  //     const count = await this.countElementsPresent(this.residentPayerRow);
+  //     console.log("count==", count);
+  //     for (let i = 1; i <= count; i++) {
+  //       const amountLocator = this.page.locator(
+  //         `((//div[contains(@data-row-id,'resident_payer_payerCategory_facility_facilityGroup')])[${i}]/div/div)[3]`
+  //       );
+  //       const residentPayerCreateTaskIcon = this.page.locator(
+  //         `(//arw-button[@icon='plusSquareDefault']//button)[${i}]`
+  //       );
+  //       await this.hoverOnResidentPayerAmount(amountLocator);
+  //       const status = await residentPayerCreateTaskIcon.isDisabled();
+  //       if (!status) {
+  //         flag = 1;
+  //         await this.test.step("The Page is loading, please wait", async () => {
+  //           await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+  //         });
+  //         await residentPayerCreateTaskIcon.click();
+  //         await this.test.step("The Page is loading, please wait", async () => {
+  //           await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+  //         });
+  //         break;
+  //       }
+  //     }
+  //     if (flag == 1) {
+  //       break;
+  //     }
+  //   }
+  // };
+
   residentPayerRowCheck = async () => {
     let flag = 0;
     await this.page.waitForSelector(
       "(//div[@data-column-definition-name='_groupColumn']//arw-icon[@name='arrowNarrowDown'])",
       { state: "visible" }
     );
-    // const thumb = this.page.locator("(//div[@class='ng-scrollbar-thumb'])[1]");
-    // await thumb.evaluate(el => el.scrollIntoView({ behavior: 'smooth', block: 'center' }));
     const expandIcons = await this.arAgingExpandIcon;
-    await this.test.step("The Page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
-    });
     const noOfExpandIcons = await expandIcons.count();
-    console.log(noOfExpandIcons);
     for (let j = 0; j < noOfExpandIcons; j++) {
       const arAgingExpandIcon = expandIcons.nth(j);
-      console.log(arAgingExpandIcon);
       await arAgingExpandIcon.click();
-      await this.page.waitForSelector(
-        "(//div[contains(@data-row-id,'resident_payer_payerCategory_facility_facilityGroup')])",
-        { state: "visible" }
-      );
-      await this.test.step("The Page is loading, please wait", async () => {
-        await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+      await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.largeWait));
+        await this.page.waitForTimeout(parseInt(process.env.largeWait));
       });
-      const count = await this.countElementsPresent(this.residentPayerRow);
-      console.log("count==", count);
-      for (let i = 1; i <= count; i++) {
-        const amountLocator = this.page.locator(
-          `((//div[contains(@data-row-id,'resident_payer_payerCategory_facility_facilityGroup')])[${i}]/div/div)[3]`
-        );
-        const residentPayerCreateTaskIcon = this.page.locator(
-          `(//arw-button[@icon='plusSquareDefault']//button)[${i}]`
-        );
-        await this.hoverOnResidentPayerAmount(amountLocator);
-        const status = await residentPayerCreateTaskIcon.isDisabled();
-        if (!status) {
-          flag = 1;
-          await this.test.step("The Page is loading, please wait", async () => {
-            await this.page.waitForTimeout(parseInt(process.env.mediumWait));
-          });
-          await residentPayerCreateTaskIcon.click();
-          await this.test.step("The Page is loading, please wait", async () => {
-            await this.page.waitForTimeout(parseInt(process.env.mediumWait));
-          });
-          break;
-        }
-      }
-      if (flag == 1) {
-        break;
-      }
-    }
-  };
+      let previousRowCount = 0;
+      while (true) {
+        const rows = this.residentPayerRow;
+        await this.test.step("The page is loading, please wait", async () => {
+          await this.page.waitForTimeout(parseInt(process.env.largeWait));
+        });
+        const rowCount = await rows.count();
+        if (rowCount === previousRowCount) break;
+        previousRowCount = rowCount;
+        for (let i = 0; i < rowCount; i++) {
+          const row = rows.nth(i);
+          await row.evaluate((el) => el.scrollIntoView());
+          const cellCount = await row.locator("xpath=./div/div").count();
+          for (let k = 3; k <= cellCount; k++) {
+            const amountLocator = row.locator(`xpath=./div/div[${k}]`);
 
+            const text = (await amountLocator.textContent())?.trim();
+            // Skip empty cells
+            if (!text) continue;
+            await this.hoverOnResidentPayerAmount(amountLocator);
+            await this.page.waitForTimeout(200);
+            // Use the button inside the current cell only
+            const residentPayerCreateTaskIcon = amountLocator.locator(
+              `xpath=.//arw-button[@icon='plusSquareDefault']//button`
+            );
+            const enabledButtons =
+              await residentPayerCreateTaskIcon.elementHandles();
+            if (enabledButtons.length > 0) {
+              for (const btn of enabledButtons) {
+                if (await btn.isEnabled()) {
+                  flag = 1;
+                  await btn.click();
+                  await this.page.waitForTimeout(
+                    parseInt(process.env.smallWait)
+                  );
+                  break;
+                }
+              }
+            }
+            if (flag === 1) break;
+          }
+          if (flag === 1) break;
+        }
+        if (flag === 1) break;
+        await this.page.evaluate(() => {
+          const container = document.querySelector(
+            "ng-scrollbar.cdk-virtual-scrollable.arw-grid-table__body"
+          );
+          if (container) container.scrollBy(0, 200);
+        });
+        await this.page.waitForTimeout(400);
+      }
+      if (flag === 1) break;
+    }
+    if (flag === 0)
+      console.log("⚠️ No enabled Create Task + icon found in any row");
+  };
   fillFieldsforArAging = async () => {
     await this.clickOnArAgingBtn();
     await this.residentPayerRowCheck();

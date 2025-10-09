@@ -1,0 +1,11 @@
+Facility Name: Baltimore Wash
+Role Name: Manager
+Primary
+Facility Name: Aberdeen
+Role Name: MCR Biller
+Primary
+Facility Name: Advanced Valley Parkside
+Role Name: HMO Senior Supervisor
+1 Other User
+Checking toggle for Advanced Valley Parkside and HMO Senior Supervisor
+1 Other User: aria-checked = false

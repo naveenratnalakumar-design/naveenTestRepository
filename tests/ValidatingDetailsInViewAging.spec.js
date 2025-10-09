@@ -25,7 +25,6 @@ test.describe("Navigate to View Aging and validate Resident and Facility Name", 
     });
     await createTaskPage.clickOnCustomSortFilter();
     const taskListPage = new sections.TaskListPage(test, page);
-    // await page.pause();
     await taskListPage.validateFiltersInViewAging();
   });
 

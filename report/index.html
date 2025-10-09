@@ -43,9 +43,9 @@
       <body>
         <h1>📊 Playwright Test Execution Report</h1>
         <h2>Summary</h2>
-        <p><strong>Total Scenarios:</strong> 1 | ✅ Passed: 1 | ❌ Failed: 0 | ⚠️ Skipped: 0</p>
+        <p><strong>Total Scenarios:</strong> 2 | ✅ Passed: 0 | ❌ Failed: 2 | ⚠️ Skipped: 0</p>
         <canvas id="chart" width="200" height="200"></canvas>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js?t=1759130582245"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js?t=1760013332514"></script>
     <script>
       const ctx = document.getElementById('chart').getContext('2d');
       new Chart(ctx, {
@@ -53,7 +53,7 @@
         data: {
           labels: ['Passed', 'Failed', 'Skipped'],
           datasets: [{
-            data: [1, 0, 0],
+            data: [0, 2, 0],
             backgroundColor: ['#4CAF50', '#F44336', '#FF9800']
           }]
         },
@@ -76,13 +76,23 @@
           <tbody>
             
       <tr>
-        <td><a href="validating_details_in_view_aging.html?t=1759130582245">Validating Details in View Aging</a></td>
-        <td>✅️</td>
+        <td><a href="verify_search_by_non-existing_user.html?t=1760013332514">Verify search by non-existing user</a></td>
+        <td>⛔</td>
         <td>1</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>43466</td>
+      </tr>
+    
+      <tr>
+        <td><a href="verify_search_by_non-existing_user.html?t=1760013332514">Verify search by non-existing user</a></td>
+        <td>⛔</td>
+        <td>1</td>
+        <td>0</td>
         <td>1</td>
         <td>0</td>
         <td>0</td>
-        <td>50392</td>
       </tr>
     
           </tbody>

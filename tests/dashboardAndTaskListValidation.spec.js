@@ -14,12 +14,12 @@ test.describe("Verify Dashboard and Task List Items", () => {
       [process.env.password]
     );
   });
-  test("Verify Dashboard Items", async () => {
+  test("@regression Verify Dashboard Items", async () => {
     const dashboardPage = new sections.DashboardPage(test, page);
     await dashboardPage.validateTaskListModuleCardOnDashboard();
     await dashboardPage.validateArAgingModuleCardOnDashboard();
   });
-  test("Verify details on Task list page", async () => {
+  test("@regression Verify details on Task list page", async () => {
     const createTaskPage = new sections.CreateTaskPage(test, page);
     await createTaskPage.VerifyingDetailsForTaskListPage();
   });

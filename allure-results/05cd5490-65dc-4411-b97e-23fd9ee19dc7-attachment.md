@@ -1,0 +1,1000 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - navigation [ref=e5]:
+    - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+      - /url: /
+      - img "Revflow logo" [ref=e7] [cursor=pointer]
+      - img "Revflow" [ref=e9] [cursor=pointer]
+    - generic [ref=e11]:
+      - link "Dashboard" [ref=e13] [cursor=pointer]:
+        - /url: /dashboard
+        - img [ref=e16] [cursor=pointer]
+        - generic [ref=e18] [cursor=pointer]: Dashboard
+      - link "Task List" [ref=e20] [cursor=pointer]:
+        - /url: /tasks
+        - img [ref=e23] [cursor=pointer]
+        - generic [ref=e25] [cursor=pointer]: Task List
+      - link "AR Aging" [ref=e27] [cursor=pointer]:
+        - /url: /ar-aging
+        - img [ref=e30] [cursor=pointer]
+        - generic [ref=e32] [cursor=pointer]: AR Aging
+      - link "Biller Activity Report" [ref=e34] [cursor=pointer]:
+        - /url: /biller-report
+        - img [ref=e37] [cursor=pointer]
+        - generic [ref=e39] [cursor=pointer]: Biller Activity Report
+      - generic [ref=e40]:
+        - link "Settings" [ref=e41] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e44] [cursor=pointer]
+          - generic [ref=e47] [cursor=pointer]: Settings
+          - img [ref=e50] [cursor=pointer]
+        - generic [ref=e52]:
+          - link "User Management" [ref=e54] [cursor=pointer]:
+            - /url: /settings/user-management
+            - generic [ref=e55] [cursor=pointer]: User Management
+          - link "Facility Payers" [ref=e57] [cursor=pointer]:
+            - /url: /settings/facility-payers
+            - generic [ref=e58] [cursor=pointer]: Facility Payers
+    - button [ref=e63] [cursor=pointer]:
+      - img [ref=e67] [cursor=pointer]
+  - generic [ref=e69]:
+    - button "KK" [ref=e73] [cursor=pointer]:
+      - generic [ref=e76] [cursor=pointer]: KK
+      - img [ref=e79] [cursor=pointer]
+    - generic [ref=e82]:
+      - generic [ref=e84]:
+        - link "User Management" [ref=e85] [cursor=pointer]:
+          - /url: /settings/user-management/details
+          - button [ref=e87] [cursor=pointer]:
+            - img [ref=e91] [cursor=pointer]
+          - text: User Management
+        - img [ref=e95]
+        - generic [ref=e101]: SR
+        - generic [ref=e104]:
+          - generic [ref=e105]: Santosh Rongali
+          - button [ref=e107] [cursor=pointer]:
+            - img [ref=e111] [cursor=pointer]
+      - generic [ref=e116]:
+        - generic [ref=e117]:
+          - generic [ref=e118]:
+            - generic [ref=e122] [cursor=pointer]: Email
+            - generic [ref=e124]:
+              - generic [ref=e125]: SRongali@apexhct.onmicrosoft.com
+              - button [ref=e127] [cursor=pointer]:
+                - img [ref=e131] [cursor=pointer]
+          - generic [ref=e133]:
+            - generic [ref=e137] [cursor=pointer]: RevFlow Access
+            - radiogroup [ref=e138]:
+              - radio "Active" [checked] [ref=e139] [cursor=pointer]:
+                - generic [ref=e140] [cursor=pointer]: Active
+              - radio "Inactive" [ref=e141] [cursor=pointer]:
+                - generic [ref=e142] [cursor=pointer]: Inactive
+          - generic [ref=e143]:
+            - generic [ref=e147] [cursor=pointer]: User ID
+            - text: "1309"
+          - generic [ref=e148]:
+            - generic [ref=e152] [cursor=pointer]: Added On
+            - text: 5/30/2025 4:13 PM
+          - generic [ref=e153]:
+            - generic [ref=e157] [cursor=pointer]: Active Directory ID
+            - text: 37743d98-9323-4b9c-af84-7b644de8f340
+            - generic [ref=e158]: Azure
+        - generic [ref=e159]:
+          - generic [ref=e160]:
+            - generic [ref=e162]:
+              - img [ref=e165]
+              - generic [ref=e167]: Facilities & Roles (87)
+            - button "Assign New" [ref=e169] [cursor=pointer]:
+              - generic [ref=e170] [cursor=pointer]:
+                - img [ref=e173] [cursor=pointer]
+                - text: Assign New
+          - generic [ref=e178]:
+            - generic [ref=e179]:
+              - generic [ref=e183] [cursor=pointer]: Facility
+              - generic [ref=e187] [cursor=pointer]: Role
+              - generic [ref=e191] [cursor=pointer]: Status
+              - generic [ref=e196] [cursor=pointer]: Last Updated On
+            - generic [ref=e200]:
+              - generic [ref=e202]:
+                - generic [ref=e206]: Berkshire Place
+                - generic [ref=e211]:
+                  - generic [ref=e212]: Tracker
+                  - link "26 Other Users" [ref=e213] [cursor=pointer]
+                - radiogroup [ref=e217]:
+                  - radio "Active" [checked] [ref=e218] [cursor=pointer]:
+                    - generic [ref=e219] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e220] [cursor=pointer]:
+                    - generic [ref=e221] [cursor=pointer]: Inactive
+                - generic [ref=e225]: 6/4/2025 7:01 PM by John Doe
+              - generic [ref=e227]:
+                - generic [ref=e231]: Dawnhill
+                - generic [ref=e236]:
+                  - generic [ref=e237]: Tracker
+                  - link "25 Other Users" [ref=e238] [cursor=pointer]
+                - radiogroup [ref=e242]:
+                  - radio "Active" [checked] [ref=e243] [cursor=pointer]:
+                    - generic [ref=e244] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e245] [cursor=pointer]:
+                    - generic [ref=e246] [cursor=pointer]: Inactive
+                - generic [ref=e250]: 6/4/2025 7:01 PM by John Doe
+              - generic [ref=e252]:
+                - generic [ref=e256]: Stillwater
+                - generic [ref=e261]:
+                  - generic [ref=e262]: HMO Biller
+                  - link "2 Other Users" [ref=e263] [cursor=pointer]
+                - radiogroup [ref=e267]:
+                  - radio "Active" [checked] [ref=e268] [cursor=pointer]:
+                    - generic [ref=e269] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e270] [cursor=pointer]:
+                    - generic [ref=e271] [cursor=pointer]: Inactive
+                - generic [ref=e275]: 8/8/2025 7:20 PM by Esther Furst
+              - generic [ref=e277]:
+                - generic [ref=e281]: Westview
+                - generic [ref=e286]:
+                  - generic [ref=e287]: Tracker
+                  - link "26 Other Users" [ref=e288] [cursor=pointer]
+                - radiogroup [ref=e292]:
+                  - radio "Active" [checked] [ref=e293] [cursor=pointer]:
+                    - generic [ref=e294] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e295] [cursor=pointer]:
+                    - generic [ref=e296] [cursor=pointer]: Inactive
+                - generic [ref=e300]: 6/4/2025 7:01 PM by John Doe
+              - generic [ref=e302]:
+                - generic [ref=e306]: South County
+                - generic [ref=e311]:
+                  - generic [ref=e312]: Tracker
+                  - link "26 Other Users" [ref=e313] [cursor=pointer]
+                - radiogroup [ref=e317]:
+                  - radio "Active" [checked] [ref=e318] [cursor=pointer]:
+                    - generic [ref=e319] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e320] [cursor=pointer]:
+                    - generic [ref=e321] [cursor=pointer]: Inactive
+                - generic [ref=e325]: 6/4/2025 7:01 PM by John Doe
+              - generic [ref=e327]:
+                - generic [ref=e331]: Ivy at Davenport-St Mary
+                - generic [ref=e336]:
+                  - generic [ref=e337]: Tracker
+                  - link "27 Other Users" [ref=e338] [cursor=pointer]
+                - radiogroup [ref=e342]:
+                  - radio "Active" [checked] [ref=e343] [cursor=pointer]:
+                    - generic [ref=e344] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e345] [cursor=pointer]:
+                    - generic [ref=e346] [cursor=pointer]: Inactive
+                - generic [ref=e350]: 6/4/2025 7:01 PM by John Doe
+              - generic [ref=e352]:
+                - generic [ref=e356]: Avantara Crown Point
+                - generic [ref=e361]:
+                  - generic [ref=e362]: Tracker
+                  - link "26 Other Users" [ref=e363] [cursor=pointer]
+                - radiogroup [ref=e367]:
+                  - radio "Active" [checked] [ref=e368] [cursor=pointer]:
+                    - generic [ref=e369] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e370] [cursor=pointer]:
+                    - generic [ref=e371] [cursor=pointer]: Inactive
+                - generic [ref=e375]: 6/4/2025 7:01 PM by John Doe
+              - generic [ref=e377]:
+                - generic [ref=e381]: Avantara Crown Point
+                - generic [ref=e387]: HMO Biller
+                - radiogroup [ref=e391]:
+                  - radio "Active" [disabled] [ref=e392]:
+                    - generic [ref=e393]: Active
+                  - radio "Inactive" [checked] [ref=e394] [cursor=pointer]:
+                    - generic [ref=e395] [cursor=pointer]: Inactive
+                - generic [ref=e399]: 8/12/2025 3:55 PM by Keshava Karri
+              - generic [ref=e401]:
+                - generic [ref=e405]: Artesia
+                - generic [ref=e410]:
+                  - generic [ref=e411]: Tracker
+                  - link "26 Other Users" [ref=e412] [cursor=pointer]
+                - radiogroup [ref=e416]:
+                  - radio "Active" [checked] [ref=e417] [cursor=pointer]:
+                    - generic [ref=e418] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e419] [cursor=pointer]:
+                    - generic [ref=e420] [cursor=pointer]: Inactive
+                - generic [ref=e424]: 6/4/2025 7:01 PM by John Doe
+              - generic [ref=e426]:
+                - generic [ref=e430]: Dillsboro-Ross Manor
+                - generic [ref=e436]: Tracker
+                - radiogroup [ref=e440]:
+                  - radio "Active" [disabled] [ref=e441]:
+                    - generic [ref=e442]: Active
+                  - radio "Inactive" [checked] [ref=e443] [cursor=pointer]:
+                    - generic [ref=e444] [cursor=pointer]: Inactive
+                - generic [ref=e448]: 7/25/2025 10:09 PM by Orest Shpak
+              - generic [ref=e450]:
+                - generic [ref=e454]: Abington
+                - generic [ref=e460]: HMO Biller
+                - radiogroup [ref=e464]:
+                  - radio "Active" [disabled] [ref=e465]:
+                    - generic [ref=e466]: Active
+                  - radio "Inactive" [checked] [ref=e467] [cursor=pointer]:
+                    - generic [ref=e468] [cursor=pointer]: Inactive
+                - generic [ref=e472]: 7/29/2025 8:05 PM by Keshava Karri
+              - generic [ref=e474]:
+                - generic [ref=e478]: Hamilton Arms
+                - generic [ref=e484]: HMO Biller
+                - radiogroup [ref=e488]:
+                  - radio "Active" [disabled] [ref=e489]:
+                    - generic [ref=e490]: Active
+                  - radio "Inactive" [checked] [ref=e491] [cursor=pointer]:
+                    - generic [ref=e492] [cursor=pointer]: Inactive
+                - generic [ref=e496]: 7/29/2025 8:05 PM by Keshava Karri
+              - generic [ref=e498]:
+                - generic [ref=e502]: Oasis-Crystal
+                - generic [ref=e506]:
+                  - generic [ref=e508]: MCR Biller
+                  - button "Primary" [ref=e510] [cursor=pointer]:
+                    - generic [ref=e511] [cursor=pointer]: Primary
+                - radiogroup [ref=e515]:
+                  - radio "Active" [checked] [ref=e516] [cursor=pointer]:
+                    - generic [ref=e517] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e518] [cursor=pointer]:
+                    - generic [ref=e519] [cursor=pointer]: Inactive
+                - generic [ref=e523]: 10/1/2025 3:18 PM by Keshava Karri
+              - generic [ref=e525]:
+                - generic [ref=e529]: Oasis-Crystal
+                - generic [ref=e533]:
+                  - generic [ref=e535]: Director
+                  - button "Primary" [ref=e537] [cursor=pointer]:
+                    - generic [ref=e538] [cursor=pointer]: Primary
+                - radiogroup [ref=e542]:
+                  - radio "Active" [checked] [ref=e543] [cursor=pointer]:
+                    - generic [ref=e544] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e545] [cursor=pointer]:
+                    - generic [ref=e546] [cursor=pointer]: Inactive
+                - generic [ref=e550]: 10/1/2025 3:40 PM by Keshava Karri
+              - generic [ref=e552]:
+                - generic [ref=e556]: Oasis-Crystal
+                - generic [ref=e560]:
+                  - generic [ref=e562]: HMO Senior Supervisor
+                  - button "Primary" [ref=e564] [cursor=pointer]:
+                    - generic [ref=e565] [cursor=pointer]: Primary
+                - radiogroup [ref=e569]:
+                  - radio "Active" [checked] [ref=e570] [cursor=pointer]:
+                    - generic [ref=e571] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e572] [cursor=pointer]:
+                    - generic [ref=e573] [cursor=pointer]: Inactive
+                - generic [ref=e577]: 10/1/2025 3:43 PM by Keshava Karri
+              - generic [ref=e579]:
+                - generic [ref=e583]: Oasis-Crystal
+                - generic [ref=e587]:
+                  - generic [ref=e589]: Manager
+                  - button "Primary" [ref=e591] [cursor=pointer]:
+                    - generic [ref=e592] [cursor=pointer]: Primary
+                - radiogroup [ref=e596]:
+                  - radio "Active" [checked] [ref=e597] [cursor=pointer]:
+                    - generic [ref=e598] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e599] [cursor=pointer]:
+                    - generic [ref=e600] [cursor=pointer]: Inactive
+                - generic [ref=e604]: 10/1/2025 3:44 PM by Keshava Karri
+              - generic [ref=e606]:
+                - generic [ref=e610]: Gulfport
+                - generic [ref=e614]:
+                  - generic [ref=e616]: MCR Biller
+                  - button "Primary" [ref=e618] [cursor=pointer]:
+                    - generic [ref=e619] [cursor=pointer]: Primary
+                - radiogroup [ref=e623]:
+                  - radio "Active" [checked] [ref=e624] [cursor=pointer]:
+                    - generic [ref=e625] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e626] [cursor=pointer]:
+                    - generic [ref=e627] [cursor=pointer]: Inactive
+                - generic [ref=e631]: 10/7/2025 8:16 PM by Vikesh Gaikawad
+              - generic [ref=e633]:
+                - generic [ref=e637]: Gulfport
+                - generic [ref=e641]:
+                  - generic [ref=e643]: Director
+                  - button "Primary" [ref=e645] [cursor=pointer]:
+                    - generic [ref=e646] [cursor=pointer]: Primary
+                - radiogroup [ref=e650]:
+                  - radio "Active" [checked] [ref=e651] [cursor=pointer]:
+                    - generic [ref=e652] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e653] [cursor=pointer]:
+                    - generic [ref=e654] [cursor=pointer]: Inactive
+                - generic [ref=e658]: 10/9/2025 2:49 PM by Vikesh Gaikawad
+              - generic [ref=e660]:
+                - generic [ref=e664]: ADR
+                - generic [ref=e668]:
+                  - generic [ref=e670]: BOM
+                  - button "Primary" [ref=e672] [cursor=pointer]:
+                    - generic [ref=e673] [cursor=pointer]: Primary
+                - radiogroup [ref=e677]:
+                  - radio "Active" [checked] [ref=e678] [cursor=pointer]:
+                    - generic [ref=e679] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e680] [cursor=pointer]:
+                    - generic [ref=e681] [cursor=pointer]: Inactive
+                - generic [ref=e685]: 10/2/2025 10:40 PM by Santosh Rongali
+              - generic [ref=e687]:
+                - generic [ref=e691]: Test Winston Salem
+                - generic [ref=e697]: Tracker
+                - radiogroup [ref=e701]:
+                  - radio "Active" [disabled] [ref=e702]:
+                    - generic [ref=e703]: Active
+                  - radio "Inactive" [checked] [ref=e704] [cursor=pointer]:
+                    - generic [ref=e705] [cursor=pointer]: Inactive
+                - generic [ref=e709]: 7/25/2025 10:09 PM by Orest Shpak
+              - generic [ref=e711]:
+                - generic [ref=e715]: Test Glenview
+                - generic [ref=e721]: Tracker
+                - radiogroup [ref=e725]:
+                  - radio "Active" [disabled] [ref=e726]:
+                    - generic [ref=e727]: Active
+                  - radio "Inactive" [checked] [ref=e728] [cursor=pointer]:
+                    - generic [ref=e729] [cursor=pointer]: Inactive
+                - generic [ref=e733]: 7/25/2025 10:09 PM by Orest Shpak
+              - generic [ref=e735]:
+                - generic [ref=e739]: Bay Oaks
+                - generic [ref=e745]: HMO Biller
+                - radiogroup [ref=e749]:
+                  - radio "Active" [disabled] [ref=e750]:
+                    - generic [ref=e751]: Active
+                  - radio "Inactive" [checked] [ref=e752] [cursor=pointer]:
+                    - generic [ref=e753] [cursor=pointer]: Inactive
+                - generic [ref=e757]: 7/29/2025 8:05 PM by Keshava Karri
+              - generic [ref=e759]:
+                - generic [ref=e763]: Mountain Ridge
+                - generic [ref=e767]:
+                  - generic [ref=e769]: Director
+                  - button "Primary" [ref=e771] [cursor=pointer]:
+                    - generic [ref=e772] [cursor=pointer]: Primary
+                - radiogroup [ref=e776]:
+                  - radio "Active" [checked] [ref=e777] [cursor=pointer]:
+                    - generic [ref=e778] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e779] [cursor=pointer]:
+                    - generic [ref=e780] [cursor=pointer]: Inactive
+                - generic [ref=e784]: 10/7/2025 12:44 PM by Santosh Rongali
+              - generic [ref=e786]:
+                - generic [ref=e790]: Test Riverdale
+                - generic [ref=e796]: Tracker
+                - radiogroup [ref=e800]:
+                  - radio "Active" [disabled] [ref=e801]:
+                    - generic [ref=e802]: Active
+                  - radio "Inactive" [checked] [ref=e803] [cursor=pointer]:
+                    - generic [ref=e804] [cursor=pointer]: Inactive
+                - generic [ref=e808]: 7/25/2025 10:09 PM by Orest Shpak
+              - generic [ref=e810]:
+                - generic [ref=e814]: Camellia-Beckford (Henderson)
+                - generic [ref=e818]:
+                  - generic [ref=e820]: Director
+                  - button "Primary" [ref=e822] [cursor=pointer]:
+                    - generic [ref=e823] [cursor=pointer]: Primary
+                - radiogroup [ref=e827]:
+                  - radio "Active" [checked] [ref=e828] [cursor=pointer]:
+                    - generic [ref=e829] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e830] [cursor=pointer]:
+                    - generic [ref=e831] [cursor=pointer]: Inactive
+                - generic [ref=e835]: 10/6/2025 3:22 PM by Vikesh Gaikawad
+              - generic [ref=e837]:
+                - generic [ref=e841]: Elizabeth City
+                - generic [ref=e845]:
+                  - generic [ref=e847]: Tracker
+                  - button "Primary" [ref=e849] [cursor=pointer]:
+                    - generic [ref=e850] [cursor=pointer]: Primary
+                - radiogroup [ref=e854]:
+                  - radio "Active" [checked] [ref=e855] [cursor=pointer]:
+                    - generic [ref=e856] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e857] [cursor=pointer]:
+                    - generic [ref=e858] [cursor=pointer]: Inactive
+                - generic [ref=e862]: 10/3/2025 12:02 AM by Keshava Karri
+              - generic [ref=e864]:
+                - generic [ref=e868]: Elizabeth City
+                - generic [ref=e872]:
+                  - generic [ref=e874]: MCD Biller
+                  - button "Primary" [ref=e876] [cursor=pointer]:
+                    - generic [ref=e877] [cursor=pointer]: Primary
+                - radiogroup [ref=e881]:
+                  - radio "Active" [checked] [ref=e882] [cursor=pointer]:
+                    - generic [ref=e883] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e884] [cursor=pointer]:
+                    - generic [ref=e885] [cursor=pointer]: Inactive
+                - generic [ref=e889]: 10/2/2025 8:44 PM by Keshava Karri
+              - generic [ref=e891]:
+                - generic [ref=e895]: Aberdeen
+                - generic [ref=e899]:
+                  - generic [ref=e901]: MCR Biller
+                  - button "Primary" [ref=e903] [cursor=pointer]:
+                    - generic [ref=e904] [cursor=pointer]: Primary
+                - radiogroup [ref=e908]:
+                  - radio "Active" [checked] [ref=e909] [cursor=pointer]:
+                    - generic [ref=e910] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e911] [cursor=pointer]:
+                    - generic [ref=e912] [cursor=pointer]: Inactive
+                - generic [ref=e916]: 10/6/2025 2:21 PM by Vikesh Gaikawad
+              - generic [ref=e918]:
+                - generic [ref=e922]: Allen
+                - generic [ref=e928]: HMO Biller
+                - radiogroup [ref=e932]:
+                  - radio "Active" [disabled] [ref=e933]:
+                    - generic [ref=e934]: Active
+                  - radio "Inactive" [checked] [ref=e935] [cursor=pointer]:
+                    - generic [ref=e936] [cursor=pointer]: Inactive
+                - generic [ref=e940]: 7/29/2025 8:05 PM by Keshava Karri
+              - generic [ref=e942]:
+                - generic [ref=e946]: Edinburg
+                - generic [ref=e952]: HMO Biller
+                - radiogroup [ref=e956]:
+                  - radio "Active" [disabled] [ref=e957]:
+                    - generic [ref=e958]: Active
+                  - radio "Inactive" [checked] [ref=e959] [cursor=pointer]:
+                    - generic [ref=e960] [cursor=pointer]: Inactive
+                - generic [ref=e964]: 7/29/2025 8:05 PM by Keshava Karri
+              - generic [ref=e966]:
+                - generic [ref=e970]: Amherst
+                - generic [ref=e974]:
+                  - generic [ref=e976]: MCR Biller
+                  - button "Primary" [ref=e978] [cursor=pointer]:
+                    - generic [ref=e979] [cursor=pointer]: Primary
+                - radiogroup [ref=e983]:
+                  - radio "Active" [checked] [ref=e984] [cursor=pointer]:
+                    - generic [ref=e985] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e986] [cursor=pointer]:
+                    - generic [ref=e987] [cursor=pointer]: Inactive
+                - generic [ref=e991]: 10/6/2025 3:56 PM by Vikesh Gaikawad
+              - generic [ref=e993]:
+                - generic [ref=e997]: Palm Vista
+                - generic [ref=e1003]: HMO Biller
+                - radiogroup [ref=e1007]:
+                  - radio "Active" [disabled] [ref=e1008]:
+                    - generic [ref=e1009]: Active
+                  - radio "Inactive" [checked] [ref=e1010] [cursor=pointer]:
+                    - generic [ref=e1011] [cursor=pointer]: Inactive
+                - generic [ref=e1015]: 7/29/2025 8:05 PM by Keshava Karri
+              - generic [ref=e1017]:
+                - generic [ref=e1021]: Accounting
+                - generic [ref=e1025]:
+                  - generic [ref=e1027]: BOM
+                  - button "Primary" [ref=e1029] [cursor=pointer]:
+                    - generic [ref=e1030] [cursor=pointer]: Primary
+                - radiogroup [ref=e1034]:
+                  - radio "Active" [checked] [ref=e1035] [cursor=pointer]:
+                    - generic [ref=e1036] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e1037] [cursor=pointer]:
+                    - generic [ref=e1038] [cursor=pointer]: Inactive
+                - generic [ref=e1042]: 10/6/2025 3:50 PM by Vikesh Gaikawad
+              - generic [ref=e1044]:
+                - generic [ref=e1048]: Beacon
+                - generic [ref=e1052]:
+                  - generic [ref=e1054]: Manager
+                  - button "Primary" [ref=e1056] [cursor=pointer]:
+                    - generic [ref=e1057] [cursor=pointer]: Primary
+                - radiogroup [ref=e1061]:
+                  - radio "Active" [checked] [ref=e1062] [cursor=pointer]:
+                    - generic [ref=e1063] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e1064] [cursor=pointer]:
+                    - generic [ref=e1065] [cursor=pointer]: Inactive
+                - generic [ref=e1069]: 10/8/2025 3:32 PM by Santosh Rongali
+              - generic [ref=e1071]:
+                - generic [ref=e1075]: Paradise Palms
+                - generic [ref=e1079]:
+                  - generic [ref=e1081]: HMO Senior Supervisor
+                  - button "Primary" [ref=e1083] [cursor=pointer]:
+                    - generic [ref=e1084] [cursor=pointer]: Primary
+                - radiogroup [ref=e1088]:
+                  - radio "Active" [checked] [ref=e1089] [cursor=pointer]:
+                    - generic [ref=e1090] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e1091] [cursor=pointer]:
+                    - generic [ref=e1092] [cursor=pointer]: Inactive
+                - generic [ref=e1096]: 10/6/2025 4:05 PM by Vikesh Gaikawad
+              - generic [ref=e1098]:
+                - generic [ref=e1102]: Paradise Palms
+                - generic [ref=e1106]:
+                  - generic [ref=e1108]: AR Biller
+                  - button "Primary" [ref=e1110] [cursor=pointer]:
+                    - generic [ref=e1111] [cursor=pointer]: Primary
+                - radiogroup [ref=e1115]:
+                  - radio "Active" [checked] [ref=e1116] [cursor=pointer]:
+                    - generic [ref=e1117] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e1118] [cursor=pointer]:
+                    - generic [ref=e1119] [cursor=pointer]: Inactive
+                - generic [ref=e1123]: 10/3/2025 11:53 AM by Keshava Karri
+              - generic [ref=e1125]:
+                - generic [ref=e1129]: ApexSystems
+                - generic [ref=e1133]:
+                  - generic [ref=e1135]: AR Biller
+                  - button "Primary" [ref=e1137] [cursor=pointer]:
+                    - generic [ref=e1138] [cursor=pointer]: Primary
+                - radiogroup [ref=e1142]:
+                  - radio "Active" [checked] [ref=e1143] [cursor=pointer]:
+                    - generic [ref=e1144] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e1145] [cursor=pointer]:
+                    - generic [ref=e1146] [cursor=pointer]: Inactive
+                - generic [ref=e1150]: 10/2/2025 8:22 PM by Keshava Karri
+              - generic [ref=e1152]:
+                - generic [ref=e1156]: ApexSystems
+                - generic [ref=e1160]:
+                  - generic [ref=e1162]: BOM
+                  - button "Primary" [ref=e1164] [cursor=pointer]:
+                    - generic [ref=e1165] [cursor=pointer]: Primary
+                - radiogroup [ref=e1169]:
+                  - radio "Active" [checked] [ref=e1170] [cursor=pointer]:
+                    - generic [ref=e1171] [cursor=pointer]: Active
+                  - radio "Inactive" [active] [ref=e1172] [cursor=pointer]:
+                    - generic [ref=e1173] [cursor=pointer]: Inactive
+                - generic [ref=e1177]: 10/2/2025 9:54 PM by Santosh Rongali
+              - generic [ref=e1179]:
+                - generic [ref=e1183]: Plaza
+                - generic [ref=e1189]: Tracker
+                - radiogroup [ref=e1193]:
+                  - radio "Active" [disabled] [ref=e1194]:
+                    - generic [ref=e1195]: Active
+                  - radio "Inactive" [checked] [ref=e1196] [cursor=pointer]:
+                    - generic [ref=e1197] [cursor=pointer]: Inactive
+                - generic [ref=e1201]: 7/25/2025 10:09 PM by Orest Shpak
+              - generic [ref=e1203]:
+                - generic [ref=e1207]: Bedrock Care Health Benefits
+                - generic [ref=e1211]:
+                  - generic [ref=e1213]: Manager
+                  - button "Primary" [ref=e1215] [cursor=pointer]:
+                    - generic [ref=e1216] [cursor=pointer]: Primary
+                - radiogroup [ref=e1220]:
+                  - radio "Active" [checked] [ref=e1221] [cursor=pointer]:
+                    - generic [ref=e1222] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e1223] [cursor=pointer]:
+                    - generic [ref=e1224] [cursor=pointer]: Inactive
+                - generic [ref=e1228]: 10/3/2025 11:50 AM by Keshava Karri
+              - generic [ref=e1230]:
+                - generic [ref=e1234]: Bedrock Care Health Benefits
+                - generic [ref=e1238]:
+                  - generic [ref=e1240]: HMO Biller
+                  - button "Primary" [ref=e1242] [cursor=pointer]:
+                    - generic [ref=e1243] [cursor=pointer]: Primary
+                - radiogroup [ref=e1247]:
+                  - radio "Active" [checked] [ref=e1248] [cursor=pointer]:
+                    - generic [ref=e1249] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e1250] [cursor=pointer]:
+                    - generic [ref=e1251] [cursor=pointer]: Inactive
+                - generic [ref=e1255]: 9/30/2025 5:16 PM by Keshava Karri
+              - generic [ref=e1257]:
+                - generic [ref=e1261]: Grandview-Parkside
+                - generic [ref=e1265]:
+                  - generic [ref=e1267]: BOM
+                  - button "Primary" [ref=e1269] [cursor=pointer]:
+                    - generic [ref=e1270] [cursor=pointer]: Primary
+                - radiogroup [ref=e1274]:
+                  - radio "Active" [checked] [ref=e1275] [cursor=pointer]:
+                    - generic [ref=e1276] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e1277] [cursor=pointer]:
+                    - generic [ref=e1278] [cursor=pointer]: Inactive
+                - generic [ref=e1282]: 10/3/2025 10:27 AM by Santosh Rongali
+              - generic [ref=e1284]:
+                - generic [ref=e1288]: Spring Creek
+                - generic [ref=e1294]: HMO Biller
+                - radiogroup [ref=e1298]:
+                  - radio "Active" [disabled] [ref=e1299]:
+                    - generic [ref=e1300]: Active
+                  - radio "Inactive" [checked] [ref=e1301] [cursor=pointer]:
+                    - generic [ref=e1302] [cursor=pointer]: Inactive
+                - generic [ref=e1306]: 7/29/2025 8:05 PM by Keshava Karri
+              - generic [ref=e1308]:
+                - generic [ref=e1312]: Caring Heart
+                - generic [ref=e1318]: Tracker
+                - radiogroup [ref=e1322]:
+                  - radio "Active" [disabled] [ref=e1323]:
+                    - generic [ref=e1324]: Active
+                  - radio "Inactive" [checked] [ref=e1325] [cursor=pointer]:
+                    - generic [ref=e1326] [cursor=pointer]: Inactive
+                - generic [ref=e1330]: 7/25/2025 10:09 PM by Orest Shpak
+              - generic [ref=e1332]:
+                - generic [ref=e1336]: Test Citrus
+                - generic [ref=e1340]:
+                  - generic [ref=e1342]: Director
+                  - button "Primary" [ref=e1344] [cursor=pointer]:
+                    - generic [ref=e1345] [cursor=pointer]: Primary
+                - radiogroup [ref=e1349]:
+                  - radio "Active" [checked] [ref=e1350] [cursor=pointer]:
+                    - generic [ref=e1351] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e1352] [cursor=pointer]:
+                    - generic [ref=e1353] [cursor=pointer]: Inactive
+                - generic [ref=e1357]: 10/8/2025 3:26 PM by Santosh Rongali
+              - generic [ref=e1359]:
+                - generic [ref=e1363]: Test Aberdeen
+                - generic [ref=e1369]: Tracker
+                - radiogroup [ref=e1373]:
+                  - radio "Active" [disabled] [ref=e1374]:
+                    - generic [ref=e1375]: Active
+                  - radio "Inactive" [checked] [ref=e1376] [cursor=pointer]:
+                    - generic [ref=e1377] [cursor=pointer]: Inactive
+                - generic [ref=e1381]: 7/25/2025 10:09 PM by Orest Shpak
+              - generic [ref=e1383]:
+                - generic [ref=e1387]: Test Buckingham
+                - generic [ref=e1393]: Tracker
+                - radiogroup [ref=e1397]:
+                  - radio "Active" [disabled] [ref=e1398]:
+                    - generic [ref=e1399]: Active
+                  - radio "Inactive" [checked] [ref=e1400] [cursor=pointer]:
+                    - generic [ref=e1401] [cursor=pointer]: Inactive
+                - generic [ref=e1405]: 7/25/2025 10:09 PM by Orest Shpak
+              - generic [ref=e1407]:
+                - generic [ref=e1411]: Mohawk Meadows
+                - generic [ref=e1415]:
+                  - generic [ref=e1417]: Director
+                  - button "Primary" [ref=e1419] [cursor=pointer]:
+                    - generic [ref=e1420] [cursor=pointer]: Primary
+                - radiogroup [ref=e1424]:
+                  - radio "Active" [checked] [ref=e1425] [cursor=pointer]:
+                    - generic [ref=e1426] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e1427] [cursor=pointer]:
+                    - generic [ref=e1428] [cursor=pointer]: Inactive
+                - generic [ref=e1432]: 10/3/2025 4:51 PM by Santosh Rongali
+              - generic [ref=e1434]:
+                - generic [ref=e1438]: Oakwood MD
+                - generic [ref=e1444]: HMO Biller
+                - radiogroup [ref=e1448]:
+                  - radio "Active" [disabled] [ref=e1449]:
+                    - generic [ref=e1450]: Active
+                  - radio "Inactive" [checked] [ref=e1451] [cursor=pointer]:
+                    - generic [ref=e1452] [cursor=pointer]: Inactive
+                - generic [ref=e1456]: 7/29/2025 8:05 PM by Keshava Karri
+              - generic [ref=e1458]:
+                - generic [ref=e1462]: Ballenger Creek
+                - generic [ref=e1466]:
+                  - generic [ref=e1468]: Manager
+                  - button "Primary" [ref=e1470] [cursor=pointer]:
+                    - generic [ref=e1471] [cursor=pointer]: Primary
+                - radiogroup [ref=e1475]:
+                  - radio "Active" [checked] [ref=e1476] [cursor=pointer]:
+                    - generic [ref=e1477] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e1478] [cursor=pointer]:
+                    - generic [ref=e1479] [cursor=pointer]: Inactive
+                - generic [ref=e1483]: 10/9/2025 11:46 AM by Santosh Rongali
+              - generic [ref=e1485]:
+                - generic [ref=e1489]: Baltimore Wash
+                - generic [ref=e1493]:
+                  - generic [ref=e1495]: Manager
+                  - button "Primary" [ref=e1497] [cursor=pointer]:
+                    - generic [ref=e1498] [cursor=pointer]: Primary
+                - radiogroup [ref=e1502]:
+                  - radio "Active" [checked] [ref=e1503] [cursor=pointer]:
+                    - generic [ref=e1504] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e1505] [cursor=pointer]:
+                    - generic [ref=e1506] [cursor=pointer]: Inactive
+                - generic [ref=e1510]: 10/9/2025 11:43 AM by Santosh Rongali
+              - generic [ref=e1512]:
+                - generic [ref=e1516]: Cascades at Delray Senior Living Memory Care
+                - generic [ref=e1520]:
+                  - generic [ref=e1522]: Manager
+                  - button "Primary" [ref=e1524] [cursor=pointer]:
+                    - generic [ref=e1525] [cursor=pointer]: Primary
+                - radiogroup [ref=e1529]:
+                  - radio "Active" [checked] [ref=e1530] [cursor=pointer]:
+                    - generic [ref=e1531] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e1532] [cursor=pointer]:
+                    - generic [ref=e1533] [cursor=pointer]: Inactive
+                - generic [ref=e1537]: 10/2/2025 2:24 PM by Keshava Karri
+              - generic [ref=e1539]:
+                - generic [ref=e1543]: Advena-10th-Legacy
+                - generic [ref=e1547]:
+                  - generic [ref=e1549]: MCD Biller
+                  - button "Primary" [ref=e1551] [cursor=pointer]:
+                    - generic [ref=e1552] [cursor=pointer]: Primary
+                - radiogroup [ref=e1556]:
+                  - radio "Active" [checked] [ref=e1557] [cursor=pointer]:
+                    - generic [ref=e1558] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e1559] [cursor=pointer]:
+                    - generic [ref=e1560] [cursor=pointer]: Inactive
+                - generic [ref=e1564]: 10/3/2025 3:13 PM by Keshava Karri
+              - generic [ref=e1566]:
+                - generic [ref=e1570]: Advena-10th-Legacy
+                - generic [ref=e1574]:
+                  - generic [ref=e1576]: MCR Biller
+                  - button "Primary" [ref=e1578] [cursor=pointer]:
+                    - generic [ref=e1579] [cursor=pointer]: Primary
+                - radiogroup [ref=e1583]:
+                  - radio "Active" [checked] [ref=e1584] [cursor=pointer]:
+                    - generic [ref=e1585] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e1586] [cursor=pointer]:
+                    - generic [ref=e1587] [cursor=pointer]: Inactive
+                - generic [ref=e1591]: 10/3/2025 12:10 AM by Keshava Karri
+              - generic [ref=e1593]:
+                - generic [ref=e1597]: Delmar
+                - generic [ref=e1603]: HMO Biller
+                - radiogroup [ref=e1607]:
+                  - radio "Active" [disabled] [ref=e1608]:
+                    - generic [ref=e1609]: Active
+                  - radio "Inactive" [checked] [ref=e1610] [cursor=pointer]:
+                    - generic [ref=e1611] [cursor=pointer]: Inactive
+                - generic [ref=e1615]: 8/14/2025 5:39 PM by Vikesh Gaikawad
+              - generic [ref=e1617]:
+                - generic [ref=e1621]: Fountainview - ALF
+                - generic [ref=e1625]:
+                  - generic [ref=e1627]: HMO Supervisor
+                  - button "Primary" [ref=e1629] [cursor=pointer]:
+                    - generic [ref=e1630] [cursor=pointer]: Primary
+                - radiogroup [ref=e1634]:
+                  - radio "Active" [checked] [ref=e1635] [cursor=pointer]:
+                    - generic [ref=e1636] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e1637] [cursor=pointer]:
+                    - generic [ref=e1638] [cursor=pointer]: Inactive
+                - generic [ref=e1642]: 8/18/2025 12:23 AM by Vikesh Gaikawad
+              - generic [ref=e1644]:
+                - generic [ref=e1648]: Highland Care
+                - generic [ref=e1654]: HMO Biller
+                - radiogroup [ref=e1658]:
+                  - radio "Active" [disabled] [ref=e1659]:
+                    - generic [ref=e1660]: Active
+                  - radio "Inactive" [checked] [ref=e1661] [cursor=pointer]:
+                    - generic [ref=e1662] [cursor=pointer]: Inactive
+                - generic [ref=e1666]: 10/7/2025 7:49 PM by Keshava Karri
+              - generic [ref=e1668]:
+                - generic [ref=e1672]: Hill View-Portsmouth ALF
+                - generic [ref=e1678]: HMO Senior Supervisor
+                - radiogroup [ref=e1682]:
+                  - radio "Active" [disabled] [ref=e1683]:
+                    - generic [ref=e1684]: Active
+                  - radio "Inactive" [checked] [ref=e1685] [cursor=pointer]:
+                    - generic [ref=e1686] [cursor=pointer]: Inactive
+                - generic [ref=e1690]: 10/8/2025 3:16 PM by Keshava Karri
+              - generic [ref=e1692]:
+                - generic [ref=e1696]: Hill View-Portsmouth ALF
+                - generic [ref=e1702]: Director
+                - radiogroup [ref=e1706]:
+                  - radio "Active" [disabled] [ref=e1707]:
+                    - generic [ref=e1708]: Active
+                  - radio "Inactive" [checked] [ref=e1709] [cursor=pointer]:
+                    - generic [ref=e1710] [cursor=pointer]: Inactive
+                - generic [ref=e1714]: 10/9/2025 12:34 PM by Keshava Karri
+              - generic [ref=e1716]:
+                - generic [ref=e1720]: Advanced Valley Parkside
+                - generic [ref=e1726]: HMO Senior Supervisor
+                - radiogroup [ref=e1730]:
+                  - radio "Active" [disabled] [ref=e1731]:
+                    - generic [ref=e1732]: Active
+                  - radio "Inactive" [checked] [ref=e1733] [cursor=pointer]:
+                    - generic [ref=e1734] [cursor=pointer]: Inactive
+                - generic [ref=e1738]: 10/9/2025 2:36 PM by Keshava Karri
+              - generic [ref=e1740]:
+                - generic [ref=e1744]: Stillwater
+                - generic [ref=e1750]: Tracker
+                - radiogroup [ref=e1754]:
+                  - radio "Active" [disabled] [ref=e1755]:
+                    - generic [ref=e1756]: Active
+                  - radio "Inactive" [checked] [ref=e1757] [cursor=pointer]:
+                    - generic [ref=e1758] [cursor=pointer]: Inactive
+                - generic [ref=e1762]: 10/8/2025 11:25 AM by Keshava Karri
+              - generic [ref=e1764]:
+                - generic [ref=e1768]: Clarion Senior Living
+                - generic [ref=e1774]: Supervisor
+                - radiogroup [ref=e1778]:
+                  - radio "Active" [disabled] [ref=e1779]:
+                    - generic [ref=e1780]: Active
+                  - radio "Inactive" [checked] [ref=e1781] [cursor=pointer]:
+                    - generic [ref=e1782] [cursor=pointer]: Inactive
+                - generic [ref=e1786]: 10/8/2025 1:23 PM by Keshava Karri
+              - generic [ref=e1788]:
+                - generic [ref=e1792]: Choice Management
+                - generic [ref=e1798]: BOM
+                - radiogroup [ref=e1802]:
+                  - radio "Active" [disabled] [ref=e1803]:
+                    - generic [ref=e1804]: Active
+                  - radio "Inactive" [checked] [ref=e1805] [cursor=pointer]:
+                    - generic [ref=e1806] [cursor=pointer]: Inactive
+                - generic [ref=e1810]: 10/7/2025 5:45 PM by Keshava Karri
+              - generic [ref=e1812]:
+                - generic [ref=e1816]: Dahlia Gardens
+                - generic [ref=e1822]: HMO Supervisor
+                - radiogroup [ref=e1826]:
+                  - radio "Active" [disabled] [ref=e1827]:
+                    - generic [ref=e1828]: Active
+                  - radio "Inactive" [checked] [ref=e1829] [cursor=pointer]:
+                    - generic [ref=e1830] [cursor=pointer]: Inactive
+                - generic [ref=e1834]: 10/8/2025 6:07 PM by Keshava Karri
+              - generic [ref=e1836]:
+                - generic [ref=e1840]: TOM
+                - generic [ref=e1846]: BOM
+                - radiogroup [ref=e1850]:
+                  - radio "Active" [disabled] [ref=e1851]:
+                    - generic [ref=e1852]: Active
+                  - radio "Inactive" [checked] [ref=e1853] [cursor=pointer]:
+                    - generic [ref=e1854] [cursor=pointer]: Inactive
+                - generic [ref=e1858]: 10/7/2025 8:04 PM by Keshava Karri
+              - generic [ref=e1860]:
+                - generic [ref=e1864]: Seven Oaks-St Andrews
+                - generic [ref=e1870]: Tracker
+                - radiogroup [ref=e1874]:
+                  - radio "Active" [disabled] [ref=e1875]:
+                    - generic [ref=e1876]: Active
+                  - radio "Inactive" [checked] [ref=e1877] [cursor=pointer]:
+                    - generic [ref=e1878] [cursor=pointer]: Inactive
+                - generic [ref=e1882]: 10/7/2025 6:23 PM by Keshava Karri
+              - generic [ref=e1884]:
+                - generic [ref=e1888]: Gulfport
+                - generic [ref=e1894]: HMO Supervisor
+                - radiogroup [ref=e1898]:
+                  - radio "Active" [disabled] [ref=e1899]:
+                    - generic [ref=e1900]: Active
+                  - radio "Inactive" [checked] [ref=e1901] [cursor=pointer]:
+                    - generic [ref=e1902] [cursor=pointer]: Inactive
+                - generic [ref=e1906]: 10/9/2025 8:34 AM by Keshava Karri
+              - generic [ref=e1908]:
+                - generic [ref=e1912]: Pawtucket-Violet
+                - generic [ref=e1918]: Tracker
+                - radiogroup [ref=e1922]:
+                  - radio "Active" [disabled] [ref=e1923]:
+                    - generic [ref=e1924]: Active
+                  - radio "Inactive" [checked] [ref=e1925] [cursor=pointer]:
+                    - generic [ref=e1926] [cursor=pointer]: Inactive
+                - generic [ref=e1930]: 10/7/2025 10:53 AM by Keshava Karri
+              - generic [ref=e1932]:
+                - generic [ref=e1936]: Accordius St Mary
+                - generic [ref=e1942]: Tracker
+                - radiogroup [ref=e1946]:
+                  - radio "Active" [disabled] [ref=e1947]:
+                    - generic [ref=e1948]: Active
+                  - radio "Inactive" [checked] [ref=e1949] [cursor=pointer]:
+                    - generic [ref=e1950] [cursor=pointer]: Inactive
+                - generic [ref=e1954]: 10/7/2025 6:19 PM by Keshava Karri
+              - generic [ref=e1956]:
+                - generic [ref=e1960]: Coronado-Henderson
+                - generic [ref=e1966]: Tracker
+                - radiogroup [ref=e1970]:
+                  - radio "Active" [disabled] [ref=e1971]:
+                    - generic [ref=e1972]: Active
+                  - radio "Inactive" [checked] [ref=e1973] [cursor=pointer]:
+                    - generic [ref=e1974] [cursor=pointer]: Inactive
+                - generic [ref=e1978]: 10/7/2025 11:14 AM by Keshava Karri
+              - generic [ref=e1980]:
+                - generic [ref=e1984]: Crystal Lake
+                - generic [ref=e1990]: Tracker
+                - radiogroup [ref=e1994]:
+                  - radio "Active" [disabled] [ref=e1995]:
+                    - generic [ref=e1996]: Active
+                  - radio "Inactive" [checked] [ref=e1997] [cursor=pointer]:
+                    - generic [ref=e1998] [cursor=pointer]: Inactive
+                - generic [ref=e2002]: 10/7/2025 5:41 PM by Keshava Karri
+              - generic [ref=e2004]:
+                - generic [ref=e2008]: South County
+                - generic [ref=e2014]: Tracker
+                - radiogroup [ref=e2018]:
+                  - radio "Active" [disabled] [ref=e2019]:
+                    - generic [ref=e2020]: Active
+                  - radio "Inactive" [checked] [ref=e2021] [cursor=pointer]:
+                    - generic [ref=e2022] [cursor=pointer]: Inactive
+                - generic [ref=e2026]: 10/7/2025 5:48 PM by Keshava Karri
+              - generic [ref=e2028]:
+                - generic [ref=e2032]: Dawn Hill DO NOT USE
+                - generic [ref=e2038]: Tracker
+                - radiogroup [ref=e2042]:
+                  - radio "Active" [disabled] [ref=e2043]:
+                    - generic [ref=e2044]: Active
+                  - radio "Inactive" [checked] [ref=e2045] [cursor=pointer]:
+                    - generic [ref=e2046] [cursor=pointer]: Inactive
+                - generic [ref=e2050]: 10/7/2025 6:28 PM by Keshava Karri
+              - generic [ref=e2052]:
+                - generic [ref=e2056]: Silver Creek DO NOT USE
+                - generic [ref=e2062]: Tracker
+                - radiogroup [ref=e2066]:
+                  - radio "Active" [disabled] [ref=e2067]:
+                    - generic [ref=e2068]: Active
+                  - radio "Inactive" [checked] [ref=e2069] [cursor=pointer]:
+                    - generic [ref=e2070] [cursor=pointer]: Inactive
+                - generic [ref=e2074]: 10/9/2025 8:21 AM by Keshava Karri
+              - generic [ref=e2076]:
+                - generic [ref=e2080]: Overlook
+                - generic [ref=e2086]: Tracker
+                - radiogroup [ref=e2090]:
+                  - radio "Active" [disabled] [ref=e2091]:
+                    - generic [ref=e2092]: Active
+                  - radio "Inactive" [checked] [ref=e2093] [cursor=pointer]:
+                    - generic [ref=e2094] [cursor=pointer]: Inactive
+                - generic [ref=e2098]: 10/7/2025 3:18 PM by Kesavarao Karri
+              - generic [ref=e2100]:
+                - generic [ref=e2104]: Silver Creek Manor
+                - generic [ref=e2110]: Tracker
+                - radiogroup [ref=e2114]:
+                  - radio "Active" [disabled] [ref=e2115]:
+                    - generic [ref=e2116]: Active
+                  - radio "Inactive" [checked] [ref=e2117] [cursor=pointer]:
+                    - generic [ref=e2118] [cursor=pointer]: Inactive
+                - generic [ref=e2122]: 10/8/2025 6:17 PM by Kesavarao Karri
+              - generic [ref=e2124]:
+                - generic [ref=e2128]: Berkshire DO NOT USE
+                - generic [ref=e2134]: Tracker
+                - radiogroup [ref=e2138]:
+                  - radio "Active" [disabled] [ref=e2139]:
+                    - generic [ref=e2140]: Active
+                  - radio "Inactive" [checked] [ref=e2141] [cursor=pointer]:
+                    - generic [ref=e2142] [cursor=pointer]: Inactive
+                - generic [ref=e2146]: 10/8/2025 6:35 PM by Kesavarao Karri
+              - generic [ref=e2148]:
+                - generic [ref=e2152]: Palms
+                - generic [ref=e2158]: HMO Biller
+                - radiogroup [ref=e2162]:
+                  - radio "Active" [disabled] [ref=e2163]:
+                    - generic [ref=e2164]: Active
+                  - radio "Inactive" [checked] [ref=e2165] [cursor=pointer]:
+                    - generic [ref=e2166] [cursor=pointer]: Inactive
+                - generic [ref=e2170]: 10/7/2025 10:55 AM by Kesavarao Karri
+              - generic [ref=e2172]:
+                - generic [ref=e2176]: Test Buckingham
+                - generic [ref=e2181]:
+                  - generic [ref=e2182]: HMO Biller
+                  - link "3 Other Users" [ref=e2183] [cursor=pointer]
+                - radiogroup [ref=e2187]:
+                  - radio "Active" [checked] [ref=e2188] [cursor=pointer]:
+                    - generic [ref=e2189] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e2190] [cursor=pointer]:
+                    - generic [ref=e2191] [cursor=pointer]: Inactive
+                - generic [ref=e2195]: 8/20/2025 6:43 PM by Kesavarao Karri
+              - generic [ref=e2197]:
+                - generic [ref=e2201]: Calibre
+                - generic [ref=e2206]:
+                  - generic [ref=e2207]: Tracker
+                  - link "24 Other Users" [ref=e2208] [cursor=pointer]
+                - radiogroup [ref=e2212]:
+                  - radio "Active" [checked] [ref=e2213] [cursor=pointer]:
+                    - generic [ref=e2214] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e2215] [cursor=pointer]:
+                    - generic [ref=e2216] [cursor=pointer]: Inactive
+                - generic [ref=e2220]: 8/18/2025 11:06 PM by Rivky Meguira
+              - generic [ref=e2222]:
+                - generic [ref=e2226]: Pike Creek
+                - generic [ref=e2231]:
+                  - generic [ref=e2232]: HMO Biller
+                  - link "3 Other Users" [ref=e2233] [cursor=pointer]
+                - radiogroup [ref=e2237]:
+                  - radio "Active" [checked] [ref=e2238] [cursor=pointer]:
+                    - generic [ref=e2239] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e2240] [cursor=pointer]:
+                    - generic [ref=e2241] [cursor=pointer]: Inactive
+                - generic [ref=e2245]: 8/17/2025 11:10 PM by Rivky Meguira
+              - generic [ref=e2247]:
+                - generic [ref=e2251]: Achieve
+                - generic [ref=e2257]: Tracker
+                - radiogroup [ref=e2261]:
+                  - radio "Active" [disabled] [ref=e2262]:
+                    - generic [ref=e2263]: Active
+                  - radio "Inactive" [checked] [ref=e2264] [cursor=pointer]:
+                    - generic [ref=e2265] [cursor=pointer]: Inactive
+                - generic [ref=e2269]: 10/7/2025 12:50 PM by Santosh Rongali
+              - generic [ref=e2271]:
+                - generic [ref=e2275]: Silver Oak
+                - generic [ref=e2281]: Tracker
+                - radiogroup [ref=e2285]:
+                  - radio "Active" [disabled] [ref=e2286]:
+                    - generic [ref=e2287]: Active
+                  - radio "Inactive" [checked] [ref=e2288] [cursor=pointer]:
+                    - generic [ref=e2289] [cursor=pointer]: Inactive
+                - generic [ref=e2293]: 10/7/2025 3:25 PM by Santosh Rongali
+              - generic [ref=e2295]:
+                - generic [ref=e2299]: Artesia
+                - generic [ref=e2305]: MCR Biller
+                - radiogroup [ref=e2309]:
+                  - radio "Active" [disabled] [ref=e2310]:
+                    - generic [ref=e2311]: Active
+                  - radio "Inactive" [checked] [ref=e2312] [cursor=pointer]:
+                    - generic [ref=e2313] [cursor=pointer]: Inactive
+                - generic [ref=e2317]: 10/8/2025 11:06 AM by Santosh Rongali
+              - generic [ref=e2319]:
+                - generic [ref=e2323]: Hill View-Portsmouth ALF
+                - generic [ref=e2329]: Supervisor
+                - radiogroup [ref=e2333]:
+                  - radio "Active" [disabled] [ref=e2334]:
+                    - generic [ref=e2335]: Active
+                  - radio "Inactive" [checked] [ref=e2336] [cursor=pointer]:
+                    - generic [ref=e2337] [cursor=pointer]: Inactive
+                - generic [ref=e2341]: 8/25/2025 4:26 PM by Santosh Rongali
+              - generic [ref=e2343]:
+                - generic [ref=e2347]: Hill View-Portsmouth ALF
+                - generic [ref=e2352]:
+                  - generic [ref=e2353]: HMO Biller
+                  - link "1 Other User" [ref=e2354] [cursor=pointer]
+                - radiogroup [ref=e2358]:
+                  - radio "Active" [checked] [ref=e2359] [cursor=pointer]:
+                    - generic [ref=e2360] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e2361] [cursor=pointer]:
+                    - generic [ref=e2362] [cursor=pointer]: Inactive
+                - generic [ref=e2366]: 8/25/2025 2:01 PM by Santosh Rongali
+              - generic [ref=e2368]:
+                - generic [ref=e2372]: Hill View-Portsmouth ALF
+                - generic [ref=e2376]:
+                  - generic [ref=e2378]: HMO Supervisor
+                  - button "Primary" [ref=e2380] [cursor=pointer]:
+                    - generic [ref=e2381] [cursor=pointer]: Primary
+                - radiogroup [ref=e2385]:
+                  - radio "Active" [checked] [ref=e2386] [cursor=pointer]:
+                    - generic [ref=e2387] [cursor=pointer]: Active
+                  - radio "Inactive" [ref=e2388] [cursor=pointer]:
+                    - generic [ref=e2389] [cursor=pointer]: Inactive
+                - generic [ref=e2393]: 8/25/2025 4:18 PM by Santosh Rongali
+```

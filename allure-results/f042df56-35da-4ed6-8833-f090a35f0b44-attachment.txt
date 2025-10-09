@@ -1,0 +1,35 @@
+Facility Name: ADR
+Role Name: BOM
+Primary
+Facility Name: Amherst
+Role Name: MCR Biller
+Primary
+Facility Name: Elizabeth City
+Role Name: Tracker
+Primary
+Neither Close button nor Deactivate and Reassign Tasks button is visible.
+Facility Name: Oasis-Crystal
+Role Name: Director
+Primary
+Facility Name: Camellia-Beckford (Henderson)
+Role Name: Director
+Primary
+Facility Name: South County
+Role Name: Tracker
+26 Other Users
+Neither Close button nor Deactivate and Reassign Tasks button is visible.
+Facility Name: Oasis-Crystal
+Role Name: HMO Senior Supervisor
+Primary
+Facility Name: Hill View-Portsmouth ALF
+Role Name: HMO Supervisor
+Primary
+Neither Close button nor Deactivate and Reassign Tasks button is visible.
+Facility Name: Cascades at Delray Senior Living Memory Care
+Role Name: Manager
+Primary
+Facility Name: Gulfport
+Role Name: Director
+Primary
+Checking toggle for Gulfport and Director
+Primary: aria-checked = false
