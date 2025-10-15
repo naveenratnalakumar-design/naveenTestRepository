@@ -1,0 +1,262 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Revflow logo" [ref=e7] [cursor=pointer]
+        - img "Revflow" [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link "Task List" [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link "AR Aging" [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - link "Biller Activity Report" [ref=e34] [cursor=pointer]:
+          - /url: /biller-report
+          - img [ref=e37] [cursor=pointer]
+          - generic [ref=e39] [cursor=pointer]: Biller Activity Report
+        - generic [ref=e40]:
+          - link "Settings" [ref=e41] [cursor=pointer]:
+            - /url: /settings
+            - img [ref=e44] [cursor=pointer]
+            - generic [ref=e47] [cursor=pointer]: Settings
+            - img [ref=e50] [cursor=pointer]
+          - generic [ref=e52]:
+            - link "User Management" [ref=e54] [cursor=pointer]:
+              - /url: /settings/user-management
+              - generic [ref=e55] [cursor=pointer]: User Management
+            - link "Facility Payers" [ref=e57] [cursor=pointer]:
+              - /url: /settings/facility-payers
+              - generic [ref=e58] [cursor=pointer]: Facility Payers
+      - button [ref=e63] [cursor=pointer]:
+        - img [ref=e67] [cursor=pointer]
+    - generic [ref=e69]:
+      - button "KK" [ref=e73] [cursor=pointer]:
+        - generic [ref=e76] [cursor=pointer]: KK
+        - img [ref=e79] [cursor=pointer]
+      - generic [ref=e82]:
+        - generic [ref=e83]:
+          - heading "Facility Payers" [level=2] [ref=e86]
+          - generic [ref=e92]:
+            - button "Selected Facilities (3)" [ref=e96] [cursor=pointer]:
+              - generic [ref=e97] [cursor=pointer]: Selected Facilities (3)
+              - generic [ref=e98] [cursor=pointer]:
+                - button [ref=e99] [cursor=pointer]:
+                  - img [ref=e102] [cursor=pointer]
+                - img [ref=e106] [cursor=pointer]
+            - button "Select Payers" [expanded] [ref=e111] [cursor=pointer]:
+              - generic [ref=e112] [cursor=pointer]: Select Payers
+              - img [ref=e116] [cursor=pointer]
+        - generic [ref=e120]:
+          - generic [ref=e123]:
+            - generic [ref=e124]: "794"
+            - text: Results for
+            - generic [ref=e125]: 3 Facilities
+          - generic [ref=e127]:
+            - generic [ref=e131] [cursor=pointer]: Payer Name
+            - generic [ref=e135] [cursor=pointer]:
+              - generic [ref=e136] [cursor=pointer]: Facility
+              - button [ref=e138] [cursor=pointer]:
+                - img [ref=e141] [cursor=pointer]
+            - generic [ref=e147] [cursor=pointer]: Payer Category
+          - generic [ref=e156]:
+            - generic [ref=e158]:
+              - generic [ref=e162]: Cigna Commercial
+              - generic [ref=e166]: Highland Care
+              - generic [ref=e169]: Medicare
+              - button "Edit" [ref=e175] [cursor=pointer]:
+                - generic [ref=e176] [cursor=pointer]:
+                  - img [ref=e179] [cursor=pointer]
+                  - text: Edit
+            - generic [ref=e182]:
+              - generic [ref=e186]: Chartis Ins
+              - generic [ref=e190]: Highland Care
+              - generic [ref=e193]: HMO
+              - button "Edit" [ref=e199] [cursor=pointer]:
+                - generic [ref=e200] [cursor=pointer]:
+                  - img [ref=e203] [cursor=pointer]
+                  - text: Edit
+            - generic [ref=e206]:
+              - generic [ref=e210]: Comprehensive
+              - generic [ref=e214]: Highland Care
+              - generic [ref=e217]: HMO
+              - button "Edit" [ref=e223] [cursor=pointer]:
+                - generic [ref=e224] [cursor=pointer]:
+                  - img [ref=e227] [cursor=pointer]
+                  - text: Edit
+            - generic [ref=e230]:
+              - generic [ref=e234]: Catholic Managed Ltc Lt
+              - generic [ref=e238]: Highland Care
+              - generic [ref=e241]: HMO
+              - button "Edit" [ref=e247] [cursor=pointer]:
+                - generic [ref=e248] [cursor=pointer]:
+                  - img [ref=e251] [cursor=pointer]
+                  - text: Edit
+            - generic [ref=e254]:
+              - generic [ref=e258]: Federal Bcbs
+              - generic [ref=e262]: Highland Care
+              - generic [ref=e265]: HMO
+              - button "Edit" [ref=e271] [cursor=pointer]:
+                - generic [ref=e272] [cursor=pointer]:
+                  - img [ref=e275] [cursor=pointer]
+                  - text: Edit
+            - generic [ref=e278]:
+              - generic [ref=e282]: Bankers Life
+              - generic [ref=e286]: Highland Care
+              - generic [ref=e289]: HMO
+              - button "Edit" [ref=e295] [cursor=pointer]:
+                - generic [ref=e296] [cursor=pointer]:
+                  - img [ref=e299] [cursor=pointer]
+                  - text: Edit
+            - generic [ref=e302]:
+              - generic [ref=e306]: Empire Bcbs Commercial
+              - generic [ref=e310]: Highland Care
+              - generic [ref=e313]: HMO
+              - button "Edit" [ref=e319] [cursor=pointer]:
+                - generic [ref=e320] [cursor=pointer]:
+                  - img [ref=e323] [cursor=pointer]
+                  - text: Edit
+            - generic [ref=e326]:
+              - generic [ref=e330]: Xblue Cross Commercial
+              - generic [ref=e334]: Highland Care
+              - generic [ref=e337]: HMO
+              - button "Edit" [ref=e343] [cursor=pointer]:
+                - generic [ref=e344] [cursor=pointer]:
+                  - img [ref=e347] [cursor=pointer]
+                  - text: Edit
+            - generic [ref=e350]:
+              - generic [ref=e354]: Xbluecross Blueshield
+              - generic [ref=e358]: Highland Care
+              - generic [ref=e361]: HMO
+              - button "Edit" [ref=e367] [cursor=pointer]:
+                - generic [ref=e368] [cursor=pointer]:
+                  - img [ref=e371] [cursor=pointer]
+                  - text: Edit
+            - generic [ref=e374]:
+              - generic [ref=e378]: Allstate Life
+              - generic [ref=e382]: Highland Care
+              - generic [ref=e385]: HMO
+              - button "Edit" [ref=e391] [cursor=pointer]:
+                - generic [ref=e392] [cursor=pointer]:
+                  - img [ref=e395] [cursor=pointer]
+                  - text: Edit
+            - generic [ref=e398]:
+              - generic [ref=e402]: Archcare St
+              - generic [ref=e406]: Highland Care
+              - generic [ref=e409]: HMO
+              - button "Edit" [ref=e415] [cursor=pointer]:
+                - generic [ref=e416] [cursor=pointer]:
+                  - img [ref=e419] [cursor=pointer]
+                  - text: Edit
+            - generic [ref=e422]:
+              - generic [ref=e426]: Archcare Lt
+              - generic [ref=e430]: Highland Care
+              - generic [ref=e433]: HMO
+              - button "Edit" [ref=e439] [cursor=pointer]:
+                - generic [ref=e440] [cursor=pointer]:
+                  - img [ref=e443] [cursor=pointer]
+                  - text: Edit
+            - generic [ref=e446]:
+              - generic [ref=e450]: Xarchcare Mltc Lt
+              - generic [ref=e454]: Highland Care
+              - generic [ref=e457]: HMO
+              - button "Edit" [ref=e463] [cursor=pointer]:
+                - generic [ref=e464] [cursor=pointer]:
+                  - img [ref=e467] [cursor=pointer]
+                  - text: Edit
+            - generic [ref=e470]:
+              - generic [ref=e474]: Apwu
+              - generic [ref=e478]: Highland Care
+              - generic [ref=e481]: HMO
+              - button "Edit" [ref=e487] [cursor=pointer]:
+                - generic [ref=e488] [cursor=pointer]:
+                  - img [ref=e491] [cursor=pointer]
+                  - text: Edit
+  - menu [ref=e503]:
+    - generic [ref=e505]:
+      - generic [ref=e509]:
+        - img [ref=e512] [cursor=pointer]
+        - textbox "Search" [active] [ref=e514]: Cigna Commercial
+      - generic [ref=e517]:
+        - generic [ref=e518] [cursor=pointer]:
+          - checkbox "All (34 Matches)" [ref=e519] [cursor=pointer]
+          - generic:
+            - img
+        - generic [ref=e520] [cursor=pointer]: All (34 Matches)
+      - generic [ref=e523]:
+        - generic [ref=e525] [cursor=pointer]:
+          - generic [ref=e526] [cursor=pointer]:
+            - generic [ref=e529] [cursor=pointer]:
+              - checkbox [ref=e530] [cursor=pointer]
+              - generic:
+                - img
+            - generic [ref=e532] [cursor=pointer]: HMO
+          - button [ref=e533] [cursor=pointer]:
+            - img [ref=e536] [cursor=pointer]
+        - generic [ref=e539] [cursor=pointer]:
+          - generic [ref=e542] [cursor=pointer]:
+            - checkbox [ref=e543] [cursor=pointer]
+            - generic:
+              - img
+          - generic [ref=e546] [cursor=pointer]: Cigna Commercial
+        - generic [ref=e548] [cursor=pointer]:
+          - generic [ref=e551] [cursor=pointer]:
+            - checkbox [ref=e552] [cursor=pointer]
+            - generic:
+              - img
+          - generic [ref=e554] [cursor=pointer]:
+            - generic [ref=e555] [cursor=pointer]: Cigna Commercial
+            - text: "140"
+        - generic [ref=e557] [cursor=pointer]:
+          - generic [ref=e560] [cursor=pointer]:
+            - checkbox [ref=e561] [cursor=pointer]
+            - generic:
+              - img
+          - generic [ref=e563] [cursor=pointer]:
+            - generic [ref=e564] [cursor=pointer]: Cigna Commercial
+            - text: "148"
+        - generic [ref=e566] [cursor=pointer]:
+          - generic [ref=e569] [cursor=pointer]:
+            - checkbox [ref=e570] [cursor=pointer]
+            - generic:
+              - img
+          - generic [ref=e572] [cursor=pointer]:
+            - generic [ref=e573] [cursor=pointer]: Cigna Commercial
+            - text: 2 Levels 140
+        - generic [ref=e575] [cursor=pointer]:
+          - generic [ref=e578] [cursor=pointer]:
+            - checkbox [ref=e579] [cursor=pointer]
+            - generic:
+              - img
+          - generic [ref=e581] [cursor=pointer]:
+            - generic [ref=e582] [cursor=pointer]: Cigna Commercial
+            - text: 2 Levels 147
+        - generic [ref=e584] [cursor=pointer]:
+          - generic [ref=e587] [cursor=pointer]:
+            - checkbox [ref=e588] [cursor=pointer]
+            - generic:
+              - img
+          - generic [ref=e590] [cursor=pointer]:
+            - generic [ref=e591] [cursor=pointer]: Cigna Commercial
+            - text: A
+        - generic [ref=e593] [cursor=pointer]:
+          - generic [ref=e596] [cursor=pointer]:
+            - checkbox [ref=e597] [cursor=pointer]
+            - generic:
+              - img
+          - generic [ref=e599] [cursor=pointer]:
+            - generic [ref=e600] [cursor=pointer]: Cigna Commercial
+            - text: A Fairmont
+      - button "Apply" [disabled] [ref=e608]:
+        - generic [ref=e609]: Apply
+```

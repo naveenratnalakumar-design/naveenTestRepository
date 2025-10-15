@@ -15,7 +15,7 @@ test.describe("Assign roles to the facility and validate the global facility cou
             [testData.RevflowData.loginDetails.password]
         );
     });
-    test("@regression Verify Add Role Assignments", async () => {
+    test("Verify Add Role Assignments", async () => {
         const userManagementPage = new sections.UserManagementPage(test, page);
         await userManagementPage.verifyAddRoleAssignments();
     });

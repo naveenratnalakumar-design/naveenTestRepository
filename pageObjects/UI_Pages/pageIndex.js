@@ -5,4 +5,5 @@ import { DashboardPage } from "./dashborad";
 import { TaskListPage } from "./taskList";
 import { AgingPage } from "./agingPage";
 import { UserManagementPage } from "./userManagement";
-export { LoginPage, LogoutPage, CreateTaskPage, DashboardPage, TaskListPage,AgingPage,UserManagementPage };
+import { FacilityPage } from "./facility";
+export { LoginPage, LogoutPage, CreateTaskPage, DashboardPage, TaskListPage,AgingPage,UserManagementPage,FacilityPage };

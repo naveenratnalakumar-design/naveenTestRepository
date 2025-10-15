@@ -54,7 +54,14 @@ exports.LoginPage = class LoginPage {
     );
   };
   loginWithValidCredentials = async (email, pwd) => {
-    await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    await this.test.step(
+      "wait for until Miscrosoft SignIn Button  is visible",
+      async () => {
+        await this.page.waitForSelector("//*[name()='svg']", {
+          state: "visible",
+        });
+      }
+    );
     await this.clickOnMiscrosoftSignInButton();
     await this.page.waitForTimeout(parseInt(process.env.smallWait));
     await this.fillingUseremail(email);

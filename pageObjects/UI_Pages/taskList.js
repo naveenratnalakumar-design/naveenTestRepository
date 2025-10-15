@@ -135,6 +135,9 @@ exports.TaskListPage = class TaskListPage {
     this.globalFacilityfilterApplyBtn = page.locator(
       "//span[normalize-space(text())='Apply']"
     );
+    this.addFilterBtn = page.locator("//span[normalize-space(text())='Add Filter']");
+    this.addFilterDropdown = page.locator("//span[text()='Select']")
+    
   }
   clickOnFilterBtn = async () => {
     await excuteSteps(

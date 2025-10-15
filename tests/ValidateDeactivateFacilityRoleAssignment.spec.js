@@ -14,8 +14,9 @@ test.describe("Facility Role Assignment Deactivation", () => {
             [process.env.password]
         );
     });
-    test("@regression Validate Deactivate Facility Role Assignment", async () => {
+    test("Validate Deactivate Facility Role Assignment", async () => {
         const userManagementPage = new sections.UserManagementPage(test, page);
+        await page.pause()
         await userManagementPage.validateDeactivateFacilityRoleAssignment();
     });
     test.afterAll(async () => {

@@ -63,6 +63,7 @@ exports.UserManagementPage = class UserManagementPage {
             "//span[text()=' Assign a Primary User ']/parent::button"
         );
         this.resetFilters = page.locator("//span[text()=' Reset to Default ']/parent::button");
+        this.userGidHeaders = page.location("(//div[contains(@id,'cdk-drop-list')])[2]//arw-header-cell");
     }
     clickOnFacilityPayers = async () => {
         await excuteSteps(

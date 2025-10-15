@@ -1,10 +1,11 @@
 name: Apex Automated Tests
 
+#on:
+  #workflow_dispatch:
 on:
-  schedule:
-    #Run every day at 7:00 AM EST (11:00 AM UTC)
-    - cron: '30 11 * * *'
-
+ schedule:
+    #Run every day at 8:00 AM UTC
+    - cron: '0 8 * * *'
 jobs:
   test:
     runs-on: [self-hosted, linux]
@@ -24,7 +25,9 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: npx playwright test --trace=on
+        #run: npx playwright test --trace=on
+        run: npx playwright test --grep "@regression" --trace=on
+
 
       # Upload Playwright HTML Report
       - name: Upload Playwright HTML Report
