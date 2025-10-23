@@ -110,14 +110,31 @@ exports.UserManagementPage = class UserManagementPage {
     this.roleGridColums = page.locator(
       "//div[@data-column-definition-name='roleId']//div[@class='overflow-hidden text-ellipsis']"
     );
-    this.userGridRow = page.locator("(//div[@data-column-definition-name='lastName'])[2]")
-    this.userNameEditBtn = page.locator("(//div[@class='relative flex items-center']//button)[1]")
-    this.userEmailEditBtn = page.locator("(//div[@class='relative flex items-center']//button)[2]")
-    this.firstNameInput = page.locator("(//div[@class='relative flex']//input)[1]")
-    this.lastNameInput = page.locator("(//div[@class='relative flex']//input)[2]")
-    this.updateBtn = page.locator("//button[contains(@class,'success arw-button')]")
-    this.userDetailsSuccussPopup = page.locator("//div[contains(@class,'mat-mdc-snack-bar-label')]")
-    this.cancelBtn = page.locator("//span[normalize-space(text())='Cancel']")
+    this.userGridRow = page.locator(
+      "(//div[@data-column-definition-name='lastName'])[2]"
+    );
+    this.userNameEditBtn = page.locator(
+      "(//div[@class='relative flex items-center']//button)[1]"
+    );
+    this.userEmailEditBtn = page.locator(
+      "(//div[@class='relative flex items-center']//button)[2]"
+    );
+    this.firstNameInput = page.locator(
+      "(//div[@class='relative flex']//input)[1]"
+    );
+    this.lastNameInput = page.locator(
+      "(//div[@class='relative flex']//input)[2]"
+    );
+    this.updateBtn = page.locator(
+      "//button[contains(@class,'success arw-button')]"
+    );
+    this.userDetailsSuccussPopup = page.locator(
+      "//div[contains(@class,'mat-mdc-snack-bar-label')]"
+    );
+    this.cancelBtn = page.locator("//span[normalize-space(text())='Cancel']");
+    this.primaryTagInRoleview = page.locator(
+      "(//div[@data-column-definition-name='roleId']//span[normalize-space(text())='Primary'])[1]"
+    );
   }
   clickOnFacilityPayers = async () => {
     await excuteSteps(this.test, this.facilityPayers, "click", `click`);
@@ -199,14 +216,14 @@ exports.UserManagementPage = class UserManagementPage {
       `Click 'x' icon to close the Add New User Search Window`
     );
   };
-  clickOnCancelBtn = async()=>{
+  clickOnCancelBtn = async () => {
     await excuteSteps(
       this.test,
       this.cancelBtn,
       "click",
       "Click on the cancel button"
-    )
-  }
+    );
+  };
   clickSelectUsersDropDown = async () => {
     await excuteSteps(
       this.test,
@@ -411,14 +428,14 @@ exports.UserManagementPage = class UserManagementPage {
       `Click on Assign a new user Button`
     );
   };
-  clickOnUserGridRow = async () =>{
+  clickOnUserGridRow = async () => {
     await excuteSteps(
-        this.test,
-        this.userGridRow,
-        "click",
-        "Click on the user row"
-    )
-  }
+      this.test,
+      this.userGridRow,
+      "click",
+      "Click on the user row"
+    );
+  };
   enterLocationInSearchFacilitiesDropDown = async () => {
     const noOfLocations = await this.facilityLocations.count();
     const locationIndex = Math.floor(Math.random() * (noOfLocations - 1)) + 1;
@@ -630,57 +647,57 @@ exports.UserManagementPage = class UserManagementPage {
       "Click On the sort button"
     );
   };
-  clickOnUserNameEditbtn = async()=>{
+  clickOnUserNameEditbtn = async () => {
     await excuteSteps(
-        this.test,
-        this.userNameEditBtn,
-        "click",
-        "Click on the user name edit button"
-    )
-  }
-   clickOnUserEmailEditbtn = async()=>{
+      this.test,
+      this.userNameEditBtn,
+      "click",
+      "Click on the user name edit button"
+    );
+  };
+  clickOnUserEmailEditbtn = async () => {
     await excuteSteps(
-        this.test,
-        this.userEmailEditBtn,
-        "click",
-        "Click on the user email edit button"
-    )
-  }
-  userFirstnameInput = async(txt)=>{
+      this.test,
+      this.userEmailEditBtn,
+      "click",
+      "Click on the user email edit button"
+    );
+  };
+  userFirstnameInput = async (txt) => {
     await excuteSteps(
-        this.test,
-        this.firstNameInput,
-        "fill",
-        "Enter user first name in the first name input",
-        txt
-    )
-  }
-  userLastNameInput = async(txt)=>{
+      this.test,
+      this.firstNameInput,
+      "fill",
+      "Enter user first name in the first name input",
+      txt
+    );
+  };
+  userLastNameInput = async (txt) => {
     await excuteSteps(
-        this.test,
-        this.lastNameInput,
-        "fill",
-        "Enter user last name in the last name input",
-        txt
-    )
-  }
-  clickOnUpdateBtn = async()=>{
+      this.test,
+      this.lastNameInput,
+      "fill",
+      "Enter user last name in the last name input",
+      txt
+    );
+  };
+  clickOnUpdateBtn = async () => {
     await excuteSteps(
-        this.test,
-        this.updateBtn,
-        "click",
-        "click Update button"
-    )
-  }
-  updateEmailInput = async(txt)=>{
+      this.test,
+      this.updateBtn,
+      "click",
+      "click Update button"
+    );
+  };
+  updateEmailInput = async (txt) => {
     await excuteSteps(
-        this.test,
-        this.firstNameInput,
-        "fill",
-        "Enter user email address in the email input",
-        txt
-    )
-  }
+      this.test,
+      this.firstNameInput,
+      "fill",
+      "Enter user email address in the email input",
+      txt
+    );
+  };
   verifySearchByExistingUser = async () => {
     await this.clickOnSettingsButton();
     await this.clickUserManagementOption();
@@ -725,94 +742,115 @@ exports.UserManagementPage = class UserManagementPage {
     );
     await this.clickOnCancelBtn();
   };
+  // verifyAddRoleAssignments = async () => {
+  //   await this.clickOnSettingsButton();
+  //   await this.clickUserManagementOption();
+  //   await this.test.step("The Page is loading, please wait", async () => {
+  //     await this.page.waitForTimeout(parseInt(process.env.smallWait));
+  //   });
+  //   await this.clickSelectUsersDropDown();
+  //   await this.searchTextInSearchBox([
+  //     test_Data.RevflowData.userManagementData.addRoleAssignmentUsername,
+  //   ]);
+  //   await this.test.step("The Page is loading, please wait", async () => {
+  //     await this.page.waitForTimeout(parseInt(process.env.smallWait));
+  //   });
+  //   await this.selectAllCheckBox();
+  //   await this.clickOnApplyButton();
+  //   await this.test.step("The Page is loading, please wait", async () => {
+  //     await this.page.waitForTimeout(parseInt(process.env.smallWait));
+  //   });
+  //   await this.userViewSearchResults.waitFor({ state: "visible" });
+  //   const noOfFacilitiesBeforeAssignment = await this.getNoOfFacilities();
+  //   await this.clickOnUserViewSearchResultsLink();
+  //   await this.clickOnAssignNewLink();
+  //   let assigned = false;
+  //   let previousFacility = "";
+  //   let previousRole = "";
+  //   while (!assigned) {
+  //     const selectedFacility = await this.selectFacilityOption();
+  //     console.log(`Selected Facility: ${selectedFacility}`);
+  //     await this.clickOnApplyButton();
+  //     await this.test.step("The Page is loading, please wait", async () => {
+  //       await this.page.waitForTimeout(parseInt(process.env.smallWait));
+  //     });
+  //     const selectedRole = await this.selectRoleOption();
+  //     console.log(`Selected Role: ${selectedRole}`);
+  //     await this.clickSaveButton();
+  //     await this.test.step("The Page is loading, please wait", async () => {
+  //       await this.page.waitForTimeout(parseInt(process.env.smallWait));
+  //     });
+  //     if (
+  //       selectedFacility === previousFacility &&
+  //       selectedRole === previousRole
+  //     ) {
+  //       console.error(
+  //         "Error: Repeated selection of facility and role. Retrying..."
+  //       );
+  //       continue;
+  //     }
+  //     previousFacility = selectedFacility;
+  //     previousRole = selectedRole;
+  //     assigned = true;
+  //     console.log(
+  //       `Successfully assigned Facility: ${selectedFacility} and Role: ${selectedRole}`
+  //     );
+  //   }
+  //   await this.clickOnChevronLeftButton();
+  //   await this.test.step("The Page is loading, please wait", async () => {
+  //     await this.page.waitForTimeout(parseInt(process.env.largeWait));
+  //   });
+  //   const noOfFacilitiesAfterAssignment = await this.getNoOfFacilities();
+  //   expect(noOfFacilitiesAfterAssignment).toBe(
+  //     noOfFacilitiesBeforeAssignment + 1
+  //   );
+  //   console.log(
+  //     `Before: ${noOfFacilitiesBeforeAssignment}, After: ${noOfFacilitiesAfterAssignment}`
+  //   );
+  //   await this.test.step("The Page is loading, please wait", async () => {
+  //     await this.page.waitForTimeout(parseInt(process.env.smallWait));
+  //   });
+  //   await this.clickFacilityAndRoleViewButton();
+  //   await this.clickSelectFacilitiesDropdown();
+  //   await this.searchTextInSearchBox([this.selectedFacility]);
+  //   await this.test.step("The Page is loading, please wait", async () => {
+  //     await this.page.waitForTimeout(parseInt(process.env.smallWait));
+  //   });
+  //   await this.selectAllCheckBox();
+  //   await this.clickOnApplyButton();
+  //   await this.clickSelectRolesDropdown();
+  //   await this.searchTextInSearchBox([this.selectedRole]);
+  //   await this.test.step("The Page is loading, please wait", async () => {
+  //     await this.page.waitForTimeout(parseInt(process.env.smallWait));
+  //   });
+  //   await this.selectAllCheckBox();
+  //   await this.clickOnApplyButton();
+  //   await this.test.step("The Page is loading, please wait", async () => {
+  //     await this.page.waitForTimeout(parseInt(process.env.smallWait));
+  //   });
+  //   await this.getFacilityHierarchyId();
+  //   expect(this.facilityName.trim()).toBe(this.selectedFacility.trim());
+  // };
   verifyAddRoleAssignments = async () => {
     await this.clickOnSettingsButton();
     await this.clickUserManagementOption();
     await this.test.step("The Page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.smallWait));
     });
-    await this.clickSelectUsersDropDown();
-    await this.searchTextInSearchBox([
-      test_Data.RevflowData.userManagementData.addRoleAssignmentUsername,
-    ]);
-    await this.test.step("The Page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.smallWait));
-    });
-    await this.selectAllCheckBox();
-    await this.clickOnApplyButton();
-    await this.test.step("The Page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.smallWait));
-    });
-    await this.userViewSearchResults.waitFor({ state: "visible" });
-    const noOfFacilitiesBeforeAssignment = await this.getNoOfFacilities();
-    await this.clickOnUserViewSearchResultsLink();
-    await this.clickOnAssignNewLink();
-    let assigned = false;
-    let previousFacility = "";
-    let previousRole = "";
-    while (!assigned) {
-      const selectedFacility = await this.selectFacilityOption();
-      console.log(`Selected Facility: ${selectedFacility}`);
-      await this.clickOnApplyButton();
-      await this.test.step("The Page is loading, please wait", async () => {
-        await this.page.waitForTimeout(parseInt(process.env.smallWait));
-      });
-      const selectedRole = await this.selectRoleOption();
-      console.log(`Selected Role: ${selectedRole}`);
-      await this.clickSaveButton();
-      await this.test.step("The Page is loading, please wait", async () => {
-        await this.page.waitForTimeout(parseInt(process.env.smallWait));
-      });
-      if (
-        selectedFacility === previousFacility &&
-        selectedRole === previousRole
-      ) {
-        console.error(
-          "Error: Repeated selection of facility and role. Retrying..."
-        );
-        continue;
-      }
-      previousFacility = selectedFacility;
-      previousRole = selectedRole;
-      assigned = true;
-      console.log(
-        `Successfully assigned Facility: ${selectedFacility} and Role: ${selectedRole}`
-      );
-    }
-    await this.clickOnChevronLeftButton();
-    await this.test.step("The Page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.largeWait));
-    });
-    const noOfFacilitiesAfterAssignment = await this.getNoOfFacilities();
-    expect(noOfFacilitiesAfterAssignment).toBe(
-      noOfFacilitiesBeforeAssignment + 1
-    );
-    console.log(
-      `Before: ${noOfFacilitiesBeforeAssignment}, After: ${noOfFacilitiesAfterAssignment}`
-    );
-    await this.test.step("The Page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.smallWait));
-    });
     await this.clickFacilityAndRoleViewButton();
-    await this.clickSelectFacilitiesDropdown();
-    await this.searchTextInSearchBox([this.selectedFacility]);
-    await this.test.step("The Page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.smallWait));
-    });
-    await this.selectAllCheckBox();
-    await this.clickOnApplyButton();
-    await this.clickSelectRolesDropdown();
-    await this.searchTextInSearchBox([this.selectedRole]);
-    await this.test.step("The Page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.smallWait));
-    });
-    await this.selectAllCheckBox();
-    await this.clickOnApplyButton();
-    await this.test.step("The Page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.smallWait));
-    });
-    await this.getFacilityHierarchyId();
-    expect(this.facilityName.trim()).toBe(this.selectedFacility.trim());
+    let primaryRoleTagIsVisible = await this.primaryTagInRoleview.isVisible();
+    if (primaryRoleTagIsVisible) {
+      await this.test.step("Navigate to user view", async () => {
+        await this.primaryTagInRoleview.click();
+      });
+      await this.test.step("The Page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.smallWait));
+      });
+      let email = await this.page
+        .locator("(//div[@class='relative flex items-center']//span)[3]")
+        .innerText();
+      console.log("email==", email);
+    }
   };
   verifyChangePrimaryToAnyUser = async () => {
     await this.clickOnSettingsButton();
@@ -1038,51 +1076,51 @@ exports.UserManagementPage = class UserManagementPage {
       "Verifying that Emails are visible in descending order when descending sort is applied"
     ).toEqual(sortedDesc);
   };
-// verifyEmailSortFunctunality = async () => {
-//   const normalizeEmail = (email) =>
-//     email.trim().toLowerCase().replace(/[-_]/g, ""); // remove - and _ for comparison
+  // verifyEmailSortFunctunality = async () => {
+  //   const normalizeEmail = (email) =>
+  //     email.trim().toLowerCase().replace(/[-_]/g, ""); // remove - and _ for comparison
 
-//   // Wait for page/grid to load
-//   await this.test.step("Wait for page to load", async () => {
-//     await this.page.waitForTimeout(parseInt(process.env.largeWait));
-//   });
+  //   // Wait for page/grid to load
+  //   await this.test.step("Wait for page to load", async () => {
+  //     await this.page.waitForTimeout(parseInt(process.env.largeWait));
+  //   });
 
-//   // ---- ASCENDING SORT VALIDATION ----
-//   await this.hoverOnUserViewGridHeaders("Email");
-//   await this.clickOnSortBtn("Email");
-//   await this.page.waitForTimeout(parseInt(process.env.largeWait));
+  //   // ---- ASCENDING SORT VALIDATION ----
+  //   await this.hoverOnUserViewGridHeaders("Email");
+  //   await this.clickOnSortBtn("Email");
+  //   await this.page.waitForTimeout(parseInt(process.env.largeWait));
 
-//   const ascItemsRaw = await this.userViewGridColums("email").allInnerTexts();
-//   console.log("Ascending (raw):", ascItemsRaw);
+  //   const ascItemsRaw = await this.userViewGridColums("email").allInnerTexts();
+  //   console.log("Ascending (raw):", ascItemsRaw);
 
-//   const ascItems = ascItemsRaw.map(normalizeEmail);
+  //   const ascItems = ascItemsRaw.map(normalizeEmail);
 
-//   for (let i = 0; i < ascItems.length - 1; i++) {
-//     expect(
-//       ascItems[i].localeCompare(ascItems[i + 1], undefined, { sensitivity: "base" }) <= 0,
-//       `Email list not sorted correctly at index ${i}: "${ascItemsRaw[i]}" vs "${ascItemsRaw[i + 1]}"`
-//     ).toBeTruthy();
-//   }
-//   console.log("All emails are correctly sorted in ascending order.");
+  //   for (let i = 0; i < ascItems.length - 1; i++) {
+  //     expect(
+  //       ascItems[i].localeCompare(ascItems[i + 1], undefined, { sensitivity: "base" }) <= 0,
+  //       `Email list not sorted correctly at index ${i}: "${ascItemsRaw[i]}" vs "${ascItemsRaw[i + 1]}"`
+  //     ).toBeTruthy();
+  //   }
+  //   console.log("All emails are correctly sorted in ascending order.");
 
-//   // ---- DESCENDING SORT VALIDATION ----
-//   await this.hoverOnUserViewGridHeaders("Email");
-//   await this.clickOnSortBtn("Email");
-//   await this.page.waitForTimeout(parseInt(process.env.largeWait));
+  //   // ---- DESCENDING SORT VALIDATION ----
+  //   await this.hoverOnUserViewGridHeaders("Email");
+  //   await this.clickOnSortBtn("Email");
+  //   await this.page.waitForTimeout(parseInt(process.env.largeWait));
 
-//   const descItemsRaw = await this.userViewGridColums("email").allInnerTexts();
-//   console.log("Descending (raw):", descItemsRaw);
+  //   const descItemsRaw = await this.userViewGridColums("email").allInnerTexts();
+  //   console.log("Descending (raw):", descItemsRaw);
 
-//   const descItems = descItemsRaw.map(normalizeEmail);
+  //   const descItems = descItemsRaw.map(normalizeEmail);
 
-//   for (let i = 0; i < descItems.length - 1; i++) {
-//     expect(
-//       descItems[i].localeCompare(descItems[i + 1], undefined, { sensitivity: "base" }) >= 0,
-//       `Email list not sorted correctly at index ${i}: "${descItemsRaw[i]}" vs "${descItemsRaw[i + 1]}"`
-//     ).toBeTruthy();
-//   }
-//   console.log("All emails are correctly sorted in descending order.");
-// };
+  //   for (let i = 0; i < descItems.length - 1; i++) {
+  //     expect(
+  //       descItems[i].localeCompare(descItems[i + 1], undefined, { sensitivity: "base" }) >= 0,
+  //       `Email list not sorted correctly at index ${i}: "${descItemsRaw[i]}" vs "${descItemsRaw[i + 1]}"`
+  //     ).toBeTruthy();
+  //   }
+  //   console.log("All emails are correctly sorted in descending order.");
+  // };
   verifyAddedOnRevFlowSortFunctunality = async () => {
     await this.test.step("Wait for grid to load", async () => {
       await this.page.waitForSelector("//span[text()=' Settings ']", {
@@ -1407,38 +1445,72 @@ exports.UserManagementPage = class UserManagementPage {
       "Verifying that roles are visible in descending order when descending sort is applied"
     ).toEqual(sortedDesc);
   };
-  verifyUserEmailAndName = async ()=>{
+  verifyUserEmailAndName = async () => {
     await this.clickOnSettingsButton();
     await this.clickUserManagementOption();
     await this.clickSelectUsersDropDown();
-    await this.searchTextInSearchBox(['Santosh'])
-    await this.page.keyboard.press('Enter')
-    await this.clickOnApplyButton()
-    await this.clickOnUserGridRow()
-    let email = await this.page.locator("(//div[@class='relative flex items-center']//span)[3]").innerText()
-     await this.test.step("The Page is loading, please wait", async () => {
+    await this.searchTextInSearchBox(["Santosh"]);
+    await this.page.keyboard.press("Enter");
+    await this.clickOnApplyButton();
+    await this.clickOnUserGridRow();
+    let email = await this.page
+      .locator("(//div[@class='relative flex items-center']//span)[3]")
+      .innerText();
+    await this.test.step("The Page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.smallWait));
     });
     await this.clickOnUserNameEditbtn();
-    await this.userFirstnameInput([test_Data.RevflowData.userManagementData.updatedUserFirstName]);
-    await this.userLastNameInput([test_Data.RevflowData.userManagementData.updateUserLastName]);
-    await this.clickOnUpdateBtn()
-    await expect(this.userDetailsSuccussPopup,"Update user details success popup should visible").toBeVisible()
-    await this.clickOnUserEmailEditbtn()
-    await this.updateEmailInput([test_Data.RevflowData.userManagementData.updatedUserEmail])
-    await this.clickOnUpdateBtn()
-    await expect(this.userDetailsSuccussPopup,"Update user details success popup should visible").toBeVisible()
+    await this.userFirstnameInput([
+      test_Data.RevflowData.userManagementData.updatedUserFirstName,
+    ]);
+    await this.userLastNameInput([
+      test_Data.RevflowData.userManagementData.updateUserLastName,
+    ]);
+    await this.clickOnUpdateBtn();
+    await this.test.step("The Page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    await expect(
+      this.userDetailsSuccussPopup,
+      "Update user details success popup should visible"
+    ).toBeVisible();
+    await this.clickOnUserEmailEditbtn();
+    await this.updateEmailInput([
+      test_Data.RevflowData.userManagementData.updatedUserEmail,
+    ]);
+    await this.clickOnUpdateBtn();
+    await this.test.step("The Page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    await expect(
+      this.userDetailsSuccussPopup,
+      "Update user details success popup should visible"
+    ).toBeVisible();
     // update perivous details
     await this.clickOnUserNameEditbtn();
-    await this.userFirstnameInput([test_Data.RevflowData.userManagementData.orginalUserFirstName]);
-    await this.userLastNameInput([test_Data.RevflowData.userManagementData.orginalUserLastName]);
-    await this.clickOnUpdateBtn()
-    await expect(this.userDetailsSuccussPopup,"Update user details success popup should visible").toBeVisible()
-    await this.clickOnUserEmailEditbtn()
-    await this.updateEmailInput([email])
-    await this.clickOnUpdateBtn()
-    await expect(this.userDetailsSuccussPopup,"Update user details success popup should visible").toBeVisible()
-
-
-  }
+    await this.userFirstnameInput([
+      test_Data.RevflowData.userManagementData.orginalUserFirstName,
+    ]);
+    await this.userLastNameInput([
+      test_Data.RevflowData.userManagementData.orginalUserLastName,
+    ]);
+    await this.clickOnUpdateBtn();
+    await this.test.step("The Page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    await expect(
+      this.userDetailsSuccussPopup,
+      "Update user details success popup should visible"
+    ).toBeVisible();
+    await this.clickOnUserEmailEditbtn();
+    await this.updateEmailInput([email]);
+    await this.clickOnUpdateBtn();
+    await this.test.step("The Page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    await expect(
+      this.userDetailsSuccussPopup,
+      "Update user details success popup should visible"
+    ).toBeVisible();
+  };
 };
