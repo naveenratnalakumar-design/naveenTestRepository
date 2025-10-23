@@ -1,0 +1,101 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - navigation [ref=e5]:
+    - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+      - /url: /
+      - img "Revflow logo" [ref=e7] [cursor=pointer]
+      - img "Revflow" [ref=e9] [cursor=pointer]
+    - generic [ref=e11]:
+      - link "Dashboard" [ref=e13] [cursor=pointer]:
+        - /url: /dashboard
+        - img [ref=e16] [cursor=pointer]
+        - generic [ref=e18] [cursor=pointer]: Dashboard
+      - link "Task List" [ref=e20] [cursor=pointer]:
+        - /url: /tasks
+        - img [ref=e23] [cursor=pointer]
+        - generic [ref=e25] [cursor=pointer]: Task List
+      - link "AR Aging" [ref=e27] [cursor=pointer]:
+        - /url: /ar-aging
+        - img [ref=e30] [cursor=pointer]
+        - generic [ref=e32] [cursor=pointer]: AR Aging
+      - link "Biller Activity Report" [ref=e34] [cursor=pointer]:
+        - /url: /biller-report
+        - img [ref=e37] [cursor=pointer]
+        - generic [ref=e39] [cursor=pointer]: Biller Activity Report
+      - link "Settings" [ref=e41] [cursor=pointer]:
+        - /url: /settings
+        - img [ref=e44] [cursor=pointer]
+        - generic [ref=e47] [cursor=pointer]: Settings
+        - img [ref=e50] [cursor=pointer]
+    - button [ref=e56] [cursor=pointer]:
+      - img [ref=e60] [cursor=pointer]
+  - generic [ref=e62]:
+    - generic [ref=e63]:
+      - generic [ref=e68]:
+        - img [ref=e71]
+        - textbox "Search for a Case" [ref=e73]
+      - generic [ref=e74]:
+        - button "Selected Facilities (58)" [ref=e76] [cursor=pointer]:
+          - text: Selected Facilities (58)
+          - img [ref=e79] [cursor=pointer]
+        - img [ref=e85]
+        - button "KK" [ref=e88] [cursor=pointer]:
+          - generic [ref=e91] [cursor=pointer]: KK
+          - img [ref=e94] [cursor=pointer]
+    - generic [ref=e97]:
+      - generic [ref=e98]:
+        - heading "Tasks" [level=2] [ref=e101]
+        - generic [ref=e103]:
+          - button "Sort" [ref=e105] [cursor=pointer]:
+            - generic [ref=e106] [cursor=pointer]: Sort
+            - img [ref=e109] [cursor=pointer]
+          - button "Filters 1" [active] [ref=e112] [cursor=pointer]:
+            - img [ref=e115] [cursor=pointer]
+            - generic [ref=e117] [cursor=pointer]:
+              - text: Filters
+              - generic [ref=e118] [cursor=pointer]: "1"
+          - button "Reset to Default" [ref=e120] [cursor=pointer]:
+            - generic [ref=e121] [cursor=pointer]:
+              - text: Reset to Default
+              - img [ref=e124] [cursor=pointer]
+      - generic [ref=e128]:
+        - generic [ref=e131]:
+          - generic [ref=e132]: "1"
+          - text: Results
+        - generic [ref=e134]:
+          - generic [ref=e138] [cursor=pointer]: Task
+          - generic [ref=e143] [cursor=pointer]: Facility
+          - generic [ref=e147] [cursor=pointer]:
+            - generic [ref=e148] [cursor=pointer]: Resident
+            - generic [ref=e149] [cursor=pointer]:
+              - button [ref=e150] [cursor=pointer]:
+                - img [ref=e153] [cursor=pointer]
+              - button [ref=e155] [cursor=pointer]:
+                - img [ref=e158] [cursor=pointer]
+          - generic [ref=e164] [cursor=pointer]: Payer
+          - generic [ref=e169] [cursor=pointer]: Balance
+          - generic [ref=e174] [cursor=pointer]: Balance Status
+          - generic [ref=e179] [cursor=pointer]: Due Date
+          - generic [ref=e184] [cursor=pointer]: Task Status
+          - generic [ref=e189] [cursor=pointer]: Assigned To
+          - generic [ref=e194] [cursor=pointer]: Root Issue
+        - generic [ref=e202]:
+          - link "test" [ref=e206] [cursor=pointer]:
+            - /url: /tasks/details/869
+          - generic [ref=e210]: Achieve
+          - link "Wells, Eleanor" [ref=e214] [cursor=pointer]:
+            - /url: /cases/details/3671096
+          - generic [ref=e218]: Empire Bcbs Mcr
+          - generic [ref=e222]: 6,494.50
+          - generic [ref=e226]:
+            - img [ref=e229]
+            - generic [ref=e231]: Needs Research
+          - generic [ref=e235]: 9/16/2025
+          - generic [ref=e240]: In Progress
+          - generic [ref=e244]:
+            - generic [ref=e249]: KK
+            - generic [ref=e250]: Keshava Karri
+          - generic [ref=e254]: Invalid Claim Info
+```

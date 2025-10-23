@@ -1,0 +1,300 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - navigation [ref=e5]:
+    - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+      - /url: /
+      - img "Revflow logo" [ref=e7] [cursor=pointer]
+      - img "Revflow" [ref=e9] [cursor=pointer]
+    - generic [ref=e11]:
+      - link "Dashboard" [ref=e13] [cursor=pointer]:
+        - /url: /dashboard
+        - img [ref=e16] [cursor=pointer]
+        - generic [ref=e18] [cursor=pointer]: Dashboard
+      - link "Task List" [ref=e20] [cursor=pointer]:
+        - /url: /tasks
+        - img [ref=e23] [cursor=pointer]
+        - generic [ref=e25] [cursor=pointer]: Task List
+      - link "AR Aging" [ref=e27] [cursor=pointer]:
+        - /url: /ar-aging
+        - img [ref=e30] [cursor=pointer]
+        - generic [ref=e32] [cursor=pointer]: AR Aging
+      - link "Settings" [ref=e34] [cursor=pointer]:
+        - /url: /settings
+        - img [ref=e37] [cursor=pointer]
+        - generic [ref=e40] [cursor=pointer]: Settings
+        - img [ref=e43] [cursor=pointer]
+    - button [ref=e49] [cursor=pointer]:
+      - img [ref=e53] [cursor=pointer]
+  - generic [ref=e55]:
+    - generic [ref=e56]:
+      - generic [ref=e61]:
+        - img [ref=e64]
+        - textbox "Search for a Case" [ref=e66]
+      - generic [ref=e67]:
+        - button "Selected Facilities (35)" [ref=e69] [cursor=pointer]:
+          - text: Selected Facilities (35)
+          - img [ref=e72] [cursor=pointer]
+        - img [ref=e78]
+        - button "AT" [ref=e81] [cursor=pointer]:
+          - generic [ref=e84] [cursor=pointer]: AT
+          - img [ref=e87] [cursor=pointer]
+    - generic [ref=e90]:
+      - generic [ref=e91]:
+        - heading "Tasks" [level=2] [ref=e94]
+        - generic [ref=e96]:
+          - button "Sort (1)" [active] [ref=e98] [cursor=pointer]:
+            - generic [ref=e99] [cursor=pointer]:
+              - text: Sort
+              - generic [ref=e100] [cursor=pointer]: (1)
+            - img [ref=e103] [cursor=pointer]
+          - button "Filters" [ref=e106] [cursor=pointer]:
+            - img [ref=e109] [cursor=pointer]
+            - generic [ref=e111] [cursor=pointer]: Filters
+          - button "Reset to Default" [ref=e113] [cursor=pointer]:
+            - generic [ref=e114] [cursor=pointer]:
+              - text: Reset to Default
+              - img [ref=e117] [cursor=pointer]
+      - generic [ref=e121]:
+        - generic [ref=e124]:
+          - generic [ref=e125]: "2326"
+          - text: Results
+        - generic [ref=e127]:
+          - generic [ref=e130] [cursor=pointer]:
+            - generic [ref=e131] [cursor=pointer]: Task
+            - button [ref=e133] [cursor=pointer]:
+              - img [ref=e136] [cursor=pointer]
+          - generic [ref=e142] [cursor=pointer]: Facility
+          - generic [ref=e147] [cursor=pointer]: Resident
+          - generic [ref=e152] [cursor=pointer]: Payer
+          - generic [ref=e157] [cursor=pointer]: Balance
+          - generic [ref=e162] [cursor=pointer]: Balance Status
+          - generic [ref=e167] [cursor=pointer]: Due Date
+          - generic [ref=e172] [cursor=pointer]: Task Status
+          - generic [ref=e177] [cursor=pointer]: Assigned To
+          - generic [ref=e182] [cursor=pointer]: Root Issue
+        - generic [ref=e188]:
+          - generic [ref=e190]:
+            - link "3" [ref=e194] [cursor=pointer]
+            - generic [ref=e198]: Mountain Ridge
+            - link "Criswell, Herman" [ref=e202] [cursor=pointer]:
+              - /url: /cases/details/4487595
+            - generic [ref=e206]: Anthem Bcbs
+            - generic [ref=e210]: "857.95"
+            - generic [ref=e214]:
+              - img [ref=e217]
+              - generic [ref=e219]: DD Enrolled
+            - generic [ref=e223]: 8/27/2025
+            - generic [ref=e228]: In Progress
+            - generic [ref=e232]:
+              - generic [ref=e237]: AW
+              - generic [ref=e238]: Adina Wilhelm
+            - generic [ref=e242]: Invalid NPI
+          - generic [ref=e244]:
+            - link "4" [ref=e248] [cursor=pointer]
+            - generic [ref=e252]: Mountain Ridge
+            - link "Criswell, Herman" [ref=e256] [cursor=pointer]:
+              - /url: /cases/details/4487595
+            - generic [ref=e260]: Anthem Bcbs
+            - generic [ref=e264]: 1,224.87
+            - generic [ref=e268]:
+              - img [ref=e271]
+              - generic [ref=e273]: Recently Billed
+            - generic [ref=e277]: 8/29/2025
+            - generic [ref=e282]: In Progress
+            - generic [ref=e286]:
+              - generic [ref=e291]: AW
+              - generic [ref=e292]: Adina Wilhelm
+            - generic [ref=e296]: Invalid Claim Info
+          - generic [ref=e298]:
+            - link "4875" [ref=e302] [cursor=pointer]
+            - generic [ref=e306]: Ivy at Davenport-St Mary
+            - link "Hampton, David" [ref=e310] [cursor=pointer]:
+              - /url: /cases/details/4589312
+            - generic [ref=e314]: Humana Medicare
+            - generic [ref=e318]: (0.70)
+            - generic [ref=e322]:
+              - img [ref=e325]
+              - generic [ref=e327]: Denied
+            - generic [ref=e331]: 9/21/2025
+            - generic [ref=e336]: In Progress
+            - generic [ref=e340]:
+              - generic [ref=e345]: KK
+              - generic [ref=e346]: Keshava Karri
+            - generic [ref=e350]: Additional Info Needed
+          - generic [ref=e352]:
+            - link "5" [ref=e356] [cursor=pointer]
+            - generic [ref=e360]: Mountain Ridge
+            - link "Criswell, Herman" [ref=e364] [cursor=pointer]:
+              - /url: /cases/details/4487595
+            - generic [ref=e368]: Anthem Bcbs
+            - generic [ref=e372]: (1,332.91)
+            - generic [ref=e376]:
+              - img [ref=e379]
+              - generic [ref=e381]: Payment Posted
+            - generic [ref=e385]: 8/29/2025
+            - generic [ref=e390]: In Progress
+            - generic [ref=e394]:
+              - generic [ref=e399]: AW
+              - generic [ref=e400]: Adina Wilhelm
+            - generic [ref=e404]: Missing Cont. Auth
+          - generic [ref=e406]:
+            - link "500 Error task" [ref=e410] [cursor=pointer]
+            - generic [ref=e414]: Test Citrus
+            - link "Fisher, Doris" [ref=e418] [cursor=pointer]:
+              - /url: /cases/details/4190819
+            - generic [ref=e422]: Fl Mcd Sunshine Ltc
+            - generic [ref=e428]:
+              - img [ref=e431]
+              - generic [ref=e433]: Rejected
+            - generic [ref=e437]: 10/22/2025
+            - generic [ref=e442]: Not Started
+            - generic [ref=e446]:
+              - generic [ref=e451]: SR
+              - generic [ref=e452]: Santosh Rongali
+            - generic [ref=e456]: Invalid NPI
+          - generic [ref=e458]:
+            - link "5461" [ref=e462] [cursor=pointer]
+            - generic [ref=e466]: Gulfport
+            - link "Sanders, Velinda" [ref=e470] [cursor=pointer]:
+              - /url: /cases/details/3881366
+            - generic [ref=e474]: Wellmed
+            - generic [ref=e478]: "161.86"
+            - generic [ref=e482]:
+              - img [ref=e485]
+              - generic [ref=e487]: Rejected
+            - generic [ref=e491]: 9/9/2025
+            - generic [ref=e496]: In Progress
+            - generic [ref=e500]:
+              - generic [ref=e505]: KK
+              - generic [ref=e506]: Kesavarao Karri
+            - generic [ref=e510]: Invalid NPI
+          - generic [ref=e512]:
+            - link "8745a" [ref=e516] [cursor=pointer]
+            - generic [ref=e520]: Ivy at Davenport-St Mary
+            - link "Cady, Rodney" [ref=e524] [cursor=pointer]:
+              - /url: /cases/details/4230848
+            - generic [ref=e528]: United Healthcare Mcr
+            - generic [ref=e532]: "520.00"
+            - generic [ref=e536]:
+              - img [ref=e539]
+              - generic [ref=e541]: Rejected
+            - generic [ref=e545]: 9/10/2025
+            - generic [ref=e550]: In Progress
+            - generic [ref=e554]:
+              - generic [ref=e559]: KK
+              - generic [ref=e560]: Keshava Karri
+            - generic [ref=e564]: Invalid NPI
+          - generic [ref=e566]:
+            - link "8794" [ref=e570] [cursor=pointer]
+            - generic [ref=e574]: Gulfport
+            - link "Sanders, Velinda" [ref=e578] [cursor=pointer]:
+              - /url: /cases/details/3881366
+            - generic [ref=e582]: Wellmed
+            - generic [ref=e586]: (87.37)
+            - generic [ref=e590]:
+              - img [ref=e593]
+              - generic [ref=e595]: Claim Processing 14+ days
+            - generic [ref=e599]: 9/16/2025
+            - generic [ref=e604]: In Progress
+            - generic [ref=e608]:
+              - generic [ref=e613]: VG
+              - generic [ref=e614]: Vikesh Gaikawad
+            - generic [ref=e618]: ADR
+          - generic [ref=e620]:
+            - link "Address Denial" [ref=e624] [cursor=pointer]
+            - generic [ref=e628]: Ivy at Davenport-St Mary
+            - link "Phillips, Miriam" [ref=e632] [cursor=pointer]:
+              - /url: /cases/details/4555229
+            - generic [ref=e636]: Aetna Medicare
+            - generic [ref=e640]: (0.18)
+            - generic [ref=e644]:
+              - img [ref=e647]
+              - generic [ref=e649]: Payment not Posted
+            - generic [ref=e653]: 10/6/2025
+            - generic [ref=e658]: In Progress
+            - generic [ref=e662]:
+              - generic [ref=e667]: KK
+              - generic [ref=e668]: Keshava Karri
+            - generic [ref=e672]: Invalid NPI
+          - generic [ref=e674]:
+            - link "Adina Test" [ref=e678] [cursor=pointer]
+            - generic [ref=e682]: Citrus
+            - link "Allen, Beverly" [ref=e686] [cursor=pointer]:
+              - /url: /cases/details/4244807
+            - generic [ref=e690]: Bc Bs Ppo Hmo (5 Levels) Commercial
+            - generic [ref=e694]: 2,358.07
+            - generic [ref=e698]:
+              - img [ref=e701]
+              - generic [ref=e703]: Rejected
+            - generic [ref=e707]: 8/21/2025
+            - generic [ref=e712]: Completed
+            - generic [ref=e716]:
+              - generic [ref=e721]: AW
+              - generic [ref=e722]: Adina Wilhelm
+            - generic [ref=e726]: Invalid Claim Info
+          - generic [ref=e728]:
+            - link "Aditya testing" [ref=e732] [cursor=pointer]
+            - generic [ref=e736]: Gulfport
+            - link "Figueredo campos, Norbelis" [ref=e740] [cursor=pointer]:
+              - /url: /cases/details/3942326
+            - generic [ref=e744]: Ambetter Sunshine Commerci
+            - generic [ref=e748]: 1,667.50
+            - generic [ref=e752]:
+              - img [ref=e755]
+              - generic [ref=e757]: Appealed
+            - generic [ref=e761]: 8/19/2025
+            - generic [ref=e766]: In Progress
+            - generic [ref=e770]:
+              - generic [ref=e775]: VG
+              - generic [ref=e776]: Vikesh Gaikawad
+            - generic [ref=e780]: Processing
+          - generic [ref=e782]:
+            - link "adityaa" [ref=e786] [cursor=pointer]
+            - generic [ref=e790]: Caring Heart
+            - link "Harper, Ida" [ref=e794] [cursor=pointer]:
+              - /url: /cases/details/4241449
+            - generic [ref=e798]: Civil Service
+            - generic [ref=e802]: "384.58"
+            - generic [ref=e806]:
+              - img [ref=e809]
+              - generic [ref=e811]: Follow-Up Needed
+            - generic [ref=e815]: 10/10/2025
+            - generic [ref=e820]: In Progress
+            - generic [ref=e824]:
+              - generic [ref=e829]: AR
+              - generic [ref=e830]: Aditya Ravulkar
+            - generic [ref=e834]: Uncooperative
+          - generic [ref=e836]:
+            - link "Adityas" [ref=e840] [cursor=pointer]
+            - generic [ref=e844]: Gulfport
+            - link "Green, Klara" [ref=e848] [cursor=pointer]:
+              - /url: /cases/details/4630038
+            - generic [ref=e852]: Florida Cc Medicaid
+            - generic [ref=e856]: "0.00"
+            - generic [ref=e860]:
+              - img [ref=e863]
+              - generic [ref=e865]: Rejected
+            - generic [ref=e869]: 10/14/2025
+            - generic [ref=e874]: In Progress
+            - generic [ref=e878]:
+              - generic [ref=e883]: VG
+              - generic [ref=e884]: Vikesh Gaikawad
+            - generic [ref=e888]: Awaiting Primary Payment
+          - generic [ref=e890]:
+            - link "ARW-1677" [ref=e894] [cursor=pointer]
+            - generic [ref=e898]: Highland Care
+            - link "Marchione, Ana" [ref=e902] [cursor=pointer]:
+              - /url: /cases/details/2038229
+            - generic [ref=e906]: Amerihealth
+            - generic [ref=e912]:
+              - img [ref=e915]
+              - generic [ref=e917]: Unbilled
+            - generic [ref=e921]: 10/2/2025
+            - generic [ref=e926]: In Progress
+            - generic [ref=e930]:
+              - generic [ref=e935]: VG
+              - generic [ref=e936]: Vikesh Gaikawad
+            - generic [ref=e940]: CHOW Issue
+```

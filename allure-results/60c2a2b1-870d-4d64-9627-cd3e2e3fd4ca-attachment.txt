@@ -1,0 +1,12 @@
+✅ All Facility Names: [
+  'Abington',
+  'Achieve',
+  'Advanced Valley Parkside',
+  'Advena-10th-Legacy',
+  'Advena-Fountainview',
+  'Artesia',
+  'Bowie-Nocona',
+  'Calibre',
+  'Care Center East',
+  'Caring Heart'
+]

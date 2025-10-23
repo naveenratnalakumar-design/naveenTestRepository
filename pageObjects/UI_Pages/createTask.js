@@ -49,7 +49,7 @@ exports.CreateTaskPage = class CreateTaskPage {
     this.test = test;
     this.page = page;
     this.taskNamecolumn = page.locator(
-      "//div[@data-column-definition-name='name']"
+      "//div[@data-column-definition-name='name']//a"
     );
 
     this.arAgingBtn = page.locator("//span[text()=' AR Aging ']");
@@ -107,7 +107,7 @@ exports.CreateTaskPage = class CreateTaskPage {
     this.paginationAfter = page.locator(
       "//div[contains(@class,'mat-mdc-tab-header-pagination-after')]"
     );
-    this.activityTab = page.locator("//span[contains(text(),' Activity ')]");
+    this.activityTab = page.locator("//span[normalize-space(text())='Activity']");
 
     this.TaskListBtn = page.locator("//span[text()=' Task List ']");
     this.createTaskBtn = page.locator("//span[text()='Create Task']");
@@ -123,6 +123,7 @@ exports.CreateTaskPage = class CreateTaskPage {
     this.blanceStatusDropdown = page.locator(
       "//span[text()=' Balance Status ']"
     );
+    this.closeBtn = page.locator("(//div[contains(@class,'items-center shrink')]//arw-button[@category='tertiary'])[2]")
     this.assignedUserDropdown = page.locator(
       "//mat-select[@id='mat-select-3']"
     );
@@ -201,7 +202,7 @@ exports.CreateTaskPage = class CreateTaskPage {
       "//span[normalize-space(text())='Apply Filter']"
     );
     this.firstTask = page.locator(
-      "(//a[@class='ng-star-inserted']/parent::span)[1]"
+      "(//div[@data-column-definition-name='name']//a)[1]"
     );
     this.fileNameEditIcon = page.locator("(//arw-button[@icon='edit01'])[1]");
     this.editFileNameInput = page.locator(
@@ -308,6 +309,7 @@ exports.CreateTaskPage = class CreateTaskPage {
     );
     this.verifyCreatedIsVisibleOnTaskGrid = (txt) =>
       page.locator(`//a[text()='${txt}']`);
+    this.fileBtn = page.locator("//span[normalize-space(text())='Files']")
   }
 
   hoverOnCustomSort = async () => {
@@ -556,6 +558,14 @@ exports.CreateTaskPage = class CreateTaskPage {
       `Click on the Balance Status btn`
     );
   };
+  clickOnCloseBtn = async()=>{
+    await excuteSteps(
+      this.test,
+      this.closeBtn,
+      "click",
+      "Click on the close button"
+    )
+  }
   SearchDropdownOptions = async (txt) => {
     await excuteSteps(
       this.test,
@@ -860,6 +870,14 @@ exports.CreateTaskPage = class CreateTaskPage {
       txt
     );
   };
+  clickOnFileBtn = async()=>{
+    await excuteSteps(
+      this.test,
+      this.fileBtn,
+      "click",
+      "Navigate to File section"
+    )
+  }
 
   countElementsPresent = async (locator) => {
     const rowLocator = locator;
@@ -1095,6 +1113,7 @@ exports.CreateTaskPage = class CreateTaskPage {
       await this.page.waitForTimeout(parseInt(process.env.largeWait));
     });
     await this.clickOnFirstTask();
+    await this.clickOnFileBtn()
     await this.clickOnAddFilebtn();
     await this.clickonLinkFromCaseBtn();
     await this.test.step("The Page is loading, please wait", async () => {
@@ -1924,7 +1943,7 @@ exports.CreateTaskPage = class CreateTaskPage {
 
     let tasknameV = await this.taskTitleInputFiled.inputValue();
     let residentV = await this.page
-      .locator("//a[contains(@href,'/cases/details/')]")
+      .locator("//div[contains(@class,'arw-control arw-control')]//a")
       .innerText();
     let balanceStatusV = await this.page
       .locator(
@@ -1951,14 +1970,14 @@ exports.CreateTaskPage = class CreateTaskPage {
     await this.test.step("The Page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.smallWait));
     });
-    await this.page.locator("(//mat-option)[1]").click();
+    await this.page.locator("(//mat-option[@aria-selected='false'])[1]").click();
     let newbalanceStatus = await this.page
       .locator(
         "//arw-select[@formcontrolname='balanceStatusId']//arw-tag//span"
       )
       .innerText();
     console.log("newbalanceStatus==", newbalanceStatus);
-    await this.clickOnPagination();
+    // await this.clickOnPagination();
     await this.clickOnActivity();
     await this.page
       .locator("(//div[@data-column-definition-name='_hierarchyColumn'])[2]")
@@ -1970,5 +1989,9 @@ exports.CreateTaskPage = class CreateTaskPage {
       activity,
       "Verify that an Activity Log is recorded when updating a required field on a task"
     ).toBeVisible();
+    await this.test.step("The Page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    await this.clickOnCloseBtn()
   };
 };

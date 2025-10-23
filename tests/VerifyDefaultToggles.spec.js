@@ -14,10 +14,13 @@ test.describe("Verify data when toggles are on and off", () => {
       [process.env.password]
     );
   });
-  test("Verify default toggles", async () => {
+  test("@regression Verify default toggles", async () => {
     const createTaskPage = new sections.CreateTaskPage(test, page);
     await createTaskPage.clickOnArAgingBtn();
     const agingPage = new sections.AgingPage(test, page);
+     await test.step("Wait for grid to load", async () => {
+    await page.waitForTimeout(parseInt(process.env.largeWait));
+  });
     await agingPage.verifyDefaultToggles();
   });
   test.afterAll(async () => {

@@ -1,0 +1,25 @@
+facilityHierarchyId== [
+  '148 Houston LLC', 'Abbey Woods',
+  'Abbey Woods',     'Aberdeen',
+  'Aberdeen',        'Abingdon',
+  'Abingdon',        'Abington',
+  'Abington',        'Abington',
+  'Abington',        'Abington',
+  'Abington',        'Abington'
+]
+facilityHierarchyId== [
+  'York',
+  'York',
+  'Yeadon',
+  'Yanceyville',
+  'Wyoming-First Hospital',
+  'Wright Rehab',
+  'Woodside',
+  'Woodside',
+  'Woodside',
+  'Woodside',
+  'Woodland Hills',
+  'Woodland',
+  'Woodbridge CC',
+  'Woodbridge'
+]

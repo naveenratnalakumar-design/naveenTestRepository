@@ -1,0 +1,68 @@
+firstNames== [
+  'Abigail',    'Adam',
+  'Adam',       'Adina',
+  'Aditya',     'Aleksandr',
+  'Amanda',     'Anna',
+  'Apex',       'ARW Test',
+  'ARW Test',   'ARW Worker',
+  'ARW Worker', 'Avi'
+]
+firstNames== [
+  'Vlad',     'Vikesh',
+  'Vikesh',   'Vikesh',
+  'Valeriia', 'Sergey',
+  'Santosh',  'Santosh',
+  'Rivky',    'Rivky',
+  'Orest',    'null',
+  'Nicolas',  'Nancy'
+]
+lastNames== [
+  'Account',  'Account',
+  'Account',  'Account',
+  'Andreyev', 'Barkin',
+  'Bunchuk',  'Deren',
+  'Doe',      'Feinroth',
+  'Ferreira', 'Furst',
+  'Furst',    'Gaikawad'
+]
+lastNames== [
+  'Wilhelm',  'Wagner',
+  'Trufanov', 'Trufanov',
+  'Treires',  'Shpak',
+  'Savkin',   'Rongali',
+  'Rongali',  'Ravulkar',
+  'Paytyan',  'null',
+  'Myronov',  'MSP'
+]
+Ascending (raw): [
+  'ABiondo@axgsolutions.com',
+  'admin@apexhct.onmicrosoft.com',
+  'ahamada@axgsolutions.com',
+  'akaufman@axgsolutions.com',
+  'AKhandogiy@axgsolutions.com',
+  'alevin@apexhct.onmicrosoft.com',
+  'alevin@axgsolutions.com',
+  'ALowe@axgsolutions.com',
+  'arAdmin@axgsolutions.com',
+  'ARavulkar@axgsolutions.com',
+  'arw-test@apexhct.onmicrosoft.com',
+  'AWilhelm@axgsolutions.com',
+  'dgastfreund@axgsolutions.com',
+  'dhochman@axgsolutions.com'
+]
+Descending (raw): [
+  'v-vsavkin@axgsolutions.com',
+  'VKoshmanova@axgsolutions.com',
+  'vgaikawad@axgsolutions.com',
+  'vgaikawad@axgsolutions.com',
+  'vgaikawad@apexhct.onmicrosoft.com',
+  'v-dpaytyan@axgsolutions.com',
+  'svc-arw-worker@axgsolutions.com',
+  'svc-arw-test@axgsolutions.com',
+  'svc_arw_worker@apexhct.onmicrosoft.com',
+  'SRongali@axgsolutions.com',
+  'SRongali@apexhct.onmicrosoft.com',
+  'SAndreyev@axgsolutions.com',
+  'rmeguira@axgsolutions.com',
+  'rmeguira@axgsolutions.com'
+]

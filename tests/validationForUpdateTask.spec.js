@@ -14,11 +14,14 @@ test.describe("Verify update existing task auditLog", () => {
       [process.env.password]
     );
   });
-  test("Validate details (Balance, Payer, Balance Status, Root Issue, Due Date, Charges) match Task List view; Update fields in Task View", async () => {
+  test("@regression Validate details (Balance, Payer, Balance Status, Root Issue, Due Date, Charges) match Task List view; Update fields in Task View", async () => {
     await page.waitForTimeout(parseInt(process.env.largeWait));
     const createTaskPage = new sections.CreateTaskPage(test, page);
+    const taskListPage = new sections.TaskListPage(test,page);
     await createTaskPage.clickOnTaskList();
     await page.waitForTimeout(parseInt(process.env.largeWait));
+    await taskListPage.clickOnFilterBtn();
+    await taskListPage.clickOnClearFilterIcon()
     await createTaskPage.verifyTaskDetailsListView();
   });
   test.afterAll(async () => {

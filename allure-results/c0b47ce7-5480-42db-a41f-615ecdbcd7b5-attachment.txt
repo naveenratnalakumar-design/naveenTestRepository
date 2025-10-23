@@ -1,0 +1,141 @@
+facilities== [
+  'Achieve', 'Achieve', 'Achieve',
+  'Achieve', 'Achieve', 'Achieve',
+  'Achieve', 'Achieve', 'Achieve',
+  'Achieve', 'Achieve', 'Achieve',
+  'Achieve', 'Achieve', 'Achieve',
+  'Achieve', 'Achieve', 'Achieve',
+  'Achieve', 'Achieve', 'Achieve',
+  'Achieve', 'Achieve', 'Achieve',
+  'Achieve', 'Achieve', 'Achieve',
+  'Achieve'
+]
+facilities== [
+  'Test Buckingham',
+  'Test Buckingham',
+  'Test Buckingham',
+  'Test Buckingham',
+  'Test Buckingham',
+  'Test Buckingham',
+  'Test Buckingham',
+  'Test Buckingham',
+  'Test Buckingham',
+  'Test Buckingham',
+  'Ivy at Davenport-St Mary',
+  'Ivy at Davenport-St Mary',
+  'Ivy at Davenport-St Mary',
+  'Ivy at Davenport-St Mary',
+  'Ivy at Davenport-St Mary',
+  'Ivy at Davenport-St Mary',
+  'Ivy at Davenport-St Mary',
+  'Ivy at Davenport-St Mary',
+  'Ivy at Davenport-St Mary',
+  'Ivy at Davenport-St Mary',
+  'Ivy at Davenport-St Mary',
+  'Ivy at Davenport-St Mary',
+  'Ivy at Davenport-St Mary',
+  'Ivy at Davenport-St Mary',
+  'Ivy at Davenport-St Mary',
+  'Ivy at Davenport-St Mary',
+  'Ivy at Davenport-St Mary',
+  'Ivy at Davenport-St Mary'
+]
+payers== [
+  'Aarp',
+  'Aarp',
+  'Aarp',
+  'Aarp',
+  'Aarp Health Care Options',
+  'Aarp Health Care Options',
+  'Aarp Health Care Options',
+  'Aarp Health Care Options',
+  'Aarp Health Care Options',
+  'Aarp Health Care Options',
+  'Aarp Health Care Options',
+  'Aarp Health Care Options',
+  'Aarp Health Care Options',
+  'Aarp Health Care Options'
+]
+payers== [
+  'Wellpoint Ia Medicare Adv',
+  'Wellpoint Ia Medicare Adv',
+  'Wellpoint Ia Medicare Adv',
+  'Wellpoint Ia Medicare Adv',
+  'Wellpoint Amerigroup Ia',
+  'Wellmark Bcbs',
+  'Wellmark Bcbs',
+  'Veterans',
+  'Veterans',
+  'Veterans',
+  'Veterans',
+  'Veterans',
+  'Veterans',
+  'Veterans'
+]
+balanceStatus== [
+  'ACH/CC Processed',
+  'ACH/CC Processed',
+  'ACH/CC processing',
+  'Appealed',
+  'Appealed',
+  'Appealed',
+  'Bleeding Issue',
+  'Bleeding Issue',
+  'Bleeding Issue',
+  'Bleeding Issue',
+  'Bleeding Issue',
+  'Bleeding Issue',
+  'Bleeding Issue',
+  'Corrected Claim'
+]
+balancestatus== [
+  'Write Off', 'Write Off',
+  'Write Off', 'Write Off',
+  'Write Off', 'Write Off',
+  'Underpaid', 'Underpaid',
+  'Underpaid', 'Underpaid',
+  'Underpaid', 'Underpaid',
+  'Unbilled',  'Unbilled'
+]
+taskStatus== [
+  'Canceled',    'Completed',
+  'Completed',   'Completed',
+  'Completed',   'Completed',
+  'Completed',   'Completed',
+  'In Progress', 'In Progress',
+  'In Progress', 'In Progress',
+  'In Progress', 'In Progress'
+]
+taskStatus== [
+  'Not Started',
+  'Not Started',
+  'Not Started',
+  'Not Started',
+  'Not Started',
+  'Not Started'
+]
+assignedTo== [
+  'Adina Wilhelm',   'Adina Wilhelm',
+  'Adina Wilhelm',   'Adina Wilhelm',
+  'Adina Wilhelm',   'Aditya Ravulkar',
+  'Aditya Ravulkar', 'Aditya Ravulkar',
+  'Esther Furst',    'Esther Furst',
+  'John Doe',        'John Doe',
+  'Kesavarao Karri', 'Kesavarao Karri'
+]
+assignedTo== [
+  'Vikesh Gaikawad',
+  'Vikesh Gaikawad',
+  'Vikesh Gaikawad',
+  'Vikesh Gaikawad',
+  'Vikesh Gaikawad',
+  'Vikesh Gaikawad',
+  'Vikesh Gaikawad',
+  'Vikesh Gaikawad',
+  'Vikesh Gaikawad',
+  'Vikesh Gaikawad',
+  'Vikesh Gaikawad',
+  'Vikesh Gaikawad',
+  'Vikesh Gaikawad',
+  'Vikesh Gaikawad'
+]

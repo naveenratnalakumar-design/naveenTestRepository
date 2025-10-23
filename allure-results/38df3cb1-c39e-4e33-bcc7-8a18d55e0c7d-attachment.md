@@ -1,0 +1,286 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Revflow logo" [ref=e7] [cursor=pointer]
+        - img "Revflow" [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link "Task List" [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link "AR Aging" [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - link "Settings" [ref=e34] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e37] [cursor=pointer]
+          - generic [ref=e40] [cursor=pointer]: Settings
+          - img [ref=e43] [cursor=pointer]
+      - button [ref=e49] [cursor=pointer]:
+        - img [ref=e53] [cursor=pointer]
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - generic [ref=e61]:
+          - img [ref=e64]
+          - textbox "Search for a Case" [ref=e66]
+        - generic [ref=e67]:
+          - button "Selected Facilities (35)" [ref=e69] [cursor=pointer]:
+            - text: Selected Facilities (35)
+            - img [ref=e72] [cursor=pointer]
+          - img [ref=e78]
+          - button "AT" [ref=e81] [cursor=pointer]:
+            - generic [ref=e84] [cursor=pointer]: AT
+            - img [ref=e87] [cursor=pointer]
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - heading "Tasks" [level=2] [ref=e94]
+          - generic [ref=e96]:
+            - button "Custom Sort (2)" [ref=e98] [cursor=pointer]:
+              - generic [ref=e99] [cursor=pointer]:
+                - text: Custom Sort
+                - generic [ref=e100] [cursor=pointer]: (2)
+              - img [ref=e103] [cursor=pointer]
+            - button "Filters" [expanded] [active] [ref=e106] [cursor=pointer]:
+              - img [ref=e109] [cursor=pointer]
+              - generic [ref=e111] [cursor=pointer]: Filters
+            - button "Reset to Default" [ref=e113] [cursor=pointer]:
+              - generic [ref=e114] [cursor=pointer]:
+                - text: Reset to Default
+                - img [ref=e117] [cursor=pointer]
+        - generic [ref=e121]:
+          - generic [ref=e124]:
+            - generic [ref=e125]: "2319"
+            - text: Results
+          - generic [ref=e127]:
+            - generic [ref=e131] [cursor=pointer]: Task
+            - generic [ref=e136] [cursor=pointer]: Facility
+            - generic [ref=e141] [cursor=pointer]: Resident
+            - generic [ref=e146] [cursor=pointer]: Payer
+            - generic [ref=e150] [cursor=pointer]:
+              - generic [ref=e151] [cursor=pointer]: Balance
+              - button [ref=e153] [cursor=pointer]:
+                - img [ref=e156] [cursor=pointer]
+            - generic [ref=e162] [cursor=pointer]: Balance Status
+            - generic [ref=e166] [cursor=pointer]:
+              - generic [ref=e167] [cursor=pointer]: Due Date
+              - button [ref=e169] [cursor=pointer]:
+                - img [ref=e172] [cursor=pointer]
+            - generic [ref=e178] [cursor=pointer]: Task Status
+            - generic [ref=e183] [cursor=pointer]: Assigned To
+            - generic [ref=e188] [cursor=pointer]: Root Issue
+          - generic [ref=e194]:
+            - generic [ref=e196]:
+              - link "ARW-1677Manual task creation" [ref=e200] [cursor=pointer]
+              - generic [ref=e204]: Highland Care
+              - link "Marchione, Ana" [ref=e208] [cursor=pointer]:
+                - /url: /cases/details/2038229
+              - generic [ref=e212]: Amerihealth
+              - generic [ref=e218]:
+                - img [ref=e221]
+                - generic [ref=e223]: Denied
+              - generic [ref=e227]: 2/10/2025
+              - generic [ref=e232]: Canceled
+              - generic [ref=e236]:
+                - generic [ref=e241]: SR
+                - generic [ref=e242]: Santosh Rongali
+              - generic [ref=e246]: Invalid NPI
+            - generic [ref=e248]:
+              - link "Confirm correct NPI number for claim/payers" [ref=e252] [cursor=pointer]
+              - generic [ref=e256]: Achieve
+              - link "Connors, Gail" [ref=e260] [cursor=pointer]:
+                - /url: /cases/details/4705677
+              - generic [ref=e264]: Aarp Health Care Options
+              - generic [ref=e268]: "100.00"
+              - generic [ref=e272]:
+                - img [ref=e275]
+                - generic [ref=e277]: Denied
+              - generic [ref=e281]: 8/8/2025
+              - generic [ref=e286]: In Progress
+              - generic [ref=e290]:
+                - generic [ref=e295]: RM
+                - generic [ref=e296]: Rivky Meguira
+              - generic [ref=e300]: Invalid NPI
+            - generic [ref=e302]:
+              - link "test" [ref=e306] [cursor=pointer]
+              - generic [ref=e310]: Achieve
+              - link "Hobson, Elizabeth" [ref=e314] [cursor=pointer]:
+                - /url: /cases/details/4648507
+              - generic [ref=e318]: Empire Bcbs Mcr
+              - generic [ref=e322]: "0.00"
+              - generic [ref=e326]:
+                - img [ref=e329]
+                - generic [ref=e331]: Unbilled
+              - generic [ref=e335]: 8/8/2025
+              - generic [ref=e340]: In Progress
+              - generic [ref=e344]:
+                - generic [ref=e349]: RM
+                - generic [ref=e350]: Rivky Meguira
+              - generic [ref=e354]: Missing Initial Auth
+            - generic [ref=e356]:
+              - link "test" [ref=e360] [cursor=pointer]
+              - generic [ref=e364]: Caring Heart
+              - link "Ross, Darlene" [ref=e368] [cursor=pointer]:
+                - /url: /cases/details/5564936
+              - generic [ref=e372]: Aetna Adv Mcr
+              - generic [ref=e376]: "0.00"
+              - generic [ref=e380]:
+                - img [ref=e383]
+                - generic [ref=e385]: Unbilled
+              - generic [ref=e389]: 8/8/2025
+              - generic [ref=e394]: In Progress
+              - generic [ref=e398]:
+                - generic [ref=e403]: RM
+                - generic [ref=e404]: Rivky Meguira
+              - generic [ref=e408]: Invalid Claim Info
+            - generic [ref=e410]:
+              - link "test" [ref=e414] [cursor=pointer]
+              - generic [ref=e418]: Caring Heart
+              - link "Madison, Angela" [ref=e422] [cursor=pointer]:
+                - /url: /cases/details/5588921
+              - generic [ref=e426]: Aetna Adv Mcr
+              - generic [ref=e430]: "0.00"
+              - generic [ref=e434]:
+                - img [ref=e437]
+                - generic [ref=e439]: Unbilled
+              - generic [ref=e443]: 8/8/2025
+              - generic [ref=e448]: In Progress
+              - generic [ref=e452]:
+                - generic [ref=e457]: RM
+                - generic [ref=e458]: Rivky Meguira
+              - generic [ref=e462]: Missing Initial Auth
+            - generic [ref=e464]:
+              - link "test" [ref=e468] [cursor=pointer]
+              - generic [ref=e472]: Achieve
+              - link "Villoldo, Audrey" [ref=e476] [cursor=pointer]:
+                - /url: /cases/details/4420305
+              - generic [ref=e480]: Aarp Health Care Options
+              - generic [ref=e484]: "0.00"
+              - generic [ref=e488]:
+                - img [ref=e491]
+                - generic [ref=e493]: Unbilled
+              - generic [ref=e497]: 8/8/2025
+              - generic [ref=e502]: In Progress
+              - generic [ref=e506]:
+                - generic [ref=e511]: RM
+                - generic [ref=e512]: Rivky Meguira
+              - generic [ref=e516]: Missing Initial Auth
+            - generic [ref=e518]:
+              - link "test" [ref=e522] [cursor=pointer]
+              - generic [ref=e526]: Achieve
+              - link "Mann, Elinore" [ref=e530] [cursor=pointer]:
+                - /url: /cases/details/4557286
+              - generic [ref=e534]: Fidelis Lt
+              - generic [ref=e538]: (163.06)
+              - generic [ref=e542]:
+                - img [ref=e545]
+                - generic [ref=e547]: Rejected
+              - generic [ref=e551]: 8/8/2025
+              - generic [ref=e556]: In Progress
+              - generic [ref=e560]:
+                - generic [ref=e565]: RM
+                - generic [ref=e566]: Rivky Meguira
+              - generic [ref=e570]: Invalid Claim Info
+            - generic [ref=e572]:
+              - link "test" [ref=e576] [cursor=pointer]
+              - generic [ref=e580]: Richboro
+              - link "Robinson, Ruth Ann" [ref=e584] [cursor=pointer]:
+                - /url: /cases/details/3591590
+              - generic [ref=e588]: Blue Cross
+              - generic [ref=e592]: (266.77)
+              - generic [ref=e596]:
+                - img [ref=e599]
+                - generic [ref=e601]: Unbilled
+              - generic [ref=e605]: 8/8/2025
+              - generic [ref=e610]: In Progress
+              - generic [ref=e614]:
+                - generic [ref=e619]: RM
+                - generic [ref=e620]: Rivky Meguira
+              - generic [ref=e624]: Missing Initial Auth
+            - generic [ref=e626]:
+              - link "Rejected Claim" [ref=e630] [cursor=pointer]
+              - generic [ref=e634]: Green Meadows
+              - link "Wigmore, Robert" [ref=e638] [cursor=pointer]:
+                - /url: /cases/details/4309621
+              - generic [ref=e642]: Keystone Health Plan Mcr
+              - generic [ref=e646]: 1,644.00
+              - generic [ref=e650]:
+                - img [ref=e653]
+                - generic [ref=e655]: Recently Billed
+              - generic [ref=e659]: 8/11/2025
+              - generic [ref=e664]: In Progress
+              - generic [ref=e668]:
+                - generic [ref=e673]: EF
+                - generic [ref=e674]: Esther Furst
+              - generic [ref=e678]: Invalid NPI
+            - generic [ref=e680]:
+              - link "test 2 task" [ref=e684] [cursor=pointer]
+              - generic [ref=e688]: Green Meadows
+              - link "Dubiel, Antoinette" [ref=e692] [cursor=pointer]:
+                - /url: /cases/details/4400864
+              - generic [ref=e696]: Keystone Health Plan Mcr
+              - generic [ref=e700]: 1,017.91
+              - generic [ref=e704]:
+                - img [ref=e707]
+                - generic [ref=e709]: Recently Billed
+              - generic [ref=e713]: 8/11/2025
+              - generic [ref=e718]: In Progress
+              - generic [ref=e722]:
+                - generic [ref=e727]: EF
+                - generic [ref=e728]: Esther Furst
+              - generic [ref=e732]: CHOW Issue
+            - generic [ref=e734]:
+              - link "PayerCategoryHMO" [ref=e738] [cursor=pointer]
+              - generic [ref=e742]: Mountain Ridge
+              - link "Hutchison, Christene" [ref=e746] [cursor=pointer]:
+                - /url: /cases/details/4197842
+              - generic [ref=e750]: Humana Levels
+              - generic [ref=e754]: (37.72)
+              - generic [ref=e758]:
+                - img [ref=e761]
+                - generic [ref=e763]: Rejected
+              - generic [ref=e767]: 8/11/2025
+              - generic [ref=e772]: In Progress
+              - generic [ref=e776]:
+                - generic [ref=e781]: VG
+                - generic [ref=e782]: Vikesh Gaikawad
+              - generic [ref=e786]: Missing Initial Auth
+            - generic [ref=e788]:
+              - link "Test 2" [ref=e792] [cursor=pointer]
+              - generic [ref=e796]: Citrus
+              - link "Smith, Joseph" [ref=e800] [cursor=pointer]:
+                - /url: /cases/details/4658615
+              - generic [ref=e804]: Bc Bs Ppo Hmo (5 Levels) Commercial
+              - generic [ref=e808]: 2,095.00
+              - generic [ref=e812]:
+                - img [ref=e815]
+                - generic [ref=e817]: Payment Posted
+              - generic [ref=e821]: 8/12/2025
+              - generic [ref=e826]: In Progress
+              - generic [ref=e830]:
+                - generic [ref=e835]: AW
+                - generic [ref=e836]: Adina Wilhelm
+              - generic [ref=e840]: Missing Initial Auth
+  - menu [ref=e855]:
+    - generic [ref=e857]:
+      - generic [ref=e858]:
+        - generic [ref=e859]: Filter by
+        - button "Clear Filter" [disabled] [ref=e861]:
+          - generic [ref=e862]: Clear Filter
+      - generic [ref=e863]:
+        - button "Add Filter" [ref=e865] [cursor=pointer]:
+          - generic [ref=e866] [cursor=pointer]:
+            - img [ref=e869] [cursor=pointer]
+            - text: Add Filter
+        - button "Apply Filter" [disabled] [ref=e872]:
+          - generic [ref=e873]: Apply Filter
+```

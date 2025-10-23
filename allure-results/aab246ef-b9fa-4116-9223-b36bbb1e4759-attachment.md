@@ -1,0 +1,356 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Revflow logo" [ref=e7] [cursor=pointer]
+        - img "Revflow" [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link "Task List" [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link "AR Aging" [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - link "Settings" [ref=e34] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e37] [cursor=pointer]
+          - generic [ref=e40] [cursor=pointer]: Settings
+          - img [ref=e43] [cursor=pointer]
+      - button [ref=e49] [cursor=pointer]:
+        - img [ref=e53] [cursor=pointer]
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - generic [ref=e61]:
+          - img [ref=e64]
+          - textbox "Search for a Case" [ref=e66]
+        - generic [ref=e67]:
+          - button "Selected Facilities (13)" [ref=e69] [cursor=pointer]:
+            - text: Selected Facilities (13)
+            - img [ref=e72] [cursor=pointer]
+          - img [ref=e78]
+          - button "KK" [ref=e81] [cursor=pointer]:
+            - generic [ref=e84] [cursor=pointer]: KK
+            - img [ref=e87] [cursor=pointer]
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - heading "Tasks" [level=2] [ref=e94]
+          - generic [ref=e96]:
+            - button "Custom Sort (2)" [ref=e98] [cursor=pointer]:
+              - generic [ref=e99] [cursor=pointer]:
+                - text: Custom Sort
+                - generic [ref=e100] [cursor=pointer]: (2)
+              - img [ref=e103] [cursor=pointer]
+            - button "Filters" [expanded] [ref=e106] [cursor=pointer]:
+              - img [ref=e109] [cursor=pointer]
+              - generic [ref=e111] [cursor=pointer]: Filters
+            - button "Reset to Default" [ref=e113] [cursor=pointer]:
+              - generic [ref=e114] [cursor=pointer]:
+                - text: Reset to Default
+                - img [ref=e117] [cursor=pointer]
+        - generic [ref=e121]:
+          - generic [ref=e124]:
+            - generic [ref=e125]: "1935"
+            - text: Results
+          - generic [ref=e127]:
+            - generic [ref=e131] [cursor=pointer]: Task
+            - generic [ref=e136] [cursor=pointer]: Facility
+            - generic [ref=e141] [cursor=pointer]: Resident
+            - generic [ref=e146] [cursor=pointer]: Payer
+            - generic [ref=e150] [cursor=pointer]:
+              - generic [ref=e151] [cursor=pointer]: Balance
+              - button [ref=e153] [cursor=pointer]:
+                - img [ref=e156] [cursor=pointer]
+            - generic [ref=e162] [cursor=pointer]: Balance Status
+            - generic [ref=e166] [cursor=pointer]:
+              - generic [ref=e167] [cursor=pointer]: Due Date
+              - button [ref=e169] [cursor=pointer]:
+                - img [ref=e172] [cursor=pointer]
+            - generic [ref=e178] [cursor=pointer]: Task Status
+            - generic [ref=e183] [cursor=pointer]: Assigned To
+            - generic [ref=e188] [cursor=pointer]: Root Issue
+          - generic [ref=e194]:
+            - generic [ref=e196]:
+              - link "Confirm correct NPI number for claim/payers" [ref=e200] [cursor=pointer]
+              - generic [ref=e204]: Achieve
+              - link "Connors, Gail" [ref=e208] [cursor=pointer]:
+                - /url: /cases/details/4705677
+              - generic [ref=e212]: Aarp Health Care Options
+              - generic [ref=e216]: "100.00"
+              - generic [ref=e220]:
+                - img [ref=e223]
+                - generic [ref=e225]: Denied
+              - generic [ref=e229]: 8/8/2025
+              - generic [ref=e234]: In Progress
+              - generic [ref=e238]:
+                - generic [ref=e243]: RM
+                - generic [ref=e244]: Rivky Meguira
+              - generic [ref=e248]: Invalid NPI
+            - generic [ref=e250]:
+              - link "test" [ref=e254] [cursor=pointer]
+              - generic [ref=e258]: Achieve
+              - link "Hobson, Elizabeth" [ref=e262] [cursor=pointer]:
+                - /url: /cases/details/4648507
+              - generic [ref=e266]: Empire Bcbs Mcr
+              - generic [ref=e270]: "0.00"
+              - generic [ref=e274]:
+                - img [ref=e277]
+                - generic [ref=e279]: Unbilled
+              - generic [ref=e283]: 8/8/2025
+              - generic [ref=e288]: In Progress
+              - generic [ref=e292]:
+                - generic [ref=e297]: RM
+                - generic [ref=e298]: Rivky Meguira
+              - generic [ref=e302]: Missing Initial Auth
+            - generic [ref=e304]:
+              - link "test" [ref=e308] [cursor=pointer]
+              - generic [ref=e312]: Caring Heart
+              - link "Ross, Darlene" [ref=e316] [cursor=pointer]:
+                - /url: /cases/details/5564936
+              - generic [ref=e320]: Aetna Adv Mcr
+              - generic [ref=e324]: "0.00"
+              - generic [ref=e328]:
+                - img [ref=e331]
+                - generic [ref=e333]: Unbilled
+              - generic [ref=e337]: 8/8/2025
+              - generic [ref=e342]: In Progress
+              - generic [ref=e346]:
+                - generic [ref=e351]: RM
+                - generic [ref=e352]: Rivky Meguira
+              - generic [ref=e356]: Invalid Claim Info
+            - generic [ref=e358]:
+              - link "test" [ref=e362] [cursor=pointer]
+              - generic [ref=e366]: Caring Heart
+              - link "Madison, Angela" [ref=e370] [cursor=pointer]:
+                - /url: /cases/details/5588921
+              - generic [ref=e374]: Aetna Adv Mcr
+              - generic [ref=e378]: "0.00"
+              - generic [ref=e382]:
+                - img [ref=e385]
+                - generic [ref=e387]: Unbilled
+              - generic [ref=e391]: 8/8/2025
+              - generic [ref=e396]: In Progress
+              - generic [ref=e400]:
+                - generic [ref=e405]: RM
+                - generic [ref=e406]: Rivky Meguira
+              - generic [ref=e410]: Missing Initial Auth
+            - generic [ref=e412]:
+              - link "test" [ref=e416] [cursor=pointer]
+              - generic [ref=e420]: Achieve
+              - link "Villoldo, Audrey" [ref=e424] [cursor=pointer]:
+                - /url: /cases/details/4420305
+              - generic [ref=e428]: Aarp Health Care Options
+              - generic [ref=e432]: "0.00"
+              - generic [ref=e436]:
+                - img [ref=e439]
+                - generic [ref=e441]: Unbilled
+              - generic [ref=e445]: 8/8/2025
+              - generic [ref=e450]: In Progress
+              - generic [ref=e454]:
+                - generic [ref=e459]: RM
+                - generic [ref=e460]: Rivky Meguira
+              - generic [ref=e464]: Missing Initial Auth
+            - generic [ref=e466]:
+              - link "test" [ref=e470] [cursor=pointer]
+              - generic [ref=e474]: Achieve
+              - link "Mann, Elinore" [ref=e478] [cursor=pointer]:
+                - /url: /cases/details/4557286
+              - generic [ref=e482]: Fidelis Lt
+              - generic [ref=e486]: (163.06)
+              - generic [ref=e490]:
+                - img [ref=e493]
+                - generic [ref=e495]: Rejected
+              - generic [ref=e499]: 8/8/2025
+              - generic [ref=e504]: In Progress
+              - generic [ref=e508]:
+                - generic [ref=e513]: RM
+                - generic [ref=e514]: Rivky Meguira
+              - generic [ref=e518]: Invalid Claim Info
+            - generic [ref=e520]:
+              - link "jfiuyfg" [ref=e524] [cursor=pointer]
+              - generic [ref=e528]: Caring Heart
+              - link "Carter, Bryan" [ref=e532] [cursor=pointer]:
+                - /url: /cases/details/5584424
+              - generic [ref=e536]: Aetna Adv Mcr
+              - generic [ref=e542]:
+                - img [ref=e545]
+                - generic [ref=e547]: Denied
+              - generic [ref=e551]: 8/12/2025
+              - generic [ref=e556]: In Progress
+              - generic [ref=e560]:
+                - generic [ref=e565]: SA
+                - generic [ref=e566]: Sergey Andreyev
+              - generic [ref=e570]: Invalid Claim Info
+            - generic [ref=e572]:
+              - link "Test Task Name" [ref=e576] [cursor=pointer]
+              - generic [ref=e580]: Achieve
+              - link "Adolph, Herbert" [ref=e584] [cursor=pointer]:
+                - /url: /cases/details/4639863
+              - generic [ref=e588]: Mvp Pdpm
+              - generic [ref=e592]: "261.80"
+              - generic [ref=e596]:
+                - img [ref=e599]
+                - generic [ref=e601]: Denied
+              - generic [ref=e605]: 8/13/2025
+              - generic [ref=e610]: In Progress
+              - generic [ref=e614]:
+                - generic [ref=e619]: EF
+                - generic [ref=e620]: Esther Furst
+              - generic [ref=e624]: Invalid NPI
+            - generic [ref=e626]:
+              - link "test" [ref=e630] [cursor=pointer]
+              - generic [ref=e634]: Achieve
+              - link "Lewis, Janice" [ref=e638] [cursor=pointer]:
+                - /url: /cases/details/4615574
+              - generic [ref=e642]: Aarp Health Care Options
+              - generic [ref=e646]: "0.00"
+              - generic [ref=e650]:
+                - img [ref=e653]
+                - generic [ref=e655]: Unbilled
+              - generic [ref=e659]: 8/13/2025
+              - generic [ref=e664]: In Progress
+              - generic [ref=e668]:
+                - generic [ref=e673]: SR
+                - generic [ref=e674]: Santosh Rongali
+              - generic [ref=e678]: Missing Initial Auth
+            - generic [ref=e680]:
+              - link "Serge's Test Task Aug 11/2025" [ref=e684] [cursor=pointer]
+              - generic [ref=e688]: Achieve
+              - link "Hobson, Elizabeth" [ref=e692] [cursor=pointer]:
+                - /url: /cases/details/4648507
+              - generic [ref=e696]: Empire Bcbs Mcr
+              - generic [ref=e700]: "0.00"
+              - generic [ref=e704]:
+                - img [ref=e707]
+                - generic [ref=e709]: Rejected
+              - generic [ref=e713]: 8/13/2025
+              - generic [ref=e718]: In Progress
+              - generic [ref=e722]:
+                - generic [ref=e727]: SA
+                - generic [ref=e728]: Sergey Andreyev
+              - generic [ref=e732]: Invalid Claim Info
+            - generic [ref=e734]:
+              - link "Aditya testing" [ref=e738] [cursor=pointer]
+              - generic [ref=e742]: Gulfport
+              - link "Figueredo campos, Norbelis" [ref=e746] [cursor=pointer]:
+                - /url: /cases/details/3942326
+              - generic [ref=e750]: Ambetter Sunshine Commerci
+              - generic [ref=e754]: 1,667.50
+              - generic [ref=e758]:
+                - img [ref=e761]
+                - generic [ref=e763]: Appealed
+              - generic [ref=e767]: 8/19/2025
+              - generic [ref=e772]: In Progress
+              - generic [ref=e776]:
+                - generic [ref=e781]: VG
+                - generic [ref=e782]: Vikesh Gaikawad
+              - generic [ref=e786]: Processing
+            - generic [ref=e788]:
+              - link "test" [ref=e792] [cursor=pointer]
+              - generic [ref=e796]: Gulfport
+              - link "Miller, Meredith" [ref=e800] [cursor=pointer]:
+                - /url: /cases/details/4506322
+              - generic [ref=e804]: Ambetter Sunshine Commerci
+              - generic [ref=e810]:
+                - img [ref=e813]
+                - generic [ref=e815]: Rejected
+              - generic [ref=e819]: 8/19/2025
+              - generic [ref=e824]: In Progress
+              - generic [ref=e828]:
+                - generic [ref=e833]: RM
+                - generic [ref=e834]: Rivky Meguira
+              - generic [ref=e838]: Invalid NPI
+            - generic [ref=e840]:
+              - link "test" [ref=e844] [cursor=pointer]
+              - generic [ref=e848]: Gulfport
+              - link "Figueredo campos, Norbelis" [ref=e852] [cursor=pointer]:
+                - /url: /cases/details/3942326
+              - generic [ref=e856]: Ambetter Sunshine Commerci
+              - generic [ref=e862]:
+                - img [ref=e865]
+                - generic [ref=e867]: Rejected
+              - generic [ref=e871]: 8/19/2025
+              - generic [ref=e876]: In Progress
+              - generic [ref=e880]:
+                - generic [ref=e885]: RM
+                - generic [ref=e886]: Rivky Meguira
+              - generic [ref=e890]: Invalid NPI
+            - generic [ref=e892]:
+              - link "Taskkk" [ref=e896] [cursor=pointer]
+              - generic [ref=e900]: Gulfport
+              - link "Tyrrell, Joseph" [ref=e904] [cursor=pointer]:
+                - /url: /cases/details/3930050
+              - generic [ref=e908]: Bcbs
+              - generic [ref=e912]: "100.00"
+              - generic [ref=e916]:
+                - img [ref=e919]
+                - generic [ref=e921]: Unbilled
+              - generic [ref=e925]: 8/20/2025
+              - generic [ref=e931]:
+                - generic [ref=e936]: VG
+                - generic [ref=e937]: Vikesh Gaikawad
+              - generic [ref=e941]: Invalid NPI
+  - generic:
+    - menu [ref=e956]:
+      - generic [ref=e958]:
+        - generic [ref=e959]:
+          - generic [ref=e960]: Filter by
+          - button "Clear Filter" [disabled] [ref=e962]:
+            - generic [ref=e963]: Clear Filter
+        - generic [ref=e967]:
+          - generic [ref=e968]:
+            - combobox "Payer" [ref=e971]:
+              - generic [ref=e977] [cursor=pointer]: Payer
+            - button "Select Payer" [expanded] [ref=e982] [cursor=pointer]:
+              - generic [ref=e983] [cursor=pointer]: Select Payer
+              - img [ref=e987] [cursor=pointer]
+          - button [ref=e990] [cursor=pointer]:
+            - img [ref=e994] [cursor=pointer]
+        - generic [ref=e996]:
+          - button "Add Filter" [disabled] [ref=e998]:
+            - generic [ref=e999]:
+              - img [ref=e1002]
+              - text: Add Filter
+          - button "Apply Filter" [disabled] [ref=e1005]:
+            - generic [ref=e1006]: Apply Filter
+    - menu [ref=e1009]:
+      - generic [ref=e1011]:
+        - generic [ref=e1015]:
+          - img [ref=e1018] [cursor=pointer]
+          - textbox "Search" [active] [ref=e1020]: Blue Cross
+        - generic [ref=e1023]:
+          - generic [ref=e1024] [cursor=pointer]:
+            - checkbox "All (1 Match)" [ref=e1025] [cursor=pointer]
+            - generic:
+              - img
+          - generic [ref=e1026] [cursor=pointer]: All (1 Match)
+        - generic [ref=e1029]:
+          - generic [ref=e1031] [cursor=pointer]:
+            - generic [ref=e1032] [cursor=pointer]:
+              - generic [ref=e1035] [cursor=pointer]:
+                - checkbox [ref=e1036] [cursor=pointer]
+                - generic:
+                  - img
+              - generic [ref=e1038] [cursor=pointer]: HMO
+            - button [ref=e1039] [cursor=pointer]:
+              - img [ref=e1042] [cursor=pointer]
+          - generic [ref=e1045] [cursor=pointer]:
+            - generic [ref=e1048] [cursor=pointer]:
+              - checkbox [ref=e1049] [cursor=pointer]
+              - generic:
+                - img
+            - generic [ref=e1051] [cursor=pointer]:
+              - generic [ref=e1052] [cursor=pointer]: Blue Cross
+              - text: Illinois
+        - button "Apply" [disabled] [ref=e1055]:
+          - generic [ref=e1056]: Apply
+```

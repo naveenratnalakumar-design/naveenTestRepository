@@ -57,9 +57,7 @@ exports.LoginPage = class LoginPage {
     await this.test.step(
       "wait for until Miscrosoft SignIn Button  is visible",
       async () => {
-        await this.page.waitForSelector("//*[name()='svg']", {
-          state: "visible",
-        });
+      await this.page.waitForURL(process.env.baseURL)
       }
     );
     await this.clickOnMiscrosoftSignInButton();

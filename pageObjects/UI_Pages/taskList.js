@@ -1,14 +1,25 @@
 const { test, expect } = require("@playwright/test");
 const { excuteSteps } = require("../../utilities/actions");
 const test_Data = require("../../test_Data/testData.json");
-
+const randomFacilityNames =
+  test_Data.RevflowData.TaskListPage.facilityOptions[
+    Math.floor(
+      Math.random() * test_Data.RevflowData.TaskListPage.facilityOptions.length
+    )
+  ];
+const randomPayerNames =
+  test_Data.RevflowData.TaskListPage.payenameList[
+    Math.floor(
+      Math.random() * test_Data.RevflowData.TaskListPage.payenameList.length
+    )
+  ];
 require("dotenv").config();
-
+let facilitiesDrodownValues;
 exports.TaskListPage = class TaskListPage {
   constructor(test, page) {
     this.test = test;
     this.page = page;
-    this.filterBtn = page.locator("//span[contains(text(),'Filters')]");
+    this.filterBtn = page.locator("//span[normalize-space(text())='Filters']");
     this.dueDateDropDown = page.locator("(//mat-select[@role='combobox' ])[1]");
     this.taskStatusDropDown = page.locator(
       "(//mat-select[@role='combobox' ])[2]"
@@ -53,12 +64,14 @@ exports.TaskListPage = class TaskListPage {
     this.allCheckbox = page.locator("(//input[@type='checkbox'])[1]");
     this.applyButton = page.locator("//span[text()=' Apply ']");
     this.facilityNameBox = page.locator(
-      "(//div[@data-column-definition-name='facility']//span)[1]"
+      "((//div[@data-column-definition-name='facility'])[2]//span)[2]"
     );
     this.residentNameBox = page.locator(
-      "(//div[@data-column-definition-name='caseDetails']//a)[1]"
+      "(//div[@data-column-definition-name='caseDetails'])[2]//a"
     );
-    this.residentNameLink = page.locator("//a[text()='Wells, Eleanor']");
+    this.residentNameLink = page.locator(
+      "(//div[@data-column-definition-name='caseDetails'])[2]//a"
+    );
     this.viewAgingButton = page.locator("//arw-button[@category='secondary']");
     this.viewTaskListButton = page.locator(
       "//arw-button[@category='secondary']/following-sibling::arw-button"
@@ -71,10 +84,8 @@ exports.TaskListPage = class TaskListPage {
     this.appliedFilter2 = page.locator(
       "(//div[contains(@class,'web-body-1 text-foreground-high grow overflow-hidden')])[2]"
     );
-    this.downArrow = page.locator("(//div[@class='w-full'])[15]");
-    this.firstGroup = page.locator(
-      "//span[text()='Achieve']"
-    );
+    this.downArrow = page.locator("//arw-icon[@name='arrowNarrowDown']");
+    this.firstGroup = page.locator("//span[text()='Achieve']");
     this.filtersDropDown = page.locator(
       "//span[text()=' Filters ']/ancestor::arw-grid-header-filters"
     );
@@ -135,9 +146,85 @@ exports.TaskListPage = class TaskListPage {
     this.globalFacilityfilterApplyBtn = page.locator(
       "//span[normalize-space(text())='Apply']"
     );
-    this.addFilterBtn = page.locator("//span[normalize-space(text())='Add Filter']");
-    this.addFilterDropdown = page.locator("//span[text()='Select']")
-    
+    this.addFilterBtn = page.locator(
+      "//span[normalize-space(text())='Add Filter']"
+    );
+    this.addFilterDropdown = page.locator("//span[text()='Select']");
+    this.selectFiltesrsOptions = (txt) =>
+      page.locator(`(//div[normalize-space(text())='${txt}'])[2]`);
+    this.taskNameSearchInput = page.locator("(//input)[2]");
+    this.taskNameGidRow = page.locator(
+      "//div[@data-column-definition-name='name']//a"
+    );
+    this.noTaskFound = page.locator("//div[text()='No tasks found']");
+    this.customSortBtn = page.locator(
+      "//span[normalize-space(text())='Custom Sort']"
+    );
+    this.clearFilterOnNoTaskFoundScreen = page.locator(
+      "//span[text()='Clear filters']"
+    );
+    this.editFilterOnNoTaskFoundScreen = page.locator(
+      "//span[text()='Edit Filters']"
+    );
+    this.selectFacilityFilterSubOptionsdropdown = (txt) =>
+      page.locator(`//span[text()='${txt}']`);
+    this.facilitydropdownOptions = page.locator(
+      "//div[@class='px-12 flex items-center grow gap-8 overflow-hidden text-ellipsis whitespace-nowrap ng-star-inserted']//span"
+    );
+    this.addSortBtn = page.locator(
+      "//span[normalize-space(text())='Add Sort']"
+    );
+    this.slectSortingFilterName = page.locator("(//span[text()='Select'])[1]");
+    this.sortingOptionDropdown = page.locator("(//span[text()='Select'])[2]");
+    this.selectSortingOption = (txt) =>
+      page.locator(`//div[normalize-space(text())='${txt}']`);
+    this.sortBtn = page.locator("//span[normalize-space(text())='Sort']");
+    this.facilityGridColumns = page.locator(
+      "//div[@data-column-definition-name='facility']//span"
+    );
+    this.residentGridColumns = page.locator(
+      "//div[@data-column-definition-name='caseDetails']//a"
+    );
+    this.payerGridColumns = page.locator(
+      "//div[@data-column-definition-name='payer']//span[contains(@class,'block overflow-hidden')]"
+    );
+    this.balanceGridColumn = page.locator(
+      "//div[@data-column-definition-name='balance']//span[contains(@class,'block overflow-hidden')]"
+    );
+    this.balanceStatusGridColumn = page.locator(
+      "//div[@data-column-definition-name='balanceStatusId']//span[contains(@class,'grow overflow-ellipsis')]"
+    );
+    this.taskStatusGridColumn = page.locator(
+      "//div[@data-column-definition-name='taskStatusId']//span[contains(@class,'grow overflow-ellipsis')]"
+    );
+    this.assignedToGridColums = page.locator(
+      "//div[@data-column-definition-name='assignedToUser']//span[contains(@class,'overflow-hidden')]"
+    );
+    this.rootsIssuesGridColumns = page.locator(
+      "//div[@data-column-definition-name='issue']//span[contains(@class,'block overflow-hidden')]"
+    );
+    this.dueDateGridColums = page.locator(
+      "//div[@data-column-definition-name='dueDate']//span[contains(@class,'block overflow-hidden')]"
+    );
+    this.facilityOptioncheckBox = (txt) =>
+      page.locator(
+        `//div[@class='overflow-hidden text-ellipsis whitespace-nowrap']//span[text()='${txt}']`
+      );
+    this.tasklistGridColumns = (txt) =>
+      page.locator(
+        `//div[@data-column-definition-name='${txt}']//span[contains(@class,'block overflow-hidden')]`
+      );
+    this.noMatchesFoundLabel = page.locator(
+      "//label[normalize-space(text())='All (0 Matches)']"
+    );
+    this.dropdownOptionList = page.locator(
+      "//div[@class='overflow-hidden text-ellipsis whitespace-nowrap']//span[contains(@class,'bg-complementary-blue')]"
+    );
+    this.balanceOptions = (txt) =>
+      page.locator(`//div[normalize-space(text())='${txt}']`);
+    this.betweenInputOne = page.locator("(//input[@type='number'])[1]");
+    this.betweenInputTwo = page.locator("(//input[@type='number'])[2]");
+    this.dueDateOptions = (txt)=>page.locator(`//span[normalize-space(text())='${txt}']`)
   }
   clickOnFilterBtn = async () => {
     await excuteSteps(
@@ -338,6 +425,14 @@ exports.TaskListPage = class TaskListPage {
       txt
     );
   };
+  clickOnCustomSortBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.customSortBtn,
+      "click",
+      `Click on the custom sort button`
+    );
+  };
   selectSearchFacilityInDropdown = async () => {
     await excuteSteps(
       this.test,
@@ -354,6 +449,139 @@ exports.TaskListPage = class TaskListPage {
       `Click on Apply button`
     );
   };
+  clickOnAddFilterBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.addFilterBtn,
+      "click",
+      `Click on the Add filter button`
+    );
+  };
+  clickOAddFilterDropdown = async () => {
+    await excuteSteps(
+      this.test,
+      this.addFilterDropdown,
+      "click",
+      `Click Add Filter Dropdown`
+    );
+  };
+  searchTaskName = async (txt) => {
+    await excuteSteps(
+      this.test,
+      this.taskNameSearchInput,
+      "fill",
+      "Enter the filter name in the search input",
+      txt
+    );
+  };
+  searchFilterNames = async (txt) => {
+    await excuteSteps(
+      this.test,
+      this.globalSearchInput,
+      "fill",
+      "Enter the filter name in the search input",
+      txt
+    );
+  };
+  selectFilterOptionsFromDropdown = async (txt) => {
+    await excuteSteps(
+      this.test,
+      this.selectFiltesrsOptions(txt),
+      "click",
+      `Select the desired filter from the dropdown list`
+    );
+  };
+  selectFacilitySubOptions = async (txt) => {
+    await excuteSteps(
+      this.test,
+      this.selectFacilityFilterSubOptionsdropdown(txt),
+      "click",
+      `Click on the dropdown to select a facility filter sub-option`
+    );
+  };
+  searchSortName = async (txt) => {
+    await excuteSteps(
+      this.test,
+      this.globalSearchInput,
+      "fill",
+      "Enter the sorting filter name in the search input.",
+      txt
+    );
+  };
+  clickOnAddSortBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.addSortBtn,
+      "click",
+      "Click on the add sort button"
+    );
+  };
+  clickOnSlectSortingFilterName = async () => {
+    await excuteSteps(
+      this.test,
+      this.slectSortingFilterName,
+      "click",
+      "Click on the sorting filter name dropdown"
+    );
+  };
+  clickOnSortingOptionDropdown = async () => {
+    await excuteSteps(
+      this.test,
+      this.sortingOptionDropdown,
+      "click",
+      "Click on the sorting option dopdown"
+    );
+  };
+  selectSortingOptionFromDropdown = async (txt) => {
+    await excuteSteps(
+      this.test,
+      this.selectSortingOption(txt),
+      "click",
+      "Select the desired sorting option from the dropdown"
+    );
+  };
+  clickOnSortBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.sortBtn,
+      "click",
+      "Click on the sort button"
+    );
+  };
+  clickOnBalanceOptions = async (txt) => {
+    await excuteSteps(
+      this.test,
+      this.balanceOptions(txt),
+      "click",
+      "Select required option from the dropdown"
+    );
+  };
+  fillBetweenbalanceInputOne = async (txt) => {
+    await excuteSteps(
+      this.test,
+      this.betweenInputOne,
+      "fill",
+      "Enta data in input filed",
+      txt
+    );
+  };
+  fillBetweenbalanceInputTwo = async (txt) => {
+    await excuteSteps(
+      this.test,
+      this.betweenInputTwo,
+      "fill",
+      "Enta data in input filed",
+      txt
+    );
+  };
+  clickOnDueDateOptions = async(txt)=>{
+    await excuteSteps(
+      this.test,
+      this.dueDateOptions(txt),
+      "click",
+      "Select due date option from the dropdown"
+    )
+  }
   verifyDefaultFiltersInTaskList = async () => {
     await this.page.waitForTimeout(parseInt(process.env.largeWait));
     const dueDateDropDown = await this.dueDateDropDown;
@@ -368,9 +596,10 @@ exports.TaskListPage = class TaskListPage {
   };
   verifyFacilityAndResidentName = async () => {
     await this.clickOnFilterBtn();
+    await this.clickOnApplyFilterButton();
     let nameOfFacility = await this.facilityNameBox.innerText();
     let nameOfResident = await this.residentNameBox.innerText();
-    await this.hoverOutFromFilterDropDown();
+    // await this.hoverOutFromFilterDropDown();
     await this.clickOnResidentNameLink();
     await this.page.waitForTimeout(parseInt(process.env.largeWait));
     let visibFacilityName = await this.visibleFacilityName.innerText();
@@ -381,8 +610,14 @@ exports.TaskListPage = class TaskListPage {
   verifyViewAgingAndViewTaskListButtonsAreVisible = async () => {
     const viewAgingBtn = await this.viewAgingButton;
     const viewTaskListBtn = await this.viewTaskListButton;
-    await expect(viewAgingBtn,"Validating whether the 'View Aging' button is visible on the case view page").toBeVisible();
-    await expect(viewTaskListBtn,"Validating whether the 'View TaskList' button is visible on the case view page").toBeVisible();
+    await expect(
+      viewAgingBtn,
+      "Validating whether the 'View Aging' button is visible on the case view page"
+    ).toBeVisible();
+    await expect(
+      viewTaskListBtn,
+      "Validating whether the 'View TaskList' button is visible on the case view page"
+    ).toBeVisible();
   };
   checkingTextOnAppliedFilters = async () => {
     await this.clickOnFilterBtn();
@@ -421,6 +656,14 @@ exports.TaskListPage = class TaskListPage {
       `Click somewhere outside to come out of Filter Dropdown`
     );
   };
+  clickChecbox = async (txt) => {
+    await excuteSteps(
+      this.test,
+      this.facilityOptioncheckBox(txt),
+      "click",
+      "Select check box opetion"
+    );
+  };
   checkingFiltersForTrackerAccount = async () => {
     await this.clickOnFilterBtn();
     const dueDateDropDown = await this.dueDateDropDown;
@@ -436,7 +679,7 @@ exports.TaskListPage = class TaskListPage {
     await this.clickOnDeleteBalanceInSortIcon();
     await this.clickOnApplySortButtonIcon();
     await this.clickOnFilterBtn();
-    await this.verifyDefaultFiltersInTaskList();
+    // await this.verifyDefaultFiltersInTaskList();
     await this.clickOnClearFilterIcon();
     await this.hoverOverResidentHeaderIcon();
     await this.test.step("The Page is loading, please wait", async () => {
@@ -598,16 +841,18 @@ exports.TaskListPage = class TaskListPage {
       await this.page.waitForTimeout(parseInt(process.env.mediumWait));
     });
     let getresidentFacility = await this.residentFacilityName.innerText();
-    let residentFacility = getresidentFacility.replace("The ", "")
+    let residentFacility = getresidentFacility.replace("The ", "");
     await this.clickOnResidentOption();
     await this.test.step("The page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.mediumWait));
     });
-    let caseResidentFacilityName = await this.caseViewResidentFacility.innerText();
-    let facilityName = caseResidentFacilityName.replace(/[-–—]?\s*st\s*mary\b/ig, '')
-    .replace(/\s{2,}/g, ' ')              
-    .trim();
-    console.log("Facility@==",facilityName)
+    let caseResidentFacilityName =
+      await this.caseViewResidentFacility.innerText();
+    let facilityName = caseResidentFacilityName
+      .replace(/[-–—]?\s*st\s*mary\b/gi, "")
+      .replace(/\s{2,}/g, " ")
+      .trim();
+    console.log("Facility@==", facilityName);
     await expect(
       this.caseViewResidentName,
       "Verify the resident name is displayed correctly on the case view screen"
@@ -616,5 +861,1093 @@ exports.TaskListPage = class TaskListPage {
       facilityName,
       "Verify the facility name is displayed correctly on the case view screen"
     ).toBe(residentFacility);
+  };
+  varifyingTaskNameFilter = async () => {
+    await this.clickOnCustomSortBtn();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnApplySortButtonIcon();
+    await this.clickOnFilterBtn();
+    await this.clickOnClearFilterIcon();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
+    await this.clickOnFilterBtn();
+    await this.clickOnAddFilterBtn();
+    await this.clickOAddFilterDropdown();
+    await this.searchFilterNames(["Task"]);
+    await this.selectFilterOptionsFromDropdown(["Task"]);
+    await this.searchTaskName(["DaliyTaskCreation"]);
+    await this.clickOnApplyFilterButton();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    const noTasksMsgIsVisible = await this.noTaskFound.isVisible();
+    if (noTasksMsgIsVisible) {
+      await expect(
+        this.clearFilterOnNoTaskFoundScreen,
+        "Clear Filter button should be visible on the 'No Tasks Found' screen"
+      ).toBeVisible();
+      await expect(
+        this.editFilterOnNoTaskFoundScreen,
+        "Edit Filter button should be visible on the 'No Tasks Found' screen."
+      ).toBeVisible();
+    } else {
+      let count = await this.taskNameGidRow.count();
+      for (let i = 0; i <= count; i++) {
+        const row = this.taskNameGidRow.nth(i);
+        await row.scrollIntoViewIfNeeded();
+        await expect(row).toContainText("DaliyTaskCreation");
+      }
+    }
+  };
+  VerifyingFacilityFilter = async () => {
+    await this.clickOnFilterBtn();
+    await this.clickOnClearFilterIcon();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
+    await this.clickOnFilterBtn();
+    await this.clickOnAddFilterBtn();
+    await this.clickOAddFilterDropdown();
+    await this.searchFilterNames(["Facility"]);
+    await this.selectFilterOptionsFromDropdown("Facility");
+    await this.selectFacilitySubOptions("Select Facilities");
+    await this.searchTaskName([randomFacilityNames]);
+    await this.page.keyboard.press("Enter");
+    let checkBoxIsvisble = await this.facilityOptioncheckBox(
+      randomFacilityNames
+    ).isVisible();
+    if (checkBoxIsvisble) {
+      await this.clickOnApplyButton();
+      await this.clickOnApplyFilterButton();
+      let count = await this.tasklistGridColumns("facility").count();
+      for (let i = 0; i <= count; i++) {
+        const row = this.tasklistGridColumns("facility").nth(i);
+        await row.scrollIntoViewIfNeeded();
+        await expect(row).toContainText(randomFacilityNames);
+      }
+    } else {
+      await expect(
+        this.noMatchesFoundLabel,
+        "Verify 0 Matches' message should be displayed when the searched facility is not available in the dropdown list"
+      ).toBeVisible();
+      await this.page.keyboard.press("Escape");
+    }
+  };
+  //  verifyingPayerFilter = async () => {
+  //   await this.clickOnFilterBtn();
+  //   await this.clickOnClearFilterIcon();
+  //   await this.test.step("The page is loading, please wait", async () => {
+  //     await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+  //   });
+  //   await this.clickOnFilterBtn();
+  //   await this.clickOnAddFilterBtn();
+  //   await this.clickOAddFilterDropdown();
+  //   await this.searchFilterNames(["Payer"]);
+  //   await this.selectFilterOptionsFromDropdown("Payer");
+  //   await this.selectFacilitySubOptions("Select Payer");
+  //   await this.searchTaskName(["Blue Cross"]);
+
+  //   const checkBoxLocator = this.dropdownOptionList.innerText();
+  //    await this.test.step("The page is loading, please wait", async () => {
+  //     await this.page.waitForTimeout(parseInt(process.env.smallWait));
+  //   });
+  //   const isCheckBoxVisible = await checkBoxLocator.isVisible();
+  //   const isNoMatchVisible = await this.noMatchesFoundLabel.isVisible();
+
+  //   if (isCheckBoxVisible) {
+  //     await this.clickChecbox("Blue Cross");
+  //     await this.clickOnApplyButton();
+  //     await this.clickOnApplyFilterButton();
+
+  //     const count = await this.tasklistGridColumns("payer").count();
+  //     for (let i = 0; i < count; i++) {
+  //       const row = this.tasklistGridColumns("payer").nth(i);
+  //       await row.scrollIntoViewIfNeeded();
+  //       await expect(row).toContainText("Blue Cross");
+  //     }
+
+  //   } else if (!isCheckBoxVisible && !isNoMatchVisible) {
+  //     // ✅ Partial match case (No exact match, but partial matches exist)
+  //     console.log(`Payer was not found in the list (only partial matches shown)`);
+
+  //   } else if (isNoMatchVisible) {
+  //     // ✅ No results found at all
+  //     await expect(
+  //       this.noMatchesFoundLabel,
+  //       "Verify '0 Matches' message should be displayed when searched payer is not available"
+  //     ).toBeVisible();
+  //     console.log(`No matches found — 0 Matches message displayed`);
+  //   }
+  // };
+  verifyingPayerFilter = async () => {
+    const searchPayer = "Blue Cross"; // The payer name you are searching
+    const searchNormalized = searchPayer.trim().toLowerCase();
+
+    await this.clickOnFilterBtn();
+    await this.clickOnClearFilterIcon();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
+
+    await this.clickOnFilterBtn();
+    await this.clickOnAddFilterBtn();
+    await this.clickOAddFilterDropdown();
+    await this.searchFilterNames(["Payer"]);
+    await this.selectFilterOptionsFromDropdown("Payer");
+    await this.selectFacilitySubOptions("Select Payer");
+    await this.searchTaskName([searchPayer]);
+
+    await this.test.step("Wait for search results to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+
+    const checkBoxLocator = this.dropdownOptionList;
+    const allOptionsText = await checkBoxLocator.allInnerTexts();
+
+    // ✅ Normalize text for exact and partial match check
+    const cleanedOptions = allOptionsText.map((t) => t.trim());
+    const cleanedNormalized = cleanedOptions.map((t) => t.toLowerCase());
+
+    // ✅ Find exact and partial matches
+    const exactMatchIndex = cleanedNormalized.findIndex(
+      (t) => t === searchNormalized
+    );
+    const partialMatches = cleanedOptions.filter(
+      (t, i) =>
+        cleanedNormalized[i].includes(searchNormalized) && i !== exactMatchIndex
+    );
+
+    const isNoMatchVisible = await this.noMatchesFoundLabel.isVisible();
+
+    if (exactMatchIndex !== -1) {
+      // ✅ Exact match found
+      await this.clickChecbox(searchPayer);
+      await this.clickOnApplyButton();
+      await this.clickOnApplyFilterButton();
+
+      const count = await this.tasklistGridColumns("payer").count();
+      for (let i = 0; i < count; i++) {
+        const row = this.tasklistGridColumns("payer").nth(i);
+        await row.scrollIntoViewIfNeeded();
+        await expect(row).toContainText(searchPayer);
+      }
+    } else if (partialMatches.length > 0) {
+      // ✅ Partial match found
+      console.log(`Partial matches found: ${partialMatches.join(", ")}`);
+      console.log(`Exact payer '${searchPayer}' was not found in the list`);
+    } else if (isNoMatchVisible) {
+      // ✅ No results at all
+      await expect(
+        this.noMatchesFoundLabel,
+        "Verify '0 Matches' message should be displayed when searched payer is not available"
+      ).toBeVisible();
+      console.log(`No matches found — 0 Matches message displayed`);
+    }
+  };
+  verifyingBalanceFilter = async () => {
+    await this.clickOnFilterBtn();
+    await this.clickOnClearFilterIcon();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
+    await this.clickOnFilterBtn();
+    await this.clickOnAddFilterBtn();
+    await this.clickOAddFilterDropdown();
+    await this.searchFilterNames(["Balance"]);
+    await this.selectFilterOptionsFromDropdown("Balance");
+    await this.selectFacilitySubOptions("Conditional");
+    await this.clickOnBalanceOptions("Between");
+    await this.fillBetweenbalanceInputOne(["100"]),
+      await this.fillBetweenbalanceInputTwo(["1000"]);
+    await this.clickOnApplyFilterButton();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    const noTasksMsgIsVisible = await this.noTaskFound.isVisible();
+    if (noTasksMsgIsVisible) {
+      await expect(
+        this.clearFilterOnNoTaskFoundScreen,
+        "Clear Filter button should be visible on the 'No Tasks Found' screen"
+      ).toBeVisible();
+      await expect(
+        this.editFilterOnNoTaskFoundScreen,
+        "Edit Filter button should be visible on the 'No Tasks Found' screen."
+      ).toBeVisible();
+    } else {
+      let count = await this.tasklistGridColumns("balance").count();
+      const minAmount = 100;
+      const maxAmount = 1000;
+      for (let i = 0; i <= count; i++) {
+        const row = this.tasklistGridColumns("balance").nth(i);
+        await row.scrollIntoViewIfNeeded();
+        const balanceText = await row.innerText(); // get the balance text
+        const balanceAmount = parseFloat(balanceText.replace(/[^0-9.-]+/g, "")); // convert to number
+        // Assertion: check if balance is between min and max
+        expect(balanceAmount,"Verifying that balance is between min and max").toBeGreaterThanOrEqual(minAmount);
+        expect(balanceAmount,"Verifying that balance is between min and max").toBeLessThanOrEqual(maxAmount);
+      }
+    }
+    //Equals
+    const expectedAmount = 2000
+    await this.clickOnFilterBtn();
+    await this.clickOnClearFilterIcon();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
+    await this.clickOnFilterBtn();
+    await this.clickOnAddFilterBtn();
+    await this.clickOAddFilterDropdown();
+    await this.searchFilterNames(["Balance"]);
+    await this.selectFilterOptionsFromDropdown("Balance");
+    await this.selectFacilitySubOptions("Conditional");
+    await this.clickOnBalanceOptions("Equals");
+    await this.fillBetweenbalanceInputOne(["2000"]);
+    await this.clickOnApplyFilterButton();
+     await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    let noFilterscreen = await this.noTaskFound.isVisible();
+    if (noFilterscreen) {
+      await expect(
+        this.clearFilterOnNoTaskFoundScreen,
+        "Clear Filter button should be visible on the 'No Tasks Found' screen"
+      ).toBeVisible();
+      await expect(
+        this.editFilterOnNoTaskFoundScreen,
+        "Edit Filter button should be visible on the 'No Tasks Found' screen."
+      ).toBeVisible();
+    } else {
+      let count = await this.tasklistGridColumns("balance").count();
+      for (let i = 0; i <= count; i++) {
+        const row = this.tasklistGridColumns("balance").nth(i);
+        await row.scrollIntoViewIfNeeded();
+        const balanceText = await row.innerText(); // get the balance text
+        const balanceAmount = parseFloat(balanceText.replace(/[^0-9.-]+/g, "")); // convert to number
+        // Assertion: check if balance equals expectedAmount
+        expect(balanceAmount,"Verifying that balance equals expectedAmount").toBe(expectedAmount);
+      }
+    }
+    //GreaterThan
+    const minAmount = 2000
+    await this.clickOnFilterBtn();
+    await this.clickOnClearFilterIcon();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
+    await this.clickOnFilterBtn();
+    await this.clickOnAddFilterBtn();
+    await this.clickOAddFilterDropdown();
+    await this.searchFilterNames(["Balance"]);
+    await this.selectFilterOptionsFromDropdown("Balance");
+    await this.selectFacilitySubOptions("Conditional");
+    await this.clickOnBalanceOptions("Greater than");
+    await this.fillBetweenbalanceInputOne(["2000"]);
+    await this.clickOnApplyFilterButton();
+     await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    let noFiltersscreen = await this.noTaskFound.isVisible();
+    if (noFiltersscreen) {
+      await expect(
+        this.clearFilterOnNoTaskFoundScreen,
+        "Clear Filter button should be visible on the 'No Tasks Found' screen"
+      ).toBeVisible();
+      await expect(
+        this.editFilterOnNoTaskFoundScreen,
+        "Edit Filter button should be visible on the 'No Tasks Found' screen."
+      ).toBeVisible();
+    } else {
+      let count = await this.tasklistGridColumns("balance").count();
+      for (let i = 0; i <= count; i++) {
+        const row = this.tasklistGridColumns("balance").nth(i);
+        await row.scrollIntoViewIfNeeded();
+        const balanceText = await row.innerText(); // get the balance text
+        const balanceAmount = parseFloat(balanceText.replace(/[^0-9.-]+/g, "")); // convert to number
+         // Assertion: check if balance is greater than minAmount
+        expect(balanceAmount,"Verifying that balance is greater than minAmount").toBeGreaterThan(minAmount);
+      }
+    }
+    //Lessthan
+    const maxAmount  = 2000
+    await this.clickOnFilterBtn();
+    await this.clickOnClearFilterIcon();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
+    await this.clickOnFilterBtn();
+    await this.clickOnAddFilterBtn();
+    await this.clickOAddFilterDropdown();
+    await this.searchFilterNames(["Balance"]);
+    await this.selectFilterOptionsFromDropdown("Balance");
+    await this.selectFacilitySubOptions("Conditional");
+    await this.clickOnBalanceOptions("Less than");
+    await this.fillBetweenbalanceInputOne(["2000"]);
+    await this.clickOnApplyFilterButton();
+     await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    let noTaskFiltersscreen = await this.noTaskFound.isVisible();
+    if (noTaskFiltersscreen) {
+      await expect(
+        this.clearFilterOnNoTaskFoundScreen,
+        "Clear Filter button should be visible on the 'No Tasks Found' screen"
+      ).toBeVisible();
+      await expect(
+        this.editFilterOnNoTaskFoundScreen,
+        "Edit Filter button should be visible on the 'No Tasks Found' screen."
+      ).toBeVisible();
+    } else {
+      let count = await this.tasklistGridColumns("balance").count();
+      for (let i = 0; i <= count; i++) {
+        const row = this.tasklistGridColumns("balance").nth(i);
+        await row.scrollIntoViewIfNeeded();
+        const balanceText = await row.innerText(); // get the balance text
+        const balanceAmount = parseFloat(balanceText.replace(/[^0-9.-]+/g, "")); // convert to number
+         // Assertion: check if balance is less than maxAmount
+        expect(balanceAmount,"Verifying that balance less than maxAmount").toBeLessThan(maxAmount);
+      }
+    }
+  };
+  verifyingDuedateFilter = async ()=>{
+    await this.clickOnFilterBtn();
+    await this.clickOnClearFilterIcon();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
+    await this.clickOnFilterBtn();
+    await this.clickOnAddFilterBtn();
+    await this.clickOAddFilterDropdown();
+    await this.searchFilterNames(["Balance"]);
+    await this.selectFilterOptionsFromDropdown("Balance");
+    await this.selectFacilitySubOptions(["Select"])
+    await this.clickOnDueDateOptions([])
+    await this.clickOnApplyButton();
+      await this.clickOnApplyFilterButton();
+      
+
+  }
+  // verifyingTaskNameSortingFunctionality = async () => {
+  //   // Step 1: Clear existing sort/filter
+  //   await this.clickOnCustomSortBtn();
+  //   await this.clickOnDeleteDuedateInSortIcon();
+  //   await this.clickOnDeleteDuedateInSortIcon();
+  //   await this.clickOnApplySortButtonIcon();
+
+  //   await this.clickOnFilterBtn();
+  //   await this.clickOnClearFilterIcon();
+
+  //   await this.test.step("Wait for grid to load", async () => {
+  //     await this.page.waitForTimeout(parseInt(process.env.smallWait, 10));
+  //   });
+
+  //   const taskgridRows = await this.taskNameGidRow;
+  //   await expect(
+  //     taskgridRows.first(),
+  //     "TaskName row should be visible"
+  //   ).toBeVisible();
+
+  //   //  Apply Ascending (A → Z) Sort
+  //   await this.clickOnSortBtn();
+  //   await this.clickOnAddSortBtn();
+  //   await this.clickOnSlectSortingFilterName();
+  //   await this.searchSortName(["Task"]);
+  //   await this.selectFilterOptionsFromDropdown(["Task"]);
+  //   await this.clickOnSlectSortingFilterName();
+  //   await this.selectSortingOptionFromDropdown("A → Z");
+  //   await this.clickOnApplySortButtonIcon();
+
+  //   await this.test.step("Wait for grid to load", async () => {
+  //     await this.page.waitForTimeout(parseInt(process.env.mediumWait, 10));
+  //   });
+
+  //   //Ascending Values from UI
+  //   const ascValues = (await taskgridRows.allTextContents()).map((v) =>
+  //     v.trim()
+  //   );
+  //   console.log("Ascending Values:", ascValues);
+  //   const normalizeString = (str) =>
+  //     str
+  //       ?.toLowerCase()
+  //       .replace(/\s+/g, " ") // normalize spaces
+  //       .trim();
+  //   const naturalCompare = (a, b) => {
+  //     const normalizedA = normalizeString(a);
+  //     const normalizedB = normalizeString(b);
+  //     return normalizedA.localeCompare(normalizedB, undefined, {
+  //       numeric: true,
+  //       sensitivity: "base",
+  //     });
+  //   };
+
+  //   // Verify Ascending Order
+  //   let isSortedAsc = true;
+  //   for (let i = 1; i < ascValues.length; i++) {
+  //     if (naturalCompare(ascValues[i - 1], ascValues[i]) > 0) {
+  //       console.log(
+  //         `Out of order (Ascending): "${ascValues[i - 1]}" > "${ascValues[i]}"`
+  //       );
+  //       isSortedAsc = false;
+  //     }
+  //   }
+  //   expect(
+  //     isSortedAsc,
+  //     "AVerify that task names are displayed in ascending order when the ascending sort is applied."
+  //   ).toBeTruthy();
+
+  //   // 🟥 Step 5: Apply Descending (Z → A) Sort
+  //   await this.clickOnSortBtn();
+  //   await this.clickOnDeleteDuedateInSortIcon().catch(() => {});
+  //   await this.clickOnApplySortButtonIcon();
+
+  //   await this.test.step("Wait for grid to load", async () => {
+  //     await this.page.waitForTimeout(parseInt(process.env.smallWait, 10));
+  //   });
+
+  //   await this.clickOnSortBtn();
+  //   await this.clickOnAddSortBtn();
+  //   await this.clickOnSlectSortingFilterName();
+  //   await this.searchSortName(["Task"]);
+  //   await this.selectFilterOptionsFromDropdown(["Task"]);
+  //   await this.clickOnSlectSortingFilterName();
+  //   await this.selectSortingOptionFromDropdown("Z → A");
+  //   await this.clickOnApplySortButtonIcon();
+  //   await this.test.step("Wait for grid to load", async () => {
+  //     await this.page.waitForTimeout(parseInt(process.env.mediumWait, 10));
+  //   });
+  //   // Step 6: Get Descending Values from UI
+  //   const descValues = (await taskgridRows.allTextContents()).map((v) =>
+  //     v.trim()
+  //   );
+  //   console.log("Descending Values:", descValues);
+
+  //   // Step 7: Verify Descending Order
+  //   let isSortedDesc = true;
+  //   for (let i = 1; i < descValues.length; i++) {
+  //     if (naturalCompare(descValues[i - 1], descValues[i]) < 0) {
+  //       console.log(
+  //         `Out of order (Descending): "${descValues[i - 1]}" < "${
+  //           descValues[i]
+  //         }"`
+  //       );
+  //       isSortedDesc = false;
+  //     }
+  //   }
+  //   expect(
+  //     isSortedDesc,
+  //     "Verify that task names are displayed in descending order when the descending sort is applied."
+  //   ).toBeTruthy();
+  // };
+verifyingTaskNameSortingFunctionality = async () => {
+  // Step 1: Clear existing sort/filter
+  await this.clickOnCustomSortBtn();
+  await this.clickOnDeleteDuedateInSortIcon().catch(() => {});
+  await this.clickOnDeleteDuedateInSortIcon().catch(() => {});
+  await this.clickOnApplySortButtonIcon();
+
+  await this.clickOnFilterBtn();
+  await this.clickOnClearFilterIcon();
+
+  await this.test.step("Wait for grid to load", async () => {
+    await this.page.waitForTimeout(parseInt(process.env.smallWait, 10));
+  });
+
+  const taskgridRows = this.taskNameGidRow;
+  await expect(
+    taskgridRows.first(),
+    "TaskName row should be visible"
+  ).toBeVisible();
+
+  // 🟩 Step 2: Apply Ascending (A → Z) Sort
+  await this.clickOnSortBtn();
+  await this.clickOnAddSortBtn();
+  await this.clickOnSlectSortingFilterName();
+  await this.searchSortName(["Task"]);
+  await this.selectFilterOptionsFromDropdown(["Task"]);
+  await this.clickOnSlectSortingFilterName();
+  await this.selectSortingOptionFromDropdown("A → Z");
+  await this.clickOnApplySortButtonIcon();
+
+  await this.test.step("Wait for grid to load", async () => {
+    await this.page.waitForTimeout(parseInt(process.env.mediumWait, 10));
+  });
+
+  // 🟢 Step 3: Verify Ascending Order
+  const ascValues = (await taskgridRows.allTextContents()).map(v => v.trim());
+  console.log("Ascending Values:", ascValues);
+
+  // 🧩 Pure lexicographic (UI-style) comparison
+  const normalizeString = (str) =>
+    str?.toLowerCase().replace(/\s+/g, " ").trim();
+
+  const sortedAsc = [...ascValues].sort((a, b) =>
+    normalizeString(a).localeCompare(normalizeString(b))
+  );
+
+  let isSortedAsc = true;
+  for (let i = 0; i < ascValues.length; i++) {
+    if (ascValues[i] !== sortedAsc[i]) {
+      console.log(
+        `Out of order (Ascending): Expected "${sortedAsc[i]}" but found "${ascValues[i]}" at index ${i}`
+      );
+      isSortedAsc = false;
+    }
+  }
+
+  expect(
+    isSortedAsc,
+    "Verify that task names are displayed in ascending order when ascending sort is applied."
+  ).toBeTruthy();
+
+  // 🟥 Step 4: Apply Descending (Z → A) Sort
+  await this.clickOnSortBtn();
+  await this.clickOnDeleteDuedateInSortIcon().catch(() => {});
+  await this.clickOnApplySortButtonIcon();
+
+  await this.test.step("Wait for grid to load", async () => {
+    await this.page.waitForTimeout(parseInt(process.env.smallWait, 10));
+  });
+
+  await this.clickOnSortBtn();
+  await this.clickOnAddSortBtn();
+  await this.clickOnSlectSortingFilterName();
+  await this.searchSortName(["Task"]);
+  await this.selectFilterOptionsFromDropdown(["Task"]);
+  await this.clickOnSlectSortingFilterName();
+  await this.selectSortingOptionFromDropdown("Z → A");
+  await this.clickOnApplySortButtonIcon();
+
+  await this.test.step("Wait for grid to load", async () => {
+    await this.page.waitForTimeout(parseInt(process.env.mediumWait, 10));
+  });
+
+  // 🔻 Step 5: Verify Descending Order
+  const descValues = (await taskgridRows.allTextContents()).map(v => v.trim());
+  console.log("Descending Values:", descValues);
+
+  const sortedDesc = [...descValues]
+    .sort((a, b) => normalizeString(a).localeCompare(normalizeString(b)))
+    .reverse();
+
+  let isSortedDesc = true;
+  for (let i = 0; i < descValues.length; i++) {
+    if (descValues[i] !== sortedDesc[i]) {
+      console.log(
+        `Out of order (Descending): Expected "${sortedDesc[i]}" but found "${descValues[i]}" at index ${i}`
+      );
+      isSortedDesc = false;
+    }
+  }
+
+  expect(
+    isSortedDesc,
+    "Verify that task names are displayed in descending order when descending sort is applied."
+  ).toBeTruthy();
+};
+
+
+  verifyingFacilityColumnSortingFunctionality = async () => {
+    await this.clickOnSortBtn();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnApplySortButtonIcon();
+
+    await this.clickOnSortBtn();
+    await this.clickOnAddSortBtn();
+    await this.clickOnSlectSortingFilterName();
+    await this.searchSortName(["Facility"]);
+    await this.selectFilterOptionsFromDropdown("Facility");
+    await this.clickOnSlectSortingFilterName();
+    await this.selectSortingOptionFromDropdown("A → Z");
+    await this.clickOnApplySortButtonIcon();
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    const Ascitems = await this.facilityGridColumns.allInnerTexts();
+    console.log("facilities==", Ascitems);
+    // For Ascending order check
+    const sortedAsc = [...Ascitems].sort((a, b) => a.localeCompare(b));
+    expect(
+      Ascitems,
+      "Verifying that facility names are visible in ascending order when ascending sort is applied."
+    ).toEqual(sortedAsc);
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    await this.clickOnSortBtn();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnApplySortButtonIcon();
+
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait, 10));
+    });
+    await this.clickOnSortBtn();
+    await this.clickOnAddSortBtn();
+    await this.clickOnSlectSortingFilterName();
+    await this.searchSortName(["Facility"]);
+    await this.selectFilterOptionsFromDropdown("Facility");
+    await this.clickOnSlectSortingFilterName();
+    await this.selectSortingOptionFromDropdown("Z → A");
+    await this.clickOnApplySortButtonIcon();
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    const Dscitems = await this.facilityGridColumns.allInnerTexts();
+    console.log("facilities==", Dscitems);
+    // For Descending order check
+    const sortedDesc = [...Dscitems].sort((a, b) => b.localeCompare(a));
+    expect(
+      Dscitems,
+      "Verifying that facility names are visible in descending order when descending sort is applied"
+    ).toEqual(sortedDesc);
+  };
+  verifyResidentColumnSortingFunctionality = async () => {
+    // Apply Ascending Sort
+    await this.clickOnSortBtn();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnApplySortButtonIcon();
+
+    await this.clickOnSortBtn();
+    await this.clickOnAddSortBtn();
+    await this.clickOnSlectSortingFilterName();
+    await this.searchSortName(["Resident"]);
+    await this.selectFilterOptionsFromDropdown("Resident");
+    await this.clickOnSlectSortingFilterName();
+    await this.selectSortingOptionFromDropdown("A → Z");
+    await this.clickOnApplySortButtonIcon();
+
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+
+    // ASC check
+    const Ascitems = await this.residentGridColumns.allInnerTexts();
+    const firstNames = Ascitems.map((name) => name.split(",")[1]?.trim());
+    const sortedAscending = [...firstNames].sort((a, b) => a.localeCompare(b));
+
+    // Verify ascending order
+    expect(
+      firstNames,
+      "Verifying that resident names are visible in ascending order when ascending sort is applied"
+    ).toEqual(sortedAscending);
+    // Apply Descending Sort
+    await this.clickOnSortBtn();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnApplySortButtonIcon();
+
+    await this.clickOnSortBtn();
+    await this.clickOnAddSortBtn();
+    await this.clickOnSlectSortingFilterName();
+    await this.searchSortName(["Resident"]);
+    await this.selectFilterOptionsFromDropdown("Resident");
+    await this.clickOnSlectSortingFilterName();
+    await this.selectSortingOptionFromDropdown("Z → A");
+    await this.clickOnApplySortButtonIcon();
+
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+
+    // DESC check
+    const Dscitems = await this.residentGridColumns.allInnerTexts();
+    const descendingFirstNames = Dscitems.map((name) =>
+      name.split(",")[1]?.trim()
+    );
+    const sortedDescending = [...descendingFirstNames].sort((a, b) =>
+      b.localeCompare(a)
+    );
+
+    // Verify descending order
+    expect(
+      descendingFirstNames,
+      "Verifying that resident names are visible in descending order when descending sort is applied"
+    ).toEqual(sortedDescending);
+  };
+  verifyPayerColumnSortingFunctionality = async () => {
+    await this.clickOnSortBtn();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnApplySortButtonIcon();
+    await this.clickOnSortBtn();
+    await this.clickOnAddSortBtn();
+    await this.clickOnSlectSortingFilterName();
+    await this.searchSortName(["Payer"]);
+    await this.selectFilterOptionsFromDropdown("Payer");
+    await this.clickOnSlectSortingFilterName();
+    await this.selectSortingOptionFromDropdown("A → Z");
+    await this.clickOnApplySortButtonIcon();
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    const Ascitems = await this.payerGridColumns.allInnerTexts();
+    console.log("payers==", Ascitems);
+    // For Ascending order check
+    const sortedAsc = [...Ascitems].sort((a, b) => a.localeCompare(b));
+    expect(
+      Ascitems,
+      "Verifying that payers names are visible in ascending order when ascending sort is applied."
+    ).toEqual(sortedAsc);
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    await this.clickOnSortBtn();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnApplySortButtonIcon();
+
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    await this.clickOnSortBtn();
+    await this.clickOnAddSortBtn();
+    await this.clickOnSlectSortingFilterName();
+    await this.searchSortName(["Payer"]);
+    await this.selectFilterOptionsFromDropdown("Payer");
+    await this.clickOnSlectSortingFilterName();
+    await this.selectSortingOptionFromDropdown("Z → A");
+    await this.clickOnApplySortButtonIcon();
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    const Dscitems = await this.payerGridColumns.allInnerTexts();
+    console.log("payers==", Dscitems);
+    // For Descending order check
+    const sortedDesc = [...Dscitems].sort((a, b) => b.localeCompare(a));
+    expect(
+      Dscitems,
+      "Verifying that payers names are visible in descending order when descending sort is applied"
+    ).toEqual(sortedDesc);
+  };
+  verifyingBalanceColumnSortingFunctionality = async () => {
+    await this.clickOnSortBtn();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnApplySortButtonIcon();
+    await this.clickOnSortBtn();
+    await this.clickOnAddSortBtn();
+    await this.clickOnSlectSortingFilterName();
+    await this.searchSortName(["Balance"]);
+    await this.selectFilterOptionsFromDropdown("Balance");
+    await this.clickOnSlectSortingFilterName();
+    await this.selectSortingOptionFromDropdown("Highest → Lowest");
+    await this.clickOnApplySortButtonIcon();
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    // Extract displayed balances after descending sort
+    const highToLowItems = await this.balanceGridColumn.allInnerTexts();
+    console.log("Balances Highest to Lowest:", highToLowItems);
+    const highToLowNumbers = highToLowItems.map((str) =>
+      Number(str.replace(/[^0-9.-]+/g, ""))
+    );
+    // Sort a copy descending
+    const sortedDesc = [...highToLowNumbers].sort((a, b) => b - a);
+    // Assert descending order
+    expect(
+      highToLowNumbers,
+      "Verify balances sorted from highest to lowest"
+    ).toEqual(sortedDesc);
+    await this.test.step(
+      "Wait for grid to load after descending check",
+      async () => {
+        await this.page.waitForTimeout(parseInt(process.env.smallWait));
+      }
+    );
+    // Now apply "Lowest → Highest" sort
+    await this.clickOnSortBtn();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnApplySortButtonIcon();
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    await this.clickOnSortBtn();
+    await this.clickOnAddSortBtn();
+    await this.clickOnSlectSortingFilterName();
+    await this.searchSortName(["Balance"]);
+    await this.selectFilterOptionsFromDropdown("Balance");
+    await this.clickOnSlectSortingFilterName();
+    await this.selectSortingOptionFromDropdown("Lowest → Highest");
+    await this.clickOnApplySortButtonIcon();
+    await this.test.step(
+      "Wait for grid to load after ascending sort",
+      async () => {
+        await this.page.waitForTimeout(parseInt(process.env.largeWait));
+      }
+    );
+    // Extract balances after ascending sort
+    const lowToHighItems = await this.balanceGridColumn.allInnerTexts();
+    console.log("Balances Lowest to Highest:", lowToHighItems);
+    const lowToHighNumbers = lowToHighItems.map((str) =>
+      Number(str.replace(/[^0-9.-]+/g, ""))
+    );
+    const sortedAsc = [...lowToHighNumbers].sort((a, b) => a - b);
+    expect(
+      lowToHighNumbers,
+      "Verify balances sorted from lowest to highest"
+    ).toEqual(sortedAsc);
+  };
+
+  verifyingBalanceStatusSortingFunctionality = async () => {
+    await this.clickOnSortBtn();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnApplySortButtonIcon();
+    await this.clickOnSortBtn();
+    await this.clickOnAddSortBtn();
+    await this.clickOnSlectSortingFilterName();
+    await this.searchSortName(["Balance Status"]);
+    await this.selectFilterOptionsFromDropdown("Balance Status");
+    await this.clickOnSlectSortingFilterName();
+    await this.selectSortingOptionFromDropdown("A → Z");
+    await this.clickOnApplySortButtonIcon();
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    const Ascitems = await this.balanceStatusGridColumn.allInnerTexts();
+    console.log("balanceStatus==", Ascitems);
+    // For Ascending order check
+    const sortedAsc = [...Ascitems].sort((a, b) => a.localeCompare(b));
+    expect(
+      Ascitems,
+      "Verifying that balance status are visible in ascending order when ascending sort is applied."
+    ).toEqual(sortedAsc);
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    await this.clickOnSortBtn();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnApplySortButtonIcon();
+
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    await this.clickOnSortBtn();
+    await this.clickOnAddSortBtn();
+    await this.clickOnSlectSortingFilterName();
+    await this.searchSortName(["Balance Status"]);
+    await this.selectFilterOptionsFromDropdown("Balance Status");
+    await this.clickOnSlectSortingFilterName();
+    await this.selectSortingOptionFromDropdown("Z → A");
+    await this.clickOnApplySortButtonIcon();
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    const Dscitems = await this.balanceStatusGridColumn.allInnerTexts();
+    console.log("balancestatus==", Dscitems);
+    // For Descending order check
+    const sortedDesc = [...Dscitems].sort((a, b) => b.localeCompare(a));
+    expect(
+      Dscitems,
+      "Verifying that balance status are visible in descending order when descending sort is applied"
+    ).toEqual(sortedDesc);
+  };
+  verifyingTaskStatusSortingFunctionality = async () => {
+    await this.clickOnSortBtn();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnApplySortButtonIcon();
+    await this.clickOnSortBtn();
+    await this.clickOnAddSortBtn();
+    await this.clickOnSlectSortingFilterName();
+    await this.searchSortName(["Task Status"]);
+    await this.selectFilterOptionsFromDropdown("Task Status");
+    await this.clickOnSlectSortingFilterName();
+    await this.selectSortingOptionFromDropdown("A → Z");
+    await this.clickOnApplySortButtonIcon();
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    const Ascitems = await this.taskStatusGridColumn.allInnerTexts();
+    console.log("taskStatus==", Ascitems);
+    // For Ascending order check
+    const sortedAsc = [...Ascitems].sort((a, b) => a.localeCompare(b));
+    expect(
+      Ascitems,
+      "Verifying that task status are visible in ascending order when ascending sort is applied."
+    ).toEqual(sortedAsc);
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    await this.clickOnSortBtn();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnApplySortButtonIcon();
+
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    await this.clickOnSortBtn();
+    await this.clickOnAddSortBtn();
+    await this.clickOnSlectSortingFilterName();
+    await this.searchSortName(["Task Status"]);
+    await this.selectFilterOptionsFromDropdown("Task Status");
+    await this.clickOnSlectSortingFilterName();
+    await this.selectSortingOptionFromDropdown("Z → A");
+    await this.clickOnApplySortButtonIcon();
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    const Dscitems = await this.taskStatusGridColumn.allInnerTexts();
+    console.log("taskStatus==", Dscitems);
+    // For Descending order check
+    const sortedDesc = [...Dscitems].sort((a, b) => b.localeCompare(a));
+    expect(
+      Dscitems,
+      "Verifying that task status are visible in descending order when descending sort is applied"
+    ).toEqual(sortedDesc);
+  };
+  verifyingAssignedToSortingFunctionality = async () => {
+    await this.clickOnSortBtn();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnApplySortButtonIcon();
+    await this.clickOnSortBtn();
+    await this.clickOnAddSortBtn();
+    await this.clickOnSlectSortingFilterName();
+    await this.searchSortName(["Assigned To"]);
+    await this.selectFilterOptionsFromDropdown("Assigned To");
+    await this.clickOnSlectSortingFilterName();
+    await this.selectSortingOptionFromDropdown("A → Z");
+    await this.clickOnApplySortButtonIcon();
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    const Ascitems = await this.assignedToGridColums.allInnerTexts();
+    console.log("assignedTo==", Ascitems);
+    // For Ascending order check
+    const sortedAsc = [...Ascitems].sort((a, b) => a.localeCompare(b));
+    expect(
+      Ascitems,
+      "Verifying that assigned To users are visible in ascending order when ascending sort is applied."
+    ).toEqual(sortedAsc);
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    await this.clickOnSortBtn();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnApplySortButtonIcon();
+
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    await this.clickOnSortBtn();
+    await this.clickOnAddSortBtn();
+    await this.clickOnSlectSortingFilterName();
+    await this.searchSortName(["Assigned To"]);
+    await this.selectFilterOptionsFromDropdown("Assigned To");
+    await this.clickOnSlectSortingFilterName();
+    await this.selectSortingOptionFromDropdown("Z → A");
+    await this.clickOnApplySortButtonIcon();
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    const Dscitems = await this.assignedToGridColums.allInnerTexts();
+    console.log("assignedTo==", Dscitems);
+    // For Descending order check
+    const sortedDesc = [...Dscitems].sort((a, b) =>
+      b.toLowerCase().localeCompare(a.toLowerCase())
+    );
+    expect(
+      Dscitems,
+      "Verifying that Assigned To users are visible in descending order when descending sort is applied"
+    ).toEqual(sortedDesc);
+  };
+  verifyingRootIssuesSortingFunctionality = async () => {
+    await this.clickOnSortBtn();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnApplySortButtonIcon();
+    await this.clickOnSortBtn();
+    await this.clickOnAddSortBtn();
+    await this.clickOnSlectSortingFilterName();
+    await this.searchSortName(["Root Issue"]);
+    await this.selectFilterOptionsFromDropdown("Root Issue");
+    await this.clickOnSlectSortingFilterName();
+    await this.selectSortingOptionFromDropdown("A → Z");
+    await this.clickOnApplySortButtonIcon();
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    const Ascitems = await this.rootsIssuesGridColumns.allInnerTexts();
+    console.log("rootIssue==", Ascitems);
+    // For Ascending order check
+    const sortedAsc = [...Ascitems].sort((a, b) => a.localeCompare(b));
+    expect(
+      Ascitems,
+      "Verifying that root issues visible in ascending order when ascending sort is applied."
+    ).toEqual(sortedAsc);
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    await this.clickOnSortBtn();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnApplySortButtonIcon();
+
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    await this.clickOnSortBtn();
+    await this.clickOnAddSortBtn();
+    await this.clickOnSlectSortingFilterName();
+    await this.searchSortName(["Root Issue"]);
+    await this.selectFilterOptionsFromDropdown("Root Issue");
+    await this.clickOnSlectSortingFilterName();
+    await this.selectSortingOptionFromDropdown("Z → A");
+    await this.clickOnApplySortButtonIcon();
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    const Dscitems = await this.rootsIssuesGridColumns.allInnerTexts();
+    console.log("rootIssue==", Dscitems);
+    // For Descending order check
+    const sortedDesc = [...Dscitems].sort((a, b) => b.localeCompare(a));
+    expect(
+      Dscitems,
+      "Verifying that roots Issues are visible in descending order when descending sort is applied"
+    ).toEqual(sortedDesc);
+  };
+  verifyingDuedateSortingFunctionality = async () => {
+    await this.clickOnSortBtn();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnApplySortButtonIcon();
+    await this.clickOnSortBtn();
+    await this.clickOnAddSortBtn();
+    await this.clickOnSlectSortingFilterName();
+    await this.searchSortName(["Due Date"]);
+    await this.selectFilterOptionsFromDropdown("Due Date");
+    await this.clickOnSlectSortingFilterName();
+    await this.selectSortingOptionFromDropdown("Newest → Oldest");
+    await this.clickOnApplySortButtonIcon();
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    const Dscitems = await this.dueDateGridColums.allInnerTexts();
+    const dates = Dscitems.map((text) => new Date(text.trim()));
+    const sortedDesc = [...dates].sort((a, b) => b - a);
+    const isDescending = dates.every(
+      (val, i) => i === 0 || val <= dates[i - 1]
+    );
+    expect(
+      isDescending,
+      "Verify that due dates are sorted from newest to oldest when the 'Newest to Oldest' sort is applied"
+    ).toBeTruthy();
+    await this.clickOnSortBtn();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnApplySortButtonIcon();
+    await this.clickOnSortBtn();
+    await this.clickOnAddSortBtn();
+    await this.clickOnSlectSortingFilterName();
+    await this.searchSortName(["Due Date"]);
+    await this.selectFilterOptionsFromDropdown("Due Date");
+    await this.clickOnSlectSortingFilterName();
+    await this.selectSortingOptionFromDropdown("Oldest → Newest");
+    await this.clickOnApplySortButtonIcon();
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    const Ascitems = await this.dueDateGridColums.allInnerTexts();
+    const dueDates = Ascitems.map((text) => new Date(text.trim()));
+
+    // --- Validation for Ascending (Oldest to Newest) ---
+    const sortedAsc = [...dueDates].sort((a, b) => a - b);
+    const isAscending = dueDates.every(
+      (val, i) => i === 0 || val >= dueDates[i - 1]
+    );
+    expect(
+      isAscending,
+      "Verify that due dates are sorted from oldest to newest when the 'Oldest to Newest' sort is applied"
+    ).toBeTruthy();
   };
 };

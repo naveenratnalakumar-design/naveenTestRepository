@@ -2,7 +2,7 @@ const { test, expect } = require("@playwright/test");
 const sections = require("../pageObjects/UI_Pages/pageIndex");
 require("dotenv").config();
 
-test.describe("Verify data is populated correctly when the toggles are on and off", () => {
+test.describe("Verify data is populated correctly when the toggles are on and off on Aging Screen", () => {
     let page;
     test.beforeAll(async ({ browser }) => {
         const context = await browser.newContext();

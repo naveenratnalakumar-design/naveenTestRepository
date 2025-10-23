@@ -17,7 +17,7 @@ test.describe("Verify resident & Facility filters applied correctly on ViewTask 
     );
   });
 
-  test("@regression Validate Default Filters in Tracker Account", async () => {
+  test("Validate Default Filters in Tracker Account", async () => {
         const createTaskPage = new sections.CreateTaskPage(test, page);
         await createTaskPage.clickOnTaskList();
         const taskListPage = new sections.TaskListPage(test, page);

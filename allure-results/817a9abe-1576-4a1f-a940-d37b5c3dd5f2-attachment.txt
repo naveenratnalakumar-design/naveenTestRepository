@@ -1,0 +1,116 @@
+facilityHierarchyId== [
+  '148 Houston LLC', 'Abbey Woods',
+  'Abbey Woods',     'Aberdeen',
+  'Aberdeen',        'Abingdon',
+  'Abingdon',        'Abington',
+  'Abington',        'Abington',
+  'Abington',        'Abington',
+  'Abington',        'Abington'
+]
+facilityHierarchyId== [
+  'York',
+  'York',
+  'Yeadon',
+  'Yanceyville',
+  'Wyoming-First Hospital',
+  'Wright Rehab',
+  'Woodside',
+  'Woodside',
+  'Woodside',
+  'Woodside',
+  'Woodland Hills',
+  'Woodland',
+  'Woodbridge CC',
+  'Woodbridge'
+]
+lastNames== [
+  'Alfaro', 'Alfaro',
+  'Alfaro', 'Alfaro',
+  'Alfaro', 'Alfaro',
+  'Alfaro', 'Alfaro',
+  'Alfaro', 'Alfaro',
+  'Alfaro', 'Alfaro',
+  'Alfaro', 'Alfaro'
+]
+lastNames== [
+  'Wilhelm', 'Wilhelm',
+  'Wilhelm', 'Wilhelm',
+  'Wilhelm', 'Wilhelm',
+  'Wilhelm', 'Wilhelm',
+  'Wilhelm', 'Wilhelm',
+  'Wilhelm', 'Wilhelm',
+  'Wilhelm', 'Wilhelm'
+]
+firstNames== [
+  'Abigail', 'Abigail',
+  'Abigail', 'Abigail',
+  'Abigail', 'Abigail',
+  'Abigail', 'Abigail',
+  'Abigail', 'Abigail',
+  'Adam',    'Adam',
+  'Adam',    'Adam'
+]
+firstNames== [
+  'Vlad', 'Vlad', 'Vlad',
+  'Vlad', 'Vlad', 'Vlad',
+  'Vlad', 'Vlad', 'Vlad',
+  'Vlad', 'Vlad', 'Vlad',
+  'Vlad', 'Vlad'
+]
+email== [
+  'abc@test.com', 'abc@test.com',
+  'abc@test.com', 'abc@test.com',
+  'abc@test.com', 'abc@test.com',
+  'abc@test.com', 'abc@test.com',
+  'abc@test.com', 'abc@test.com',
+  'abc@test.com', 'abc@test.com',
+  'abc@test.com', 'abc@test.com'
+]
+email== [
+  'v-vsavkin@axgsolutions.com',
+  'v-vsavkin@axgsolutions.com',
+  'v-vsavkin@axgsolutions.com',
+  'v-vsavkin@axgsolutions.com',
+  'v-vsavkin@axgsolutions.com',
+  'v-vsavkin@axgsolutions.com',
+  'v-vsavkin@axgsolutions.com',
+  'v-vsavkin@axgsolutions.com',
+  'v-vsavkin@axgsolutions.com',
+  'v-vsavkin@axgsolutions.com',
+  'v-vsavkin@axgsolutions.com',
+  'v-vsavkin@axgsolutions.com',
+  'v-vsavkin@axgsolutions.com',
+  'v-vsavkin@axgsolutions.com'
+]
+createdOn== [
+  '10/17/2025 5:03 PM',
+  '10/16/2025 3:14 PM',
+  '10/16/2025 3:14 PM',
+  '10/16/2025 3:12 PM',
+  '10/16/2025 3:12 PM',
+  '10/14/2025 3:47 PM',
+  '10/14/2025 3:47 PM',
+  '10/14/2025 3:47 PM',
+  '10/14/2025 3:47 PM',
+  '10/14/2025 3:47 PM',
+  '10/14/2025 3:47 PM',
+  '10/14/2025 3:47 PM',
+  '10/13/2025 2:13 PM',
+  '10/13/2025 2:12 PM'
+]
+createdOn== [
+  '1/1/0001 5:53 AM',
+  '1/1/0001 5:53 AM',
+  '1/1/0001 5:53 AM',
+  '1/1/0001 5:53 AM',
+  '1/1/0001 5:53 AM',
+  '1/1/0001 5:53 AM',
+  '1/1/0001 5:53 AM',
+  '1/1/0001 5:53 AM',
+  '1/1/0001 5:53 AM',
+  '1/1/0001 5:53 AM',
+  '1/1/0001 5:53 AM',
+  '1/1/0001 5:53 AM',
+  '1/1/0001 5:53 AM',
+  '5/28/2025 11:25 PM'
+]

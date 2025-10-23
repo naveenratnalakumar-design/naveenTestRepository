@@ -1,0 +1,21 @@
+Ascending Values: [
+  '$<⁌⟪௹Đ‖®⁜⁜⁜⁜⁜',
+  '$F{U(n_T@i!m~e+SĐ௹§※⁕⁂⁑⁎№⁔⁀',
+  `(|testing&"Sun"['Fun']|)`,
+  '(|Testing,"Sun"|)',
+  '(ActivityL?@$ogT)|imeSta<mpCh>eck',
+  '(Sun)|¥₹£₨-West is best placeⅠ⋂⋈',
+  ')(DnneeclltCreateAssiStaff',
+  '^!~Testing@sample~!@',
+  '^&*(ZTaskNew1',
+  '^()[]{}<>?/|\\~!@#$%^&*()Task___--------',
+  '{!ZnewTask',
+  '~New Task12345',
+  '+%1234~!@#$%',
+  '11-07-2025tASK(1)'
+]
+Out of order: "$F{U(n_T@i!m~e+SĐ௹§※⁕⁂⁑⁎№⁔⁀" > "(|testing&"Sun"['Fun']|)"
+Out of order: "(|testing&"Sun"['Fun']|)" > "(|Testing,"Sun"|)"
+Out of order: "^&*(ZTaskNew1" > "^()[]{}<>?/|\~!@#$%^&*()Task___--------"
+Out of order: "^()[]{}<>?/|\~!@#$%^&*()Task___--------" > "{!ZnewTask"
+Out of order: "~New Task12345" > "+%1234~!@#$%"

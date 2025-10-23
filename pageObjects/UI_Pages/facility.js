@@ -7,6 +7,12 @@ const randomPickPayerCategories =
       Math.random() * test_Data.RevflowData.OverridePayerCategories.length
     )
   ];
+const randomFacilityNames =
+  test_Data.RevflowData.TaskListPage.facilityOptions[
+    Math.floor(
+      Math.random() * test_Data.RevflowData.TaskListPage.facilityOptions.length
+    )
+  ];
 exports.FacilityPage = class FacilityPage {
   constructor(test, page) {
     this.test = test;
@@ -138,10 +144,9 @@ exports.FacilityPage = class FacilityPage {
       await this.page.waitForTimeout(parseInt(process.env.mediumWait));
     });
     await this.clickOnFacilityFilterDropdown();
-    await this.searchFilterName([
-      test_Data.RevflowData.facilityPagedata.facilityName,
-    ]);
-    await this.selectFacilityFilterOptions();
+    await this.searchFilterName([test_Data.RevflowData.facilityPagedata.facilityName]);
+    // await this.selectFacilityFilterOptions();
+    await this.page.keyboard.press('Enter')
     await this.clickOnApplyButton();
     await this.test.step("The Page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.mediumWait));
@@ -155,8 +160,8 @@ exports.FacilityPage = class FacilityPage {
     await this.test.step("The Page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.largeWait));
     });
-    let facilityTxt = "Regal Heights";
-    let payerTxt = "Zzrespite";
+    let facilityTxt =test_Data.RevflowData.facilityPagedata.facilityName;
+    let payerTxt = test_Data.RevflowData.facilityPagedata.payerName;
     await expect(
       this.FacilityPayergrid(facilityTxt),
       "Verifying the FacilityName is correctly displayed on the Facility-Payer grid after applying the filter"

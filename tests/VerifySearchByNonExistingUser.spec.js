@@ -14,7 +14,7 @@ test.describe("Verify that the Error Message is displayed when searching for a N
       [process.env.password]
     );
   });
-  test("Verify search by non-existing user", async () => {
+  test("@regression Verify search by non-existing user", async () => {
     const userManagementPage = new sections.UserManagementPage(test, page);
     await userManagementPage.verifySearchByNonExistingUser();
   });
