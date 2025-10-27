@@ -55,20 +55,17 @@ jobs:
             echo "<h2>No Playwright report found.</h2>" > playwright-report/index.html
           fi
 
-      - name: Send Email with Playwright Report
-        uses: dawidd6/action-send-mail@v6
+      - name: Send Email with Playwright Report via SendGrid
+        uses: licenseware/send-email-notification@v1
         with:
-          server_address: smtp.office365.com
-          server_port: 587
-          username: ${{ secrets.MAIL_USERNAME }}
-          password: ${{ secrets.MAIL_PASSWORD }}
+          api-key: ${{ secrets.SENDGRID_API_KEY }}
           subject: Apex Automated Tests Report - ${{ needs.test.outputs.conclusion }}
-          to: SRongali@axgsolutions.com,vgaikawad@axgsolutions.com
-          from: QA Automation <${{ secrets.MAIL_USERNAME }}>
-          html_body: file://playwright-report/index.html
+          from-email: your_verified_sendgrid@yourdomain.com
+          to-email: SRongali@axgsolutions.com,vgaikawad@axgsolutions.com
+          markdown-body: |
+            # Apex Automated Tests
+            The Playwright report is attached.
           attachments: |
             playwright-report/index.html
             playwright-report/**/*.html
             playwright-report/**/*.zip
-          secure: false      # 👈 Use STARTTLS instead of implicit SSL
-          ignore_cert: true  # Optional: prevents cert chain issues (safe in CI)
