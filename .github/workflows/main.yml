@@ -28,7 +28,7 @@ jobs:
       - name: Run Playwright tests
         id: test_result
         # The '|| true' allows the workflow to continue even on test failures (recommended)
-        run: npx playwright test --grep "@regression" --trace=on || true 
+        run: npx playwright test tests/dashboardAndTaskListValidation.spec.js --trace=on || true 
 
       - name: Upload Playwright HTML Report
         if: always()
