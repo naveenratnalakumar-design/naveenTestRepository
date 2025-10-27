@@ -66,6 +66,6 @@ jobs:
           from: QA Automation <${{ secrets.MAIL_USERNAME }}>
           html_body: file://playwright-report/playwright-report/index.html
           attachments: |
-            playwright-report/*.png
-            playwright-report/data/*
+            playwright-report/playwright-report/*.png
+            playwright-report/playwright-report/data/*
           secure: true
