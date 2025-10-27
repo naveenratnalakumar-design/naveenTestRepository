@@ -65,7 +65,8 @@ jobs:
           # --- SMTP Configuration (Using Office 365 as specified) ---
           server_address: smtp.office365.com
           server_port: 587
-          secure: true # Use 'true' with port 587 for STARTTLS (Office365 standard)
+           # FIX: Changed 'secure: true' to 'secure: false' for STARTTLS on port 587
+          secure: false 
           
           # --- Authentication ---
           username: ${{ secrets.MAIL_USERNAME }}
