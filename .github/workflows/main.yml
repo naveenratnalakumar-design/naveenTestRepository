@@ -64,7 +64,7 @@ jobs:
           subject: Apex Automated Tests Report - ${{ needs.test.result }}
           to: SRongali@axgsolutions.com,vgaikawad@axgsolutions.com
           from: QA Automation <${{ secrets.MAIL_USERNAME }}>
-          html_body: file://playwright-report/index.html
+          html_body: file://playwright-report/playwright-report/index.html
           attachments: |
             playwright-report/*.png
             playwright-report/data/*
