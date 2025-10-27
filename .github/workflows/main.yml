@@ -55,17 +55,20 @@ jobs:
             echo "<h2>No Playwright report found.</h2>" > playwright-report/index.html
           fi
 
+      - name: List Report Attachments
+        id: list_attachments
+        run: |
+          REPORTS=$(find playwright-report -type f \( -name "*.html" -o -name "*.zip" \) | tr '\n' ',' | sed 's/,$//')
+          echo "attachments=$REPORTS" >> "$GITHUB_OUTPUT"
+
       - name: Send Email with Playwright Report via SendGrid
         uses: licenseware/send-email-notification@v1
         with:
           api-key: ${{ secrets.SENDGRID_API_KEY }}
           subject: Apex Automated Tests Report - ${{ needs.test.outputs.conclusion }}
-          from-email: your_verified_sendgrid@yourdomain.com
+          from-email: ${{ secrets.MAIL_USERNAME }}
           to-email: SRongali@axgsolutions.com,vgaikawad@axgsolutions.com
           markdown-body: |
             # Apex Automated Tests
             The Playwright report is attached.
-          attachments: |
-            playwright-report/index.html
-            playwright-report/**/*.html
-            playwright-report/**/*.zip
+          attachments: ${{ steps.list_attachments.outputs.attachments }}
