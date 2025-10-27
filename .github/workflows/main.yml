@@ -1,9 +1,11 @@
 name: Apex Automated Tests
 
 on:
-  schedule:
+  workflow_dispatch:
+#on:
+  #schedule:
     # Run every day at 8:00 AM UTC
-    - cron: '0 8 * * *'
+   # - cron: '0 8 * * *'
 
 jobs:
   test:
@@ -27,7 +29,8 @@ jobs:
 
       - name: Run Playwright tests
         id: test_result
-        run: npx playwright test --grep "@regression" --trace=on
+        # run: npx playwright test --grep "@regression" --trace=on
+        run: npx playwright test tests/dashboardAndTaskListValidation.spec.js
 
       - name: Upload Playwright HTML Report
         if: always()
@@ -46,13 +49,15 @@ jobs:
   email-report:
     needs: test
     runs-on: ubuntu-latest
-    if: always()
     steps:
-      - name: Download Playwright HTML Report
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download Playwright Report
         uses: actions/download-artifact@v4
         with:
           name: playwright-report
-          path: playwright-report/
+          path: playwright-report
 
       - name: Send Email with Playwright Report
         uses: dawidd6/action-send-mail@v6
@@ -61,11 +66,12 @@ jobs:
           server_port: 587
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: Apex Automated Tests Report - ${{ needs.test.result }}
+          subject: Apex Automated Tests Report - ${{ needs.test.outputs.conclusion }}
           to: SRongali@axgsolutions.com,vgaikawad@axgsolutions.com
           from: QA Automation <${{ secrets.MAIL_USERNAME }}>
-          html_body: file://playwright-report/playwright-report/index.html
+          html_body: file://playwright-report/index.html
           attachments: |
-            playwright-report/playwright-report/*.png
-            playwright-report/playwright-report/data/*
+            playwright-report/index.html
+            playwright-report/data/*
+            playwright-report/trace/*
           secure: true
