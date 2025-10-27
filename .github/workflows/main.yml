@@ -70,4 +70,5 @@ jobs:
             playwright-report/index.html
             playwright-report/**/*.html
             playwright-report/**/*.zip
-          secure: true
+          secure: false      # 👈 Use STARTTLS instead of implicit SSL
+          ignore_cert: true  # Optional: prevents cert chain issues (safe in CI)
