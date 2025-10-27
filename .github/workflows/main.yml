@@ -58,7 +58,7 @@ jobs:
       - name: List Report Attachments
         id: list_attachments
         run: |
-          REPORTS=$(find playwright-report -type f \( -name "*.html" -o -name "*.zip" \) | tr '\n' ',' | sed 's/,$//')
+          REPORTS=$(find playwright-report -type f | paste -sd "," -)
           echo "attachments=$REPORTS" >> "$GITHUB_OUTPUT"
 
       - name: Send Email with Playwright Report via SendGrid
