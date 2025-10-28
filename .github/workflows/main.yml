@@ -42,19 +42,38 @@ jobs:
           name: test-results
           path: test-results/
 
-      # Send Email Notification via SendGrid
       - name: Send Email via SendGrid
         if: always()
-        uses: peter-evans/sendgrid-action@v1
-        with:
-          api_key: ${{ secrets.SENDGRID_API_KEY }}
-          from: ${{ secrets.MAIL_USERNAME }}
-          to: "SRongali@axgsolutions.com, anotheruser@yourdomain.com"
-          subject: "Apex Automated Tests - ${{ job.status }}"
-          content: |
-            <h2 style="color:${{ job.status == 'success' && 'green' || 'red' }}">Apex Automated Tests: ${{ job.status }}</h2>
+        run: |
+          npm install @sendgrid/mail
+          node <<'EOF'
+          const sgMail = require('@sendgrid/mail');
+          sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
+          const status = '${{ job.status }}';
+          const color = status === 'success' ? 'green' : 'red';
+          const html = `
+            <h2 style="color:${color}">Apex Automated Tests: ${status}</h2>
             <p><strong>Date:</strong> ${{ github.event.head_commit.timestamp }}</p>
             <p>Workflow: ${{ github.workflow }}</p>
             <p>Branch: ${{ github.ref_name }}</p>
-            <p>Commit: <a href="https://github.com/${{ github.repository }}/commit/${{ github.sha }}"> ${{ github.sha }} </a></p>
+            <p>Commit: <a href="https://github.com/${{ github.repository }}/commit/${{ github.sha }}"> ${{ github.sha }}</a></p>
             <p>Check the full HTML report in the workflow artifacts.</p>
+          `;
+
+          const msg = {
+            to: ['SRongali@axgsolutions.com', 'vgaikawad@axgsolutions.com'], // multiple emails supported
+            from: ${{ secrets.MAIL_USERNAME }} // must be verified sender in SendGrid
+            subject: `Apex Automated Tests - ${status}`,
+            html,
+          };
+
+          sgMail.send(msg)
+            .then(() => console.log('✅ Email sent successfully'))
+            .catch(err => {
+              console.error('❌ Failed to send email:', err.response?.body || err);
+              process.exit(1);
+            });
+          EOF
+        env:
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
