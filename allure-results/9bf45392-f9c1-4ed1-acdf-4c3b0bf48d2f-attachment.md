@@ -1,0 +1,302 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - navigation [ref=e5]:
+    - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+      - /url: /
+      - img "Revflow logo" [ref=e7] [cursor=pointer]
+      - img "Revflow" [ref=e9] [cursor=pointer]
+    - generic [ref=e11]:
+      - link "Dashboard" [ref=e13] [cursor=pointer]:
+        - /url: /dashboard
+        - img [ref=e16] [cursor=pointer]
+        - generic [ref=e18] [cursor=pointer]: Dashboard
+      - link "Task List" [ref=e20] [cursor=pointer]:
+        - /url: /tasks
+        - img [ref=e23] [cursor=pointer]
+        - generic [ref=e25] [cursor=pointer]: Task List
+      - link "AR Aging" [ref=e27] [cursor=pointer]:
+        - /url: /ar-aging
+        - img [ref=e30] [cursor=pointer]
+        - generic [ref=e32] [cursor=pointer]: AR Aging
+      - link "Settings" [ref=e34] [cursor=pointer]:
+        - /url: /settings
+        - img [ref=e37] [cursor=pointer]
+        - generic [ref=e40] [cursor=pointer]: Settings
+        - img [ref=e43] [cursor=pointer]
+    - button [ref=e49] [cursor=pointer]:
+      - img [ref=e53] [cursor=pointer]
+  - generic [ref=e55]:
+    - generic [ref=e56]:
+      - generic [ref=e61]:
+        - img [ref=e64]
+        - textbox "Search for a Case" [ref=e66]
+      - generic [ref=e67]:
+        - button "Selected Facilities (35)" [ref=e69] [cursor=pointer]:
+          - text: Selected Facilities (35)
+          - img [ref=e72] [cursor=pointer]
+        - img [ref=e78]
+        - button "AT" [ref=e81] [cursor=pointer]:
+          - generic [ref=e84] [cursor=pointer]: AT
+          - img [ref=e87] [cursor=pointer]
+    - generic [ref=e90]:
+      - generic [ref=e91]:
+        - heading "Tasks" [level=2] [ref=e94]
+        - generic [ref=e96]:
+          - button "Sort (1)" [active] [ref=e98] [cursor=pointer]:
+            - generic [ref=e99] [cursor=pointer]:
+              - text: Sort
+              - generic [ref=e100] [cursor=pointer]: (1)
+            - img [ref=e103] [cursor=pointer]
+          - button "Filters" [ref=e106] [cursor=pointer]:
+            - img [ref=e109] [cursor=pointer]
+            - generic [ref=e111] [cursor=pointer]: Filters
+          - button "Reset to Default" [ref=e113] [cursor=pointer]:
+            - generic [ref=e114] [cursor=pointer]:
+              - text: Reset to Default
+              - img [ref=e117] [cursor=pointer]
+      - generic [ref=e121]:
+        - generic [ref=e124]:
+          - generic [ref=e125]: "5853"
+          - text: Results
+        - generic [ref=e127]:
+          - generic [ref=e131] [cursor=pointer]: Task
+          - generic [ref=e136] [cursor=pointer]: Facility
+          - generic [ref=e141] [cursor=pointer]: Resident
+          - generic [ref=e146] [cursor=pointer]: Payer
+          - generic [ref=e151] [cursor=pointer]: Balance
+          - generic [ref=e156] [cursor=pointer]: Balance Status
+          - generic [ref=e161] [cursor=pointer]: Due Date
+          - generic [ref=e166] [cursor=pointer]: Task Status
+          - generic [ref=e171] [cursor=pointer]: Assigned To
+          - generic [ref=e175] [cursor=pointer]:
+            - generic [ref=e176] [cursor=pointer]: Root Issue
+            - button [ref=e178] [cursor=pointer]:
+              - img [ref=e181] [cursor=pointer]
+        - generic [ref=e188]:
+          - generic [ref=e190]:
+            - link "Task" [ref=e194] [cursor=pointer]
+            - generic [ref=e198]: Highland Care
+            - link "Scott, Garfield" [ref=e202] [cursor=pointer]:
+              - /url: /cases/details/4228592
+            - generic [ref=e206]: Emblem Health
+            - generic [ref=e210]: (897.35)
+            - generic [ref=e214]:
+              - img [ref=e217]
+              - generic [ref=e219]: Unworked
+            - generic [ref=e223]: 10/27/2025
+            - generic [ref=e228]: Not Started
+            - generic [ref=e232]:
+              - generic [ref=e237]: VG
+              - generic [ref=e238]: Vikesh Gaikawad
+            - generic [ref=e242]: Unknown
+          - generic [ref=e244]:
+            - link "Task" [ref=e248] [cursor=pointer]
+            - generic [ref=e252]: Highland Care
+            - link "Scott, Garfield" [ref=e256] [cursor=pointer]:
+              - /url: /cases/details/4228592
+            - generic [ref=e260]: Emblem Health
+            - generic [ref=e264]: (951.45)
+            - generic [ref=e268]:
+              - img [ref=e271]
+              - generic [ref=e273]: Unworked
+            - generic [ref=e277]: 10/27/2025
+            - generic [ref=e282]: Not Started
+            - generic [ref=e286]:
+              - generic [ref=e291]: VG
+              - generic [ref=e292]: Vikesh Gaikawad
+            - generic [ref=e296]: Unknown
+          - generic [ref=e298]:
+            - link "Task" [ref=e302] [cursor=pointer]
+            - generic [ref=e306]: Highland Care
+            - link "Mancuso, Cynthia" [ref=e310] [cursor=pointer]:
+              - /url: /cases/details/4229599
+            - generic [ref=e314]: NY Medicaid
+            - generic [ref=e318]: (418.00)
+            - generic [ref=e322]:
+              - img [ref=e325]
+              - generic [ref=e327]: Unworked
+            - generic [ref=e331]: 10/27/2025
+            - generic [ref=e336]: Not Started
+            - generic [ref=e340]:
+              - generic [ref=e345]: OS
+              - generic [ref=e346]: Orest Shpak
+            - generic [ref=e350]: Unknown
+          - generic [ref=e352]:
+            - link "Task" [ref=e356] [cursor=pointer]
+            - generic [ref=e360]: Highland Care
+            - link "Mancuso, Cynthia" [ref=e364] [cursor=pointer]:
+              - /url: /cases/details/4229599
+            - generic [ref=e368]: NY Medicaid
+            - generic [ref=e372]: (418.00)
+            - generic [ref=e376]:
+              - img [ref=e379]
+              - generic [ref=e381]: Unworked
+            - generic [ref=e385]: 10/27/2025
+            - generic [ref=e390]: Not Started
+            - generic [ref=e394]:
+              - generic [ref=e399]: OS
+              - generic [ref=e400]: Orest Shpak
+            - generic [ref=e404]: Unknown
+          - generic [ref=e406]:
+            - link "Task" [ref=e410] [cursor=pointer]
+            - generic [ref=e414]: Highland Care
+            - link "Mancuso, Cynthia" [ref=e418] [cursor=pointer]:
+              - /url: /cases/details/4229599
+            - generic [ref=e422]: Health First MCR
+            - generic [ref=e426]: (14.83)
+            - generic [ref=e430]:
+              - img [ref=e433]
+              - generic [ref=e435]: Unworked
+            - generic [ref=e439]: 10/27/2025
+            - generic [ref=e444]: Not Started
+            - generic [ref=e448]:
+              - generic [ref=e453]: VG
+              - generic [ref=e454]: Vikesh Gaikawad
+            - generic [ref=e458]: Unknown
+          - generic [ref=e460]:
+            - link "Task" [ref=e464] [cursor=pointer]
+            - generic [ref=e468]: Achieve
+            - link "Denieff, Michelle" [ref=e472] [cursor=pointer]:
+              - /url: /cases/details/4229636
+            - generic [ref=e476]: Medicare
+            - generic [ref=e480]: (11,038.40)
+            - generic [ref=e484]:
+              - img [ref=e487]
+              - generic [ref=e489]: Unworked
+            - generic [ref=e493]: 10/27/2025
+            - generic [ref=e498]: Not Started
+            - generic [ref=e502]:
+              - generic [ref=e507]: MF
+              - generic [ref=e508]: Malki Feinroth
+            - generic [ref=e512]: Unknown
+          - generic [ref=e514]:
+            - link "Task" [ref=e518] [cursor=pointer]
+            - generic [ref=e522]: Achieve
+            - link "Denieff, Michelle" [ref=e526] [cursor=pointer]:
+              - /url: /cases/details/4229636
+            - generic [ref=e530]: Medicare
+            - generic [ref=e534]: (14,021.91)
+            - generic [ref=e538]:
+              - img [ref=e541]
+              - generic [ref=e543]: Unworked
+            - generic [ref=e547]: 10/27/2025
+            - generic [ref=e552]: Not Started
+            - generic [ref=e556]:
+              - generic [ref=e561]: MF
+              - generic [ref=e562]: Malki Feinroth
+            - generic [ref=e566]: Unknown
+          - generic [ref=e568]:
+            - link "Task" [ref=e572] [cursor=pointer]
+            - generic [ref=e576]: Achieve
+            - link "Denieff, Michelle" [ref=e580] [cursor=pointer]:
+              - /url: /cases/details/4229636
+            - generic [ref=e584]: Medicare
+            - generic [ref=e588]: 11,038.40
+            - generic [ref=e592]:
+              - img [ref=e595]
+              - generic [ref=e597]: Unworked
+            - generic [ref=e601]: 10/27/2025
+            - generic [ref=e606]: Not Started
+            - generic [ref=e610]:
+              - generic [ref=e615]: MF
+              - generic [ref=e616]: Malki Feinroth
+            - generic [ref=e620]: Unknown
+          - generic [ref=e622]:
+            - link "Task" [ref=e626] [cursor=pointer]
+            - generic [ref=e630]: Achieve
+            - link "Denieff, Michelle" [ref=e634] [cursor=pointer]:
+              - /url: /cases/details/4229636
+            - generic [ref=e638]: Medicare
+            - generic [ref=e642]: 14,021.91
+            - generic [ref=e646]:
+              - img [ref=e649]
+              - generic [ref=e651]: Unworked
+            - generic [ref=e655]: 10/27/2025
+            - generic [ref=e660]: Not Started
+            - generic [ref=e664]:
+              - generic [ref=e669]: MF
+              - generic [ref=e670]: Malki Feinroth
+            - generic [ref=e674]: Unknown
+          - generic [ref=e676]:
+            - link "Task" [ref=e680] [cursor=pointer]
+            - generic [ref=e684]: Highland Care
+            - link "Clermont, Guy" [ref=e688] [cursor=pointer]:
+              - /url: /cases/details/4229666
+            - generic [ref=e692]: NY Medicaid
+            - generic [ref=e696]: (369.95)
+            - generic [ref=e700]:
+              - img [ref=e703]
+              - generic [ref=e705]: Unworked
+            - generic [ref=e709]: 10/27/2025
+            - generic [ref=e714]: Not Started
+            - generic [ref=e718]:
+              - generic [ref=e723]: OS
+              - generic [ref=e724]: Orest Shpak
+            - generic [ref=e728]: Unknown
+          - generic [ref=e730]:
+            - link "Task" [ref=e734] [cursor=pointer]
+            - generic [ref=e738]: Achieve
+            - link "Hogan, William" [ref=e742] [cursor=pointer]:
+              - /url: /cases/details/4230347
+            - generic [ref=e746]: Aetna MCR
+            - generic [ref=e750]: (56.01)
+            - generic [ref=e754]:
+              - img [ref=e757]
+              - generic [ref=e759]: Unworked
+            - generic [ref=e763]: 10/27/2025
+            - generic [ref=e768]: Not Started
+            - generic [ref=e772]:
+              - generic [ref=e777]: VG
+              - generic [ref=e778]: Vikesh Gaikawad
+            - generic [ref=e782]: Unknown
+          - generic [ref=e784]:
+            - link "Task" [ref=e788] [cursor=pointer]
+            - generic [ref=e792]: Achieve
+            - link "Hogan, William" [ref=e796] [cursor=pointer]:
+              - /url: /cases/details/4230347
+            - generic [ref=e800]: NY Medicaid Pending
+            - generic [ref=e804]: (1,131.30)
+            - generic [ref=e808]:
+              - img [ref=e811]
+              - generic [ref=e813]: Unworked
+            - generic [ref=e817]: 10/27/2025
+            - generic [ref=e822]: Not Started
+            - generic [ref=e826]:
+              - generic [ref=e831]: MF
+              - generic [ref=e832]: Malki Feinroth
+            - generic [ref=e836]: Unknown
+          - generic [ref=e838]:
+            - link "Task" [ref=e842] [cursor=pointer]
+            - generic [ref=e846]: Achieve
+            - link "Scott, Jason" [ref=e850] [cursor=pointer]:
+              - /url: /cases/details/4231095
+            - generic [ref=e854]: Fidelis LT
+            - generic [ref=e858]: (528.96)
+            - generic [ref=e862]:
+              - img [ref=e865]
+              - generic [ref=e867]: Unworked
+            - generic [ref=e871]: 10/27/2025
+            - generic [ref=e876]: Not Started
+            - generic [ref=e880]:
+              - generic [ref=e885]: VG
+              - generic [ref=e886]: Vikesh Gaikawad
+            - generic [ref=e890]: Unknown
+          - generic [ref=e892]:
+            - link "Task" [ref=e896] [cursor=pointer]
+            - generic [ref=e900]: Highland Care
+            - link "Wheat, Paulette" [ref=e904] [cursor=pointer]:
+              - /url: /cases/details/4231940
+            - generic [ref=e908]: United Healthcare Commercial
+            - generic [ref=e912]: (1,085.50)
+            - generic [ref=e916]:
+              - img [ref=e919]
+              - generic [ref=e921]: Unworked
+            - generic [ref=e925]: 10/27/2025
+            - generic [ref=e930]: Not Started
+            - generic [ref=e934]:
+              - generic [ref=e939]: VG
+              - generic [ref=e940]: Vikesh Gaikawad
+            - generic [ref=e944]: Unknown
+```

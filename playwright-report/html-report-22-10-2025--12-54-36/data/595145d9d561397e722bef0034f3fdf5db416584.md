@@ -1,0 +1,321 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Revflow logo" [ref=e7] [cursor=pointer]
+        - img "Revflow" [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link "Task List" [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link "AR Aging" [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - link "Settings" [ref=e34] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e37] [cursor=pointer]
+          - generic [ref=e40] [cursor=pointer]: Settings
+          - img [ref=e43] [cursor=pointer]
+      - button [ref=e49] [cursor=pointer]:
+        - img [ref=e53] [cursor=pointer]
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - generic [ref=e61]:
+          - img [ref=e64]
+          - textbox "Search for a Case" [ref=e66]
+        - generic [ref=e67]:
+          - button "Selected Facilities (13)" [ref=e69] [cursor=pointer]:
+            - text: Selected Facilities (13)
+            - img [ref=e72] [cursor=pointer]
+          - img [ref=e78]
+          - button "KK" [ref=e81] [cursor=pointer]:
+            - generic [ref=e84] [cursor=pointer]: KK
+            - img [ref=e87] [cursor=pointer]
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - heading "Tasks" [level=2] [ref=e94]
+          - generic [ref=e96]:
+            - button "Sort" [ref=e98] [cursor=pointer]:
+              - generic [ref=e99] [cursor=pointer]: Sort
+              - img [ref=e102] [cursor=pointer]
+            - button "Filters" [expanded] [ref=e105] [cursor=pointer]:
+              - img [ref=e108] [cursor=pointer]
+              - generic [ref=e110] [cursor=pointer]: Filters
+            - button "Reset to Default" [ref=e112] [cursor=pointer]:
+              - generic [ref=e113] [cursor=pointer]:
+                - text: Reset to Default
+                - img [ref=e116] [cursor=pointer]
+        - generic [ref=e120]:
+          - generic [ref=e123]:
+            - generic [ref=e124]: "1936"
+            - text: Results
+          - generic [ref=e126]:
+            - generic [ref=e130] [cursor=pointer]: Task
+            - generic [ref=e135] [cursor=pointer]: Facility
+            - generic [ref=e140] [cursor=pointer]: Resident
+            - generic [ref=e145] [cursor=pointer]: Payer
+            - generic [ref=e150] [cursor=pointer]: Balance
+            - generic [ref=e155] [cursor=pointer]: Balance Status
+            - generic [ref=e160] [cursor=pointer]: Due Date
+            - generic [ref=e165] [cursor=pointer]: Task Status
+            - generic [ref=e170] [cursor=pointer]: Assigned To
+            - generic [ref=e175] [cursor=pointer]: Root Issue
+          - generic [ref=e181]:
+            - generic [ref=e183]:
+              - link "DailyTaskCreation(11-09-2025)-Task-1story(1144)" [ref=e187] [cursor=pointer]
+              - generic [ref=e191]: Caring Heart
+              - link "Washington, Ruby" [ref=e195] [cursor=pointer]:
+                - /url: /cases/details/3574400
+              - generic [ref=e199]: Social Security
+              - generic [ref=e203]: "0.00"
+              - generic [ref=e207]:
+                - img [ref=e210]
+                - generic [ref=e212]: Paid Status
+              - generic [ref=e216]: 10/16/2025
+              - generic [ref=e221]: Not Started
+              - generic [ref=e225]:
+                - generic [ref=e230]: KK
+                - generic [ref=e231]: Kesavarao Karri
+              - generic [ref=e235]: Invalid NPI
+            - generic [ref=e237]:
+              - link "CreateTaskARW-1292" [ref=e241] [cursor=pointer]
+              - generic [ref=e245]: Caring Heart
+              - link "Halstead, Carolyn" [ref=e249] [cursor=pointer]:
+                - /url: /cases/details/3574404
+              - generic [ref=e253]: Medicare
+              - generic [ref=e259]:
+                - img [ref=e262]
+                - generic [ref=e264]: Rejected
+              - generic [ref=e268]: 9/10/2025
+              - generic [ref=e273]: In Progress
+              - generic [ref=e277]:
+                - generic [ref=e282]: KK
+                - generic [ref=e283]: Keshava Karri
+              - generic [ref=e287]: Invalid NPI
+            - generic [ref=e289]:
+              - link "Tasknew" [ref=e293] [cursor=pointer]
+              - generic [ref=e297]: Gulfport
+              - link "Cormier, Christine" [ref=e301] [cursor=pointer]:
+                - /url: /cases/details/2073408
+              - generic [ref=e305]: Aarp
+              - generic [ref=e311]:
+                - img [ref=e314]
+                - generic [ref=e316]: Denied
+              - generic [ref=e320]: 8/31/2025
+              - generic [ref=e325]: In Progress
+              - generic [ref=e329]:
+                - generic [ref=e334]: VG
+                - generic [ref=e335]: Vikesh Gaikawad
+              - generic [ref=e339]: Missing Cont. Auth
+            - generic [ref=e341]:
+              - link "TaskNegativeCharge" [ref=e345] [cursor=pointer]
+              - generic [ref=e349]: Achieve
+              - link "Jennings, Brenda" [ref=e353] [cursor=pointer]:
+                - /url: /cases/details/4210440
+              - generic [ref=e357]: Mvp Lt
+              - generic [ref=e361]: "30.07"
+              - generic [ref=e365]:
+                - img [ref=e368]
+                - generic [ref=e370]: Unbilled
+              - generic [ref=e374]: 8/31/2025
+              - generic [ref=e379]: In Progress
+              - generic [ref=e383]:
+                - generic [ref=e388]: KK
+                - generic [ref=e389]: Keshava Karri
+              - generic [ref=e393]: Missing Cont. Auth
+            - generic [ref=e395]:
+              - link "Serge's Test Task Aug 11/2025" [ref=e399] [cursor=pointer]
+              - generic [ref=e403]: Achieve
+              - link "Hobson, Elizabeth" [ref=e407] [cursor=pointer]:
+                - /url: /cases/details/4648507
+              - generic [ref=e411]: Empire Bcbs Mcr
+              - generic [ref=e415]: "0.00"
+              - generic [ref=e419]:
+                - img [ref=e422]
+                - generic [ref=e424]: Rejected
+              - generic [ref=e428]: 8/13/2025
+              - generic [ref=e433]: In Progress
+              - generic [ref=e437]:
+                - generic [ref=e442]: SA
+                - generic [ref=e443]: Sergey Andreyev
+              - generic [ref=e447]: Invalid Claim Info
+            - generic [ref=e449]:
+              - link "PayerCategoryMedicaid" [ref=e453] [cursor=pointer]
+              - generic [ref=e457]: Ivy at Davenport-St Mary
+              - link "Lutz, Kenneth" [ref=e461] [cursor=pointer]:
+                - /url: /cases/details/4708260
+              - generic [ref=e465]: Ia Medicaid
+              - generic [ref=e469]: 6,285.00
+              - generic [ref=e473]:
+                - img [ref=e476]
+                - generic [ref=e478]: Bleeding Issue
+              - generic [ref=e482]: 8/24/2025
+              - generic [ref=e487]: In Progress
+              - generic [ref=e491]:
+                - generic [ref=e496]: VG
+                - generic [ref=e497]: Vikesh Gaikawad
+              - generic [ref=e501]: Income Deviation
+            - generic [ref=e503]:
+              - link "Task_2025-08-11T15:17" [ref=e507] [cursor=pointer]
+              - generic [ref=e511]: Ivy at Davenport-St Mary
+              - link "Kelly, Walter" [ref=e515] [cursor=pointer]:
+                - /url: /cases/details/4709280
+              - generic [ref=e519]: Ia Medicaid Pending
+              - generic [ref=e523]: 5,382.00
+              - generic [ref=e527]:
+                - img [ref=e530]
+                - generic [ref=e532]: Payment not Posted
+              - generic [ref=e536]: 10/17/2028
+              - generic [ref=e541]: In Progress
+              - generic [ref=e545]:
+                - generic [ref=e550]: KK
+                - generic [ref=e551]: Keshava Karri
+              - generic [ref=e555]: Coverage Terminated
+            - generic [ref=e557]:
+              - link "Task_2025-08-11T15:12" [ref=e561] [cursor=pointer]
+              - generic [ref=e565]: Ivy at Davenport-St Mary
+              - link "Elzy, Dorothea" [ref=e569] [cursor=pointer]:
+                - /url: /cases/details/4709278
+              - generic [ref=e573]: Ia Medicaid Pending
+              - generic [ref=e577]: 2,304.50
+              - generic [ref=e581]:
+                - img [ref=e584]
+                - generic [ref=e586]: Payment Posted
+              - generic [ref=e590]: 10/17/2028
+              - generic [ref=e595]: In Progress
+              - generic [ref=e599]:
+                - generic [ref=e604]: KK
+                - generic [ref=e605]: Keshava Karri
+              - generic [ref=e609]: Not on File
+            - generic [ref=e611]:
+              - link "sdfgh" [ref=e615] [cursor=pointer]
+              - generic [ref=e619]: Achieve
+              - link "Raven, Mark" [ref=e623] [cursor=pointer]:
+                - /url: /cases/details/4707219
+              - generic [ref=e627]: Aarp Health Care Options
+              - generic [ref=e631]: "0.00"
+              - generic [ref=e635]:
+                - img [ref=e638]
+                - generic [ref=e640]: Rejected
+              - generic [ref=e644]: 8/23/2025
+              - generic [ref=e649]: In Progress
+              - generic [ref=e653]:
+                - generic [ref=e658]: KK
+                - generic [ref=e659]: Keshava Karri
+              - generic [ref=e663]: Invalid Claim Info
+            - generic [ref=e665]:
+              - link "Task_2025-08-11T15:05" [ref=e669] [cursor=pointer]
+              - generic [ref=e673]: Ivy at Davenport-St Mary
+              - link "Koberg, Nancy" [ref=e677] [cursor=pointer]:
+                - /url: /cases/details/4705232
+              - generic [ref=e681]: Blue Cross Illinois
+              - generic [ref=e685]: "0.00"
+              - generic [ref=e689]:
+                - img [ref=e692]
+                - generic [ref=e694]: Unbilled
+              - generic [ref=e698]: 10/17/2028
+              - generic [ref=e703]: In Progress
+              - generic [ref=e707]:
+                - generic [ref=e712]: KK
+                - generic [ref=e713]: Keshava Karri
+              - generic [ref=e717]: Invalid Claim Info
+            - generic [ref=e719]:
+              - link "Task_2025-08-11T14:35" [ref=e723] [cursor=pointer]
+              - generic [ref=e727]: Ivy at Davenport-St Mary
+              - link "Kelly, Walter" [ref=e731] [cursor=pointer]:
+                - /url: /cases/details/4709280
+              - generic [ref=e735]: United Healthcare Mcr
+              - generic [ref=e739]: 5,070.00
+              - generic [ref=e743]:
+                - img [ref=e746]
+                - generic [ref=e748]: Appealed
+              - generic [ref=e752]: 10/17/2028
+              - generic [ref=e757]: In Progress
+              - generic [ref=e761]:
+                - generic [ref=e766]: KK
+                - generic [ref=e767]: Keshava Karri
+              - generic [ref=e771]: Coverage Terminated
+            - generic [ref=e773]:
+              - link "eter" [ref=e777] [cursor=pointer]
+              - generic [ref=e781]: Achieve
+              - link "Fisher, Caroline" [ref=e785] [cursor=pointer]:
+                - /url: /cases/details/3571775
+              - generic [ref=e789]: Cigna
+              - generic [ref=e793]: "0.00"
+              - generic [ref=e797]:
+                - img [ref=e800]
+                - generic [ref=e802]: Rejected
+              - generic [ref=e806]: 8/28/2025
+              - generic [ref=e811]: In Progress
+              - generic [ref=e815]:
+                - generic [ref=e820]: AW
+                - generic [ref=e821]: Adina Wilhelm
+              - generic [ref=e825]: Invalid NPI
+            - generic [ref=e827]:
+              - link "Sergey's Test" [ref=e831] [cursor=pointer]
+              - generic [ref=e835]: Achieve
+              - link "Alli, Mary" [ref=e839] [cursor=pointer]:
+                - /url: /cases/details/4649876
+              - generic [ref=e843]: Aarp Health Care Options
+              - generic [ref=e847]: "0.00"
+              - generic [ref=e851]:
+                - img [ref=e854]
+                - generic [ref=e856]: Rejected
+              - generic [ref=e860]: 8/28/2025
+              - generic [ref=e865]: In Progress
+              - generic [ref=e869]:
+                - generic [ref=e874]: SA
+                - generic [ref=e875]: Sergey Andreyev
+              - generic [ref=e879]: Co-Pay
+            - generic [ref=e881]:
+              - link "Need retro auth" [ref=e885] [cursor=pointer]
+              - generic [ref=e889]: Achieve
+              - link "Stanton, Victoria" [ref=e893] [cursor=pointer]:
+                - /url: /cases/details/4392129
+              - generic [ref=e897]: Fidelis Lt
+              - generic [ref=e901]: 3,704.04
+              - generic [ref=e905]:
+                - img [ref=e908]
+                - generic [ref=e910]: Denied
+              - generic [ref=e914]: 8/23/2025
+              - generic [ref=e919]: In Progress
+              - generic [ref=e923]:
+                - generic [ref=e928]: EF
+                - generic [ref=e929]: Esther Furst
+              - generic [ref=e933]: Missing Initial Auth
+  - menu [ref=e948]:
+    - generic [ref=e950]:
+      - generic [ref=e951]:
+        - generic [ref=e952]: Filter by
+        - button "Clear Filter" [disabled] [ref=e954]:
+          - generic [ref=e955]: Clear Filter
+      - generic [ref=e959]:
+        - generic [ref=e960]:
+          - combobox "Balance" [ref=e963]:
+            - generic [ref=e969] [cursor=pointer]: Balance
+          - generic [ref=e972]:
+            - combobox "Between" [active] [ref=e975]:
+              - generic [ref=e981] [cursor=pointer]: Between
+            - generic [ref=e983]:
+              - spinbutton [ref=e987]
+              - spinbutton [ref=e991]
+        - button [ref=e993] [cursor=pointer]:
+          - img [ref=e997] [cursor=pointer]
+      - generic [ref=e999]:
+        - button "Add Filter" [disabled] [ref=e1001]:
+          - generic [ref=e1002]:
+            - img [ref=e1005]
+            - text: Add Filter
+        - button "Apply Filter" [disabled] [ref=e1008]:
+          - generic [ref=e1009]: Apply Filter
+```

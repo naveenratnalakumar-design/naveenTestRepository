@@ -11,7 +11,7 @@ exports.UserManagementPage = class UserManagementPage {
       "//span[text()=' User Management ']"
     );
     this.newUserButton = page.locator(
-      "//span[text()='New User']/parent::button"
+      "//span[normalize-space(text())='Assign New']"
     );
     this.searchUserInputBox = page.locator(
       "//input[@placeholder='Search Users by First Name, Last Name or Email']"
@@ -135,6 +135,25 @@ exports.UserManagementPage = class UserManagementPage {
     this.primaryTagInRoleview = page.locator(
       "(//div[@data-column-definition-name='roleId']//span[normalize-space(text())='Primary'])[1]"
     );
+    this.primaryUserRoleColumn = page.locator(
+      "(//span[normalize-space(text())='Primary'])[1]/ancestor::div[@data-column-definition-name='roleId']"
+    );
+    this.backUsermanagementscreenBtn = page.locator(
+      "//a[normalize-space(text())='User Management']"
+    );
+    this.userViewBtn = page.locator(
+      "//div[normalize-space(text())='USER VIEW']"
+    );
+    this.facilitydroDownAddNewuser = page.locator(
+      "//button[@aria-haspopup='menu']"
+    );
+    this.rolwDropdownAddNewuser = page.locator(
+      "//mat-select[@aria-haspopup='listbox']"
+    );
+    this.selectRoleOptionIndropdown = page.locator(
+      "//mat-option[@role='option']"
+    );
+    this.newUserBtn = page.locator("//span[normalize-space(text())='New User']")
   }
   clickOnFacilityPayers = async () => {
     await excuteSteps(this.test, this.facilityPayers, "click", `click`);
@@ -202,6 +221,14 @@ exports.UserManagementPage = class UserManagementPage {
       name
     );
   };
+  clickOnUserbtn = async()=>{
+    await excuteSteps(
+      this.test,
+      this.newUserBtn,
+      "click",
+      "Click on the New user button"
+    )
+  }
   noOfSearchResults = async () => {
     return await this.searchResults.count();
   };
@@ -232,12 +259,28 @@ exports.UserManagementPage = class UserManagementPage {
       `Click on Select Users Dropdown`
     );
   };
+  clickOnBackToUserScreen = async () => {
+    await excuteSteps(
+      this.test,
+      this.backUsermanagementscreenBtn,
+      "click",
+      "Navigate to usermanagement screen"
+    );
+  };
+  clickOnUserViewBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.userViewBtn,
+      "click",
+      "Navigate user view screen"
+    );
+  };
   searchTextInSearchBox = async (text) => {
     await excuteSteps(
       this.test,
       this.searchInputBox,
       "fill",
-      `Enter ${text} in searchBox`,
+      `Enter user eamil in searchBox`,
       text
     );
   };
@@ -434,6 +477,30 @@ exports.UserManagementPage = class UserManagementPage {
       this.userGridRow,
       "click",
       "Click on the user row"
+    );
+  };
+  clickOnFacilityDropdown = async () => {
+    await excuteSteps(
+      this.test,
+      this.facilitydroDownAddNewuser,
+      "click",
+      "Click on facility dropdown option"
+    );
+  };
+  clickOnRoleSelectDropdown = async () => {
+    await excuteSteps(
+      this.test,
+      this.rolwDropdownAddNewuser,
+      "click",
+      "Click on role selection dropdown"
+    );
+  };
+  selectRoleOptionFromDropdwon = async () => {
+    await excuteSteps(
+      this.test,
+      this.selectRoleOptionIndropdown,
+      "click",
+      "Select the role option from the role dropdown"
     );
   };
   enterLocationInSearchFacilitiesDropDown = async () => {
@@ -704,7 +771,7 @@ exports.UserManagementPage = class UserManagementPage {
     await this.test.step("The Page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.smallWait));
     });
-    await this.clickOnNewUserButton();
+    await this.clickOnUserbtn();
     await this.test.step("The Page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.smallWait));
     });
@@ -725,7 +792,7 @@ exports.UserManagementPage = class UserManagementPage {
     await this.test.step("The Page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.smallWait));
     });
-    await this.clickOnNewUserButton();
+    await this.clickOnUserbtn();
     const users = test_Data.RevflowData.userManagementData.nonExistingUserNames;
     const nonExistingUser = users[Math.floor(Math.random() * users.length)];
     await this.enterUserNameInSearchBox([nonExistingUser]);
@@ -841,7 +908,7 @@ exports.UserManagementPage = class UserManagementPage {
     let primaryRoleTagIsVisible = await this.primaryTagInRoleview.isVisible();
     if (primaryRoleTagIsVisible) {
       await this.test.step("Navigate to user view", async () => {
-        await this.primaryTagInRoleview.click();
+        await this.primaryUserRoleColumn.click();
       });
       await this.test.step("The Page is loading, please wait", async () => {
         await this.page.waitForTimeout(parseInt(process.env.smallWait));
@@ -850,6 +917,39 @@ exports.UserManagementPage = class UserManagementPage {
         .locator("(//div[@class='relative flex items-center']//span)[3]")
         .innerText();
       console.log("email==", email);
+      await this.clickOnBackToUserScreen();
+      await this.clickSelectUsersDropDown();
+      await this.searchTextInSearchBox([email]);
+      await this.page.keyboard.press("Enter");
+      await this.clickOnApplyButton();
+      let roleName = await this.page
+        .locator(
+          "(//span[normalize-space(text())='Primary']/ancestor::div[@data-column-definition-name='roleId']//div[@class='overflow-hidden text-ellipsis'])[1]"
+        )
+        .innerText();
+      console.log("role==", roleName);
+      let facilityName = await this.page
+        .locator(
+          "(//span[normalize-space(text())='Primary']/ancestor::div[@data-column-definition-name='roleId']/preceding-sibling::div[@data-column-definition-name='facilityHierarchyId']//span[contains(@class,'block overflow-hidden')])[1]"
+        )
+        .innerText();
+      console.log("facility==", facilityName);
+      await this.clickOnUserViewBtn();
+      await this.clickSelectUsersDropDown();
+      await this.searchTextInSearchBox(["kesava"]);
+      await this.page.keyboard.press("Enter");
+      await this.clickOnApplyButton();
+      await this.clickOnUserGridRow();
+      await this.clickOnNewUserButton();
+      await this.clickOnNewUserButton();
+      await this.clickOnFacilityDropdown();
+      await this.searchTextInSearchBox([email]);
+      await this.page.keyboard.press("Enter");
+      await this.clickOnApplyButton();
+      await this.clickOnRoleSelectDropdown();
+      await this.searchTextInSearchBox([roleName]);
+      await this.selectRoleOptionFromDropdwon();
+      // await this.clickSaveButton();
     }
   };
   verifyChangePrimaryToAnyUser = async () => {

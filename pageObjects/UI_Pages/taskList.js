@@ -121,7 +121,7 @@ exports.TaskListPage = class TaskListPage {
       "//div[contains(@class, 'web-title-2')]"
     );
     this.caseViewBillingSystemId = page.locator(
-      "(//div[contains(@class,'arw-control')])[6]"
+      "(//arw-case-details//div[@class='arw-control arw-control--inline items-center'])[4]"
     );
     this.caseviewDob = page.locator(
       "(//div[contains(@class,'arw-control')])[9]"
@@ -133,7 +133,7 @@ exports.TaskListPage = class TaskListPage {
       "(//div[contains(@class, 'text-foreground-medium')])[2]"
     );
     this.residentNameInSearchList = page.locator(
-      "(//span[contains(@class, 'web-subtitle-1')])[1]"
+      "//span[contains(@class,'web-subtitle-1')]//span"
     );
     this.clearCaseSearchBtn = page.locator("//arw-icon[@name='x']");
     this.residentOptionList = page.locator("(//div[@role='link'])[1]");
@@ -224,7 +224,15 @@ exports.TaskListPage = class TaskListPage {
       page.locator(`//div[normalize-space(text())='${txt}']`);
     this.betweenInputOne = page.locator("(//input[@type='number'])[1]");
     this.betweenInputTwo = page.locator("(//input[@type='number'])[2]");
-    this.dueDateOptions = (txt)=>page.locator(`//span[normalize-space(text())='${txt}']`)
+    this.dueDateOptions = (txt) =>
+      page.locator(`//span[normalize-space(text())='${txt}']`);
+    this.dueDateDefaultValuePath = page.locator(
+      "(//div[@class='mat-mdc-menu-content']/descendant::div[contains(@class,'whitespace-nowrap')])[2]"
+    );
+    this.defaultBalanceAndTaskStatusValuePath = page.locator(
+      "(//div[@class='mat-mdc-menu-content']/descendant::div[contains(@class,'whitespace-nowrap')])[4]"
+    );
+    this.resetDefaultBtn = page.locator("//span[normalize-space(text())='Reset to Default']")
   }
   clickOnFilterBtn = async () => {
     await excuteSteps(
@@ -347,6 +355,14 @@ exports.TaskListPage = class TaskListPage {
       `Click on View Task List Button on the top right`
     );
   };
+  clickOnResetDefaultBtn = async()=>{
+    await excuteSteps(
+      this.test,
+      this.resetDefaultBtn,
+      "click",
+      "Click on reset default button"
+    )
+  }
   clickOnViewAgingButton = async () => {
     await excuteSteps(
       this.test,
@@ -574,14 +590,14 @@ exports.TaskListPage = class TaskListPage {
       txt
     );
   };
-  clickOnDueDateOptions = async(txt)=>{
+  clickOnDueDateOptions = async (txt) => {
     await excuteSteps(
       this.test,
       this.dueDateOptions(txt),
       "click",
       "Select due date option from the dropdown"
-    )
-  }
+    );
+  };
   verifyDefaultFiltersInTaskList = async () => {
     await this.page.waitForTimeout(parseInt(process.env.largeWait));
     const dueDateDropDown = await this.dueDateDropDown;
@@ -763,14 +779,16 @@ exports.TaskListPage = class TaskListPage {
     await this.hoverOutFromFilterDropDown();
   };
   validateCaseDetailsUsingCaseSearch = async () => {
-    await this.searchCaseName([test_Data.RevflowData.taskListData.resident]);
+    await this.searchCaseName([
+      test_Data.RevflowData.TaskListPage.residentName,
+    ]);
     await this.test.step("The page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.mediumWait));
     });
     await expect(
       this.residentNameInSearchList,
       "Verify that the resident name is correctly displayed for the searched name"
-    ).toHaveText([test_Data.RevflowData.taskListData.resident]);
+    ).toHaveText([test_Data.RevflowData.TaskListPage.residentName]);
     let residentNameSearchList =
       await this.residentNameInSearchList.innerText();
     console.log("residentName==", residentNameSearchList);
@@ -792,7 +810,7 @@ exports.TaskListPage = class TaskListPage {
     await expect(
       this.caseViewResidentName,
       "Verify the resident name is displayed correctly on the case view screen"
-    ).toHaveText(test_Data.RevflowData.taskListData.resident);
+    ).toHaveText(test_Data.RevflowData.TaskListPage.residentName);
     await expect(
       this.caseViewResidentFacility,
       "Verify the facility name is displayed correctly on the case view screen"
@@ -806,7 +824,7 @@ exports.TaskListPage = class TaskListPage {
     let getBillingsysID = await this.caseViewBillingSystemId.innerText();
     let caseviewResidentBillingSysId = getBillingsysID
       .replace("Billing System ID", "")
-      .replace("PCC", "")
+      .replace(billingsysType, "")
       .trim();
     console.log("Case-BillingsysNo==", caseviewResidentBillingSysId);
     await expect(
@@ -830,7 +848,7 @@ exports.TaskListPage = class TaskListPage {
     await this.clickOnGlobalSearchdropdown();
     await this.deselectAllFacilities();
     await this.searchGlobalFacilty([
-      test_Data.RevflowData.taskListData.facility,
+      test_Data.RevflowData.TaskListPage.facilityname,
     ]);
     await this.selectSearchFacilityInDropdown();
     await this.clickOnGloabalFacilityApplyBtn();
@@ -1085,12 +1103,18 @@ exports.TaskListPage = class TaskListPage {
         const balanceText = await row.innerText(); // get the balance text
         const balanceAmount = parseFloat(balanceText.replace(/[^0-9.-]+/g, "")); // convert to number
         // Assertion: check if balance is between min and max
-        expect(balanceAmount,"Verifying that balance is between min and max").toBeGreaterThanOrEqual(minAmount);
-        expect(balanceAmount,"Verifying that balance is between min and max").toBeLessThanOrEqual(maxAmount);
+        expect(
+          balanceAmount,
+          "Verifying that balance is between min and max"
+        ).toBeGreaterThanOrEqual(minAmount);
+        expect(
+          balanceAmount,
+          "Verifying that balance is between min and max"
+        ).toBeLessThanOrEqual(maxAmount);
       }
     }
     //Equals
-    const expectedAmount = 2000
+    const expectedAmount = 2000;
     await this.clickOnFilterBtn();
     await this.clickOnClearFilterIcon();
     await this.test.step("The page is loading, please wait", async () => {
@@ -1105,7 +1129,7 @@ exports.TaskListPage = class TaskListPage {
     await this.clickOnBalanceOptions("Equals");
     await this.fillBetweenbalanceInputOne(["2000"]);
     await this.clickOnApplyFilterButton();
-     await this.test.step("The page is loading, please wait", async () => {
+    await this.test.step("The page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.largeWait));
     });
     let noFilterscreen = await this.noTaskFound.isVisible();
@@ -1126,11 +1150,14 @@ exports.TaskListPage = class TaskListPage {
         const balanceText = await row.innerText(); // get the balance text
         const balanceAmount = parseFloat(balanceText.replace(/[^0-9.-]+/g, "")); // convert to number
         // Assertion: check if balance equals expectedAmount
-        expect(balanceAmount,"Verifying that balance equals expectedAmount").toBe(expectedAmount);
+        expect(
+          balanceAmount,
+          "Verifying that balance equals expectedAmount"
+        ).toBe(expectedAmount);
       }
     }
     //GreaterThan
-    const minAmount = 2000
+    const minAmount = 2000;
     await this.clickOnFilterBtn();
     await this.clickOnClearFilterIcon();
     await this.test.step("The page is loading, please wait", async () => {
@@ -1145,7 +1172,7 @@ exports.TaskListPage = class TaskListPage {
     await this.clickOnBalanceOptions("Greater than");
     await this.fillBetweenbalanceInputOne(["2000"]);
     await this.clickOnApplyFilterButton();
-     await this.test.step("The page is loading, please wait", async () => {
+    await this.test.step("The page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.largeWait));
     });
     let noFiltersscreen = await this.noTaskFound.isVisible();
@@ -1165,12 +1192,15 @@ exports.TaskListPage = class TaskListPage {
         await row.scrollIntoViewIfNeeded();
         const balanceText = await row.innerText(); // get the balance text
         const balanceAmount = parseFloat(balanceText.replace(/[^0-9.-]+/g, "")); // convert to number
-         // Assertion: check if balance is greater than minAmount
-        expect(balanceAmount,"Verifying that balance is greater than minAmount").toBeGreaterThan(minAmount);
+        // Assertion: check if balance is greater than minAmount
+        expect(
+          balanceAmount,
+          "Verifying that balance is greater than minAmount"
+        ).toBeGreaterThan(minAmount);
       }
     }
     //Lessthan
-    const maxAmount  = 2000
+    const maxAmount = 2000;
     await this.clickOnFilterBtn();
     await this.clickOnClearFilterIcon();
     await this.test.step("The page is loading, please wait", async () => {
@@ -1185,7 +1215,7 @@ exports.TaskListPage = class TaskListPage {
     await this.clickOnBalanceOptions("Less than");
     await this.fillBetweenbalanceInputOne(["2000"]);
     await this.clickOnApplyFilterButton();
-     await this.test.step("The page is loading, please wait", async () => {
+    await this.test.step("The page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.largeWait));
     });
     let noTaskFiltersscreen = await this.noTaskFound.isVisible();
@@ -1205,12 +1235,15 @@ exports.TaskListPage = class TaskListPage {
         await row.scrollIntoViewIfNeeded();
         const balanceText = await row.innerText(); // get the balance text
         const balanceAmount = parseFloat(balanceText.replace(/[^0-9.-]+/g, "")); // convert to number
-         // Assertion: check if balance is less than maxAmount
-        expect(balanceAmount,"Verifying that balance less than maxAmount").toBeLessThan(maxAmount);
+        // Assertion: check if balance is less than maxAmount
+        expect(
+          balanceAmount,
+          "Verifying that balance less than maxAmount"
+        ).toBeLessThan(maxAmount);
       }
     }
   };
-  verifyingDuedateFilter = async ()=>{
+  verifyingDuedateFilter = async () => {
     await this.clickOnFilterBtn();
     await this.clickOnClearFilterIcon();
     await this.test.step("The page is loading, please wait", async () => {
@@ -1221,13 +1254,11 @@ exports.TaskListPage = class TaskListPage {
     await this.clickOAddFilterDropdown();
     await this.searchFilterNames(["Balance"]);
     await this.selectFilterOptionsFromDropdown("Balance");
-    await this.selectFacilitySubOptions(["Select"])
-    await this.clickOnDueDateOptions([])
+    await this.selectFacilitySubOptions(["Select"]);
+    await this.clickOnDueDateOptions([]);
     await this.clickOnApplyButton();
-      await this.clickOnApplyFilterButton();
-      
-
-  }
+    await this.clickOnApplyFilterButton();
+  };
   // verifyingTaskNameSortingFunctionality = async () => {
   //   // Step 1: Clear existing sort/filter
   //   await this.clickOnCustomSortBtn();
@@ -1339,113 +1370,116 @@ exports.TaskListPage = class TaskListPage {
   //     "Verify that task names are displayed in descending order when the descending sort is applied."
   //   ).toBeTruthy();
   // };
-verifyingTaskNameSortingFunctionality = async () => {
-  // Step 1: Clear existing sort/filter
-  await this.clickOnCustomSortBtn();
-  await this.clickOnDeleteDuedateInSortIcon().catch(() => {});
-  await this.clickOnDeleteDuedateInSortIcon().catch(() => {});
-  await this.clickOnApplySortButtonIcon();
+  verifyingTaskNameSortingFunctionality = async () => {
+    // Step 1: Clear existing sort/filter
+    await this.clickOnCustomSortBtn();
+    await this.clickOnDeleteDuedateInSortIcon().catch(() => {});
+    await this.clickOnDeleteDuedateInSortIcon().catch(() => {});
+    await this.clickOnApplySortButtonIcon();
 
-  await this.clickOnFilterBtn();
-  await this.clickOnClearFilterIcon();
+    await this.clickOnFilterBtn();
+    await this.clickOnClearFilterIcon();
 
-  await this.test.step("Wait for grid to load", async () => {
-    await this.page.waitForTimeout(parseInt(process.env.smallWait, 10));
-  });
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait, 10));
+    });
 
-  const taskgridRows = this.taskNameGidRow;
-  await expect(
-    taskgridRows.first(),
-    "TaskName row should be visible"
-  ).toBeVisible();
+    const taskgridRows = this.taskNameGidRow;
+    await expect(
+      taskgridRows.first(),
+      "TaskName row should be visible"
+    ).toBeVisible();
 
-  // 🟩 Step 2: Apply Ascending (A → Z) Sort
-  await this.clickOnSortBtn();
-  await this.clickOnAddSortBtn();
-  await this.clickOnSlectSortingFilterName();
-  await this.searchSortName(["Task"]);
-  await this.selectFilterOptionsFromDropdown(["Task"]);
-  await this.clickOnSlectSortingFilterName();
-  await this.selectSortingOptionFromDropdown("A → Z");
-  await this.clickOnApplySortButtonIcon();
+    // 🟩 Step 2: Apply Ascending (A → Z) Sort
+    await this.clickOnSortBtn();
+    await this.clickOnAddSortBtn();
+    await this.clickOnSlectSortingFilterName();
+    await this.searchSortName(["Task"]);
+    await this.selectFilterOptionsFromDropdown(["Task"]);
+    await this.clickOnSlectSortingFilterName();
+    await this.selectSortingOptionFromDropdown("A → Z");
+    await this.clickOnApplySortButtonIcon();
 
-  await this.test.step("Wait for grid to load", async () => {
-    await this.page.waitForTimeout(parseInt(process.env.mediumWait, 10));
-  });
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait, 10));
+    });
 
-  // 🟢 Step 3: Verify Ascending Order
-  const ascValues = (await taskgridRows.allTextContents()).map(v => v.trim());
-  console.log("Ascending Values:", ascValues);
+    // 🟢 Step 3: Verify Ascending Order
+    const ascValues = (await taskgridRows.allTextContents()).map((v) =>
+      v.trim()
+    );
+    console.log("Ascending Values:", ascValues);
 
-  // 🧩 Pure lexicographic (UI-style) comparison
-  const normalizeString = (str) =>
-    str?.toLowerCase().replace(/\s+/g, " ").trim();
+    // 🧩 Pure lexicographic (UI-style) comparison
+    const normalizeString = (str) =>
+      str?.toLowerCase().replace(/\s+/g, " ").trim();
 
-  const sortedAsc = [...ascValues].sort((a, b) =>
-    normalizeString(a).localeCompare(normalizeString(b))
-  );
+    const sortedAsc = [...ascValues].sort((a, b) =>
+      normalizeString(a).localeCompare(normalizeString(b))
+    );
 
-  let isSortedAsc = true;
-  for (let i = 0; i < ascValues.length; i++) {
-    if (ascValues[i] !== sortedAsc[i]) {
-      console.log(
-        `Out of order (Ascending): Expected "${sortedAsc[i]}" but found "${ascValues[i]}" at index ${i}`
-      );
-      isSortedAsc = false;
+    let isSortedAsc = true;
+    for (let i = 0; i < ascValues.length; i++) {
+      if (ascValues[i] !== sortedAsc[i]) {
+        console.log(
+          `Out of order (Ascending): Expected "${sortedAsc[i]}" but found "${ascValues[i]}" at index ${i}`
+        );
+        isSortedAsc = false;
+      }
     }
-  }
 
-  expect(
-    isSortedAsc,
-    "Verify that task names are displayed in ascending order when ascending sort is applied."
-  ).toBeTruthy();
+    expect(
+      isSortedAsc,
+      "Verify that task names are displayed in ascending order when ascending sort is applied."
+    ).toBeTruthy();
 
-  // 🟥 Step 4: Apply Descending (Z → A) Sort
-  await this.clickOnSortBtn();
-  await this.clickOnDeleteDuedateInSortIcon().catch(() => {});
-  await this.clickOnApplySortButtonIcon();
+    // 🟥 Step 4: Apply Descending (Z → A) Sort
+    await this.clickOnSortBtn();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnApplySortButtonIcon();
 
-  await this.test.step("Wait for grid to load", async () => {
-    await this.page.waitForTimeout(parseInt(process.env.smallWait, 10));
-  });
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait, 10));
+    });
 
-  await this.clickOnSortBtn();
-  await this.clickOnAddSortBtn();
-  await this.clickOnSlectSortingFilterName();
-  await this.searchSortName(["Task"]);
-  await this.selectFilterOptionsFromDropdown(["Task"]);
-  await this.clickOnSlectSortingFilterName();
-  await this.selectSortingOptionFromDropdown("Z → A");
-  await this.clickOnApplySortButtonIcon();
+    await this.clickOnSortBtn();
+    await this.clickOnAddSortBtn();
+    await this.clickOnSlectSortingFilterName();
+    await this.searchSortName(["Task"]);
+    await this.selectFilterOptionsFromDropdown(["Task"]);
+    await this.clickOnSlectSortingFilterName();
+    await this.selectSortingOptionFromDropdown("Z → A");
+    await this.clickOnApplySortButtonIcon();
 
-  await this.test.step("Wait for grid to load", async () => {
-    await this.page.waitForTimeout(parseInt(process.env.mediumWait, 10));
-  });
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait, 10));
+    });
 
-  // 🔻 Step 5: Verify Descending Order
-  const descValues = (await taskgridRows.allTextContents()).map(v => v.trim());
-  console.log("Descending Values:", descValues);
+    // 🔻 Step 5: Verify Descending Order
+    const descValues = (await taskgridRows.allTextContents()).map((v) =>
+      v.trim()
+    );
+    console.log("Descending Values:", descValues);
 
-  const sortedDesc = [...descValues]
-    .sort((a, b) => normalizeString(a).localeCompare(normalizeString(b)))
-    .reverse();
+    const sortedDesc = [...descValues]
+      .sort((a, b) => normalizeString(a).localeCompare(normalizeString(b)))
+      .reverse();
 
-  let isSortedDesc = true;
-  for (let i = 0; i < descValues.length; i++) {
-    if (descValues[i] !== sortedDesc[i]) {
-      console.log(
-        `Out of order (Descending): Expected "${sortedDesc[i]}" but found "${descValues[i]}" at index ${i}`
-      );
-      isSortedDesc = false;
+    let isSortedDesc = true;
+    for (let i = 0; i < descValues.length; i++) {
+      if (descValues[i] !== sortedDesc[i]) {
+        console.log(
+          `Out of order (Descending): Expected "${sortedDesc[i]}" but found "${descValues[i]}" at index ${i}`
+        );
+        isSortedDesc = false;
+      }
     }
-  }
 
-  expect(
-    isSortedDesc,
-    "Verify that task names are displayed in descending order when descending sort is applied."
-  ).toBeTruthy();
-};
-
+    expect(
+      isSortedDesc,
+      "Verify that task names are displayed in descending order when descending sort is applied."
+    ).toBeTruthy();
+  };
 
   verifyingFacilityColumnSortingFunctionality = async () => {
     await this.clickOnSortBtn();
@@ -1754,6 +1788,9 @@ verifyingTaskNameSortingFunctionality = async () => {
     });
     const Ascitems = await this.taskStatusGridColumn.allInnerTexts();
     console.log("taskStatus==", Ascitems);
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
     // For Ascending order check
     const sortedAsc = [...Ascitems].sort((a, b) => a.localeCompare(b));
     expect(
@@ -1949,5 +1986,34 @@ verifyingTaskNameSortingFunctionality = async () => {
       isAscending,
       "Verify that due dates are sorted from oldest to newest when the 'Oldest to Newest' sort is applied"
     ).toBeTruthy();
+  };
+  verifyingResetToDefaultsOnTaskList = async () => {
+    await this.clickOnCustomSortBtn();
+    await this.clickOnDeleteDuedateInSortIcon();
+      await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnApplySortButtonIcon();
+    await this.clickOnFilterBtn();
+    await this.clickOnClearFilterIcon();
+    await this.clickOnSortBtn();
+    await expect(
+      this.addSortBtn,
+      "Verifying the 'Add Sort' button is visible on the custom sort filter after resetting to defaults"
+    ).toBeVisible();
+    await this.page.keyboard.press("Escape");
+    await this.clickOnFilterBtn();
+    await expect(
+      this.addFilterBtn,
+      "Verifying the 'Add Sort' button is visible on the custom sort filter"
+    ).toBeVisible();
+      await this.page.keyboard.press("Escape");
+    await this.clickOnResetDefaultBtn()
+     await this.clickOnCustomSortBtn();
+     await expect(this.dueDateDefaultValuePath,"Verify the default 'Due Date' sort  is visible in the custom sort dropdown after resetting to defaults").toHaveText(test_Data.RevflowData.taskListData.dueDateDefaultSortData);
+     await expect(this.defaultBalanceAndTaskStatusValuePath,"Verifying default balance sort is displaying on custom sort dropdown after resetting to defaults").toHaveText(test_Data.RevflowData.taskListData.balanceDefaultSortData);
+       await this.page.keyboard.press("Escape");
+     await this.clickOnFilterBtn();
+     await expect(this.dueDateDefaultValuePath,"Verify the default 'Due Date' filter is visible in the filter dropdown after resetting to defaults").toHaveText(test_Data.RevflowData.taskListData.dueDateDefaultFilterData);
+     await expect(this.defaultBalanceAndTaskStatusValuePath,"Verifying the default 'TaskStatus' filter is visible in the filter dropdown after resetting to defaults").toHaveText(test_Data.RevflowData.taskListData.taskStatusDefaultFilterData);
+       await this.page.keyboard.press("Escape");
   };
 };

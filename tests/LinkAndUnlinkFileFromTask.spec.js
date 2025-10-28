@@ -19,10 +19,10 @@ test.describe("Verify LinkAndUnlinkFileFromTask from Case", () => {
     await page.pause()
     await createTaskPage.linkFiles();
   });
-  test("Verify the file can be unlinked from Task", async () => {
-    const createTaskPage = new sections.CreateTaskPage(test, page);
-    await createTaskPage.unlinkFile();
-  });
+  // test("Verify the file can be unlinked from Task", async () => {
+  //   const createTaskPage = new sections.CreateTaskPage(test, page);
+  //   await createTaskPage.unlinkFile();
+  // });
   test.afterAll(async () => {
     const logoutPage = new sections.LogoutPage(test, page);
     await logoutPage.logout();

@@ -1,0 +1,229 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Revflow logo" [ref=e7] [cursor=pointer]
+        - img "Revflow" [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link "Task List" [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link "AR Aging" [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - link "Biller Activity Report" [ref=e34] [cursor=pointer]:
+          - /url: /biller-report
+          - img [ref=e37] [cursor=pointer]
+          - generic [ref=e39] [cursor=pointer]: Biller Activity Report
+        - generic [ref=e40]:
+          - link "Settings" [ref=e41] [cursor=pointer]:
+            - /url: /settings
+            - img [ref=e44] [cursor=pointer]
+            - generic [ref=e47] [cursor=pointer]: Settings
+            - img [ref=e50] [cursor=pointer]
+          - generic [ref=e52]:
+            - link "User Management" [ref=e54] [cursor=pointer]:
+              - /url: /settings/user-management
+              - generic [ref=e55] [cursor=pointer]: User Management
+            - link "Facility Payers" [ref=e57] [cursor=pointer]:
+              - /url: /settings/facility-payers
+              - generic [ref=e58] [cursor=pointer]: Facility Payers
+      - button [ref=e63] [cursor=pointer]:
+        - img [ref=e67] [cursor=pointer]
+    - generic [ref=e69]:
+      - generic [ref=e71]:
+        - img [ref=e76]
+        - button "KK" [ref=e79] [cursor=pointer]:
+          - generic [ref=e82] [cursor=pointer]: KK
+          - img [ref=e85] [cursor=pointer]
+      - generic [ref=e88]:
+        - generic [ref=e89]:
+          - generic [ref=e91]:
+            - heading "User Management" [level=2] [ref=e92]
+            - button "New User" [ref=e94] [cursor=pointer]:
+              - generic [ref=e95] [cursor=pointer]:
+                - img [ref=e98] [cursor=pointer]
+                - text: New User
+          - button "Select Users" [ref=e109] [cursor=pointer]:
+            - generic [ref=e110] [cursor=pointer]: Select Users
+            - img [ref=e114] [cursor=pointer]
+        - generic [ref=e118]:
+          - generic [ref=e120]:
+            - generic [ref=e121]:
+              - generic [ref=e122]: "49"
+              - text: Results
+            - radiogroup [ref=e124]:
+              - radio "USER VIEW" [checked] [ref=e125] [cursor=pointer]:
+                - generic [ref=e127] [cursor=pointer]:
+                  - img [ref=e130] [cursor=pointer]
+                  - text: USER VIEW
+              - radio "FACILITY & ROLE VIEW" [ref=e132] [cursor=pointer]:
+                - generic [ref=e134] [cursor=pointer]:
+                  - img [ref=e137] [cursor=pointer]
+                  - text: FACILITY & ROLE VIEW
+            - generic [ref=e141]:
+              - switch "Active Users Only" [ref=e142] [cursor=pointer]
+              - generic [ref=e150] [cursor=pointer]: Active Users Only
+          - generic [ref=e152]:
+            - generic [ref=e157] [cursor=pointer]: Last Name
+            - generic [ref=e162] [cursor=pointer]: First Name
+            - generic [ref=e167] [cursor=pointer]: Email
+            - generic [ref=e172] [cursor=pointer]: Added to RevFlow On
+            - generic [ref=e176] [cursor=pointer]:
+              - generic [ref=e177] [cursor=pointer]: RevFlow Access
+              - button [active] [ref=e179] [cursor=pointer]:
+                - img [ref=e182] [cursor=pointer]
+            - generic [ref=e188] [cursor=pointer]: Facilities & Roles
+          - generic [ref=e195]:
+            - link "SR Rongali Santosh SRongali@axgsolutions.com 5/5/2025 5:30 AM Active 24" [ref=e197] [cursor=pointer]:
+              - generic [ref=e201] [cursor=pointer]:
+                - generic [ref=e206] [cursor=pointer]: SR
+                - text: Rongali
+              - generic [ref=e210] [cursor=pointer]: Santosh
+              - generic [ref=e214] [cursor=pointer]: SRongali@axgsolutions.com
+              - generic [ref=e218] [cursor=pointer]: 5/5/2025 5:30 AM
+              - generic [ref=e224] [cursor=pointer]: Active
+              - generic [ref=e230] [cursor=pointer]: "24"
+              - img [ref=e234] [cursor=pointer]
+            - link "VG Gaikawad Vikesh vgaikawad@apexhct.onmicrosoft.com 5/9/2025 11:16 AM Active 23" [ref=e237] [cursor=pointer]:
+              - generic [ref=e241] [cursor=pointer]:
+                - generic [ref=e246] [cursor=pointer]: VG
+                - text: Gaikawad
+              - generic [ref=e250] [cursor=pointer]: Vikesh
+              - generic [ref=e254] [cursor=pointer]: vgaikawad@apexhct.onmicrosoft.com
+              - generic [ref=e258] [cursor=pointer]: 5/9/2025 11:16 AM
+              - generic [ref=e264] [cursor=pointer]: Active
+              - generic [ref=e270] [cursor=pointer]: "23"
+              - img [ref=e274] [cursor=pointer]
+            - link "KK Karri Keshava kkari@apexhct.onmicrosoft.com 5/9/2025 12:12 PM Active 8" [ref=e277] [cursor=pointer]:
+              - generic [ref=e281] [cursor=pointer]:
+                - generic [ref=e286] [cursor=pointer]: KK
+                - text: Karri
+              - generic [ref=e290] [cursor=pointer]: Keshava
+              - generic [ref=e294] [cursor=pointer]: kkari@apexhct.onmicrosoft.com
+              - generic [ref=e298] [cursor=pointer]: 5/9/2025 12:12 PM
+              - generic [ref=e304] [cursor=pointer]: Active
+              - generic [ref=e310] [cursor=pointer]: "8"
+              - img [ref=e314] [cursor=pointer]
+            - link "FL Luque Fabian fluque@axgsolutions.com 5/13/2025 2:52 AM Active 10" [ref=e317] [cursor=pointer]:
+              - generic [ref=e321] [cursor=pointer]:
+                - generic [ref=e326] [cursor=pointer]: FL
+                - text: Luque
+              - generic [ref=e330] [cursor=pointer]: Fabian
+              - generic [ref=e334] [cursor=pointer]: fluque@axgsolutions.com
+              - generic [ref=e338] [cursor=pointer]: 5/13/2025 2:52 AM
+              - generic [ref=e344] [cursor=pointer]: Active
+              - generic [ref=e350] [cursor=pointer]: "10"
+              - img [ref=e354] [cursor=pointer]
+            - link "ML Locker Menachem MLocker@axgsolutions.com 5/13/2025 2:52 AM Active 9" [ref=e357] [cursor=pointer]:
+              - generic [ref=e361] [cursor=pointer]:
+                - generic [ref=e366] [cursor=pointer]: ML
+                - text: Locker
+              - generic [ref=e370] [cursor=pointer]: Menachem
+              - generic [ref=e374] [cursor=pointer]: MLocker@axgsolutions.com
+              - generic [ref=e378] [cursor=pointer]: 5/13/2025 2:52 AM
+              - generic [ref=e384] [cursor=pointer]: Active
+              - generic [ref=e390] [cursor=pointer]: "9"
+              - img [ref=e394] [cursor=pointer]
+            - link "DP Paytyan Davit v-dpaytyan@axgsolutions.com 5/13/2025 9:07 AM Active 1" [ref=e397] [cursor=pointer]:
+              - generic [ref=e401] [cursor=pointer]:
+                - generic [ref=e406] [cursor=pointer]: DP
+                - text: Paytyan
+              - generic [ref=e410] [cursor=pointer]: Davit
+              - generic [ref=e414] [cursor=pointer]: v-dpaytyan@axgsolutions.com
+              - generic [ref=e418] [cursor=pointer]: 5/13/2025 9:07 AM
+              - generic [ref=e424] [cursor=pointer]: Active
+              - generic [ref=e430] [cursor=pointer]: "1"
+              - img [ref=e434] [cursor=pointer]
+            - link "DM Myronov Dmytro DMyronov@axgsolutions.com 5/13/2025 9:07 AM Active 9" [ref=e437] [cursor=pointer]:
+              - generic [ref=e441] [cursor=pointer]:
+                - generic [ref=e446] [cursor=pointer]: DM
+                - text: Myronov
+              - generic [ref=e450] [cursor=pointer]: Dmytro
+              - generic [ref=e454] [cursor=pointer]: DMyronov@axgsolutions.com
+              - generic [ref=e458] [cursor=pointer]: 5/13/2025 9:07 AM
+              - generic [ref=e464] [cursor=pointer]: Active
+              - generic [ref=e470] [cursor=pointer]: "9"
+              - img [ref=e474] [cursor=pointer]
+            - link "EF Furst Esther efurst@axgsolutions.com 5/13/2025 9:07 AM Active 19" [ref=e477] [cursor=pointer]:
+              - generic [ref=e481] [cursor=pointer]:
+                - generic [ref=e486] [cursor=pointer]: EF
+                - text: Furst
+              - generic [ref=e490] [cursor=pointer]: Esther
+              - generic [ref=e494] [cursor=pointer]: efurst@axgsolutions.com
+              - generic [ref=e498] [cursor=pointer]: 5/13/2025 9:07 AM
+              - generic [ref=e504] [cursor=pointer]: Active
+              - generic [ref=e510] [cursor=pointer]: "19"
+              - img [ref=e514] [cursor=pointer]
+            - link "JD Doe John arAdmin@axgsolutions.com 3/28/2025 9:58 PM Active 2" [ref=e517] [cursor=pointer]:
+              - generic [ref=e521] [cursor=pointer]:
+                - generic [ref=e526] [cursor=pointer]: JD
+                - text: Doe
+              - generic [ref=e530] [cursor=pointer]: John
+              - generic [ref=e534] [cursor=pointer]: arAdmin@axgsolutions.com
+              - generic [ref=e538] [cursor=pointer]: 3/28/2025 9:58 PM
+              - generic [ref=e544] [cursor=pointer]: Active
+              - generic [ref=e550] [cursor=pointer]: "2"
+              - img [ref=e554] [cursor=pointer]
+            - link "NN null null ABiondo@axgsolutions.com 5/2/2025 5:30 AM Active 1" [ref=e557] [cursor=pointer]:
+              - generic [ref=e561] [cursor=pointer]:
+                - generic [ref=e566] [cursor=pointer]: NN
+                - text: "null"
+              - generic [ref=e570] [cursor=pointer]: "null"
+              - generic [ref=e574] [cursor=pointer]: ABiondo@axgsolutions.com
+              - generic [ref=e578] [cursor=pointer]: 5/2/2025 5:30 AM
+              - generic [ref=e584] [cursor=pointer]: Active
+              - generic [ref=e590] [cursor=pointer]: "1"
+              - img [ref=e594] [cursor=pointer]
+            - link "GF Ferreira Guillermo gferreira@axgsolutions.com 5/13/2025 9:07 AM Active 13" [ref=e597] [cursor=pointer]:
+              - generic [ref=e601] [cursor=pointer]:
+                - generic [ref=e606] [cursor=pointer]: GF
+                - text: Ferreira
+              - generic [ref=e610] [cursor=pointer]: Guillermo
+              - generic [ref=e614] [cursor=pointer]: gferreira@axgsolutions.com
+              - generic [ref=e618] [cursor=pointer]: 5/13/2025 9:07 AM
+              - generic [ref=e624] [cursor=pointer]: Active
+              - generic [ref=e630] [cursor=pointer]: "13"
+              - img [ref=e634] [cursor=pointer]
+            - link "KK Karri Kesavarao KKarri@axgsolutions.com 5/13/2025 9:07 AM Active 9" [ref=e637] [cursor=pointer]:
+              - generic [ref=e641] [cursor=pointer]:
+                - generic [ref=e646] [cursor=pointer]: KK
+                - text: Karri
+              - generic [ref=e650] [cursor=pointer]: Kesavarao
+              - generic [ref=e654] [cursor=pointer]: KKarri@axgsolutions.com
+              - generic [ref=e658] [cursor=pointer]: 5/13/2025 9:07 AM
+              - generic [ref=e664] [cursor=pointer]: Active
+              - generic [ref=e670] [cursor=pointer]: "9"
+              - img [ref=e674] [cursor=pointer]
+            - link "DH Hochman Daniel dhochman@axgsolutions.com 5/15/2025 9:30 PM Active 1" [ref=e677] [cursor=pointer]:
+              - generic [ref=e681] [cursor=pointer]:
+                - generic [ref=e686] [cursor=pointer]: DH
+                - text: Hochman
+              - generic [ref=e690] [cursor=pointer]: Daniel
+              - generic [ref=e694] [cursor=pointer]: dhochman@axgsolutions.com
+              - generic [ref=e698] [cursor=pointer]: 5/15/2025 9:30 PM
+              - generic [ref=e704] [cursor=pointer]: Active
+              - generic [ref=e710] [cursor=pointer]: "1"
+              - img [ref=e714] [cursor=pointer]
+            - link "MD Deren Marlena MDeren@axgsolutions.com 5/15/2025 9:38 PM Active 10" [ref=e717] [cursor=pointer]:
+              - generic [ref=e721] [cursor=pointer]:
+                - generic [ref=e726] [cursor=pointer]: MD
+                - text: Deren
+              - generic [ref=e730] [cursor=pointer]: Marlena
+              - generic [ref=e734] [cursor=pointer]: MDeren@axgsolutions.com
+              - generic [ref=e738] [cursor=pointer]: 5/15/2025 9:38 PM
+              - generic [ref=e744] [cursor=pointer]: Active
+              - generic [ref=e750] [cursor=pointer]: "10"
+              - img [ref=e754] [cursor=pointer]
+  - generic [ref=e766]: "Sorted: Descending"
+```

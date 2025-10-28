@@ -1,0 +1,325 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - navigation [ref=e5]:
+    - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+      - /url: /
+      - img "Revflow logo" [ref=e7] [cursor=pointer]
+      - img "Revflow" [ref=e9] [cursor=pointer]
+    - generic [ref=e11]:
+      - link "Dashboard" [ref=e13] [cursor=pointer]:
+        - /url: /dashboard
+        - img [ref=e16] [cursor=pointer]
+        - generic [ref=e18] [cursor=pointer]: Dashboard
+      - link "Task List" [ref=e20] [cursor=pointer]:
+        - /url: /tasks
+        - img [ref=e23] [cursor=pointer]
+        - generic [ref=e25] [cursor=pointer]: Task List
+      - link "AR Aging" [ref=e27] [cursor=pointer]:
+        - /url: /ar-aging
+        - img [ref=e30] [cursor=pointer]
+        - generic [ref=e32] [cursor=pointer]: AR Aging
+      - link "Settings" [ref=e34] [cursor=pointer]:
+        - /url: /settings
+        - img [ref=e37] [cursor=pointer]
+        - generic [ref=e40] [cursor=pointer]: Settings
+        - img [ref=e43] [cursor=pointer]
+    - button [ref=e49] [cursor=pointer]:
+      - img [ref=e53] [cursor=pointer]
+  - generic [ref=e55]:
+    - generic [ref=e56]:
+      - generic [ref=e62]:
+        - img [ref=e65]
+        - textbox "Search for a Case" [ref=e67]
+      - generic [ref=e68]:
+        - button "Selected Facilities (65)" [ref=e70] [cursor=pointer]:
+          - text: Selected Facilities (65)
+          - img [ref=e73] [cursor=pointer]
+        - button "VG" [ref=e76] [cursor=pointer]:
+          - generic [ref=e79] [cursor=pointer]: VG
+          - img [ref=e82] [cursor=pointer]
+    - generic [ref=e85]:
+      - generic [ref=e86]:
+        - heading "Tasks" [level=2] [ref=e89]
+        - generic [ref=e91]:
+          - button "Custom Sort (2)" [ref=e93] [cursor=pointer]:
+            - generic [ref=e94] [cursor=pointer]:
+              - text: Custom Sort
+              - generic [ref=e95] [cursor=pointer]: (2)
+            - img [ref=e98] [cursor=pointer]
+          - button "Filters 2" [active] [ref=e101] [cursor=pointer]:
+            - img [ref=e104] [cursor=pointer]
+            - generic [ref=e106] [cursor=pointer]:
+              - text: Filters
+              - generic [ref=e107] [cursor=pointer]: "2"
+      - generic [ref=e110]:
+        - generic [ref=e113]:
+          - generic [ref=e114]: "464"
+          - text: Results
+        - generic [ref=e116]:
+          - generic [ref=e120] [cursor=pointer]: Task Name
+          - generic [ref=e125] [cursor=pointer]: Facility
+          - generic [ref=e130] [cursor=pointer]: Resident
+          - generic [ref=e135] [cursor=pointer]: Payer
+          - generic [ref=e139] [cursor=pointer]:
+            - generic [ref=e140] [cursor=pointer]: Balance
+            - button [ref=e142] [cursor=pointer]:
+              - img [ref=e145] [cursor=pointer]
+          - generic [ref=e151] [cursor=pointer]: Balance Status
+          - generic [ref=e155] [cursor=pointer]:
+            - generic [ref=e156] [cursor=pointer]: Due Date
+            - generic [ref=e157] [cursor=pointer]:
+              - button [ref=e158] [cursor=pointer]:
+                - img [ref=e161] [cursor=pointer]
+              - button [ref=e163] [cursor=pointer]:
+                - img [ref=e166] [cursor=pointer]
+          - generic [ref=e171] [cursor=pointer]:
+            - generic [ref=e172] [cursor=pointer]: Task Status
+            - generic [ref=e173] [cursor=pointer]:
+              - button [ref=e174] [cursor=pointer]:
+                - img [ref=e177] [cursor=pointer]
+              - button [ref=e179] [cursor=pointer]:
+                - img [ref=e182] [cursor=pointer]
+          - generic [ref=e188] [cursor=pointer]: Assigned To
+          - generic [ref=e193] [cursor=pointer]: Root Issue
+        - generic [ref=e199]:
+          - generic [ref=e201]:
+            - link "Task Update 0605test" [ref=e205] [cursor=pointer]:
+              - /url: /tasks/details/134
+            - generic [ref=e209]: Landmark of Louisville
+            - link "Gaines, Johnette" [ref=e213] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e217]: United Health
+            - generic [ref=e221]: $100.00
+            - generic [ref=e225]:
+              - img [ref=e228]
+              - generic [ref=e230]: Rejected
+            - generic [ref=e234]: 5/7/2025
+            - generic [ref=e239]: Not Started
+            - generic [ref=e243]:
+              - generic [ref=e248]: KK
+              - generic [ref=e249]: Keshava Karri
+            - generic [ref=e253]: Invalid Claim Info
+          - generic [ref=e255]:
+            - link "Task View Attach" [ref=e259] [cursor=pointer]:
+              - /url: /tasks/details/135
+            - generic [ref=e263]: Landmark of Louisville
+            - link "Gaines, Johnette" [ref=e267] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e271]: United Health
+            - generic [ref=e275]: $100.00
+            - generic [ref=e279]:
+              - img [ref=e282]
+              - generic [ref=e284]: Underpaid
+            - generic [ref=e288]: 5/7/2025
+            - generic [ref=e293]: In Progress
+            - generic [ref=e297]:
+              - generic [ref=e302]: VG
+              - generic [ref=e303]: Vikesh Gaikawad
+            - generic [ref=e307]: Current DD, no prior plan
+          - generic [ref=e309]:
+            - link "New Task 0805" [ref=e313] [cursor=pointer]:
+              - /url: /tasks/details/140
+            - generic [ref=e317]: Landmark of Louisville
+            - link "Gaines, Johnette" [ref=e321] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e325]: United Health
+            - generic [ref=e329]: $1,240.00
+            - generic [ref=e333]:
+              - img [ref=e336]
+              - generic [ref=e338]: Rejected
+            - generic [ref=e342]: 5/8/2025
+            - generic [ref=e347]: In Progress
+            - generic [ref=e351]:
+              - generic [ref=e355]: VG
+              - generic [ref=e356]: Vikesh Gaikawad
+            - generic [ref=e360]: Attorney Case
+          - generic [ref=e362]:
+            - link "new task docx" [ref=e366] [cursor=pointer]:
+              - /url: /tasks/details/160
+            - generic [ref=e370]: Landmark of Louisville
+            - link "Gaines, Johnette" [ref=e374] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e378]: United Health
+            - generic [ref=e382]: $1,240.00
+            - generic [ref=e386]:
+              - img [ref=e389]
+              - generic [ref=e391]: Rejected
+            - generic [ref=e395]: 5/10/2025
+            - generic [ref=e400]: In Progress
+            - generic [ref=e404]:
+              - generic [ref=e408]: JD
+              - generic [ref=e409]: John Doe
+            - generic [ref=e413]: Additional Info Needed
+          - generic [ref=e415]:
+            - link "Task new 05" [ref=e419] [cursor=pointer]:
+              - /url: /tasks/details/139
+            - generic [ref=e423]: Landmark of Louisville
+            - link "Gaines, Johnette" [ref=e427] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e431]: United Health
+            - generic [ref=e435]: $1,240.00
+            - generic [ref=e439]:
+              - img [ref=e442]
+              - generic [ref=e444]: Denied
+            - generic [ref=e448]: 5/14/2025
+            - generic [ref=e453]: In Progress
+            - generic [ref=e457]:
+              - generic [ref=e461]: JD
+              - generic [ref=e462]: John Doe
+            - generic [ref=e466]: Additional Info Needed
+          - generic [ref=e468]:
+            - link "Task with many comments" [ref=e472] [cursor=pointer]:
+              - /url: /tasks/details/214
+            - generic [ref=e476]: Landmark of Louisville
+            - link "Gaines, Johnette" [ref=e480] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e484]: United Health
+            - generic [ref=e488]: $1,240.00
+            - generic [ref=e492]:
+              - img [ref=e495]
+              - generic [ref=e497]: Rejected
+            - generic [ref=e501]: 5/17/2025
+            - generic [ref=e506]: In Progress
+            - generic [ref=e510]:
+              - generic [ref=e514]: JD
+              - generic [ref=e515]: John Doe
+            - generic [ref=e519]: Additional Info Needed
+          - generic [ref=e521]:
+            - link "ewrwerf" [ref=e525] [cursor=pointer]:
+              - /url: /tasks/details/196
+            - generic [ref=e529]: Landmark of Louisville
+            - link "Gaines, Johnette" [ref=e533] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e537]: United Health
+            - generic [ref=e541]: $1,240.00
+            - generic [ref=e545]:
+              - img [ref=e548]
+              - generic [ref=e550]: Rejected
+            - generic [ref=e554]: 5/17/2025
+            - generic [ref=e559]: In Progress
+            - generic [ref=e563]:
+              - generic [ref=e567]: KK
+              - generic [ref=e568]: Keshava Karri
+            - generic [ref=e572]: Additional Info Needed
+          - generic [ref=e574]:
+            - link "Task new" [ref=e578] [cursor=pointer]:
+              - /url: /tasks/details/116
+            - generic [ref=e582]: Landmark of Louisville
+            - link "Gaines, Johnette" [ref=e586] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e590]: United Health
+            - generic [ref=e594]: $1,240.00
+            - generic [ref=e598]:
+              - img [ref=e601]
+              - generic [ref=e603]: Rejected
+            - generic [ref=e607]: 5/19/2025
+            - generic [ref=e612]: In Progress
+            - generic [ref=e616]:
+              - generic [ref=e621]: SR
+              - generic [ref=e622]: Santosh Rongali
+            - generic [ref=e626]: ADR
+          - generic [ref=e628]:
+            - link "Task May12" [ref=e632] [cursor=pointer]:
+              - /url: /tasks/details/170
+            - generic [ref=e636]: Landmark of Louisville
+            - link "Gaines, Johnette" [ref=e640] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e644]: United Health
+            - generic [ref=e648]: $1,240.00
+            - generic [ref=e652]:
+              - img [ref=e655]
+              - generic [ref=e657]: ACH/CC Processed
+            - generic [ref=e661]: 5/20/2025
+            - generic [ref=e666]: In Progress
+            - generic [ref=e670]:
+              - generic [ref=e674]: VG
+              - generic [ref=e675]: Vikesh Gaikawad
+            - generic [ref=e679]: ADR
+          - generic [ref=e681]:
+            - link "Task‖ DOCX file" [ref=e685] [cursor=pointer]:
+              - /url: /tasks/details/154
+            - generic [ref=e689]: Landmark of Louisville
+            - link "Gaines, Johnette" [ref=e693] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e697]: United Health
+            - generic [ref=e701]: $1,240.00
+            - generic [ref=e705]:
+              - img [ref=e708]
+              - generic [ref=e710]: Rejected
+            - generic [ref=e714]: 5/21/2025
+            - generic [ref=e719]: In Progress
+            - generic [ref=e723]:
+              - generic [ref=e727]: JD
+              - generic [ref=e728]: John Doe
+            - generic [ref=e732]: Auth/Condition Code
+          - generic [ref=e734]:
+            - link "Task EOB" [ref=e738] [cursor=pointer]:
+              - /url: /tasks/details/156
+            - generic [ref=e742]: Landmark of Louisville
+            - link "Gaines, Johnette" [ref=e746] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e750]: United Health
+            - generic [ref=e754]: $1,240.00
+            - generic [ref=e758]:
+              - img [ref=e761]
+              - generic [ref=e763]: Rejected
+            - generic [ref=e767]: 5/21/2025
+            - generic [ref=e772]: In Progress
+            - generic [ref=e776]:
+              - generic [ref=e780]: JD
+              - generic [ref=e781]: John Doe
+            - generic [ref=e785]: Attorney Case
+          - generic [ref=e787]:
+            - link "Test DOC 1205" [ref=e791] [cursor=pointer]:
+              - /url: /tasks/details/169
+            - generic [ref=e795]: Landmark of Louisville
+            - link "Gaines, Johnette" [ref=e799] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e803]: United Health
+            - generic [ref=e807]: $1,240.00
+            - generic [ref=e811]:
+              - img [ref=e814]
+              - generic [ref=e816]: Rejected
+            - generic [ref=e820]: 5/21/2025
+            - generic [ref=e825]: In Progress
+            - generic [ref=e829]:
+              - generic [ref=e833]: JD
+              - generic [ref=e834]: John Doe
+            - generic [ref=e838]: Attorney Case
+          - generic [ref=e840]:
+            - link "Balance over 60 days" [ref=e844] [cursor=pointer]:
+              - /url: /tasks/details/3
+            - generic [ref=e848]: Rosedale
+            - link "Gaines, Johnette" [ref=e852] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e856]: Aetna
+            - generic [ref=e860]: $920.40
+            - generic [ref=e864]:
+              - img [ref=e867]
+              - generic [ref=e869]: Rejected
+            - generic [ref=e873]: 5/21/2025
+            - generic [ref=e878]: In Progress
+            - generic [ref=e882]:
+              - generic [ref=e886]: ML
+              - generic [ref=e887]: Menachem Locker
+            - generic [ref=e891]: Invalid NPI
+          - generic [ref=e893]:
+            - link "Task Multi Files new" [ref=e897] [cursor=pointer]:
+              - /url: /tasks/details/205
+            - generic [ref=e901]: Landmark of Louisville
+            - link "Gaines, Johnette" [ref=e905] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e909]: United Health
+            - generic [ref=e913]: $1,240.00
+            - generic [ref=e917]:
+              - img [ref=e920]
+              - generic [ref=e922]: Denied
+            - generic [ref=e926]: 5/22/2025
+            - generic [ref=e931]: In Progress
+            - generic [ref=e935]:
+              - generic [ref=e939]: JD
+              - generic [ref=e940]: John Doe
+            - generic [ref=e944]: Attorney Case
+```

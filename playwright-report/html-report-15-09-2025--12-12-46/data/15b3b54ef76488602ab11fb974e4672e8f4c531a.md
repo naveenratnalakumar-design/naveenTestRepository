@@ -1,0 +1,457 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Revflow logo" [ref=e7] [cursor=pointer]
+        - img "Revflow" [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link "Task List" [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link "AR Aging" [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - link "Settings" [ref=e34] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e37] [cursor=pointer]
+          - generic [ref=e40] [cursor=pointer]: Settings
+          - img [ref=e43] [cursor=pointer]
+      - button [ref=e49] [cursor=pointer]:
+        - img [ref=e53] [cursor=pointer]
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - generic [ref=e62]:
+          - img [ref=e65]
+          - textbox "Search for a Case" [ref=e67]
+        - generic [ref=e68]:
+          - button "Selected Facilities (65)" [ref=e70] [cursor=pointer]:
+            - text: Selected Facilities (65)
+            - img [ref=e73] [cursor=pointer]
+          - button "VG" [ref=e76] [cursor=pointer]:
+            - generic [ref=e79] [cursor=pointer]: VG
+            - img [ref=e82] [cursor=pointer]
+      - generic [ref=e85]:
+        - generic [ref=e86]:
+          - heading "AR Aging" [level=2] [ref=e89]
+          - generic [ref=e90]:
+            - generic [ref=e91]:
+              - 'button "Grouping: Facility Group to Resident" [ref=e93] [cursor=pointer]':
+                - generic [ref=e94] [cursor=pointer]:
+                  - text: "Grouping:"
+                  - generic [ref=e95] [cursor=pointer]: Facility Group to Resident
+                - img [ref=e98] [cursor=pointer]
+              - button "Filters 1" [ref=e101] [cursor=pointer]:
+                - img [ref=e104] [cursor=pointer]
+                - generic [ref=e106] [cursor=pointer]:
+                  - text: Filters
+                  - generic [ref=e107] [cursor=pointer]: "1"
+            - generic [ref=e108]:
+              - radiogroup [ref=e111]:
+                - radio "6 Months" [checked] [ref=e112] [cursor=pointer]:
+                  - generic [ref=e113] [cursor=pointer]: 6 Months
+                - radio "12 Months" [ref=e114] [cursor=pointer]:
+                  - generic [ref=e115] [cursor=pointer]: 12 Months
+                - radio "18 Months" [ref=e116] [cursor=pointer]:
+                  - generic [ref=e117] [cursor=pointer]: 18 Months
+                - radio "Custom" [ref=e118] [cursor=pointer]:
+                  - generic [ref=e119] [cursor=pointer]: Custom
+              - button [ref=e120] [cursor=pointer]:
+                - img [ref=e123] [cursor=pointer]
+        - generic [ref=e127]:
+          - generic [ref=e128]:
+            - generic [ref=e130]:
+              - generic [ref=e131]: "9"
+              - text: Results
+            - generic [ref=e132]:
+              - generic [ref=e134]:
+                - switch "Current Month" [checked] [ref=e135] [cursor=pointer]
+                - generic [ref=e144] [cursor=pointer]: Current Month
+              - generic [ref=e146]:
+                - switch "All Prior Balances" [checked] [ref=e147] [cursor=pointer]
+                - generic [ref=e156] [cursor=pointer]: All Prior Balances
+              - generic [ref=e158]:
+                - switch "Total Displayed Balance" [checked] [ref=e159] [cursor=pointer]
+                - generic [ref=e168] [cursor=pointer]: Total Displayed Balance
+          - generic [ref=e170]:
+            - generic [ref=e172]: Grouping
+            - generic [ref=e177] [cursor=pointer]: Sep 2025
+            - generic [ref=e182] [cursor=pointer]: Aug 2025
+            - generic [ref=e187] [cursor=pointer]: Jul 2025
+            - generic [ref=e192] [cursor=pointer]: Jun 2025
+            - generic [ref=e197] [cursor=pointer]: May 2025
+            - generic [ref=e202] [cursor=pointer]: Apr 2025
+            - generic [ref=e207] [cursor=pointer]: Mar 2025
+            - generic [ref=e212] [cursor=pointer]: All Prior Balances
+            - generic [ref=e217] [cursor=pointer]: Total Displayed Balance
+          - generic [ref=e221]:
+            - generic [ref=e223]:
+              - generic [ref=e225]:
+                - generic [ref=e227]:
+                  - generic [ref=e228]:
+                    - img [ref=e231]
+                    - button [ref=e235] [cursor=pointer]:
+                      - img [ref=e239] [cursor=pointer]
+                  - generic [ref=e243]: 428 Healthcare
+                - generic [ref=e248]:
+                  - text: 23,748.
+                  - generic [ref=e249]: "92"
+                - generic [ref=e254]:
+                  - text: 361,368.
+                  - generic [ref=e255]: "42"
+                - generic [ref=e260]:
+                  - text: 107,409.
+                  - generic [ref=e261]: "57"
+                - generic [ref=e266]:
+                  - text: 62,716.
+                  - generic [ref=e267]: "04"
+                - generic [ref=e272]:
+                  - text: 67,960.
+                  - generic [ref=e273]: "74"
+                - generic [ref=e278]:
+                  - text: 62,923.
+                  - generic [ref=e279]: "24"
+                - generic [ref=e284]:
+                  - text: 50,811.
+                  - generic [ref=e285]: "82"
+                - generic [ref=e290]:
+                  - text: 287,047.
+                  - generic [ref=e291]: "69"
+                - generic [ref=e296]:
+                  - text: 1,023,986.
+                  - generic [ref=e297]: "44"
+              - generic [ref=e299]:
+                - generic [ref=e302]:
+                  - generic [ref=e303]:
+                    - img [ref=e306]
+                    - button [ref=e309] [cursor=pointer]:
+                      - img [ref=e313] [cursor=pointer]
+                  - generic [ref=e317]: Gulfport Nursing Center
+                - generic [ref=e322]:
+                  - text: 23,748.
+                  - generic [ref=e323]: "92"
+                - generic [ref=e328]:
+                  - text: 361,368.
+                  - generic [ref=e329]: "42"
+                - generic [ref=e334]:
+                  - text: 107,409.
+                  - generic [ref=e335]: "57"
+                - generic [ref=e340]:
+                  - text: 62,716.
+                  - generic [ref=e341]: "04"
+                - generic [ref=e346]:
+                  - text: 67,960.
+                  - generic [ref=e347]: "74"
+                - generic [ref=e352]:
+                  - text: 62,923.
+                  - generic [ref=e353]: "24"
+                - generic [ref=e358]:
+                  - text: 50,811.
+                  - generic [ref=e359]: "82"
+                - generic [ref=e364]:
+                  - text: 287,047.
+                  - generic [ref=e365]: "69"
+                - generic [ref=e370]:
+                  - text: 1,023,986.
+                  - generic [ref=e371]: "44"
+              - generic [ref=e373]:
+                - generic [ref=e377]:
+                  - generic [ref=e378]:
+                    - img [ref=e381]
+                    - button [ref=e384] [cursor=pointer]:
+                      - img [ref=e388] [cursor=pointer]
+                  - generic [ref=e392]: HMO
+                - generic [ref=e399]:
+                  - text: 20,918.
+                  - generic [ref=e400]: "78"
+                - generic [ref=e405]:
+                  - text: 3,172.
+                  - generic [ref=e406]: "75"
+                - generic [ref=e411]:
+                  - text: (1,800.
+                  - generic [ref=e412]: "61"
+                  - text: )
+                - generic [ref=e417]:
+                  - text: 9,432.
+                  - generic [ref=e418]: "59"
+                - generic [ref=e423]:
+                  - text: 10,803.
+                  - generic [ref=e424]: "76"
+                - generic [ref=e429]:
+                  - text: 1,195.
+                  - generic [ref=e430]: "73"
+                - generic [ref=e435]:
+                  - text: 11,632.
+                  - generic [ref=e436]: "97"
+                - generic [ref=e441]:
+                  - text: 55,355.
+                  - generic [ref=e442]: "97"
+              - generic [ref=e444]:
+                - generic [ref=e449]:
+                  - generic [ref=e450]:
+                    - img [ref=e453]
+                    - button [ref=e456] [cursor=pointer]:
+                      - img [ref=e460] [cursor=pointer]
+                  - generic [ref=e464]: Aarp
+                - generic [ref=e473]:
+                  - text: "792."
+                  - generic [ref=e474]: "89"
+                - generic [ref=e487]:
+                  - text: 16,116.
+                  - generic [ref=e488]: "00"
+                - generic [ref=e493]:
+                  - text: 16,908.
+                  - generic [ref=e494]: "89"
+              - generic [ref=e496]:
+                - generic [ref=e501]:
+                  - img [ref=e505]
+                  - link "Hamilton, Brian" [ref=e509] [cursor=pointer]:
+                    - /url: /cases/details/3916825
+                - generic [ref=e517]:
+                  - generic [ref=e518]:
+                    - button [disabled] [ref=e520]:
+                      - img [ref=e524]
+                    - button "2" [ref=e527] [cursor=pointer]:
+                      - generic [ref=e528] [cursor=pointer]:
+                        - img [ref=e531] [cursor=pointer]
+                        - generic [ref=e533] [cursor=pointer]: "2"
+                  - generic [ref=e536]:
+                    - text: "792."
+                    - generic [ref=e537]: "89"
+                - generic [ref=e552]:
+                  - text: "792."
+                  - generic [ref=e553]: "89"
+              - generic [ref=e555]:
+                - generic [ref=e560]:
+                  - generic [ref=e561]:
+                    - img [ref=e564]
+                    - button [ref=e567] [cursor=pointer]:
+                      - img [ref=e571] [cursor=pointer]
+                  - generic [ref=e575]: Ambetter Sunshine Commerci
+                - generic [ref=e582]:
+                  - text: 5,985.
+                  - generic [ref=e583]: "00"
+                - generic [ref=e590]:
+                  - text: "802."
+                  - generic [ref=e591]: "30"
+                - generic [ref=e596]:
+                  - text: 2,060.
+                  - generic [ref=e597]: "17"
+                - generic [ref=e604]:
+                  - text: 4,560.
+                  - generic [ref=e605]: "00"
+                - generic [ref=e610]:
+                  - text: 11,355.
+                  - generic [ref=e611]: "00"
+                - generic [ref=e616]:
+                  - text: 24,762.
+                  - generic [ref=e617]: "47"
+              - generic [ref=e619]:
+                - generic [ref=e625]:
+                  - img [ref=e629]
+                  - link "Figueredo campos, Norbelis" [ref=e633] [cursor=pointer]:
+                    - /url: /cases/details/3942326
+                - generic [ref=e643]:
+                  - generic [ref=e644]:
+                    - button [disabled] [ref=e646]:
+                      - img [ref=e650]
+                    - button [ref=e653] [cursor=pointer]:
+                      - img [ref=e657] [cursor=pointer]
+                  - generic [ref=e661]:
+                    - text: "802."
+                    - generic [ref=e662]: "30"
+                - generic [ref=e666]:
+                  - generic [ref=e667]:
+                    - button [disabled] [ref=e669]:
+                      - img [ref=e673]
+                    - button [ref=e676] [cursor=pointer]:
+                      - img [ref=e680] [cursor=pointer]
+                  - generic [ref=e684]:
+                    - text: 1,174.
+                    - generic [ref=e685]: "70"
+                - generic [ref=e696]:
+                  - text: 1,977.
+                  - generic [ref=e697]: "00"
+              - generic [ref=e699]:
+                - generic [ref=e705]:
+                  - img [ref=e709]
+                  - link "McKenzie, Philipp" [ref=e713] [cursor=pointer]:
+                    - /url: /cases/details/4583590
+                - generic [ref=e729]:
+                  - generic [ref=e730]:
+                    - button [disabled] [ref=e732]:
+                      - img [ref=e736]
+                    - button [ref=e739] [cursor=pointer]:
+                      - img [ref=e743] [cursor=pointer]
+                  - generic [ref=e747]:
+                    - text: 4,560.
+                    - generic [ref=e748]: "00"
+                - generic [ref=e753]:
+                  - text: 7,980.
+                  - generic [ref=e754]: "00"
+                - generic [ref=e759]:
+                  - text: 12,540.
+                  - generic [ref=e760]: "00"
+              - generic [ref=e762]:
+                - generic [ref=e768]:
+                  - img [ref=e772]
+                  - link "Miller, Meredith" [ref=e776] [cursor=pointer]:
+                    - /url: /cases/details/4506322
+                - generic [ref=e788]:
+                  - generic [ref=e789]:
+                    - button [disabled] [ref=e791]:
+                      - img [ref=e795]
+                    - button [ref=e798] [cursor=pointer]:
+                      - img [ref=e802] [cursor=pointer]
+                  - generic [ref=e806]:
+                    - text: "713."
+                    - generic [ref=e807]: "96"
+                - generic [ref=e818]:
+                  - text: "713."
+                  - generic [ref=e819]: "96"
+              - generic [ref=e821]:
+                - generic [ref=e827]:
+                  - img [ref=e831]
+                  - link "Ortiz, Jose" [ref=e835] [cursor=pointer]:
+                    - /url: /cases/details/5610040
+                - generic [ref=e841]:
+                  - generic [ref=e842]:
+                    - button [disabled] [ref=e844]:
+                      - img [ref=e848]
+                    - button [ref=e851] [cursor=pointer]:
+                      - img [ref=e855] [cursor=pointer]
+                  - generic [ref=e859]:
+                    - text: 4,275.
+                    - generic [ref=e860]: "00"
+                - generic [ref=e877]:
+                  - text: 4,275.
+                  - generic [ref=e878]: "00"
+              - generic [ref=e880]:
+                - generic [ref=e886]:
+                  - img [ref=e890]
+                  - link "Pele, Daniel" [ref=e894] [cursor=pointer]:
+                    - /url: /cases/details/5615002
+                - generic [ref=e900]:
+                  - generic [ref=e901]:
+                    - button [disabled] [ref=e903]:
+                      - img [ref=e907]
+                    - button [ref=e910] [cursor=pointer]:
+                      - img [ref=e914] [cursor=pointer]
+                  - generic [ref=e918]:
+                    - text: "285."
+                    - generic [ref=e919]: "00"
+                - generic [ref=e936]:
+                  - text: "285."
+                  - generic [ref=e937]: "00"
+              - generic [ref=e939]:
+                - generic [ref=e945]:
+                  - img [ref=e949]
+                  - link "Sikorski, Eva" [ref=e953] [cursor=pointer]:
+                    - /url: /cases/details/5613118
+                - generic [ref=e959]:
+                  - generic [ref=e960]:
+                    - button [disabled] [ref=e962]:
+                      - img [ref=e966]
+                    - button [ref=e969] [cursor=pointer]:
+                      - img [ref=e973] [cursor=pointer]
+                  - generic [ref=e977]:
+                    - text: 1,425.
+                    - generic [ref=e978]: "00"
+                - generic [ref=e995]:
+                  - text: 1,425.
+                  - generic [ref=e996]: "00"
+              - generic [ref=e998]:
+                - generic [ref=e1003]:
+                  - img [ref=e1007]
+                  - link "Wood, Audrey" [ref=e1011] [cursor=pointer]:
+                    - /url: /cases/details/4626330
+                - generic [ref=e1023]:
+                  - generic [ref=e1024]:
+                    - button [disabled] [ref=e1026]:
+                      - img [ref=e1030]
+                    - button [ref=e1033] [cursor=pointer]:
+                      - img [ref=e1037] [cursor=pointer]
+                  - generic [ref=e1041]:
+                    - text: "171."
+                    - generic [ref=e1042]: "51"
+                - generic [ref=e1053]:
+                  - text: "171."
+                  - generic [ref=e1054]: "51"
+              - generic [ref=e1056]:
+                - generic [ref=e1061]:
+                  - generic [ref=e1062]:
+                    - img [ref=e1065]
+                    - button [ref=e1068] [cursor=pointer]:
+                      - img [ref=e1072] [cursor=pointer]
+                  - generic [ref=e1076]: Bcbs
+                - generic [ref=e1091]:
+                  - text: (708.
+                  - generic [ref=e1092]: "37"
+                  - text: )
+                - generic [ref=e1097]:
+                  - text: (667.
+                  - generic [ref=e1098]: "32"
+                  - text: )
+                - generic [ref=e1105]:
+                  - text: (1,375.
+                  - generic [ref=e1106]: "69"
+                  - text: )
+            - generic [ref=e1109]:
+              - generic [ref=e1111]: Summary
+              - generic [ref=e1116]:
+                - text: 1,925,847.
+                - generic [ref=e1117]: "17"
+              - generic [ref=e1122]:
+                - text: 13,240,899.
+                - generic [ref=e1123]: "83"
+              - generic [ref=e1128]:
+                - text: 3,000,300.
+                - generic [ref=e1129]: "85"
+              - generic [ref=e1134]:
+                - text: 1,465,749.
+                - generic [ref=e1135]: "61"
+              - generic [ref=e1140]:
+                - text: 1,629,185.
+                - generic [ref=e1141]: "94"
+              - generic [ref=e1146]:
+                - text: 838,454.
+                - generic [ref=e1147]: "14"
+              - generic [ref=e1152]:
+                - text: 789,757.
+                - generic [ref=e1153]: "23"
+              - generic [ref=e1158]:
+                - text: (1,726,603.
+                - generic [ref=e1159]: "07"
+                - text: )
+              - generic [ref=e1164]:
+                - text: 21,163,591.
+                - generic [ref=e1165]: "70"
+  - generic [ref=e1183]:
+    - generic [ref=e1184]:
+      - generic [ref=e1185]: TaskCommentTest0903
+      - generic [ref=e1186]:
+        - img [ref=e1189]
+        - generic [ref=e1191]: Unbilled
+    - generic [ref=e1192]:
+      - generic [ref=e1193]: Service Dates
+      - generic [ref=e1194]: 8/30/2025 - 8/30/2025
+    - generic [ref=e1195]:
+      - generic [ref=e1196]: "Latest Comment by:"
+      - text: Vikesh Gaikawad
+      - paragraph [ref=e1198]:
+        - text: A -
+        - link "RevFlow | Task Details" [ref=e1199] [cursor=pointer]:
+          - /url: https://revflow-dev.axgsolutions.com/tasks/details/1045
+      - generic [ref=e1200]: 9/3/2025
+    - button "See Task" [ref=e1202] [cursor=pointer]:
+      - generic [ref=e1203] [cursor=pointer]: See Task
+```

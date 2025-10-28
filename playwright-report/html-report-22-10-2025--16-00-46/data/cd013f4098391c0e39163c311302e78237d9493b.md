@@ -1,0 +1,70 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - navigation [ref=e5]:
+    - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+      - /url: /
+      - img "Revflow logo" [ref=e7] [cursor=pointer]
+      - img "Revflow" [ref=e9] [cursor=pointer]
+    - generic [ref=e11]:
+      - link "Dashboard" [ref=e13] [cursor=pointer]:
+        - /url: /dashboard
+        - img [ref=e16] [cursor=pointer]
+        - generic [ref=e18] [cursor=pointer]: Dashboard
+      - link "Task List" [active] [ref=e20] [cursor=pointer]:
+        - /url: /tasks
+        - img [ref=e23] [cursor=pointer]
+        - generic [ref=e25] [cursor=pointer]: Task List
+      - link "AR Aging" [ref=e27] [cursor=pointer]:
+        - /url: /ar-aging
+        - img [ref=e30] [cursor=pointer]
+        - generic [ref=e32] [cursor=pointer]: AR Aging
+      - link "Settings" [ref=e34] [cursor=pointer]:
+        - /url: /settings
+        - img [ref=e37] [cursor=pointer]
+        - generic [ref=e40] [cursor=pointer]: Settings
+        - img [ref=e43] [cursor=pointer]
+    - button [ref=e49] [cursor=pointer]:
+      - img [ref=e53] [cursor=pointer]
+  - generic [ref=e55]:
+    - generic [ref=e56]:
+      - generic [ref=e61]:
+        - img [ref=e64]
+        - textbox "Search for a Case" [ref=e66]
+      - generic [ref=e67]:
+        - button "Selected Facilities (35)" [ref=e69] [cursor=pointer]:
+          - text: Selected Facilities (35)
+          - img [ref=e72] [cursor=pointer]
+        - img [ref=e78]
+        - button "AT" [ref=e81] [cursor=pointer]:
+          - generic [ref=e84] [cursor=pointer]: AT
+          - img [ref=e87] [cursor=pointer]
+    - generic [ref=e90]:
+      - generic [ref=e91]:
+        - heading "Tasks" [level=2] [ref=e94]
+        - generic [ref=e96]:
+          - button "Custom Sort (2)" [ref=e98] [cursor=pointer]:
+            - generic [ref=e99] [cursor=pointer]:
+              - text: Custom Sort
+              - generic [ref=e100] [cursor=pointer]: (2)
+            - img [ref=e103] [cursor=pointer]
+          - button "Filters 3" [ref=e106] [cursor=pointer]:
+            - img [ref=e109] [cursor=pointer]
+            - generic [ref=e111] [cursor=pointer]:
+              - text: Filters
+              - generic [ref=e112] [cursor=pointer]: "3"
+          - button "Reset to Default" [disabled] [ref=e114]:
+            - generic [ref=e115]:
+              - text: Reset to Default
+              - img [ref=e118]
+      - generic [ref=e130]:
+        - img [ref=e133]
+        - generic [ref=e135]: No tasks found
+        - generic [ref=e136]: Try to clear filters.
+        - generic [ref=e137]:
+          - button "Clear filters" [ref=e139] [cursor=pointer]:
+            - generic [ref=e140] [cursor=pointer]: Clear filters
+          - button "Edit Filters" [ref=e142] [cursor=pointer]:
+            - generic [ref=e143] [cursor=pointer]: Edit Filters
+```

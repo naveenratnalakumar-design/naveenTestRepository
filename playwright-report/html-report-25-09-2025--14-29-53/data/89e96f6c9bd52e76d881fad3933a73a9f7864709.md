@@ -1,0 +1,181 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - navigation [ref=e5]:
+    - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+      - /url: /
+      - img "Revflow logo" [ref=e7] [cursor=pointer]
+      - img "Revflow" [ref=e9] [cursor=pointer]
+    - generic [ref=e11]:
+      - link "Dashboard" [ref=e13] [cursor=pointer]:
+        - /url: /dashboard
+        - img [ref=e16] [cursor=pointer]
+        - generic [ref=e18] [cursor=pointer]: Dashboard
+      - link "Task List" [ref=e20] [cursor=pointer]:
+        - /url: /tasks
+        - img [ref=e23] [cursor=pointer]
+        - generic [ref=e25] [cursor=pointer]: Task List
+      - link "AR Aging" [ref=e27] [cursor=pointer]:
+        - /url: /ar-aging
+        - img [ref=e30] [cursor=pointer]
+        - generic [ref=e32] [cursor=pointer]: AR Aging
+      - link "Biller Activity Report" [ref=e34] [cursor=pointer]:
+        - /url: /biller-report
+        - img [ref=e37] [cursor=pointer]
+        - generic [ref=e39] [cursor=pointer]: Biller Activity Report
+      - link "Settings" [ref=e41] [cursor=pointer]:
+        - /url: /settings
+        - img [ref=e44] [cursor=pointer]
+        - generic [ref=e47] [cursor=pointer]: Settings
+        - img [ref=e50] [cursor=pointer]
+    - button [ref=e56] [cursor=pointer]:
+      - img [ref=e60] [cursor=pointer]
+  - generic [ref=e62]:
+    - generic [ref=e63]:
+      - generic [ref=e68]:
+        - img [ref=e71]
+        - textbox "Search for a Case" [ref=e73]
+      - generic [ref=e74]:
+        - button "Selected Facilities (44)" [ref=e76] [cursor=pointer]:
+          - text: Selected Facilities (44)
+          - img [ref=e79] [cursor=pointer]
+        - button "KK" [ref=e82] [cursor=pointer]:
+          - generic [ref=e85] [cursor=pointer]: KK
+          - img [ref=e88] [cursor=pointer]
+    - generic [ref=e90]:
+      - generic [ref=e91]:
+        - generic [ref=e92]:
+          - button [ref=e94] [cursor=pointer]:
+            - img [ref=e98] [cursor=pointer]
+          - textbox [ref=e103]: Task_2025-09-25T14:25
+          - generic [ref=e104]:
+            - button "Close" [ref=e106] [cursor=pointer]:
+              - generic [ref=e107] [cursor=pointer]: Close
+            - button [ref=e109] [cursor=pointer]:
+              - img [ref=e113] [cursor=pointer]
+        - generic [ref=e115]:
+          - generic [ref=e119]:
+            - generic [ref=e120]:
+              - generic [ref=e124] [cursor=pointer]: Facility
+              - text: Ivy at Davenport-St Mary
+            - generic [ref=e125]:
+              - generic [ref=e129] [cursor=pointer]: Resident
+              - link "Huff, Jordan" [ref=e130] [cursor=pointer]:
+                - /url: /cases/details/4334678
+            - generic [ref=e131]:
+              - generic [ref=e135] [cursor=pointer]: Balance
+              - generic [ref=e136]:
+                - generic [ref=e137]: 9,269.00
+                - button "(1 Charge)" [ref=e139] [cursor=pointer]:
+                  - generic [ref=e140] [cursor=pointer]: (1 Charge)
+            - generic [ref=e141]:
+              - generic [ref=e145] [cursor=pointer]: Payer
+              - text: Medicaid Pending Denied
+            - generic [ref=e149]:
+              - toolbar:
+                - generic [ref=e150]:
+                  - button "bold" [ref=e151] [cursor=pointer]:
+                    - img [ref=e152] [cursor=pointer]
+                  - button "italic" [ref=e154] [cursor=pointer]:
+                    - img [ref=e155] [cursor=pointer]
+                  - button "underline" [ref=e157] [cursor=pointer]:
+                    - img [ref=e158] [cursor=pointer]
+                  - button "strike" [ref=e160] [cursor=pointer]:
+                    - img [ref=e161] [cursor=pointer]
+                - generic [ref=e163]:
+                  - 'button "list: bullet" [ref=e164] [cursor=pointer]':
+                    - img [ref=e165] [cursor=pointer]
+                  - 'button "list: ordered" [ref=e167] [cursor=pointer]':
+                    - img [ref=e168] [cursor=pointer]
+                - button "link" [ref=e172] [cursor=pointer]:
+                  - img [ref=e173] [cursor=pointer]
+              - generic [ref=e175]:
+                - paragraph [ref=e177]: Add new task
+                - text: "Visit URL: EditRemove"
+            - generic [ref=e179]:
+              - generic [ref=e182] [cursor=pointer]:
+                - generic [ref=e183] [cursor=pointer]: Balance Status
+                - generic [ref=e184] [cursor=pointer]: "*"
+              - combobox "Denied" [ref=e186]:
+                - generic [ref=e193] [cursor=pointer]:
+                  - img [ref=e196] [cursor=pointer]
+                  - generic [ref=e198] [cursor=pointer]: Denied
+            - generic [ref=e200]:
+              - generic [ref=e203] [cursor=pointer]:
+                - generic [ref=e204] [cursor=pointer]: Root Issue
+                - generic [ref=e205] [cursor=pointer]: "*"
+              - combobox "Additional Info Needed" [ref=e207]:
+                - generic [ref=e213] [cursor=pointer]: Additional Info Needed
+            - generic [ref=e215]:
+              - generic [ref=e219] [cursor=pointer]: Assigned To
+              - combobox "KK Keshava Karri" [ref=e221]:
+                - button "KK Keshava Karri" [ref=e229] [cursor=pointer]:
+                  - generic [ref=e234] [cursor=pointer]: KK
+                  - generic [ref=e235] [cursor=pointer]: Keshava Karri
+            - generic [ref=e237]:
+              - generic [ref=e240] [cursor=pointer]:
+                - generic [ref=e241] [cursor=pointer]: Due Date
+                - generic [ref=e242] [cursor=pointer]: "*"
+              - textbox "Due Date *" [ref=e245]: 1/1/0001
+            - generic [ref=e246]:
+              - generic [ref=e250] [cursor=pointer]: Task Status
+              - combobox "In Progress" [ref=e252]:
+                - generic [ref=e260] [cursor=pointer]: In Progress
+            - generic [ref=e262]:
+              - generic [ref=e263]:
+                - img [ref=e266]
+                - generic [ref=e268]: Files
+                - text: (0)
+              - button "Add File" [ref=e271] [cursor=pointer]:
+                - generic [ref=e272] [cursor=pointer]:
+                  - text: Add File
+                  - img [ref=e275] [cursor=pointer]
+          - generic [ref=e278]:
+            - tablist [ref=e283]:
+              - generic [ref=e284]:
+                - tab "Comments 0" [selected] [ref=e285] [cursor=pointer]:
+                  - generic [ref=e287] [cursor=pointer]:
+                    - text: Comments
+                    - generic [ref=e288] [cursor=pointer]: "0"
+                - tab "Charges 1" [ref=e289] [cursor=pointer]:
+                  - generic [ref=e291] [cursor=pointer]:
+                    - text: Charges
+                    - generic [ref=e292] [cursor=pointer]: "1"
+                - tab "Activity 1" [ref=e293] [cursor=pointer]:
+                  - generic [ref=e295] [cursor=pointer]:
+                    - text: Activity
+                    - generic [ref=e296] [cursor=pointer]: "1"
+            - generic [ref=e299]:
+              - tabpanel "Comments 0" [ref=e300]:
+                - generic [ref=e308]:
+                  - generic [ref=e310]:
+                    - toolbar:
+                      - generic [ref=e311]:
+                        - button "bold" [ref=e312] [cursor=pointer]:
+                          - img [ref=e313] [cursor=pointer]
+                        - button "italic" [ref=e315] [cursor=pointer]:
+                          - img [ref=e316] [cursor=pointer]
+                        - button "underline" [ref=e318] [cursor=pointer]:
+                          - img [ref=e319] [cursor=pointer]
+                        - button "strike" [ref=e321] [cursor=pointer]:
+                          - img [ref=e322] [cursor=pointer]
+                      - generic [ref=e324]:
+                        - 'button "list: bullet" [ref=e325] [cursor=pointer]':
+                          - img [ref=e326] [cursor=pointer]
+                        - 'button "list: ordered" [ref=e328] [cursor=pointer]':
+                          - img [ref=e329] [cursor=pointer]
+                      - button "link" [ref=e333] [cursor=pointer]:
+                        - img [ref=e334] [cursor=pointer]
+                    - generic [ref=e336]:
+                      - generic [ref=e337]:
+                        - text: Add comment...
+                        - paragraph [ref=e338]
+                      - text: "Visit URL: EditRemove"
+                  - generic [ref=e339]: Max number of characters allowed 500
+              - tabpanel [ref=e341]
+              - tabpanel [ref=e342]
+      - generic [ref=e344]:
+        - generic [ref=e345]: "*"
+        - text: Required fields
+```

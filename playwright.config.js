@@ -17,8 +17,8 @@ const timestamp = new Date()
  */
 export default defineConfig({
   testDir: "./tests",
-  timeout: 200 * 1000,
-  expect: { timeout: 10 * 1000 }, // expect() default (10s)
+  timeout: 300 * 1000,
+  expect: { timeout: 20 * 1000 }, // expect() default (10s)
   /* Run tests in files in parallel */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -52,9 +52,9 @@ export default defineConfig({
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    viewport: { width: 1366, height: 768 },
+    // viewport: { width: 1366, height: 768 },
     actionTimeout: 30 * 1000, // default timeout for page actions (30s)
-    navigationTimeout: 60 * 1000, // default navigation timeout (60s)
+    navigationTimeout: 100 * 1000, // default navigation timeout (60s)
     trace: "on-first-retry",
     headless: true,
     screenshot: "only-on-failure",

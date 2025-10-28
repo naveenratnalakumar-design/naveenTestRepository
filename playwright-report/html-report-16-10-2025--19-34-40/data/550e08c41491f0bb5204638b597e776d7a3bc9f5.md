@@ -1,0 +1,328 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - navigation [ref=e5]:
+    - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+      - /url: /
+      - img "Revflow logo" [ref=e7] [cursor=pointer]
+      - img "Revflow" [ref=e9] [cursor=pointer]
+    - generic [ref=e11]:
+      - link "Dashboard" [ref=e13] [cursor=pointer]:
+        - /url: /dashboard
+        - img [ref=e16] [cursor=pointer]
+        - generic [ref=e18] [cursor=pointer]: Dashboard
+      - link "Task List" [ref=e20] [cursor=pointer]:
+        - /url: /tasks
+        - img [ref=e23] [cursor=pointer]
+        - generic [ref=e25] [cursor=pointer]: Task List
+      - link "AR Aging" [ref=e27] [cursor=pointer]:
+        - /url: /ar-aging
+        - img [ref=e30] [cursor=pointer]
+        - generic [ref=e32] [cursor=pointer]: AR Aging
+      - link "Biller Activity Report" [ref=e34] [cursor=pointer]:
+        - /url: /biller-report
+        - img [ref=e37] [cursor=pointer]
+        - generic [ref=e39] [cursor=pointer]: Biller Activity Report
+      - link "Settings" [ref=e41] [cursor=pointer]:
+        - /url: /settings
+        - img [ref=e44] [cursor=pointer]
+        - generic [ref=e47] [cursor=pointer]: Settings
+        - img [ref=e50] [cursor=pointer]
+    - button [ref=e56] [cursor=pointer]:
+      - img [ref=e60] [cursor=pointer]
+  - generic [ref=e62]:
+    - generic [ref=e63]:
+      - generic [ref=e68]:
+        - img [ref=e71]
+        - textbox "Search for a Case" [ref=e73]
+      - generic [ref=e74]:
+        - button "Selected Facilities (58)" [ref=e76] [cursor=pointer]:
+          - text: Selected Facilities (58)
+          - img [ref=e79] [cursor=pointer]
+        - button "KK" [ref=e82] [cursor=pointer]:
+          - generic [ref=e85] [cursor=pointer]: KK
+          - img [ref=e88] [cursor=pointer]
+    - generic [ref=e91]:
+      - generic [ref=e92]:
+        - heading "Tasks" [level=2] [ref=e95]
+        - generic [ref=e97]:
+          - button "Sort" [active] [ref=e99] [cursor=pointer]:
+            - generic [ref=e100] [cursor=pointer]: Sort
+            - img [ref=e103] [cursor=pointer]
+          - button "Filters 2" [ref=e106] [cursor=pointer]:
+            - img [ref=e109] [cursor=pointer]
+            - generic [ref=e111] [cursor=pointer]:
+              - text: Filters
+              - generic [ref=e112] [cursor=pointer]: "2"
+          - button "Reset to Default" [ref=e114] [cursor=pointer]:
+            - generic [ref=e115] [cursor=pointer]:
+              - text: Reset to Default
+              - img [ref=e118] [cursor=pointer]
+      - generic [ref=e122]:
+        - generic [ref=e125]:
+          - generic [ref=e126]: "338"
+          - text: Results
+        - generic [ref=e128]:
+          - generic [ref=e132] [cursor=pointer]: Task
+          - generic [ref=e137] [cursor=pointer]: Facility
+          - generic [ref=e142] [cursor=pointer]: Resident
+          - generic [ref=e147] [cursor=pointer]: Payer
+          - generic [ref=e152] [cursor=pointer]: Balance
+          - generic [ref=e157] [cursor=pointer]: Balance Status
+          - generic [ref=e161] [cursor=pointer]:
+            - generic [ref=e162] [cursor=pointer]: Due Date
+            - generic [ref=e163] [cursor=pointer]:
+              - button [ref=e164] [cursor=pointer]:
+                - img [ref=e167] [cursor=pointer]
+              - button [ref=e169] [cursor=pointer]:
+                - img [ref=e172] [cursor=pointer]
+          - generic [ref=e177] [cursor=pointer]:
+            - generic [ref=e178] [cursor=pointer]: Task Status
+            - generic [ref=e179] [cursor=pointer]:
+              - button [ref=e180] [cursor=pointer]:
+                - img [ref=e183] [cursor=pointer]
+              - button [ref=e185] [cursor=pointer]:
+                - img [ref=e188] [cursor=pointer]
+          - generic [ref=e194] [cursor=pointer]: Assigned To
+          - generic [ref=e199] [cursor=pointer]: Root Issue
+        - generic [ref=e205]:
+          - generic [ref=e207]:
+            - link "Testing<West>\"East\"|/\\^" [ref=e211] [cursor=pointer]:
+              - /url: /tasks/details/421
+            - generic [ref=e215]: Landmark of Louisville
+            - link "Gaines, Johnette" [ref=e219] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e223]: Humana
+            - generic [ref=e227]: "1.00"
+            - generic [ref=e231]:
+              - img [ref=e234]
+              - generic [ref=e236]: Corrected Claim
+            - generic [ref=e240]: 6/30/2025
+            - generic [ref=e245]: In Progress
+            - generic [ref=e249]:
+              - generic [ref=e254]: SR
+              - generic [ref=e255]: Santosh Rongali
+            - generic [ref=e259]: Co-Pay
+          - generic [ref=e261]:
+            - link "Follow up on Humana claim for Steven Skaggs" [ref=e265] [cursor=pointer]:
+              - /url: /tasks/details/418
+            - generic [ref=e269]: Landmark of Louisville
+            - link "Gaines, Johnette" [ref=e273] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e277]: Humana
+            - generic [ref=e281]: "1.00"
+            - generic [ref=e285]:
+              - img [ref=e288]
+              - generic [ref=e290]: Rejected
+            - generic [ref=e294]: 6/30/2025
+            - generic [ref=e299]: In Progress
+            - generic [ref=e303]:
+              - generic [ref=e308]: VG
+              - generic [ref=e309]: Vikesh Gaikawad
+            - generic [ref=e313]: Additional Info Needed
+          - generic [ref=e315]:
+            - link "Follow up on Humana claim for Steven Skaggs" [ref=e319] [cursor=pointer]:
+              - /url: /tasks/details/417
+            - generic [ref=e323]: Landmark of Louisville
+            - link "Gaines, Johnette" [ref=e327] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e331]: Humana
+            - generic [ref=e335]: "1.00"
+            - generic [ref=e339]:
+              - img [ref=e342]
+              - generic [ref=e344]: Unbilled
+            - generic [ref=e348]: 6/30/2025
+            - generic [ref=e353]: In Progress
+            - generic [ref=e357]:
+              - generic [ref=e362]: VG
+              - generic [ref=e363]: Vikesh Gaikawad
+            - generic [ref=e367]: Additional Info Needed
+          - generic [ref=e369]:
+            - link "task123" [ref=e373] [cursor=pointer]:
+              - /url: /tasks/details/416
+            - generic [ref=e377]: Landmark of Louisville
+            - link "Gaines, Johnette" [ref=e381] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e385]: Humana
+            - generic [ref=e389]: "100.00"
+            - generic [ref=e393]:
+              - img [ref=e396]
+              - generic [ref=e398]: Rejected
+            - generic [ref=e402]: 8/23/2025
+            - generic [ref=e407]: In Progress
+            - generic [ref=e411]:
+              - generic [ref=e416]: VG
+              - generic [ref=e417]: Vikesh Gaikawad
+            - generic [ref=e421]: Additional Info Needed
+          - generic [ref=e423]:
+            - link "(|testing&\"Sun\"['Fun']|)" [ref=e427] [cursor=pointer]:
+              - /url: /tasks/details/415
+            - generic [ref=e431]: Landmark of Louisville
+            - link "Gaines, Johnette" [ref=e435] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e439]: Humana
+            - generic [ref=e443]: "1.00"
+            - generic [ref=e447]:
+              - img [ref=e450]
+              - generic [ref=e452]: Payment not Posted
+            - generic [ref=e456]: 6/17/2025
+            - generic [ref=e461]: In Progress
+            - generic [ref=e465]:
+              - generic [ref=e470]: VG
+              - generic [ref=e471]: Vikesh Gaikawad
+            - generic [ref=e475]: Coverage Terminated
+          - generic [ref=e477]:
+            - link "$<⁌⟪௹Đ‖®⁜⁜⁜⁜⁜" [ref=e481] [cursor=pointer]:
+              - /url: /tasks/details/396
+            - generic [ref=e485]: Landmark of Louisville
+            - link "Gaines, Johnette" [ref=e489] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e493]: Humana
+            - generic [ref=e497]: "1.00"
+            - generic [ref=e501]:
+              - img [ref=e504]
+              - generic [ref=e506]: Rejected
+            - generic [ref=e510]: 6/16/2025
+            - generic [ref=e515]: In Progress
+            - generic [ref=e519]:
+              - generic [ref=e524]: SR
+              - generic [ref=e525]: Santosh Rongali
+            - generic [ref=e529]: Attorney Case
+          - generic [ref=e531]:
+            - link "+%1234~!@#$%" [ref=e535] [cursor=pointer]:
+              - /url: /tasks/details/385
+            - generic [ref=e539]: Landmark of Louisville
+            - link "Gaines, Johnette" [ref=e543] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e547]: Humana
+            - generic [ref=e551]: "1.00"
+            - generic [ref=e555]:
+              - img [ref=e558]
+              - generic [ref=e560]: Rejected
+            - generic [ref=e564]: 6/9/2025
+            - generic [ref=e569]: In Progress
+            - generic [ref=e573]:
+              - generic [ref=e578]: VG
+              - generic [ref=e579]: Vikesh Gaikawad
+            - generic [ref=e583]: Hospice on File
+          - generic [ref=e585]:
+            - link "As$1234~!@#$%" [ref=e589] [cursor=pointer]:
+              - /url: /tasks/details/384
+            - generic [ref=e593]: Landmark of Louisville
+            - link "Gaines, Johnette" [ref=e597] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e601]: Humana
+            - generic [ref=e605]: "1.00"
+            - generic [ref=e609]:
+              - img [ref=e612]
+              - generic [ref=e614]: Rejected
+            - generic [ref=e618]: 6/9/2025
+            - generic [ref=e623]: Not Started
+            - generic [ref=e627]:
+              - generic [ref=e632]: VG
+              - generic [ref=e633]: Vikesh Gaikawad
+            - generic [ref=e637]: Invalid NPI
+          - generic [ref=e639]:
+            - link "^!~Testing@sample~!@" [ref=e643] [cursor=pointer]:
+              - /url: /tasks/details/383
+            - generic [ref=e647]: Landmark of Louisville
+            - link "Gaines, Johnette" [ref=e651] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e655]: Humana
+            - generic [ref=e659]: "1.00"
+            - generic [ref=e663]:
+              - img [ref=e666]
+              - generic [ref=e668]: Rejected
+            - generic [ref=e672]: 10/6/2025
+            - generic [ref=e677]: Not Started
+            - generic [ref=e681]:
+              - generic [ref=e686]: VG
+              - generic [ref=e687]: Vikesh Gaikawad
+            - generic [ref=e691]: Invalid NPI
+          - generic [ref=e693]:
+            - link "Task 0506" [ref=e697] [cursor=pointer]:
+              - /url: /tasks/details/379
+            - generic [ref=e701]: Landmark of Louisville
+            - link "Gaines, Johnette" [ref=e705] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e709]: Humana
+            - generic [ref=e713]: "1.00"
+            - generic [ref=e717]:
+              - img [ref=e720]
+              - generic [ref=e722]: Rejected
+            - generic [ref=e726]: 6/18/2025
+            - generic [ref=e731]: In Progress
+            - generic [ref=e735]:
+              - generic [ref=e740]: VG
+              - generic [ref=e741]: Vikesh Gaikawad
+            - generic [ref=e745]: Attorney Case
+          - generic [ref=e747]:
+            - link "Testing Task Running3" [ref=e751] [cursor=pointer]:
+              - /url: /tasks/details/373
+            - generic [ref=e755]: Landmark of Louisville
+            - link "Gaines, Johnette" [ref=e759] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e763]: Humana
+            - generic [ref=e767]: "1.00"
+            - generic [ref=e771]:
+              - img [ref=e774]
+              - generic [ref=e776]: Rejected
+            - generic [ref=e780]: 8/30/2025
+            - generic [ref=e785]: Not Started
+            - generic [ref=e789]:
+              - generic [ref=e794]: VG
+              - generic [ref=e795]: Vikesh Gaikawad
+            - generic [ref=e799]: Invalid NPI
+          - generic [ref=e801]:
+            - link "Test Facility2" [ref=e805] [cursor=pointer]:
+              - /url: /tasks/details/351
+            - generic [ref=e809]: Landmark of Louisville
+            - link "Gaines, Johnette" [ref=e813] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e817]: Humana
+            - generic [ref=e821]: "1.00"
+            - generic [ref=e825]:
+              - img [ref=e828]
+              - generic [ref=e830]: Rejected
+            - generic [ref=e834]: 6/12/2025
+            - generic [ref=e839]: Not Started
+            - generic [ref=e843]:
+              - generic [ref=e848]: VG
+              - generic [ref=e849]: Vikesh Gaikawad
+            - generic [ref=e853]: Invalid NPI
+          - generic [ref=e855]:
+            - link "Test Facility1" [ref=e859] [cursor=pointer]:
+              - /url: /tasks/details/350
+            - generic [ref=e863]: Landmark of Louisville
+            - link "Gaines, Johnette" [ref=e867] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e871]: Humana
+            - generic [ref=e875]: "1.00"
+            - generic [ref=e879]:
+              - img [ref=e882]
+              - generic [ref=e884]: Paid Status
+            - generic [ref=e888]: 9/23/2025
+            - generic [ref=e893]: Not Started
+            - generic [ref=e897]:
+              - generic [ref=e902]: VG
+              - generic [ref=e903]: Vikesh Gaikawad
+            - generic [ref=e907]: Invalid NPI
+          - generic [ref=e909]:
+            - link "Test Facility" [ref=e913] [cursor=pointer]:
+              - /url: /tasks/details/346
+            - generic [ref=e917]: Landmark of Louisville
+            - link "Gaines, Johnette" [ref=e921] [cursor=pointer]:
+              - /url: /cases/details/2036609
+            - generic [ref=e925]: Humana
+            - generic [ref=e929]: "1.00"
+            - generic [ref=e933]:
+              - img [ref=e936]
+              - generic [ref=e938]: Rejected
+            - generic [ref=e942]: 6/10/2025
+            - generic [ref=e947]: Not Started
+            - generic [ref=e951]:
+              - generic [ref=e956]: VG
+              - generic [ref=e957]: Vikesh Gaikawad
+            - generic [ref=e961]: Invalid NPI
+```

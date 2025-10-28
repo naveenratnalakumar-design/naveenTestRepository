@@ -107,12 +107,14 @@ exports.CreateTaskPage = class CreateTaskPage {
     this.paginationAfter = page.locator(
       "//div[contains(@class,'mat-mdc-tab-header-pagination-after')]"
     );
-    this.activityTab = page.locator("//span[normalize-space(text())='Activity']");
+    this.activityTab = page.locator(
+      "//span[normalize-space(text())='Activity']"
+    );
 
     this.TaskListBtn = page.locator("//span[text()=' Task List ']");
     this.createTaskBtn = page.locator("//span[text()='Create Task']");
     this.taskTitleInputFiled = page.locator(
-      "//div[@class='arw-page-container__title']//input"
+      "//div[@class='relative flex h-full']//input"
     );
     this.discriptionInputFiled = page.locator(
       "//div[@data-placeholder='Add a description...']"
@@ -123,7 +125,9 @@ exports.CreateTaskPage = class CreateTaskPage {
     this.blanceStatusDropdown = page.locator(
       "//span[text()=' Balance Status ']"
     );
-    this.closeBtn = page.locator("(//div[contains(@class,'items-center shrink')]//arw-button[@category='tertiary'])[2]")
+    this.closeBtn = page.locator(
+      "(//div[contains(@class,'items-center shrink')]//arw-button[@category='tertiary'])[2]"
+    );
     this.assignedUserDropdown = page.locator(
       "//mat-select[@id='mat-select-3']"
     );
@@ -309,7 +313,12 @@ exports.CreateTaskPage = class CreateTaskPage {
     );
     this.verifyCreatedIsVisibleOnTaskGrid = (txt) =>
       page.locator(`//a[text()='${txt}']`);
-    this.fileBtn = page.locator("//span[normalize-space(text())='Files']")
+    this.fileBtn = page.locator("//span[normalize-space(text())='Files']");
+    this.selectFilerOptions = (txt) =>
+      page.locator(
+        `//mat-option[@role='option']//div[normalize-space(text()) = '${txt}']`
+      );
+      this.filterinputFiled = page.locator("(//div[@class='arw-control__content']//input)[2]")
   }
 
   hoverOnCustomSort = async () => {
@@ -558,14 +567,14 @@ exports.CreateTaskPage = class CreateTaskPage {
       `Click on the Balance Status btn`
     );
   };
-  clickOnCloseBtn = async()=>{
+  clickOnCloseBtn = async () => {
     await excuteSteps(
       this.test,
       this.closeBtn,
       "click",
       "Click on the close button"
-    )
-  }
+    );
+  };
   SearchDropdownOptions = async (txt) => {
     await excuteSteps(
       this.test,
@@ -870,15 +879,31 @@ exports.CreateTaskPage = class CreateTaskPage {
       txt
     );
   };
-  clickOnFileBtn = async()=>{
+  clickOnFileBtn = async () => {
     await excuteSteps(
       this.test,
       this.fileBtn,
       "click",
       "Navigate to File section"
+    );
+  };
+  selectFilterOptionsInDropdown = async (txt) => {
+    await excuteSteps(
+      this.test,
+      this.selectFilerOptions(txt),
+      "click",
+      "Select a filter from the dropdown list"
+    );
+  };
+  enterFilterInsearchInput = async(txt)=>{
+    await excuteSteps(
+      this.test,
+      this.filterinputFiled,
+      "fill",
+      "Enter a filter name in the search input",
+      txt
     )
   }
-
   countElementsPresent = async (locator) => {
     const rowLocator = locator;
     let previousCount = 0;
@@ -1112,8 +1137,15 @@ exports.CreateTaskPage = class CreateTaskPage {
     await this.test.step("The Page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.largeWait));
     });
+    await this.clickOnTaskNameFilters();
+    await this.clickOnAddTaskFilterBtn();
+    await this.clickOnSelectTaskFilterdropdown();
+    await this.SearchDropdownOptions(["Task"]);
+    await this.selectFilterOptionsInDropdown("Task");
+    await this.enterFilterInsearchInput(['createTaskBeacon'])
+    await this.clickOnTaskApplyFilter();
     await this.clickOnFirstTask();
-    await this.clickOnFileBtn()
+    await this.clickOnFileBtn();
     await this.clickOnAddFilebtn();
     await this.clickonLinkFromCaseBtn();
     await this.test.step("The Page is loading, please wait", async () => {
@@ -1959,18 +1991,20 @@ exports.CreateTaskPage = class CreateTaskPage {
     let assignedUserV = await this.page
       .locator("//arw-select[@formcontrolname='assigneeId']//button/span")
       .innerText();
-    await expect(taskName.trim()).toBe(tasknameV.trim());
-    await expect(residentName.trim()).toBe(residentV.trim());
-    await expect(balanceStatus.trim()).toBe(balanceStatusV.trim());
-    await expect(dueDate.trim()).toBe(dueDateV.trim());
-    await expect(taskStatus.trim()).toBe(taskStatusV.trim());
-    await expect(assignedUser.trim()).toBe(assignedUserV.trim());
+    await expect(taskName.trim(),"Validating the existing task name is correctly displayed on the task list screen and in the task view").toBe(tasknameV.trim());
+    await expect(residentName.trim(),"Validating the existing task resident name is correctly displayed on the task list screen and in the task view").toBe(residentV.trim());
+    await expect(balanceStatus.trim(),"Validating the existing task balance status is correctly displayed on the task list screen and in the task view").toBe(balanceStatusV.trim());
+    await expect(dueDate.trim(),"Validating the existing task due date is correctly displayed on the task list screen and in the task view").toBe(dueDateV.trim());
+    await expect(taskStatus.trim(),"Validating the existing task taskStatus is correctly displayed on the task list screen and in the task view").toBe(taskStatusV.trim());
+    await expect(assignedUser.trim(),"Validating the existing task assignedTo user is correctly displayed on the task list screen and in the task view").toBe(assignedUserV.trim());
 
     await this.clickOnBalanceStatusdrop();
     await this.test.step("The Page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.smallWait));
     });
-    await this.page.locator("(//mat-option[@aria-selected='false'])[1]").click();
+    await this.page
+      .locator("(//mat-option[@aria-selected='false'])[1]")
+      .click();
     let newbalanceStatus = await this.page
       .locator(
         "//arw-select[@formcontrolname='balanceStatusId']//arw-tag//span"
@@ -1992,6 +2026,6 @@ exports.CreateTaskPage = class CreateTaskPage {
     await this.test.step("The Page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.smallWait));
     });
-    await this.clickOnCloseBtn()
+    await this.clickOnCloseBtn();
   };
 };

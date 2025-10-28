@@ -1,0 +1,118 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img [ref=e7] [cursor=pointer]
+        - img [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - link [ref=e34] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e37] [cursor=pointer]
+          - generic [ref=e40] [cursor=pointer]: Settings
+          - img [ref=e43] [cursor=pointer]
+      - button [ref=e49] [cursor=pointer]:
+        - img [ref=e53] [cursor=pointer]
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - generic [ref=e61]:
+          - img [ref=e64]
+          - textbox [ref=e66]
+        - generic [ref=e67]:
+          - button [ref=e69] [cursor=pointer]:
+            - text: Selected Facilities (35)
+            - img [ref=e72] [cursor=pointer]
+          - img [ref=e78]
+          - button [ref=e81] [cursor=pointer]:
+            - generic [ref=e84] [cursor=pointer]: AT
+            - img [ref=e87] [cursor=pointer]
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - generic [ref=e92]:
+            - button [ref=e94] [cursor=pointer]:
+              - img [ref=e98] [cursor=pointer]
+            - generic [ref=e100]: Marchione, Ana
+          - generic [ref=e101]:
+            - img [ref=e104]
+            - text: Highland Care
+          - generic [ref=e106]:
+            - button [ref=e108] [cursor=pointer]:
+              - generic [ref=e109] [cursor=pointer]: View Aging
+            - button [ref=e111] [cursor=pointer]:
+              - generic [ref=e112] [cursor=pointer]: View Task List
+        - generic [ref=e117]:
+          - generic [ref=e118]:
+            - generic [ref=e119]:
+              - generic [ref=e123] [cursor=pointer]: Resident Status
+              - generic [ref=e125]: Discharged
+            - generic [ref=e126]:
+              - generic [ref=e130] [cursor=pointer]: Medicare
+              - generic [ref=e131]: 128324015A
+            - generic [ref=e132]:
+              - generic [ref=e136] [cursor=pointer]: Original Admission Date
+              - text: 4/4/2012
+            - generic [ref=e137]:
+              - generic [ref=e141] [cursor=pointer]: Billing System ID
+              - text: "848998"
+              - generic [ref=e142]: PCC
+            - generic [ref=e143]:
+              - generic [ref=e147] [cursor=pointer]: Medicaid
+              - generic [ref=e148]: YB23316J
+            - generic [ref=e149]:
+              - generic [ref=e153] [cursor=pointer]: Current Admission Date
+              - text: 5/13/2015
+            - generic [ref=e154]:
+              - generic [ref=e158] [cursor=pointer]: DOB
+              - text: 7/15/1942
+            - generic [ref=e159]:
+              - generic [ref=e163] [cursor=pointer]: SSN
+              - text: 128-32-4015
+            - generic [ref=e164]:
+              - generic [ref=e168] [cursor=pointer]: Current Discharge Date
+              - text: 11/27/2017
+            - generic [ref=e169]:
+              - generic [ref=e173] [cursor=pointer]: DOD
+              - text: "-"
+            - generic [ref=e174]:
+              - generic [ref=e178] [cursor=pointer]: Bedhold Days
+              - text: "0"
+          - generic [ref=e180]:
+            - generic [ref=e181]:
+              - img [ref=e184]
+              - generic [ref=e186]: Files
+              - text: (0)
+            - button [ref=e190] [cursor=pointer]:
+              - generic [ref=e191] [cursor=pointer]:
+                - text: Add File
+                - img [ref=e194] [cursor=pointer]
+  - dialog [ref=e200]:
+    - generic [ref=e202]:
+      - heading [level=2] [ref=e203]
+      - generic [ref=e206]:
+        - generic [ref=e207]: Upload Your File
+        - generic [ref=e208]:
+          - generic [ref=e209]:
+            - generic [ref=e210]:
+              - img [ref=e213]
+              - generic [ref=e215]: Drag and drop your file here or
+            - button "Browse" [active] [ref=e218] [cursor=pointer]:
+              - generic [ref=e219] [cursor=pointer]: Browse
+          - generic [ref=e220]: Only 1 file allowed. Max size 500MB
+      - button [ref=e222] [cursor=pointer]:
+        - img [ref=e226] [cursor=pointer]
+```

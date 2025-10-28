@@ -33,9 +33,13 @@ exports.AgingPage = class AgingPage {
     this.totalDisplayedBalanceSummaryColumn = page.locator(
       "(//span[text()='Summary']/parent::div/following-sibling::div)[last()]"
     );
-    this.agingEachamountRows = page.locator("//div[@class='overflow-hidden text-ellipsis']")
-    this.agingBtn = page.locator("//span[normalize-space(text())='AR Aging']")
-    this.totalBalanceColumns = page.locator("//div[@data-column-definition-name='totalBalance']//div[@class='overflow-hidden text-ellipsis']")
+    this.agingEachamountRows = page.locator(
+      "//div[@class='overflow-hidden text-ellipsis']"
+    );
+    this.agingBtn = page.locator("//span[normalize-space(text())='AR Aging']");
+    this.totalBalanceColumns = page.locator(
+      "//div[@data-column-definition-name='totalBalance']//div[@class='overflow-hidden text-ellipsis']"
+    );
   }
 
   clickOnCurrentMonthToggle = async () => {
@@ -46,14 +50,14 @@ exports.AgingPage = class AgingPage {
       `Click on Current Month Toggle`
     );
   };
-  clickOnAgingBtn = async()=>{
+  clickOnAgingBtn = async () => {
     await excuteSteps(
       this.test,
       this.agingBtn,
       "click",
       "Click on the aging button"
-    )
-  }
+    );
+  };
   clickOnAllPriorBalancesToggle = async () => {
     await excuteSteps(
       this.test,
@@ -73,6 +77,10 @@ exports.AgingPage = class AgingPage {
   };
 
   getBalance = async (locator) => {
+     await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
     const text = await locator.innerText();
     if (!text || text.trim() === "") {
       return 0;
@@ -126,7 +134,18 @@ exports.AgingPage = class AgingPage {
 
   verifyToggleStatusWhenOff = async () => {
     await this.clickOnCurrentMonthToggle();
-    await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    await this.test.step("Wait until the aging screen appears", async () => {
+      await this.page.waitForSelector(
+        "(//div[@data-column-definition-name='currentMonth'])[1]",
+        { state: "hidden" }
+      );
+    });
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
     await expect(
       this.currentMonthToggle,
       "Verify the the Current Month toggle is in disabled mode when it is turned off"
@@ -137,7 +156,15 @@ exports.AgingPage = class AgingPage {
     ).toBeHidden();
 
     await this.clickOnAllPriorBalancesToggle();
-    await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    await this.test.step("Wait until the aging screen appears", async () => {
+      await this.page.waitForSelector(
+        "(//div[@data-column-definition-name='priorBalances'])[1]",
+        { state: "hidden" }
+      );
+    });
     await expect(
       this.allPriorBalancesToggle,
       "Verify the the All Prior Balance toggle is in disabled mode when it is turned off"
@@ -149,7 +176,13 @@ exports.AgingPage = class AgingPage {
 
     await this.clickOnTotalDisplayedBalanceToggle();
     await this.test.step("Wait for grid to load", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    await this.test.step("Wait until the aging screen appears", async () => {
+      await this.page.waitForSelector(
+        "(//div[@data-column-definition-name='totalBalance'])[1]",
+        { state: "hidden" }
+      );
     });
     await expect(
       this.totalDisplayedBalanceToggle,
@@ -162,9 +195,14 @@ exports.AgingPage = class AgingPage {
   };
 
   verifyDataWhenTogglesAreOn = async () => {
-      await this.test.step("Wait until the aging screen appears",async()=>{
-      await this.page.waitForSelector("//span[text()='Current Month']", { state: 'visible' })
-    })
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    await this.test.step("Wait until the aging screen appears", async () => {
+      await this.page.waitForSelector("//span[text()='Current Month']", {
+        state: "visible",
+      });
+    });
     await this.currentMonthSummaryColumn.waitFor({ state: "visible" });
     await this.allPriorBalancesSummaryColumn.waitFor({ state: "visible" });
     await this.totalDisplayedBalanceSummaryColumn.waitFor({ state: "visible" });
@@ -180,34 +218,40 @@ exports.AgingPage = class AgingPage {
     );
 
     await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    await this.test.step("Wait for grid to load", async () => {
       await this.page.waitForTimeout(parseInt(process.env.mediumWait));
     });
-
     await expect(this.currentMonthBalance).toBeGreaterThan(0);
     await expect(this.allPriorBalance).toBeGreaterThan(0);
     await expect(this.totalDisplayedBalance).toBeGreaterThan(0);
   };
 
   verifyDataWhenTogglesAreOff = async () => {
-    await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
     let totalBefore = await this.getBalance(
       this.totalDisplayedBalanceSummaryColumn
     );
     await this.clickOnCurrentMonthToggle();
-    await this.page.waitForTimeout(parseInt(process.env.largeWait));
     let totalAfter = await this.getBalance(
       this.totalDisplayedBalanceSummaryColumn
     );
+      await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
     await expect(
       Number((totalBefore - this.currentMonthBalance).toFixed(2))
     ).toBe(Number(totalAfter.toFixed(2)));
 
     totalBefore = totalAfter;
     await this.clickOnAllPriorBalancesToggle();
-    await this.test.step("Wait for grid to load", async () => {
+    totalAfter = await this.getBalance(this.totalDisplayedBalanceSummaryColumn);
+      await this.test.step("Wait for grid to load", async () => {
       await this.page.waitForTimeout(parseInt(process.env.largeWait));
     });
-    totalAfter = await this.getBalance(this.totalDisplayedBalanceSummaryColumn);
     await expect(
       Number((totalBefore - this.allPriorBalance).toFixed(2)),
       "Validatin total summary balance when priorbalance toggle is off"
@@ -217,70 +261,76 @@ exports.AgingPage = class AgingPage {
   };
 
   verifyDefaultToggles = async () => {
-       await this.test.step("Wait until the aging screen appears",async()=>{
-      await this.page.waitForSelector("//span[text()='Current Month']", { state: 'visible' })
-    })
+    await this.test.step("Wait until the aging screen appears", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+      await this.page.waitForSelector("//span[text()='Current Month']", {
+        state: "visible",
+      });
+    });
     await this.verifyToggleStatusWhenOn();
     await this.verifyToggleStatusWhenOff();
   };
 
   verifyActiveAndInactiveToggles = async () => {
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    
     await this.verifyDataWhenTogglesAreOn();
     await this.verifyDataWhenTogglesAreOff();
   };
-// VerifyingTotalBlanceMitchingSixmonthsView = async () => {
-//   await this.clickOnAgingBtn();
+  // VerifyingTotalBlanceMitchingSixmonthsView = async () => {
+  //   await this.clickOnAgingBtn();
 
-//   await this.test.step("Wait for grid to load", async () => {
-//     await this.page.waitForTimeout(parseInt(process.env.largeWait));
-//   });
+  //   await this.test.step("Wait for grid to load", async () => {
+  //     await this.page.waitForTimeout(parseInt(process.env.largeWait));
+  //   });
 
-//   // Get the locator count
-//   const rowCount = await this.agingEachamountRows.count();
-//   console.log("monthRowsCount==", rowCount);
+  //   // Get the locator count
+  //   const rowCount = await this.agingEachamountRows.count();
+  //   console.log("monthRowsCount==", rowCount);
 
-//   let sum = 0;
+  //   let sum = 0;
 
-//   for (let i = 0; i < rowCount - 1; i++) {
-//     const txt = await this.agingEachamountRows.nth(i).innerText();
-//     const num = parseFloat(txt.replace(/[^0-9.-]+/g, "")) || 0;
-//     sum += num;
-//     console.log(`Index ${i} | Text: "${txt}" | Numeric: ${num} | Running Sum: ${sum.toFixed(2)}`);
-//   }
+  //   for (let i = 0; i < rowCount - 1; i++) {
+  //     const txt = await this.agingEachamountRows.nth(i).innerText();
+  //     const num = parseFloat(txt.replace(/[^0-9.-]+/g, "")) || 0;
+  //     sum += num;
+  //     console.log(`Index ${i} | Text: "${txt}" | Numeric: ${num} | Running Sum: ${sum.toFixed(2)}`);
+  //   }
 
-//   console.log(`Total Sum of all values: ${sum.toFixed(2)}`);
-// };
+  //   console.log(`Total Sum of all values: ${sum.toFixed(2)}`);
+  // };
 
-VerifyingTotalBlanceMitchingSixmonthsView = async () => {
-  await this.clickOnAgingBtn();
+  VerifyingTotalBlanceMitchingSixmonthsView = async () => {
+    await this.clickOnAgingBtn();
 
-  await this.test.step("Wait for grid to load", async () => {
-    await this.page.waitForTimeout(parseInt(process.env.largeWait));
-  });
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
 
-  // Locate only actual data rows (exclude headers, footers/summary)
-  const dataRowLocator = this.page.locator('div[role="row"]'); // Replace with actual row selector/class if different
-  const dataRowCount = await dataRowLocator.count();
-  console.log("Data Row Count:", dataRowCount);
+    // Locate only actual data rows (exclude headers, footers/summary)
+    const dataRowLocator = this.page.locator('div[role="row"]'); // Replace with actual row selector/class if different
+    const dataRowCount = await dataRowLocator.count();
+    console.log("Data Row Count:", dataRowCount);
 
-  let sum = 0;
+    let sum = 0;
 
-  // Loop through each row except the last one (assuming it's summary)
-  for (let i = 0; i < dataRowCount - 1; i++) {
-    // For each row, get its cells but exclude the last cell (Total Displayed Balance)
-    const cellLocator = dataRowLocator.nth(i).locator('div[role="gridcell"]'); // Replace with cell selector/class
-    const cellCount = await cellLocator.count();
+    // Loop through each row except the last one (assuming it's summary)
+    for (let i = 0; i < dataRowCount - 1; i++) {
+      // For each row, get its cells but exclude the last cell (Total Displayed Balance)
+      const cellLocator = dataRowLocator.nth(i).locator('div[role="gridcell"]'); // Replace with cell selector/class
+      const cellCount = await cellLocator.count();
 
-    for (let j = 0; j < cellCount - 1; j++) {
-      const cellText = await cellLocator.nth(j).innerText();
-      const num = parseFloat(cellText.replace(/[^0-9.-]+/g, "")) || 0;
-      sum += num;
-      console.log(`Row ${i}, Col ${j}: "${cellText}" -> ${num}, Sum: ${sum}`);
+      for (let j = 0; j < cellCount - 1; j++) {
+        const cellText = await cellLocator.nth(j).innerText();
+        const num = parseFloat(cellText.replace(/[^0-9.-]+/g, "")) || 0;
+        sum += num;
+        console.log(`Row ${i}, Col ${j}: "${cellText}" -> ${num}, Sum: ${sum}`);
+      }
     }
-  }
 
-  console.log(`Total Sum of all values: ${sum.toFixed(2)}`);
-};
-
-
+    console.log(`Total Sum of all values: ${sum.toFixed(2)}`);
+  };
 };

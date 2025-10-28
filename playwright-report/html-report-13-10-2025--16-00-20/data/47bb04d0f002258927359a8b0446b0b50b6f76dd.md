@@ -1,0 +1,221 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Revflow logo" [ref=e7] [cursor=pointer]
+        - img "Revflow" [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link "Task List" [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link "AR Aging" [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - link "Biller Activity Report" [ref=e34] [cursor=pointer]:
+          - /url: /biller-report
+          - img [ref=e37] [cursor=pointer]
+          - generic [ref=e39] [cursor=pointer]: Biller Activity Report
+        - generic [ref=e40]:
+          - link "Settings" [ref=e41] [cursor=pointer]:
+            - /url: /settings
+            - img [ref=e44] [cursor=pointer]
+            - generic [ref=e47] [cursor=pointer]: Settings
+            - img [ref=e50] [cursor=pointer]
+          - generic [ref=e52]:
+            - link "User Management" [ref=e54] [cursor=pointer]:
+              - /url: /settings/user-management
+              - generic [ref=e55] [cursor=pointer]: User Management
+            - link "Facility Payers" [ref=e57] [cursor=pointer]:
+              - /url: /settings/facility-payers
+              - generic [ref=e58] [cursor=pointer]: Facility Payers
+      - button [ref=e63] [cursor=pointer]:
+        - img [ref=e67] [cursor=pointer]
+    - generic [ref=e69]:
+      - button "KK" [ref=e73] [cursor=pointer]:
+        - generic [ref=e76] [cursor=pointer]: KK
+        - img [ref=e79] [cursor=pointer]
+      - generic [ref=e82]:
+        - generic [ref=e83]:
+          - heading "Facility Payers" [level=2] [ref=e86]
+          - generic [ref=e88]:
+            - generic [ref=e92]:
+              - button "Selected Facilities (1)" [ref=e96] [cursor=pointer]:
+                - generic [ref=e97] [cursor=pointer]: Selected Facilities (1)
+                - generic [ref=e98] [cursor=pointer]:
+                  - button [ref=e99] [cursor=pointer]:
+                    - img [ref=e102] [cursor=pointer]
+                  - img [ref=e106] [cursor=pointer]
+              - button "Select Payers" [expanded] [ref=e111] [cursor=pointer]:
+                - generic [ref=e112] [cursor=pointer]: Select Payers
+                - img [ref=e116] [cursor=pointer]
+            - button "Reset to Default" [ref=e119] [cursor=pointer]:
+              - generic [ref=e120] [cursor=pointer]:
+                - text: Reset to Default
+                - img [ref=e123] [cursor=pointer]
+        - generic [ref=e127]:
+          - generic [ref=e130]:
+            - generic [ref=e131]: "145"
+            - text: Results for
+            - generic [ref=e132]: 1 Facility
+          - generic [ref=e134]:
+            - generic [ref=e138] [cursor=pointer]: Payer Name
+            - generic [ref=e142] [cursor=pointer]:
+              - generic [ref=e143] [cursor=pointer]: Facility
+              - button [ref=e145] [cursor=pointer]:
+                - img [ref=e148] [cursor=pointer]
+            - generic [ref=e154] [cursor=pointer]: Payer Category
+          - generic [ref=e163]:
+            - generic [ref=e165]:
+              - generic [ref=e169]: Ny Medicaid
+              - generic [ref=e173]: Regal Heights
+              - generic [ref=e176]: Medicaid
+              - button "Edit" [ref=e182] [cursor=pointer]:
+                - generic [ref=e183] [cursor=pointer]:
+                  - img [ref=e186] [cursor=pointer]
+                  - text: Edit
+            - generic [ref=e189]:
+              - generic [ref=e193]: Veterans Allowance
+              - generic [ref=e197]: Regal Heights
+              - generic [ref=e200]: Income
+              - button "Edit" [ref=e206] [cursor=pointer]:
+                - generic [ref=e207] [cursor=pointer]:
+                  - img [ref=e210] [cursor=pointer]
+                  - text: Edit
+            - generic [ref=e213]:
+              - generic [ref=e217]: Veterans
+              - generic [ref=e221]: Regal Heights
+              - generic [ref=e224]: Income
+              - button "Edit" [ref=e230] [cursor=pointer]:
+                - generic [ref=e231] [cursor=pointer]:
+                  - img [ref=e234] [cursor=pointer]
+                  - text: Edit
+            - generic [ref=e237]:
+              - generic [ref=e241]: Pna Transfer
+              - generic [ref=e245]: Regal Heights
+              - generic [ref=e248]: Income
+              - button "Edit" [ref=e254] [cursor=pointer]:
+                - generic [ref=e255] [cursor=pointer]:
+                  - img [ref=e258] [cursor=pointer]
+                  - text: Edit
+            - generic [ref=e261]:
+              - generic [ref=e265]: State Ssi
+              - generic [ref=e269]: Regal Heights
+              - generic [ref=e272]: Income
+              - button "Edit" [ref=e278] [cursor=pointer]:
+                - generic [ref=e279] [cursor=pointer]:
+                  - img [ref=e282] [cursor=pointer]
+                  - text: Edit
+            - generic [ref=e285]:
+              - generic [ref=e289]: Social Security
+              - generic [ref=e293]: Regal Heights
+              - generic [ref=e296]: Income
+              - button "Edit" [ref=e302] [cursor=pointer]:
+                - generic [ref=e303] [cursor=pointer]:
+                  - img [ref=e306] [cursor=pointer]
+                  - text: Edit
+            - generic [ref=e309]:
+              - generic [ref=e313]: Spousal Contribution
+              - generic [ref=e317]: Regal Heights
+              - generic [ref=e320]: Income
+              - button "Edit" [ref=e326] [cursor=pointer]:
+                - generic [ref=e327] [cursor=pointer]:
+                  - img [ref=e330] [cursor=pointer]
+                  - text: Edit
+            - generic [ref=e333]:
+              - generic [ref=e337]: Railroad
+              - generic [ref=e341]: Regal Heights
+              - generic [ref=e344]: Income
+              - button "Edit" [ref=e350] [cursor=pointer]:
+                - generic [ref=e351] [cursor=pointer]:
+                  - img [ref=e354] [cursor=pointer]
+                  - text: Edit
+            - generic [ref=e357]:
+              - generic [ref=e361]: Pension 4
+              - generic [ref=e365]: Regal Heights
+              - generic [ref=e368]: Income
+              - button "Edit" [ref=e374] [cursor=pointer]:
+                - generic [ref=e375] [cursor=pointer]:
+                  - img [ref=e378] [cursor=pointer]
+                  - text: Edit
+            - generic [ref=e381]:
+              - generic [ref=e385]: Pension 3
+              - generic [ref=e389]: Regal Heights
+              - generic [ref=e392]: Income
+              - button "Edit" [ref=e398] [cursor=pointer]:
+                - generic [ref=e399] [cursor=pointer]:
+                  - img [ref=e402] [cursor=pointer]
+                  - text: Edit
+            - generic [ref=e405]:
+              - generic [ref=e409]: Pension 2
+              - generic [ref=e413]: Regal Heights
+              - generic [ref=e416]: Income
+              - button "Edit" [ref=e422] [cursor=pointer]:
+                - generic [ref=e423] [cursor=pointer]:
+                  - img [ref=e426] [cursor=pointer]
+                  - text: Edit
+            - generic [ref=e429]:
+              - generic [ref=e433]: Pension
+              - generic [ref=e437]: Regal Heights
+              - generic [ref=e440]: Income
+              - button "Edit" [ref=e446] [cursor=pointer]:
+                - generic [ref=e447] [cursor=pointer]:
+                  - img [ref=e450] [cursor=pointer]
+                  - text: Edit
+            - generic [ref=e453]:
+              - generic [ref=e457]: Federal Ssi
+              - generic [ref=e461]: Regal Heights
+              - generic [ref=e464]: Income
+              - button "Edit" [ref=e470] [cursor=pointer]:
+                - generic [ref=e471] [cursor=pointer]:
+                  - img [ref=e474] [cursor=pointer]
+                  - text: Edit
+            - generic [ref=e477]:
+              - generic [ref=e481]: Dividend
+              - generic [ref=e485]: Regal Heights
+              - generic [ref=e488]: Income
+              - button "Edit" [ref=e494] [cursor=pointer]:
+                - generic [ref=e495] [cursor=pointer]:
+                  - img [ref=e498] [cursor=pointer]
+                  - text: Edit
+  - menu [ref=e510]:
+    - generic [ref=e512]:
+      - generic [ref=e516]:
+        - img [ref=e519] [cursor=pointer]
+        - textbox "Search" [active] [ref=e521]: Zzrespite
+      - generic [ref=e522]:
+        - generic [ref=e524]:
+          - generic [ref=e525] [cursor=pointer]:
+            - checkbox "All (1 Match)" [checked] [ref=e526] [cursor=pointer]
+            - generic:
+              - img
+          - generic [ref=e527] [cursor=pointer]: All (1 Match)
+        - generic [ref=e528]: 1 Item Selected
+      - generic [ref=e531]:
+        - generic [ref=e533] [cursor=pointer]:
+          - generic [ref=e534] [cursor=pointer]:
+            - generic [ref=e537] [cursor=pointer]:
+              - checkbox [checked] [ref=e538] [cursor=pointer]
+              - generic:
+                - img
+            - generic [ref=e540] [cursor=pointer]: Respite
+          - button [ref=e541] [cursor=pointer]:
+            - img [ref=e544] [cursor=pointer]
+        - generic [ref=e547] [cursor=pointer]:
+          - generic [ref=e550] [cursor=pointer]:
+            - checkbox [checked] [ref=e551] [cursor=pointer]
+            - generic:
+              - img
+          - generic [ref=e554] [cursor=pointer]: Zzrespite
+      - button "Apply" [ref=e557] [cursor=pointer]:
+        - generic [ref=e558] [cursor=pointer]: Apply
+```

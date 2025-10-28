@@ -1,0 +1,205 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Revflow logo" [ref=e7] [cursor=pointer]
+        - img "Revflow" [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link "Task List" [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link "AR Aging" [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - link "Biller Activity Report" [ref=e34] [cursor=pointer]:
+          - /url: /biller-report
+          - img [ref=e37] [cursor=pointer]
+          - generic [ref=e39] [cursor=pointer]: Biller Activity Report
+        - generic [ref=e40]:
+          - link "Settings" [ref=e41] [cursor=pointer]:
+            - /url: /settings
+            - img [ref=e44] [cursor=pointer]
+            - generic [ref=e47] [cursor=pointer]: Settings
+            - img [ref=e50] [cursor=pointer]
+          - generic [ref=e52]:
+            - link "User Management" [ref=e54] [cursor=pointer]:
+              - /url: /settings/user-management
+              - generic [ref=e55] [cursor=pointer]: User Management
+            - link "Facility Payers" [ref=e57] [cursor=pointer]:
+              - /url: /settings/facility-payers
+              - generic [ref=e58] [cursor=pointer]: Facility Payers
+      - button [ref=e63] [cursor=pointer]:
+        - img [ref=e67] [cursor=pointer]
+    - generic [ref=e69]:
+      - button "KK" [ref=e73] [cursor=pointer]:
+        - generic [ref=e76] [cursor=pointer]: KK
+        - img [ref=e79] [cursor=pointer]
+      - generic [ref=e82]:
+        - generic [ref=e83]:
+          - heading "Facility Payers" [level=2] [ref=e86]
+          - generic [ref=e92]:
+            - button "Select Facilities" [ref=e96] [cursor=pointer]:
+              - generic [ref=e97] [cursor=pointer]: Select Facilities
+              - img [ref=e101] [cursor=pointer]
+            - button "Select Payers" [ref=e106] [cursor=pointer]:
+              - generic [ref=e107] [cursor=pointer]: Select Payers
+              - img [ref=e111] [cursor=pointer]
+        - generic [ref=e115]:
+          - generic [ref=e118]:
+            - generic [ref=e119]: "373782"
+            - text: Results
+          - generic [ref=e121]:
+            - generic [ref=e125] [cursor=pointer]: Payer Name
+            - generic [ref=e130] [cursor=pointer]: Facility
+            - generic [ref=e135] [cursor=pointer]: Payer Category
+          - generic [ref=e144]:
+            - generic [ref=e146]:
+              - generic [ref=e150]: Cigna Commercial
+              - generic [ref=e154]: Highland Care
+              - generic [ref=e158]:
+                - textbox [disabled] [ref=e162]: HMO
+                - combobox "Hospice" [expanded] [ref=e165]:
+                  - generic [ref=e171] [cursor=pointer]: Hospice
+              - generic [ref=e176]:
+                - button "Cancel" [ref=e178] [cursor=pointer]:
+                  - generic [ref=e179] [cursor=pointer]: Cancel
+                - button "Save" [ref=e181] [cursor=pointer]:
+                  - generic [ref=e182] [cursor=pointer]: Save
+            - generic [ref=e184]:
+              - generic [ref=e188]: Chartis Ins
+              - generic [ref=e192]: Highland Care
+              - generic [ref=e195]: HMO
+              - button "Edit" [disabled] [ref=e201]:
+                - generic [ref=e202]:
+                  - img [ref=e205]
+                  - text: Edit
+            - generic [ref=e208]:
+              - generic [ref=e212]: Comprehensive
+              - generic [ref=e216]: Highland Care
+              - generic [ref=e219]: HMO
+              - button "Edit" [disabled] [ref=e225]:
+                - generic [ref=e226]:
+                  - img [ref=e229]
+                  - text: Edit
+            - generic [ref=e232]:
+              - generic [ref=e236]: Catholic Managed Ltc Lt
+              - generic [ref=e240]: Highland Care
+              - generic [ref=e243]: HMO
+              - button "Edit" [disabled] [ref=e249]:
+                - generic [ref=e250]:
+                  - img [ref=e253]
+                  - text: Edit
+            - generic [ref=e256]:
+              - generic [ref=e260]: Federal Bcbs
+              - generic [ref=e264]: Highland Care
+              - generic [ref=e267]: HMO
+              - button "Edit" [disabled] [ref=e273]:
+                - generic [ref=e274]:
+                  - img [ref=e277]
+                  - text: Edit
+            - generic [ref=e280]:
+              - generic [ref=e284]: Bankers Life
+              - generic [ref=e288]: Highland Care
+              - generic [ref=e291]: HMO
+              - button "Edit" [disabled] [ref=e297]:
+                - generic [ref=e298]:
+                  - img [ref=e301]
+                  - text: Edit
+            - generic [ref=e304]:
+              - generic [ref=e308]: Empire Bcbs Commercial
+              - generic [ref=e312]: Highland Care
+              - generic [ref=e315]: HMO
+              - button "Edit" [disabled] [ref=e321]:
+                - generic [ref=e322]:
+                  - img [ref=e325]
+                  - text: Edit
+            - generic [ref=e328]:
+              - generic [ref=e332]: Xblue Cross Commercial
+              - generic [ref=e336]: Highland Care
+              - generic [ref=e339]: HMO
+              - button "Edit" [disabled] [ref=e345]:
+                - generic [ref=e346]:
+                  - img [ref=e349]
+                  - text: Edit
+            - generic [ref=e352]:
+              - generic [ref=e356]: Xbluecross Blueshield
+              - generic [ref=e360]: Highland Care
+              - generic [ref=e363]: HMO
+              - button "Edit" [disabled] [ref=e369]:
+                - generic [ref=e370]:
+                  - img [ref=e373]
+                  - text: Edit
+            - generic [ref=e376]:
+              - generic [ref=e380]: Allstate Life
+              - generic [ref=e384]: Highland Care
+              - generic [ref=e387]: HMO
+              - button "Edit" [disabled] [ref=e393]:
+                - generic [ref=e394]:
+                  - img [ref=e397]
+                  - text: Edit
+            - generic [ref=e400]:
+              - generic [ref=e404]: Archcare St
+              - generic [ref=e408]: Highland Care
+              - generic [ref=e411]: HMO
+              - button "Edit" [disabled] [ref=e417]:
+                - generic [ref=e418]:
+                  - img [ref=e421]
+                  - text: Edit
+            - generic [ref=e424]:
+              - generic [ref=e428]: Archcare Lt
+              - generic [ref=e432]: Highland Care
+              - generic [ref=e435]: HMO
+              - button "Edit" [disabled] [ref=e441]:
+                - generic [ref=e442]:
+                  - img [ref=e445]
+                  - text: Edit
+            - generic [ref=e448]:
+              - generic [ref=e452]: Xarchcare Mltc Lt
+              - generic [ref=e456]: Highland Care
+              - generic [ref=e459]: HMO
+              - button "Edit" [disabled] [ref=e465]:
+                - generic [ref=e466]:
+                  - img [ref=e469]
+                  - text: Edit
+            - generic [ref=e472]:
+              - generic [ref=e476]: Apwu
+              - generic [ref=e480]: Highland Care
+              - generic [ref=e483]: HMO
+              - button "Edit" [disabled] [ref=e489]:
+                - generic [ref=e490]:
+                  - img [ref=e493]
+                  - text: Edit
+  - listbox [ref=e505]:
+    - generic [ref=e509]:
+      - img [ref=e512]
+      - textbox "Search" [active] [ref=e514]
+    - generic [ref=e517]:
+      - option "HMO" [ref=e518] [cursor=pointer]:
+        - generic [ref=e520] [cursor=pointer]: HMO
+      - option "Hospice" [selected] [ref=e521] [cursor=pointer]:
+        - generic [ref=e523] [cursor=pointer]: Hospice
+      - option "Income" [ref=e525] [cursor=pointer]:
+        - generic [ref=e527] [cursor=pointer]: Income
+      - option "Medicaid" [ref=e528] [cursor=pointer]:
+        - generic [ref=e530] [cursor=pointer]: Medicaid
+      - option "Medicaid Pending" [ref=e531] [cursor=pointer]:
+        - generic [ref=e533] [cursor=pointer]: Medicaid Pending
+      - option "Medicare" [ref=e534] [cursor=pointer]:
+        - generic [ref=e536] [cursor=pointer]: Medicare
+      - option "Private Pay" [ref=e537] [cursor=pointer]:
+        - generic [ref=e539] [cursor=pointer]: Private Pay
+      - option "Respite" [ref=e540] [cursor=pointer]:
+        - generic [ref=e542] [cursor=pointer]: Respite
+      - option "Veterans" [ref=e543] [cursor=pointer]:
+        - generic [ref=e545] [cursor=pointer]: Veterans
+```

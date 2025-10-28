@@ -2,7 +2,7 @@ const { test, expect } = require("@playwright/test");
 const sections = require("../pageObjects/UI_Pages/pageIndex");
 require("dotenv").config();
 
-test.describe("Creating Task from Aging with file attachment", () => {
+test.describe("Verify that the resident name is correctly displayed for the searched name", () => {
   let page;
   test.beforeAll(async ({ browser }) => {
     const context = await browser.newContext();

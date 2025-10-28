@@ -1,0 +1,50 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - navigation [ref=e5]:
+    - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+      - /url: /
+      - img "Revflow logo" [ref=e7] [cursor=pointer]
+      - img "Revflow" [ref=e9] [cursor=pointer]
+    - generic [ref=e11]:
+      - link "Dashboard" [ref=e13] [cursor=pointer]:
+        - /url: /dashboard
+        - img [ref=e16] [cursor=pointer]
+        - generic [ref=e18] [cursor=pointer]: Dashboard
+      - link "Task List" [ref=e20] [cursor=pointer]:
+        - /url: /tasks
+        - img [ref=e23] [cursor=pointer]
+        - generic [ref=e25] [cursor=pointer]: Task List
+      - link "AR Aging" [ref=e27] [cursor=pointer]:
+        - /url: /ar-aging
+        - img [ref=e30] [cursor=pointer]
+        - generic [ref=e32] [cursor=pointer]: AR Aging
+      - generic [ref=e33]:
+        - link "Settings" [ref=e34] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e37] [cursor=pointer]
+          - generic [ref=e40] [cursor=pointer]: Settings
+          - img [ref=e43] [cursor=pointer]
+        - generic [ref=e45]:
+          - link "User Management" [active] [ref=e47] [cursor=pointer]:
+            - /url: /settings/user-management
+            - generic [ref=e48] [cursor=pointer]: User Management
+          - link "Facility Payers" [ref=e50] [cursor=pointer]:
+            - /url: /settings/facility-payers
+            - generic [ref=e51] [cursor=pointer]: Facility Payers
+    - button [ref=e56] [cursor=pointer]:
+      - img [ref=e60] [cursor=pointer]
+  - generic [ref=e63]:
+    - generic [ref=e68]:
+      - img [ref=e71]
+      - textbox "Search for a Case" [ref=e73]
+    - generic [ref=e74]:
+      - button "Selected Facilities (35)" [ref=e76] [cursor=pointer]:
+        - text: Selected Facilities (35)
+        - img [ref=e79] [cursor=pointer]
+      - img [ref=e85]
+      - button "AT" [ref=e88] [cursor=pointer]:
+        - generic [ref=e91] [cursor=pointer]: AT
+        - img [ref=e94] [cursor=pointer]
+```

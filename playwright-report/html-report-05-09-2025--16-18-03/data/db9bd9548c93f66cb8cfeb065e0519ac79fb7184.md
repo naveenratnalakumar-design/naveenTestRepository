@@ -1,0 +1,502 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Revflow logo" [ref=e7] [cursor=pointer]
+        - img "Revflow" [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link "Task List" [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link "AR Aging" [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - link "Settings" [ref=e34] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e37] [cursor=pointer]
+          - generic [ref=e40] [cursor=pointer]: Settings
+          - img [ref=e43] [cursor=pointer]
+      - button [ref=e49] [cursor=pointer]:
+        - img [ref=e53] [cursor=pointer]
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - generic [ref=e62]:
+          - img [ref=e65]
+          - textbox "Search for a Case" [ref=e67]
+        - generic [ref=e68]:
+          - button "Selected Facilities (44)" [ref=e70] [cursor=pointer]:
+            - text: Selected Facilities (44)
+            - img [ref=e73] [cursor=pointer]
+          - button "KK" [ref=e76] [cursor=pointer]:
+            - generic [ref=e79] [cursor=pointer]: KK
+            - img [ref=e82] [cursor=pointer]
+      - generic [ref=e85]:
+        - generic [ref=e86]:
+          - heading "AR Aging" [level=2] [ref=e89]
+          - generic [ref=e90]:
+            - generic [ref=e91]:
+              - 'button "Grouping: Facility Group to Resident" [ref=e93] [cursor=pointer]':
+                - generic [ref=e94] [cursor=pointer]:
+                  - text: "Grouping:"
+                  - generic [ref=e95] [cursor=pointer]: Facility Group to Resident
+                - img [ref=e98] [cursor=pointer]
+              - button "Filters 1" [ref=e101] [cursor=pointer]:
+                - img [ref=e104] [cursor=pointer]
+                - generic [ref=e106] [cursor=pointer]:
+                  - text: Filters
+                  - generic [ref=e107] [cursor=pointer]: "1"
+            - generic [ref=e108]:
+              - radiogroup [ref=e111]:
+                - radio "6 Months" [checked] [ref=e112] [cursor=pointer]:
+                  - generic [ref=e113] [cursor=pointer]: 6 Months
+                - radio "12 Months" [ref=e114] [cursor=pointer]:
+                  - generic [ref=e115] [cursor=pointer]: 12 Months
+                - radio "18 Months" [ref=e116] [cursor=pointer]:
+                  - generic [ref=e117] [cursor=pointer]: 18 Months
+                - radio "Custom" [ref=e118] [cursor=pointer]:
+                  - generic [ref=e119] [cursor=pointer]: Custom
+              - button [ref=e120] [cursor=pointer]:
+                - img [ref=e123] [cursor=pointer]
+        - generic [ref=e127]:
+          - generic [ref=e128]:
+            - generic [ref=e130]:
+              - generic [ref=e131]: "3"
+              - text: Results
+            - generic [ref=e132]:
+              - generic [ref=e134]:
+                - switch "Current Month" [checked] [ref=e135] [cursor=pointer]
+                - generic [ref=e144] [cursor=pointer]: Current Month
+              - generic [ref=e146]:
+                - switch "All Prior Balances" [checked] [ref=e147] [cursor=pointer]
+                - generic [ref=e156] [cursor=pointer]: All Prior Balances
+              - generic [ref=e158]:
+                - switch "Total Displayed Balance" [checked] [ref=e159] [cursor=pointer]
+                - generic [ref=e168] [cursor=pointer]: Total Displayed Balance
+          - generic [ref=e170]:
+            - generic [ref=e172]: Grouping
+            - generic [ref=e179]: Sep 2025
+            - generic [ref=e186]: Aug 2025
+            - generic [ref=e193]: Jul 2025
+            - generic [ref=e200]: Jun 2025
+            - generic [ref=e207]: May 2025
+            - generic [ref=e214]: Apr 2025
+            - generic [ref=e221]: Mar 2025
+            - generic [ref=e227]: All Prior Balances
+            - generic [ref=e233]: Total Displayed Balance
+          - generic [ref=e237]:
+            - generic [ref=e239]:
+              - generic [ref=e241]:
+                - generic [ref=e243]:
+                  - generic [ref=e244]:
+                    - img [ref=e247]
+                    - button [ref=e251] [cursor=pointer]:
+                      - img [ref=e255] [cursor=pointer]
+                  - generic [ref=e259]: Ivy Healthcare
+                - generic [ref=e264]:
+                  - text: 59,735.
+                  - generic [ref=e265]: "71"
+                - generic [ref=e270]:
+                  - text: 383,914.
+                  - generic [ref=e271]: "63"
+                - generic [ref=e276]:
+                  - text: 137,527.
+                  - generic [ref=e277]: "01"
+                - generic [ref=e282]:
+                  - text: 81,612.
+                  - generic [ref=e283]: "28"
+                - generic [ref=e288]:
+                  - text: 65,402.
+                  - generic [ref=e289]: "94"
+                - generic [ref=e294]:
+                  - text: 56,255.
+                  - generic [ref=e295]: "65"
+                - generic [ref=e300]:
+                  - text: 39,464.
+                  - generic [ref=e301]: "07"
+                - generic [ref=e306]:
+                  - text: 893,708.
+                  - generic [ref=e307]: "40"
+                - generic [ref=e312]:
+                  - text: 1,717,620.
+                  - generic [ref=e313]: "69"
+              - generic [ref=e315]:
+                - generic [ref=e318]:
+                  - generic [ref=e319]:
+                    - img [ref=e322]
+                    - button [ref=e325] [cursor=pointer]:
+                      - img [ref=e329] [cursor=pointer]
+                  - generic [ref=e333]: The Ivy at Davenport
+                - generic [ref=e338]:
+                  - text: 59,735.
+                  - generic [ref=e339]: "71"
+                - generic [ref=e344]:
+                  - text: 383,914.
+                  - generic [ref=e345]: "63"
+                - generic [ref=e350]:
+                  - text: 137,527.
+                  - generic [ref=e351]: "01"
+                - generic [ref=e356]:
+                  - text: 81,612.
+                  - generic [ref=e357]: "28"
+                - generic [ref=e362]:
+                  - text: 65,402.
+                  - generic [ref=e363]: "94"
+                - generic [ref=e368]:
+                  - text: 56,255.
+                  - generic [ref=e369]: "65"
+                - generic [ref=e374]:
+                  - text: 39,464.
+                  - generic [ref=e375]: "07"
+                - generic [ref=e380]:
+                  - text: 893,708.
+                  - generic [ref=e381]: "40"
+                - generic [ref=e386]:
+                  - text: 1,717,620.
+                  - generic [ref=e387]: "69"
+              - generic [ref=e389]:
+                - generic [ref=e393]:
+                  - generic [ref=e394]:
+                    - img [ref=e397]
+                    - button [ref=e400] [cursor=pointer]:
+                      - img [ref=e404] [cursor=pointer]
+                  - generic [ref=e408]: HMO
+                - generic [ref=e415]:
+                  - text: 31,705.
+                  - generic [ref=e416]: "44"
+                - generic [ref=e421]:
+                  - text: 18,137.
+                  - generic [ref=e422]: "74"
+                - generic [ref=e427]:
+                  - text: 2,426.
+                  - generic [ref=e428]: "79"
+                - generic [ref=e433]:
+                  - text: "699."
+                  - generic [ref=e434]: "97"
+                - generic [ref=e439]:
+                  - text: 15,068.
+                  - generic [ref=e440]: "69"
+                - generic [ref=e445]:
+                  - text: 2,506.
+                  - generic [ref=e446]: "89"
+                - generic [ref=e451]:
+                  - text: 33,632.
+                  - generic [ref=e452]: "15"
+                - generic [ref=e457]:
+                  - text: 104,177.
+                  - generic [ref=e458]: "67"
+              - generic [ref=e460]:
+                - generic [ref=e465]:
+                  - generic [ref=e466]:
+                    - img [ref=e469]
+                    - button [ref=e472] [cursor=pointer]:
+                      - img [ref=e476] [cursor=pointer]
+                  - generic [ref=e480]: Aetna
+                - generic [ref=e487]:
+                  - text: "212."
+                  - generic [ref=e488]: "36"
+                - generic [ref=e501]:
+                  - text: 1,622.
+                  - generic [ref=e502]: "16"
+                - generic [ref=e507]:
+                  - text: (2,277.
+                  - generic [ref=e508]: "66"
+                  - text: )
+                - generic [ref=e513]:
+                  - text: (443.
+                  - generic [ref=e514]: "14"
+                  - text: )
+              - generic [ref=e516]:
+                - generic [ref=e522]:
+                  - img [ref=e526]
+                  - link "Adams, Steven" [ref=e530] [cursor=pointer]:
+                    - /url: /cases/details/5595670
+                - generic [ref=e536]:
+                  - button [ref=e539] [cursor=pointer]:
+                    - img [ref=e543] [cursor=pointer]
+                  - generic [ref=e545]:
+                    - text: "212."
+                    - generic [ref=e546]: "36"
+                - generic [ref=e563]:
+                  - text: "212."
+                  - generic [ref=e564]: "36"
+              - generic [ref=e566]:
+                - generic [ref=e572]:
+                  - img [ref=e576]
+                  - link "Crocker, David" [ref=e580] [cursor=pointer]:
+                    - /url: /cases/details/4346591
+                - generic [ref=e596]:
+                  - button [ref=e599] [cursor=pointer]:
+                    - img [ref=e603] [cursor=pointer]
+                  - generic [ref=e605]:
+                    - text: 1,668.
+                    - generic [ref=e606]: "67"
+                - generic [ref=e613]:
+                  - text: 1,668.
+                  - generic [ref=e614]: "67"
+              - generic [ref=e616]:
+                - generic [ref=e621]:
+                  - img [ref=e625]
+                  - link "Scharff, Wayne" [ref=e629] [cursor=pointer]:
+                    - /url: /cases/details/4408072
+                - generic [ref=e645]:
+                  - button [ref=e648] [cursor=pointer]:
+                    - img [ref=e652] [cursor=pointer]
+                  - generic [ref=e654]:
+                    - text: (46.
+                    - generic [ref=e655]: "51"
+                    - text: )
+                - generic [ref=e660]:
+                  - text: (5,400.
+                  - generic [ref=e661]: "00"
+                  - text: )
+                - generic [ref=e666]:
+                  - text: (5,446.
+                  - generic [ref=e667]: "51"
+                  - text: )
+              - generic [ref=e669]:
+                - generic [ref=e674]:
+                  - generic [ref=e675]:
+                    - img [ref=e678]
+                    - button [ref=e681] [cursor=pointer]:
+                      - img [ref=e685] [cursor=pointer]
+                  - generic [ref=e689]: Aetna Medicare
+                - generic [ref=e696]:
+                  - text: 2,700.
+                  - generic [ref=e697]: "00"
+                - generic [ref=e702]:
+                  - text: "900."
+                  - generic [ref=e703]: "00"
+                - generic [ref=e710]:
+                  - text: 1,800.
+                  - generic [ref=e711]: "00"
+                - generic [ref=e716]:
+                  - text: 5,518.
+                  - generic [ref=e717]: "82"
+                - generic [ref=e724]:
+                  - text: 2,038.
+                  - generic [ref=e725]: "25"
+                - generic [ref=e730]:
+                  - text: 12,957.
+                  - generic [ref=e731]: "07"
+              - generic [ref=e733]:
+                - generic [ref=e739]:
+                  - img [ref=e743]
+                  - link "Adams, Steven" [ref=e747] [cursor=pointer]:
+                    - /url: /cases/details/5595670
+                - generic [ref=e753]:
+                  - button [ref=e756] [cursor=pointer]:
+                    - img [ref=e760] [cursor=pointer]
+                  - generic [ref=e762]:
+                    - text: 2,700.
+                    - generic [ref=e763]: "00"
+                - generic [ref=e767]:
+                  - button [ref=e770] [cursor=pointer]:
+                    - img [ref=e774] [cursor=pointer]
+                  - generic [ref=e776]:
+                    - text: "600."
+                    - generic [ref=e777]: "00"
+                - generic [ref=e792]:
+                  - text: 3,300.
+                  - generic [ref=e793]: "00"
+              - generic [ref=e795]:
+                - generic [ref=e801]:
+                  - img [ref=e805]
+                  - link "Davis, Veronica" [ref=e809] [cursor=pointer]:
+                    - /url: /cases/details/4318194
+                - generic [ref=e823]:
+                  - button [ref=e826] [cursor=pointer]:
+                    - img [ref=e830] [cursor=pointer]
+                  - generic [ref=e832]:
+                    - text: 5,519.
+                    - generic [ref=e833]: "00"
+                - generic [ref=e842]:
+                  - text: 5,519.
+                  - generic [ref=e843]: "00"
+              - generic [ref=e845]:
+                - generic [ref=e851]:
+                  - img [ref=e855]
+                  - link "Phillips, Miriam" [ref=e859] [cursor=pointer]:
+                    - /url: /cases/details/4555229
+                - generic [ref=e871]:
+                  - button [ref=e874] [cursor=pointer]:
+                    - img [ref=e878] [cursor=pointer]
+                  - generic [ref=e880]:
+                    - text: 1,800.
+                    - generic [ref=e881]: "00"
+                - generic [ref=e885]:
+                  - button [ref=e888] [cursor=pointer]:
+                    - img [ref=e892] [cursor=pointer]
+                  - generic [ref=e894]:
+                    - text: (0.
+                    - generic [ref=e895]: "18"
+                    - text: )
+                - generic [ref=e904]:
+                  - text: 1,799.
+                  - generic [ref=e905]: "82"
+            - generic [ref=e908]:
+              - generic [ref=e910]: Summary
+              - generic [ref=e915]:
+                - text: 375,271.
+                - generic [ref=e916]: "25"
+              - generic [ref=e921]:
+                - text: 4,356,166.
+                - generic [ref=e922]: "55"
+              - generic [ref=e927]:
+                - text: 1,241,520.
+                - generic [ref=e928]: "23"
+              - generic [ref=e933]:
+                - text: 567,248.
+                - generic [ref=e934]: "48"
+              - generic [ref=e939]:
+                - text: 456,630.
+                - generic [ref=e940]: "81"
+              - generic [ref=e945]:
+                - text: 348,100.
+                - generic [ref=e946]: "45"
+              - generic [ref=e951]:
+                - text: 279,049.
+                - generic [ref=e952]: "44"
+              - generic [ref=e957]:
+                - text: 3,001,652.
+                - generic [ref=e958]: "54"
+              - generic [ref=e963]:
+                - text: 10,625,639.
+                - generic [ref=e964]: "75"
+  - generic [ref=e980]:
+    - generic [ref=e981]:
+      - textbox [ref=e985]: Task_2025-09-05T16:18
+      - generic [ref=e986]:
+        - button "Save Task" [ref=e988] [cursor=pointer]:
+          - generic [ref=e989] [cursor=pointer]: Save Task
+        - button [ref=e991] [cursor=pointer]:
+          - img [ref=e995] [cursor=pointer]
+    - generic [ref=e997]:
+      - generic [ref=e1001]:
+        - generic [ref=e1002]:
+          - generic [ref=e1006] [cursor=pointer]: Facility
+          - text: The Ivy at Davenport
+        - generic [ref=e1007]:
+          - generic [ref=e1011] [cursor=pointer]: Resident
+          - link "Adams, Steven" [ref=e1012] [cursor=pointer]:
+            - /url: /cases/details/5595670
+        - generic [ref=e1013]:
+          - generic [ref=e1017] [cursor=pointer]: Balance
+          - generic [ref=e1018]:
+            - generic [ref=e1019]: $212.36
+            - button "(2 Charges)" [ref=e1021] [cursor=pointer]:
+              - generic [ref=e1022] [cursor=pointer]: (2 Charges)
+        - generic [ref=e1023]:
+          - generic [ref=e1027] [cursor=pointer]: Payer
+          - text: Aetna
+        - generic [ref=e1031]:
+          - toolbar:
+            - generic [ref=e1032]:
+              - button "bold" [ref=e1033] [cursor=pointer]:
+                - img [ref=e1034] [cursor=pointer]
+              - button "italic" [ref=e1036] [cursor=pointer]:
+                - img [ref=e1037] [cursor=pointer]
+              - button "underline" [ref=e1039] [cursor=pointer]:
+                - img [ref=e1040] [cursor=pointer]
+              - button "strike" [ref=e1042] [cursor=pointer]:
+                - img [ref=e1043] [cursor=pointer]
+            - generic [ref=e1045]:
+              - 'button "list: bullet" [ref=e1046] [cursor=pointer]':
+                - img [ref=e1047] [cursor=pointer]
+              - 'button "list: ordered" [ref=e1049] [cursor=pointer]':
+                - img [ref=e1050] [cursor=pointer]
+            - button "link" [ref=e1054] [cursor=pointer]:
+              - img [ref=e1055] [cursor=pointer]
+          - generic [ref=e1057]:
+            - paragraph [ref=e1059]: Add new task
+            - text: "Visit URL: EditRemove"
+        - generic [ref=e1061]:
+          - generic [ref=e1064] [cursor=pointer]:
+            - generic [ref=e1065] [cursor=pointer]: Balance Status
+            - generic [ref=e1066] [cursor=pointer]: "*"
+          - combobox "Paid Status" [ref=e1068]:
+            - generic [ref=e1075] [cursor=pointer]:
+              - img [ref=e1078] [cursor=pointer]
+              - generic [ref=e1080] [cursor=pointer]: Paid Status
+        - generic [ref=e1082]:
+          - generic [ref=e1085] [cursor=pointer]:
+            - generic [ref=e1086] [cursor=pointer]: Root Issue
+            - generic [ref=e1087] [cursor=pointer]: "*"
+          - combobox "Invalid NPI" [ref=e1089]:
+            - generic [ref=e1095] [cursor=pointer]: Invalid NPI
+        - generic [ref=e1097]:
+          - generic [ref=e1101] [cursor=pointer]: Assigned To
+          - combobox "KK Keshava Karri" [ref=e1103]:
+            - button "KK Keshava Karri" [ref=e1111] [cursor=pointer]:
+              - generic [ref=e1116] [cursor=pointer]: KK
+              - generic [ref=e1117] [cursor=pointer]: Keshava Karri
+        - generic [ref=e1119]:
+          - generic [ref=e1122] [cursor=pointer]:
+            - generic [ref=e1123] [cursor=pointer]: Due Date
+            - generic [ref=e1124] [cursor=pointer]: "*"
+          - textbox "Due Date *" [ref=e1127]: 9/5/2025
+        - generic [ref=e1128]:
+          - generic [ref=e1132] [cursor=pointer]: Task Status
+          - combobox "In Progress" [ref=e1134]:
+            - generic [ref=e1142] [cursor=pointer]: In Progress
+      - generic [ref=e1150]:
+        - tablist [ref=e1153]:
+          - generic [ref=e1154]:
+            - tab "Comments 0" [ref=e1155] [cursor=pointer]:
+              - generic [ref=e1157] [cursor=pointer]:
+                - text: Comments
+                - generic [ref=e1158] [cursor=pointer]: "0"
+            - tab "Charges 2" [selected] [ref=e1159] [cursor=pointer]:
+              - generic [ref=e1161] [cursor=pointer]:
+                - text: Charges
+                - generic [ref=e1162] [cursor=pointer]: "2"
+            - tab "Activity 0" [ref=e1163] [cursor=pointer]:
+              - generic [ref=e1165] [cursor=pointer]:
+                - text: Activity
+                - generic [ref=e1166] [cursor=pointer]: "0"
+            - tab "Files 0" [ref=e1167] [cursor=pointer]:
+              - generic [ref=e1169] [cursor=pointer]:
+                - text: Files
+                - generic [ref=e1170] [cursor=pointer]: "0"
+        - generic [ref=e1171]:
+          - tabpanel [ref=e1172]
+          - tabpanel "Charges 2" [ref=e1173]:
+            - generic [ref=e1177]:
+              - generic [ref=e1178]: Linked Charges
+              - generic [ref=e1182]:
+                - generic [ref=e1183]:
+                  - generic [ref=e1186] [cursor=pointer]:
+                    - generic [ref=e1187] [cursor=pointer]: Service Dates
+                    - button [ref=e1189] [cursor=pointer]:
+                      - img [ref=e1192] [cursor=pointer]
+                  - generic [ref=e1198] [cursor=pointer]: Amount
+                  - generic [ref=e1203] [cursor=pointer]: Coverage
+                  - generic [ref=e1208] [cursor=pointer]: Service
+                - generic [ref=e1215]:
+                  - generic [ref=e1217]:
+                    - generic [ref=e1221]: 8/13/2025-8/13/2025
+                    - generic [ref=e1225]: $116.77
+                    - generic [ref=e1229]: Primary
+                    - generic [ref=e1233]: PT
+                    - button [ref=e1238] [cursor=pointer]:
+                      - img [ref=e1242] [cursor=pointer]
+                  - generic [ref=e1245]:
+                    - generic [ref=e1249]: 8/14/2025-8/14/2025
+                    - generic [ref=e1253]: $95.59
+                    - generic [ref=e1257]: Primary
+                    - generic [ref=e1261]: OT
+                    - button [ref=e1266] [cursor=pointer]:
+                      - img [ref=e1270] [cursor=pointer]
+              - generic [ref=e1272]: No available charges to link
+          - tabpanel [ref=e1273]
+          - tabpanel [ref=e1274]
+```
