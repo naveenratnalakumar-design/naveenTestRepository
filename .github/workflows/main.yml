@@ -45,35 +45,23 @@ jobs:
           name: test-results
           path: test-results/
 
-      # Send Email Notification using SendGrid API
-      - name: Send Email Notification
+      # Send Outlook Email Notification
+      - name: Send Outlook Email Notification
         if: always() # runs even if previous steps failed
-        env:
-          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
-          TO_EMAIL: "SRongali@axgsolutions.com"
-          FROM_EMAIL: ${{ secrets.MAIL_USERNAME }}
-          WORKFLOW_STATUS: ${{ job.status }}
-        run: |
-          STATUS_COLOR="green"
-          if [ "$WORKFLOW_STATUS" != "success" ]; then
-            STATUS_COLOR="red"
-          fi
-
-          EMAIL_SUBJECT="Apex Automated Tests - $WORKFLOW_STATUS"
-          EMAIL_BODY="<h2 style='color:${STATUS_COLOR}'>Apex Automated Tests: ${WORKFLOW_STATUS}</h2>
-          <p><strong>Date:</strong> $(date -u)</p>
-          <p>Workflow: ${GITHUB_WORKFLOW}</p>
-          <p>Branch: ${GITHUB_REF_NAME}</p>
-          <p>Commit: <a href='https://github.com/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA}'>${GITHUB_SHA}</a></p>
-          <p>Check the full HTML report in the artifacts.</p>"
-
-          curl -s --request POST \
-            --url https://api.sendgrid.com/v3/mail/send \
-            --header "Authorization: Bearer ${SENDGRID_API_KEY}" \
-            --header "Content-Type: application/json" \
-            --data "{
-              \"personalizations\": [{ \"to\": [{ \"email\": \"${TO_EMAIL}\" }] }],
-              \"from\": { \"email\": \"${FROM_EMAIL}\" },
-              \"subject\": \"${EMAIL_SUBJECT}\",
-              \"content\": [{ \"type\": \"text/html\", \"value\": \"${EMAIL_BODY}\" }]
-            }"
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.office365.com
+          server_port: 587
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: |
+            Apex Automated Tests - ${{ job.status }}
+          to: SRongali@axgsolutions.com
+          from: ${{ secrets.MAIL_USERNAME }}
+          html_body: |
+            <h2 style="color:${{ job.status == 'success' && 'green' || 'red' }}">Apex Automated Tests: ${{ job.status }}</h2>
+            <p><strong>Date:</strong> ${{ github.event.head_commit.timestamp }}</p>
+            <p>Workflow: ${{ github.workflow }}</p>
+            <p>Branch: ${{ github.ref_name }}</p>
+            <p>Commit: <a href="https://github.com/${{ github.repository }}/commit/${{ github.sha }}"> ${{ github.sha }} </a></p>
+            <p>Check the full HTML report in the workflow artifacts.</p>
