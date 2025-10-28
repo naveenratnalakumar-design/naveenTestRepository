@@ -1,12 +1,14 @@
 name: Apex Automated Tests
 
+#on:
+  #workflow_dispatch:
 on:
-  workflow_dispatch:
-
+ schedule:
+    #Run every day at 8:00 AM UTC
+    - cron: '0 8 * * *'
 jobs:
   test:
     runs-on: [self-hosted, linux]
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -17,17 +19,17 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci   # safer than npm install for CI
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        id: run_tests
-        run: |
-          npx playwright test tests/dashboardAndTaskListValidation.spec.js --grep "@regression" --trace=on
-        continue-on-error: true
+        #run: npx playwright test --trace=on
+        run: npx playwright test --grep "@regression" --trace=on
 
+
+      # Upload Playwright HTML Report
       - name: Upload Playwright HTML Report
         if: always()
         uses: actions/upload-artifact@v4
@@ -35,58 +37,10 @@ jobs:
           name: playwright-report
           path: playwright-report/
 
+      # Upload raw test results (screenshots/videos)
       - name: Upload Test Results
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: test-results
           path: test-results/
-
-      - name: Send Email via SendGrid
-        if: always()
-        run: |
-          npm install @sendgrid/mail
-          node <<'EOF'
-          const sgMail = require('@sendgrid/mail');
-          sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-
-          const status = process.env.WORKFLOW_STATUS;
-          const color = status === 'success' ? 'green' : 'red';
-          const html = `
-            <h2 style="color:${color}">Apex Automated Tests: ${status}</h2>
-            <p><strong>Date:</strong> ${process.env.COMMIT_TIME}</p>
-            <p><strong>Workflow:</strong> ${process.env.WORKFLOW_NAME}</p>
-            <p><strong>Branch:</strong> ${process.env.BRANCH}</p>
-            <p><strong>Commit:</strong> <a href="https://github.com/${process.env.REPO}/commit/${process.env.SHA}">${process.env.SHA}</a></p>
-            <p>Check the full HTML report in the workflow artifacts.</p>
-          `;
-
-          const msg = {
-            to: [
-              { email: 'SRongali@axgsolutions.com' },
-              { email: 'kkarri@axgsolutions.com' }
-            ],
-            from: { email: process.env.MAIL_USERNAME }, // ✅ FIXED: must be an object
-            subject: 'Apex Automated Tests - ' + status,
-            html,
-          };
-
-          sgMail
-            .send(msg)
-            .then(() => console.log('✅ Email sent successfully'))
-            .catch(err => {
-              console.error('❌ Failed to send email:', err.response?.body || err);
-              process.exit(1);
-            });
-          EOF
-        env:
-          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
-          FROM_EMAIL: ${{ secrets.MAIL_USERNAME }}
-          WORKFLOW_STATUS: ${{ job.status }}
-          WORKFLOW_NAME: ${{ github.workflow }}
-          BRANCH: ${{ github.ref_name }}
-          REPO: ${{ github.repository }}
-          SHA: ${{ github.sha }}
-          COMMIT_TIME: ${{ github.event.head_commit.timestamp }}
-
-
