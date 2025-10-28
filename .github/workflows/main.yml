@@ -1,9 +1,6 @@
 name: Apex Automated Tests
 
 on:
-  #schedule:
-    # Run every day at 8:00 AM UTC
-    #- cron: '0 8 * * *'
   workflow_dispatch:
 
 jobs:
@@ -45,20 +42,16 @@ jobs:
           name: test-results
           path: test-results/
 
-      # Send Outlook Email Notification
-      - name: Send Outlook Email Notification
-        if: always() # runs even if previous steps failed
-        uses: dawidd6/action-send-mail@v3
+      # Send Email Notification via SendGrid
+      - name: Send Email via SendGrid
+        if: always()
+        uses: peter-evans/sendgrid-action@v1
         with:
-          server_address: smtp.office365.com
-          server_port: 587
-          username: ${{ secrets.MAIL_USERNAME }}
-          password: ${{ secrets.MAIL_PASSWORD }}
-          subject: |
-            Apex Automated Tests - ${{ job.status }}
-          to: SRongali@axgsolutions.com
+          api_key: ${{ secrets.SENDGRID_API_KEY }}
           from: ${{ secrets.MAIL_USERNAME }}
-          html_body: |
+          to: "SRongali@axgsolutions.com, anotheruser@yourdomain.com"
+          subject: "Apex Automated Tests - ${{ job.status }}"
+          content: |
             <h2 style="color:${{ job.status == 'success' && 'green' || 'red' }}">Apex Automated Tests: ${{ job.status }}</h2>
             <p><strong>Date:</strong> ${{ github.event.head_commit.timestamp }}</p>
             <p>Workflow: ${{ github.workflow }}</p>
