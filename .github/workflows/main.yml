@@ -63,7 +63,7 @@ jobs:
 
           const msg = {
             to: ['SRongali@axgsolutions.com', 'vgaikawad@axgsolutions.com'], // multiple emails supported
-            from: ${{ secrets.MAIL_USERNAME }} // must be verified sender in SendGrid
+            from: process.env.MAIL_USERNAME // must be verified sender in SendGrid
             subject: `Apex Automated Tests - ${status}`,
             html,
           };
