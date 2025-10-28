@@ -50,21 +50,21 @@ jobs:
           const sgMail = require('@sendgrid/mail');
           sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-          const status = '${{ job.status }}';
+          const status = process.env.WORKFLOW_STATUS;
           const color = status === 'success' ? 'green' : 'red';
           const html = `
             <h2 style="color:${color}">Apex Automated Tests: ${status}</h2>
-            <p><strong>Date:</strong> ${{ github.event.head_commit.timestamp }}</p>
-            <p>Workflow: ${{ github.workflow }}</p>
-            <p>Branch: ${{ github.ref_name }}</p>
-            <p>Commit: <a href="https://github.com/${{ github.repository }}/commit/${{ github.sha }}"> ${{ github.sha }}</a></p>
+            <p><strong>Date:</strong> ${process.env.COMMIT_TIME}</p>
+            <p>Workflow: ${process.env.WORKFLOW_NAME}</p>
+            <p>Branch: ${process.env.BRANCH}</p>
+            <p>Commit: <a href="https://github.com/${process.env.REPO}/commit/${process.env.SHA}">${process.env.SHA}</a></p>
             <p>Check the full HTML report in the workflow artifacts.</p>
           `;
 
           const msg = {
-            to: ['SRongali@axgsolutions.com', 'vgaikawad@axgsolutions.com'], // multiple emails supported
-            from: process.env.MAIL_USERNAME // must be verified sender in SendGrid
-            subject: `Apex Automated Tests - ${status}`,
+            to: ['SRongali@axgsolutions.com', 'anotheruser@axgsolutions.com'],
+            from: process.env.MAIL_USERNAME,
+            subject: 'Apex Automated Tests - ' + status,
             html,
           };
 
@@ -77,3 +77,11 @@ jobs:
           EOF
         env:
           SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+          FROM_EMAIL: ${{ secrets.MAIL_USERNAME }}
+          WORKFLOW_STATUS: ${{ job.status }}
+          WORKFLOW_NAME: ${{ github.workflow }}
+          BRANCH: ${{ github.ref_name }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+          COMMIT_TIME: ${{ github.event.head_commit.timestamp }}
+
