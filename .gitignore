@@ -3,4 +3,5 @@
 node_modules/
 /test-results/
 /blob-report/
+/playwright-report/
 /playwright/.cache/

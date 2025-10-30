@@ -1,5 +1,6 @@
 const { expect } = require("@playwright/test");
 const { excuteSteps } = require("../../utilities/actions");
+const testData = require("../../test_Data/testData.json");
 
 exports.AgingPage = class AgingPage {
   constructor(test, page) {
@@ -40,6 +41,19 @@ exports.AgingPage = class AgingPage {
     this.totalBalanceColumns = page.locator(
       "//div[@data-column-definition-name='totalBalance']//div[@class='overflow-hidden text-ellipsis']"
     );
+    this.payerFilter = page.locator(
+      "(//div[@class='mat-mdc-menu-content']/descendant::div[contains(@class,'whitespace-nowrap')])[1]"
+    );
+    this.filterBtn = page.locator("//span[normalize-space(text())='Filters']");
+    this.clearFilterBtn = page.locator(
+      "//span[normalize-space(text())='Clear Filter']"
+    );
+    this.applyFilterBtn = page.locator(
+      "//arw-button//button[contains(@class,'arw-button--primary')]"
+    );
+    this.resetDefaultBtn = page.locator(
+      "//span[normalize-space(text())='Reset to Default']"
+    );
   }
 
   clickOnCurrentMonthToggle = async () => {
@@ -56,6 +70,30 @@ exports.AgingPage = class AgingPage {
       this.agingBtn,
       "click",
       "Click on the aging button"
+    );
+  };
+  clickOnFilterBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.filterBtn,
+      "click",
+      "Click on filter button"
+    );
+  };
+  clickOnClearFilterBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.clearFilterBtn,
+      "click",
+      "Click on the clear filter button"
+    );
+  };
+  clickOnResetDefaultBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.resetDefaultBtn,
+      "click",
+      "Click on reset default button"
     );
   };
   clickOnAllPriorBalancesToggle = async () => {
@@ -77,7 +115,7 @@ exports.AgingPage = class AgingPage {
   };
 
   getBalance = async (locator) => {
-     await this.test.step("Wait for grid to load", async () => {
+    await this.test.step("Wait for grid to load", async () => {
       await this.page.waitForTimeout(parseInt(process.env.largeWait));
       await this.page.waitForTimeout(parseInt(process.env.largeWait));
     });
@@ -239,7 +277,7 @@ exports.AgingPage = class AgingPage {
     let totalAfter = await this.getBalance(
       this.totalDisplayedBalanceSummaryColumn
     );
-      await this.test.step("Wait for grid to load", async () => {
+    await this.test.step("Wait for grid to load", async () => {
       await this.page.waitForTimeout(parseInt(process.env.largeWait));
     });
     await expect(
@@ -249,7 +287,7 @@ exports.AgingPage = class AgingPage {
     totalBefore = totalAfter;
     await this.clickOnAllPriorBalancesToggle();
     totalAfter = await this.getBalance(this.totalDisplayedBalanceSummaryColumn);
-      await this.test.step("Wait for grid to load", async () => {
+    await this.test.step("Wait for grid to load", async () => {
       await this.page.waitForTimeout(parseInt(process.env.largeWait));
     });
     await expect(
@@ -276,7 +314,7 @@ exports.AgingPage = class AgingPage {
       await this.page.waitForTimeout(parseInt(process.env.largeWait));
       await this.page.waitForTimeout(parseInt(process.env.largeWait));
     });
-    
+
     await this.verifyDataWhenTogglesAreOn();
     await this.verifyDataWhenTogglesAreOff();
   };
@@ -303,34 +341,179 @@ exports.AgingPage = class AgingPage {
   //   console.log(`Total Sum of all values: ${sum.toFixed(2)}`);
   // };
 
+  // VerifyingTotalBlanceMitchingSixmonthsView = async () => {
+  //   await this.clickOnAgingBtn();
+
+  //   await this.test.step("Wait for grid to load", async () => {
+  //     await this.page.waitForTimeout(parseInt(process.env.largeWait));
+  //   });
+
+  //   // Locate only actual data rows (exclude headers, footers/summary)
+  //   const dataRowLocator = this.page.locator('div[role="row"]'); // Replace with actual row selector/class if different
+  //   const dataRowCount = await dataRowLocator.count();
+  //   console.log("Data Row Count:", dataRowCount);
+
+  //   let sum = 0;
+
+  //   // Loop through each row except the last one (assuming it's summary)
+  //   for (let i = 0; i < dataRowCount - 1; i++) {
+  //     // For each row, get its cells but exclude the last cell (Total Displayed Balance)
+  //     const cellLocator = dataRowLocator.nth(i).locator('div[role="gridcell"]'); // Replace with cell selector/class
+  //     const cellCount = await cellLocator.count();
+
+  //     for (let j = 0; j < cellCount - 1; j++) {
+  //       const cellText = await cellLocator.nth(j).innerText();
+  //       const num = parseFloat(cellText.replace(/[^0-9.-]+/g, "")) || 0;
+  //       sum += num;
+  //       console.log(`Row ${i}, Col ${j}: "${cellText}" -> ${num}, Sum: ${sum}`);
+  //     }
+  //   }
+
+  //   console.log(`Total Sum of all values: ${sum.toFixed(2)}`);
+  // };
   VerifyingTotalBlanceMitchingSixmonthsView = async () => {
     await this.clickOnAgingBtn();
 
+    //console.log("Wait for grid to load...");
+    //await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    await this.page.waitForSelector(
+      '//arw-ar-aging-cell[@class="flex items-center justify-between gap-8 w-full group ng-star-inserted"]',
+      { timeout: 20000 }
+    );
+
+    // Fetch all cell values
+    const allValues = await this.page
+      .locator(
+        '//arw-ar-aging-cell[@class="flex items-center justify-between gap-8 w-full group ng-star-inserted"]'
+      )
+      .allInnerTexts();
+
+    console.log("Total cells found:", allValues.length);
+
+    // Take first 8 and 9th values
+    const firstEight = allValues.slice(0, 8);
+    const totalDisplayed = allValues[8]; // 9th value
+
+    // Function to clean and convert both (negative) and normal numbers
+    const cleanNumber = (val) => {
+      if (!val) return 0;
+      val = val.replace(/,/g, "").trim();
+
+      // Handle negative numbers in parentheses, e.g. (5,649.15)
+      if (/^\(.*\)$/.test(val)) {
+        val = "-" + val.replace(/[()]/g, "");
+      }
+      const num = parseFloat(val);
+      return isNaN(num) ? 0 : num;
+    };
+
+    // Convert to numeric (keep decimals, remove commas)
+    const monthNumbers = firstEight.map(cleanNumber);
+    const totalNumber = cleanNumber(totalDisplayed);
+
+    // Calculate sum of first 8
+    const sum = monthNumbers.reduce((acc, val) => acc + val, 0);
+
+    console.log("Month values:", monthNumbers);
+    console.log("Sum of all Months balance :", sum.toFixed(2));
+    console.log("Total Displayed Balance :", totalNumber.toFixed(2));
+
+    // Assertion (allowing rounding difference)
+    expect(Math.abs(sum - totalNumber)).toBeLessThan(1);
+
+    console.log(
+      "Validation passed — sum of all month total equals displayed Total Displayed Balance!"
+    );
+  };
+  verifysummaryTotal = async () => {
+    await this.clickOnAgingBtn();
+
+    // Wait for all cells in the 'currentMonth' column to load
+    await this.page.waitForSelector(
+      "//div[@data-column-definition-name='currentMonth']//div[contains(@class,'overflow-hidden')]",
+      { timeout: 60000 }
+    );
+
+    // Get all cell text values
+    const allValues = await this.page
+      .locator(
+        "//div[@data-column-definition-name='currentMonth']//div[contains(@class,'overflow-hidden')]"
+      )
+      .allInnerTexts();
+
+    console.log(" Total cells found:", allValues.length);
+
+    // Helper: clean text → number
+    const cleanNumber = (val) => {
+      if (!val) return 0;
+      val = val.replace(/,/g, "").trim();
+      if (/^\(.*\)$/.test(val)) val = "-" + val.replace(/[()]/g, "");
+      const num = parseFloat(val);
+      return isNaN(num) ? 0 : num;
+    };
+
+    // Convert all values to numeric
+    const numericValues = allValues.map(cleanNumber);
+
+    // Split into month cells and total cell
+    const lastIndex = numericValues.length - 1;
+    const monthValues = numericValues.slice(0, lastIndex);
+    const totalValue = numericValues[lastIndex];
+
+    // Sum of month values
+    const sum = monthValues.reduce((acc, val) => acc + val, 0);
+
+    // Logs
+    console.log(" Month values:", monthValues);
+    console.log(" Sum of months summary:", sum.toFixed(2));
+    console.log(" Total Summary:", totalValue.toFixed(2));
+
+    // Assertion (allow rounding difference)
+    expect(Math.abs(sum - totalValue)).toBeLessThan(1);
+
+    console.log(" Validation passed — Sum of months equals displayed summary!");
+  };
+  VerifyResetDefaultOnAging = async () => {
+    await this.clickOnAgingBtn();
     await this.test.step("Wait for grid to load", async () => {
       await this.page.waitForTimeout(parseInt(process.env.largeWait));
     });
-
-    // Locate only actual data rows (exclude headers, footers/summary)
-    const dataRowLocator = this.page.locator('div[role="row"]'); // Replace with actual row selector/class if different
-    const dataRowCount = await dataRowLocator.count();
-    console.log("Data Row Count:", dataRowCount);
-
-    let sum = 0;
-
-    // Loop through each row except the last one (assuming it's summary)
-    for (let i = 0; i < dataRowCount - 1; i++) {
-      // For each row, get its cells but exclude the last cell (Total Displayed Balance)
-      const cellLocator = dataRowLocator.nth(i).locator('div[role="gridcell"]'); // Replace with cell selector/class
-      const cellCount = await cellLocator.count();
-
-      for (let j = 0; j < cellCount - 1; j++) {
-        const cellText = await cellLocator.nth(j).innerText();
-        const num = parseFloat(cellText.replace(/[^0-9.-]+/g, "")) || 0;
-        sum += num;
-        console.log(`Row ${i}, Col ${j}: "${cellText}" -> ${num}, Sum: ${sum}`);
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    await this.test.step(
+      "Wait Until Filter button is visible on task list page",
+      async () => {
+        await this.page.waitForSelector(
+          "//span[normalize-space(text())='Filters']",
+          { state: "visible" }
+        );
       }
-    }
-
-    console.log(`Total Sum of all values: ${sum.toFixed(2)}`);
+    );
+    await this.clickOnFilterBtn();
+    await this.clickOnClearFilterBtn();
+    await this.clickOnFilterBtn();
+    await expect(
+      this.applyFilterBtn,
+      "Verifying the 'Apply' button is visible and disabled after clearing the filter"
+    ).toBeDisabled();
+    await this.page.keyboard.press("Escape");
+    await this.clickOnResetDefaultBtn();
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    let restDefaultIsDisable = await this.page.locator(
+      "//arw-button[@class='ng-star-inserted']//button[contains(@class,'arw-button--accent')]"
+    );
+    await expect(
+      restDefaultIsDisable,
+      "Verify the 'Reset Defaults' button is in disabled mode"
+    ).toBeDisabled();
+    await this.clickOnFilterBtn();
+    await expect(
+      this.payerFilter,
+      "Verify the 'Payer' default filter is visible in the filter dropdown after resetting to defaults"
+    ).toHaveText(testData.RevflowData.agingData.payerFiler);
+    await this.page.keyboard.press("Escape");
   };
 };

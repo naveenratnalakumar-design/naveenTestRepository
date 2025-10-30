@@ -233,6 +233,14 @@ exports.TaskListPage = class TaskListPage {
       "(//div[@class='mat-mdc-menu-content']/descendant::div[contains(@class,'whitespace-nowrap')])[4]"
     );
     this.resetDefaultBtn = page.locator("//span[normalize-space(text())='Reset to Default']")
+    this.selectFirstTask = page.locator("(//div[@data-column-definition-name='name']//a)[1]")
+    this.taskNameInput = page.locator("//div[@class='relative flex h-full']//input");
+    this.taskViewFacilityName = page.locator("//span[normalize-space(text())='Facility']/ancestor::div[contains(@class,'items-center')]")
+    this.taskViewResidentName = page.locator("//span[normalize-space(text())='Resident']/ancestor::div[contains(@class,'items-center')]")
+    this.taskViewPayerName = page.locator("//span[normalize-space(text())='Payer']/ancestor::div[contains(@class,'items-center')]");
+    this.taskCloseBtn = page.locator("(//arw-button[@category='tertiary']//button[contains(@class,'arw-button--icon-only')])[2]")
+    this.rootIssueSelectDrodown = page.locator("//arw-select[@formcontrolname='issueId']//div[@class='mat-mdc-select-trigger']");
+    this.selectRootOption = page.locator("(//mat-option[@role='option'])[1]")
   }
   clickOnFilterBtn = async () => {
     await excuteSteps(
@@ -242,6 +250,38 @@ exports.TaskListPage = class TaskListPage {
       `Click on Filters Icon in Task List`
     );
   };
+  clickOnTaskCloseBtn = async ()=>{
+    await excuteSteps(
+      this.test,
+      this.taskCloseBtn,
+      "click",
+      "Click close button"
+    )
+  }
+  clickOnRootIssueDropdown = async ()=>{
+    await excuteSteps(
+      this.test,
+      this.rootIssueSelectDrodown,
+      "click",
+      "Click On rootIssue dropdown"
+    )
+  }
+  selectRootIssueOptionFromDropdown = async()=>{
+    await excuteSteps(
+      this.test,
+      this.selectRootOption,
+      "click",
+      "Select rootIssue option from the dropdown"
+    )
+  }
+  clickOnTaskName = async () =>{
+    await excuteSteps(
+      this.test,
+      this.selectFirstTask,
+      "click",
+      "Navigate to task view"
+    )
+  }
   clickOnClearFilterIcon = async () => {
     await excuteSteps(
       this.test,
@@ -2016,4 +2056,63 @@ exports.TaskListPage = class TaskListPage {
      await expect(this.defaultBalanceAndTaskStatusValuePath,"Verifying the default 'TaskStatus' filter is visible in the filter dropdown after resetting to defaults").toHaveText(test_Data.RevflowData.taskListData.taskStatusDefaultFilterData);
        await this.page.keyboard.press("Escape");
   };
+  verifyingTasklistOpensSlideOutAndUpdatingAnyFieldRefreshesTasklistGrid = async ()=>{
+    await this.clickOnCustomSortBtn();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnApplySortButtonIcon();
+    await this.clickOnFilterBtn();
+    await this.clickOnClearFilterIcon();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
+    await this.clickOnTaskName();
+    let facilityName = await this.taskViewFacilityName.innerText();
+    let facility = facilityName.replace(/^Facility\s*/i, "");
+    let residentName = await this.taskViewResidentName.innerText();
+    let resident =residentName.replace(/^Resident\s*/i, "");
+    let payerName = await this.taskViewPayerName.innerText();
+    let payer = payerName.replace(/^Payer\s*/i, "");
+    console.log("FacilityName ==",facility);
+    console.log("ResidentName ==",resident);
+    console.log("payerName==",payer);
+   await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
+    await this.clickOnRootIssueDropdown();
+    let rootIssue = await this.selectRootOption.innerText();
+    console.log("rootIssue==",rootIssue)
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
+    await this.selectRootIssueOptionFromDropdown();
+    await this.clickOnTaskCloseBtn()
+     await this.clickOnFilterBtn();
+    await this.clickOnAddFilterBtn();
+    await this.clickOAddFilterDropdown();
+    await this.searchFilterNames(["Facility"]);
+    await this.selectFilterOptionsFromDropdown("Facility");
+    await this.selectFacilitySubOptions("Select Facilities");
+    await this.searchTaskName([facility]);
+    await this.page.keyboard.press("Enter");
+    await this.clickOnApplyButton();
+    await this.clickOnAddFilterBtn();
+    await this.clickOAddFilterDropdown();
+    await this.searchFilterNames(["Resident"]);
+    await this.selectFilterOptionsFromDropdown("Resident");
+    await this.selectFacilitySubOptions("Select Resident");
+    await this.searchTaskName([resident]);
+    await this.page.keyboard.press("Enter");
+    await this.clickOnApplyButton();
+    await this.clickOnAddFilterBtn();
+    await this.clickOAddFilterDropdown();
+    await this.searchFilterNames(["Payer"]);
+    await this.selectFilterOptionsFromDropdown("Payer");
+    await this.selectFacilitySubOptions("Select Payer");
+    await this.searchTaskName([payer]);
+    await this.page.keyboard.press("Enter");
+    await this.clickOnApplyButton();
+    await this.clickOnApplyFilterButton();
+    await expect().toHaveText(rootIssue)
+  }
 };

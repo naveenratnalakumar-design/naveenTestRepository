@@ -18,7 +18,6 @@ test.describe("Verify data is populated correctly when the toggles are on and of
         const createTaskPage = new sections.CreateTaskPage(test, page);
         await createTaskPage.clickOnArAgingBtn();
         const agingPage = new sections.AgingPage(test, page);
-        // await page.pause();
         await agingPage.verifyActiveAndInactiveToggles();
     });
     test.afterAll(async () => {

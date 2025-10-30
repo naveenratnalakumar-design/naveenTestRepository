@@ -1,0 +1,3 @@
+usersemail== kkari@apexhct.onmicrosoft.com
+roles== Tracker
+facilities== Test Pinnacle

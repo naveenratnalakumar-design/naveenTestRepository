@@ -1,0 +1,15 @@
+Data Row Count: 0
+Total Sum of all values: 0.00
+ Total cells found: 14
+ Month values: [
+          0,   -4601.65,
+  787592.68,          0,
+          0,   11574.34,
+     686.53,   40150.05,
+  262043.68,  169638.44,
+  113356.78, 2556238.32,
+          0
+]
+ Sum of months summary: 3936679.17
+ Total Summary: 3936679.17
+ Validation passed — Sum of months equals displayed summary!

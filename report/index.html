@@ -43,9 +43,9 @@
       <body>
         <h1>📊 Playwright Test Execution Report</h1>
         <h2>Summary</h2>
-        <p><strong>Total Scenarios:</strong> 1 | ✅ Passed: 1 | ❌ Failed: 0 | ⚠️ Skipped: 0</p>
+        <p><strong>Total Scenarios:</strong> 2 | ✅ Passed: 0 | ❌ Failed: 2 | ⚠️ Skipped: 0</p>
         <canvas id="chart" width="200" height="200"></canvas>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js?t=1761631735629"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js?t=1761817228416"></script>
     <script>
       const ctx = document.getElementById('chart').getContext('2d');
       new Chart(ctx, {
@@ -53,7 +53,7 @@
         data: {
           labels: ['Passed', 'Failed', 'Skipped'],
           datasets: [{
-            data: [1, 0, 0],
+            data: [0, 2, 0],
             backgroundColor: ['#4CAF50', '#F44336', '#FF9800']
           }]
         },
@@ -76,13 +76,23 @@
           <tbody>
             
       <tr>
-        <td><a href="@regression_verify_sorting_all_columns_on_tasklist.html?t=1761631735629">@regression Verify Sorting all columns on TaskList</a></td>
-        <td>✅️</td>
+        <td><a href="verify_task_list_opens_in_slide_out_and_updating_any_field_refreshes_the_tasklist_grid.html?t=1761817228416">Verify task list opens in slide out and updating any field refreshes the tasklist grid</a></td>
+        <td>⛔</td>
         <td>1</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>52430</td>
+      </tr>
+    
+      <tr>
+        <td><a href="verify_task_list_opens_in_slide_out_and_updating_any_field_refreshes_the_tasklist_grid.html?t=1761817228416">Verify task list opens in slide out and updating any field refreshes the tasklist grid</a></td>
+        <td>⛔</td>
+        <td>1</td>
+        <td>0</td>
         <td>1</td>
         <td>0</td>
         <td>0</td>
-        <td>196883</td>
       </tr>
     
           </tbody>

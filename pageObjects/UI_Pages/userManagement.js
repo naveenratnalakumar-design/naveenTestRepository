@@ -1,7 +1,25 @@
 const { expect } = require("@playwright/test");
 const { excuteSteps } = require("../../utilities/actions");
 const test_Data = require("../../test_Data/testData.json");
-
+const randomFacilities =
+  test_Data.RevflowData.TaskListPage.facilityOptions[
+    Math.floor(
+      Math.random() * test_Data.RevflowData.TaskListPage.facilityOptions.length
+    )
+  ];
+const roleNames =
+  test_Data.RevflowData.userManagementData.roleOptions[
+    Math.floor(
+      Math.random() *
+        test_Data.RevflowData.userManagementData.roleOptions.length
+    )
+  ];
+const usersNames =
+  test_Data.RevflowData.userManagementData.Users[
+    Math.floor(
+      Math.random() * test_Data.RevflowData.userManagementData.Users.length
+    )
+  ];
 exports.UserManagementPage = class UserManagementPage {
   constructor(test, page) {
     this.test = test;
@@ -32,6 +50,15 @@ exports.UserManagementPage = class UserManagementPage {
     this.applyButton = page.locator("//span[text()=' Apply ']/parent::button");
     this.facilityRoleAssignments = page.locator(
       "(//div[@data-column-definition-name='facilityRoleAssignments'])[2]//div"
+    );
+    this.selectRoleFilterDropdown = page.locator(
+      "//span[text()='Select Roles']"
+    );
+    this.facilityFilterDropdown = page.locator(
+      "//span[text()='Select Facilities']"
+    );
+    this.selectUsersFilter = page.locator(
+      "//span[normalize-space(text())='Select Users']"
     );
     this.userViewSearchResults = page.locator("//div[@role='link']");
     this.assignNewLink = page.locator(
@@ -144,19 +171,52 @@ exports.UserManagementPage = class UserManagementPage {
     this.userViewBtn = page.locator(
       "//div[normalize-space(text())='USER VIEW']"
     );
+    this.userFilterClearBtn = page.locator(
+      "//button[contains(@class,'arw-select__clear')]"
+    );
     this.facilitydroDownAddNewuser = page.locator(
       "//button[@aria-haspopup='menu']"
     );
     this.rolwDropdownAddNewuser = page.locator(
-      "//mat-select[@aria-haspopup='listbox']"
+      "//div[@class='mat-mdc-select-value']//span[text()='Select']"
     );
     this.selectRoleOptionIndropdown = page.locator(
       "//mat-option[@role='option']"
     );
-    this.newUserBtn = page.locator("//span[normalize-space(text())='New User']")
+    this.newUserBtn = page.locator(
+      "//span[normalize-space(text())='New User']"
+    );
+    this.roleColumnGrid = page.locator(
+      "(//div[@data-column-definition-name='roleId']//div[contains(@class,'overflow-hidden')])[2]"
+    );
+    this.inActiveToggleBtn = page.locator(
+      "//span[normalize-space(text())='Inactive']"
+    );
+    this.deactiveBtn = page.locator(
+      "//span[normalize-space(text())='Deactivate']"
+    );
+    this.statusGridColumn = page.locator(
+      "(//div[@data-column-definition-name='isActive']//div[contains(@class,'text-center')])[1]"
+    );
   }
   clickOnFacilityPayers = async () => {
     await excuteSteps(this.test, this.facilityPayers, "click", `click`);
+  };
+  clickOnInactiveToggleBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.inActiveToggleBtn,
+      "click",
+      "Click on the inactive toggle"
+    );
+  };
+  clickOnDeactiveBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.deactiveBtn,
+      "click",
+      "Click on the deactive button"
+    );
   };
   clickResetToDefaultBtn = async () => {
     await excuteSteps(
@@ -164,6 +224,14 @@ exports.UserManagementPage = class UserManagementPage {
       this.resetFilters,
       "click",
       `Click Reset to Default Button`
+    );
+  };
+  clickOnSelectUserFilterDropdown = async () => {
+    await excuteSteps(
+      this.test,
+      this.selectUsersFilter,
+      "click",
+      "click on the selet users dropdown"
     );
   };
   getNoOfFacilities = async () => {
@@ -221,14 +289,14 @@ exports.UserManagementPage = class UserManagementPage {
       name
     );
   };
-  clickOnUserbtn = async()=>{
+  clickOnUserbtn = async () => {
     await excuteSteps(
       this.test,
       this.newUserBtn,
       "click",
       "Click on the New user button"
-    )
-  }
+    );
+  };
   noOfSearchResults = async () => {
     return await this.searchResults.count();
   };
@@ -275,6 +343,14 @@ exports.UserManagementPage = class UserManagementPage {
       "Navigate user view screen"
     );
   };
+  clickOnUserFilterClearBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.userFilterClearBtn,
+      "click",
+      "Click On the clearFilter button"
+    );
+  };
   searchTextInSearchBox = async (text) => {
     await excuteSteps(
       this.test,
@@ -298,6 +374,22 @@ exports.UserManagementPage = class UserManagementPage {
       this.applyButton,
       "click",
       `Click on Apply Button`
+    );
+  };
+  clickOnFacilityFilterDropdown = async () => {
+    await excuteSteps(
+      this.test,
+      this.facilityFilterDropdown,
+      "click",
+      "Click on the facility dropdown"
+    );
+  };
+  clickOnSelectRoleFilterDropdown = async () => {
+    await excuteSteps(
+      this.test,
+      this.selectRoleFilterDropdown,
+      "click",
+      "Click on selectRoleFilterDropdown"
     );
   };
   clickOnUserViewSearchResultsLink = async () => {
@@ -503,6 +595,7 @@ exports.UserManagementPage = class UserManagementPage {
       "Select the role option from the role dropdown"
     );
   };
+
   enterLocationInSearchFacilitiesDropDown = async () => {
     const noOfLocations = await this.facilityLocations.count();
     const locationIndex = Math.floor(Math.random() * (noOfLocations - 1)) + 1;
@@ -809,148 +902,55 @@ exports.UserManagementPage = class UserManagementPage {
     );
     await this.clickOnCancelBtn();
   };
-  // verifyAddRoleAssignments = async () => {
-  //   await this.clickOnSettingsButton();
-  //   await this.clickUserManagementOption();
-  //   await this.test.step("The Page is loading, please wait", async () => {
-  //     await this.page.waitForTimeout(parseInt(process.env.smallWait));
-  //   });
-  //   await this.clickSelectUsersDropDown();
-  //   await this.searchTextInSearchBox([
-  //     test_Data.RevflowData.userManagementData.addRoleAssignmentUsername,
-  //   ]);
-  //   await this.test.step("The Page is loading, please wait", async () => {
-  //     await this.page.waitForTimeout(parseInt(process.env.smallWait));
-  //   });
-  //   await this.selectAllCheckBox();
-  //   await this.clickOnApplyButton();
-  //   await this.test.step("The Page is loading, please wait", async () => {
-  //     await this.page.waitForTimeout(parseInt(process.env.smallWait));
-  //   });
-  //   await this.userViewSearchResults.waitFor({ state: "visible" });
-  //   const noOfFacilitiesBeforeAssignment = await this.getNoOfFacilities();
-  //   await this.clickOnUserViewSearchResultsLink();
-  //   await this.clickOnAssignNewLink();
-  //   let assigned = false;
-  //   let previousFacility = "";
-  //   let previousRole = "";
-  //   while (!assigned) {
-  //     const selectedFacility = await this.selectFacilityOption();
-  //     console.log(`Selected Facility: ${selectedFacility}`);
-  //     await this.clickOnApplyButton();
-  //     await this.test.step("The Page is loading, please wait", async () => {
-  //       await this.page.waitForTimeout(parseInt(process.env.smallWait));
-  //     });
-  //     const selectedRole = await this.selectRoleOption();
-  //     console.log(`Selected Role: ${selectedRole}`);
-  //     await this.clickSaveButton();
-  //     await this.test.step("The Page is loading, please wait", async () => {
-  //       await this.page.waitForTimeout(parseInt(process.env.smallWait));
-  //     });
-  //     if (
-  //       selectedFacility === previousFacility &&
-  //       selectedRole === previousRole
-  //     ) {
-  //       console.error(
-  //         "Error: Repeated selection of facility and role. Retrying..."
-  //       );
-  //       continue;
-  //     }
-  //     previousFacility = selectedFacility;
-  //     previousRole = selectedRole;
-  //     assigned = true;
-  //     console.log(
-  //       `Successfully assigned Facility: ${selectedFacility} and Role: ${selectedRole}`
-  //     );
-  //   }
-  //   await this.clickOnChevronLeftButton();
-  //   await this.test.step("The Page is loading, please wait", async () => {
-  //     await this.page.waitForTimeout(parseInt(process.env.largeWait));
-  //   });
-  //   const noOfFacilitiesAfterAssignment = await this.getNoOfFacilities();
-  //   expect(noOfFacilitiesAfterAssignment).toBe(
-  //     noOfFacilitiesBeforeAssignment + 1
-  //   );
-  //   console.log(
-  //     `Before: ${noOfFacilitiesBeforeAssignment}, After: ${noOfFacilitiesAfterAssignment}`
-  //   );
-  //   await this.test.step("The Page is loading, please wait", async () => {
-  //     await this.page.waitForTimeout(parseInt(process.env.smallWait));
-  //   });
-  //   await this.clickFacilityAndRoleViewButton();
-  //   await this.clickSelectFacilitiesDropdown();
-  //   await this.searchTextInSearchBox([this.selectedFacility]);
-  //   await this.test.step("The Page is loading, please wait", async () => {
-  //     await this.page.waitForTimeout(parseInt(process.env.smallWait));
-  //   });
-  //   await this.selectAllCheckBox();
-  //   await this.clickOnApplyButton();
-  //   await this.clickSelectRolesDropdown();
-  //   await this.searchTextInSearchBox([this.selectedRole]);
-  //   await this.test.step("The Page is loading, please wait", async () => {
-  //     await this.page.waitForTimeout(parseInt(process.env.smallWait));
-  //   });
-  //   await this.selectAllCheckBox();
-  //   await this.clickOnApplyButton();
-  //   await this.test.step("The Page is loading, please wait", async () => {
-  //     await this.page.waitForTimeout(parseInt(process.env.smallWait));
-  //   });
-  //   await this.getFacilityHierarchyId();
-  //   expect(this.facilityName.trim()).toBe(this.selectedFacility.trim());
-  // };
   verifyAddRoleAssignments = async () => {
     await this.clickOnSettingsButton();
     await this.clickUserManagementOption();
     await this.test.step("The Page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    console.log("usersemail==", usersNames);
+    console.log("roles==", roleNames);
+    console.log("facilities==", randomFacilities);
+    await this.clickSelectUsersDropDown();
+    await this.searchTextInSearchBox([usersNames]);
+      await this.test.step("The Page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.smallWait));
     });
+    await this.page.keyboard.press("Enter");
+    await this.clickOnApplyButton();
+    await this.clickOnUserGridRow();
+    await this.clickOnNewUserButton();
+    await this.clickOnFacilityDropdown();
+    await this.searchTextInSearchBox([randomFacilities]);
+    await this.page.keyboard.press("Enter");
+    await this.clickOnApplyButton();
+    await this.clickOnRoleSelectDropdown();
+    await this.searchTextInSearchBox([roleNames]);
+    await this.selectRoleOptionFromDropdwon();
+    await this.clickSaveButton();
+    await this.test.step("The Page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    await this.clickOnBackToUserScreen();
     await this.clickFacilityAndRoleViewButton();
-    let primaryRoleTagIsVisible = await this.primaryTagInRoleview.isVisible();
-    if (primaryRoleTagIsVisible) {
-      await this.test.step("Navigate to user view", async () => {
-        await this.primaryUserRoleColumn.click();
-      });
+    await this.clickOnFacilityFilterDropdown();
+    await this.searchTextInSearchBox([randomFacilities]);
       await this.test.step("The Page is loading, please wait", async () => {
-        await this.page.waitForTimeout(parseInt(process.env.smallWait));
-      });
-      let email = await this.page
-        .locator("(//div[@class='relative flex items-center']//span)[3]")
-        .innerText();
-      console.log("email==", email);
-      await this.clickOnBackToUserScreen();
-      await this.clickSelectUsersDropDown();
-      await this.searchTextInSearchBox([email]);
-      await this.page.keyboard.press("Enter");
-      await this.clickOnApplyButton();
-      let roleName = await this.page
-        .locator(
-          "(//span[normalize-space(text())='Primary']/ancestor::div[@data-column-definition-name='roleId']//div[@class='overflow-hidden text-ellipsis'])[1]"
-        )
-        .innerText();
-      console.log("role==", roleName);
-      let facilityName = await this.page
-        .locator(
-          "(//span[normalize-space(text())='Primary']/ancestor::div[@data-column-definition-name='roleId']/preceding-sibling::div[@data-column-definition-name='facilityHierarchyId']//span[contains(@class,'block overflow-hidden')])[1]"
-        )
-        .innerText();
-      console.log("facility==", facilityName);
-      await this.clickOnUserViewBtn();
-      await this.clickSelectUsersDropDown();
-      await this.searchTextInSearchBox(["kesava"]);
-      await this.page.keyboard.press("Enter");
-      await this.clickOnApplyButton();
-      await this.clickOnUserGridRow();
-      await this.clickOnNewUserButton();
-      await this.clickOnNewUserButton();
-      await this.clickOnFacilityDropdown();
-      await this.searchTextInSearchBox([email]);
-      await this.page.keyboard.press("Enter");
-      await this.clickOnApplyButton();
-      await this.clickOnRoleSelectDropdown();
-      await this.searchTextInSearchBox([roleName]);
-      await this.selectRoleOptionFromDropdwon();
-      // await this.clickSaveButton();
-    }
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    await this.page.keyboard.press("Enter");
+    await this.clickOnApplyButton();
+    await this.clickOnSelectRoleFilterDropdown();
+    await this.searchTextInSearchBox([roleNames]);
+     await this.test.step("The Page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    await this.page.keyboard.press("Enter");
+    await this.clickOnApplyButton();
+    await expect(
+      this.roleColumnGrid,
+      "Verifying that a new role has been added to the user"
+    ).toHaveText(roleNames);
   };
   verifyChangePrimaryToAnyUser = async () => {
     await this.clickOnSettingsButton();

@@ -1,0 +1,87 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Revflow logo" [ref=e7] [cursor=pointer]
+        - img "Revflow" [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link "Task List" [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link "AR Aging" [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - generic [ref=e33]:
+          - link "Settings" [ref=e34] [cursor=pointer]:
+            - /url: /settings
+            - img [ref=e37] [cursor=pointer]
+            - generic [ref=e40] [cursor=pointer]: Settings
+            - img [ref=e43] [cursor=pointer]
+          - generic [ref=e45]:
+            - link "User Management" [ref=e47] [cursor=pointer]:
+              - /url: /settings/user-management
+              - generic [ref=e48] [cursor=pointer]: User Management
+            - link "Facility Payers" [ref=e50] [cursor=pointer]:
+              - /url: /settings/facility-payers
+              - generic [ref=e51] [cursor=pointer]: Facility Payers
+      - button [ref=e56] [cursor=pointer]:
+        - img [ref=e60] [cursor=pointer]
+    - generic [ref=e62]:
+      - generic [ref=e64]:
+        - img [ref=e69]
+        - button "AT" [ref=e72] [cursor=pointer]:
+          - generic [ref=e75] [cursor=pointer]: AT
+          - img [ref=e78] [cursor=pointer]
+      - generic [ref=e81]:
+        - generic [ref=e82]:
+          - generic [ref=e84]:
+            - heading "User Management" [level=2] [ref=e85]
+            - button "New User" [ref=e87] [cursor=pointer]:
+              - generic [ref=e88] [cursor=pointer]:
+                - img [ref=e91] [cursor=pointer]
+                - text: New User
+          - button "Selected Users (1)" [active] [ref=e102] [cursor=pointer]:
+            - generic [ref=e103] [cursor=pointer]: Selected Users (1)
+            - generic [ref=e104] [cursor=pointer]:
+              - button [ref=e105] [cursor=pointer]:
+                - img [ref=e108] [cursor=pointer]
+              - img [ref=e112] [cursor=pointer]
+        - generic [ref=e116]:
+          - generic [ref=e118]:
+            - generic [ref=e119]:
+              - generic [ref=e120]: "0"
+              - text: Results
+            - radiogroup [ref=e122]:
+              - radio "USER VIEW" [checked] [ref=e123] [cursor=pointer]:
+                - generic [ref=e125] [cursor=pointer]:
+                  - img [ref=e128] [cursor=pointer]
+                  - text: USER VIEW
+              - radio "FACILITY & ROLE VIEW" [ref=e130] [cursor=pointer]:
+                - generic [ref=e132] [cursor=pointer]:
+                  - img [ref=e135] [cursor=pointer]
+                  - text: FACILITY & ROLE VIEW
+            - generic [ref=e139]:
+              - switch "Active Users Only" [checked] [ref=e140] [cursor=pointer]
+              - generic [ref=e148] [cursor=pointer]: Active Users Only
+          - generic [ref=e156]:
+            - img [ref=e159]
+            - generic [ref=e161]: No users found
+            - generic [ref=e162]: Try to clear filters.
+            - button "Clear filters" [ref=e165] [cursor=pointer]:
+              - generic [ref=e166] [cursor=pointer]: Clear filters
+  - generic [ref=e167]: Jira Service Management Widget
+  - iframe [ref=e168]:
+    - main "Help Center Widget Content" [ref=f1e2]:
+      - button "?" [ref=f1e5] [cursor=pointer]:
+        - paragraph [ref=f1e6] [cursor=pointer]: "?"
+```

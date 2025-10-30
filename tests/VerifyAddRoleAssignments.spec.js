@@ -15,9 +15,8 @@ test.describe("Assign roles to the facility and validate the global facility cou
       [process.env.password]
     );
   });
-  test("Verify Add Role Assignments", async () => {
+  test("@regression Verify Add Role Assignments", async () => {
     const userManagementPage = new sections.UserManagementPage(test, page);
-    await page.pause()
     await userManagementPage.verifyAddRoleAssignments();
   });
   test.afterAll(async () => {

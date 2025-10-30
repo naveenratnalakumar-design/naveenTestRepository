@@ -30,16 +30,28 @@
       </head>
       <body>
         <h2>Verify Total Displayed Balance on Summary is matching with the sum of individual months for six months View</h2>
-        <a href="index.html?t=1761035095876">⬅️ Back to Summary</a>
+        <a href="index.html?t=1761808241010">⬅️ Back to Summary</a>
         
         <h3>📝 Steps:</h3>
         <ul>
           
+            <li>Pause </li>
+          
             <li>Click on the aging button </li>
           
-            <li>Wait for grid to load </li>
+            <li>Wait for selector locator('//arw-ar-aging-cell[@class="flex items-center justify-between gap-8 w-full group ng-star-inserted"]') </li>
           
-            <li>Query count locator('div[role="row"]') </li>
+            <li>Evaluate locator('//arw-ar-aging-cell[@class="flex items-center justify-between gap-8 w-full group ng-star-inserted"]') </li>
+          
+            <li>Expect "toBeLessThan" </li>
+          
+            <li>Click on the aging button </li>
+          
+            <li>Wait for selector locator('//div[@data-column-definition-name=\'currentMonth\']//div[contains(@class,\'overflow-hidden\')]') </li>
+          
+            <li>Evaluate locator('//div[@data-column-definition-name=\'currentMonth\']//div[contains(@class,\'overflow-hidden\')]') </li>
+          
+            <li>Expect "toBeLessThan" </li>
           
         </ul>
         

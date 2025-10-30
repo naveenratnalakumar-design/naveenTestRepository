@@ -16,7 +16,9 @@ test.describe("Verify Total Displayed Balance on Summary is matching with the su
   });
   test("Verify Total Displayed Balance on Summary is matching with the sum of individual months for six months View", async () => {
    const agingPage = new sections.AgingPage(test,page)
-   await agingPage.VerifyingTotalBlanceMitchingSixmonthsView()
+   await page.pause()
+   await agingPage.VerifyingTotalBlanceMitchingSixmonthsView();
+   await agingPage.verifysummaryTotal()
   });
   test.afterAll(async () => {
     const logoutPage = new sections.LogoutPage(test, page);
