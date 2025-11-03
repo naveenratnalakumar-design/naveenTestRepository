@@ -54,6 +54,11 @@ exports.AgingPage = class AgingPage {
     this.resetDefaultBtn = page.locator(
       "//span[normalize-space(text())='Reset to Default']"
     );
+    this.downArrowBtn = page.locator("//arw-icon[@name='arrowNarrowDown']");
+    this.addTaskBtn = page.locator(
+      "//arw-template-renderer[@class='ng-star-inserted']//arw-button[@icon='plusSquareDefault']"
+    );
+    this.loadMore = page.locator("//div[contains(text(),'Load more results')]");
   }
 
   clickOnCurrentMonthToggle = async () => {
@@ -62,6 +67,22 @@ exports.AgingPage = class AgingPage {
       this.currentMonthToggle,
       "click",
       `Click on Current Month Toggle`
+    );
+  };
+  clickOnDownArrowBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.downArrowBtn,
+      "click",
+      "Click on Expand all button"
+    );
+  };
+  clickOnAddTaskBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.addTaskBtn,
+      "click",
+      "Click on add task button"
     );
   };
   clickOnAgingBtn = async () => {
@@ -112,6 +133,48 @@ exports.AgingPage = class AgingPage {
       "click",
       `Click on Total Displayed Balance Toggle`
     );
+  };
+  createTaskWithAttachment = async () => {
+    await this.clickOnAgingBtn();
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    const iconCount = await this.downArrowBtn.count();
+    console.log(`Total down arrow icons found: ${iconCount}`);
+    for (let i = 0; i < iconCount; i++) {
+      const currentIcon = this.downArrowBtn.nth(i);
+      await this.test.step("Clicking down arrow icon", async () => {
+        await currentIcon.click();
+        await this.page.waitForTimeout(1000);
+      });
+      while (!(await this.loadMore.isVisible())) {
+        await this.page.mouse.wheel(0, 500); // scroll down by 500 pixels
+        await this.page.waitForTimeout(500); // wait a bit for content to load
+      }
+      // Check if "Load more results" is visible
+      if (await this.loadMore.isVisible()) {
+        await this.test.step("Clicking Load more results", async () => {
+          await this.loadMore.click();
+          await this.page.waitForTimeout(1000);
+        });
+      }
+      // Check if Add Task button has the 'disabled' attribute
+      const isDisabled = await this.page
+        .locator(
+          "//button[@class='arw-button arw-button--accent arw-button--small arw-button--tertiary arw-button--icon-only']"
+        )
+        .first()
+        .evaluate((el) => el.hasAttribute("disabled"));
+      if (!isDisabled) {
+        await this.test.step(
+          "Add Task button active — clicking it",
+          async () => {
+            await this.addTaskBtn.first().click();
+          }
+        );
+      }
+      break;
+    }
   };
 
   getBalance = async (locator) => {

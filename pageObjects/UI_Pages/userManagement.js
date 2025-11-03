@@ -198,6 +198,9 @@ exports.UserManagementPage = class UserManagementPage {
     this.statusGridColumn = page.locator(
       "(//div[@data-column-definition-name='isActive']//div[contains(@class,'text-center')])[1]"
     );
+    this.moreThanOnePrimaryUsersHyperText = page.locator("//a[normalize-space(text())='1 Other User']");
+    this.parmaryRadioBtn = page.locator("//input[@tabindex='-1']");
+    this.saveBtn = page.locator("//span[normalize-space(text())='Save']")
   }
   clickOnFacilityPayers = async () => {
     await excuteSteps(this.test, this.facilityPayers, "click", `click`);

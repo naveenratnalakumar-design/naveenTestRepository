@@ -18,6 +18,7 @@ test.describe("Verify task list opens in slide out and updating any field refres
      const createTaskPage= new sections.CreateTaskPage(test,page);
       await createTaskPage.clickOnTaskList();
       const taskListPage = new sections.TaskListPage(test,page);
+      await page.pause()
       await taskListPage.verifyingTasklistOpensSlideOutAndUpdatingAnyFieldRefreshesTasklistGrid()
   });
   test.afterAll(async () => {

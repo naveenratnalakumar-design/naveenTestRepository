@@ -17,8 +17,11 @@ test.describe("Creating Task from Aging with file attachment", () => {
     });
 
     test("Create task with file attachment using browse",async()=>{
-        const createTaskpage=new sections.CreateTaskPage(test,page);
-        await createTaskpage.arAgingBrowseFile();
+        // const createTaskpage=new sections.CreateTaskPage(test,page);
+        // await createTaskpage.arAgingBrowseFile();
+        const agingPage = new sections.AgingPage(test,page);
+        await page.pause()
+        await agingPage.createTaskWithAttachment()
     });
     test.afterAll(async () => {
         const logoutPage = new sections.LogoutPage(test,page);

@@ -99,7 +99,7 @@ exports.CreateTaskPage = class CreateTaskPage {
       "(((//div[@class='cdk-virtual-scroll-content-wrapper']/child::div)[1])//div[@data-column-definition-name='dueDate']//span)[2]"
     );
     this.firstTaskTaskStatus = page.locator(
-      "(((//div[@class='cdk-virtual-scroll-content-wrapper']/child::div)[1])//div[@data-column-definition-name='taskStatusId']//span)[2]"
+      "(//div[@data-column-definition-name='taskStatusId']//span[contains(@class,'grow overflow-ellipsis overflow-hidden')])[1]"
     );
     this.firstTaskAssigned = page.locator(
       "(((//div[@class='cdk-virtual-scroll-content-wrapper']/child::div)[1])//div[@data-column-definition-name='assignedToUser']//span)[2]"
@@ -2068,7 +2068,9 @@ exports.CreateTaskPage = class CreateTaskPage {
     ).toBeVisible();
     await this.page.keyboard.press("Escape");
     await this.hoverOnCustomSort();
-    await this.page.waitForTimeout(parseInt(process.env.smallWait));
+      await this.test.step("The Page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
     await expect(
       this.customSortDateFilter,
       "Verify the default custom date filter filter is visible on the Task List page"
@@ -2078,19 +2080,37 @@ exports.CreateTaskPage = class CreateTaskPage {
       "Verify the default custom balance filter is visible on the Task List page"
     ).toBeVisible();
   };
-
+   clickOnSlectSortingFilterName = async () => {
+    await excuteSteps(
+      this.test,
+      this.slectSortingFilterName,
+      "click",
+      "Click on the sorting filter name dropdown"
+    );
+  };
   verifyTaskDetailsListView = async () => {
-    await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    await this.clickOnCustomSortBtn()
+    await this.clickOnDeleteDuedateInSortIcon()
+      await this.clickOnDeleteDuedateInSortIcon()
+      await this.clickOnApplySortButtonIcon()
+      await this.test.step("The Page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
     let taskName = await this.firstTaskName.innerText();
     let residentName = await this.firstTaskResidentName.innerText();
     let balance = await this.firstTaskBalance.innerText();
+       await this.test.step("The Page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
     let balanceStatus = await this.firstTaskBalanceStatus.innerText();
     let dueDate = await this.firstTaskDueDate.innerText();
     let taskStatus = await this.firstTaskTaskStatus.innerText();
     let assignedUser = await this.firstTaskAssigned.innerText();
 
     await this.clickOnFirstTask();
-    await this.page.waitForTimeout(parseInt(process.env.smallWait));
+     await this.test.step("The Page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
 
     let tasknameV = await this.taskTitleInputFiled.inputValue();
     let residentV = await this.page
@@ -2104,8 +2124,11 @@ exports.CreateTaskPage = class CreateTaskPage {
     let dueDateV = await this.page
       .locator("//arw-input[@formcontrolname='dueDate']//input")
       .inputValue();
+         await this.test.step("The Page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
     let taskStatusV = await this.page
-      .locator("//arw-select[@formcontrolname='taskStatusId']//arw-tag//span")
+      .locator("(//span[@class='mat-mdc-select-value-text ng-star-inserted'])[4]//span[@class='grow overflow-ellipsis overflow-hidden text-center whitespace-nowrap']")
       .innerText();
     let assignedUserV = await this.page
       .locator("//arw-select[@formcontrolname='assigneeId']//button/span")
