@@ -14,11 +14,12 @@ test.describe("Verify data is populated correctly when the toggles are on and of
             [process.env.password]
         );
     });
-    test("Verify data when toggles are On and Off", async () => {
+    test("@regression Verify data when toggles are On and Off", async () => {
         const createTaskPage = new sections.CreateTaskPage(test, page);
         await createTaskPage.clickOnArAgingBtn();
         const agingPage = new sections.AgingPage(test, page);
-        await agingPage.verifyActiveAndInactiveToggles();
+        // await page.pause();
+        await agingPage.VerifyAgingGridDataWhenTogglesOnAndOff();
     });
     test.afterAll(async () => {
         const logoutPage = new sections.LogoutPage(test, page);

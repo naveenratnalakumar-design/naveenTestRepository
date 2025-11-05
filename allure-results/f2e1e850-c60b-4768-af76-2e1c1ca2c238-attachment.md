@@ -1,0 +1,461 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img [ref=e7] [cursor=pointer]
+        - img [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - link [ref=e34] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e37] [cursor=pointer]
+          - generic [ref=e40] [cursor=pointer]: Settings
+          - img [ref=e43] [cursor=pointer]
+      - button [ref=e49] [cursor=pointer]:
+        - img [ref=e53] [cursor=pointer]
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - generic [ref=e61]:
+          - img [ref=e64]
+          - textbox [ref=e66]
+        - generic [ref=e67]:
+          - button [ref=e69] [cursor=pointer]:
+            - text: Selected Facilities (35)
+            - img [ref=e72] [cursor=pointer]
+          - img [ref=e78]
+          - button [ref=e81] [cursor=pointer]:
+            - generic [ref=e84] [cursor=pointer]: AT
+            - img [ref=e87] [cursor=pointer]
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - heading [level=2] [ref=e94]: Tasks
+          - generic [ref=e96]:
+            - button [ref=e98] [cursor=pointer]:
+              - generic [ref=e99] [cursor=pointer]: Sort
+              - img [ref=e102] [cursor=pointer]
+            - button [ref=e105] [cursor=pointer]:
+              - img [ref=e108] [cursor=pointer]
+              - generic [ref=e110] [cursor=pointer]: Filters
+            - button [ref=e112] [cursor=pointer]:
+              - generic [ref=e113] [cursor=pointer]:
+                - text: Reset to Default
+                - img [ref=e116] [cursor=pointer]
+        - generic [ref=e120]:
+          - generic [ref=e123]:
+            - generic [ref=e124]: "8785"
+            - text: Results
+          - generic [ref=e126]:
+            - generic [ref=e130] [cursor=pointer]: Task
+            - generic [ref=e135] [cursor=pointer]: Facility
+            - generic [ref=e140] [cursor=pointer]: Resident
+            - generic [ref=e145] [cursor=pointer]: Payer
+            - generic [ref=e150] [cursor=pointer]: Balance
+            - generic [ref=e155] [cursor=pointer]: Balance Status
+            - generic [ref=e160] [cursor=pointer]: Due Date
+            - generic [ref=e165] [cursor=pointer]: Task Status
+            - generic [ref=e170] [cursor=pointer]: Assigned To
+            - generic [ref=e175] [cursor=pointer]: Root Issue
+          - generic [ref=e181]:
+            - generic [ref=e183]:
+              - link [ref=e187] [cursor=pointer]: TaskBalActivity
+              - generic [ref=e191]: Gulfport
+              - link [ref=e195] [cursor=pointer]:
+                - /url: /cases/details/3928177
+                - text: Burik, Richard
+              - generic [ref=e199]: Social Security
+              - generic [ref=e205]:
+                - img [ref=e208]
+                - generic [ref=e210]: Collection Letter sent
+              - generic [ref=e214]: 12/5/2025
+              - generic [ref=e219]: In Progress
+              - generic [ref=e223]:
+                - generic [ref=e228]: U3
+                - generic [ref=e229]: User 3 user 3
+              - generic [ref=e233]: Attorney Case
+            - generic [ref=e235]:
+              - link [ref=e239] [cursor=pointer]: DaliyTaskCreation(20-08-2025)Task4-1
+              - generic [ref=e243]: Achieve
+              - link [ref=e247] [cursor=pointer]:
+                - /url: /cases/details/4248110
+                - text: Aracci, Dominick
+              - generic [ref=e251]: Social Security
+              - generic [ref=e255]: "100.00"
+              - generic [ref=e259]:
+                - img [ref=e262]
+                - generic [ref=e264]: Unworked
+              - generic [ref=e268]: 10/28/2025
+              - generic [ref=e273]: In Progress
+              - generic [ref=e277]:
+                - generic [ref=e282]: SR
+                - generic [ref=e283]: Santosh Rongali
+              - generic [ref=e287]: Bad Debt
+            - generic [ref=e289]:
+              - link [ref=e293] [cursor=pointer]: TaskBal
+              - generic [ref=e297]: Gulfport
+              - link [ref=e301] [cursor=pointer]:
+                - /url: /cases/details/3922094
+                - text: Langford, William
+              - generic [ref=e305]: Humana Medicare
+              - generic [ref=e311]:
+                - img [ref=e314]
+                - generic [ref=e316]: Paid Status
+              - generic [ref=e320]: 8/31/2025
+              - generic [ref=e325]: In Progress
+              - generic [ref=e329]:
+                - generic [ref=e334]: VG
+                - generic [ref=e335]: Vikesh Gaikawad
+              - generic [ref=e339]: Unknown
+            - generic [ref=e341]:
+              - link [ref=e345] [cursor=pointer]: Tasknew
+              - generic [ref=e349]: Gulfport
+              - link [ref=e353] [cursor=pointer]:
+                - /url: /cases/details/2073408
+                - text: Cormier, Christine
+              - generic [ref=e357]: AARP
+              - generic [ref=e363]:
+                - img [ref=e366]
+                - generic [ref=e368]: Unworked
+              - generic [ref=e372]: 8/31/2025
+              - generic [ref=e377]: In Progress
+              - generic [ref=e381]:
+                - generic [ref=e386]: VG
+                - generic [ref=e387]: Vikesh Gaikawad
+              - generic [ref=e391]: Unknown
+            - generic [ref=e393]:
+              - link [ref=e397] [cursor=pointer]: Taskkk
+              - generic [ref=e401]: Gulfport
+              - link [ref=e405] [cursor=pointer]:
+                - /url: /cases/details/3930050
+                - text: Tyrrell, Joseph
+              - generic [ref=e409]: BCBS
+              - generic [ref=e413]: "100.00"
+              - generic [ref=e417]:
+                - img [ref=e420]
+                - generic [ref=e422]: Denied
+              - generic [ref=e426]: 11/1/2025
+              - generic [ref=e431]: In Progress
+              - generic [ref=e435]:
+                - generic [ref=e440]: VG
+                - generic [ref=e441]: Vikesh Gaikawad
+              - generic [ref=e445]: Unknown
+            - generic [ref=e447]:
+              - link [ref=e451] [cursor=pointer]: TaskPayerFixed
+              - generic [ref=e455]: Gulfport
+              - link [ref=e459] [cursor=pointer]:
+                - /url: /cases/details/3928177
+                - text: Burik, Richard
+              - generic [ref=e463]: Social Security
+              - generic [ref=e469]:
+                - img [ref=e472]
+                - generic [ref=e474]: Unworked
+              - generic [ref=e478]: 8/31/2025
+              - generic [ref=e483]: In Progress
+              - generic [ref=e487]:
+                - generic [ref=e492]: VG
+                - generic [ref=e493]: Vikesh Gaikawad
+              - generic [ref=e497]: Retro Payer Change
+            - generic [ref=e499]:
+              - link [ref=e503] [cursor=pointer]: test
+              - generic [ref=e507]: Gulfport
+              - link [ref=e511] [cursor=pointer]:
+                - /url: /cases/details/3942326
+                - text: Figueredo campos, Norbelis
+              - generic [ref=e515]: Ambetter Sunshine Commerci
+              - generic [ref=e521]:
+                - img [ref=e524]
+                - generic [ref=e526]: Denied
+              - generic [ref=e530]: 11/1/2025
+              - generic [ref=e535]: In Progress
+              - generic [ref=e539]:
+                - generic [ref=e544]: RM
+                - generic [ref=e545]: Rivky Meguira
+              - generic [ref=e549]: Unknown
+            - generic [ref=e551]:
+              - link [ref=e555] [cursor=pointer]: TaskMonthA
+              - generic [ref=e559]: Gulfport
+              - link [ref=e563] [cursor=pointer]:
+                - /url: /cases/details/3930050
+                - text: Tyrrell, Joseph
+              - generic [ref=e567]: Suncoast Hospice
+              - generic [ref=e571]: "0.00"
+              - generic [ref=e575]:
+                - img [ref=e578]
+                - generic [ref=e580]: Unworked
+              - generic [ref=e584]: 8/31/2025
+              - generic [ref=e589]: Completed
+              - generic [ref=e593]:
+                - generic [ref=e598]: VG
+                - generic [ref=e599]: Vikesh Gaikawad
+              - generic [ref=e603]: Unknown
+            - generic [ref=e605]:
+              - link [ref=e609] [cursor=pointer]: Aditya testing
+              - generic [ref=e613]: Gulfport
+              - link [ref=e617] [cursor=pointer]:
+                - /url: /cases/details/3942326
+                - text: Figueredo campos, Norbelis
+              - generic [ref=e621]: Ambetter Sunshine Commerci
+              - generic [ref=e625]: 1,667.50
+              - generic [ref=e629]:
+                - img [ref=e632]
+                - generic [ref=e634]: Denied
+              - generic [ref=e638]: 10/31/2025
+              - generic [ref=e643]: In Progress
+              - generic [ref=e647]:
+                - generic [ref=e652]: VG
+                - generic [ref=e653]: Vikesh Gaikawad
+              - generic [ref=e657]: Unknown
+            - generic [ref=e659]:
+              - link [ref=e663] [cursor=pointer]: TaskPrivatePa
+              - generic [ref=e667]: Beacon
+              - link [ref=e671] [cursor=pointer]:
+                - /url: /cases/details/3600390
+                - text: Goldstein, Aviva
+              - generic [ref=e675]: Private Pay
+              - generic [ref=e679]: "0.00"
+              - generic [ref=e683]:
+                - img [ref=e686]
+                - generic [ref=e688]: Unworked
+              - generic [ref=e692]: 9/26/2025
+              - generic [ref=e697]: Canceled
+              - generic [ref=e701]:
+                - generic [ref=e706]: VG
+                - generic [ref=e707]: Vikesh Gaikawad
+              - generic [ref=e711]: Retro Payer Change
+            - generic [ref=e713]:
+              - link [ref=e717] [cursor=pointer]: denied, need retro auth
+              - generic [ref=e721]: Green Meadows
+              - link [ref=e725] [cursor=pointer]:
+                - /url: /cases/details/4159535
+                - text: Coleman, Ronald
+              - generic [ref=e729]: Gateway Medicare
+              - generic [ref=e733]: "625.47"
+              - generic [ref=e737]:
+                - img [ref=e740]
+                - generic [ref=e742]: Corrected Claim
+              - generic [ref=e746]: 8/31/2025
+              - generic [ref=e751]: In Progress
+              - generic [ref=e755]:
+                - generic [ref=e760]: EF
+                - generic [ref=e761]: Esther Furst
+              - generic [ref=e765]: Unknown
+            - generic [ref=e767]:
+              - link [ref=e771] [cursor=pointer]: test
+              - generic [ref=e775]: Mountain Ridge
+              - link [ref=e779] [cursor=pointer]:
+                - /url: /cases/details/4076132
+                - text: Bell, Zelma
+              - generic [ref=e783]: Humana Levels
+              - generic [ref=e787]: (588.99)
+              - generic [ref=e791]:
+                - img [ref=e794]
+                - generic [ref=e796]: Denied
+              - generic [ref=e800]: 8/21/2025
+              - generic [ref=e805]: In Progress
+              - generic [ref=e809]:
+                - generic [ref=e814]: AW
+                - generic [ref=e815]: Adina Wilhelm
+              - generic [ref=e819]: Unknown
+            - generic [ref=e821]:
+              - link [ref=e825] [cursor=pointer]: TaskCreationDaily(14-08-2025)-Task-2
+              - generic [ref=e829]: Gulfport
+              - link [ref=e833] [cursor=pointer]:
+                - /url: /cases/details/3916564
+                - text: Cannon Iii, John
+              - generic [ref=e837]: Simply Medicare
+              - generic [ref=e841]: (1,540.77)
+              - generic [ref=e845]:
+                - img [ref=e848]
+                - generic [ref=e850]: Corrected Claim
+              - generic [ref=e854]: 8/31/2025
+              - generic [ref=e859]: In Progress
+              - generic [ref=e863]:
+                - generic [ref=e868]: VG
+                - generic [ref=e869]: Vikesh Gaikawad
+              - generic [ref=e873]: Unknown
+            - generic [ref=e875]:
+              - link [ref=e879] [cursor=pointer]: TaskCreationDaliy(14-8-2025)-Task-1
+              - generic [ref=e883]: Gulfport
+              - link [ref=e887] [cursor=pointer]:
+                - /url: /cases/details/3916564
+                - text: Cannon Iii, John
+              - generic [ref=e891]: Simply Medicare
+              - generic [ref=e895]: (561.22)
+              - generic [ref=e899]:
+                - img [ref=e902]
+                - generic [ref=e904]: Sent for Reprocessing
+              - generic [ref=e908]: 10/31/2025
+              - generic [ref=e913]: In Progress
+              - generic [ref=e917]:
+                - generic [ref=e922]: VG
+                - generic [ref=e923]: Vikesh Gaikawad
+              - generic [ref=e927]: Unknown
+  - generic [ref=e939]: Jira Service Management Widget
+  - iframe [ref=e940]:
+    - main "Help Center Widget Content" [ref=f1e2]:
+      - button "?" [ref=f1e5] [cursor=pointer]:
+        - paragraph [ref=f1e6] [cursor=pointer]: "?"
+  - generic:
+    - generic [ref=e947]:
+      - generic [ref=e948]:
+        - textbox [ref=e952]: TaskBalActivity
+        - generic [ref=e953]:
+          - button [ref=e955] [cursor=pointer]:
+            - img [ref=e959] [cursor=pointer]
+          - link "Open Task" [ref=e961] [cursor=pointer]:
+            - /url: /tasks/details/978
+            - button "Open Task" [ref=e963] [cursor=pointer]:
+              - generic [ref=e964] [cursor=pointer]:
+                - text: Open Task
+                - img [ref=e967] [cursor=pointer]
+          - button [ref=e970] [cursor=pointer]:
+            - img [ref=e974] [cursor=pointer]
+      - generic [ref=e976]:
+        - generic [ref=e980]:
+          - generic [ref=e981]:
+            - generic [ref=e985] [cursor=pointer]: Facility
+            - text: Gulfport
+          - generic [ref=e986]:
+            - generic [ref=e990] [cursor=pointer]: Resident
+            - link "Burik, Richard" [ref=e991] [cursor=pointer]:
+              - /url: /cases/details/3928177
+          - generic [ref=e992]:
+            - generic [ref=e996] [cursor=pointer]: Balance
+            - generic [ref=e997]:
+              - generic [ref=e998]: 2,210.00
+              - button "(1 Charge)" [ref=e1000] [cursor=pointer]:
+                - generic [ref=e1001] [cursor=pointer]: (1 Charge)
+          - generic [ref=e1002]:
+            - generic [ref=e1006] [cursor=pointer]: Payer
+            - text: Social Security
+          - generic [ref=e1010]:
+            - toolbar:
+              - generic [ref=e1011]:
+                - button "bold" [ref=e1012] [cursor=pointer]:
+                  - img [ref=e1013] [cursor=pointer]
+                - button "italic" [ref=e1015] [cursor=pointer]:
+                  - img [ref=e1016] [cursor=pointer]
+                - button "underline" [ref=e1018] [cursor=pointer]:
+                  - img [ref=e1019] [cursor=pointer]
+                - button "strike" [ref=e1021] [cursor=pointer]:
+                  - img [ref=e1022] [cursor=pointer]
+              - generic [ref=e1024]:
+                - 'button "list: bullet" [ref=e1025] [cursor=pointer]':
+                  - img [ref=e1026] [cursor=pointer]
+                - 'button "list: ordered" [ref=e1028] [cursor=pointer]':
+                  - img [ref=e1029] [cursor=pointer]
+              - button "link" [ref=e1033] [cursor=pointer]:
+                - img [ref=e1034] [cursor=pointer]
+            - generic [ref=e1036]:
+              - generic [ref=e1037]:
+                - text: Add a description...
+                - paragraph [ref=e1038]
+              - text: "Visit URL: EditRemove"
+          - generic [ref=e1040]:
+            - generic [ref=e1043] [cursor=pointer]:
+              - generic [ref=e1044] [cursor=pointer]: Balance Status
+              - generic [ref=e1045] [cursor=pointer]: "*"
+            - combobox "Collection Letter sent" [ref=e1047]:
+              - generic [ref=e1054] [cursor=pointer]:
+                - img [ref=e1057] [cursor=pointer]
+                - generic [ref=e1059] [cursor=pointer]: Collection Letter sent
+          - generic [ref=e1061]:
+            - generic [ref=e1064] [cursor=pointer]:
+              - generic [ref=e1065] [cursor=pointer]: Root Issue
+              - generic [ref=e1066] [cursor=pointer]: "*"
+            - combobox "Attorney Case" [ref=e1068]:
+              - generic [ref=e1074] [cursor=pointer]: Attorney Case
+          - generic [ref=e1076]:
+            - generic [ref=e1080] [cursor=pointer]: Assigned To
+            - combobox "U3 User 3 user 3" [ref=e1082]:
+              - button "U3 User 3 user 3" [ref=e1090] [cursor=pointer]:
+                - generic [ref=e1095] [cursor=pointer]: U3
+                - generic [ref=e1096] [cursor=pointer]: User 3 user 3
+          - generic [ref=e1098]:
+            - generic [ref=e1101] [cursor=pointer]:
+              - generic [ref=e1102] [cursor=pointer]: Due Date
+              - generic [ref=e1103] [cursor=pointer]: "*"
+            - textbox "Due Date *" [ref=e1106]: 12/5/2025
+          - generic [ref=e1107]:
+            - generic [ref=e1111] [cursor=pointer]: Task Status
+            - combobox "In Progress" [disabled] [ref=e1113]:
+              - generic [ref=e1121]: In Progress
+        - generic [ref=e1128]:
+          - tablist [ref=e1131]:
+            - generic [ref=e1132]:
+              - tab "Comments 0" [selected] [ref=e1133] [cursor=pointer]:
+                - generic [ref=e1135] [cursor=pointer]:
+                  - text: Comments
+                  - generic [ref=e1136] [cursor=pointer]: "0"
+              - tab "Charges 1" [ref=e1137] [cursor=pointer]:
+                - generic [ref=e1139] [cursor=pointer]:
+                  - text: Charges
+                  - generic [ref=e1140] [cursor=pointer]: "1"
+              - tab "Activity 0" [ref=e1141] [cursor=pointer]:
+                - generic [ref=e1143] [cursor=pointer]:
+                  - text: Activity
+                  - generic [ref=e1144] [cursor=pointer]: "0"
+              - tab "Files 0" [ref=e1145] [cursor=pointer]:
+                - generic [ref=e1147] [cursor=pointer]:
+                  - text: Files
+                  - generic [ref=e1148] [cursor=pointer]: "0"
+          - generic [ref=e1149]:
+            - tabpanel "Comments 0" [ref=e1150]:
+              - generic [ref=e1158]:
+                - generic [ref=e1160]:
+                  - toolbar:
+                    - generic [ref=e1161]:
+                      - button "bold" [ref=e1162] [cursor=pointer]:
+                        - img [ref=e1163] [cursor=pointer]
+                      - button "italic" [ref=e1165] [cursor=pointer]:
+                        - img [ref=e1166] [cursor=pointer]
+                      - button "underline" [ref=e1168] [cursor=pointer]:
+                        - img [ref=e1169] [cursor=pointer]
+                      - button "strike" [ref=e1171] [cursor=pointer]:
+                        - img [ref=e1172] [cursor=pointer]
+                    - generic [ref=e1174]:
+                      - 'button "list: bullet" [ref=e1175] [cursor=pointer]':
+                        - img [ref=e1176] [cursor=pointer]
+                      - 'button "list: ordered" [ref=e1178] [cursor=pointer]':
+                        - img [ref=e1179] [cursor=pointer]
+                    - button "link" [ref=e1183] [cursor=pointer]:
+                      - img [ref=e1184] [cursor=pointer]
+                  - generic [ref=e1186]:
+                    - generic [ref=e1187]:
+                      - text: Add comment...
+                      - paragraph [ref=e1188]
+                    - text: "Visit URL: EditRemove"
+                - generic [ref=e1189]: Max number of characters allowed 500
+            - tabpanel [ref=e1191]
+            - tabpanel [ref=e1192]
+            - tabpanel [ref=e1193]
+    - dialog "Delete Task?" [ref=e1198]:
+      - generic [ref=e1200]:
+        - heading "Delete Task?" [level=2] [ref=e1201]:
+          - img [ref=e1204]
+          - text: Delete Task?
+        - generic [ref=e1209]:
+          - generic [ref=e1210]: This action cannot be undone. If you are sure you want to delete this task, type "Delete" below.
+          - textbox "Type \"Delete\" here" [active] [ref=e1214]
+        - generic [ref=e1215]:
+          - button "Cancel" [ref=e1217] [cursor=pointer]:
+            - generic [ref=e1218] [cursor=pointer]: Cancel
+          - button "Delete" [disabled] [ref=e1220]:
+            - generic [ref=e1221]: Delete
+        - button [ref=e1223] [cursor=pointer]:
+          - img [ref=e1227] [cursor=pointer]
+```

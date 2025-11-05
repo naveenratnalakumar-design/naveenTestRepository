@@ -30,8 +30,13 @@
       </head>
       <body>
         <h2>@regression Validate details (Balance, Payer, Balance Status, Root Issue, Due Date, Charges) match Task List view; Update fields in Task View</h2>
-        <a href="index.html?t=1762152585592">⬅️ Back to Summary</a>
-        
+        <a href="index.html?t=1762351399657">⬅️ Back to Summary</a>
+        <h3 style="color:red;">❌ Reason: Error: Validating the existing task due date is correctly displayed on the task list screen and in the task view
+
+[2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+Expected: [32m"2,210.00 "[39m
+Received: [31m""[39m</h3>
         <h3>📝 Steps:</h3>
         <ul>
           
@@ -69,30 +74,10 @@
           
             <li>Validating the existing task balance status is correctly displayed on the task list screen and in the task view </li>
           
-            <li>Validating the existing task due date is correctly displayed on the task list screen and in the task view </li>
-          
-            <li>Validating the existing task taskStatus is correctly displayed on the task list screen and in the task view </li>
-          
-            <li>Validating the existing task assignedTo user is correctly displayed on the task list screen and in the task view </li>
-          
-            <li>Click on the Balance Status btn </li>
-          
-            <li>The Page is loading, please wait </li>
-          
-            <li>Click locator('xpath=(//mat-option[@aria-selected=\'false\'])[1]') </li>
-          
-            <li>Click on Activity tab </li>
-          
-            <li>Click locator('xpath=(//div[@data-column-definition-name=\'_hierarchyColumn\'])[2]') </li>
-          
-            <li>Verify that an Activity Log is recorded when updating a required field on a task </li>
-          
-            <li>The Page is loading, please wait </li>
-          
-            <li>Click on the close button </li>
+            <li>Validating the existing task due date is correctly displayed on the task list screen and in the task view <span style="color:red;">(Failed)</span></li>
           
         </ul>
-        
+        <h3>📸 Screenshot</h3><img src="@regression_validate_details_(balance,_payer,_balance_status,_root_issue,_due_date,_charges)_match_task_list_view;_update_fields_in_task_view_screenshot.png?t=1762351399657" width="600" />
         
       </body>
     </html>

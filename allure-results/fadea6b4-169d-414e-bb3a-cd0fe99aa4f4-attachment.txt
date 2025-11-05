@@ -1,0 +1,5 @@
+
+ Attempt 1: Trying with Resdent "Adolph, Herbert"
+ Found checkbox for "Adolph, Herbert". Selecting payer.
+ Selected & entered resident: Adolph, Herbert
+ Resident displayed on tabel: Adolph, Herbert

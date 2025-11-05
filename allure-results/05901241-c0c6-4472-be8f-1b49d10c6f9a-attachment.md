@@ -1,0 +1,262 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img [ref=e7] [cursor=pointer]
+        - img [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - generic [ref=e33]:
+          - link [ref=e34] [cursor=pointer]:
+            - /url: /settings
+            - img [ref=e37] [cursor=pointer]
+            - generic [ref=e40] [cursor=pointer]: Settings
+            - img [ref=e43] [cursor=pointer]
+          - generic [ref=e45]:
+            - link [ref=e47] [cursor=pointer]:
+              - /url: /settings/user-management
+              - generic [ref=e48] [cursor=pointer]: User Management
+            - link [ref=e50] [cursor=pointer]:
+              - /url: /settings/facility-payers
+              - generic [ref=e51] [cursor=pointer]: Facility Payers
+      - button [ref=e56] [cursor=pointer]:
+        - img [ref=e60] [cursor=pointer]
+    - generic [ref=e62]:
+      - generic [ref=e64]:
+        - img [ref=e69]
+        - button [ref=e72] [cursor=pointer]:
+          - generic [ref=e75] [cursor=pointer]: AT
+          - img [ref=e78] [cursor=pointer]
+      - generic [ref=e81]:
+        - generic [ref=e83]:
+          - link [ref=e84] [cursor=pointer]:
+            - /url: /settings/user-management/details
+            - button [ref=e86] [cursor=pointer]:
+              - img [ref=e90] [cursor=pointer]
+            - text: User Management
+          - img [ref=e94]
+          - generic [ref=e100]: AT
+          - generic [ref=e103]:
+            - generic [ref=e104]: ARW Test Account
+            - button [ref=e106] [cursor=pointer]:
+              - img [ref=e110] [cursor=pointer]
+        - generic [ref=e113]:
+          - generic [ref=e114]:
+            - generic [ref=e115]:
+              - generic [ref=e119] [cursor=pointer]: Email
+              - generic [ref=e121]:
+                - generic [ref=e122]: svc-arw-test@axgsolutions.com
+                - button [ref=e124] [cursor=pointer]:
+                  - img [ref=e128] [cursor=pointer]
+            - generic [ref=e130]:
+              - generic [ref=e134] [cursor=pointer]: RevFlow Access
+              - radiogroup [ref=e135]:
+                - radio [checked] [ref=e136] [cursor=pointer]:
+                  - generic [ref=e137] [cursor=pointer]: Active
+                - radio [ref=e138] [cursor=pointer]:
+                  - generic [ref=e139] [cursor=pointer]: Inactive
+            - generic [ref=e140]:
+              - generic [ref=e144] [cursor=pointer]: User ID
+              - text: "1349"
+            - generic [ref=e145]:
+              - generic [ref=e149] [cursor=pointer]: Added On
+              - text: 10/21/2025 12:06 AM
+            - generic [ref=e150]:
+              - generic [ref=e154] [cursor=pointer]: Active Directory ID
+              - text: 332f4e15-7247-478e-8407-819da325e88d
+              - generic [ref=e155]: Azure
+          - generic [ref=e156]:
+            - generic [ref=e157]:
+              - generic [ref=e159]:
+                - img [ref=e162]
+                - generic [ref=e164]: Facilities & Roles (36)
+              - button [ref=e166] [cursor=pointer]:
+                - generic [ref=e167] [cursor=pointer]:
+                  - img [ref=e170] [cursor=pointer]
+                  - text: Assign New
+            - generic [ref=e175]:
+              - generic [ref=e176]:
+                - generic [ref=e180] [cursor=pointer]: Facility
+                - generic [ref=e184] [cursor=pointer]: Role
+                - generic [ref=e188] [cursor=pointer]: Status
+                - generic [ref=e193] [cursor=pointer]: Last Updated On
+              - generic [ref=e199]:
+                - generic [ref=e201]:
+                  - generic [ref=e204]: Ivy at Davenport-St Mary
+                  - generic [ref=e209]:
+                    - generic [ref=e210]: AR Biller
+                    - link [ref=e211] [cursor=pointer]: 2 Other Users
+                  - radiogroup [ref=e215]:
+                    - radio [checked] [ref=e216] [cursor=pointer]:
+                      - generic [ref=e217] [cursor=pointer]: Active
+                    - radio [ref=e218] [cursor=pointer]:
+                      - generic [ref=e219] [cursor=pointer]: Inactive
+                  - generic [ref=e222]: 10/30/2025 5:28 PM by ARW Test Account
+                - generic [ref=e224]:
+                  - generic [ref=e227]: Midwest City
+                  - generic [ref=e232]:
+                    - generic [ref=e233]: AR Biller
+                    - link [ref=e234] [cursor=pointer]: 1 Other User
+                  - radiogroup [ref=e238]:
+                    - radio [checked] [ref=e239] [cursor=pointer]:
+                      - generic [ref=e240] [cursor=pointer]: Active
+                    - radio [ref=e241] [cursor=pointer]:
+                      - generic [ref=e242] [cursor=pointer]: Inactive
+                  - generic [ref=e245]: 10/22/2025 3:45 PM by Vikesh Gaikawad
+                - generic [ref=e247]:
+                  - generic [ref=e250]: Windsor
+                  - generic [ref=e255]:
+                    - generic [ref=e256]: AR Biller
+                    - link [ref=e257] [cursor=pointer]: 3 Other Users
+                  - radiogroup [ref=e261]:
+                    - radio [checked] [ref=e262] [cursor=pointer]:
+                      - generic [ref=e263] [cursor=pointer]: Active
+                    - radio [ref=e264] [cursor=pointer]:
+                      - generic [ref=e265] [cursor=pointer]: Inactive
+                  - generic [ref=e268]: 10/22/2025 3:45 PM by Vikesh Gaikawad
+                - generic [ref=e270]:
+                  - generic [ref=e273]: Gulfport
+                  - generic [ref=e278]:
+                    - generic [ref=e279]: AR Biller
+                    - link [ref=e280] [cursor=pointer]: 5 Other Users
+                  - radiogroup [ref=e284]:
+                    - radio [checked] [ref=e285] [cursor=pointer]:
+                      - generic [ref=e286] [cursor=pointer]: Active
+                    - radio [ref=e287] [cursor=pointer]:
+                      - generic [ref=e288] [cursor=pointer]: Inactive
+                  - generic [ref=e291]: 10/22/2025 3:45 PM by Vikesh Gaikawad
+                - generic [ref=e293]:
+                  - generic [ref=e296]: Test Winston Salem
+                  - generic [ref=e300]:
+                    - generic [ref=e301]:
+                      - generic [ref=e302]: AR Biller
+                      - link [ref=e303] [cursor=pointer]: 1 Other User
+                    - button [ref=e305] [cursor=pointer]:
+                      - generic [ref=e306] [cursor=pointer]: Primary
+                  - radiogroup [ref=e310]:
+                    - radio [checked] [ref=e311] [cursor=pointer]:
+                      - generic [ref=e312] [cursor=pointer]: Active
+                    - radio [ref=e313] [cursor=pointer]:
+                      - generic [ref=e314] [cursor=pointer]: Inactive
+                  - generic [ref=e317]: 10/22/2025 3:45 PM by Vikesh Gaikawad
+                - generic [ref=e319]:
+                  - generic [ref=e322]: Test Glenview
+                  - generic [ref=e326]:
+                    - generic [ref=e327]:
+                      - generic [ref=e328]: AR Biller
+                      - link [ref=e329] [cursor=pointer]: 1 Other User
+                    - button [ref=e331] [cursor=pointer]:
+                      - generic [ref=e332] [cursor=pointer]: Primary
+                  - radiogroup [ref=e336]:
+                    - radio [checked] [ref=e337] [cursor=pointer]:
+                      - generic [ref=e338] [cursor=pointer]: Active
+                    - radio [ref=e339] [cursor=pointer]:
+                      - generic [ref=e340] [cursor=pointer]: Inactive
+                  - generic [ref=e343]: 10/22/2025 3:45 PM by Vikesh Gaikawad
+                - generic [ref=e345]:
+                  - generic [ref=e348]: Ft. Lauderdale
+                  - generic [ref=e352]:
+                    - generic [ref=e353]:
+                      - generic [ref=e354]: AR Biller
+                      - link [ref=e355] [cursor=pointer]: 2 Other Users
+                    - button [ref=e357] [cursor=pointer]:
+                      - generic [ref=e358] [cursor=pointer]: Primary
+                  - radiogroup [ref=e362]:
+                    - radio [checked] [ref=e363] [cursor=pointer]:
+                      - generic [ref=e364] [cursor=pointer]: Active
+                    - radio [ref=e365] [cursor=pointer]:
+                      - generic [ref=e366] [cursor=pointer]: Inactive
+                  - generic [ref=e369]: 10/22/2025 3:45 PM by Vikesh Gaikawad
+                - generic [ref=e371]:
+                  - generic [ref=e374]: North Campus
+                  - generic [ref=e378]:
+                    - generic [ref=e380]: AR Biller
+                    - button [ref=e382] [cursor=pointer]:
+                      - generic [ref=e383] [cursor=pointer]: Primary
+                  - radiogroup [ref=e387]:
+                    - radio [checked] [ref=e388] [cursor=pointer]:
+                      - generic [ref=e389] [cursor=pointer]: Active
+                    - radio [ref=e390] [cursor=pointer]:
+                      - generic [ref=e391] [cursor=pointer]: Inactive
+                  - generic [ref=e394]: 10/22/2025 3:45 PM by Vikesh Gaikawad
+                - generic [ref=e396]:
+                  - generic [ref=e399]: Citrus
+                  - generic [ref=e403]:
+                    - generic [ref=e404]:
+                      - generic [ref=e405]: AR Biller
+                      - link [ref=e406] [cursor=pointer]: 1 Other User
+                    - button [ref=e408] [cursor=pointer]:
+                      - generic [ref=e409] [cursor=pointer]: Primary
+                  - radiogroup [ref=e413]:
+                    - radio [checked] [ref=e414] [cursor=pointer]:
+                      - generic [ref=e415] [cursor=pointer]: Active
+                    - radio [ref=e416] [cursor=pointer]:
+                      - generic [ref=e417] [cursor=pointer]: Inactive
+                  - generic [ref=e420]: 10/22/2025 3:45 PM by Vikesh Gaikawad
+                - generic [ref=e422]:
+                  - generic [ref=e425]: Mountain Ridge
+                  - generic [ref=e430]:
+                    - generic [ref=e431]: AR Biller
+                    - link [ref=e432] [cursor=pointer]: 2 Other Users
+                  - radiogroup [ref=e436]:
+                    - radio [checked] [ref=e437] [cursor=pointer]:
+                      - generic [ref=e438] [cursor=pointer]: Active
+                    - radio [ref=e439] [cursor=pointer]:
+                      - generic [ref=e440] [cursor=pointer]: Inactive
+                  - generic [ref=e443]: 10/22/2025 3:45 PM by Vikesh Gaikawad
+  - generic [ref=e451]: Jira Service Management Widget
+  - iframe [ref=e452]:
+    - main "Help Center Widget Content" [ref=f1e2]:
+      - button "?" [ref=f1e5] [cursor=pointer]:
+        - paragraph [ref=f1e6] [cursor=pointer]: "?"
+  - dialog [ref=e457]:
+    - generic [ref=e459]:
+      - heading [level=2] [ref=e460]
+      - generic [ref=e464]:
+        - generic [ref=e465]: Ivy at Davenport-St Mary / AR Biller (3)
+        - radiogroup [ref=e466]:
+          - generic [ref=e467]: Primary
+          - generic [ref=e469]:
+            - radio "AT ARW Test Account svc-arw-test@axgsolutions.com" [ref=e471] [cursor=pointer]
+            - generic [ref=e475]:
+              - generic [ref=e480]: AT
+              - generic [ref=e481]:
+                - generic [ref=e482]: ARW Test Account
+                - generic [ref=e483]: svc-arw-test@axgsolutions.com
+          - generic [ref=e485]:
+            - radio "AR Aditya Ravulkar ARavulkar@axgsolutions.com" [ref=e487] [cursor=pointer]
+            - generic [ref=e491]:
+              - generic [ref=e496]: AR
+              - generic [ref=e497]:
+                - generic [ref=e498]: Aditya Ravulkar
+                - generic [ref=e499]: ARavulkar@axgsolutions.com
+          - generic [ref=e501]:
+            - radio "OS Orest Shpak oshpak@axgsolutions.com" [checked] [ref=e503] [cursor=pointer]
+            - generic [ref=e508]:
+              - generic [ref=e513]: OS
+              - generic [ref=e514]:
+                - generic [ref=e515]: Orest Shpak
+                - generic [ref=e516]: oshpak@axgsolutions.com
+      - generic [ref=e517]:
+        - button "Save" [ref=e519] [cursor=pointer]:
+          - generic [ref=e520] [cursor=pointer]: Save
+        - button "Close" [active] [ref=e522] [cursor=pointer]:
+          - generic [ref=e523] [cursor=pointer]: Close
+      - button [ref=e525] [cursor=pointer]:
+        - img [ref=e529] [cursor=pointer]
+```

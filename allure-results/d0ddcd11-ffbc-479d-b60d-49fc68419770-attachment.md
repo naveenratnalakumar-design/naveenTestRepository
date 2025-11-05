@@ -1,0 +1,323 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Revflow logo" [ref=e7] [cursor=pointer]
+        - img "Revflow" [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link "Task List" [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link "AR Aging" [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - link "Settings" [ref=e34] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e37] [cursor=pointer]
+          - generic [ref=e40] [cursor=pointer]: Settings
+          - img [ref=e43] [cursor=pointer]
+      - button [ref=e49] [cursor=pointer]:
+        - img [ref=e53] [cursor=pointer]
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - generic [ref=e61]:
+          - img [ref=e64]
+          - textbox "Search for a Case" [ref=e66]
+        - generic [ref=e67]:
+          - button "Selected Facilities (35)" [ref=e69] [cursor=pointer]:
+            - text: Selected Facilities (35)
+            - img [ref=e72] [cursor=pointer]
+          - img [ref=e78]
+          - button "AT" [ref=e81] [cursor=pointer]:
+            - generic [ref=e84] [cursor=pointer]: AT
+            - img [ref=e87] [cursor=pointer]
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - heading "Tasks" [level=2] [ref=e94]
+          - generic [ref=e96]:
+            - button "Custom Sort (2)" [ref=e98] [cursor=pointer]:
+              - generic [ref=e99] [cursor=pointer]:
+                - text: Custom Sort
+                - generic [ref=e100] [cursor=pointer]: (2)
+              - img [ref=e103] [cursor=pointer]
+            - button "Filters 1" [active] [ref=e106] [cursor=pointer]:
+              - img [ref=e109] [cursor=pointer]
+              - generic [ref=e111] [cursor=pointer]:
+                - text: Filters
+                - generic [ref=e112] [cursor=pointer]: "1"
+            - button "Reset to Default" [ref=e114] [cursor=pointer]:
+              - generic [ref=e115] [cursor=pointer]:
+                - text: Reset to Default
+                - img [ref=e118] [cursor=pointer]
+        - generic [ref=e120]:
+          - generic [ref=e122]:
+            - generic [ref=e125]:
+              - generic [ref=e126]: "7906"
+              - text: Results
+            - generic [ref=e128]:
+              - generic [ref=e132] [cursor=pointer]: Task
+              - generic [ref=e137] [cursor=pointer]: Facility
+              - generic [ref=e142] [cursor=pointer]: Resident
+              - generic [ref=e147] [cursor=pointer]: Payer
+              - generic [ref=e151] [cursor=pointer]:
+                - generic [ref=e152] [cursor=pointer]: Balance
+                - button [ref=e154] [cursor=pointer]:
+                  - img [ref=e157] [cursor=pointer]
+              - generic [ref=e163] [cursor=pointer]: Balance Status
+              - generic [ref=e167] [cursor=pointer]:
+                - generic [ref=e168] [cursor=pointer]: Due Date
+                - generic [ref=e169] [cursor=pointer]:
+                  - button [ref=e170] [cursor=pointer]:
+                    - img [ref=e173] [cursor=pointer]
+                  - button [ref=e175] [cursor=pointer]:
+                    - img [ref=e178] [cursor=pointer]
+              - generic [ref=e184] [cursor=pointer]: Task Status
+              - generic [ref=e189] [cursor=pointer]: Assigned To
+              - generic [ref=e194] [cursor=pointer]: Root Issue
+            - generic [ref=e200]:
+              - generic [ref=e202]:
+                - link "DaliyTaskCreation(21-08-2025)Task-2" [ref=e206] [cursor=pointer]
+                - generic [ref=e210]: Green Meadows
+                - link "Blackmon, Helga" [ref=e214] [cursor=pointer]:
+                  - /url: /cases/details/4313921
+                - generic [ref=e218]: AARP
+                - generic [ref=e222]: "0.00"
+                - generic [ref=e226]:
+                  - img [ref=e229]
+                  - generic [ref=e231]: Unworked
+                - generic [ref=e235]: 8/21/2025
+                - generic [ref=e240]: Canceled
+                - generic [ref=e244]:
+                  - generic [ref=e249]: SR
+                  - generic [ref=e250]: Santosh Rongali
+                - generic [ref=e254]: Unknown
+              - generic [ref=e256]:
+                - link "test" [ref=e260] [cursor=pointer]
+                - generic [ref=e264]: Mountain Ridge
+                - link "Bell, Zelma" [ref=e268] [cursor=pointer]:
+                  - /url: /cases/details/4076132
+                - generic [ref=e272]: Humana Levels
+                - generic [ref=e276]: (588.99)
+                - generic [ref=e280]:
+                  - img [ref=e283]
+                  - generic [ref=e285]: Denied
+                - generic [ref=e289]: 8/21/2025
+                - generic [ref=e294]: In Progress
+                - generic [ref=e298]:
+                  - generic [ref=e303]: AW
+                  - generic [ref=e304]: Adina Wilhelm
+                - generic [ref=e308]: Unknown
+              - generic [ref=e310]:
+                - link "tasooo" [ref=e314] [cursor=pointer]
+                - generic [ref=e318]: Caring Heart
+                - link "Pitts, Donald" [ref=e322] [cursor=pointer]:
+                  - /url: /cases/details/4701768
+                - generic [ref=e326]: Gateway MCD
+                - generic [ref=e330]: 4,500.00
+                - generic [ref=e334]:
+                  - img [ref=e337]
+                  - generic [ref=e339]: Underpaid
+                - generic [ref=e343]: 8/22/2025
+                - generic [ref=e348]: In Progress
+                - generic [ref=e352]:
+                  - generic [ref=e357]: VG
+                  - generic [ref=e358]: Vikesh Gaikawad
+                - generic [ref=e362]: Unknown
+              - generic [ref=e364]:
+                - link "inno" [ref=e368] [cursor=pointer]
+                - generic [ref=e372]: Caring Heart
+                - link "Hinson, Robert" [ref=e376] [cursor=pointer]:
+                  - /url: /cases/details/4655842
+                - generic [ref=e380]: Humana MCR
+                - generic [ref=e384]: (38.01)
+                - generic [ref=e388]:
+                  - img [ref=e391]
+                  - generic [ref=e393]: Rejected
+                - generic [ref=e397]: 8/22/2025
+                - generic [ref=e402]: In Progress
+                - generic [ref=e406]:
+                  - generic [ref=e411]: VG
+                  - generic [ref=e412]: Vikesh Gaikawad
+                - generic [ref=e416]: Unknown
+              - generic [ref=e418]:
+                - link "inni" [ref=e422] [cursor=pointer]
+                - generic [ref=e426]: Caring Heart
+                - link "Butler, Loretta" [ref=e430] [cursor=pointer]:
+                  - /url: /cases/details/3578604
+                - generic [ref=e434]: Humana MCR
+                - generic [ref=e438]: (711.57)
+                - generic [ref=e442]:
+                  - img [ref=e445]
+                  - generic [ref=e447]: DD Enrolled
+                - generic [ref=e451]: 8/22/2025
+                - generic [ref=e456]: In Progress
+                - generic [ref=e460]:
+                  - generic [ref=e465]: VG
+                  - generic [ref=e466]: Vikesh Gaikawad
+                - generic [ref=e470]: Unknown
+              - generic [ref=e472]:
+                - link "test" [ref=e476] [cursor=pointer]
+                - generic [ref=e480]: Ivy at Davenport-St Mary
+                - link "Dismer, Deborah" [ref=e484] [cursor=pointer]:
+                  - /url: /cases/details/4649593
+                - generic [ref=e488]: Genesis Hospice
+                - generic [ref=e492]: (2,028.99)
+                - generic [ref=e496]:
+                  - img [ref=e499]
+                  - generic [ref=e501]: Unworked
+                - generic [ref=e505]: 8/23/2025
+                - generic [ref=e510]: In Progress
+                - generic [ref=e514]:
+                  - generic [ref=e519]: MF
+                  - generic [ref=e520]: Malki Feinroth
+                - generic [ref=e524]: Unknown
+              - generic [ref=e526]:
+                - link "PayerCategoryMedicaid" [ref=e530] [cursor=pointer]
+                - generic [ref=e534]: Ivy at Davenport-St Mary
+                - link "Lutz, Kenneth" [ref=e538] [cursor=pointer]:
+                  - /url: /cases/details/4708260
+                - generic [ref=e542]: IA Medicaid
+                - generic [ref=e546]: 6,285.00
+                - generic [ref=e550]:
+                  - img [ref=e553]
+                  - generic [ref=e555]: Bleeding Issue
+                - generic [ref=e559]: 8/24/2025
+                - generic [ref=e564]: In Progress
+                - generic [ref=e568]:
+                  - generic [ref=e573]: VG
+                  - generic [ref=e574]: Vikesh Gaikawad
+                - generic [ref=e578]: Unknown
+              - generic [ref=e580]:
+                - link "TaskLinkableCharge" [ref=e584] [cursor=pointer]
+                - generic [ref=e588]: Citrus
+                - link "Hart, Mark" [ref=e592] [cursor=pointer]:
+                  - /url: /cases/details/4694867
+                - generic [ref=e596]: Florida Hospice Medicaid Pending
+                - generic [ref=e600]: "0.00"
+                - generic [ref=e604]:
+                  - img [ref=e607]
+                  - generic [ref=e609]: Unworked
+                - generic [ref=e613]: 8/24/2025
+                - generic [ref=e618]: Canceled
+                - generic [ref=e622]:
+                  - generic [ref=e627]: VG
+                  - generic [ref=e628]: Vikesh Gaikawad
+                - generic [ref=e632]: Unknown
+              - generic [ref=e634]:
+                - link "Task Icon Refresh" [ref=e638] [cursor=pointer]
+                - generic [ref=e642]: Gulfport
+                - link "Hamilton, Brian" [ref=e646] [cursor=pointer]:
+                  - /url: /cases/details/3916825
+                - generic [ref=e650]: AARP
+                - generic [ref=e654]: "0.00"
+                - generic [ref=e658]:
+                  - img [ref=e661]
+                  - generic [ref=e663]: Unworked
+                - generic [ref=e667]: 8/24/2025
+                - generic [ref=e672]: Canceled
+                - generic [ref=e676]:
+                  - generic [ref=e681]: VG
+                  - generic [ref=e682]: Vikesh Gaikawad
+                - generic [ref=e686]: Unknown
+              - generic [ref=e688]:
+                - link "Task AA" [ref=e692] [cursor=pointer]
+                - generic [ref=e696]: Gulfport
+                - link "Beazley, Carol" [ref=e700] [cursor=pointer]:
+                  - /url: /cases/details/4655681
+                - generic [ref=e704]: United Healthcare MCR
+                - generic [ref=e708]: (2,748.00)
+                - generic [ref=e712]:
+                  - img [ref=e715]
+                  - generic [ref=e717]: Unbilled
+                - generic [ref=e721]: 8/24/2025
+                - generic [ref=e726]: In Progress
+                - generic [ref=e730]:
+                  - generic [ref=e735]: VG
+                  - generic [ref=e736]: Vikesh Gaikawad
+                - generic [ref=e740]: Unknown
+              - generic [ref=e742]:
+                - link "Task7" [ref=e746] [cursor=pointer]
+                - generic [ref=e750]: Beacon
+                - link "Hunt, Kenneth" [ref=e754] [cursor=pointer]:
+                  - /url: /cases/details/4292956
+                - generic [ref=e758]: Village Care Max
+                - generic [ref=e762]: 1,373.04
+                - generic [ref=e766]:
+                  - img [ref=e769]
+                  - generic [ref=e771]: Corrected Claim
+                - generic [ref=e775]: 8/25/2025
+                - generic [ref=e780]: In Progress
+                - generic [ref=e784]:
+                  - generic [ref=e789]: VG
+                  - generic [ref=e790]: Vikesh Gaikawad
+                - generic [ref=e794]: Unknown
+              - generic [ref=e796]:
+                - link "Task New1208" [ref=e800] [cursor=pointer]
+                - generic [ref=e804]: Citrus
+                - link "Bailey, Betty" [ref=e808] [cursor=pointer]:
+                  - /url: /cases/details/4697357
+                - generic [ref=e812]: Vitas Hospice
+                - generic [ref=e816]: "521.84"
+                - generic [ref=e820]:
+                  - img [ref=e823]
+                  - generic [ref=e825]: Unworked
+                - generic [ref=e829]: 8/25/2025
+                - generic [ref=e834]: Not Started
+                - generic [ref=e838]:
+                  - generic [ref=e843]: ML
+                  - generic [ref=e844]: Menachem Locker
+                - generic [ref=e848]: Unknown
+              - generic [ref=e850]:
+                - link "TaskLinkedCharges" [ref=e854] [cursor=pointer]
+                - generic [ref=e858]: Citrus
+                - link "Hart, Mark" [ref=e862] [cursor=pointer]:
+                  - /url: /cases/details/4694867
+                - generic [ref=e866]: Florida Hospice Medicaid Pending
+                - generic [ref=e870]: "0.00"
+                - generic [ref=e874]:
+                  - img [ref=e877]
+                  - generic [ref=e879]: Unworked
+                - generic [ref=e883]: 8/25/2025
+                - generic [ref=e888]: Canceled
+                - generic [ref=e892]:
+                  - generic [ref=e897]: VG
+                  - generic [ref=e898]: Vikesh Gaikawad
+                - generic [ref=e902]: Unknown
+              - generic [ref=e904]:
+                - link "Task Respite" [ref=e908] [cursor=pointer]
+                - generic [ref=e912]: North Campus
+                - link "Mix, Robert" [ref=e916] [cursor=pointer]:
+                  - /url: /cases/details/4703624
+                - generic [ref=e920]: Vitas Hospice Respite
+                - generic [ref=e924]: "0.00"
+                - generic [ref=e928]:
+                  - img [ref=e931]
+                  - generic [ref=e933]: Unworked
+                - generic [ref=e937]: 8/25/2025
+                - generic [ref=e942]: Canceled
+                - generic [ref=e946]:
+                  - generic [ref=e951]: VG
+                  - generic [ref=e952]: Vikesh Gaikawad
+                - generic [ref=e956]: Unknown
+          - progressbar [ref=e969]:
+            - img [ref=e971]
+            - generic [ref=e974]:
+              - img [ref=e976]
+              - img [ref=e979]
+              - img [ref=e982]
+  - generic [ref=e984]: Jira Service Management Widget
+  - iframe [ref=e985]:
+    - main "Help Center Widget Content" [ref=f1e2]:
+      - button "?" [ref=f1e5] [cursor=pointer]:
+        - paragraph [ref=f1e6] [cursor=pointer]: "?"
+```

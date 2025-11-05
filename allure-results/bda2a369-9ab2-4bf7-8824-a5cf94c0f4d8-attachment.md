@@ -1,0 +1,523 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Revflow logo" [ref=e7] [cursor=pointer]
+        - img "Revflow" [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link "Task List" [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link "AR Aging" [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - link "Settings" [ref=e34] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e37] [cursor=pointer]
+          - generic [ref=e40] [cursor=pointer]: Settings
+          - img [ref=e43] [cursor=pointer]
+      - button [ref=e49] [cursor=pointer]:
+        - img [ref=e53] [cursor=pointer]
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - generic [ref=e61]:
+          - img [ref=e64]
+          - textbox "Search for a Case" [ref=e66]
+        - generic [ref=e67]:
+          - button "Selected Facilities (35)" [ref=e69] [cursor=pointer]:
+            - text: Selected Facilities (35)
+            - img [ref=e72] [cursor=pointer]
+          - img [ref=e78]
+          - button "AT" [ref=e81] [cursor=pointer]:
+            - generic [ref=e84] [cursor=pointer]: AT
+            - img [ref=e87] [cursor=pointer]
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - heading "AR Aging" [level=2] [ref=e94]
+          - generic [ref=e95]:
+            - generic [ref=e96]:
+              - 'button "Grouping: Facility Group to Resident" [ref=e98] [cursor=pointer]':
+                - generic [ref=e99] [cursor=pointer]:
+                  - text: "Grouping:"
+                  - generic [ref=e100] [cursor=pointer]: Facility Group to Resident
+                - img [ref=e103] [cursor=pointer]
+              - button "Filters" [expanded] [ref=e106] [cursor=pointer]:
+                - img [ref=e109] [cursor=pointer]
+                - generic [ref=e111] [cursor=pointer]: Filters
+              - button "Reset to Default" [ref=e113] [cursor=pointer]:
+                - generic [ref=e114] [cursor=pointer]:
+                  - text: Reset to Default
+                  - img [ref=e117] [cursor=pointer]
+            - radiogroup [ref=e122]:
+              - radio "6 Months" [checked] [ref=e123] [cursor=pointer]:
+                - generic [ref=e124] [cursor=pointer]: 6 Months
+              - radio "12 Months" [ref=e125] [cursor=pointer]:
+                - generic [ref=e126] [cursor=pointer]: 12 Months
+              - radio "18 Months" [ref=e127] [cursor=pointer]:
+                - generic [ref=e128] [cursor=pointer]: 18 Months
+              - radio "Custom" [ref=e129] [cursor=pointer]:
+                - generic [ref=e130] [cursor=pointer]: Custom
+        - generic [ref=e133]:
+          - generic [ref=e135]:
+            - generic [ref=e136]:
+              - generic [ref=e137]:
+                - generic [ref=e138]: "12"
+                - text: Results
+              - generic [ref=e139]: Data refreshed at 11/5/2025 6:24 PM
+            - generic [ref=e140]:
+              - generic [ref=e142]:
+                - switch "Current Month" [checked] [ref=e143] [cursor=pointer]
+                - generic [ref=e152] [cursor=pointer]: Current Month
+              - generic [ref=e154]:
+                - switch "All Prior Balances" [checked] [ref=e155] [cursor=pointer]
+                - generic [ref=e164] [cursor=pointer]: All Prior Balances
+              - generic [ref=e166]:
+                - switch "Total Displayed Balance" [checked] [ref=e167] [cursor=pointer]
+                - generic [ref=e176] [cursor=pointer]: Total Displayed Balance
+          - generic [ref=e178]:
+            - generic [ref=e180]: Grouping
+            - generic [ref=e185] [cursor=pointer]: Nov 2025
+            - generic [ref=e190] [cursor=pointer]: Oct 2025
+            - generic [ref=e195] [cursor=pointer]: Sep 2025
+            - generic [ref=e200] [cursor=pointer]: Aug 2025
+            - generic [ref=e205] [cursor=pointer]: Jul 2025
+            - generic [ref=e210] [cursor=pointer]: Jun 2025
+            - generic [ref=e215] [cursor=pointer]: May 2025
+            - generic [ref=e220] [cursor=pointer]: All Prior Balances
+            - generic [ref=e225] [cursor=pointer]: Total Displayed Balance
+          - generic [ref=e229]:
+            - generic [ref=e231]:
+              - generic [ref=e233]:
+                - generic [ref=e235]:
+                  - generic [ref=e236]:
+                    - img [ref=e239]
+                    - button [ref=e243] [cursor=pointer]:
+                      - img [ref=e247] [cursor=pointer]
+                  - generic [ref=e251]: 428 Healthcare
+                  - img [ref=e254] [cursor=pointer]
+                - generic [ref=e260]:
+                  - text: 48,412.
+                  - generic [ref=e261]: "00"
+                - generic [ref=e266]:
+                  - text: 444,598.
+                  - generic [ref=e267]: "87"
+                - generic [ref=e272]:
+                  - text: 61,768.
+                  - generic [ref=e273]: "75"
+                - generic [ref=e278]:
+                  - text: 51,426.
+                  - generic [ref=e279]: "43"
+                - generic [ref=e284]:
+                  - text: 33,536.
+                  - generic [ref=e285]: "29"
+                - generic [ref=e290]:
+                  - text: 13,090.
+                  - generic [ref=e291]: "73"
+                - generic [ref=e296]:
+                  - text: 39,447.
+                  - generic [ref=e297]: "12"
+                - generic [ref=e302]:
+                  - text: 278,561.
+                  - generic [ref=e303]: "60"
+                - generic [ref=e308]:
+                  - text: 970,841.
+                  - generic [ref=e309]: "79"
+              - generic [ref=e311]:
+                - generic [ref=e313]:
+                  - generic [ref=e314]:
+                    - img [ref=e317]
+                    - button [ref=e321] [cursor=pointer]:
+                      - img [ref=e325] [cursor=pointer]
+                  - generic [ref=e329]: Advanced Health
+                  - img [ref=e332] [cursor=pointer]
+                - generic [ref=e338]:
+                  - text: 60,605.
+                  - generic [ref=e339]: "26"
+                - generic [ref=e344]:
+                  - text: 1,215,354.
+                  - generic [ref=e345]: "42"
+                - generic [ref=e350]:
+                  - text: 212,218.
+                  - generic [ref=e351]: "16"
+                - generic [ref=e356]:
+                  - text: 44,078.
+                  - generic [ref=e357]: "72"
+                - generic [ref=e362]:
+                  - text: 18,877.
+                  - generic [ref=e363]: "58"
+                - generic [ref=e368]:
+                  - text: (119,070.
+                  - generic [ref=e369]: "21"
+                  - text: )
+                - generic [ref=e374]:
+                  - text: 432,251.
+                  - generic [ref=e375]: "97"
+                - generic [ref=e380]:
+                  - text: (846,993.
+                  - generic [ref=e381]: "83"
+                  - text: )
+                - generic [ref=e386]:
+                  - text: 1,017,322.
+                  - generic [ref=e387]: "07"
+              - generic [ref=e389]:
+                - generic [ref=e391]:
+                  - generic [ref=e392]:
+                    - img [ref=e395]
+                    - button [ref=e399] [cursor=pointer]:
+                      - img [ref=e403] [cursor=pointer]
+                  - generic [ref=e407]: Benchmark
+                  - img [ref=e410] [cursor=pointer]
+                - generic [ref=e430]:
+                  - text: 288,683.
+                  - generic [ref=e431]: "76"
+                - generic [ref=e436]:
+                  - text: 288,683.
+                  - generic [ref=e437]: "76"
+              - generic [ref=e439]:
+                - generic [ref=e441]:
+                  - generic [ref=e442]:
+                    - img [ref=e445]
+                    - button [ref=e449] [cursor=pointer]:
+                      - img [ref=e453] [cursor=pointer]
+                  - generic [ref=e457]: Citadel
+                  - img [ref=e460] [cursor=pointer]
+                - generic [ref=e480]:
+                  - text: (382,043.
+                  - generic [ref=e481]: "37"
+                  - text: )
+                - generic [ref=e486]:
+                  - text: (382,043.
+                  - generic [ref=e487]: "37"
+                  - text: )
+              - generic [ref=e489]:
+                - generic [ref=e491]:
+                  - generic [ref=e492]:
+                    - img [ref=e495]
+                    - button [ref=e499] [cursor=pointer]:
+                      - img [ref=e503] [cursor=pointer]
+                  - generic [ref=e507]: ClearView
+                  - img [ref=e510] [cursor=pointer]
+                - generic [ref=e516]:
+                  - text: 43,583.
+                  - generic [ref=e517]: "45"
+                - generic [ref=e522]:
+                  - text: 61,198.
+                  - generic [ref=e523]: "56"
+                - generic [ref=e528]:
+                  - text: 14,114.
+                  - generic [ref=e529]: "87"
+                - generic [ref=e534]:
+                  - text: "822."
+                  - generic [ref=e535]: "36"
+                - generic [ref=e540]:
+                  - text: 16,854.
+                  - generic [ref=e541]: "14"
+                - generic [ref=e546]:
+                  - text: 3,077.
+                  - generic [ref=e547]: "24"
+                - generic [ref=e552]:
+                  - text: 5,131.
+                  - generic [ref=e553]: "75"
+                - generic [ref=e558]:
+                  - text: 59,129.
+                  - generic [ref=e559]: "22"
+                - generic [ref=e564]:
+                  - text: 203,911.
+                  - generic [ref=e565]: "59"
+              - generic [ref=e567]:
+                - generic [ref=e569]:
+                  - generic [ref=e570]:
+                    - img [ref=e573]
+                    - button [ref=e577] [cursor=pointer]:
+                      - img [ref=e581] [cursor=pointer]
+                  - generic [ref=e585]: Ivy Healthcare
+                  - img [ref=e588] [cursor=pointer]
+                - generic [ref=e594]:
+                  - text: 60,831.
+                  - generic [ref=e595]: "38"
+                - generic [ref=e600]:
+                  - text: 166,286.
+                  - generic [ref=e601]: "10"
+                - generic [ref=e606]:
+                  - text: 49,466.
+                  - generic [ref=e607]: "14"
+                - generic [ref=e612]:
+                  - text: 54,875.
+                  - generic [ref=e613]: "26"
+                - generic [ref=e618]:
+                  - text: 47,152.
+                  - generic [ref=e619]: "37"
+                - generic [ref=e624]:
+                  - text: 21,678.
+                  - generic [ref=e625]: "58"
+                - generic [ref=e630]:
+                  - text: 33,458.
+                  - generic [ref=e631]: "71"
+                - generic [ref=e636]:
+                  - text: 601,068.
+                  - generic [ref=e637]: "19"
+                - generic [ref=e642]:
+                  - text: 1,034,816.
+                  - generic [ref=e643]: "73"
+              - generic [ref=e645]:
+                - generic [ref=e647]:
+                  - generic [ref=e648]:
+                    - img [ref=e651]
+                    - button [ref=e655] [cursor=pointer]:
+                      - img [ref=e659] [cursor=pointer]
+                  - generic [ref=e663]: Lilac
+                  - img [ref=e666] [cursor=pointer]
+                - generic [ref=e672]:
+                  - text: 79,320.
+                  - generic [ref=e673]: "57"
+                - generic [ref=e678]:
+                  - text: 935,100.
+                  - generic [ref=e679]: "80"
+                - generic [ref=e684]:
+                  - text: 190,746.
+                  - generic [ref=e685]: "08"
+                - generic [ref=e690]:
+                  - text: 99,754.
+                  - generic [ref=e691]: "32"
+                - generic [ref=e696]:
+                  - text: 86,145.
+                  - generic [ref=e697]: "27"
+                - generic [ref=e702]:
+                  - text: 81,441.
+                  - generic [ref=e703]: "98"
+                - generic [ref=e708]:
+                  - text: 94,494.
+                  - generic [ref=e709]: "51"
+                - generic [ref=e714]:
+                  - text: 1,145,386.
+                  - generic [ref=e715]: "09"
+                - generic [ref=e720]:
+                  - text: 2,712,389.
+                  - generic [ref=e721]: "62"
+              - generic [ref=e723]:
+                - generic [ref=e725]:
+                  - generic [ref=e726]:
+                    - img [ref=e729]
+                    - button [ref=e733] [cursor=pointer]:
+                      - img [ref=e737] [cursor=pointer]
+                  - generic [ref=e741]: Millennial
+                  - img [ref=e744] [cursor=pointer]
+                - generic [ref=e750]:
+                  - text: 394,597.
+                  - generic [ref=e751]: "02"
+                - generic [ref=e756]:
+                  - text: 2,246,678.
+                  - generic [ref=e757]: "34"
+                - generic [ref=e762]:
+                  - text: 582,021.
+                  - generic [ref=e763]: "03"
+                - generic [ref=e768]:
+                  - text: 290,758.
+                  - generic [ref=e769]: "01"
+                - generic [ref=e774]:
+                  - text: 226,231.
+                  - generic [ref=e775]: "04"
+                - generic [ref=e780]:
+                  - text: 151,161.
+                  - generic [ref=e781]: "40"
+                - generic [ref=e786]:
+                  - text: 147,689.
+                  - generic [ref=e787]: "57"
+                - generic [ref=e792]:
+                  - text: (395,035.
+                  - generic [ref=e793]: "89"
+                  - text: )
+                - generic [ref=e798]:
+                  - text: 3,644,100.
+                  - generic [ref=e799]: "52"
+              - generic [ref=e801]:
+                - generic [ref=e803]:
+                  - generic [ref=e804]:
+                    - img [ref=e807]
+                    - button [ref=e811] [cursor=pointer]:
+                      - img [ref=e815] [cursor=pointer]
+                  - generic [ref=e819]: Prestige
+                  - img [ref=e822] [cursor=pointer]
+                - generic [ref=e828]:
+                  - text: 651,418.
+                  - generic [ref=e829]: "06"
+                - generic [ref=e834]:
+                  - text: 3,855,213.
+                  - generic [ref=e835]: "35"
+                - generic [ref=e840]:
+                  - text: 1,205,656.
+                  - generic [ref=e841]: "14"
+                - generic [ref=e846]:
+                  - text: 651,732.
+                  - generic [ref=e847]: "36"
+                - generic [ref=e852]:
+                  - text: 376,309.
+                  - generic [ref=e853]: "26"
+                - generic [ref=e858]:
+                  - text: 319,764.
+                  - generic [ref=e859]: "33"
+                - generic [ref=e864]:
+                  - text: 243,461.
+                  - generic [ref=e865]: "56"
+                - generic [ref=e870]:
+                  - text: 2,197,352.
+                  - generic [ref=e871]: "89"
+                - generic [ref=e876]:
+                  - text: 9,500,907.
+                  - generic [ref=e877]: "95"
+              - generic [ref=e879]:
+                - generic [ref=e881]:
+                  - generic [ref=e882]:
+                    - img [ref=e885]
+                    - button [ref=e889] [cursor=pointer]:
+                      - img [ref=e893] [cursor=pointer]
+                  - generic [ref=e897]: Quantum
+                  - img [ref=e900] [cursor=pointer]
+                - generic [ref=e906]:
+                  - text: 350,227.
+                  - generic [ref=e907]: "90"
+                - generic [ref=e912]:
+                  - text: 1,974,593.
+                  - generic [ref=e913]: "27"
+                - generic [ref=e918]:
+                  - text: 401,244.
+                  - generic [ref=e919]: "93"
+                - generic [ref=e924]:
+                  - text: 241,261.
+                  - generic [ref=e925]: "83"
+                - generic [ref=e930]:
+                  - text: 129,764.
+                  - generic [ref=e931]: "47"
+                - generic [ref=e936]:
+                  - text: 74,669.
+                  - generic [ref=e937]: "12"
+                - generic [ref=e942]:
+                  - text: 97,820.
+                  - generic [ref=e943]: "31"
+                - generic [ref=e948]:
+                  - text: (351,235.
+                  - generic [ref=e949]: "70"
+                  - text: )
+                - generic [ref=e954]:
+                  - text: 2,918,346.
+                  - generic [ref=e955]: "13"
+              - generic [ref=e957]:
+                - generic [ref=e959]:
+                  - generic [ref=e960]:
+                    - img [ref=e963]
+                    - button [ref=e967] [cursor=pointer]:
+                      - img [ref=e971] [cursor=pointer]
+                  - generic [ref=e975]: Vintage NY
+                  - img [ref=e978] [cursor=pointer]
+                - generic [ref=e984]:
+                  - text: 437,236.
+                  - generic [ref=e985]: "47"
+                - generic [ref=e990]:
+                  - text: 4,763,267.
+                  - generic [ref=e991]: "90"
+                - generic [ref=e996]:
+                  - text: 1,249,330.
+                  - generic [ref=e997]: "92"
+                - generic [ref=e1002]:
+                  - text: 577,662.
+                  - generic [ref=e1003]: "00"
+                - generic [ref=e1008]:
+                  - text: 367,242.
+                  - generic [ref=e1009]: "52"
+                - generic [ref=e1014]:
+                  - text: 267,614.
+                  - generic [ref=e1015]: "67"
+                - generic [ref=e1020]:
+                  - text: 212,981.
+                  - generic [ref=e1021]: "64"
+                - generic [ref=e1026]:
+                  - text: (3,920,160.
+                  - generic [ref=e1027]: "16"
+                  - text: )
+                - generic [ref=e1032]:
+                  - text: 3,955,175.
+                  - generic [ref=e1033]: "96"
+              - generic [ref=e1035]:
+                - generic [ref=e1037]:
+                  - generic [ref=e1038]:
+                    - img [ref=e1041]
+                    - button [ref=e1045] [cursor=pointer]:
+                      - img [ref=e1049] [cursor=pointer]
+                  - generic [ref=e1053]: Workday Project
+                  - img [ref=e1056] [cursor=pointer]
+                - generic [ref=e1076]:
+                  - text: 29,693,502.
+                  - generic [ref=e1077]: "11"
+                - generic [ref=e1082]:
+                  - text: 29,693,502.
+                  - generic [ref=e1083]: "11"
+            - generic [ref=e1086]:
+              - generic [ref=e1088]: Summary
+              - generic [ref=e1093]:
+                - text: 2,126,232.
+                - generic [ref=e1094]: "11"
+              - generic [ref=e1099]:
+                - text: 15,662,291.
+                - generic [ref=e1100]: "61"
+              - generic [ref=e1105]:
+                - text: 3,966,567.
+                - generic [ref=e1106]: "02"
+              - generic [ref=e1111]:
+                - text: 2,012,371.
+                - generic [ref=e1112]: "29"
+              - generic [ref=e1117]:
+                - text: 1,302,112.
+                - generic [ref=e1118]: "94"
+              - generic [ref=e1123]:
+                - text: 813,427.
+                - generic [ref=e1124]: "84"
+              - generic [ref=e1129]:
+                - text: 1,306,737.
+                - generic [ref=e1130]: "14"
+              - generic [ref=e1135]:
+                - text: 28,368,214.
+                - generic [ref=e1136]: "91"
+              - generic [ref=e1141]:
+                - text: 55,557,954.
+                - generic [ref=e1142]: "86"
+  - generic [ref=e1152]: Jira Service Management Widget
+  - iframe [ref=e1153]:
+    - main "Help Center Widget Content" [ref=f1e2]:
+      - button "?" [ref=f1e5] [cursor=pointer]:
+        - paragraph [ref=f1e6] [cursor=pointer]: "?"
+  - menu [ref=e1157]:
+    - generic [ref=e1159]:
+      - generic [ref=e1160]:
+        - generic [ref=e1161]: Filter by
+        - button "Clear Filter" [disabled] [ref=e1163]:
+          - generic [ref=e1164]: Clear Filter
+      - generic [ref=e1168]:
+        - generic [ref=e1169]:
+          - combobox "Resident Balance" [ref=e1172]:
+            - generic [ref=e1178] [cursor=pointer]: Resident Balance
+          - generic [ref=e1181]:
+            - combobox "Between" [active] [ref=e1184]:
+              - generic [ref=e1190] [cursor=pointer]: Between
+            - generic [ref=e1192]:
+              - spinbutton [ref=e1196]
+              - spinbutton [ref=e1200]
+        - button [ref=e1202] [cursor=pointer]:
+          - img [ref=e1206] [cursor=pointer]
+      - generic [ref=e1208]:
+        - button "Add Filter" [disabled] [ref=e1210]:
+          - generic [ref=e1211]:
+            - img [ref=e1214]
+            - text: Add Filter
+        - button "Apply Filter" [disabled] [ref=e1217]:
+          - generic [ref=e1218]: Apply Filter
+```

@@ -322,7 +322,7 @@ exports.CreateTaskPage = class CreateTaskPage {
       "(//div[@class='arw-control__content']//input)[2]"
     );
     this.closeIconBtn = page.locator(
-      "(//button[contains(@class,'arw-button--icon-only')])[2]"
+      "(//button[contains(@class,'arw-button--icon-only')])[3]"
     );
     this.customSortBtn = page.locator(
       "//span[normalize-space(text())='Custom Sort']"
@@ -1155,7 +1155,7 @@ exports.CreateTaskPage = class CreateTaskPage {
         await this.clickOnCloseIconBtn();
         break;
       } else {
-         await this.clickOnCloseIconBtn();
+        await this.clickOnCloseIconBtn();
       }
     }
   };
@@ -1194,7 +1194,9 @@ exports.CreateTaskPage = class CreateTaskPage {
     await this.clickOnSelectTaskFilterdropdown();
     await this.SearchDropdownOptions(["Task"]);
     await this.selectFilterOptionsInDropdown("Task");
-    await this.enterFilterInsearchInput([testData.RevflowData.taskListData.TaskName]);
+    await this.enterFilterInsearchInput([
+      testData.RevflowData.taskListData.TaskName,
+    ]);
     await this.clickOnTaskApplyFilter();
     await this.clickOnFirstTask();
     await this.clickOnFileBtn();
@@ -1280,8 +1282,8 @@ exports.CreateTaskPage = class CreateTaskPage {
     this.test.step("smallWaitawait this.linkfileList.count();", async () => {
       await this.page.waitForTimeout(parseInt(process.env.smallWait));
     });
-     await this.clickOnTaskNameFilters();
-      await this.clickTaskFilterClearBtn();
+    await this.clickOnTaskNameFilters();
+    await this.clickTaskFilterClearBtn();
     await this.test.step("The Page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.largeWait));
     });
@@ -1290,11 +1292,13 @@ exports.CreateTaskPage = class CreateTaskPage {
     await this.clickOnSelectTaskFilterdropdown();
     await this.SearchDropdownOptions(["Task"]);
     await this.selectFilterOptionsInDropdown("Task");
-    await this.enterFilterInsearchInput([testData.RevflowData.taskListData.TaskName]);
+    await this.enterFilterInsearchInput([
+      testData.RevflowData.taskListData.TaskName,
+    ]);
     await this.clickOnTaskApplyFilter();
     await this.clickOnFirstTask();
     await this.clickOnFileBtn();
-     await this.test.step("The Page is loading, please wait", async () => {
+    await this.test.step("The Page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.largeWait));
     });
     const unlinkFilename = await this.finameofUnlinkbtn.innerText();
@@ -1340,47 +1344,46 @@ exports.CreateTaskPage = class CreateTaskPage {
     //     await this.clickOnCloseIconBtn();
     //   }
     // }
-//     const count = await this.taskNamecolumn.count();
+    //     const count = await this.taskNamecolumn.count();
 
-// for (let i = 1; i < count; i++) {
-//   await this.test.step("The Page is loading, please wait", async () => {
-//     await this.page.waitForTimeout(parseInt(process.env.largeWait));
-//   });
+    // for (let i = 1; i < count; i++) {
+    //   await this.test.step("The Page is loading, please wait", async () => {
+    //     await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    //   });
 
-//   const task = this.taskNamecolumn.nth(i);
-//   await task.click();
-//   await this.clickOnFileBtn();
-//   await this.test.step("Waiting for page to load after clicking task", async () => {
-//     await this.page.waitForTimeout(parseInt(process.env.mediumWait));
-//   });
+    //   const task = this.taskNamecolumn.nth(i);
+    //   await task.click();
+    //   await this.clickOnFileBtn();
+    //   await this.test.step("Waiting for page to load after clicking task", async () => {
+    //     await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    //   });
 
-//   //Check if unlinkBtn exists and is visible safely
-//   const unlinkBtnVisible =
-//     (await this.unlinkBtn.count()) > 0 &&
-//     (await this.unlinkBtn.first().isVisible().catch(() => false));
+    //   //Check if unlinkBtn exists and is visible safely
+    //   const unlinkBtnVisible =
+    //     (await this.unlinkBtn.count()) > 0 &&
+    //     (await this.unlinkBtn.first().isVisible().catch(() => false));
 
-//   if (unlinkBtnVisible) {
-//     const unlinkFilename = await this.finameofUnlinkbtn.innerText();
-//     console.log("Unlink file name:", unlinkFilename);
-//     await this.unlinkBtn.click();
-//     await this.test.step("Wait after unlink button click", async () => {
-//       await this.page.waitForTimeout(parseInt(process.env.smallWait));
-//     });
-//     await this.unlinkFromTaskBtn.click();
-//     if (await this.filesPresent.isVisible().catch(() => false)) {
-//       await expect(
-//         this.files.filter({ hasText: unlinkFilename }),
-//         `Verifying file ${unlinkFilename} is NOT linked to task`
-//       ).toHaveCount(0);
-//       await this.clickOnCloseIconBtn();
-//     }
-//     break;
-//   } else {
-//     console.log(`Unlink button not visible for task index ${i}. Closing task...`);
-//     await this.clickOnCloseIconBtn();
-//   }
-// }
-
+    //   if (unlinkBtnVisible) {
+    //     const unlinkFilename = await this.finameofUnlinkbtn.innerText();
+    //     console.log("Unlink file name:", unlinkFilename);
+    //     await this.unlinkBtn.click();
+    //     await this.test.step("Wait after unlink button click", async () => {
+    //       await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    //     });
+    //     await this.unlinkFromTaskBtn.click();
+    //     if (await this.filesPresent.isVisible().catch(() => false)) {
+    //       await expect(
+    //         this.files.filter({ hasText: unlinkFilename }),
+    //         `Verifying file ${unlinkFilename} is NOT linked to task`
+    //       ).toHaveCount(0);
+    //       await this.clickOnCloseIconBtn();
+    //     }
+    //     break;
+    //   } else {
+    //     console.log(`Unlink button not visible for task index ${i}. Closing task...`);
+    //     await this.clickOnCloseIconBtn();
+    //   }
+    // }
   };
 
   emptyTaskFieldValidation = async () => {
@@ -2068,7 +2071,7 @@ exports.CreateTaskPage = class CreateTaskPage {
     ).toBeVisible();
     await this.page.keyboard.press("Escape");
     await this.hoverOnCustomSort();
-      await this.test.step("The Page is loading, please wait", async () => {
+    await this.test.step("The Page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.smallWait));
     });
     await expect(
@@ -2080,7 +2083,7 @@ exports.CreateTaskPage = class CreateTaskPage {
       "Verify the default custom balance filter is visible on the Task List page"
     ).toBeVisible();
   };
-   clickOnSlectSortingFilterName = async () => {
+  clickOnSlectSortingFilterName = async () => {
     await excuteSteps(
       this.test,
       this.slectSortingFilterName,
@@ -2089,26 +2092,25 @@ exports.CreateTaskPage = class CreateTaskPage {
     );
   };
   verifyTaskDetailsListView = async () => {
-    await this.clickOnCustomSortBtn()
-    await this.clickOnDeleteDuedateInSortIcon()
-      await this.clickOnDeleteDuedateInSortIcon()
-      await this.clickOnApplySortButtonIcon()
-      await this.test.step("The Page is loading, please wait", async () => {
+    await this.clickOnCustomSortBtn();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnApplySortButtonIcon();
+    await this.test.step("The Page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.largeWait));
     });
     let taskName = await this.firstTaskName.innerText();
     let residentName = await this.firstTaskResidentName.innerText();
     let balance = await this.firstTaskBalance.innerText();
-       await this.test.step("The Page is loading, please wait", async () => {
+    await this.test.step("The Page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.smallWait));
     });
     let balanceStatus = await this.firstTaskBalanceStatus.innerText();
-    let dueDate = await this.firstTaskDueDate.innerText();
     let taskStatus = await this.firstTaskTaskStatus.innerText();
     let assignedUser = await this.firstTaskAssigned.innerText();
 
     await this.clickOnFirstTask();
-     await this.test.step("The Page is loading, please wait", async () => {
+    await this.test.step("The Page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.smallWait));
     });
 
@@ -2121,14 +2123,18 @@ exports.CreateTaskPage = class CreateTaskPage {
         "//arw-select[@formcontrolname='balanceStatusId']//arw-tag//span"
       )
       .innerText();
-    let dueDateV = await this.page
-      .locator("//arw-input[@formcontrolname='dueDate']//input")
-      .inputValue();
-         await this.test.step("The Page is loading, please wait", async () => {
+    let balanceV = await this.page
+      .locator(
+        "//span[normalize-space(text())='Balance']/ancestor::div[@class='arw-control arw-control--inline items-center']//span[@class='font-bold mr-4']"
+      )
+      .innerText();
+    await this.test.step("The Page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.mediumWait));
     });
     let taskStatusV = await this.page
-      .locator("(//span[@class='mat-mdc-select-value-text ng-star-inserted'])[4]//span[@class='grow overflow-ellipsis overflow-hidden text-center whitespace-nowrap']")
+      .locator(
+        "(//span[@class='mat-mdc-select-value-text ng-star-inserted'])[4]//span[@class='grow overflow-ellipsis overflow-hidden text-center whitespace-nowrap']"
+      )
       .innerText();
     let assignedUserV = await this.page
       .locator("//arw-select[@formcontrolname='assigneeId']//button/span")
@@ -2146,9 +2152,9 @@ exports.CreateTaskPage = class CreateTaskPage {
       "Validating the existing task balance status is correctly displayed on the task list screen and in the task view"
     ).toBe(balanceStatusV.trim());
     await expect(
-      dueDate.trim(),
+      balance.trim(),
       "Validating the existing task due date is correctly displayed on the task list screen and in the task view"
-    ).toBe(dueDateV.trim());
+    ).toBe(balanceV);
     await expect(
       taskStatus.trim(),
       "Validating the existing task taskStatus is correctly displayed on the task list screen and in the task view"

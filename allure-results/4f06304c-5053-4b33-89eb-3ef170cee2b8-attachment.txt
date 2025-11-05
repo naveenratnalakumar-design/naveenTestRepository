@@ -1,0 +1,5 @@
+currentMonthSummary== 2619382.23
+totalBeforeNum= 45343004.64
+priorbalance== 28411659.79
+AfterCurrentMonthToggleOff== 42723622.41
+AfterPriorToggle Off TotalDisplayed Balance== 16931344.85

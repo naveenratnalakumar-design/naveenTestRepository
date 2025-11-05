@@ -1,0 +1,109 @@
+
+    <html>
+      <head>
+        <title>Verify Total Displayed Balance and Summary</title>
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+          }
+          h2, h3 {
+            color: #444;
+          }
+          ul {
+            padding-left: 20px;
+          }
+          li {
+            margin-bottom: 8px;
+          }
+          a {
+            text-decoration: none;
+            color: #007bff;
+          }
+          a:hover {
+            text-decoration: underline;
+          }
+        </style>
+      </head>
+      <body>
+        <h2>Verify Total Displayed Balance and Summary</h2>
+        <a href="index.html?t=1762155223749">⬅️ Back to Summary</a>
+        
+        <h3>📝 Steps:</h3>
+        <ul>
+          
+            <li>Click on the aging button </li>
+          
+            <li>Wait for selector locator('//div[@data-column-definition-name=\'currentMonth\']//div[contains(@class,\'overflow-hidden\')]') </li>
+          
+            <li>Evaluate locator('//arw-ar-aging-cell[@class="flex items-center justify-between gap-8 w-full group ng-star-inserted"]') </li>
+          
+            <li>Row 1: Sum of months should match Total Balance </li>
+          
+            <li>Row 2: Sum of months should match Total Balance </li>
+          
+            <li>Row 3: Sum of months should match Total Balance </li>
+          
+            <li>Row 4: Sum of months should match Total Balance </li>
+          
+            <li>Row 5: Sum of months should match Total Balance </li>
+          
+            <li>Row 6: Sum of months should match Total Balance </li>
+          
+            <li>Row 7: Sum of months should match Total Balance </li>
+          
+            <li>Row 8: Sum of months should match Total Balance </li>
+          
+            <li>Row 9: Sum of months should match Total Balance </li>
+          
+            <li>Row 10: Sum of months should match Total Balance </li>
+          
+            <li>Row 11: Sum of months should match Total Balance </li>
+          
+            <li>Row 12: Sum of months should match Total Balance </li>
+          
+            <li>Evaluate locator('//div[@data-column-definition-name=\'currentMonth\']//div[contains(@class,\'overflow-hidden\')]') </li>
+          
+            <li>Verify that the total shown in the summary section equals the combined balances of the current month. </li>
+          
+            <li>Evaluate locator('//div[@data-column-definition-name="10/2025"]') </li>
+          
+            <li>10/2025: Expected total (3941098.88) ≈ sum (3941098.88) </li>
+          
+            <li>Evaluate locator('//div[@data-column-definition-name="09/2025"]') </li>
+          
+            <li>09/2025: Expected total (4388870.71) ≈ sum (4388870.71) </li>
+          
+            <li>Evaluate locator('//div[@data-column-definition-name="08/2025"]') </li>
+          
+            <li>08/2025: Expected total (2279392.01) ≈ sum (2279392.01) </li>
+          
+            <li>Evaluate locator('//div[@data-column-definition-name="07/2025"]') </li>
+          
+            <li>07/2025: Expected total (1351117.69) ≈ sum (1351117.69) </li>
+          
+            <li>Evaluate locator('//div[@data-column-definition-name="06/2025"]') </li>
+          
+            <li>06/2025: Expected total (848669.12) ≈ sum (848669.1199999999) </li>
+          
+            <li>Evaluate locator('//div[@data-column-definition-name="05/2025"]') </li>
+          
+            <li>05/2025: Expected total (1334787.88) ≈ sum (1334787.8800000001) </li>
+          
+            <li>Evaluate locator('//div[@data-column-definition-name=\'priorBalances\']') </li>
+          
+            <li>Verify that the total shown in the summary section equals the combined balances of the All prior Balances. </li>
+          
+            <li>Evaluate locator('//div[@data-column-definition-name=\'totalBalance\']') </li>
+          
+            <li>Verify that the total shown in the summary section equals the combined balances of the Total Displayed Balances. </li>
+          
+        </ul>
+        
+        
+      </body>
+    </html>
+  

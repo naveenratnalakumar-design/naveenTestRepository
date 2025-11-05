@@ -1,0 +1,179 @@
+Ascending Values: [
+  '1900Task-For(HMO)-Task-1',
+  '1900Task-For(HMO)-Task-2',
+  '1900Task-For(HMO)-Task-3',
+  '1900Task-For(HMO)-Task-5',
+  '1900Task-For(HMO)-Task-6',
+  '1900Task-For(Hospice)-Task-7',
+  '1900Task-For(Income)-Task-8',
+  '1900Task-For(Income)-Task-9',
+  '1900Task-For(Medicaid)-Task-10',
+  '1900Task-For(Medicaid)-Task-11',
+  '1900Task-For(Medicare)-Task-12',
+  '1900Task-For(Medicare)-Task-13',
+  '1900Task-For(Private Pay)-Task-14',
+  '1900Task-For(Private Pay)-Task-15'
+]
+Descending Values: [
+  'VIJ',              'Unpaid Claim',
+  'Unpaid Claim',     'Unpaid Claim',
+  'Unpaid Claim',     'Unpaid Claim',
+  'Unpaid Claim',     'Unpaid Claim',
+  'Unpaid Claim',     'Unpaid Claim',
+  'Unpaid Claim',     'Unpaid Claim',
+  'Unknown/Unworked', 'Underpaid Claim'
+]
+facilities== [
+  'Achieve', 'Achieve', 'Achieve',
+  'Achieve', 'Achieve', 'Achieve',
+  'Achieve', 'Achieve', 'Achieve',
+  'Achieve', 'Achieve', 'Achieve',
+  'Achieve', 'Achieve', 'Achieve',
+  'Achieve', 'Achieve', 'Achieve',
+  'Achieve', 'Achieve', 'Achieve',
+  'Achieve', 'Achieve', 'Achieve',
+  'Achieve', 'Achieve', 'Achieve',
+  'Achieve'
+]
+facilities== [
+  'Windsor', 'Windsor', 'Windsor',
+  'Windsor', 'Windsor', 'Windsor',
+  'Windsor', 'Windsor', 'Windsor',
+  'Windsor', 'Windsor', 'Windsor',
+  'Windsor', 'Windsor', 'Windsor',
+  'Windsor', 'Windsor', 'Windsor',
+  'Windsor', 'Windsor', 'Windsor',
+  'Windsor', 'Windsor', 'Windsor',
+  'Windsor', 'Windsor', 'Windsor',
+  'Windsor'
+]
+payers== [
+  'AARP', 'AARP', 'AARP',
+  'AARP', 'AARP', 'AARP',
+  'AARP', 'AARP', 'AARP',
+  'AARP', 'AARP', 'AARP',
+  'AARP', 'AARP'
+]
+payers== [
+  'XEmpire Blue Cross Medica',
+  'Workers Comp',
+  'Workers Comp',
+  'Workers Comp',
+  'Workers Comp',
+  'Workers Comp',
+  'Workers Comp',
+  'Workers Comp',
+  'Workers Comp',
+  'Workers Comp',
+  'Workers Comp',
+  'Workers Comp',
+  'Wellpoint IA Medicare Adv',
+  'Wellpoint IA Medicare Adv'
+]
+Balances Highest to Lowest: [
+  '34,774.67', '31,919.44',
+  '30,960.81', '29,895.45',
+  '28,319.52', '27,967.20',
+  '27,756.47', '27,409.39',
+  '27,237.60', '27,012.93',
+  '26,921.61', '26,846.32',
+  '26,795.36', '26,745.42'
+]
+Balances Lowest to Highest: [
+  '', '', '', '', '', '',
+  '', '', '', '', '', '',
+  '', ''
+]
+balanceStatus== [
+  'Appealed',
+  'Applied for Prior Medical Expense Income Exemption',
+  'Bad Debt WO',
+  'Bad Debt WO',
+  'Bleeding Issue',
+  'Bleeding Issue',
+  'Bleeding Issue',
+  'Bleeding Issue',
+  'Bleeding Issue',
+  'Bleeding Issue',
+  'Bleeding Issue',
+  'Claim Processing, in S',
+  'Claim Processing, in S',
+  'Collection Letter sent'
+]
+balancestatus== [
+  'Write Off',      'Write Off',
+  'Write Off',      'Write Off',
+  'Write Off',      'Write Off',
+  'Write Off',      'Write Off',
+  'Waiting on LOC', 'Waiting on LOC',
+  'Unworked',       'Unworked',
+  'Unworked',       'Unworked'
+]
+taskStatus== [
+  'Canceled', 'Canceled',
+  'Canceled', 'Canceled',
+  'Canceled', 'Canceled',
+  'Canceled', 'Canceled',
+  'Canceled', 'Canceled',
+  'Canceled', 'Canceled',
+  'Canceled', 'Canceled'
+]
+taskStatus== [
+  'Not Started', 'Not Started',
+  'Not Started', 'Not Started',
+  'Not Started', 'Not Started',
+  'Not Started', 'Not Started',
+  'Not Started', 'Not Started',
+  'Not Started', 'Not Started',
+  'Not Started', 'Not Started'
+]
+assignedTo== [
+  'Adina Wilhelm', 'Adina Wilhelm',
+  'Adina Wilhelm', 'Adina Wilhelm',
+  'Adina Wilhelm', 'Adina Wilhelm',
+  'Adina Wilhelm', 'Adina Wilhelm',
+  'Adina Wilhelm', 'Adina Wilhelm',
+  'Adina Wilhelm', 'Adina Wilhelm',
+  'Adina Wilhelm', 'Adina Wilhelm'
+]
+assignedTo== [
+  'Vikesh Gaikawad',
+  'Vikesh Gaikawad',
+  'Vikesh Gaikawad',
+  'Vikesh Gaikawad',
+  'Vikesh Gaikawad',
+  'Vikesh Gaikawad',
+  'Vikesh Gaikawad',
+  'Vikesh Gaikawad',
+  'Vikesh Gaikawad',
+  'Vikesh Gaikawad',
+  'Vikesh Gaikawad',
+  'Vikesh Gaikawad',
+  'Vikesh Gaikawad',
+  'Vikesh Gaikawad'
+]
+rootIssue== [
+  'Additional Info Needed',
+  'Additional Info Needed',
+  'Additional Info Needed',
+  'Additional Info Needed',
+  'Additional Info Needed',
+  'Additional Info Needed',
+  'Additional Info Needed',
+  'Additional Info Needed',
+  'Additional Info Needed',
+  'Additional Info Needed',
+  'Additional Info Needed',
+  'Additional Info Needed',
+  'Additional Info Needed',
+  'Additional Info Needed'
+]
+rootIssue== [
+  'Unknown', 'Unknown',
+  'Unknown', 'Unknown',
+  'Unknown', 'Unknown',
+  'Unknown', 'Unknown',
+  'Unknown', 'Unknown',
+  'Unknown', 'Unknown',
+  'Unknown', 'Unknown'
+]

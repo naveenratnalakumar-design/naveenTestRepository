@@ -1,0 +1,321 @@
+
+    <html>
+      <head>
+        <title>Verify filtering on Aging (Payer, Resident, Resident Balance, Balance Status)</title>
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+          }
+          h2, h3 {
+            color: #444;
+          }
+          ul {
+            padding-left: 20px;
+          }
+          li {
+            margin-bottom: 8px;
+          }
+          a {
+            text-decoration: none;
+            color: #007bff;
+          }
+          a:hover {
+            text-decoration: underline;
+          }
+        </style>
+      </head>
+      <body>
+        <h2>Verify filtering on Aging (Payer, Resident, Resident Balance, Balance Status)</h2>
+        <a href="index.html?t=1762349829024">⬅️ Back to Summary</a>
+        
+        <h3>📝 Steps:</h3>
+        <ul>
+          
+            <li>Click on the aging button </li>
+          
+            <li>Wait for selector locator('//div[@data-column-definition-name=\'currentMonth\']//div[contains(@class,\'overflow-hidden\')]') </li>
+          
+            <li>Click on filter button </li>
+          
+            <li>Click on the clear filter button </li>
+          
+            <li>Wait for function </li>
+          
+            <li>Wait for selector locator('xpath=(//button[@aria-haspopup=\'menu\'])[3]') </li>
+          
+            <li>Click on the PayerCategories Filter button </li>
+          
+            <li>Select Add Filter </li>
+          
+            <li>Select Payerdropdown </li>
+          
+            <li>Select Resident from dropdown options </li>
+          
+            <li>click on Payer field </li>
+          
+            <li>Enter Payers into the firld </li>
+          
+            <li>Wait for timeout </li>
+          
+            <li>Query count locator('//div[contains(@class,\'option\') or contains(@class,\'item\') or contains(@class,\'select\')]//span[normalize-space() = \'Abplanalp, Mary\']') </li>
+          
+            <li>Click locator('//div[contains(@class,\'option\') or contains(@class,\'item\') or contains(@class,\'select\')]//span[normalize-space() = \'Abplanalp, Mary\']').first() </li>
+          
+            <li>Click on the Apply button </li>
+          
+            <li>Select Payerdropdown </li>
+          
+            <li>Wait for selector locator('xpath=(//div[@class=\'w-full\'])[16]') </li>
+          
+            <li>Clcik on arrow button </li>
+          
+            <li>Wait for timeout </li>
+          
+            <li>Verify the applied resident filter data is visible on the Aging grid </li>
+          
+            <li>Click on the aging button </li>
+          
+            <li>Wait for selector locator('//div[@data-column-definition-name=\'currentMonth\']//div[contains(@class,\'overflow-hidden\')]') </li>
+          
+            <li>Click on filter button </li>
+          
+            <li>Click on the clear filter button </li>
+          
+            <li>Wait for function </li>
+          
+            <li>Wait for selector locator('xpath=(//button[@aria-haspopup=\'menu\'])[3]') </li>
+          
+            <li>Click on the PayerCategories Filter button </li>
+          
+            <li>Select Add Filter </li>
+          
+            <li>Select Payerdropdown </li>
+          
+            <li>Select Payer from dropdown options </li>
+          
+            <li>click on Payer field </li>
+          
+            <li>Enter Payers into the firld </li>
+          
+            <li>Wait for timeout </li>
+          
+            <li>Query count locator('//div[contains(@class,\'option\') or contains(@class,\'item\') or contains(@class,\'select\')]//span[normalize-space() = \'Humana\']') </li>
+          
+            <li>Click locator('//div[contains(@class,\'option\') or contains(@class,\'item\') or contains(@class,\'select\')]//span[normalize-space() = \'Humana\']').first() </li>
+          
+            <li>Click on the Apply button </li>
+          
+            <li>Select Payerdropdown </li>
+          
+            <li>Wait for selector locator('xpath=(//div[@class=\'w-full\'])[16]') </li>
+          
+            <li>Clcik on arrow button </li>
+          
+            <li>Wait for timeout </li>
+          
+            <li>Verify the applied payer filter data is visible on the Aging grid </li>
+          
+            <li>Click on the aging button </li>
+          
+            <li>Wait for selector locator('//div[@data-column-definition-name=\'currentMonth\']//div[contains(@class,\'overflow-hidden\')]') </li>
+          
+            <li>Click on filter button </li>
+          
+            <li>Click on the clear filter button </li>
+          
+            <li>Wait for function </li>
+          
+            <li>Wait for selector locator('xpath=(//button[@aria-haspopup=\'menu\'])[3]') </li>
+          
+            <li>Click on the PayerCategories Filter button </li>
+          
+            <li>Select Add Filter </li>
+          
+            <li>Select Payerdropdown </li>
+          
+            <li>Select Resident from dropdown options </li>
+          
+            <li>click on Conditional field </li>
+          
+            <li>Select Between option from Dropdown </li>
+          
+            <li>Wait for selector locator('//input[@type=\'number\']').first() </li>
+          
+            <li>Wait for timeout </li>
+          
+            <li>Wait for selector locator('xpath=(//input[@placeholder=\'-\'])[1]') </li>
+          
+            <li>Scroll into view locator('xpath=(//input[@placeholder=\'-\'])[1]') </li>
+          
+            <li>Click locator('xpath=(//input[@placeholder=\'-\'])[1]') </li>
+          
+            <li>Press "Backspace" </li>
+          
+            <li>Wait for timeout </li>
+          
+            <li>Type "2000" </li>
+          
+            <li>Wait for selector locator('xpath=(//input[@placeholder=\'-\'])[2]') </li>
+          
+            <li>Scroll into view locator('xpath=(//input[@placeholder=\'-\'])[2]') </li>
+          
+            <li>Click locator('xpath=(//input[@placeholder=\'-\'])[2]') </li>
+          
+            <li>Press "Backspace" </li>
+          
+            <li>Wait for timeout </li>
+          
+            <li>Type "8000" </li>
+          
+            <li>Select Payerdropdown </li>
+          
+            <li>Wait for selector locator('xpath=(//div[@class=\'w-full\'])[16]') </li>
+          
+            <li>Clcik on arrow button </li>
+          
+            <li>Wait for timeout </li>
+          
+            <li>Click on filter button </li>
+          
+            <li>Click on the clear filter button </li>
+          
+            <li>Wait for function </li>
+          
+            <li>Wait for selector locator('xpath=(//button[@aria-haspopup=\'menu\'])[3]') </li>
+          
+            <li>Click on the PayerCategories Filter button </li>
+          
+            <li>Select Add Filter </li>
+          
+            <li>Select Payerdropdown </li>
+          
+            <li>Select Resident from dropdown options </li>
+          
+            <li>click on Conditional field </li>
+          
+            <li>Select Between option from Dropdown </li>
+          
+            <li>Wait for selector locator('xpath=(//input[@placeholder=\'-\'])[1]').first() </li>
+          
+            <li>Wait for timeout </li>
+          
+            <li>Wait for selector locator('xpath=(//input[@placeholder=\'-\'])[1]') </li>
+          
+            <li>Scroll into view locator('xpath=(//input[@placeholder=\'-\'])[1]') </li>
+          
+            <li>Click locator('xpath=(//input[@placeholder=\'-\'])[1]') </li>
+          
+            <li>Press "Backspace" </li>
+          
+            <li>Wait for timeout </li>
+          
+            <li>Type "2000" </li>
+          
+            <li>Wait for timeout </li>
+          
+            <li>Select Payerdropdown </li>
+          
+            <li>Wait for selector locator('xpath=(//div[@class=\'w-full\'])[16]') </li>
+          
+            <li>Clcik on arrow button </li>
+          
+            <li>Wait for timeout </li>
+          
+            <li>Click on filter button </li>
+          
+            <li>Click on the clear filter button </li>
+          
+            <li>Wait for function </li>
+          
+            <li>Wait for selector locator('xpath=(//button[@aria-haspopup=\'menu\'])[3]') </li>
+          
+            <li>Click on the PayerCategories Filter button </li>
+          
+            <li>Select Add Filter </li>
+          
+            <li>Select Payerdropdown </li>
+          
+            <li>Select Resident from dropdown options </li>
+          
+            <li>click on Conditional field </li>
+          
+            <li>Select Between option from Dropdown </li>
+          
+            <li>Wait for selector locator('//input[@type=\'number\']').first() </li>
+          
+            <li>Wait for timeout </li>
+          
+            <li>Wait for selector locator('xpath=(//input[@placeholder=\'-\'])[1]') </li>
+          
+            <li>Scroll into view locator('xpath=(//input[@placeholder=\'-\'])[1]') </li>
+          
+            <li>Click locator('xpath=(//input[@placeholder=\'-\'])[1]') </li>
+          
+            <li>Press "Backspace" </li>
+          
+            <li>Wait for timeout </li>
+          
+            <li>Type "2000" </li>
+          
+            <li>Select Payerdropdown </li>
+          
+            <li>Wait for selector locator('xpath=(//div[@class=\'w-full\'])[16]') </li>
+          
+            <li>Clcik on arrow button </li>
+          
+            <li>Wait for timeout </li>
+          
+            <li>Click on filter button </li>
+          
+            <li>Click on the clear filter button </li>
+          
+            <li>Wait for function </li>
+          
+            <li>Wait for selector locator('xpath=(//button[@aria-haspopup=\'menu\'])[3]') </li>
+          
+            <li>Click on the PayerCategories Filter button </li>
+          
+            <li>Select Add Filter </li>
+          
+            <li>Select Payerdropdown </li>
+          
+            <li>Select Resident from dropdown options </li>
+          
+            <li>click on Conditional field </li>
+          
+            <li>Select  Less than  option from Dropdown </li>
+          
+            <li>Wait for selector locator('//input[@type=\'number\']').first() </li>
+          
+            <li>Wait for timeout </li>
+          
+            <li>Wait for selector locator('xpath=(//input[@placeholder=\'-\'])[1]') </li>
+          
+            <li>Scroll into view locator('xpath=(//input[@placeholder=\'-\'])[1]') </li>
+          
+            <li>Click locator('xpath=(//input[@placeholder=\'-\'])[1]') </li>
+          
+            <li>Press "Backspace" </li>
+          
+            <li>Wait for timeout </li>
+          
+            <li>Type "2000" </li>
+          
+            <li>Select Payerdropdown </li>
+          
+            <li>Wait for selector locator('xpath=(//div[@class=\'w-full\'])[16]') </li>
+          
+            <li>Clcik on arrow button </li>
+          
+            <li>Wait for timeout </li>
+          
+        </ul>
+        
+        
+      </body>
+    </html>
+  

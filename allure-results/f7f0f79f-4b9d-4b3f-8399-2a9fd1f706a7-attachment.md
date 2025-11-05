@@ -1,0 +1,478 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Revflow logo" [ref=e7] [cursor=pointer]
+        - img "Revflow" [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link "Task List" [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link "AR Aging" [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - link "Settings" [ref=e34] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e37] [cursor=pointer]
+          - generic [ref=e40] [cursor=pointer]: Settings
+          - img [ref=e43] [cursor=pointer]
+      - button [ref=e49] [cursor=pointer]:
+        - img [ref=e53] [cursor=pointer]
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - generic [ref=e61]:
+          - img [ref=e64]
+          - textbox "Search for a Case" [ref=e66]
+        - generic [ref=e67]:
+          - button "Selected Facilities (35)" [ref=e69] [cursor=pointer]:
+            - text: Selected Facilities (35)
+            - img [ref=e72] [cursor=pointer]
+          - img [ref=e78]
+          - button "AT" [ref=e81] [cursor=pointer]:
+            - generic [ref=e84] [cursor=pointer]: AT
+            - img [ref=e87] [cursor=pointer]
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - heading "Tasks" [level=2] [ref=e94]
+          - generic [ref=e96]:
+            - button "Custom Sort (2)" [ref=e98] [cursor=pointer]:
+              - generic [ref=e99] [cursor=pointer]:
+                - text: Custom Sort
+                - generic [ref=e100] [cursor=pointer]: (2)
+              - img [ref=e103] [cursor=pointer]
+            - button "Filters" [expanded] [ref=e106] [cursor=pointer]:
+              - img [ref=e109] [cursor=pointer]
+              - generic [ref=e111] [cursor=pointer]: Filters
+            - button "Reset to Default" [ref=e113] [cursor=pointer]:
+              - generic [ref=e114] [cursor=pointer]:
+                - text: Reset to Default
+                - img [ref=e117] [cursor=pointer]
+        - generic [ref=e121]:
+          - generic [ref=e124]:
+            - generic [ref=e125]: "7906"
+            - text: Results
+          - generic [ref=e127]:
+            - generic [ref=e131] [cursor=pointer]: Task
+            - generic [ref=e136] [cursor=pointer]: Facility
+            - generic [ref=e141] [cursor=pointer]: Resident
+            - generic [ref=e146] [cursor=pointer]: Payer
+            - generic [ref=e150] [cursor=pointer]:
+              - generic [ref=e151] [cursor=pointer]: Balance
+              - button [ref=e153] [cursor=pointer]:
+                - img [ref=e156] [cursor=pointer]
+            - generic [ref=e162] [cursor=pointer]: Balance Status
+            - generic [ref=e166] [cursor=pointer]:
+              - generic [ref=e167] [cursor=pointer]: Due Date
+              - button [ref=e169] [cursor=pointer]:
+                - img [ref=e172] [cursor=pointer]
+            - generic [ref=e178] [cursor=pointer]: Task Status
+            - generic [ref=e183] [cursor=pointer]: Assigned To
+            - generic [ref=e188] [cursor=pointer]: Root Issue
+          - generic [ref=e194]:
+            - generic [ref=e196]:
+              - link "DaliyTaskCreation(21-08-2025)Task-2" [ref=e200] [cursor=pointer]
+              - generic [ref=e204]: Green Meadows
+              - link "Blackmon, Helga" [ref=e208] [cursor=pointer]:
+                - /url: /cases/details/4313921
+              - generic [ref=e212]: AARP
+              - generic [ref=e216]: "0.00"
+              - generic [ref=e220]:
+                - img [ref=e223]
+                - generic [ref=e225]: Unworked
+              - generic [ref=e229]: 8/21/2025
+              - generic [ref=e234]: Canceled
+              - generic [ref=e238]:
+                - generic [ref=e243]: SR
+                - generic [ref=e244]: Santosh Rongali
+              - generic [ref=e248]: Unknown
+            - generic [ref=e250]:
+              - link "test" [ref=e254] [cursor=pointer]
+              - generic [ref=e258]: Mountain Ridge
+              - link "Bell, Zelma" [ref=e262] [cursor=pointer]:
+                - /url: /cases/details/4076132
+              - generic [ref=e266]: Humana Levels
+              - generic [ref=e270]: (588.99)
+              - generic [ref=e274]:
+                - img [ref=e277]
+                - generic [ref=e279]: Denied
+              - generic [ref=e283]: 8/21/2025
+              - generic [ref=e288]: In Progress
+              - generic [ref=e292]:
+                - generic [ref=e297]: AW
+                - generic [ref=e298]: Adina Wilhelm
+              - generic [ref=e302]: Unknown
+            - generic [ref=e304]:
+              - link "tasooo" [ref=e308] [cursor=pointer]
+              - generic [ref=e312]: Caring Heart
+              - link "Pitts, Donald" [ref=e316] [cursor=pointer]:
+                - /url: /cases/details/4701768
+              - generic [ref=e320]: Gateway MCD
+              - generic [ref=e324]: 4,500.00
+              - generic [ref=e328]:
+                - img [ref=e331]
+                - generic [ref=e333]: Underpaid
+              - generic [ref=e337]: 8/22/2025
+              - generic [ref=e342]: In Progress
+              - generic [ref=e346]:
+                - generic [ref=e351]: VG
+                - generic [ref=e352]: Vikesh Gaikawad
+              - generic [ref=e356]: Unknown
+            - generic [ref=e358]:
+              - link "inno" [ref=e362] [cursor=pointer]
+              - generic [ref=e366]: Caring Heart
+              - link "Hinson, Robert" [ref=e370] [cursor=pointer]:
+                - /url: /cases/details/4655842
+              - generic [ref=e374]: Humana MCR
+              - generic [ref=e378]: (38.01)
+              - generic [ref=e382]:
+                - img [ref=e385]
+                - generic [ref=e387]: Rejected
+              - generic [ref=e391]: 8/22/2025
+              - generic [ref=e396]: In Progress
+              - generic [ref=e400]:
+                - generic [ref=e405]: VG
+                - generic [ref=e406]: Vikesh Gaikawad
+              - generic [ref=e410]: Unknown
+            - generic [ref=e412]:
+              - link "inni" [ref=e416] [cursor=pointer]
+              - generic [ref=e420]: Caring Heart
+              - link "Butler, Loretta" [ref=e424] [cursor=pointer]:
+                - /url: /cases/details/3578604
+              - generic [ref=e428]: Humana MCR
+              - generic [ref=e432]: (711.57)
+              - generic [ref=e436]:
+                - img [ref=e439]
+                - generic [ref=e441]: DD Enrolled
+              - generic [ref=e445]: 8/22/2025
+              - generic [ref=e450]: In Progress
+              - generic [ref=e454]:
+                - generic [ref=e459]: VG
+                - generic [ref=e460]: Vikesh Gaikawad
+              - generic [ref=e464]: Unknown
+            - generic [ref=e466]:
+              - link "test" [ref=e470] [cursor=pointer]
+              - generic [ref=e474]: Ivy at Davenport-St Mary
+              - link "Dismer, Deborah" [ref=e478] [cursor=pointer]:
+                - /url: /cases/details/4649593
+              - generic [ref=e482]: Genesis Hospice
+              - generic [ref=e486]: (2,028.99)
+              - generic [ref=e490]:
+                - img [ref=e493]
+                - generic [ref=e495]: Unworked
+              - generic [ref=e499]: 8/23/2025
+              - generic [ref=e504]: In Progress
+              - generic [ref=e508]:
+                - generic [ref=e513]: MF
+                - generic [ref=e514]: Malki Feinroth
+              - generic [ref=e518]: Unknown
+            - generic [ref=e520]:
+              - link "PayerCategoryMedicaid" [ref=e524] [cursor=pointer]
+              - generic [ref=e528]: Ivy at Davenport-St Mary
+              - link "Lutz, Kenneth" [ref=e532] [cursor=pointer]:
+                - /url: /cases/details/4708260
+              - generic [ref=e536]: IA Medicaid
+              - generic [ref=e540]: 6,285.00
+              - generic [ref=e544]:
+                - img [ref=e547]
+                - generic [ref=e549]: Bleeding Issue
+              - generic [ref=e553]: 8/24/2025
+              - generic [ref=e558]: In Progress
+              - generic [ref=e562]:
+                - generic [ref=e567]: VG
+                - generic [ref=e568]: Vikesh Gaikawad
+              - generic [ref=e572]: Unknown
+            - generic [ref=e574]:
+              - link "TaskLinkableCharge" [ref=e578] [cursor=pointer]
+              - generic [ref=e582]: Citrus
+              - link "Hart, Mark" [ref=e586] [cursor=pointer]:
+                - /url: /cases/details/4694867
+              - generic [ref=e590]: Florida Hospice Medicaid Pending
+              - generic [ref=e594]: "0.00"
+              - generic [ref=e598]:
+                - img [ref=e601]
+                - generic [ref=e603]: Unworked
+              - generic [ref=e607]: 8/24/2025
+              - generic [ref=e612]: Canceled
+              - generic [ref=e616]:
+                - generic [ref=e621]: VG
+                - generic [ref=e622]: Vikesh Gaikawad
+              - generic [ref=e626]: Unknown
+            - generic [ref=e628]:
+              - link "Task Icon Refresh" [ref=e632] [cursor=pointer]
+              - generic [ref=e636]: Gulfport
+              - link "Hamilton, Brian" [ref=e640] [cursor=pointer]:
+                - /url: /cases/details/3916825
+              - generic [ref=e644]: AARP
+              - generic [ref=e648]: "0.00"
+              - generic [ref=e652]:
+                - img [ref=e655]
+                - generic [ref=e657]: Unworked
+              - generic [ref=e661]: 8/24/2025
+              - generic [ref=e666]: Canceled
+              - generic [ref=e670]:
+                - generic [ref=e675]: VG
+                - generic [ref=e676]: Vikesh Gaikawad
+              - generic [ref=e680]: Unknown
+            - generic [ref=e682]:
+              - link "Task AA" [ref=e686] [cursor=pointer]
+              - generic [ref=e690]: Gulfport
+              - link "Beazley, Carol" [ref=e694] [cursor=pointer]:
+                - /url: /cases/details/4655681
+              - generic [ref=e698]: United Healthcare MCR
+              - generic [ref=e702]: (2,748.00)
+              - generic [ref=e706]:
+                - img [ref=e709]
+                - generic [ref=e711]: Unbilled
+              - generic [ref=e715]: 8/24/2025
+              - generic [ref=e720]: In Progress
+              - generic [ref=e724]:
+                - generic [ref=e729]: VG
+                - generic [ref=e730]: Vikesh Gaikawad
+              - generic [ref=e734]: Unknown
+            - generic [ref=e736]:
+              - link "Task7" [ref=e740] [cursor=pointer]
+              - generic [ref=e744]: Beacon
+              - link "Hunt, Kenneth" [ref=e748] [cursor=pointer]:
+                - /url: /cases/details/4292956
+              - generic [ref=e752]: Village Care Max
+              - generic [ref=e756]: 1,373.04
+              - generic [ref=e760]:
+                - img [ref=e763]
+                - generic [ref=e765]: Corrected Claim
+              - generic [ref=e769]: 8/25/2025
+              - generic [ref=e774]: In Progress
+              - generic [ref=e778]:
+                - generic [ref=e783]: VG
+                - generic [ref=e784]: Vikesh Gaikawad
+              - generic [ref=e788]: Unknown
+            - generic [ref=e790]:
+              - link "Task New1208" [ref=e794] [cursor=pointer]
+              - generic [ref=e798]: Citrus
+              - link "Bailey, Betty" [ref=e802] [cursor=pointer]:
+                - /url: /cases/details/4697357
+              - generic [ref=e806]: Vitas Hospice
+              - generic [ref=e810]: "521.84"
+              - generic [ref=e814]:
+                - img [ref=e817]
+                - generic [ref=e819]: Unworked
+              - generic [ref=e823]: 8/25/2025
+              - generic [ref=e828]: Not Started
+              - generic [ref=e832]:
+                - generic [ref=e837]: ML
+                - generic [ref=e838]: Menachem Locker
+              - generic [ref=e842]: Unknown
+            - generic [ref=e844]:
+              - link "TaskLinkedCharges" [ref=e848] [cursor=pointer]
+              - generic [ref=e852]: Citrus
+              - link "Hart, Mark" [ref=e856] [cursor=pointer]:
+                - /url: /cases/details/4694867
+              - generic [ref=e860]: Florida Hospice Medicaid Pending
+              - generic [ref=e864]: "0.00"
+              - generic [ref=e868]:
+                - img [ref=e871]
+                - generic [ref=e873]: Unworked
+              - generic [ref=e877]: 8/25/2025
+              - generic [ref=e882]: Canceled
+              - generic [ref=e886]:
+                - generic [ref=e891]: VG
+                - generic [ref=e892]: Vikesh Gaikawad
+              - generic [ref=e896]: Unknown
+            - generic [ref=e898]:
+              - link "Task Respite" [ref=e902] [cursor=pointer]
+              - generic [ref=e906]: North Campus
+              - link "Mix, Robert" [ref=e910] [cursor=pointer]:
+                - /url: /cases/details/4703624
+              - generic [ref=e914]: Vitas Hospice Respite
+              - generic [ref=e918]: "0.00"
+              - generic [ref=e922]:
+                - img [ref=e925]
+                - generic [ref=e927]: Unworked
+              - generic [ref=e931]: 8/25/2025
+              - generic [ref=e936]: Canceled
+              - generic [ref=e940]:
+                - generic [ref=e945]: VG
+                - generic [ref=e946]: Vikesh Gaikawad
+              - generic [ref=e950]: Unknown
+  - generic [ref=e962]: Jira Service Management Widget
+  - iframe [ref=e963]:
+    - main "Help Center Widget Content" [ref=f1e2]:
+      - button "?" [ref=f1e5] [cursor=pointer]:
+        - paragraph [ref=f1e6] [cursor=pointer]: "?"
+  - generic:
+    - menu [ref=e967]:
+      - generic [ref=e969]:
+        - generic [ref=e970]:
+          - generic [ref=e971]: Filter by
+          - button "Clear Filter" [disabled] [ref=e973]:
+            - generic [ref=e974]: Clear Filter
+        - generic [ref=e978]:
+          - generic [ref=e979]:
+            - combobox "Due Date" [ref=e982]:
+              - generic [ref=e988] [cursor=pointer]: Due Date
+            - generic [ref=e991]:
+              - button "Custom range" [ref=e993] [cursor=pointer]:
+                - generic [ref=e994] [cursor=pointer]: Custom range
+                - img [ref=e998] [cursor=pointer]
+              - group [ref=e1003]:
+                - generic [ref=e1004]:
+                  - textbox "MM/DD/YYYY" [ref=e1006]:
+                    - generic [ref=e1007]:
+                      - generic [ref=e1010]:
+                        - generic [ref=e1011]: NOV 2025
+                        - button "Choose month and year" [ref=e1012] [cursor=pointer]:
+                          - generic [ref=e1013] [cursor=pointer]:
+                            - generic [ref=e1014] [cursor=pointer]: NOV 2025
+                            - img [ref=e1015] [cursor=pointer]
+                        - button "Previous month" [ref=e1019] [cursor=pointer]:
+                          - img [ref=e1020] [cursor=pointer]
+                        - button "Next month" [ref=e1024] [cursor=pointer]:
+                          - img [ref=e1025] [cursor=pointer]
+                      - grid [ref=e1031]:
+                        - rowgroup [ref=e1032]:
+                          - row "Sunday Monday Tuesday Wednesday Thursday Friday Saturday" [ref=e1033]:
+                            - columnheader "Sunday" [ref=e1034]:
+                              - generic [ref=e1035]: Sunday
+                              - generic [ref=e1036]: Su
+                            - columnheader "Monday" [ref=e1037]:
+                              - generic [ref=e1038]: Monday
+                              - generic [ref=e1039]: Mo
+                            - columnheader "Tuesday" [ref=e1040]:
+                              - generic [ref=e1041]: Tuesday
+                              - generic [ref=e1042]: Tu
+                            - columnheader "Wednesday" [ref=e1043]:
+                              - generic [ref=e1044]: Wednesday
+                              - generic [ref=e1045]: We
+                            - columnheader "Thursday" [ref=e1046]:
+                              - generic [ref=e1047]: Thursday
+                              - generic [ref=e1048]: Th
+                            - columnheader "Friday" [ref=e1049]:
+                              - generic [ref=e1050]: Friday
+                              - generic [ref=e1051]: Fr
+                            - columnheader "Saturday" [ref=e1052]:
+                              - generic [ref=e1053]: Saturday
+                              - generic [ref=e1054]: Sa
+                          - row [ref=e1055]:
+                            - gridcell [ref=e1056]
+                        - rowgroup [ref=e1057]:
+                          - row "NOV November 1, 2025" [ref=e1058]:
+                            - gridcell "NOV" [ref=e1059]
+                            - gridcell "November 1, 2025" [ref=e1060]:
+                              - button "November 1, 2025" [ref=e1061] [cursor=pointer]:
+                                - generic [ref=e1062] [cursor=pointer]: "1"
+                          - row "November 2, 2025 November 3, 2025 November 4, 2025 November 5, 2025 November 6, 2025 November 7, 2025 November 8, 2025" [ref=e1064]:
+                            - gridcell "November 2, 2025" [ref=e1065]:
+                              - button "November 2, 2025" [ref=e1066] [cursor=pointer]:
+                                - generic [ref=e1067] [cursor=pointer]: "2"
+                            - gridcell "November 3, 2025" [ref=e1069]:
+                              - button "November 3, 2025" [ref=e1070] [cursor=pointer]:
+                                - generic [ref=e1071] [cursor=pointer]: "3"
+                            - gridcell "November 4, 2025" [ref=e1073]:
+                              - button "November 4, 2025" [active] [ref=e1074] [cursor=pointer]:
+                                - generic [ref=e1075] [cursor=pointer]: "4"
+                            - gridcell "November 5, 2025" [ref=e1077]:
+                              - button "November 5, 2025" [ref=e1078] [cursor=pointer]:
+                                - generic [ref=e1079] [cursor=pointer]: "5"
+                            - gridcell "November 6, 2025" [ref=e1081]:
+                              - button "November 6, 2025" [ref=e1082] [cursor=pointer]:
+                                - generic [ref=e1083] [cursor=pointer]: "6"
+                            - gridcell "November 7, 2025" [ref=e1085]:
+                              - button "November 7, 2025" [ref=e1086] [cursor=pointer]:
+                                - generic [ref=e1087] [cursor=pointer]: "7"
+                            - gridcell "November 8, 2025" [ref=e1089]:
+                              - button "November 8, 2025" [ref=e1090] [cursor=pointer]:
+                                - generic [ref=e1091] [cursor=pointer]: "8"
+                          - row "November 9, 2025 November 10, 2025 November 11, 2025 November 12, 2025 November 13, 2025 November 14, 2025 November 15, 2025" [ref=e1093]:
+                            - gridcell "November 9, 2025" [ref=e1094]:
+                              - button "November 9, 2025" [ref=e1095] [cursor=pointer]:
+                                - generic [ref=e1096] [cursor=pointer]: "9"
+                            - gridcell "November 10, 2025" [ref=e1098]:
+                              - button "November 10, 2025" [ref=e1099] [cursor=pointer]:
+                                - generic [ref=e1100] [cursor=pointer]: "10"
+                            - gridcell "November 11, 2025" [ref=e1102]:
+                              - button "November 11, 2025" [ref=e1103] [cursor=pointer]:
+                                - generic [ref=e1104] [cursor=pointer]: "11"
+                            - gridcell "November 12, 2025" [ref=e1106]:
+                              - button "November 12, 2025" [ref=e1107] [cursor=pointer]:
+                                - generic [ref=e1108] [cursor=pointer]: "12"
+                            - gridcell "November 13, 2025" [ref=e1110]:
+                              - button "November 13, 2025" [ref=e1111] [cursor=pointer]:
+                                - generic [ref=e1112] [cursor=pointer]: "13"
+                            - gridcell "November 14, 2025" [ref=e1114]:
+                              - button "November 14, 2025" [ref=e1115] [cursor=pointer]:
+                                - generic [ref=e1116] [cursor=pointer]: "14"
+                            - gridcell "November 15, 2025" [ref=e1118]:
+                              - button "November 15, 2025" [ref=e1119] [cursor=pointer]:
+                                - generic [ref=e1120] [cursor=pointer]: "15"
+                          - row "November 16, 2025 November 17, 2025 November 18, 2025 November 19, 2025 November 20, 2025 November 21, 2025 November 22, 2025" [ref=e1122]:
+                            - gridcell "November 16, 2025" [ref=e1123]:
+                              - button "November 16, 2025" [ref=e1124] [cursor=pointer]:
+                                - generic [ref=e1125] [cursor=pointer]: "16"
+                            - gridcell "November 17, 2025" [ref=e1127]:
+                              - button "November 17, 2025" [ref=e1128] [cursor=pointer]:
+                                - generic [ref=e1129] [cursor=pointer]: "17"
+                            - gridcell "November 18, 2025" [ref=e1131]:
+                              - button "November 18, 2025" [ref=e1132] [cursor=pointer]:
+                                - generic [ref=e1133] [cursor=pointer]: "18"
+                            - gridcell "November 19, 2025" [ref=e1135]:
+                              - button "November 19, 2025" [ref=e1136] [cursor=pointer]:
+                                - generic [ref=e1137] [cursor=pointer]: "19"
+                            - gridcell "November 20, 2025" [ref=e1139]:
+                              - button "November 20, 2025" [ref=e1140] [cursor=pointer]:
+                                - generic [ref=e1141] [cursor=pointer]: "20"
+                            - gridcell "November 21, 2025" [ref=e1143]:
+                              - button "November 21, 2025" [ref=e1144] [cursor=pointer]:
+                                - generic [ref=e1145] [cursor=pointer]: "21"
+                            - gridcell "November 22, 2025" [ref=e1147]:
+                              - button "November 22, 2025" [ref=e1148] [cursor=pointer]:
+                                - generic [ref=e1149] [cursor=pointer]: "22"
+                          - row "November 23, 2025 November 24, 2025 November 25, 2025 November 26, 2025 November 27, 2025 November 28, 2025 November 29, 2025" [ref=e1151]:
+                            - gridcell "November 23, 2025" [ref=e1152]:
+                              - button "November 23, 2025" [ref=e1153] [cursor=pointer]:
+                                - generic [ref=e1154] [cursor=pointer]: "23"
+                            - gridcell "November 24, 2025" [ref=e1156]:
+                              - button "November 24, 2025" [ref=e1157] [cursor=pointer]:
+                                - generic [ref=e1158] [cursor=pointer]: "24"
+                            - gridcell "November 25, 2025" [ref=e1160]:
+                              - button "November 25, 2025" [ref=e1161] [cursor=pointer]:
+                                - generic [ref=e1162] [cursor=pointer]: "25"
+                            - gridcell "November 26, 2025" [ref=e1164]:
+                              - button "November 26, 2025" [ref=e1165] [cursor=pointer]:
+                                - generic [ref=e1166] [cursor=pointer]: "26"
+                            - gridcell "November 27, 2025" [ref=e1168]:
+                              - button "November 27, 2025" [ref=e1169] [cursor=pointer]:
+                                - generic [ref=e1170] [cursor=pointer]: "27"
+                            - gridcell "November 28, 2025" [ref=e1172]:
+                              - button "November 28, 2025" [ref=e1173] [cursor=pointer]:
+                                - generic [ref=e1174] [cursor=pointer]: "28"
+                            - gridcell "November 29, 2025" [ref=e1176]:
+                              - button "November 29, 2025" [ref=e1177] [cursor=pointer]:
+                                - generic [ref=e1178] [cursor=pointer]: "29"
+                          - row "November 30, 2025" [ref=e1180]:
+                            - gridcell "November 30, 2025" [ref=e1181]:
+                              - button "November 30, 2025" [ref=e1182] [cursor=pointer]:
+                                - generic [ref=e1183] [cursor=pointer]: "30"
+                  - generic [ref=e1185]: –
+                  - textbox "MM/DD/YYYY" [ref=e1187]
+          - button [ref=e1189] [cursor=pointer]:
+            - img [ref=e1193] [cursor=pointer]
+        - generic [ref=e1195]:
+          - button "Add Filter" [disabled] [ref=e1197]:
+            - generic [ref=e1198]:
+              - img [ref=e1201]
+              - text: Add Filter
+          - button "Apply Filter" [disabled] [ref=e1204]:
+            - generic [ref=e1205]: Apply Filter
+    - dialog [ref=e1210]:
+      - button "Close calendar" [ref=e1211] [cursor=pointer]:
+        - generic [ref=e1212] [cursor=pointer]: Close calendar
+```

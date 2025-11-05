@@ -198,9 +198,17 @@ exports.UserManagementPage = class UserManagementPage {
     this.statusGridColumn = page.locator(
       "(//div[@data-column-definition-name='isActive']//div[contains(@class,'text-center')])[1]"
     );
-    this.moreThanOnePrimaryUsersHyperText = page.locator("//a[normalize-space(text())='1 Other User']");
-    this.parmaryRadioBtn = page.locator("//input[@tabindex='-1']");
-    this.saveBtn = page.locator("//span[normalize-space(text())='Save']")
+    this.moreThanOnePrimaryUsersHyperText = page.locator(
+      "(//a[contains(normalize-space(text()), 'Other Users')])[1]"
+    );
+    this.parmaryRadioBtn = page.locator("(//input[@tabindex='-1'])[1]");
+    this.saveBtn = page.locator("//span[normalize-space(text())='Save']");
+    this.usermanageGrid = page.locator(
+      "//div[@data-column-definition-name='lastName']//arw-template-renderer"
+    );
+    this.roleStatus = page.locator(
+      "//div[@data-column-definition-name='roleId']//span[@class='grow overflow-ellipsis overflow-hidden text-center whitespace-nowrap']"
+    );
   }
   clickOnFacilityPayers = async () => {
     await excuteSteps(this.test, this.facilityPayers, "click", `click`);
@@ -212,6 +220,17 @@ exports.UserManagementPage = class UserManagementPage {
       "click",
       "Click on the inactive toggle"
     );
+  };
+  clickOnChangePrimaryRadioBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.parmaryRadioBtn,
+      "click",
+      "Click change primary radio button"
+    );
+  };
+  clickOnSavaBtn = async () => {
+    await excuteSteps(this.test, this.saveBtn, "click", "Click on Save button");
   };
   clickOnDeactiveBtn = async () => {
     await excuteSteps(
@@ -598,7 +617,14 @@ exports.UserManagementPage = class UserManagementPage {
       "Select the role option from the role dropdown"
     );
   };
-
+  clickOnOtherHyperlink = async () => {
+    await excuteSteps(
+      this.test,
+      this.moreThanOnePrimaryUsersHyperText,
+      "click",
+      "Click on the other hyperText"
+    );
+  };
   enterLocationInSearchFacilitiesDropDown = async () => {
     const noOfLocations = await this.facilityLocations.count();
     const locationIndex = Math.floor(Math.random() * (noOfLocations - 1)) + 1;
@@ -916,7 +942,7 @@ exports.UserManagementPage = class UserManagementPage {
     console.log("facilities==", randomFacilities);
     await this.clickSelectUsersDropDown();
     await this.searchTextInSearchBox([usersNames]);
-      await this.test.step("The Page is loading, please wait", async () => {
+    await this.test.step("The Page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.smallWait));
     });
     await this.page.keyboard.press("Enter");
@@ -938,14 +964,14 @@ exports.UserManagementPage = class UserManagementPage {
     await this.clickFacilityAndRoleViewButton();
     await this.clickOnFacilityFilterDropdown();
     await this.searchTextInSearchBox([randomFacilities]);
-      await this.test.step("The Page is loading, please wait", async () => {
+    await this.test.step("The Page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.smallWait));
     });
     await this.page.keyboard.press("Enter");
     await this.clickOnApplyButton();
     await this.clickOnSelectRoleFilterDropdown();
     await this.searchTextInSearchBox([roleNames]);
-     await this.test.step("The Page is loading, please wait", async () => {
+    await this.test.step("The Page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.smallWait));
     });
     await this.page.keyboard.press("Enter");
@@ -1615,5 +1641,91 @@ exports.UserManagementPage = class UserManagementPage {
       this.userDetailsSuccussPopup,
       "Update user details success popup should visible"
     ).toBeVisible();
+  };
+  verifyingChangePrimaryUser = async () => {
+    await this.clickOnSettingsButton();
+    await this.clickUserManagementOption();
+    await this.test.step("The Page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    let changeUserEmail;
+    let getFacility;
+    let getRole;
+    let count = await this.usermanageGrid.count();
+    console.log("count==", count);
+    for (let i = 0; i < count; i++) {
+      let usergrid = await this.usermanageGrid.nth(i);
+      await this.test.step("Click on the user grid", async () => {
+        await usergrid.click();
+      });
+      await this.test.step("The Page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.largeWait));
+      });
+      let moreThanOnePrimaryUserVisible =
+        await this.moreThanOnePrimaryUsersHyperText.isVisible();
+      if (moreThanOnePrimaryUserVisible) {
+             await this.test.step("The Page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.largeWait));
+      });
+        getFacility = await this.page
+          .locator(
+            "((//a[contains(normalize-space(text()), 'Other Users')]) /ancestor::div[@data-column-definition-name='roleName'] /preceding-sibling::div[@data-column-definition-name='facilityName']//span[@class='arw-template-renderer'])[1]"
+          )
+          .innerText();
+        console.log("facilityName=", getFacility);
+        getRole = await this.page
+          .locator(
+            "(//a[contains(normalize-space(text()), 'Other Users')]/preceding-sibling::div[@class='overflow-hidden text-ellipsis'])[1]"
+          )
+          .innerText();
+        console.log("Role==", getRole);
+        await this.clickOnOtherHyperlink();
+          await this.test.step("The Page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.largeWait));
+      });
+        changeUserEmail = await this.page
+          .locator(
+            "(//input[@tabindex='-1']/ancestor::mat-radio-button//span[@class='web-body-1 text-foreground-high'])[1]"
+          )
+          .innerText();
+        console.log("useremail==", changeUserEmail);
+        await this.clickOnChangePrimaryRadioBtn();
+        await this.clickOnSavaBtn();
+        await this.clickOnBackToUserScreen();
+        await this.clickFacilityAndRoleViewButton();
+        await this.clickOnFacilityFilterDropdown();
+        await this.searchTextInSearchBox([getFacility]);
+        await this.test.step("The Page is loading, please wait", async () => {
+          await this.page.waitForTimeout(parseInt(process.env.smallWait));
+        });
+        await this.page.keyboard.press("Enter");
+        await this.clickOnApplyButton();
+        await this.clickOnSelectRoleFilterDropdown();
+        await this.searchTextInSearchBox([getRole]);
+        await this.test.step("The Page is loading, please wait", async () => {
+          await this.page.waitForTimeout(parseInt(process.env.smallWait));
+        });
+        await this.page.keyboard.press("Enter");
+        await this.clickOnApplyButton();
+        await this.clickOnSelectUserFilterDropdown();
+        await this.searchTextInSearchBox([changeUserEmail]);
+        await this.test.step("The Page is loading, please wait", async () => {
+          await this.page.waitForTimeout(parseInt(process.env.smallWait));
+        });
+        await this.page.keyboard.press("Enter");
+        await this.clickOnApplyButton();
+         await this.test.step("The Page is loading, please wait", async () => {
+          await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+        });
+        await expect(
+          this.roleStatus,
+          "Verify the primary flag is visible after changing the user"
+        ).toHaveText("Primary");
+         break;
+      } 
+      else {
+        await this.clickOnBackToUserScreen();
+      }
+    }
   };
 };

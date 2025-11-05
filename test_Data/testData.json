@@ -63,7 +63,7 @@
       "Timely Filing",
       "Uncooperative"
     ],
-    "taskStatusOptions": ["Not started", "Warning", "Completed", "Canceled"],
+    "taskStatusOptions": ["Not started","Completed", "Canceled"],
     "assignedToOption": ["Vikesh Gaikawad", "Kesavarao Karri"],
     "addTaskData": {
       "date": "5/17/2027",

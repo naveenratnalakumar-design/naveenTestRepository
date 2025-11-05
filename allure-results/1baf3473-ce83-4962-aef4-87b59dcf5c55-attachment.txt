@@ -1,0 +1,3 @@
+currentMonthSummary== 2619382.23
+totalBeforeNum= 45343004.64
+priorbalance== 28411659.79

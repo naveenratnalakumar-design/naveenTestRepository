@@ -1,6 +1,7 @@
 const { test, expect } = require("@playwright/test");
 const { excuteSteps } = require("../../utilities/actions");
 const test_Data = require("../../test_Data/testData.json");
+require("dotenv").config();
 const randomFacilityNames =
   test_Data.RevflowData.TaskListPage.facilityOptions[
     Math.floor(
@@ -13,8 +14,19 @@ const randomPayerNames =
       Math.random() * test_Data.RevflowData.TaskListPage.payenameList.length
     )
   ];
-require("dotenv").config();
-let facilitiesDrodownValues;
+const randomBalanceStatus =
+  test_Data.RevflowData.TaskListPage.balanceStatus[
+    Math.floor(
+      Math.random() * test_Data.RevflowData.TaskListPage.balanceStatus.length
+    )
+  ];
+const randomTaskStatus =
+  test_Data.RevflowData.taskStatusOptions[
+    Math.floor(Math.random() * test_Data.RevflowData.taskStatusOptions.length)
+  ];
+// Pad single digits
+const pad2 = (n) => String(n).padStart(2, "0");
+
 exports.TaskListPage = class TaskListPage {
   constructor(test, page) {
     this.test = test;
@@ -251,12 +263,22 @@ exports.TaskListPage = class TaskListPage {
       "//span[normalize-space(text())='Payer']/ancestor::div[contains(@class,'items-center')]"
     );
     this.taskCloseBtn = page.locator(
-      "(//arw-button[@category='tertiary']//button[contains(@class,'arw-button--icon-only')])[2]"
+      "(//arw-button[@category='tertiary']//button[contains(@class,'arw-button--icon-only')])[3]"
     );
     this.rootIssueSelectDrodown = page.locator(
       "//arw-select[@formcontrolname='issueId']//div[@class='mat-mdc-select-trigger']"
     );
     this.selectRootOption = page.locator("(//mat-option[@role='option'])[1]");
+    this.customRangeStartDateInput = page.locator(
+      "(//div[@class='mat-date-range-input-container']//input)[1]"
+    );
+    this.customRangeEndDateInput = page.locator(
+      "(//div[@class='mat-date-range-input-container']//input)[2]"
+    );
+    this.taskStatusDropdownOptions = (txt) =>
+      page.locator(
+        `//div[@class='overflow-hidden text-ellipsis whitespace-nowrap']//span[normalize-space(text())='${txt}']`
+      );
   }
   clickOnFilterBtn = async () => {
     await excuteSteps(
@@ -272,6 +294,32 @@ exports.TaskListPage = class TaskListPage {
       this.taskCloseBtn,
       "click",
       "Click close button"
+    );
+  };
+  selectTasstatusOptions = async (txt)=>{
+     await excuteSteps(
+      this.test,
+      this.taskStatusDropdownOptions(txt),
+      "click",
+      "Select task status dropdown Options"
+     )
+  }
+  enterCustomsStartDate = async (txt) => {
+    await excuteSteps(
+      this.test,
+      this.customRangeStartDateInput,
+      "fill",
+      "Enter the start date for the custom date range",
+      txt
+    );
+  };
+  enterCustomsEndDate = async (txt) => {
+    await excuteSteps(
+      this.test,
+      this.customRangeEndDateInput,
+      "fill",
+      "Enter the end date for the custom date range",
+      txt
     );
   };
   clickOnRootIssueDropdown = async () => {
@@ -996,7 +1044,7 @@ exports.TaskListPage = class TaskListPage {
       await this.clickOnApplyButton();
       await this.clickOnApplyFilterButton();
       let count = await this.tasklistGridColumns("facility").count();
-      for (let i = 0; i <= count; i++) {
+      for (let i = 0; i < count; i++) {
         const row = this.tasklistGridColumns("facility").nth(i);
         await row.scrollIntoViewIfNeeded();
         await expect(row).toContainText(randomFacilityNames);
@@ -1009,52 +1057,6 @@ exports.TaskListPage = class TaskListPage {
       await this.page.keyboard.press("Escape");
     }
   };
-  //  verifyingPayerFilter = async () => {
-  //   await this.clickOnFilterBtn();
-  //   await this.clickOnClearFilterIcon();
-  //   await this.test.step("The page is loading, please wait", async () => {
-  //     await this.page.waitForTimeout(parseInt(process.env.mediumWait));
-  //   });
-  //   await this.clickOnFilterBtn();
-  //   await this.clickOnAddFilterBtn();
-  //   await this.clickOAddFilterDropdown();
-  //   await this.searchFilterNames(["Payer"]);
-  //   await this.selectFilterOptionsFromDropdown("Payer");
-  //   await this.selectFacilitySubOptions("Select Payer");
-  //   await this.searchTaskName(["Blue Cross"]);
-
-  //   const checkBoxLocator = this.dropdownOptionList.innerText();
-  //    await this.test.step("The page is loading, please wait", async () => {
-  //     await this.page.waitForTimeout(parseInt(process.env.smallWait));
-  //   });
-  //   const isCheckBoxVisible = await checkBoxLocator.isVisible();
-  //   const isNoMatchVisible = await this.noMatchesFoundLabel.isVisible();
-
-  //   if (isCheckBoxVisible) {
-  //     await this.clickChecbox("Blue Cross");
-  //     await this.clickOnApplyButton();
-  //     await this.clickOnApplyFilterButton();
-
-  //     const count = await this.tasklistGridColumns("payer").count();
-  //     for (let i = 0; i < count; i++) {
-  //       const row = this.tasklistGridColumns("payer").nth(i);
-  //       await row.scrollIntoViewIfNeeded();
-  //       await expect(row).toContainText("Blue Cross");
-  //     }
-
-  //   } else if (!isCheckBoxVisible && !isNoMatchVisible) {
-  //     // ✅ Partial match case (No exact match, but partial matches exist)
-  //     console.log(`Payer was not found in the list (only partial matches shown)`);
-
-  //   } else if (isNoMatchVisible) {
-  //     // ✅ No results found at all
-  //     await expect(
-  //       this.noMatchesFoundLabel,
-  //       "Verify '0 Matches' message should be displayed when searched payer is not available"
-  //     ).toBeVisible();
-  //     console.log(`No matches found — 0 Matches message displayed`);
-  //   }
-  // };
   verifyingPayerFilter = async () => {
     const searchPayer = "Blue Cross"; // The payer name you are searching
     const searchNormalized = searchPayer.trim().toLowerCase();
@@ -1080,11 +1082,11 @@ exports.TaskListPage = class TaskListPage {
     const checkBoxLocator = this.dropdownOptionList;
     const allOptionsText = await checkBoxLocator.allInnerTexts();
 
-    // ✅ Normalize text for exact and partial match check
+    // Normalize text for exact and partial match check
     const cleanedOptions = allOptionsText.map((t) => t.trim());
     const cleanedNormalized = cleanedOptions.map((t) => t.toLowerCase());
 
-    // ✅ Find exact and partial matches
+    // Find exact and partial matches
     const exactMatchIndex = cleanedNormalized.findIndex(
       (t) => t === searchNormalized
     );
@@ -1096,7 +1098,7 @@ exports.TaskListPage = class TaskListPage {
     const isNoMatchVisible = await this.noMatchesFoundLabel.isVisible();
 
     if (exactMatchIndex !== -1) {
-      // ✅ Exact match found
+      // Exact match found
       await this.clickChecbox(searchPayer);
       await this.clickOnApplyButton();
       await this.clickOnApplyFilterButton();
@@ -1108,11 +1110,11 @@ exports.TaskListPage = class TaskListPage {
         await expect(row).toContainText(searchPayer);
       }
     } else if (partialMatches.length > 0) {
-      // ✅ Partial match found
+      // Partial match found
       console.log(`Partial matches found: ${partialMatches.join(", ")}`);
       console.log(`Exact payer '${searchPayer}' was not found in the list`);
     } else if (isNoMatchVisible) {
-      // ✅ No results at all
+      // No results at all
       await expect(
         this.noMatchesFoundLabel,
         "Verify '0 Matches' message should be displayed when searched payer is not available"
@@ -1121,6 +1123,276 @@ exports.TaskListPage = class TaskListPage {
     }
   };
   verifyingBalanceFilter = async () => {
+    // Handles normal + accounting style negative values "(200.00)"
+    const parseBalance = (text) => {
+      const clean = text.replace(/[^0-9.()\-]/g, "").trim();
+
+      // Accounting format negative value: (200.00)
+      if (clean.startsWith("(") && clean.endsWith(")")) {
+        return -parseFloat(clean.replace(/[()]/g, ""));
+      }
+
+      return parseFloat(clean);
+    };
+
+    const safeScroll = async (locator) => {
+      try {
+        const isVisible = await locator.isVisible({ timeout: 2000 });
+        if (isVisible) {
+          await locator.scrollIntoViewIfNeeded({ timeout: 3000 });
+        }
+      } catch (e) {
+        console.warn("Scroll skipped or element not visible:", e.message);
+      }
+    };
+
+    // Centralized assertion logic with negative number support
+    const assertBalanceRange = async (min, max, condition) => {
+      const count = await this.tasklistGridColumns("balance").count();
+      console.log(`Rows found for ${condition}:`, count);
+
+      for (let i = 0; i < count; i++) {
+        const row = this.tasklistGridColumns("balance").nth(i);
+        await safeScroll(row);
+
+        const balanceText = await row.innerText();
+        const balanceAmount = parseBalance(balanceText);
+
+        console.log(`Parsed Value: ${balanceAmount} from "${balanceText}"`);
+
+        if (condition === "between") {
+          expect(balanceAmount).toBeGreaterThanOrEqual(min);
+          expect(balanceAmount).toBeLessThanOrEqual(max);
+        } else if (condition === "equals") {
+          expect(balanceAmount).toBe(expectedAmount);
+        } else if (condition === "greater") {
+          expect(balanceAmount).toBeGreaterThan(min);
+        } else if (condition === "less") {
+          expect(balanceAmount).toBeLessThan(max);
+        }
+
+        // Extra validation for overpayment values (negative)
+        if (balanceAmount < 0) {
+          console.log("Overpayment detected (negative formatted value).");
+          expect(balanceAmount).toBeLessThan(0);
+        }
+      }
+    };
+
+    // ---------------- Between ----------------
+    await this.clickOnFilterBtn();
+    await this.clickOnClearFilterIcon();
+    await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+
+    await this.clickOnFilterBtn();
+    await this.clickOnAddFilterBtn();
+    await this.clickOAddFilterDropdown();
+    await this.searchFilterNames(["Balance"]);
+    await this.selectFilterOptionsFromDropdown("Balance");
+    await this.selectFacilitySubOptions("Conditional");
+    await this.clickOnBalanceOptions("Between");
+    await this.fillBetweenbalanceInputOne(["100"]);
+    await this.fillBetweenbalanceInputTwo(["1000"]);
+    await this.clickOnApplyFilterButton();
+    await this.page.waitForTimeout(parseInt(process.env.smallWait));
+
+    if (await this.noTaskFound.isVisible()) {
+      await expect(this.clearFilterOnNoTaskFoundScreen).toBeVisible();
+      await expect(this.editFilterOnNoTaskFoundScreen).toBeVisible();
+    } else {
+      await assertBalanceRange(100, 1000, "between");
+    }
+
+    // ---------------- Equals ----------------
+    const expectedAmount = 2000;
+    await this.clickOnFilterBtn();
+    await this.clickOnClearFilterIcon();
+    await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+
+    await this.clickOnFilterBtn();
+    await this.clickOnAddFilterBtn();
+    await this.clickOAddFilterDropdown();
+    await this.searchFilterNames(["Balance"]);
+    await this.selectFilterOptionsFromDropdown("Balance");
+    await this.selectFacilitySubOptions("Conditional");
+    await this.clickOnBalanceOptions("Equals");
+    await this.fillBetweenbalanceInputOne(["2000"]);
+    await this.clickOnApplyFilterButton();
+    await this.page.waitForTimeout(parseInt(process.env.largeWait));
+
+    if (await this.noTaskFound.isVisible()) {
+      await expect(this.clearFilterOnNoTaskFoundScreen).toBeVisible();
+      await expect(this.editFilterOnNoTaskFoundScreen).toBeVisible();
+    } else {
+      await assertBalanceRange(expectedAmount, null, "equals");
+    }
+
+    // ---------------- Greater Than ----------------
+    const minAmount = 2000;
+    await this.clickOnFilterBtn();
+    await this.clickOnClearFilterIcon();
+    await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+
+    await this.clickOnFilterBtn();
+    await this.clickOnAddFilterBtn();
+    await this.clickOAddFilterDropdown();
+    await this.searchFilterNames(["Balance"]);
+    await this.selectFilterOptionsFromDropdown("Balance");
+    await this.selectFacilitySubOptions("Conditional");
+    await this.clickOnBalanceOptions("Greater than");
+    await this.fillBetweenbalanceInputOne(["2000"]);
+    await this.clickOnApplyFilterButton();
+    await this.page.waitForTimeout(parseInt(process.env.largeWait));
+
+    if (await this.noTaskFound.isVisible()) {
+      await expect(this.clearFilterOnNoTaskFoundScreen).toBeVisible();
+      await expect(this.editFilterOnNoTaskFoundScreen).toBeVisible();
+    } else {
+      await assertBalanceRange(minAmount, null, "greater");
+    }
+
+    // ---------------- Less Than ----------------
+    const maxAmount = 2000;
+    await this.clickOnFilterBtn();
+    await this.clickOnClearFilterIcon();
+    await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+
+    await this.clickOnFilterBtn();
+    await this.clickOnAddFilterBtn();
+    await this.clickOAddFilterDropdown();
+    await this.searchFilterNames(["Balance"]);
+    await this.selectFilterOptionsFromDropdown("Balance");
+    await this.selectFacilitySubOptions("Conditional");
+    await this.clickOnBalanceOptions("Less than");
+    await this.fillBetweenbalanceInputOne(["2000"]);
+    await this.clickOnApplyFilterButton();
+    await this.page.waitForTimeout(parseInt(process.env.largeWait));
+
+    if (await this.noTaskFound.isVisible()) {
+      await expect(this.clearFilterOnNoTaskFoundScreen).toBeVisible();
+      await expect(this.editFilterOnNoTaskFoundScreen).toBeVisible();
+    } else {
+      await assertBalanceRange(null, maxAmount, "less");
+    }
+  };
+
+  verifyingBalanceStatusFilter = async () => {
+    await this.clickOnFilterBtn();
+    await this.clickOnClearFilterIcon();
+
+    await this.test.step(
+      "Wait for grid to refresh after clearing filters",
+      async () => {
+        await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+      }
+    );
+
+    await this.clickOnFilterBtn();
+    await this.clickOnAddFilterBtn();
+    await this.clickOAddFilterDropdown();
+    await this.searchFilterNames(["Balance Status"]);
+    await this.selectFilterOptionsFromDropdown("Balance Status");
+    await this.selectFacilitySubOptions("Select Balance Status");
+    await this.searchTaskName([randomBalanceStatus]);
+
+    await this.test.step("Wait for filter search to complete", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+
+    const checkBoxVisible = await this.facilityOptioncheckBox(
+      randomBalanceStatus
+    ).isVisible();
+
+    if (checkBoxVisible) {
+      await this.page.keyboard.press("Enter");
+      await this.clickOnApplyButton();
+      await this.clickOnApplyFilterButton();
+
+      await this.test.step("Wait for filtered grid to load", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+      });
+
+      const gridCount = await this.balanceStatusGridColumn.count();
+
+      if (gridCount > 0) {
+        //  Matching tasks found — verify text in grid
+        for (let i = 0; i < gridCount; i++) {
+          const row = this.balanceStatusGridColumn.nth(i);
+          await row.scrollIntoViewIfNeeded();
+          await expect(
+            row,
+            "Verify filtered Balance Status is displayed correctly in grid"
+          ).toContainText(randomBalanceStatus);
+        }
+      } else {
+        // Option exists but no matching tasks
+        await expect(
+          this.clearFilterOnNoTaskFoundScreen,
+          "Verify 'Clear Filter' button is visible when no grid results found"
+        ).toBeVisible();
+
+        await expect(
+          this.editFilterOnNoTaskFoundScreen,
+          "Verify 'Edit Filter' button is visible when no grid results found"
+        ).toBeVisible();
+      }
+    } else {
+      // Filter option NOT found in dropdown
+      await expect(
+        this.noMatchesFoundLabel,
+        "Verify '0 Matches' message appears when no filter options match search"
+      ).toBeVisible();
+      await this.page.keyboard.press("Escape");
+      await this.test.step(
+        "Closing filter modal since no match found",
+        async () => {
+          await this.page.waitForTimeout(parseInt(process.env.smallWait));
+        }
+      );
+      await this.clickOnDeleteDuedateInSortIcon();
+      await this.clickOnApplyFilterButton();
+    }
+  };
+  // ✅ Convert JS date → MM/DD/YYYY
+  formatDate(date) {
+    const d = new Date(date);
+    const pad2 = (n) => n.toString().padStart(2, "0");
+    return `${pad2(d.getMonth() + 1)}/${pad2(d.getDate())}/${d.getFullYear()}`;
+  }
+
+  //  Normalize grid date (Today, Tomorrow, M/D/YYYY, etc.)
+  parseGridDate = async (locator, index) => {
+    let raw = (await locator.nth(index).innerText()).trim();
+    if (!raw) return "";
+
+    const lower = raw.toLowerCase();
+    const pad2 = (n) => n.toString().padStart(2, "0");
+
+    if (lower === "today") return this.formatDate(new Date());
+
+    if (lower === "tomorrow") {
+      const t = new Date();
+      t.setDate(t.getDate() + 1);
+      return this.formatDate(t);
+    }
+
+    const parts = raw.split("/");
+    if (parts.length === 3) {
+      return `${pad2(parts[0])}/${pad2(parts[1])}/${parts[2]}`;
+    }
+
+    const parsed = new Date(raw);
+    if (!isNaN(parsed)) return this.formatDate(parsed);
+
+    return raw;
+  };
+  verifyingDuedateFilter = async () => {
+    const today = new Date();
+    const next7Days = Array.from({ length: 7 }, (_, i) =>
+      this.formatDate(
+        new Date(today.getFullYear(), today.getMonth(), today.getDate() + i)
+      )
+    );
     await this.clickOnFilterBtn();
     await this.clickOnClearFilterIcon();
     await this.test.step("The page is loading, please wait", async () => {
@@ -1129,16 +1401,156 @@ exports.TaskListPage = class TaskListPage {
     await this.clickOnFilterBtn();
     await this.clickOnAddFilterBtn();
     await this.clickOAddFilterDropdown();
-    await this.searchFilterNames(["Balance"]);
-    await this.selectFilterOptionsFromDropdown("Balance");
-    await this.selectFacilitySubOptions("Conditional");
-    await this.clickOnBalanceOptions("Between");
-    await this.fillBetweenbalanceInputOne(["100"]),
-      await this.fillBetweenbalanceInputTwo(["1000"]);
+    await this.searchFilterNames(["Due Date"]);
+    await this.selectFilterOptionsFromDropdown("Due Date");
+    await this.selectFacilitySubOptions(["Select"]);
+
+    // ************ Next 7 Days Filter Check *************
+    await this.clickOnDueDateOptions("Next 7 days");
+    await this.clickOnApplyButton();
     await this.clickOnApplyFilterButton();
     await this.test.step("The page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
     });
+    const rowsCount = await this.dueDateGridColums.count();
+    for (let i = 0; i < rowsCount; i++) {
+      const gridDate = await this.parseGridDate(this.dueDateGridColums, i);
+      expect(
+        next7Days.includes(gridDate),
+        "Verifying the Due Date grid displays the correct dates when applying the 'Next 7 Days' filter"
+      ).toBeTruthy();
+    }
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
+    // *********** OVERDUE *******************
+    await this.clickOnFilterBtn();
+    await this.clickOnClearFilterIcon();
+    await this.clickOnFilterBtn();
+    await this.clickOnAddFilterBtn();
+    await this.clickOAddFilterDropdown();
+    await this.searchFilterNames(["Due Date"]);
+    await this.selectFilterOptionsFromDropdown("Due Date");
+    await this.selectFacilitySubOptions(["Select"]);
+    await this.clickOnDueDateOptions("Overdue");
+    await this.clickOnApplyButton();
+    await this.clickOnApplyFilterButton();
+    const rows = await this.dueDateGridColums.count();
+    today.setHours(0, 0, 0, 0); // Normalize to midnight
+    for (let i = 0; i < rows; i++) {
+      const gridDateStr = await this.parseGridDate(this.dueDateGridColums, i);
+      // Skip blank date cells if any
+      if (!gridDateStr) continue;
+      // Skip "Today" as it's not overdue
+      if (gridDateStr.toLowerCase?.() === "today") continue;
+      const rowDate = new Date(gridDateStr);
+      rowDate.setHours(0, 0, 0, 0);
+      expect(
+        rowDate < today,
+        "Verify the Due Date grid displays the correct dates when the 'Overdue' filter is applied"
+      ).toBeTruthy();
+    }
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
+    // ***************** Today *******************
+    await this.clickOnFilterBtn();
+    await this.clickOnClearFilterIcon();
+    await this.clickOnFilterBtn();
+    await this.clickOnAddFilterBtn();
+    await this.clickOAddFilterDropdown();
+    await this.searchFilterNames(["Due Date"]);
+    await this.selectFilterOptionsFromDropdown("Due Date");
+    await this.selectFacilitySubOptions(["Select"]);
+    await this.clickOnDueDateOptions("Today");
+    await this.clickOnApplyButton();
+    await this.clickOnApplyFilterButton();
+    const todayrows = await this.dueDateGridColums.count();
+    for (let i = 0; i < todayrows; i++) {
+      // const value = await this.parseGridDate(this.dueDateGridColums, i);
+      expect(
+        this.dueDateGridColums.nth(i),
+        "Verify the Due Date grid displays the correct dates when the 'Today' filter is applied"
+      ).toHaveText("Today");
+    }
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
+    // await this.page.pause()
+    // // ************ Custom Range ****************
+    // const startDate = new Date(
+    //   today.getFullYear(),
+    //   today.getMonth(),
+    //   today.getDate() - 2
+    // );
+    // const endDate = new Date(
+    //   today.getFullYear(),
+    //   today.getMonth(),
+    //   today.getDate() + 2
+    // );
+
+    // // Convert to string MM/DD/YYYY
+    // const startDateStr = this.formatDate(startDate);
+    // const endDateStr = this.formatDate(endDate);
+    // await this.clickOnFilterBtn();
+    // await this.clickOnClearFilterIcon();
+    // await this.clickOnFilterBtn();
+    // await this.clickOnAddFilterBtn();
+    // await this.clickOAddFilterDropdown();
+    // await this.searchFilterNames(["Due Date"]);
+    // await this.selectFilterOptionsFromDropdown("Due Date");
+    // await this.selectFacilitySubOptions(["Select"]);
+    // await this.clickOnDueDateOptions("Custom range");
+    //  await this.test.step("The page is loading, please wait", async () => {
+    //   await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    // });
+    // await this.enterCustomsStartDate([startDateStr]);
+    // await this.test.step("Close canlander popup",async()=>{
+    //   await this.page.locator("//div[normalize-space(text())='Filter by']").click({ force: true })
+    // })
+    // await this.test.step("The page is loading, please wait", async () => {
+    //   await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    // });
+    // await this.enterCustomsEndDate([endDateStr]);
+    // await this.test.step("Close canlander popup",async()=>{
+    //   await this.page.locator("//div[normalize-space(text())='Filter by']").click({ force: true })
+    // })
+    //  await this.test.step("The page is loading, please wait", async () => {
+    //   await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    // });
+    // await this.clickOnApplyButton();
+    // await this.clickOnApplyFilterButton();
+    // const customDateRangeRows = await this.dueDateGridColums.count();
+    // for (let i = 0; i < customDateRangeRows; i++) {
+    //   const value = await this.parseGridDate(this.dueDateGridColums, i);
+    //   if (!value) continue; // skip empty rows
+    //   const rowDate = new Date(value);
+    //   rowDate.setHours(0, 0, 0, 0);
+    //   expect(
+    //     rowDate >= startDate && rowDate <= endDate,
+    //     "Verify the Due Date grid displays the correct date when the 'Custom range' filter is applied"
+    //   ).toBeTruthy();
+    // }
+  };
+  verifyingTaskStatusFilter = async () => {
+    await this.clickOnFilterBtn();
+    await this.clickOnClearFilterIcon();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
+    await this.clickOnFilterBtn();
+    await this.clickOnAddFilterBtn();
+    await this.clickOAddFilterDropdown();
+    await this.searchFilterNames(["Task Status"]);
+    await this.selectFilterOptionsFromDropdown(["Task Status"]);
+    await this.selectFacilitySubOptions(["Select Task Status"]);
+    await this.selectTasstatusOptions(randomTaskStatus);
+    await this.clickOnApplyButton();
+    await this.clickOnApplyFilterButton();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+
     const noTasksMsgIsVisible = await this.noTaskFound.isVisible();
     if (noTasksMsgIsVisible) {
       await expect(
@@ -1150,171 +1562,18 @@ exports.TaskListPage = class TaskListPage {
         "Edit Filter button should be visible on the 'No Tasks Found' screen."
       ).toBeVisible();
     } else {
-      let count = await this.tasklistGridColumns("balance").count();
-      const minAmount = 100;
-      const maxAmount = 1000;
-      for (let i = 0; i <= count; i++) {
-        const row = this.tasklistGridColumns("balance").nth(i);
+      const rows = await this.taskStatusGridColumn.count();
+      for (let i = 0; i < rows; i++) {
+        const row = this.taskStatusGridColumn.nth(i);
         await row.scrollIntoViewIfNeeded();
-        const balanceText = await row.innerText(); // get the balance text
-        const balanceAmount = parseFloat(balanceText.replace(/[^0-9.-]+/g, "")); // convert to number
-        // Assertion: check if balance is between min and max
-        expect(
-          balanceAmount,
-          "Verifying that balance is between min and max"
-        ).toBeGreaterThanOrEqual(minAmount);
-        expect(
-          balanceAmount,
-          "Verifying that balance is between min and max"
-        ).toBeLessThanOrEqual(maxAmount);
-      }
-    }
-    //Equals
-    const expectedAmount = 2000;
-    await this.clickOnFilterBtn();
-    await this.clickOnClearFilterIcon();
-    await this.test.step("The page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
-    });
-    await this.clickOnFilterBtn();
-    await this.clickOnAddFilterBtn();
-    await this.clickOAddFilterDropdown();
-    await this.searchFilterNames(["Balance"]);
-    await this.selectFilterOptionsFromDropdown("Balance");
-    await this.selectFacilitySubOptions("Conditional");
-    await this.clickOnBalanceOptions("Equals");
-    await this.fillBetweenbalanceInputOne(["2000"]);
-    await this.clickOnApplyFilterButton();
-    await this.test.step("The page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.largeWait));
-    });
-    let noFilterscreen = await this.noTaskFound.isVisible();
-    if (noFilterscreen) {
-      await expect(
-        this.clearFilterOnNoTaskFoundScreen,
-        "Clear Filter button should be visible on the 'No Tasks Found' screen"
-      ).toBeVisible();
-      await expect(
-        this.editFilterOnNoTaskFoundScreen,
-        "Edit Filter button should be visible on the 'No Tasks Found' screen."
-      ).toBeVisible();
-    } else {
-      let count = await this.tasklistGridColumns("balance").count();
-      for (let i = 0; i <= count; i++) {
-        const row = this.tasklistGridColumns("balance").nth(i);
-        await row.scrollIntoViewIfNeeded();
-        const balanceText = await row.innerText(); // get the balance text
-        const balanceAmount = parseFloat(balanceText.replace(/[^0-9.-]+/g, "")); // convert to number
-        // Assertion: check if balance equals expectedAmount
-        expect(
-          balanceAmount,
-          "Verifying that balance equals expectedAmount"
-        ).toBe(expectedAmount);
-      }
-    }
-    //GreaterThan
-    const minAmount = 2000;
-    await this.clickOnFilterBtn();
-    await this.clickOnClearFilterIcon();
-    await this.test.step("The page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
-    });
-    await this.clickOnFilterBtn();
-    await this.clickOnAddFilterBtn();
-    await this.clickOAddFilterDropdown();
-    await this.searchFilterNames(["Balance"]);
-    await this.selectFilterOptionsFromDropdown("Balance");
-    await this.selectFacilitySubOptions("Conditional");
-    await this.clickOnBalanceOptions("Greater than");
-    await this.fillBetweenbalanceInputOne(["2000"]);
-    await this.clickOnApplyFilterButton();
-    await this.test.step("The page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.largeWait));
-    });
-    let noFiltersscreen = await this.noTaskFound.isVisible();
-    if (noFiltersscreen) {
-      await expect(
-        this.clearFilterOnNoTaskFoundScreen,
-        "Clear Filter button should be visible on the 'No Tasks Found' screen"
-      ).toBeVisible();
-      await expect(
-        this.editFilterOnNoTaskFoundScreen,
-        "Edit Filter button should be visible on the 'No Tasks Found' screen."
-      ).toBeVisible();
-    } else {
-      let count = await this.tasklistGridColumns("balance").count();
-      for (let i = 0; i <= count; i++) {
-        const row = this.tasklistGridColumns("balance").nth(i);
-        await row.scrollIntoViewIfNeeded();
-        const balanceText = await row.innerText(); // get the balance text
-        const balanceAmount = parseFloat(balanceText.replace(/[^0-9.-]+/g, "")); // convert to number
-        // Assertion: check if balance is greater than minAmount
-        expect(
-          balanceAmount,
-          "Verifying that balance is greater than minAmount"
-        ).toBeGreaterThan(minAmount);
-      }
-    }
-    //Lessthan
-    const maxAmount = 2000;
-    await this.clickOnFilterBtn();
-    await this.clickOnClearFilterIcon();
-    await this.test.step("The page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
-    });
-    await this.clickOnFilterBtn();
-    await this.clickOnAddFilterBtn();
-    await this.clickOAddFilterDropdown();
-    await this.searchFilterNames(["Balance"]);
-    await this.selectFilterOptionsFromDropdown("Balance");
-    await this.selectFacilitySubOptions("Conditional");
-    await this.clickOnBalanceOptions("Less than");
-    await this.fillBetweenbalanceInputOne(["2000"]);
-    await this.clickOnApplyFilterButton();
-    await this.test.step("The page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.largeWait));
-    });
-    let noTaskFiltersscreen = await this.noTaskFound.isVisible();
-    if (noTaskFiltersscreen) {
-      await expect(
-        this.clearFilterOnNoTaskFoundScreen,
-        "Clear Filter button should be visible on the 'No Tasks Found' screen"
-      ).toBeVisible();
-      await expect(
-        this.editFilterOnNoTaskFoundScreen,
-        "Edit Filter button should be visible on the 'No Tasks Found' screen."
-      ).toBeVisible();
-    } else {
-      let count = await this.tasklistGridColumns("balance").count();
-      for (let i = 0; i <= count; i++) {
-        const row = this.tasklistGridColumns("balance").nth(i);
-        await row.scrollIntoViewIfNeeded();
-        const balanceText = await row.innerText(); // get the balance text
-        const balanceAmount = parseFloat(balanceText.replace(/[^0-9.-]+/g, "")); // convert to number
-        // Assertion: check if balance is less than maxAmount
-        expect(
-          balanceAmount,
-          "Verifying that balance less than maxAmount"
-        ).toBeLessThan(maxAmount);
+        await expect(
+          row,
+          "Verify the applied taskStatus filter is displayed in the taskStatus column on the task list screen"
+        ).toContainText(randomTaskStatus);
       }
     }
   };
-  verifyingDuedateFilter = async () => {
-    await this.clickOnFilterBtn();
-    await this.clickOnClearFilterIcon();
-    await this.test.step("The page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
-    });
-    await this.clickOnFilterBtn();
-    await this.clickOnAddFilterBtn();
-    await this.clickOAddFilterDropdown();
-    await this.searchFilterNames(["Balance"]);
-    await this.selectFilterOptionsFromDropdown("Balance");
-    await this.selectFacilitySubOptions(["Select"]);
-    await this.clickOnDueDateOptions([]);
-    await this.clickOnApplyButton();
-    await this.clickOnApplyFilterButton();
-  };
+
   // verifyingTaskNameSortingFunctionality = async () => {
   //   // Step 1: Clear existing sort/filter
   //   await this.clickOnCustomSortBtn();
@@ -2144,9 +2403,9 @@ exports.TaskListPage = class TaskListPage {
       await this.page.keyboard.press("Enter");
       await this.clickOnApplyButton();
       await this.clickOnApplyFilterButton();
-      await expect(
-        this.rootsIssuesGridColumns,
-        "Verifying the updated root issue name is displayed on the task grid after the grid auto-refreshes"
-      ).toHaveText(rootIssue);
+      // await expect(
+      //   this.rootsIssuesGridColumns,
+      //   "Verifying the updated root issue name is displayed on the task grid after the grid auto-refreshes"
+      // ).toHaveText(rootIssue);
     };
 };

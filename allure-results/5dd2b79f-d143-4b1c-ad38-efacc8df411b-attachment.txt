@@ -1,0 +1,238 @@
+Total cells found: 108
+Total groups (rows) to verify: 12
+
+ Row 1: Checking cells 19
+Month values: [
+     48412, 444598.87,
+  61768.75,  51426.43,
+  33536.29,  13090.73,
+  39447.12,  278561.6
+]
+Sum of months: 970841.79
+Displayed total: 970841.79
+
+ Row 2: Checking cells 1018
+Month values: [
+   60605.26, 1215354.42,
+  212218.16,   44078.72,
+   18877.58, -119070.21,
+  432251.97, -846993.83
+]
+Sum of months: 1017322.07
+Displayed total: 1017322.07
+
+ Row 3: Checking cells 1927
+Month values: [ 0, 0, 0, 0, 0, 0, 0, 288683.76 ]
+Sum of months: 288683.76
+Displayed total: 288683.76
+
+ Row 4: Checking cells 2836
+Month values: [ 0, 0, 0, 0, 0, 0, 0, -382043.37 ]
+Sum of months: -382043.37
+Displayed total: -382043.37
+
+ Row 5: Checking cells 3745
+Month values: [
+  43583.45, 61198.56,
+  14114.87,   822.36,
+  16854.14,  3077.24,
+   5131.75, 59129.22
+]
+Sum of months: 203911.59
+Displayed total: 203911.59
+
+ Row 6: Checking cells 4654
+Month values: [
+  60831.38,  166286.1,
+  49466.14,  54875.26,
+  47152.37,  21678.58,
+  33458.71, 601068.19
+]
+Sum of months: 1034816.73
+Displayed total: 1034816.73
+
+ Row 7: Checking cells 5563
+Month values: [
+   79320.57,   935100.8,
+  190746.08,   99754.32,
+   86145.27,   81441.98,
+   94494.51, 1145386.09
+]
+Sum of months: 2712389.62
+Displayed total: 2712389.62
+
+ Row 8: Checking cells 6472
+Month values: [
+  394597.02, 2246678.34,
+  582021.03,  290758.01,
+  226231.04,   151161.4,
+  147689.57, -395035.89
+]
+Sum of months: 3644100.52
+Displayed total: 3644100.52
+
+ Row 9: Checking cells 7381
+Month values: [
+   651418.06, 3855213.35,
+  1205656.14,  651732.36,
+   376309.26,  319764.33,
+   243461.56, 2197352.89
+]
+Sum of months: 9500907.95
+Displayed total: 9500907.95
+
+ Row 10: Checking cells 8290
+Month values: [
+   350227.9, 1974593.27,
+  401244.93,  241261.83,
+  129764.47,   74669.12,
+   97820.31,  -351235.7
+]
+Sum of months: 2918346.13
+Displayed total: 2918346.13
+
+ Row 11: Checking cells 9199
+Month values: [
+   437236.47,   4763267.9,
+  1249330.92,      577662,
+   367242.52,   267614.67,
+   212981.64, -3920160.16
+]
+Sum of months: 3955175.96
+Displayed total: 3955175.96
+
+ Row 12: Checking cells 100108
+Month values: [ 0, 0, 0, 0, 0, 0, 0, 29693502.11 ]
+Sum of months: 29693502.11
+Displayed total: 29693502.11
+Validation successful: The total summary matches the sum of the last six months balances!
+ Total cells found: 14
+ Month values: [
+          0,     48412,
+   60605.26,         0,
+          0,  43583.45,
+   60831.38,  79320.57,
+  394597.02, 651418.06,
+   350227.9, 437236.47,
+          0
+]
+ Sum of Current Month summary: 2126232.11
+ Total Current Month Summary: 2126232.11
+Validation successful: The total summary matches the sum of the current months' balances!
+
+🔹 Verifying for Month: 10/2025
+ Total cells found for 10/2025: 14
+ Month Values (10/2025): [
+           0,  444598.87,
+  1215354.42,          0,
+           0,   61198.56,
+    166286.1,   935100.8,
+  2246678.34, 3855213.35,
+  1974593.27,  4763267.9,
+           0
+]
+ Sum of Month (10/2025): 15662291.61
+ Summary Total (10/2025): 15662291.61
+Validation passed for 10/2025!
+
+🔹 Verifying for Month: 09/2025
+ Total cells found for 09/2025: 14
+ Month Values (09/2025): [
+          0,   61768.75,
+  212218.16,          0,
+          0,   14114.87,
+   49466.14,  190746.08,
+  582021.03, 1205656.14,
+  401244.93, 1249330.92,
+          0
+]
+ Sum of Month (09/2025): 3966567.02
+ Summary Total (09/2025): 3966567.02
+Validation passed for 09/2025!
+
+🔹 Verifying for Month: 08/2025
+ Total cells found for 08/2025: 14
+ Month Values (08/2025): [
+          0,  51426.43,
+   44078.72,         0,
+          0,    822.36,
+   54875.26,  99754.32,
+  290758.01, 651732.36,
+  241261.83,    577662,
+          0
+]
+ Sum of Month (08/2025): 2012371.29
+ Summary Total (08/2025): 2012371.29
+Validation passed for 08/2025!
+
+🔹 Verifying for Month: 07/2025
+ Total cells found for 07/2025: 14
+ Month Values (07/2025): [
+          0,  33536.29,
+   18877.58,         0,
+          0,  16854.14,
+   47152.37,  86145.27,
+  226231.04, 376309.26,
+  129764.47, 367242.52,
+          0
+]
+ Sum of Month (07/2025): 1302112.94
+ Summary Total (07/2025): 1302112.94
+Validation passed for 07/2025!
+
+🔹 Verifying for Month: 06/2025
+ Total cells found for 06/2025: 14
+ Month Values (06/2025): [
+           0,  13090.73,
+  -119070.21,         0,
+           0,   3077.24,
+    21678.58,  81441.98,
+    151161.4, 319764.33,
+    74669.12, 267614.67,
+           0
+]
+ Sum of Month (06/2025): 813427.84
+ Summary Total (06/2025): 813427.84
+Validation passed for 06/2025!
+
+🔹 Verifying for Month: 05/2025
+ Total cells found for 05/2025: 14
+ Month Values (05/2025): [
+          0,  39447.12,
+  432251.97,         0,
+          0,   5131.75,
+   33458.71,  94494.51,
+  147689.57, 243461.56,
+   97820.31, 212981.64,
+          0
+]
+ Sum of Month (05/2025): 1306737.14
+ Summary Total (05/2025): 1306737.14
+Validation passed for 05/2025!
+Validation successful - The total summary matches the sum of the previous months' balances for the last 6 months!
+ Total cells found: 14
+ Month values: [
+            0,    278561.6,
+   -846993.83,   288683.76,
+   -382043.37,    59129.22,
+    601068.19,  1145386.09,
+   -395035.89,  2197352.89,
+    -351235.7, -3920160.16,
+  29693502.11
+]
+ Sum of All Prior Balances summary: 28368214.91
+ Total All Prior Balances Summary: 28368214.91
+Validation successful: The total summary matches the sum of the All prior Balances!
+ Total cells found: 14
+ Month values: [
+            0,  970841.79,
+   1017322.07,  288683.76,
+   -382043.37,  203911.59,
+   1034816.73, 2712389.62,
+   3644100.52, 9500907.95,
+   2918346.13, 3955175.96,
+  29693502.11
+]
+ Sum of Total Displayed Balances summary: 55557954.86
+ Total Displayed Balance Summary: 55557954.86
+Validation successful: The total summary matches the sum of the Total Displayed Balances!

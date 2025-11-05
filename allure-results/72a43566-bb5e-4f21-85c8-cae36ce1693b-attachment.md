@@ -1,0 +1,163 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Revflow logo" [ref=e7] [cursor=pointer]
+        - img "Revflow" [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link "Task List" [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link "AR Aging" [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - link "Settings" [ref=e34] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e37] [cursor=pointer]
+          - generic [ref=e40] [cursor=pointer]: Settings
+          - img [ref=e43] [cursor=pointer]
+      - button [ref=e49] [cursor=pointer]:
+        - img [ref=e53] [cursor=pointer]
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - generic [ref=e61]:
+          - img [ref=e64]
+          - textbox "Search for a Case" [ref=e66]
+        - generic [ref=e67]:
+          - button "Selected Facilities (35)" [ref=e69] [cursor=pointer]:
+            - text: Selected Facilities (35)
+            - img [ref=e72] [cursor=pointer]
+          - img [ref=e78]
+          - button "AT" [ref=e81] [cursor=pointer]:
+            - generic [ref=e84] [cursor=pointer]: AT
+            - img [ref=e87] [cursor=pointer]
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - heading "Tasks" [level=2] [ref=e94]
+          - generic [ref=e96]:
+            - button "Sort" [ref=e98] [cursor=pointer]:
+              - generic [ref=e99] [cursor=pointer]: Sort
+              - img [ref=e102] [cursor=pointer]
+            - button "Filters 3" [active] [ref=e105] [cursor=pointer]:
+              - img [ref=e108] [cursor=pointer]
+              - generic [ref=e110] [cursor=pointer]:
+                - text: Filters
+                - generic [ref=e111] [cursor=pointer]: "3"
+            - button "Reset to Default" [ref=e113] [cursor=pointer]:
+              - generic [ref=e114] [cursor=pointer]:
+                - text: Reset to Default
+                - img [ref=e117] [cursor=pointer]
+        - generic [ref=e121]:
+          - generic [ref=e124]:
+            - generic [ref=e125]: "4"
+            - text: Results
+          - generic [ref=e127]:
+            - generic [ref=e131] [cursor=pointer]: Task
+            - generic [ref=e135] [cursor=pointer]:
+              - generic [ref=e136] [cursor=pointer]: Facility
+              - generic [ref=e137] [cursor=pointer]:
+                - button [ref=e138] [cursor=pointer]:
+                  - img [ref=e141] [cursor=pointer]
+                - button [ref=e143] [cursor=pointer]:
+                  - img [ref=e146] [cursor=pointer]
+            - generic [ref=e151] [cursor=pointer]:
+              - generic [ref=e152] [cursor=pointer]: Resident
+              - generic [ref=e153] [cursor=pointer]:
+                - button [ref=e154] [cursor=pointer]:
+                  - img [ref=e157] [cursor=pointer]
+                - button [ref=e159] [cursor=pointer]:
+                  - img [ref=e162] [cursor=pointer]
+            - generic [ref=e167] [cursor=pointer]:
+              - generic [ref=e168] [cursor=pointer]: Payer
+              - generic [ref=e169] [cursor=pointer]:
+                - button [ref=e170] [cursor=pointer]:
+                  - img [ref=e173] [cursor=pointer]
+                - button [ref=e175] [cursor=pointer]:
+                  - img [ref=e178] [cursor=pointer]
+            - generic [ref=e184] [cursor=pointer]: Balance
+            - generic [ref=e189] [cursor=pointer]: Balance Status
+            - generic [ref=e194] [cursor=pointer]: Due Date
+            - generic [ref=e199] [cursor=pointer]: Task Status
+            - generic [ref=e204] [cursor=pointer]: Assigned To
+            - generic [ref=e209] [cursor=pointer]: Root Issue
+          - generic [ref=e215]:
+            - generic [ref=e217]:
+              - link "Task" [ref=e221] [cursor=pointer]
+              - generic [ref=e225]: Gulfport
+              - link "Wilson, Gloria" [ref=e229] [cursor=pointer]:
+                - /url: /cases/details/3907067
+              - generic [ref=e233]: Suncoast Hospice
+              - generic [ref=e237]: "0.00"
+              - generic [ref=e241]:
+                - img [ref=e244]
+                - generic [ref=e246]: Unworked
+              - generic [ref=e250]: 10/28/2025
+              - generic [ref=e255]: Completed
+              - generic [ref=e259]:
+                - generic [ref=e264]: RM
+                - generic [ref=e265]: Rivky Meguira
+              - generic [ref=e269]: Unknown
+            - generic [ref=e271]:
+              - link "TaskstatusChange1" [ref=e275] [cursor=pointer]
+              - generic [ref=e279]: Gulfport
+              - link "Wilson, Gloria" [ref=e283] [cursor=pointer]:
+                - /url: /cases/details/3907067
+              - generic [ref=e287]: Suncoast Hospice
+              - generic [ref=e291]: "0.00"
+              - generic [ref=e295]:
+                - img [ref=e298]
+                - generic [ref=e300]: Unworked
+              - generic [ref=e304]: 9/29/2025
+              - generic [ref=e309]: Canceled
+              - generic [ref=e313]:
+                - generic [ref=e318]: VG
+                - generic [ref=e319]: Vikesh Gaikawad
+              - generic [ref=e323]: Unknown
+            - generic [ref=e325]:
+              - link "TaskNewComment" [ref=e329] [cursor=pointer]
+              - generic [ref=e333]: Gulfport
+              - link "Wilson, Gloria" [ref=e337] [cursor=pointer]:
+                - /url: /cases/details/3907067
+              - generic [ref=e341]: Suncoast Hospice
+              - generic [ref=e345]: "0.00"
+              - generic [ref=e349]:
+                - img [ref=e352]
+                - generic [ref=e354]: Unworked
+              - generic [ref=e358]: 9/23/2025
+              - generic [ref=e363]: Canceled
+              - generic [ref=e367]:
+                - generic [ref=e372]: VG
+                - generic [ref=e373]: Vikesh Gaikawad
+              - generic [ref=e377]: Unknown
+            - generic [ref=e379]:
+              - link "TaskChangeBal-6" [ref=e383] [cursor=pointer]
+              - generic [ref=e387]: Gulfport
+              - link "Wilson, Gloria" [ref=e391] [cursor=pointer]:
+                - /url: /cases/details/3907067
+              - generic [ref=e395]: Suncoast Hospice
+              - generic [ref=e399]: "0.00"
+              - generic [ref=e403]:
+                - img [ref=e406]
+                - generic [ref=e408]: Unworked
+              - generic [ref=e412]: 8/31/2025
+              - generic [ref=e417]: Canceled
+              - generic [ref=e421]:
+                - generic [ref=e426]: VG
+                - generic [ref=e427]: Vikesh Gaikawad
+              - generic [ref=e431]: Additional Info Needed
+  - generic [ref=e439]: Jira Service Management Widget
+  - iframe [ref=e440]:
+    - main "Help Center Widget Content" [ref=f1e2]:
+      - button "?" [ref=f1e5] [cursor=pointer]:
+        - paragraph [ref=f1e6] [cursor=pointer]: "?"
+```

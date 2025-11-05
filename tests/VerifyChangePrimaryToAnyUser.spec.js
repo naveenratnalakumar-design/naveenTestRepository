@@ -14,9 +14,9 @@ test.describe("Assign Primary to Any User and Validate New Primary User", () => 
             [process.env.password]
         );
     });
-    test("Verify Change Primary To Any User", async () => {
+    test("@regression Verify Change Primary To Any User", async () => {
         const userManagementPage = new sections.UserManagementPage(test, page);
-        await userManagementPage.verifyChangePrimaryToAnyUser();
+        await userManagementPage.verifyingChangePrimaryUser();
     });
     test.afterAll(async () => {
         const logoutPage = new sections.LogoutPage(test, page);

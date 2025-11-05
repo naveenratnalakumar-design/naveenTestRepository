@@ -21,7 +21,11 @@ test.describe("Verify filtering columns on TaskList", () => {
     // await taskListPage.varifyingTaskNameFilter()
     // await taskListPage.VerifyingFacilityFilter()
     await page.pause()
-    await taskListPage.verifyingBalanceFilter()
+    // await taskListPage.verifyingBalanceFilter()
+    // await taskListPage.verifyingBalanceStatusFilter()
+    // await taskListPage.verifyingDuedateFilter()
+    await taskListPage.verifyingTaskStatusFilter()
+
   });
   test.afterAll(async () => {
     const logoutPage = new sections.LogoutPage(test, page);

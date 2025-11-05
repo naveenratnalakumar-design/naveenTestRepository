@@ -1,0 +1,150 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Revflow logo" [ref=e7] [cursor=pointer]
+        - img "Revflow" [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link "Task List" [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link "AR Aging" [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - link "Settings" [ref=e34] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e37] [cursor=pointer]
+          - generic [ref=e40] [cursor=pointer]: Settings
+          - img [ref=e43] [cursor=pointer]
+      - button [ref=e49] [cursor=pointer]:
+        - img [ref=e53] [cursor=pointer]
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - generic [ref=e61]:
+          - img [ref=e64]
+          - textbox "Search for a Case" [ref=e66]
+        - generic [ref=e67]:
+          - button "Selected Facilities (35)" [ref=e69] [cursor=pointer]:
+            - text: Selected Facilities (35)
+            - img [ref=e72] [cursor=pointer]
+          - img [ref=e78]
+          - button "AT" [ref=e81] [cursor=pointer]:
+            - generic [ref=e84] [cursor=pointer]: AT
+            - img [ref=e87] [cursor=pointer]
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - heading "Tasks" [level=2] [ref=e94]
+          - generic [ref=e96]:
+            - button "Sort" [ref=e98] [cursor=pointer]:
+              - generic [ref=e99] [cursor=pointer]: Sort
+              - img [ref=e102] [cursor=pointer]
+            - button "Filters 1" [active] [ref=e105] [cursor=pointer]:
+              - img [ref=e108] [cursor=pointer]
+              - generic [ref=e110] [cursor=pointer]:
+                - text: Filters
+                - generic [ref=e111] [cursor=pointer]: "1"
+            - button "Reset to Default" [ref=e113] [cursor=pointer]:
+              - generic [ref=e114] [cursor=pointer]:
+                - text: Reset to Default
+                - img [ref=e117] [cursor=pointer]
+        - generic [ref=e121]:
+          - generic [ref=e124]:
+            - generic [ref=e125]: "4"
+            - text: Results
+          - generic [ref=e127]:
+            - generic [ref=e131] [cursor=pointer]: Task
+            - generic [ref=e136] [cursor=pointer]: Facility
+            - generic [ref=e141] [cursor=pointer]: Resident
+            - generic [ref=e146] [cursor=pointer]: Payer
+            - generic [ref=e150] [cursor=pointer]:
+              - generic [ref=e151] [cursor=pointer]: Balance
+              - generic [ref=e152] [cursor=pointer]:
+                - button [ref=e153] [cursor=pointer]:
+                  - img [ref=e156] [cursor=pointer]
+                - button [ref=e158] [cursor=pointer]:
+                  - img [ref=e161] [cursor=pointer]
+            - generic [ref=e167] [cursor=pointer]: Balance Status
+            - generic [ref=e172] [cursor=pointer]: Due Date
+            - generic [ref=e177] [cursor=pointer]: Task Status
+            - generic [ref=e182] [cursor=pointer]: Assigned To
+            - generic [ref=e187] [cursor=pointer]: Root Issue
+          - generic [ref=e193]:
+            - generic [ref=e195]:
+              - link "Task" [ref=e199] [cursor=pointer]
+              - generic [ref=e203]: Highland Care
+              - link "Sabella, Eleanor" [ref=e207] [cursor=pointer]:
+                - /url: /cases/details/4543267
+              - generic [ref=e211]: Private Pay
+              - generic [ref=e215]: 2,000.00
+              - generic [ref=e219]:
+                - img [ref=e222]
+                - generic [ref=e224]: Unworked
+              - generic [ref=e228]: 10/31/2025
+              - generic [ref=e233]: Not Started
+              - generic [ref=e237]:
+                - generic [ref=e242]: GF
+                - generic [ref=e243]: Guillermo Ferreira
+              - generic [ref=e247]: Unknown
+            - generic [ref=e249]:
+              - link "Task" [ref=e253] [cursor=pointer]
+              - generic [ref=e257]: Highland Care
+              - link "Sabella, Eleanor" [ref=e261] [cursor=pointer]:
+                - /url: /cases/details/4543267
+              - generic [ref=e265]: Private Pay
+              - generic [ref=e269]: 2,000.00
+              - generic [ref=e273]:
+                - img [ref=e276]
+                - generic [ref=e278]: Unworked
+              - generic [ref=e282]: 10/31/2025
+              - generic [ref=e287]: Not Started
+              - generic [ref=e291]:
+                - generic [ref=e296]: GF
+                - generic [ref=e297]: Guillermo Ferreira
+              - generic [ref=e301]: Unknown
+            - generic [ref=e303]:
+              - link "Task" [ref=e307] [cursor=pointer]
+              - generic [ref=e311]: Highland Care
+              - link "Linton, Cecile" [ref=e315] [cursor=pointer]:
+                - /url: /cases/details/4356382
+              - generic [ref=e319]: Workers Comp
+              - generic [ref=e323]: 2,000.00
+              - generic [ref=e327]:
+                - img [ref=e330]
+                - generic [ref=e332]: Unworked
+              - generic [ref=e336]: 12/17/2025
+              - generic [ref=e341]: Not Started
+              - generic [ref=e345]:
+                - generic [ref=e350]: VG
+                - generic [ref=e351]: Vikesh Gaikawad
+              - generic [ref=e355]: Unknown
+            - generic [ref=e357]:
+              - link "Task" [ref=e361] [cursor=pointer]
+              - generic [ref=e365]: Green Meadows
+              - link "Hillanbrand, John" [ref=e369] [cursor=pointer]:
+                - /url: /cases/details/4370830
+              - generic [ref=e373]: UPMC Commercial
+              - generic [ref=e377]: 2,000.00
+              - generic [ref=e381]:
+                - img [ref=e384]
+                - generic [ref=e386]: Unworked
+              - generic [ref=e390]: 12/7/2025
+              - generic [ref=e395]: Not Started
+              - generic [ref=e399]:
+                - generic [ref=e404]: VG
+                - generic [ref=e405]: Vikesh Gaikawad
+              - generic [ref=e409]: Unknown
+  - generic [ref=e417]: Jira Service Management Widget
+  - iframe [ref=e418]:
+    - generic [active] [ref=f1e1]:
+      - main "Help Center Widget Content"
+```
