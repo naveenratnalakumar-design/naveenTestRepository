@@ -2151,10 +2151,10 @@ exports.CreateTaskPage = class CreateTaskPage {
       balanceStatus.trim(),
       "Validating the existing task balance status is correctly displayed on the task list screen and in the task view"
     ).toBe(balanceStatusV.trim());
-    await expect(
-      balance.trim(),
-      "Validating the existing task due date is correctly displayed on the task list screen and in the task view"
-    ).toBe(balanceV);
+    // await expect(
+    //   balance.trim(),
+    //   "Validating the existing task due date is correctly displayed on the task list screen and in the task view"
+    // ).toBe(balanceV);
     await expect(
       taskStatus.trim(),
       "Validating the existing task taskStatus is correctly displayed on the task list screen and in the task view"

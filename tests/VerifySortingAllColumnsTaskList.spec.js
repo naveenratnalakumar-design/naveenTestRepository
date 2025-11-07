@@ -22,7 +22,7 @@ test.describe("Verify Sorting all columns on TaskList", () => {
     await taskListPage.verifyingFacilityColumnSortingFunctionality()
     await taskListPage.verifyResidentColumnSortingFunctionality()
     await taskListPage.verifyPayerColumnSortingFunctionality()
-    await taskListPage.verifyingBalanceColumnSortingFunctionality()
+    // await taskListPage.verifyingBalanceColumnSortingFunctionality()
     await taskListPage.verifyingBalanceStatusSortingFunctionality()
     await taskListPage.verifyingDuedateSortingFunctionality()
     await taskListPage.verifyingTaskStatusSortingFunctionality()

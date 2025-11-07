@@ -24,6 +24,12 @@ const randomTaskStatus =
   test_Data.RevflowData.taskStatusOptions[
     Math.floor(Math.random() * test_Data.RevflowData.taskStatusOptions.length)
   ];
+const randomResidentNames =
+  test_Data.RevflowData.TaskListPage.residentOptions[
+    Math.floor(
+      Math.random() * test_Data.RevflowData.TaskListPage.residentOptions.length
+    )
+  ];
 // Pad single digits
 const pad2 = (n) => String(n).padStart(2, "0");
 
@@ -256,6 +262,9 @@ exports.TaskListPage = class TaskListPage {
     this.taskViewFacilityName = page.locator(
       "//span[normalize-space(text())='Facility']/ancestor::div[contains(@class,'items-center')]"
     );
+    this.taskNameInputFiled = page.locator(
+      "//arw-input[@formcontrolname='name']//input"
+    );
     this.taskViewResidentName = page.locator(
       "//span[normalize-space(text())='Resident']/ancestor::div[contains(@class,'items-center')]"
     );
@@ -279,6 +288,10 @@ exports.TaskListPage = class TaskListPage {
       page.locator(
         `//div[@class='overflow-hidden text-ellipsis whitespace-nowrap']//span[normalize-space(text())='${txt}']`
       );
+    this.pickPayerName = (txt) =>
+      page.locator(
+        `(//div[contains(@class,'overflow-hidden text-ellipsis whitespace-nowrap')]/descendant::span[normalize-space(text())='${txt}'])[1]`
+      );
   }
   clickOnFilterBtn = async () => {
     await excuteSteps(
@@ -296,14 +309,14 @@ exports.TaskListPage = class TaskListPage {
       "Click close button"
     );
   };
-  selectTasstatusOptions = async (txt)=>{
-     await excuteSteps(
+  selectTasstatusOptions = async (txt) => {
+    await excuteSteps(
       this.test,
       this.taskStatusDropdownOptions(txt),
       "click",
       "Select task status dropdown Options"
-     )
-  }
+    );
+  };
   enterCustomsStartDate = async (txt) => {
     await excuteSteps(
       this.test,
@@ -1057,10 +1070,31 @@ exports.TaskListPage = class TaskListPage {
       await this.page.keyboard.press("Escape");
     }
   };
-  verifyingPayerFilter = async () => {
-    const searchPayer = "Blue Cross"; // The payer name you are searching
-    const searchNormalized = searchPayer.trim().toLowerCase();
+  // verifyingPayerFilter = async () => {
+  //   const searchPayer = "Blue Cross"; // The payer name you are searching
+  //   const searchNormalized = searchPayer.trim().toLowerCase();
 
+  //   await this.clickOnFilterBtn();
+  //   await this.clickOnClearFilterIcon();
+  //   await this.test.step("The page is loading, please wait", async () => {
+  //     await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+  //   });
+
+  //   await this.clickOnFilterBtn();
+  //   await this.clickOnAddFilterBtn();
+  //   await this.clickOAddFilterDropdown();
+  //   await this.searchFilterNames(["Payer"]);
+  //   await this.selectFilterOptionsFromDropdown("Payer");
+  //   await this.selectFacilitySubOptions("Select Payer");
+  //   await this.searchTaskName([searchPayer]);
+
+  //   await this.test.step("Wait for search results to load", async () => {
+  //     await this.page.waitForTimeout(parseInt(process.env.smallWait));
+  //   });
+  //    let checkBoxIsvisble = await this.
+
+  // };
+  verifyingPayerFilter = async () => {
     await this.clickOnFilterBtn();
     await this.clickOnClearFilterIcon();
     await this.test.step("The page is loading, please wait", async () => {
@@ -1073,53 +1107,61 @@ exports.TaskListPage = class TaskListPage {
     await this.searchFilterNames(["Payer"]);
     await this.selectFilterOptionsFromDropdown("Payer");
     await this.selectFacilitySubOptions("Select Payer");
-    await this.searchTaskName([searchPayer]);
+    await this.searchTaskName([randomPayerNames]);
 
     await this.test.step("Wait for search results to load", async () => {
       await this.page.waitForTimeout(parseInt(process.env.smallWait));
     });
-
-    const checkBoxLocator = this.dropdownOptionList;
-    const allOptionsText = await checkBoxLocator.allInnerTexts();
-
-    // Normalize text for exact and partial match check
-    const cleanedOptions = allOptionsText.map((t) => t.trim());
-    const cleanedNormalized = cleanedOptions.map((t) => t.toLowerCase());
-
-    // Find exact and partial matches
-    const exactMatchIndex = cleanedNormalized.findIndex(
-      (t) => t === searchNormalized
-    );
-    const partialMatches = cleanedOptions.filter(
-      (t, i) =>
-        cleanedNormalized[i].includes(searchNormalized) && i !== exactMatchIndex
-    );
-
-    const isNoMatchVisible = await this.noMatchesFoundLabel.isVisible();
-
-    if (exactMatchIndex !== -1) {
-      // Exact match found
-      await this.clickChecbox(searchPayer);
+    let checkBoxIsvisble = await this.pickPayerName(
+      randomPayerNames
+    ).isVisible();
+    let noMatchVisible = await this.noMatchesFoundLabel.isVisible();
+    if (checkBoxIsvisble) {
+      await this.test.step(
+        "Select the payer name from the dropdown search",
+        async () => {
+          await this.pickPayerName(randomPayerNames).click();
+        }
+      );
       await this.clickOnApplyButton();
       await this.clickOnApplyFilterButton();
-
-      const count = await this.tasklistGridColumns("payer").count();
+      await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.largeWait));
+      });
+      const count = await this.payerGridColumns.count();
       for (let i = 0; i < count; i++) {
-        const row = this.tasklistGridColumns("payer").nth(i);
+        const row = this.payerGridColumns.nth(i);
         await row.scrollIntoViewIfNeeded();
-        await expect(row).toContainText(searchPayer);
+        await expect(
+          row,
+          "Verifying the applied resident filter name is displayed on the task list grid"
+        ).toHaveText(randomPayerNames);
+        break;
       }
-    } else if (partialMatches.length > 0) {
-      // Partial match found
-      console.log(`Partial matches found: ${partialMatches.join(", ")}`);
-      console.log(`Exact payer '${searchPayer}' was not found in the list`);
-    } else if (isNoMatchVisible) {
-      // No results at all
+    } else if (noMatchVisible) {
+      // "No matches found" visible
       await expect(
         this.noMatchesFoundLabel,
-        "Verify '0 Matches' message should be displayed when searched payer is not available"
+        "Verify 0 Matches message should be displayed when the searched facility is not available in the dropdown list"
       ).toBeVisible();
-      console.log(`No matches found — 0 Matches message displayed`);
+      await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+      });
+      await this.test.step("Close filter dropdown", async () => {
+        await this.page.keyboard.press("Escape");
+        await this.clickOnDeleteDuedateInSortIcon();
+        await this.clickOnApplyFilterButton();
+      });
+    } else {
+      // No Task Found → Clear + Edit buttons must be visible
+      await expect(
+        this.clearFilterOnNoTaskFoundScreen,
+        "Clear Filter button should be visible on the 'No Tasks Found' screen"
+      ).toBeVisible();
+      await expect(
+        this.editFilterOnNoTaskFoundScreen,
+        "Edit Filter button should be visible on the 'No Tasks Found' screen."
+      ).toBeVisible();
     }
   };
   verifyingBalanceFilter = async () => {
@@ -1353,7 +1395,7 @@ exports.TaskListPage = class TaskListPage {
       await this.clickOnApplyFilterButton();
     }
   };
-  // ✅ Convert JS date → MM/DD/YYYY
+  // Convert JS date → MM/DD/YYYY
   formatDate(date) {
     const d = new Date(date);
     const pad2 = (n) => n.toString().padStart(2, "0");
@@ -1573,7 +1615,67 @@ exports.TaskListPage = class TaskListPage {
       }
     }
   };
-
+  verifyingResidentNameFilter = async () => {
+    let randomResidentNames = "yeyey";
+    await this.clickOnFilterBtn();
+    await this.clickOnClearFilterIcon();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
+    await this.clickOnFilterBtn();
+    await this.clickOnAddFilterBtn();
+    await this.clickOAddFilterDropdown();
+    await this.searchFilterNames(["Resident"]);
+    await this.selectFilterOptionsFromDropdown(["Resident"]);
+    await this.selectFacilitySubOptions(["Select Resident"]);
+    await this.searchTaskName([randomResidentNames]);
+    let checkBoxIsvisble = await this.facilityOptioncheckBox(
+      randomResidentNames
+    ).isVisible();
+    const noMatchVisible = await this.noMatchesFoundLabel.isVisible();
+    if (checkBoxIsvisble) {
+      await this.page.keyboard.press("Enter");
+      await this.clickOnApplyButton();
+      await this.clickOnApplyFilterButton();
+      await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.largeWait));
+      });
+      const count = await this.residentGridColumns.count();
+      for (let i = 0; i < count; i++) {
+        const row = this.residentGridColumns.nth(i);
+        await row.scrollIntoViewIfNeeded();
+        await expect(
+          row,
+          "Verifying the applied resident filter name is displayed on the task list grid"
+        ).toHaveText(randomResidentNames);
+        break;
+      }
+    } else if (noMatchVisible) {
+      // "No matches found" visible
+      await expect(
+        this.noMatchesFoundLabel,
+        "Verify 0 Matches message should be displayed when the searched facility is not available in the dropdown list"
+      ).toBeVisible();
+      await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+      });
+      await this.test.step("Close filter dropdown", async () => {
+        await this.page.keyboard.press("Escape");
+        await this.clickOnDeleteDuedateInSortIcon();
+        await this.clickOnApplyFilterButton();
+      });
+    } else {
+      // No Task Found → Clear + Edit buttons must be visible
+      await expect(
+        this.clearFilterOnNoTaskFoundScreen,
+        "Clear Filter button should be visible on the 'No Tasks Found' screen"
+      ).toBeVisible();
+      await expect(
+        this.editFilterOnNoTaskFoundScreen,
+        "Edit Filter button should be visible on the 'No Tasks Found' screen."
+      ).toBeVisible();
+    }
+  };
   // verifyingTaskNameSortingFunctionality = async () => {
   //   // Step 1: Clear existing sort/filter
   //   await this.clickOnCustomSortBtn();
@@ -2357,6 +2459,7 @@ exports.TaskListPage = class TaskListPage {
         await this.page.waitForTimeout(parseInt(process.env.mediumWait));
       });
       await this.clickOnTaskName();
+      let taskName = await this.taskNameInputFiled.inputValue();
       let facilityName = await this.taskViewFacilityName.innerText();
       let facility = facilityName.replace(/^Facility\s*/i, "");
       let residentName = await this.taskViewResidentName.innerText();
@@ -2366,6 +2469,7 @@ exports.TaskListPage = class TaskListPage {
       console.log("FacilityName ==", facility);
       console.log("ResidentName ==", resident);
       console.log("payerName==", payer);
+      console.log("TaskName==", taskName);
       await this.test.step("The page is loading, please wait", async () => {
         await this.page.waitForTimeout(parseInt(process.env.mediumWait));
       });
@@ -2402,10 +2506,18 @@ exports.TaskListPage = class TaskListPage {
       await this.searchTaskName([payer]);
       await this.page.keyboard.press("Enter");
       await this.clickOnApplyButton();
+      await this.clickOnAddFilterBtn();
+      await this.clickOAddFilterDropdown();
+      await this.searchFilterNames(["Task"]);
+      await this.selectFilterOptionsFromDropdown(["Task"]);
+      await this.searchTaskName([taskName]);
       await this.clickOnApplyFilterButton();
-      // await expect(
-      //   this.rootsIssuesGridColumns,
-      //   "Verifying the updated root issue name is displayed on the task grid after the grid auto-refreshes"
-      // ).toHaveText(rootIssue);
+      await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.largeWait));
+      });
+      await expect(
+        this.rootsIssuesGridColumns,
+        "Verifying the updated root issue name is displayed on the task grid after the grid auto-refreshes"
+      ).toHaveText(rootIssue);
     };
 };

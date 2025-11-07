@@ -20,11 +20,14 @@ test.describe("Verify filtering columns on TaskList", () => {
     await createTaskPage.clickOnTaskList()
     // await taskListPage.varifyingTaskNameFilter()
     // await taskListPage.VerifyingFacilityFilter()
-    await page.pause()
+    // await page.pause()
     // await taskListPage.verifyingBalanceFilter()
     // await taskListPage.verifyingBalanceStatusFilter()
     // await taskListPage.verifyingDuedateFilter()
-    await taskListPage.verifyingTaskStatusFilter()
+    // await taskListPage.verifyingTaskStatusFilter()
+    // await taskListPage.verifyingResidentNameFilter()
+    await taskListPage.verifyingPayerFilter()
+    
 
   });
   test.afterAll(async () => {
