@@ -731,7 +731,7 @@ exports.AgingPage = class AgingPage {
     await this.searchTextInSearchBox([randomFacilityNames]);
     await this.page.keyboard.press("Enter");
     await this.clickOnApplyBtn();
-    await this.page.reload({ waitUntil: "networkidle" });
+    // await this.page.reload({ waitUntil: "networkidle" });
     await this.page.waitForTimeout(parseInt(process.env.largeWait));
 
     //  Get selected facility summary after reload

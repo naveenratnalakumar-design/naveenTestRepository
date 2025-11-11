@@ -1,0 +1,170 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img [ref=e7] [cursor=pointer]
+        - img [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - generic [ref=e33]:
+          - link [ref=e34] [cursor=pointer]:
+            - /url: /settings
+            - img [ref=e37] [cursor=pointer]
+            - generic [ref=e40] [cursor=pointer]: Settings
+            - img [ref=e43] [cursor=pointer]
+          - generic [ref=e45]:
+            - link [ref=e47] [cursor=pointer]:
+              - /url: /settings/user-management
+              - generic [ref=e48] [cursor=pointer]: User Management
+            - link [ref=e50] [cursor=pointer]:
+              - /url: /settings/facility-payers
+              - generic [ref=e51] [cursor=pointer]: Facility Payers
+      - button [ref=e56] [cursor=pointer]:
+        - img [ref=e60] [cursor=pointer]
+    - generic [ref=e62]:
+      - generic [ref=e64]:
+        - img [ref=e69]
+        - button [ref=e72] [cursor=pointer]:
+          - generic [ref=e75] [cursor=pointer]: AT
+          - img [ref=e78] [cursor=pointer]
+      - generic [ref=e81]:
+        - generic [ref=e83]:
+          - link [ref=e84] [cursor=pointer]:
+            - /url: /settings/user-management/details
+            - button [ref=e86] [cursor=pointer]:
+              - img [ref=e90] [cursor=pointer]
+            - text: User Management
+          - img [ref=e94]
+          - generic [ref=e100]: SK
+          - generic [ref=e103]:
+            - generic [ref=e104]: Sofiia Kuchko
+            - button [ref=e106] [cursor=pointer]:
+              - img [ref=e110] [cursor=pointer]
+        - generic [ref=e113]:
+          - generic [ref=e114]:
+            - generic [ref=e115]:
+              - generic [ref=e119] [cursor=pointer]: Email
+              - generic [ref=e121]:
+                - generic [ref=e122]: SKuchko@axgsolutions.com
+                - button [ref=e124] [cursor=pointer]:
+                  - img [ref=e128] [cursor=pointer]
+            - generic [ref=e130]:
+              - generic [ref=e134] [cursor=pointer]: RevFlow Access
+              - radiogroup [ref=e135]:
+                - radio [checked] [ref=e136] [cursor=pointer]:
+                  - generic [ref=e137] [cursor=pointer]: Active
+                - radio [ref=e138] [cursor=pointer]:
+                  - generic [ref=e139] [cursor=pointer]: Inactive
+            - generic [ref=e140]:
+              - generic [ref=e144] [cursor=pointer]: User ID
+              - text: "1351"
+            - generic [ref=e145]:
+              - generic [ref=e149] [cursor=pointer]: Added On
+              - text: 11/3/2025 7:48 PM
+            - generic [ref=e150]:
+              - generic [ref=e154] [cursor=pointer]: Active Directory ID
+              - text: 056c9b27-b2ab-4efc-8c35-0185a7b34ed8
+              - generic [ref=e155]: Azure
+          - generic [ref=e156]:
+            - generic [ref=e157]:
+              - generic [ref=e159]:
+                - img [ref=e162]
+                - generic [ref=e164]: Facilities & Roles (1)
+              - button [ref=e166] [cursor=pointer]:
+                - generic [ref=e167] [cursor=pointer]:
+                  - img [ref=e170] [cursor=pointer]
+                  - text: Assign New
+            - generic [ref=e175]:
+              - generic [ref=e176]:
+                - generic [ref=e180] [cursor=pointer]: Facility
+                - generic [ref=e184] [cursor=pointer]: Role
+                - generic [ref=e188] [cursor=pointer]: Status
+                - generic [ref=e193] [cursor=pointer]: Last Updated On
+              - generic [ref=e201]:
+                - generic [ref=e204]: Gulfport
+                - generic [ref=e209]:
+                  - generic [ref=e210]: AR Biller
+                  - link [ref=e211] [cursor=pointer]: 5 Other Users
+                - radiogroup [ref=e215]:
+                  - radio [checked] [ref=e216] [cursor=pointer]:
+                    - generic [ref=e217] [cursor=pointer]: Active
+                  - radio [ref=e218] [cursor=pointer]:
+                    - generic [ref=e219] [cursor=pointer]: Inactive
+                - generic [ref=e222]: 11/3/2025 10:00 PM by Rivky Meguira
+  - generic [ref=e225]: Jira Service Management Widget
+  - iframe [ref=e226]:
+    - main "Help Center Widget Content" [ref=f1e2]:
+      - button "?" [ref=f1e5] [cursor=pointer]:
+        - paragraph [ref=f1e6] [cursor=pointer]: "?"
+  - dialog [ref=e231]:
+    - generic [ref=e233]:
+      - heading [level=2] [ref=e234]
+      - generic [ref=e238]:
+        - generic [ref=e239]: Gulfport / AR Biller (6)
+        - radiogroup [ref=e240]:
+          - generic [ref=e241]: Primary
+          - generic [ref=e243]:
+            - radio "SK Sofiia Kuchko SKuchko@axgsolutions.com" [ref=e245] [cursor=pointer]
+            - generic [ref=e249]:
+              - generic [ref=e254]: SK
+              - generic [ref=e255]:
+                - generic [ref=e256]: Sofiia Kuchko
+                - generic [ref=e257]: SKuchko@axgsolutions.com
+          - generic [ref=e259]:
+            - radio "AT ARW Test Account svc-arw-test@axgsolutions.com" [ref=e261] [cursor=pointer]
+            - generic [ref=e265]:
+              - generic [ref=e270]: AT
+              - generic [ref=e271]:
+                - generic [ref=e272]: ARW Test Account
+                - generic [ref=e273]: svc-arw-test@axgsolutions.com
+          - generic [ref=e275]:
+            - radio "AR Aditya Ravulkar ARavulkar@axgsolutions.com" [ref=e277] [cursor=pointer]
+            - generic [ref=e281]:
+              - generic [ref=e286]: AR
+              - generic [ref=e287]:
+                - generic [ref=e288]: Aditya Ravulkar
+                - generic [ref=e289]: ARavulkar@axgsolutions.com
+          - generic [ref=e291]:
+            - radio "VG Vikesh Gaikawad vgaikawad@axgsolutions.com" [ref=e293] [cursor=pointer]
+            - generic [ref=e297]:
+              - generic [ref=e302]: VG
+              - generic [ref=e303]:
+                - generic [ref=e304]: Vikesh Gaikawad
+                - generic [ref=e305]: vgaikawad@axgsolutions.com
+          - generic [ref=e307]:
+            - radio "OS Orest Shpak oshpak@axgsolutions.com" [ref=e309] [cursor=pointer]
+            - generic [ref=e313]:
+              - generic [ref=e318]: OS
+              - generic [ref=e319]:
+                - generic [ref=e320]: Orest Shpak
+                - generic [ref=e321]: oshpak@axgsolutions.com
+          - generic [ref=e323]:
+            - radio "NW Nicolas Wagner nwagner@axgsolutions.com" [checked] [ref=e325] [cursor=pointer]
+            - generic [ref=e330]:
+              - generic [ref=e335]: NW
+              - generic [ref=e336]:
+                - generic [ref=e337]: Nicolas Wagner
+                - generic [ref=e338]: nwagner@axgsolutions.com
+      - generic [ref=e339]:
+        - button "Save" [ref=e341] [cursor=pointer]:
+          - generic [ref=e342] [cursor=pointer]: Save
+        - button "Close" [active] [ref=e344] [cursor=pointer]:
+          - generic [ref=e345] [cursor=pointer]: Close
+      - button [ref=e347] [cursor=pointer]:
+        - img [ref=e351] [cursor=pointer]
+```

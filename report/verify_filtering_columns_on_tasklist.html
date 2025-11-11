@@ -30,7 +30,7 @@
       </head>
       <body>
         <h2>Verify filtering columns on TaskList</h2>
-        <a href="index.html?t=1762521143981">⬅️ Back to Summary</a>
+        <a href="index.html?t=1762843404003">⬅️ Back to Summary</a>
         
         <h3>📝 Steps:</h3>
         <ul>
@@ -59,11 +59,17 @@
           
             <li>Wait for search results to load </li>
           
-            <li>Verify 0 Matches message should be displayed when the searched facility is not available in the dropdown list </li>
+            <li>Press "Enter" </li>
           
-            <li>The page is loading, please wait </li>
+            <li>Click on Apply Button below </li>
           
-            <li>Close filter dropdown </li>
+            <li>Click on Apply Filter </li>
+          
+            <li>Query count locator('//div[@data-column-definition-name=\'assignedToUser\']//span[contains(@class,\'overflow-hidden\')]') </li>
+          
+            <li>Scroll into view locator('//div[@data-column-definition-name=\'assignedToUser\']//span[contains(@class,\'overflow-hidden\')]').first() </li>
+          
+            <li>Verifying the applied resident filter name is displayed on the task list grid </li>
           
         </ul>
         

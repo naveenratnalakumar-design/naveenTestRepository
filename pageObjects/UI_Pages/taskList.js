@@ -30,6 +30,13 @@ const randomResidentNames =
       Math.random() * test_Data.RevflowData.TaskListPage.residentOptions.length
     )
   ];
+const randomAssignedUsers =
+  test_Data.RevflowData.TaskListPage.assignedToUserOptions[
+    Math.floor(
+      Math.random() *
+        test_Data.RevflowData.TaskListPage.assignedToUserOptions.length
+    )
+  ];
 // Pad single digits
 const pad2 = (n) => String(n).padStart(2, "0");
 
@@ -1070,30 +1077,6 @@ exports.TaskListPage = class TaskListPage {
       await this.page.keyboard.press("Escape");
     }
   };
-  // verifyingPayerFilter = async () => {
-  //   const searchPayer = "Blue Cross"; // The payer name you are searching
-  //   const searchNormalized = searchPayer.trim().toLowerCase();
-
-  //   await this.clickOnFilterBtn();
-  //   await this.clickOnClearFilterIcon();
-  //   await this.test.step("The page is loading, please wait", async () => {
-  //     await this.page.waitForTimeout(parseInt(process.env.mediumWait));
-  //   });
-
-  //   await this.clickOnFilterBtn();
-  //   await this.clickOnAddFilterBtn();
-  //   await this.clickOAddFilterDropdown();
-  //   await this.searchFilterNames(["Payer"]);
-  //   await this.selectFilterOptionsFromDropdown("Payer");
-  //   await this.selectFacilitySubOptions("Select Payer");
-  //   await this.searchTaskName([searchPayer]);
-
-  //   await this.test.step("Wait for search results to load", async () => {
-  //     await this.page.waitForTimeout(parseInt(process.env.smallWait));
-  //   });
-  //    let checkBoxIsvisble = await this.
-
-  // };
   verifyingPayerFilter = async () => {
     await this.clickOnFilterBtn();
     await this.clickOnClearFilterIcon();
@@ -1154,6 +1137,66 @@ exports.TaskListPage = class TaskListPage {
       });
     } else {
       // No Task Found → Clear + Edit buttons must be visible
+      await expect(
+        this.clearFilterOnNoTaskFoundScreen,
+        "Clear Filter button should be visible on the 'No Tasks Found' screen"
+      ).toBeVisible();
+      await expect(
+        this.editFilterOnNoTaskFoundScreen,
+        "Edit Filter button should be visible on the 'No Tasks Found' screen."
+      ).toBeVisible();
+    }
+  };
+  verifyingAssignedToFilter = async () => {
+    await this.clickOnFilterBtn();
+    await this.clickOnClearFilterIcon();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
+
+    await this.clickOnFilterBtn();
+    await this.clickOnAddFilterBtn();
+    await this.clickOAddFilterDropdown();
+    await this.searchFilterNames(["Assigned To"]);
+    await this.selectFilterOptionsFromDropdown("Assigned To");
+    await this.selectFacilitySubOptions("Select Assigned To");
+    await this.searchTaskName([randomAssignedUsers]);
+
+    await this.test.step("Wait for search results to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    let checkBoxIsVisible = await this.facilityOptioncheckBox(
+      randomAssignedUsers
+    ).isVisible();
+    let noMatchVisible = await this.noMatchesFoundLabel.isVisible();
+    if (checkBoxIsVisible) {
+      await this.page.keyboard.press("Enter");
+      await this.clickOnApplyButton();
+      await this.clickOnApplyFilterButton();
+      const count = await this.assignedToGridColums.count();
+      for (let i = 0; i < count; i++) {
+        const row = this.assignedToGridColums.nth(i);
+        await row.scrollIntoViewIfNeeded();
+        await expect(
+          row,
+          "Verifying the applied AssignedTo filter name is displayed on the task list grid"
+        ).toHaveText(randomAssignedUsers);
+        break;
+      }
+    } else if (noMatchVisible) {
+      await expect(
+        this.noMatchesFoundLabel,
+        "Verify 'No matches found' message should be displayed when the searched facility is not available in the dropdown list"
+      ).toBeVisible();
+      await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+      });
+      await this.test.step("Close filter dropdown", async () => {
+        await this.page.keyboard.press("Escape");
+        await this.clickOnDeleteDuedateInSortIcon();
+        await this.clickOnApplyFilterButton();
+      });
+    } else {
       await expect(
         this.clearFilterOnNoTaskFoundScreen,
         "Clear Filter button should be visible on the 'No Tasks Found' screen"

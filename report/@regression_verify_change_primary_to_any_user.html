@@ -30,10 +30,15 @@
       </head>
       <body>
         <h2>@regression Verify Change Primary To Any User</h2>
-        <a href="index.html?t=1762351859056">⬅️ Back to Summary</a>
-        
+        <a href="index.html?t=1762846039889">⬅️ Back to Summary</a>
+        <h3 style="color:red;">❌ Reason: TimeoutError: page.waitForSelector: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('xpath=(//input[@type=\'radio\' and @tabindex=\'-1\']/ancestor::mat-radio-button//span[@class=\'web-body-1 text-foreground-high\'])[1]') to be visible[22m
+</h3>
         <h3>📝 Steps:</h3>
         <ul>
+          
+            <li>Pause </li>
           
             <li>Click Settings Button in HomePage/Dashboard </li>
           
@@ -53,50 +58,10 @@
           
             <li>The Page is loading, please wait </li>
           
-            <li>Click change primary radio button </li>
-          
-            <li>Click on Save button </li>
-          
-            <li>Navigate to usermanagement screen </li>
-          
-            <li>Click on Facility & Role View Button </li>
-          
-            <li>Click on the facility dropdown </li>
-          
-            <li>Enter user eamil in searchBox </li>
-          
-            <li>The Page is loading, please wait </li>
-          
-            <li>Press "Enter" </li>
-          
-            <li>Click on Apply Button </li>
-          
-            <li>Click on selectRoleFilterDropdown </li>
-          
-            <li>Enter user eamil in searchBox </li>
-          
-            <li>The Page is loading, please wait </li>
-          
-            <li>Press "Enter" </li>
-          
-            <li>Click on Apply Button </li>
-          
-            <li>click on the selet users dropdown </li>
-          
-            <li>Enter user eamil in searchBox </li>
-          
-            <li>The Page is loading, please wait </li>
-          
-            <li>Press "Enter" </li>
-          
-            <li>Click on Apply Button </li>
-          
-            <li>The Page is loading, please wait </li>
-          
-            <li>Verify the primary flag is visible after changing the user </li>
+            <li>Wait for element is visble <span style="color:red;">(Failed)</span></li>
           
         </ul>
-        
+        <h3>📸 Screenshot</h3><img src="@regression_verify_change_primary_to_any_user_screenshot.png?t=1762846039889" width="600" />
         
       </body>
     </html>

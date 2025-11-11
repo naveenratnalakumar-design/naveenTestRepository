@@ -26,7 +26,8 @@ test.describe("Verify filtering columns on TaskList", () => {
     // await taskListPage.verifyingDuedateFilter()
     // await taskListPage.verifyingTaskStatusFilter()
     // await taskListPage.verifyingResidentNameFilter()
-    await taskListPage.verifyingPayerFilter()
+    // await taskListPage.verifyingPayerFilter()
+    await taskListPage.verifyingAssignedToFilter()
     
 
   });

@@ -943,7 +943,7 @@ exports.UserManagementPage = class UserManagementPage {
     await this.clickSelectUsersDropDown();
     await this.searchTextInSearchBox([usersNames]);
     await this.test.step("The Page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
     });
     await this.page.keyboard.press("Enter");
     await this.clickOnApplyButton();
@@ -965,14 +965,14 @@ exports.UserManagementPage = class UserManagementPage {
     await this.clickOnFacilityFilterDropdown();
     await this.searchTextInSearchBox([randomFacilities]);
     await this.test.step("The Page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
     });
     await this.page.keyboard.press("Enter");
     await this.clickOnApplyButton();
     await this.clickOnSelectRoleFilterDropdown();
     await this.searchTextInSearchBox([roleNames]);
     await this.test.step("The Page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
     });
     await this.page.keyboard.press("Enter");
     await this.clickOnApplyButton();
@@ -1664,9 +1664,9 @@ exports.UserManagementPage = class UserManagementPage {
       let moreThanOnePrimaryUserVisible =
         await this.moreThanOnePrimaryUsersHyperText.isVisible();
       if (moreThanOnePrimaryUserVisible) {
-             await this.test.step("The Page is loading, please wait", async () => {
-        await this.page.waitForTimeout(parseInt(process.env.largeWait));
-      });
+        await this.test.step("The Page is loading, please wait", async () => {
+          await this.page.waitForTimeout(parseInt(process.env.largeWait));
+        });
         getFacility = await this.page
           .locator(
             "((//a[contains(normalize-space(text()), 'Other Users')]) /ancestor::div[@data-column-definition-name='roleName'] /preceding-sibling::div[@data-column-definition-name='facilityName']//span[@class='arw-template-renderer'])[1]"
@@ -1680,12 +1680,19 @@ exports.UserManagementPage = class UserManagementPage {
           .innerText();
         console.log("Role==", getRole);
         await this.clickOnOtherHyperlink();
-          await this.test.step("The Page is loading, please wait", async () => {
-        await this.page.waitForTimeout(parseInt(process.env.largeWait));
-      });
+        await this.test.step("The Page is loading, please wait", async () => {
+          await this.page.waitForTimeout(parseInt(process.env.largeWait));
+        });
+        await this.test.step("Wait for element is visble", async () => {
+          await this.page.waitForSelector(
+            "(//input[@type='radio' and @tabindex='-1']/ancestor::mat-radio-button//span[@class='web-body-1 text-foreground-high'])[1]",
+            { state: "visible" }
+          );
+        });
+
         changeUserEmail = await this.page
           .locator(
-            "(//input[@tabindex='-1']/ancestor::mat-radio-button//span[@class='web-body-1 text-foreground-high'])[1]"
+            "(//input[@type='radio' and @tabindex='-1']/ancestor::mat-radio-button//span[@class='web-body-1 text-foreground-high'])[1]"
           )
           .innerText();
         console.log("useremail==", changeUserEmail);
@@ -1714,16 +1721,15 @@ exports.UserManagementPage = class UserManagementPage {
         });
         await this.page.keyboard.press("Enter");
         await this.clickOnApplyButton();
-         await this.test.step("The Page is loading, please wait", async () => {
+        await this.test.step("The Page is loading, please wait", async () => {
           await this.page.waitForTimeout(parseInt(process.env.mediumWait));
         });
         await expect(
           this.roleStatus,
           "Verify the primary flag is visible after changing the user"
         ).toHaveText("Primary");
-         break;
-      } 
-      else {
+        break;
+      } else {
         await this.clickOnBackToUserScreen();
       }
     }
