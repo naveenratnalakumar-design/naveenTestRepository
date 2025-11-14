@@ -1,4 +1,0 @@
-FacilityName == Gulfport
-ResidentName == Burik, Richard
-payerName== Social Security
-rootIssue== Attorney Case

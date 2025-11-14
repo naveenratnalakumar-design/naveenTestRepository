@@ -1,4 +1,0 @@
-Trying resident: Alli, Mary
-Exact match found: Alli, Mary
-🟦 Selected resident: Alli, Mary
- Resident displayed on tabel: Alli, Mary

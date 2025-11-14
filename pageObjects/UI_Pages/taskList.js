@@ -320,6 +320,9 @@ exports.TaskListPage = class TaskListPage {
       page.locator(`//span[normalize-space(text())='${txt}']/ancestor::button`);
     this.pickDuedate = (txt) =>
       page.locator(`//span[normalize-space(text())='${txt}']`);
+    this.filterCountlabel = page.locator(
+      "//span[normalize-space(text())='Filters']//span"
+    );
   }
   clickOnFilterBtn = async () => {
     await excuteSteps(
@@ -602,6 +605,14 @@ exports.TaskListPage = class TaskListPage {
       this.selectAllBtn,
       "click",
       `Deselect all facilities in the global facility dropdown`
+    );
+  };
+  selectAllFacilities = async () => {
+    await excuteSteps(
+      this.test,
+      this.selectAllBtn,
+      "click",
+      `Select all facilities in the global facility dropdown`
     );
   };
   searchGlobalFacilty = async (txt) => {
@@ -1283,9 +1294,9 @@ exports.TaskListPage = class TaskListPage {
   //       this.noMatchesFoundLabel,
   //       "Verify 'No matches found' message should be displayed when the searched assignedTo user is not available in the dropdown list"
   //     ).toBeVisible();
-      // await this.test.step("The page is loading, please wait", async () => {
-      //   await this.page.waitForTimeout(parseInt(process.env.mediumWait));
-      // });
+  // await this.test.step("The page is loading, please wait", async () => {
+  //   await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+  // });
   //     await this.test.step("Close filter dropdown", async () => {
   //       await this.page.keyboard.press("Escape");
   //       await this.clickOnDeleteDuedateInSortIcon();
@@ -1311,7 +1322,7 @@ exports.TaskListPage = class TaskListPage {
 
     if (!isClearDisabled) {
       await this.clickOnClearFilterIcon();
-       await this.test.step("The page is loading, please wait", async () => {
+      await this.test.step("The page is loading, please wait", async () => {
         await this.page.waitForTimeout(parseInt(process.env.mediumWait));
       });
     }
@@ -1325,22 +1336,23 @@ exports.TaskListPage = class TaskListPage {
     await this.selectFacilitySubOptions("Select Assigned To");
     await this.searchTaskName([randomAssignedUsers]);
 
-     await this.test.step("The page is loading, please wait", async () => {
-        await this.page.waitForTimeout(parseInt(process.env.smallWait));
-      });
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
 
     const checkbox = this.facilityOptioncheckBox(randomAssignedUsers);
     const checkBoxIsVisible = await checkbox.isVisible();
     const noMatchVisible = await this.noMatchesFoundLabel.isVisible();
-   
+
     if (checkBoxIsVisible) {
       await this.page.keyboard.press("Enter");
       await this.clickOnApplyButton();
       await this.clickOnApplyFilterButton();
-       await this.test.step("The page is loading, please wait", async () => {
+      await this.test.step("The page is loading, please wait", async () => {
         await this.page.waitForTimeout(parseInt(process.env.mediumWait));
       });
-       const noTasksScreenVisible=await this.editFilterOnNoTaskFoundScreen.isVisible()
+      const noTasksScreenVisible =
+        await this.editFilterOnNoTaskFoundScreen.isVisible();
 
       if (noTasksScreenVisible) {
         await expect(
@@ -2956,5 +2968,45 @@ exports.TaskListPage = class TaskListPage {
     ).not.toBeVisible();
     await this.page.keyboard.press("Escape");
     await this.clickOnTaskCloseBtn();
+  };
+  verifyTaskListFiltersResetOnGlobalFacilityChange = async () => {
+    const filters = [
+      { name: "Facility", selectOption: "Select Facilities" },
+      { name: "Payer", selectOption: "Select Payer" },
+      { name: "Resident", selectOption: "Select Resident" },
+    ];
+    await this.clickOnFilterBtn();
+    for (const filter of filters) {
+      await this.clickOnAddFilterBtn();
+      await this.clickOAddFilterDropdown();
+      await this.searchFilterNames([filter.name]);
+      await this.selectFilterOptionsFromDropdown(filter.name);
+      await this.selectFacilitySubOptions(filter.selectOption);
+      await this.selectAllFacilities();
+      await this.clickOnApplyButton();
+    }
+    await this.clickOnApplyFilterButton();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    let filtersCount = await this.filterCountlabel.innerText();
+    console.log("filters count==", filtersCount);
+    await this.clickOnGlobalSearchdropdown();
+    await this.deselectAllFacilities();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    await this.searchGlobalFacilty([randomFacilityNames]);
+    await this.page.keyboard.press("Enter");
+    await this.clickOnGloabalFacilityApplyBtn();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
+    let AfterChangeFilityfiltersCount = await this.filterCountlabel.innerText();
+    console.log("filters count==", AfterChangeFilityfiltersCount);
+    expect(
+      filtersCount,
+      "Filters should clear after the global facility is changed"
+    ).not.toBe(AfterChangeFilityfiltersCount);
   };
 };

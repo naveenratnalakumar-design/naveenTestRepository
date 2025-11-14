@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","20570","Verify clearing of specific filters on the Task List when changing the Global Facility Filter(Resident,Facility,Payer)","chromium","Fri Nov 14 15:17:25 IST 2025","passed","Fri Nov 14 15:17:45 IST 2025","Verify clearing of specific filters on the Task List when changing the Global Facility Filter(Resident,Facility,Payer)","verifyTaskListFiltersResetOnGlobalFacilityChange.spec.js","",""
+"","7387","@smoke Verify Dashboard Items","chromium","Fri Nov 14 12:37:20 IST 2025","passed","Fri Nov 14 12:37:27 IST 2025","Verify Dashboard and Task List Items","dashboardAndTaskListValidation.spec.js","",""
+"","16266","@smoke Verify details on Task list page","chromium","Fri Nov 14 12:38:04 IST 2025","passed","Fri Nov 14 12:38:20 IST 2025","Verify Dashboard and Task List Items","dashboardAndTaskListValidation.spec.js","",""

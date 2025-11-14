@@ -1,6 +1,0 @@
-FacilityName == Facility
-Mountain Ridge
-ResidentName == Resident
-Moles, Wilma
-payerName== Payer
-Medicaid Pending

@@ -1,3 +1,0 @@
- Total Summary (Before Filter): 2,645,832.08
- Selected Facility Summary (After Filter): 
-Validation Passed: Total summary and selected facility summary are not equal.

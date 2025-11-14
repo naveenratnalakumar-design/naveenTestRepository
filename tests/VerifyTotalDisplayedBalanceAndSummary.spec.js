@@ -14,7 +14,7 @@ test.describe("Verify total summary balance", () => {
       [process.env.password]
     );
   });
-  test.only("@smoke Verify Total Displayed Balance and Summary", async () => {
+  test("@smoke Verify Total Displayed Balance and Summary", async () => {
     const agingPage = new sections.AgingPage(test,page)
     await agingPage.GetTotalBalanceAndSummary()  
 

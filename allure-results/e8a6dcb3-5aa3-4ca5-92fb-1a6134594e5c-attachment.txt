@@ -1,9 +1,0 @@
-Rows found for between: 25
-Parsed Value: 468 from "468.00"
-Rows found for equals: 4
-Parsed Value: 2000 from "2,000.00"
-Rows found for greater: 20
-Parsed Value: 2730 from "2,730.00"
-Rows found for less: 20
-Parsed Value: -220 from "(220.00)"
-Overpayment detected (negative formatted value).

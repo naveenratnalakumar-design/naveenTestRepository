@@ -1,9 +1,0 @@
-firstNames== [
-  'ARW Worker', 'Egor',
-  'Aditya',     'Daniel',
-  'ARW Test',   'Anna',
-  'Avi',        'Egor',
-  'Nancy',      'Malki',
-  'Adam',       'Abigail',
-  'Amanda',     'Adam'
-]

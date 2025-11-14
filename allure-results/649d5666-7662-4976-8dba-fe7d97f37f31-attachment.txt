@@ -1,4 +1,0 @@
-cont= 10
-7
-7
-SampleGI.gif

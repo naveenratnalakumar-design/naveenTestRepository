@@ -1,4 +1,0 @@
-cont= 7
-5
-5
-SampleGIFImage_40kbmb.gif

@@ -1,5 +1,0 @@
-
- Attempt 1: Trying with Resdent "Abplanalp, Mary"
- Found checkbox for "Abplanalp, Mary". Selecting payer.
- Selected & entered resident: Abplanalp, Mary
- Resident displayed on tabel: Abplanalp, Mary

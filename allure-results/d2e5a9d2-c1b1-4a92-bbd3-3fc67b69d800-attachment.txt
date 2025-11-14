@@ -1,4 +1,0 @@
-cont= 40
-25
-25
-Batman.jpg

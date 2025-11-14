@@ -1,3 +1,0 @@
-file is TEST.pdf
-extension is  pdf
-new file name is  rename_2025-10-09T12:12.pdf

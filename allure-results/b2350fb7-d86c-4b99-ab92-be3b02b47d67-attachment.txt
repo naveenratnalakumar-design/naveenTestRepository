@@ -1,4 +1,0 @@
-Rows found for between: 14
-Rows found for equals: 4
-Rows found for greater: 14
-Rows found for less: 16

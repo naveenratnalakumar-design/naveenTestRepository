@@ -1,3 +1,0 @@
-5
-locator('xpath=(//div[@data-column-definition-name=\'_groupColumn\']//arw-icon[@name=\'arrowNarrowDown\'])').first()
-count== 17

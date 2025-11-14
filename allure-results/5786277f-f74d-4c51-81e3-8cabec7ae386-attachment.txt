@@ -1,4 +1,0 @@
-cont= 2
-0
-0
-kane.png

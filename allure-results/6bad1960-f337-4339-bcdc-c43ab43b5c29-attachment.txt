@@ -1,4 +1,0 @@
-FacilityName == Mountain Ridge
-ResidentName == Moles, Wilma
-payerName== Medicaid Pending
-rootIssue== Additional Info Needed

@@ -1,5 +1,0 @@
-
- Attempt 1: Trying with Resdent "Alli, Mary"
- Found checkbox for "Alli, Mary". Selecting payer.
- Selected & entered resident: Alli, Mary
- Resident displayed on tabel: Nalli, Maryes

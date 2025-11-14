@@ -1,2 +1,0 @@
-monthRowsCount== 44
-Total Sum of all values: 0.00

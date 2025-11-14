@@ -1,4 +1,0 @@
-cont= 10
-6
-6
-TEST.pdf

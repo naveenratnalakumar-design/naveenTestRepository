@@ -1,2 +1,0 @@
-payerName== Cigna Commercial
-facilityName== Highland Care

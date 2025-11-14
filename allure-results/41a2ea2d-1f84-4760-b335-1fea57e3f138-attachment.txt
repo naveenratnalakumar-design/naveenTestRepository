@@ -1,2 +1,0 @@
-Data Row Count: 0
-Total Sum of all values: 0.00

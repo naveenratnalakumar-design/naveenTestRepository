@@ -1,5 +1,0 @@
-FacilityName == Gulfport
-ResidentName == Wilson, Gloria
-payerName== Suncoast Hospice
-TaskName== TaskChangeBal-6
-rootIssue== Additional Info Needed
