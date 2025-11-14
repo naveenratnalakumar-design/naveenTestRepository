@@ -15,7 +15,7 @@ test.describe("Verify filtering on Aging (Payer, Resident, Resident Balance, Bal
       [process.env.password]
     );
   });
-  test("@regression Verify filtering on Aging (Payer, Resident, Resident Balance, Balance Status)", async () => {
+  test("@smoke Verify filtering on Aging (Payer, Resident, Resident Balance, Balance Status)", async () => {
     const agingPage = new sections.AgingPage(test, page);
     await agingPage.GetResidentFilter()
     await agingPage.GetPayerFilter()

@@ -15,21 +15,19 @@ test.describe("Verify filtering columns on TaskList", () => {
     );
   });
   test("Verify filtering columns on TaskList", async () => {
-    const taskListPage = new sections.TaskListPage(test,page);
-    const createTaskPage= new sections.CreateTaskPage(test,page);
-    await createTaskPage.clickOnTaskList()
-    // await taskListPage.varifyingTaskNameFilter()
-    // await taskListPage.VerifyingFacilityFilter()
-    // await page.pause()
-    // await taskListPage.verifyingBalanceFilter()
-    // await taskListPage.verifyingBalanceStatusFilter()
-    // await taskListPage.verifyingDuedateFilter()
-    // await taskListPage.verifyingTaskStatusFilter()
-    // await taskListPage.verifyingResidentNameFilter()
-    // await taskListPage.verifyingPayerFilter()
-    await taskListPage.verifyingAssignedToFilter()
-    
-
+    const taskListPage = new sections.TaskListPage(test, page);
+    const createTaskPage = new sections.CreateTaskPage(test, page);
+    await createTaskPage.clickOnTaskList();
+    await taskListPage.varifyingTaskNameFilter();
+    await taskListPage.VerifyingFacilityFilter();
+    await taskListPage.verifyingBalanceFilter();
+    await taskListPage.verifyingBalanceStatusFilter();
+    await taskListPage.verifyingDuedateFilter();
+    await taskListPage.verifyingTaskStatusFilter();
+    await taskListPage.verifyingResidentNameFilter();
+    await taskListPage.verifyingPayerFilter();
+    await taskListPage.verifyingAssignedToFilter();
+    await taskListPage.verifyingRootIssueFilter();
   });
   test.afterAll(async () => {
     const logoutPage = new sections.LogoutPage(test, page);

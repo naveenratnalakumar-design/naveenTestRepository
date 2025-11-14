@@ -14,7 +14,7 @@ test.describe("Verify Sort behavior for all applicable columns on User View", ()
       [process.env.password]
     );
   });
-  test("@regression Verify Sort behavior for all applicable columns on User View", async () => {
+  test("@smoke Verify Sort behavior for all applicable columns on User View", async () => {
     const userManagementPage = new sections.UserManagementPage(test,page);
     await userManagementPage.verifyFirstNameSortFunctunality();
     // await userManagementPage.verifyLastNameSortFunctunality()

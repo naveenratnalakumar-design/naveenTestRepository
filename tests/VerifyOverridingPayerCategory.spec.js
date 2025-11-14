@@ -15,7 +15,7 @@ test.describe("Verify overriding payer category", () => {
             [process.env.password]
         );
     });
-    test("@regression Verify overriding payer category", async () => {
+    test("@smoke Verify overriding payer category", async () => {
         const facilityPage = new sections.FacilityPage(test, page);
         await facilityPage.VerifyOverridingPayerCategory()
     });

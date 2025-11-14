@@ -14,7 +14,7 @@ test.describe("Verify Sort behavior for all applicable columns on FacilityRole V
       [process.env.password]
     );
   });
-  test("@regression Verify Sort behavior for all applicable columns on FacilityRole View", async () => {
+  test("@smoke Verify Sort behavior for all applicable columns on FacilityRole View", async () => {
     const userManagementPage = new sections.UserManagementPage(test,page);
     // await page.pause()
     await userManagementPage.verifyFacilitySortFunctionality()

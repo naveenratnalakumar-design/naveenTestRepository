@@ -43,9 +43,9 @@
       <body>
         <h1>📊 Playwright Test Execution Report</h1>
         <h2>Summary</h2>
-        <p><strong>Total Scenarios:</strong> 1 | ✅ Passed: 0 | ❌ Failed: 0 | ⚠️ Skipped: 0</p>
+        <p><strong>Total Scenarios:</strong> 1 | ✅ Passed: 1 | ❌ Failed: 0 | ⚠️ Skipped: 0</p>
         <canvas id="chart" width="200" height="200"></canvas>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js?t=1762845852930"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js?t=1763101959775"></script>
     <script>
       const ctx = document.getElementById('chart').getContext('2d');
       new Chart(ctx, {
@@ -53,7 +53,7 @@
         data: {
           labels: ['Passed', 'Failed', 'Skipped'],
           datasets: [{
-            data: [0, 0, 0],
+            data: [1, 0, 0],
             backgroundColor: ['#4CAF50', '#F44336', '#FF9800']
           }]
         },
@@ -76,13 +76,13 @@
           <tbody>
             
       <tr>
-        <td><a href="@regression_verify_change_primary_to_any_user.html?t=1762845852930">@regression Verify Change Primary To Any User</a></td>
-        <td>⚠️</td>
+        <td><a href="@smoke_verify_total_displayed_balance_and_summary.html?t=1763101959775">@smoke Verify Total Displayed Balance and Summary</a></td>
+        <td>✅️</td>
+        <td>1</td>
         <td>1</td>
         <td>0</td>
         <td>0</td>
-        <td>0</td>
-        <td>53732</td>
+        <td>17117</td>
       </tr>
     
           </tbody>

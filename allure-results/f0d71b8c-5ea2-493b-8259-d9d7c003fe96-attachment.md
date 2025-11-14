@@ -1,0 +1,62 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Revflow logo" [ref=e7] [cursor=pointer]
+        - img "Revflow" [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link "Task List" [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link "AR Aging" [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - link "Settings" [ref=e34] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e37] [cursor=pointer]
+          - generic [ref=e40] [cursor=pointer]: Settings
+          - img [ref=e43] [cursor=pointer]
+      - button [ref=e49] [cursor=pointer]:
+        - img [ref=e53] [cursor=pointer]
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - generic [ref=e61]:
+          - img [ref=e64]
+          - textbox "Search for a Case" [ref=e66]
+        - generic [ref=e67]:
+          - button "Selected Facilities (35)" [ref=e69] [cursor=pointer]:
+            - text: Selected Facilities (35)
+            - img [ref=e72] [cursor=pointer]
+          - img [ref=e78]
+          - button "AT" [ref=e81] [cursor=pointer]:
+            - generic [ref=e84] [cursor=pointer]: AT
+            - img [ref=e87] [cursor=pointer]
+      - generic [ref=e92]:
+        - generic [ref=e93]:
+          - heading "Hi ARW Test," [level=2] [ref=e94]
+          - paragraph [ref=e95]: Welcome to RevFlow! RevFlow is designed to help you manage your aging tasks, surface issues with balances, and bring transparency to the status of all balances.
+        - generic [ref=e96]:
+          - generic [ref=e97] [cursor=pointer]:
+            - img "Task List Icon" [ref=e98] [cursor=pointer]
+            - heading "Task List" [level=2] [ref=e99] [cursor=pointer]
+            - paragraph [ref=e100] [cursor=pointer]: Tasks are created by a user from the AR Aging view. Tasks can also be created automatically by the system for an aged balance with no recent update.
+          - generic [ref=e101] [cursor=pointer]:
+            - img "AR Aging Icon" [ref=e102] [cursor=pointer]
+            - heading "AR Aging" [level=2] [ref=e103] [cursor=pointer]
+            - paragraph [ref=e104] [cursor=pointer]: AR Aging is a snapshot of all unpaid balances to be worked. Tasks can be created and updated directly from the aging.
+  - generic [ref=e105]: Jira Service Management Widget
+  - iframe [ref=e106]:
+    - main "Help Center Widget Content" [ref=f1e2]:
+      - button "?" [ref=f1e5] [cursor=pointer]:
+        - paragraph [ref=f1e6] [cursor=pointer]: "?"
+```

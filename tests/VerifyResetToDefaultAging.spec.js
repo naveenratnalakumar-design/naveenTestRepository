@@ -14,7 +14,7 @@ test.describe("Verify Reset to Default functionality on Aging", () => {
       [process.env.password]
     );
   });
-  test("@regression Verify Reset to Default functionality on Aging", async () => {
+  test("@smoke Verify Reset to Default functionality on Aging", async () => {
     const agingPage = new sections.AgingPage(test,page);
     // await page.pause()
     await agingPage.VerifyResetDefaultOnAging()

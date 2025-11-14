@@ -14,7 +14,7 @@ test.describe("Verify updating User name and email", () => {
       [process.env.password]
     );
   });
-  test("@regression Verify updating User name and email", async () => {
+  test("@smoke Verify updating User name and email", async () => {
     const userManagementPage = new sections.UserManagementPage(test,page);
     await userManagementPage.verifyUserEmailAndName()
   });

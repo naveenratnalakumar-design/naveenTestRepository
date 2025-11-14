@@ -67,6 +67,7 @@ exports.AgingPage = class AgingPage {
     this.globalFacilityDropdown = page.locator(
       "//arw-facilities-dropdown[@class='flex justify-end grow']//button"
     );
+     this.selectAllBtn = page.locator("//label[contains(text(),'All')]");
     this.allCheckBox = page.locator(
       "//label[contains(text(),'All')]/preceding-sibling::div"
     );
@@ -121,12 +122,31 @@ exports.AgingPage = class AgingPage {
     this.LessthanOption = page.locator(
       "//mat-option[@role='option' and normalize-space(.)='Less than']"
     );
-     this.BetweenFrom = page.locator(
-      "(//input[@placeholder='-'])[1]"
-    )
-    this.BetweenTo = page.locator(
-      "(//input[@placeholder='-'])[2]"
-    )
+    this.BetweenFrom = page.locator("(//input[@placeholder='-'])[1]");
+    this.BetweenTo = page.locator("(//input[@placeholder='-'])[2]");
+    this.addFilterBtn = page.locator(
+      "//span[normalize-space(text())='Add Filter']"
+    );
+    this.addFilterDropdown = page.locator("//span[text()='Select']");
+    this.globalSearchInput = page.locator("//input[@placeholder='Search']");
+    this.selectFiltesrsOptions = (txt) =>
+      page.locator(`//div[normalize-space(text())='${txt}']`);
+    this.selectFacilityFilterSubOptionsdropdown = (txt) =>
+      page.locator(`//span[text()='${txt}']`);
+    this.filtersDropdownListCount = page.locator(
+      "(//mat-checkbox//label[@class='mdc-label'])[1]"
+    );
+      this.deleteSortIcon = page.locator(
+      "(//arw-button[@icon='trash03']//button[contains(@class,'arw-button--small arw-button--tertiary')])[1]"
+    );
+    this.noTasksFound = page.locator(`//div[text()="You don't have any ar aging yet"]`)
+    this.noMatchesFoundLabel = page.locator(
+      "//label[normalize-space(text())='All (0 Matches)']"
+    );
+    this.closeBtn = page.locator("//arw-icon[@name='x']");
+      this.globalFacilityfilterApplyBtn = page.locator(
+      "//span[normalize-space(text())='Apply']"
+    );
   }
 
   clickOnCurrentMonthToggle = async () => {
@@ -152,6 +172,9 @@ exports.AgingPage = class AgingPage {
       "click",
       "Click on add task button"
     );
+  };
+    clickOnCloseBtn = async () => {
+    await excuteSteps(this.test, this.closeBtn, "click", "Click on close Icon");
   };
   searchTextInSearchBox = async (text) => {
     await excuteSteps(
@@ -392,6 +415,96 @@ exports.AgingPage = class AgingPage {
       "click",
       `Select  Less than  option from Dropdown`,
       text
+    );
+  };
+  clickOnAddFilterBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.addFilterBtn,
+      "click",
+      `Click on the Add filter button`
+    );
+  };
+  clickOAddFilterDropdown = async () => {
+    await excuteSteps(
+      this.test,
+      this.addFilterDropdown,
+      "click",
+      `Click Add Filter Dropdown`
+    );
+  };
+  searchFilterNames = async (txt) => {
+    await excuteSteps(
+      this.test,
+      this.globalSearchInput,
+      "fill",
+      "Enter the filter name in the search input",
+      txt
+    );
+  };
+  selectFacilitySubOptions = async (txt) => {
+    await excuteSteps(
+      this.test,
+      this.selectFacilityFilterSubOptionsdropdown(txt),
+      "click",
+      `Click on the dropdown to select a facility filter sub-option`
+    );
+  };
+    clickOnDeleteDuedateInSortIcon = async () => {
+    await excuteSteps(
+      this.test,
+      this.deleteSortIcon,
+      "click",
+      `Clear all sorting filters`
+    );
+  };
+    clickOnApplyFilterButton = async () => {
+    await excuteSteps(
+      this.test,
+      this.applyFilterBtn,
+      "click",
+      `Click on Apply Filter`
+    );
+  };
+    clickOnGlobalSearchdropdown = async () => {
+    await excuteSteps(
+      this.test,
+      this.globalFacilityDropdown,
+      "click",
+      `Click on global facility dropdown`
+    );
+  };
+    deselectAllFacilities = async () => {
+    await excuteSteps(
+      this.test,
+      this.selectAllBtn,
+      "click",
+      `Deselect all facilities in the global facility dropdown`
+    );
+  };
+    searchGlobalFacilty = async (txt) => {
+    await excuteSteps(
+      this.test,
+      this.globalSearchInput,
+      "fill",
+      `Search for a facility name in the search input field`,
+      txt
+    );
+  };
+    clickOnGloabalFacilityApplyBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.globalFacilityfilterApplyBtn,
+      "click",
+      `Click on Apply button`
+    );
+  };
+  selectFilterOptionsFromDropdown = async (txt) => {
+    await excuteSteps(
+      this.test,
+      this.selectFiltesrsOptions(txt),
+      "click",
+      `Select the desired filter from the dropdown list`
     );
   };
   createTaskWithAttachment = async () => {
@@ -1551,4 +1664,107 @@ exports.AgingPage = class AgingPage {
     await this.GetResidentBalance_Greaterthan(2000);
     await this.GetResidentBalance_Lessthan(2000);
   };
+  VerifyResidentPayerDropdownOptionsCountChangingGlobalFacilities =
+    async () => {
+        await this.clickOnAgingBtn()
+          await this.test.step("The page is loading, please wait", async () => {
+          await this.page.waitForTimeout(parseInt(process.env.largeWait));
+        });
+      await this.clickOnFilterBtn();
+      await this.clickOnClearFilterBtn();
+      await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+      });
+      let dropdownCount = [];
+      let afterChangeGlobalFacilityFiltercount = [];
+      const filters = [
+        { name: "Resident", selectOption: "Select Resident" },
+        { name: "Payer", selectOption: "Select Payer"}
+      ];
+      for (const element of filters) {
+        await this.clickOnFilterBtn();
+        await this.clickOnAddFilterBtn();
+        await this.clickOAddFilterDropdown();
+        await this.searchFilterNames([element.name]);
+        await this.selectFilterOptionsFromDropdown([element.name]);
+        await this.selectFacilitySubOptions([element.selectOption]);
+        await this.test.step("The page is loading, please wait", async () => {
+          await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+        });
+        const counts = await this.filtersDropdownListCount.allInnerTexts(); // returns array of strings
+        // extract numbers from each text value
+        const numbers = counts.map((text) => {
+          const match = text.match(/\d+/);
+          return match ? Number(match[0]) : 0;
+        });
+        dropdownCount.push(...numbers); // spread to flatten array
+        await this.page.keyboard.press("Escape");
+        await this.clickOnDeleteDuedateInSortIcon();
+        await this.clickOnApplyFilterButton();
+      }
+      console.log(dropdownCount);
+       await this.clickOnGlobalSearchdropdown();
+      await this.deselectAllFacilities();
+      for (let i = 0; i < 7; i++) {
+        const randomFacilityNames =
+          testData.RevflowData.TaskListPage.facilityOptions[
+            Math.floor(
+              Math.random() *
+                testData.RevflowData.TaskListPage.facilityOptions.length
+            )
+          ];
+        await this.searchGlobalFacilty([randomFacilityNames]);
+        let noMatchesFound = await this.noMatchesFoundLabel.isVisible();
+        if (noMatchesFound) {
+          await expect(
+            this.noMatchesFoundLabel,
+            "Verifying 0 matches found label"
+          ).toBeVisible();
+        }
+        await this.page.keyboard.press("Enter");
+        await this.clickOnCloseBtn();
+      }
+      await this.clickOnGloabalFacilityApplyBtn();
+      await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+      });
+       let noTasks = await this.noTasksFound.isVisible()
+       if (noTasks) {
+        await expect(
+          this.noTasksFound,
+          "verifying You don't have any ar aging yet  lable on aging screen"
+        ).toBeVisible();
+      } else {
+        const AfterChangeGlobalFacilityfilterscount = [
+          { name: "Resident", selectOption: "Select Resident" },
+          { name: "Payer", selectOption: "Select Payer"}
+        ];
+        for (const element of AfterChangeGlobalFacilityfilterscount) {
+          await this.clickOnFilterBtn();
+          await this.clickOnAddFilterBtn();
+          await this.clickOAddFilterDropdown();
+          await this.searchFilterNames([element.name]);
+          await this.selectFilterOptionsFromDropdown([element.name]);
+          await this.selectFacilitySubOptions([element.selectOption]);
+          await this.test.step("The page is loading, please wait", async () => {
+            await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+          });
+          const counts = await this.filtersDropdownListCount.allInnerTexts(); // returns array of strings
+          // extract numbers from each text value
+          const numbers = counts.map((text) => {
+            const match = text.match(/\d+/);
+            return match ? Number(match[0]) : 0;
+          });
+          afterChangeGlobalFacilityFiltercount.push(...numbers); // spread to flatten array
+          await this.page.keyboard.press("Escape");
+          await this.clickOnDeleteDuedateInSortIcon();
+          await this.clickOnApplyFilterButton();
+        }
+        console.log(afterChangeGlobalFacilityFiltercount);
+        await expect(
+          dropdownCount,
+          "Verifying the facility, payer, resident, and assigned user dropdown option counts after changing global facilities"
+        ).not.toEqual(afterChangeGlobalFacilityFiltercount);
+      }
+    };
 };

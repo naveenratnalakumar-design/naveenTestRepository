@@ -15,7 +15,7 @@ test.describe("Validating facility and payer filters", () => {
             [process.env.password]
         );
     });
-    test("@regression Verifying facility and payer filters", async () => {
+    test("@smoke Verifying facility and payer filters", async () => {
         const facilityPage = new sections.FacilityPage(test, page);
         await facilityPage.validateFacilityPayerFilter()
     });

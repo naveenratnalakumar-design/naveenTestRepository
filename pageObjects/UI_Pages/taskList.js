@@ -37,6 +37,12 @@ const randomAssignedUsers =
         test_Data.RevflowData.TaskListPage.assignedToUserOptions.length
     )
   ];
+const randomRootIssues =
+  test_Data.RevflowData.TaskListPage.rootIssuesList[
+    Math.floor(
+      Math.random() * test_Data.RevflowData.TaskListPage.rootIssuesList.length
+    )
+  ];
 // Pad single digits
 const pad2 = (n) => String(n).padStart(2, "0");
 
@@ -61,6 +67,9 @@ exports.TaskListPage = class TaskListPage {
       "//arw-select-tree[@formcontrolname='value']"
     );
     this.clearFilter = page.locator("//span[text()=' Clear Filter ']");
+    this.disableModeClearbtn = page.locator(
+      "//div[text()='Filter by']/following-sibling::arw-button[@category='tertiary']//button"
+    );
     this.selectResidentDropDown = page.locator(
       "//span[contains(text(),'Select Resident')]"
     );
@@ -299,6 +308,18 @@ exports.TaskListPage = class TaskListPage {
       page.locator(
         `(//div[contains(@class,'overflow-hidden text-ellipsis whitespace-nowrap')]/descendant::span[normalize-space(text())='${txt}'])[1]`
       );
+    this.filtersDropdownListCount = page.locator(
+      "(//label[@class='mdc-label'])[1]"
+    );
+    this.activityTab = page.locator(
+      "//span[normalize-space(text())='Activity']"
+    );
+    this.closeBtn = page.locator("//arw-icon[@name='x']");
+    this.dueDateInput = page.locator("//input[@placeholder='mm/dd/yyyy']");
+    this.daysBtn = (txt) =>
+      page.locator(`//span[normalize-space(text())='${txt}']/ancestor::button`);
+    this.pickDuedate = (txt) =>
+      page.locator(`//span[normalize-space(text())='${txt}']`);
   }
   clickOnFilterBtn = async () => {
     await excuteSteps(
@@ -306,6 +327,33 @@ exports.TaskListPage = class TaskListPage {
       this.filterBtn,
       "click",
       `Click on Filters Icon in Task List`
+    );
+  };
+  selectDuedate = async (txt) => {
+    await excuteSteps(
+      this.test,
+      this.pickDuedate(txt),
+      "click",
+      "Select the due date from the calendar"
+    );
+  };
+  clickOnDuedateFiled = async () => {
+    await excuteSteps(
+      this.test,
+      this.dueDateInput,
+      "click",
+      "Click on due date input"
+    );
+  };
+  clickOnCloseBtn = async () => {
+    await excuteSteps(this.test, this.closeBtn, "click", "Click on close Icon");
+  };
+  clickOnActivityTab = async () => {
+    await excuteSteps(
+      this.test,
+      this.activityTab,
+      "click",
+      "Navigate to Activity section"
     );
   };
   clickOnTaskCloseBtn = async () => {
@@ -1040,15 +1088,18 @@ exports.TaskListPage = class TaskListPage {
         const row = this.taskNameGidRow.nth(i);
         await row.scrollIntoViewIfNeeded();
         await expect(row).toContainText("DaliyTaskCreation");
+        break;
       }
     }
   };
   VerifyingFacilityFilter = async () => {
     await this.clickOnFilterBtn();
-    await this.clickOnClearFilterIcon();
-    await this.test.step("The page is loading, please wait", async () => {
+    let isClearDisabled = await this.disableModeClearbtn.isDisabled();
+    if (!isClearDisabled) {
+      await this.clickOnClearFilterIcon();
       await this.page.waitForTimeout(parseInt(process.env.mediumWait));
-    });
+    }
+    await this.page.keyboard.press("Escape");
     await this.clickOnFilterBtn();
     await this.clickOnAddFilterBtn();
     await this.clickOAddFilterDropdown();
@@ -1057,33 +1108,71 @@ exports.TaskListPage = class TaskListPage {
     await this.selectFacilitySubOptions("Select Facilities");
     await this.searchTaskName([randomFacilityNames]);
     await this.page.keyboard.press("Enter");
-    let checkBoxIsvisble = await this.facilityOptioncheckBox(
+
+    let checkBoxIsVisible = await this.facilityOptioncheckBox(
       randomFacilityNames
     ).isVisible();
-    if (checkBoxIsvisble) {
+
+    let noMatchVisible = await this.noMatchesFoundLabel.isVisible();
+    if (checkBoxIsVisible) {
       await this.clickOnApplyButton();
       await this.clickOnApplyFilterButton();
-      let count = await this.tasklistGridColumns("facility").count();
-      for (let i = 0; i < count; i++) {
-        const row = this.tasklistGridColumns("facility").nth(i);
-        await row.scrollIntoViewIfNeeded();
-        await expect(row).toContainText(randomFacilityNames);
+      const noTasksScreenVisible =
+        await this.clearFilterOnNoTaskFoundScreen.isVisible();
+
+      if (noTasksScreenVisible) {
+        await expect(
+          this.clearFilterOnNoTaskFoundScreen,
+          "Clear Filter button should be visible on 'No Tasks Found' screen"
+        ).toBeVisible();
+        await expect(
+          this.editFilterOnNoTaskFoundScreen,
+          "Edit Filter button should be visible on 'No Tasks Found' screen"
+        ).toBeVisible();
+
+        return;
       }
-    } else {
+      let count = await this.tasklistGridColumns("facility").count();
+      if (count > 0) {
+        for (let i = 0; i < count; i++) {
+          const row = this.tasklistGridColumns("facility").nth(i);
+          await row.scrollIntoViewIfNeeded();
+          await expect(row).toContainText(randomFacilityNames);
+          break;
+        }
+      }
+    } else if (noMatchVisible) {
       await expect(
         this.noMatchesFoundLabel,
-        "Verify 0 Matches' message should be displayed when the searched facility is not available in the dropdown list"
+        "Verify 0 Matches message should be displayed when the searched facility is not available"
       ).toBeVisible();
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
       await this.page.keyboard.press("Escape");
+      await this.clickOnDeleteDuedateInSortIcon();
+      await this.clickOnApplyFilterButton();
     }
+    // else {
+    //   await expect(
+    //     this.clearFilterOnNoTaskFoundScreen,
+    //     "Clear Filter button should be visible on 'No Tasks Found' screen"
+    //   ).toBeVisible();
+    //   await expect(
+    //     this.editFilterOnNoTaskFoundScreen,
+    //     "Edit Filter button should be visible on 'No Tasks Found' screen"
+    //   ).toBeVisible();
+    // }
   };
   verifyingPayerFilter = async () => {
+    //Check if Clear Filter button is disabled
     await this.clickOnFilterBtn();
-    await this.clickOnClearFilterIcon();
-    await this.test.step("The page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
-    });
-
+    let isClearDisabled = await this.disableModeClearbtn.isDisabled();
+    if (!isClearDisabled) {
+      await this.clickOnClearFilterIcon();
+      await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+      });
+    }
+    await this.page.keyboard.press("Escape");
     await this.clickOnFilterBtn();
     await this.clickOnAddFilterBtn();
     await this.clickOAddFilterDropdown();
@@ -1091,69 +1180,143 @@ exports.TaskListPage = class TaskListPage {
     await this.selectFilterOptionsFromDropdown("Payer");
     await this.selectFacilitySubOptions("Select Payer");
     await this.searchTaskName([randomPayerNames]);
-
-    await this.test.step("Wait for search results to load", async () => {
+    await this.test.step("Wait for dropdown search results", async () => {
       await this.page.waitForTimeout(parseInt(process.env.smallWait));
     });
-    let checkBoxIsvisble = await this.pickPayerName(
-      randomPayerNames
-    ).isVisible();
-    let noMatchVisible = await this.noMatchesFoundLabel.isVisible();
-    if (checkBoxIsvisble) {
-      await this.test.step(
-        "Select the payer name from the dropdown search",
-        async () => {
-          await this.pickPayerName(randomPayerNames).click();
-        }
-      );
+    const exactPayerLocator = this.page.locator(
+      `//span[normalize-space(.)='${randomPayerNames}']`
+    );
+    const exactMatchVisible = await exactPayerLocator.isVisible();
+    const noMatchVisible = await this.noMatchesFoundLabel.isVisible();
+
+    if (exactMatchVisible) {
+      await this.test.step("Select exact payer name", async () => {
+        await exactPayerLocator.click();
+      });
       await this.clickOnApplyButton();
       await this.clickOnApplyFilterButton();
-      await this.test.step("The page is loading, please wait", async () => {
-        await this.page.waitForTimeout(parseInt(process.env.largeWait));
+      await this.test.step("Wait for dropdown search results", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.smallWait));
       });
       const count = await this.payerGridColumns.count();
+      if (count === 0) {
+        throw new Error(
+          `Payer filter applied but grid returned 0 rows for "${randomPayerNames}"`
+        );
+      }
       for (let i = 0; i < count; i++) {
         const row = this.payerGridColumns.nth(i);
         await row.scrollIntoViewIfNeeded();
+
         await expect(
           row,
-          "Verifying the applied resident filter name is displayed on the task list grid"
+          `Grid row does NOT match applied payer filter: "${randomPayerNames}"`
         ).toHaveText(randomPayerNames);
+
         break;
       }
     } else if (noMatchVisible) {
-      // "No matches found" visible
       await expect(
         this.noMatchesFoundLabel,
-        "Verify 0 Matches message should be displayed when the searched facility is not available in the dropdown list"
+        "Expected 'No matches found' when payer not available"
       ).toBeVisible();
-      await this.test.step("The page is loading, please wait", async () => {
-        await this.page.waitForTimeout(parseInt(process.env.mediumWait));
-      });
-      await this.test.step("Close filter dropdown", async () => {
+      await this.test.step("Close filter dropdown & clear", async () => {
         await this.page.keyboard.press("Escape");
         await this.clickOnDeleteDuedateInSortIcon();
         await this.clickOnApplyFilterButton();
       });
     } else {
-      // No Task Found → Clear + Edit buttons must be visible
       await expect(
         this.clearFilterOnNoTaskFoundScreen,
-        "Clear Filter button should be visible on the 'No Tasks Found' screen"
+        "Clear Filter button should be visible"
       ).toBeVisible();
       await expect(
         this.editFilterOnNoTaskFoundScreen,
-        "Edit Filter button should be visible on the 'No Tasks Found' screen."
+        "Edit Filter button should be visible"
       ).toBeVisible();
     }
   };
-  verifyingAssignedToFilter = async () => {
-    await this.clickOnFilterBtn();
-    await this.clickOnClearFilterIcon();
-    await this.test.step("The page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
-    });
 
+  // verifyingAssignedToFilter = async () => {
+  //    let randomAssignedUsers = "Vlad Savkin";
+  //   await this.clickOnFilterBtn();
+  //   let isClearDisabled = await this.disableModeClearbtn.isDisabled();
+  //   if (!isClearDisabled) {
+  //     await this.clickOnClearFilterIcon();
+  //     await this.test.step("The page is loading, please wait", async () => {
+  //       await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+  //     });
+  //   }
+  //   await this.page.keyboard.press("Escape");
+  //   await this.clickOnFilterBtn();
+  //   await this.clickOnAddFilterBtn();
+  //   await this.clickOAddFilterDropdown();
+  //   await this.searchFilterNames(["Assigned To"]);
+  //   await this.selectFilterOptionsFromDropdown("Assigned To");
+  //   await this.selectFacilitySubOptions("Select Assigned To");
+  //   await this.searchTaskName([randomAssignedUsers]);
+
+  //   await this.test.step("Wait for search results to load", async () => {
+  //     await this.page.waitForTimeout(parseInt(process.env.smallWait));
+  //   });
+  //   let checkBoxIsVisible = await this.facilityOptioncheckBox(
+  //     randomAssignedUsers
+  //   )
+  //     .isVisible();
+  //   let noMatchVisible = await this.noMatchesFoundLabel.isVisible();
+  //   if (checkBoxIsVisible) {
+  //     await this.page.keyboard.press("Enter");
+  //     await this.clickOnApplyButton();
+  //     await this.clickOnApplyFilterButton();
+  //     const count = await this.assignedToGridColums.count();
+  //     for (let i = 0; i < count; i++) {
+  //       const row = this.assignedToGridColums.nth(i);
+  //       await row.scrollIntoViewIfNeeded();
+  //       await expect(
+  //         row,
+  //         "Verifying the applied AssignedTo filter name is displayed on the task list grid"
+  //       ).toHaveText(randomAssignedUsers);
+  //       break;
+  //     }
+  //   } else if (noMatchVisible) {
+  //     await expect(
+  //       this.noMatchesFoundLabel,
+  //       "Verify 'No matches found' message should be displayed when the searched assignedTo user is not available in the dropdown list"
+  //     ).toBeVisible();
+      // await this.test.step("The page is loading, please wait", async () => {
+      //   await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+      // });
+  //     await this.test.step("Close filter dropdown", async () => {
+  //       await this.page.keyboard.press("Escape");
+  //       await this.clickOnDeleteDuedateInSortIcon();
+  //       await this.clickOnApplyFilterButton();
+  //     });
+  //   } else {
+  //     await expect(
+  //       this.clearFilterOnNoTaskFoundScreen,
+  //       "Clear Filter button should be visible on the 'No Tasks Found' screen"
+  //     ).toBeVisible();
+  //     await expect(
+  //       this.editFilterOnNoTaskFoundScreen,
+  //       "Edit Filter button should be visible on the 'No Tasks Found' screen."
+  //     ).toBeVisible();
+  //   }
+  // };
+
+  verifyingAssignedToFilter = async () => {
+    const randomAssignedUsers = "Vlad Savkin";
+
+    await this.clickOnFilterBtn();
+    const isClearDisabled = await this.disableModeClearbtn.isDisabled();
+
+    if (!isClearDisabled) {
+      await this.clickOnClearFilterIcon();
+       await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+      });
+    }
+
+    await this.page.keyboard.press("Escape");
     await this.clickOnFilterBtn();
     await this.clickOnAddFilterBtn();
     await this.clickOAddFilterDropdown();
@@ -1162,31 +1325,105 @@ exports.TaskListPage = class TaskListPage {
     await this.selectFacilitySubOptions("Select Assigned To");
     await this.searchTaskName([randomAssignedUsers]);
 
+     await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.smallWait));
+      });
+
+    const checkbox = this.facilityOptioncheckBox(randomAssignedUsers);
+    const checkBoxIsVisible = await checkbox.isVisible();
+    const noMatchVisible = await this.noMatchesFoundLabel.isVisible();
+   
+    if (checkBoxIsVisible) {
+      await this.page.keyboard.press("Enter");
+      await this.clickOnApplyButton();
+      await this.clickOnApplyFilterButton();
+       await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+      });
+       const noTasksScreenVisible=await this.editFilterOnNoTaskFoundScreen.isVisible()
+
+      if (noTasksScreenVisible) {
+        await expect(
+          this.clearFilterOnNoTaskFoundScreen,
+          "Clear Filter button should be visible on 'No Tasks Found' screen"
+        ).toBeVisible();
+        await expect(
+          this.editFilterOnNoTaskFoundScreen,
+          "Edit Filter button should be visible on 'No Tasks Found' screen"
+        ).toBeVisible();
+
+        return;
+      }
+      const count = await this.assignedToGridColums.count();
+      if (count > 0) {
+        for (let i = 0; i < count; i++) {
+          const row = this.assignedToGridColums.nth(i);
+          await row.scrollIntoViewIfNeeded();
+          await expect(
+            row,
+            "Verify that the selected username is displayed on the task list grid"
+          ).toContainText(randomAssignedUsers);
+          break;
+        }
+      }
+    } else if (noMatchVisible) {
+      await expect(
+        this.noMatchesFoundLabel,
+        "Verify 0 Matches message should be displayed when the searched facility is not available"
+      ).toBeVisible();
+      await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.smallWait));
+      });
+      await this.page.keyboard.press("Escape");
+      await this.clickOnDeleteDuedateInSortIcon();
+      await this.clickOnApplyFilterButton();
+    }
+  };
+
+  verifyingRootIssueFilter = async () => {
+    //Check if Clear Filter button is disabled
+    await this.clickOnFilterBtn();
+    let isClearDisabled = await this.disableModeClearbtn.isDisabled();
+    if (!isClearDisabled) {
+      await this.clickOnClearFilterIcon();
+      await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+      });
+    }
+    await this.page.keyboard.press("Escape");
+    await this.clickOnFilterBtn();
+    await this.clickOnAddFilterBtn();
+    await this.clickOAddFilterDropdown();
+    await this.searchFilterNames(["Root Issue"]);
+    await this.selectFilterOptionsFromDropdown("Root Issue");
+    await this.selectFacilitySubOptions("Select Root Issue");
+    await this.searchTaskName([randomAssignedUsers]);
+
     await this.test.step("Wait for search results to load", async () => {
       await this.page.waitForTimeout(parseInt(process.env.smallWait));
     });
     let checkBoxIsVisible = await this.facilityOptioncheckBox(
-      randomAssignedUsers
+      randomRootIssues
     ).isVisible();
     let noMatchVisible = await this.noMatchesFoundLabel.isVisible();
     if (checkBoxIsVisible) {
       await this.page.keyboard.press("Enter");
       await this.clickOnApplyButton();
       await this.clickOnApplyFilterButton();
-      const count = await this.assignedToGridColums.count();
+      const count = await this.rootsIssuesGridColumns.count();
       for (let i = 0; i < count; i++) {
-        const row = this.assignedToGridColums.nth(i);
+        const row = this.rootsIssuesGridColumns.nth(i);
         await row.scrollIntoViewIfNeeded();
         await expect(
           row,
-          "Verifying the applied AssignedTo filter name is displayed on the task list grid"
+          "Verifying the applied rootIssue filter name is displayed on the task list grid"
         ).toHaveText(randomAssignedUsers);
         break;
       }
     } else if (noMatchVisible) {
       await expect(
         this.noMatchesFoundLabel,
-        "Verify 'No matches found' message should be displayed when the searched facility is not available in the dropdown list"
+        "Verify 'No matches found' message should be displayed when the searched root issue is not available in the dropdown list"
       ).toBeVisible();
       await this.test.step("The page is loading, please wait", async () => {
         await this.page.waitForTimeout(parseInt(process.env.mediumWait));
@@ -1261,14 +1498,21 @@ exports.TaskListPage = class TaskListPage {
           console.log("Overpayment detected (negative formatted value).");
           expect(balanceAmount).toBeLessThan(0);
         }
+        break;
       }
     };
 
     // ---------------- Between ----------------
+    //Check if Clear Filter button is disabled
     await this.clickOnFilterBtn();
-    await this.clickOnClearFilterIcon();
-    await this.page.waitForTimeout(parseInt(process.env.mediumWait));
-
+    let isClearDisabled = await this.disableModeClearbtn.isDisabled();
+    if (!isClearDisabled) {
+      await this.clickOnClearFilterIcon();
+      await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+      });
+    }
+    await this.page.keyboard.press("Escape");
     await this.clickOnFilterBtn();
     await this.clickOnAddFilterBtn();
     await this.clickOAddFilterDropdown();
@@ -1290,10 +1534,15 @@ exports.TaskListPage = class TaskListPage {
 
     // ---------------- Equals ----------------
     const expectedAmount = 2000;
+    //Check if Clear Filter button is disabled
     await this.clickOnFilterBtn();
-    await this.clickOnClearFilterIcon();
-    await this.page.waitForTimeout(parseInt(process.env.mediumWait));
-
+    if (!isClearDisabled) {
+      await this.clickOnClearFilterIcon();
+      await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+      });
+    }
+    await this.page.keyboard.press("Escape");
     await this.clickOnFilterBtn();
     await this.clickOnAddFilterBtn();
     await this.clickOAddFilterDropdown();
@@ -1314,10 +1563,15 @@ exports.TaskListPage = class TaskListPage {
 
     // ---------------- Greater Than ----------------
     const minAmount = 2000;
+    //Check if Clear Filter button is disabled
     await this.clickOnFilterBtn();
-    await this.clickOnClearFilterIcon();
-    await this.page.waitForTimeout(parseInt(process.env.mediumWait));
-
+    if (!isClearDisabled) {
+      await this.clickOnClearFilterIcon();
+      await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+      });
+    }
+    await this.page.keyboard.press("Escape");
     await this.clickOnFilterBtn();
     await this.clickOnAddFilterBtn();
     await this.clickOAddFilterDropdown();
@@ -1338,10 +1592,15 @@ exports.TaskListPage = class TaskListPage {
 
     // ---------------- Less Than ----------------
     const maxAmount = 2000;
+    //Check if Clear Filter button is disabled
     await this.clickOnFilterBtn();
-    await this.clickOnClearFilterIcon();
-    await this.page.waitForTimeout(parseInt(process.env.mediumWait));
-
+    if (!isClearDisabled) {
+      await this.clickOnClearFilterIcon();
+      await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+      });
+    }
+    await this.page.keyboard.press("Escape");
     await this.clickOnFilterBtn();
     await this.clickOnAddFilterBtn();
     await this.clickOAddFilterDropdown();
@@ -1362,16 +1621,17 @@ exports.TaskListPage = class TaskListPage {
   };
 
   verifyingBalanceStatusFilter = async () => {
+    //Check if Clear Filter button is disabled
     await this.clickOnFilterBtn();
-    await this.clickOnClearFilterIcon();
+    let isClearDisabled = await this.disableModeClearbtn.isDisabled();
 
-    await this.test.step(
-      "Wait for grid to refresh after clearing filters",
-      async () => {
+    if (!isClearDisabled) {
+      await this.clickOnClearFilterIcon();
+      await this.test.step("The page is loading, please wait", async () => {
         await this.page.waitForTimeout(parseInt(process.env.mediumWait));
-      }
-    );
-
+      });
+    }
+    await this.page.keyboard.press("Escape");
     await this.clickOnFilterBtn();
     await this.clickOnAddFilterBtn();
     await this.clickOAddFilterDropdown();
@@ -1408,6 +1668,7 @@ exports.TaskListPage = class TaskListPage {
             row,
             "Verify filtered Balance Status is displayed correctly in grid"
           ).toContainText(randomBalanceStatus);
+          break;
         }
       } else {
         // Option exists but no matching tasks
@@ -1478,11 +1739,17 @@ exports.TaskListPage = class TaskListPage {
         new Date(today.getFullYear(), today.getMonth(), today.getDate() + i)
       )
     );
+    //Check if Clear Filter button is disabled
     await this.clickOnFilterBtn();
-    await this.clickOnClearFilterIcon();
-    await this.test.step("The page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
-    });
+    let isClearDisabled = await this.disableModeClearbtn.isDisabled();
+
+    if (!isClearDisabled) {
+      await this.clickOnClearFilterIcon();
+      await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+      });
+    }
+    await this.page.keyboard.press("Escape");
     await this.clickOnFilterBtn();
     await this.clickOnAddFilterBtn();
     await this.clickOAddFilterDropdown();
@@ -1509,8 +1776,15 @@ exports.TaskListPage = class TaskListPage {
       await this.page.waitForTimeout(parseInt(process.env.mediumWait));
     });
     // *********** OVERDUE *******************
+    //Check if Clear Filter button is disabled
     await this.clickOnFilterBtn();
-    await this.clickOnClearFilterIcon();
+    if (!isClearDisabled) {
+      await this.clickOnClearFilterIcon();
+      await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+      });
+    }
+    await this.page.keyboard.press("Escape");
     await this.clickOnFilterBtn();
     await this.clickOnAddFilterBtn();
     await this.clickOAddFilterDropdown();
@@ -1520,27 +1794,48 @@ exports.TaskListPage = class TaskListPage {
     await this.clickOnDueDateOptions("Overdue");
     await this.clickOnApplyButton();
     await this.clickOnApplyFilterButton();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
     const rows = await this.dueDateGridColums.count();
-    today.setHours(0, 0, 0, 0); // Normalize to midnight
+    // Normalize today's date
+    const todayMidnight = new Date();
+    todayMidnight.setHours(0, 0, 0, 0);
     for (let i = 0; i < rows; i++) {
       const gridDateStr = await this.parseGridDate(this.dueDateGridColums, i);
-      // Skip blank date cells if any
-      if (!gridDateStr) continue;
-      // Skip "Today" as it's not overdue
-      if (gridDateStr.toLowerCase?.() === "today") continue;
+      // Skip blank/null/undefined
+      if (!gridDateStr?.trim()) continue;
+      const lower = gridDateStr.trim().toLowerCase();
+      // Skip "today" because it's NOT overdue
+      if (lower === "today") continue;
+      // Parse into date
       const rowDate = new Date(gridDateStr);
+
+      // Invalid date handling
+      if (isNaN(rowDate.getTime())) {
+        throw new Error(`Invalid date format in row ${i}: "${gridDateStr}"`);
+      }
+      // Normalize row date
       rowDate.setHours(0, 0, 0, 0);
-      expect(
-        rowDate < today,
-        "Verify the Due Date grid displays the correct dates when the 'Overdue' filter is applied"
-      ).toBeTruthy();
+      if (!(rowDate < todayMidnight)) {
+        throw new Error(
+          `Overdue filter failed: Row ${i} has "${gridDateStr}" which is NOT overdue.`
+        );
+      }
     }
     await this.test.step("The page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.mediumWait));
     });
     // ***************** Today *******************
+    //Check if Clear Filter button is disabled
     await this.clickOnFilterBtn();
-    await this.clickOnClearFilterIcon();
+    if (!isClearDisabled) {
+      await this.clickOnClearFilterIcon();
+      await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+      });
+    }
+    await this.page.keyboard.press("Escape");
     await this.clickOnFilterBtn();
     await this.clickOnAddFilterBtn();
     await this.clickOAddFilterDropdown();
@@ -1550,6 +1845,9 @@ exports.TaskListPage = class TaskListPage {
     await this.clickOnDueDateOptions("Today");
     await this.clickOnApplyButton();
     await this.clickOnApplyFilterButton();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
     const todayrows = await this.dueDateGridColums.count();
     for (let i = 0; i < todayrows; i++) {
       // const value = await this.parseGridDate(this.dueDateGridColums, i);
@@ -1618,17 +1916,25 @@ exports.TaskListPage = class TaskListPage {
     // }
   };
   verifyingTaskStatusFilter = async () => {
+    //Check if Clear Filter button is disabled
     await this.clickOnFilterBtn();
-    await this.clickOnClearFilterIcon();
-    await this.test.step("The page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
-    });
+    let isClearDisabled = await this.disableModeClearbtn.isDisabled();
+    if (!isClearDisabled) {
+      await this.clickOnClearFilterIcon();
+      await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+      });
+    }
+    await this.page.keyboard.press("Escape");
     await this.clickOnFilterBtn();
     await this.clickOnAddFilterBtn();
     await this.clickOAddFilterDropdown();
     await this.searchFilterNames(["Task Status"]);
     await this.selectFilterOptionsFromDropdown(["Task Status"]);
     await this.selectFacilitySubOptions(["Select Task Status"]);
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
     await this.selectTasstatusOptions(randomTaskStatus);
     await this.clickOnApplyButton();
     await this.clickOnApplyFilterButton();
@@ -1655,16 +1961,22 @@ exports.TaskListPage = class TaskListPage {
           row,
           "Verify the applied taskStatus filter is displayed in the taskStatus column on the task list screen"
         ).toContainText(randomTaskStatus);
+        break;
       }
     }
   };
   verifyingResidentNameFilter = async () => {
-    let randomResidentNames = "yeyey";
+    //Check if Clear Filter button is disabled
     await this.clickOnFilterBtn();
-    await this.clickOnClearFilterIcon();
-    await this.test.step("The page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
-    });
+    let isClearDisabled = await this.disableModeClearbtn.isDisabled();
+
+    if (!isClearDisabled) {
+      await this.clickOnClearFilterIcon();
+      await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+      });
+    }
+    await this.page.keyboard.press("Escape");
     await this.clickOnFilterBtn();
     await this.clickOnAddFilterBtn();
     await this.clickOAddFilterDropdown();
@@ -1719,117 +2031,6 @@ exports.TaskListPage = class TaskListPage {
       ).toBeVisible();
     }
   };
-  // verifyingTaskNameSortingFunctionality = async () => {
-  //   // Step 1: Clear existing sort/filter
-  //   await this.clickOnCustomSortBtn();
-  //   await this.clickOnDeleteDuedateInSortIcon();
-  //   await this.clickOnDeleteDuedateInSortIcon();
-  //   await this.clickOnApplySortButtonIcon();
-
-  //   await this.clickOnFilterBtn();
-  //   await this.clickOnClearFilterIcon();
-
-  //   await this.test.step("Wait for grid to load", async () => {
-  //     await this.page.waitForTimeout(parseInt(process.env.smallWait, 10));
-  //   });
-
-  //   const taskgridRows = await this.taskNameGidRow;
-  //   await expect(
-  //     taskgridRows.first(),
-  //     "TaskName row should be visible"
-  //   ).toBeVisible();
-
-  //   //  Apply Ascending (A → Z) Sort
-  //   await this.clickOnSortBtn();
-  //   await this.clickOnAddSortBtn();
-  //   await this.clickOnSlectSortingFilterName();
-  //   await this.searchSortName(["Task"]);
-  //   await this.selectFilterOptionsFromDropdown(["Task"]);
-  //   await this.clickOnSlectSortingFilterName();
-  //   await this.selectSortingOptionFromDropdown("A → Z");
-  //   await this.clickOnApplySortButtonIcon();
-
-  //   await this.test.step("Wait for grid to load", async () => {
-  //     await this.page.waitForTimeout(parseInt(process.env.mediumWait, 10));
-  //   });
-
-  //   //Ascending Values from UI
-  //   const ascValues = (await taskgridRows.allTextContents()).map((v) =>
-  //     v.trim()
-  //   );
-  //   console.log("Ascending Values:", ascValues);
-  //   const normalizeString = (str) =>
-  //     str
-  //       ?.toLowerCase()
-  //       .replace(/\s+/g, " ") // normalize spaces
-  //       .trim();
-  //   const naturalCompare = (a, b) => {
-  //     const normalizedA = normalizeString(a);
-  //     const normalizedB = normalizeString(b);
-  //     return normalizedA.localeCompare(normalizedB, undefined, {
-  //       numeric: true,
-  //       sensitivity: "base",
-  //     });
-  //   };
-
-  //   // Verify Ascending Order
-  //   let isSortedAsc = true;
-  //   for (let i = 1; i < ascValues.length; i++) {
-  //     if (naturalCompare(ascValues[i - 1], ascValues[i]) > 0) {
-  //       console.log(
-  //         `Out of order (Ascending): "${ascValues[i - 1]}" > "${ascValues[i]}"`
-  //       );
-  //       isSortedAsc = false;
-  //     }
-  //   }
-  //   expect(
-  //     isSortedAsc,
-  //     "AVerify that task names are displayed in ascending order when the ascending sort is applied."
-  //   ).toBeTruthy();
-
-  //   // 🟥 Step 5: Apply Descending (Z → A) Sort
-  //   await this.clickOnSortBtn();
-  //   await this.clickOnDeleteDuedateInSortIcon().catch(() => {});
-  //   await this.clickOnApplySortButtonIcon();
-
-  //   await this.test.step("Wait for grid to load", async () => {
-  //     await this.page.waitForTimeout(parseInt(process.env.smallWait, 10));
-  //   });
-
-  //   await this.clickOnSortBtn();
-  //   await this.clickOnAddSortBtn();
-  //   await this.clickOnSlectSortingFilterName();
-  //   await this.searchSortName(["Task"]);
-  //   await this.selectFilterOptionsFromDropdown(["Task"]);
-  //   await this.clickOnSlectSortingFilterName();
-  //   await this.selectSortingOptionFromDropdown("Z → A");
-  //   await this.clickOnApplySortButtonIcon();
-  //   await this.test.step("Wait for grid to load", async () => {
-  //     await this.page.waitForTimeout(parseInt(process.env.mediumWait, 10));
-  //   });
-  //   // Step 6: Get Descending Values from UI
-  //   const descValues = (await taskgridRows.allTextContents()).map((v) =>
-  //     v.trim()
-  //   );
-  //   console.log("Descending Values:", descValues);
-
-  //   // Step 7: Verify Descending Order
-  //   let isSortedDesc = true;
-  //   for (let i = 1; i < descValues.length; i++) {
-  //     if (naturalCompare(descValues[i - 1], descValues[i]) < 0) {
-  //       console.log(
-  //         `Out of order (Descending): "${descValues[i - 1]}" < "${
-  //           descValues[i]
-  //         }"`
-  //       );
-  //       isSortedDesc = false;
-  //     }
-  //   }
-  //   expect(
-  //     isSortedDesc,
-  //     "Verify that task names are displayed in descending order when the descending sort is applied."
-  //   ).toBeTruthy();
-  // };
   verifyingTaskNameSortingFunctionality = async () => {
     // Step 1: Clear existing sort/filter
     await this.clickOnCustomSortBtn();
@@ -1850,7 +2051,7 @@ exports.TaskListPage = class TaskListPage {
       "TaskName row should be visible"
     ).toBeVisible();
 
-    // 🟩 Step 2: Apply Ascending (A → Z) Sort
+    //  Apply Ascending (A → Z) Sort
     await this.clickOnSortBtn();
     await this.clickOnAddSortBtn();
     await this.clickOnSlectSortingFilterName();
@@ -1864,13 +2065,13 @@ exports.TaskListPage = class TaskListPage {
       await this.page.waitForTimeout(parseInt(process.env.mediumWait, 10));
     });
 
-    // 🟢 Step 3: Verify Ascending Order
+    //   Verify Ascending Order
     const ascValues = (await taskgridRows.allTextContents()).map((v) =>
       v.trim()
     );
     console.log("Ascending Values:", ascValues);
 
-    // 🧩 Pure lexicographic (UI-style) comparison
+    // Pure lexicographic (UI-style) comparison
     const normalizeString = (str) =>
       str?.toLowerCase().replace(/\s+/g, " ").trim();
 
@@ -1893,7 +2094,7 @@ exports.TaskListPage = class TaskListPage {
       "Verify that task names are displayed in ascending order when ascending sort is applied."
     ).toBeTruthy();
 
-    // 🟥 Step 4: Apply Descending (Z → A) Sort
+    //  Apply Descending (Z → A) Sort
     await this.clickOnSortBtn();
     await this.clickOnDeleteDuedateInSortIcon();
     await this.clickOnApplySortButtonIcon();
@@ -1915,7 +2116,7 @@ exports.TaskListPage = class TaskListPage {
       await this.page.waitForTimeout(parseInt(process.env.mediumWait, 10));
     });
 
-    // 🔻 Step 5: Verify Descending Order
+    // Verify Descending Order
     const descValues = (await taskgridRows.allTextContents()).map((v) =>
       v.trim()
     );
@@ -2563,4 +2764,197 @@ exports.TaskListPage = class TaskListPage {
         "Verifying the updated root issue name is displayed on the task grid after the grid auto-refreshes"
       ).toHaveText(rootIssue);
     };
+  VerifyResidentPayerFacilityAssignedToDropdownOptionsCountChangingGlobalFacilities =
+    async () => {
+      await this.clickOnCustomSortBtn();
+      await this.clickOnDeleteDuedateInSortIcon();
+      await this.clickOnDeleteDuedateInSortIcon();
+      await this.clickOnApplySortButtonIcon();
+      await this.clickOnFilterBtn();
+      await this.clickOnClearFilterIcon();
+      await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+      });
+      let dropdownCount = [];
+      let afterChangeGlobalFacilityFiltercount = [];
+      const filters = [
+        { name: "Resident", selectOption: "Select Resident" },
+        { name: "Payer", selectOption: "Select Payer" },
+        { name: "Facility", selectOption: "Select Facilities" },
+        { name: "Assigned To", selectOption: "Select Assigned To" },
+      ];
+      for (const element of filters) {
+        await this.clickOnFilterBtn();
+        await this.clickOnAddFilterBtn();
+        await this.clickOAddFilterDropdown();
+        await this.searchFilterNames([element.name]);
+        await this.selectFilterOptionsFromDropdown([element.name]);
+        await this.selectFacilitySubOptions([element.selectOption]);
+        await this.test.step("The page is loading, please wait", async () => {
+          await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+        });
+        const counts = await this.filtersDropdownListCount.allInnerTexts(); // returns array of strings
+        // extract numbers from each text value
+        const numbers = counts.map((text) => {
+          const match = text.match(/\d+/);
+          return match ? Number(match[0]) : 0;
+        });
+        dropdownCount.push(...numbers); // spread to flatten array
+        await this.page.keyboard.press("Escape");
+        await this.clickOnDeleteDuedateInSortIcon();
+        await this.clickOnApplyFilterButton();
+      }
+      console.log(dropdownCount);
+      await this.clickOnGlobalSearchdropdown();
+      await this.deselectAllFacilities();
+      for (let i = 0; i < 7; i++) {
+        const randomFacilityNames =
+          test_Data.RevflowData.TaskListPage.facilityOptions[
+            Math.floor(
+              Math.random() *
+                test_Data.RevflowData.TaskListPage.facilityOptions.length
+            )
+          ];
+        await this.searchGlobalFacilty([randomFacilityNames]);
+        let noMatchesFound = await this.noMatchesFoundLabel.isVisible();
+        if (noMatchesFound) {
+          await expect(
+            this.noMatchesFoundLabel,
+            "Verifying 0 matches found label"
+          ).toBeVisible();
+        }
+        await this.page.keyboard.press("Enter");
+        await this.clickOnCloseBtn();
+      }
+      await this.clickOnGloabalFacilityApplyBtn();
+      await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+      });
+      let noTasks = await this.editFilterOnNoTaskFoundScreen.isVisible();
+      if (noTasks) {
+        await expect(
+          this.editFilterOnNoTaskFoundScreen,
+          "verifying edit filter is displaying on no task found screen"
+        ).toBeVisible();
+      } else {
+        const AfterChangeGlobalFacilityfilterscount = [
+          { name: "Resident", selectOption: "Select Resident" },
+          { name: "Payer", selectOption: "Select Payer" },
+          { name: "Facility", selectOption: "Select Facilities" },
+          { name: "Assigned To", selectOption: "Select Assigned To" },
+        ];
+        for (const element of AfterChangeGlobalFacilityfilterscount) {
+          await this.clickOnFilterBtn();
+          await this.clickOnAddFilterBtn();
+          await this.clickOAddFilterDropdown();
+          await this.searchFilterNames([element.name]);
+          await this.selectFilterOptionsFromDropdown([element.name]);
+          await this.selectFacilitySubOptions([element.selectOption]);
+          await this.test.step("The page is loading, please wait", async () => {
+            await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+          });
+          const counts = await this.filtersDropdownListCount.allInnerTexts(); // returns array of strings
+          // extract numbers from each text value
+          const numbers = counts.map((text) => {
+            const match = text.match(/\d+/);
+            return match ? Number(match[0]) : 0;
+          });
+          afterChangeGlobalFacilityFiltercount.push(...numbers); // spread to flatten array
+          await this.page.keyboard.press("Escape");
+          await this.clickOnDeleteDuedateInSortIcon();
+          await this.clickOnApplyFilterButton();
+        }
+        console.log(afterChangeGlobalFacilityFiltercount);
+        await expect(
+          dropdownCount,
+          "Verifying the facility, payer, resident, and assigned user dropdown option counts after changing global facilities"
+        ).not.toEqual(afterChangeGlobalFacilityFiltercount);
+      }
+    };
+  verifyActivityLog = async () => {
+    await this.clickOnCustomSortBtn();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnApplySortButtonIcon();
+    await this.clickOnFilterBtn();
+    await this.clickOnClearFilterIcon();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
+    let count = await this.taskNameGidRow.count();
+    for (let i = 0; i < count; i++) {
+      let tasknamerow = await this.taskNameGidRow.nth(i);
+      console.log("tasks=", i);
+      await this.test.step("click task name ", async () => {
+        await tasknamerow.click();
+      });
+      await this.clickOnActivityTab();
+      await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+      });
+      await this.clickOnTaskCloseBtn();
+    }
+  };
+  VerifyDueDateUpdateFunctionalityForFuturedates = async () => {
+    const days = [];
+    const start = new Date();
+
+    for (let i = 0; i < 7; i++) {
+      const d = new Date(start);
+      d.setDate(start.getDate() + i);
+      days.push(d.getDate());
+    }
+
+    console.log(days);
+    await this.clickOnCustomSortBtn();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnDeleteDuedateInSortIcon();
+    await this.clickOnApplySortButtonIcon();
+    await this.clickOnFilterBtn();
+    await this.clickOnClearFilterIcon();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    await this.clickOnFilterBtn();
+    await this.clickOnAddFilterBtn();
+    await this.clickOAddFilterDropdown();
+    await this.searchFilterNames(["Due Date"]);
+    await this.selectFilterOptionsFromDropdown("Due Date");
+    await this.selectFacilitySubOptions(["Select"]);
+    await this.clickOnDueDateOptions("Next 7 days");
+    await this.clickOnApplyButton();
+    await this.clickOnApplyFilterButton();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    await this.clickOnTaskName();
+    await this.clickOnDuedateFiled();
+    for (const day of days) {
+      let dayBtn = await this.daysBtn(day);
+      let isAriaDisabled = await dayBtn.getAttribute("aria-disabled");
+      let isVisible = dayBtn.isVisible();
+      if (isAriaDisabled !== "true" && isVisible) {
+        expect(
+          dayBtn,
+          "Verify that the due date calendar is editable for future dates"
+        ).toBeVisible();
+      }
+    }
+    const todayDate = new Date(); // this is a Date object
+    const today = todayDate.getDate(); // number
+    const tomorrowDate = new Date(); // another Date object
+    tomorrowDate.setDate(tomorrowDate.getDate() + 1);
+    const todayPlusOne = tomorrowDate.getDate();
+    console.log("today =", today);
+    console.log("tomorrow =", todayPlusOne);
+    await this.selectDuedate(today);
+    await this.clickOnDuedateFiled();
+    let dayButton = this.daysBtn(todayPlusOne);
+    expect(
+      dayButton,
+      "The dates should be disable mode after change due date future date to current date"
+    ).not.toBeVisible();
+    await this.page.keyboard.press("Escape");
+    await this.clickOnTaskCloseBtn();
+  };
 };

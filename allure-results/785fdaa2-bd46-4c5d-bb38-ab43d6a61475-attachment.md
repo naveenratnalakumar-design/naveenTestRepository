@@ -1,0 +1,513 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Revflow logo" [ref=e7] [cursor=pointer]
+        - img "Revflow" [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link "Task List" [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link "AR Aging" [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - link "Settings" [ref=e34] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e37] [cursor=pointer]
+          - generic [ref=e40] [cursor=pointer]: Settings
+          - img [ref=e43] [cursor=pointer]
+      - button [ref=e49] [cursor=pointer]:
+        - img [ref=e53] [cursor=pointer]
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - generic [ref=e61]:
+          - img [ref=e64]
+          - textbox "Search for a Case" [ref=e66]
+        - generic [ref=e67]:
+          - button "Selected Facilities (35)" [ref=e69] [cursor=pointer]:
+            - text: Selected Facilities (35)
+            - img [ref=e72] [cursor=pointer]
+          - img [ref=e78]
+          - button "AT" [ref=e81] [cursor=pointer]:
+            - generic [ref=e84] [cursor=pointer]: AT
+            - img [ref=e87] [cursor=pointer]
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - heading "Tasks" [level=2] [ref=e94]
+          - generic [ref=e96]:
+            - button "Sort" [ref=e98] [cursor=pointer]:
+              - generic [ref=e99] [cursor=pointer]: Sort
+              - img [ref=e102] [cursor=pointer]
+            - button "Filters" [ref=e105] [cursor=pointer]:
+              - img [ref=e108] [cursor=pointer]
+              - generic [ref=e110] [cursor=pointer]: Filters
+            - button "Reset to Default" [ref=e112] [cursor=pointer]:
+              - generic [ref=e113] [cursor=pointer]:
+                - text: Reset to Default
+                - img [ref=e116] [cursor=pointer]
+        - generic [ref=e120]:
+          - generic [ref=e123]:
+            - generic [ref=e124]: "9001"
+            - text: Results
+          - generic [ref=e126]:
+            - generic [ref=e130] [cursor=pointer]: Task
+            - generic [ref=e135] [cursor=pointer]: Facility
+            - generic [ref=e140] [cursor=pointer]: Resident
+            - generic [ref=e145] [cursor=pointer]: Payer
+            - generic [ref=e150] [cursor=pointer]: Balance
+            - generic [ref=e155] [cursor=pointer]: Balance Status
+            - generic [ref=e160] [cursor=pointer]: Due Date
+            - generic [ref=e165] [cursor=pointer]: Task Status
+            - generic [ref=e170] [cursor=pointer]: Assigned To
+            - generic [ref=e175] [cursor=pointer]: Root Issue
+          - generic [ref=e181]:
+            - generic [ref=e183]:
+              - link "Task" [ref=e187] [cursor=pointer]
+              - generic [ref=e191]: Caring Heart
+              - link "Hayes, Willie" [ref=e195] [cursor=pointer]:
+                - /url: /cases/details/4469315
+              - generic [ref=e199]: PA Medicaid
+              - generic [ref=e203]: "0.00"
+              - generic [ref=e207]:
+                - img [ref=e210]
+                - generic [ref=e212]: DD Enrolled
+              - generic [ref=e216]: 10/30/2025
+              - generic [ref=e221]: Canceled
+              - generic [ref=e225]:
+                - generic [ref=e230]: MF
+                - generic [ref=e231]: Malki Feinroth
+              - generic [ref=e235]: Unknown
+            - generic [ref=e237]:
+              - link "Task" [ref=e241] [cursor=pointer]
+              - generic [ref=e245]: Caring Heart
+              - link "Kennedy, Ingrid" [ref=e249] [cursor=pointer]:
+                - /url: /cases/details/4451136
+              - generic [ref=e253]: Bravo MCR
+              - generic [ref=e257]: (38.50)
+              - generic [ref=e261]:
+                - img [ref=e264]
+                - generic [ref=e266]: DD Enrolled
+              - generic [ref=e270]: 10/30/2025
+              - generic [ref=e275]: Not Started
+              - generic [ref=e279]:
+                - generic [ref=e284]: VG
+                - generic [ref=e285]: Vikesh Gaikawad
+              - generic [ref=e289]: Unknown
+            - generic [ref=e291]:
+              - link "Task_2025-09-15T12:23" [ref=e295] [cursor=pointer]
+              - generic [ref=e299]: Mountain Ridge
+              - link "Criswell, Herman" [ref=e303] [cursor=pointer]:
+                - /url: /cases/details/4487595
+              - generic [ref=e307]: Anthem BCBS
+              - generic [ref=e311]: "0.00"
+              - generic [ref=e315]:
+                - img [ref=e318]
+                - generic [ref=e320]: Rejected
+              - generic [ref=e324]: 9/16/2025
+              - generic [ref=e329]: In Progress
+              - generic [ref=e333]:
+                - generic [ref=e338]: VG
+                - generic [ref=e339]: Vikesh Gaikawad
+              - generic [ref=e343]: Unknown
+            - generic [ref=e345]:
+              - link "Task_2025-09-15T11:53" [ref=e349] [cursor=pointer]
+              - generic [ref=e353]: Gulfport
+              - link "Haywood, Phillip" [ref=e357] [cursor=pointer]:
+                - /url: /cases/details/4449861
+              - generic [ref=e361]: Wellmed
+              - generic [ref=e365]: "709.86"
+              - generic [ref=e369]:
+                - img [ref=e372]
+                - generic [ref=e374]: Rejected
+              - generic [ref=e378]: 9/16/2025
+              - generic [ref=e383]: In Progress
+              - generic [ref=e387]:
+                - generic [ref=e392]: VG
+                - generic [ref=e393]: Vikesh Gaikawad
+              - generic [ref=e397]: Unknown
+            - generic [ref=e399]:
+              - link "Task0BalCharge-1" [ref=e403] [cursor=pointer]
+              - generic [ref=e407]: North Campus
+              - link "Hosea, Randolph" [ref=e411] [cursor=pointer]:
+                - /url: /cases/details/4444314
+              - generic [ref=e415]: Devoted PDPM
+              - generic [ref=e419]: 22,991.77
+              - generic [ref=e423]:
+                - img [ref=e426]
+                - generic [ref=e428]: Payment not Posted
+              - generic [ref=e432]: 9/17/2025
+              - generic [ref=e437]: In Progress
+              - generic [ref=e441]:
+                - generic [ref=e446]: VG
+                - generic [ref=e447]: Vikesh Gaikawad
+              - generic [ref=e451]: Unknown
+            - generic [ref=e453]:
+              - link "Task_2025-09-10T10:42" [ref=e457] [cursor=pointer]
+              - generic [ref=e461]: Ivy at Davenport-St Mary
+              - link "Baughman, Judith" [ref=e465] [cursor=pointer]:
+                - /url: /cases/details/4463107
+              - generic [ref=e469]: Wellmark BCBS
+              - generic [ref=e473]: "0.00"
+              - generic [ref=e477]:
+                - img [ref=e480]
+                - generic [ref=e482]: Rejected
+              - generic [ref=e486]: 9/11/2025
+              - generic [ref=e491]: Canceled
+              - generic [ref=e495]:
+                - generic [ref=e500]: KK
+                - generic [ref=e501]: Keshava Karri
+              - generic [ref=e505]: Unknown
+            - generic [ref=e507]:
+              - link "Research Claim Status" [ref=e511] [cursor=pointer]
+              - generic [ref=e515]: Ivy at Davenport-St Mary
+              - link "Isaac, Herbert" [ref=e519] [cursor=pointer]:
+                - /url: /cases/details/4477574
+              - generic [ref=e523]: Social Security
+              - generic [ref=e527]: "0.00"
+              - generic [ref=e531]:
+                - img [ref=e534]
+                - generic [ref=e536]: Unworked
+              - generic [ref=e540]: 10/9/2025
+              - generic [ref=e545]: Canceled
+              - generic [ref=e549]:
+                - generic [ref=e554]: SR
+                - generic [ref=e555]: Santosh Rongali
+              - generic [ref=e559]: Rep Payee Filed
+            - generic [ref=e561]:
+              - link "Task_2025-09-09T11:32" [ref=e565] [cursor=pointer]
+              - generic [ref=e569]: Ivy at Davenport-St Mary
+              - link "Perkins, Ortel" [ref=e573] [cursor=pointer]:
+                - /url: /cases/details/4507911
+              - generic [ref=e577]: IA Total Care MCD HMO
+              - generic [ref=e581]: "0.00"
+              - generic [ref=e585]:
+                - img [ref=e588]
+                - generic [ref=e590]: Follow-Up Needed
+              - generic [ref=e594]: 10/1/2025
+              - generic [ref=e599]: Canceled
+              - generic [ref=e603]:
+                - generic [ref=e608]: KK
+                - generic [ref=e609]: Keshava Karri
+              - generic [ref=e613]: Unknown
+            - generic [ref=e615]:
+              - link "test" [ref=e619] [cursor=pointer]
+              - generic [ref=e623]: Mountain Ridge
+              - link "Criswell, Herman" [ref=e627] [cursor=pointer]:
+                - /url: /cases/details/4487595
+              - generic [ref=e631]: Anthem BCBS
+              - generic [ref=e635]: 1,410.29
+              - generic [ref=e639]:
+                - img [ref=e642]
+                - generic [ref=e644]: Unworked
+              - generic [ref=e648]: 9/19/2025
+              - generic [ref=e653]: In Progress
+              - generic [ref=e657]:
+                - generic [ref=e662]: AW
+                - generic [ref=e663]: Adina Wilhelm
+              - generic [ref=e667]: Unknown
+            - generic [ref=e669]:
+              - link "Task" [ref=e673] [cursor=pointer]
+              - generic [ref=e677]: Caring Heart
+              - link "Minor, Floria" [ref=e681] [cursor=pointer]:
+                - /url: /cases/details/4656849
+              - generic [ref=e685]: Medicare
+              - generic [ref=e689]: (0.32)
+              - generic [ref=e693]:
+                - img [ref=e696]
+                - generic [ref=e698]: DD Enrolled
+              - generic [ref=e702]: 10/30/2025
+              - generic [ref=e707]: Not Started
+              - generic [ref=e711]:
+                - generic [ref=e716]: MF
+                - generic [ref=e717]: Malki Feinroth
+              - generic [ref=e721]: Unknown
+            - generic [ref=e723]:
+              - link "Task" [ref=e727] [cursor=pointer]
+              - generic [ref=e731]: Caring Heart
+              - link "Anderson, Otis" [ref=e735] [cursor=pointer]:
+                - /url: /cases/details/4633199
+              - generic [ref=e739]: Pension
+              - generic [ref=e743]: "19.74"
+              - generic [ref=e747]:
+                - img [ref=e750]
+                - generic [ref=e752]: Unworked
+              - generic [ref=e756]: 10/30/2025
+              - generic [ref=e761]: Canceled
+              - generic [ref=e765]:
+                - generic [ref=e770]: MF
+                - generic [ref=e771]: Malki Feinroth
+              - generic [ref=e775]: Unknown
+            - generic [ref=e777]:
+              - link "Task" [ref=e781] [cursor=pointer]
+              - generic [ref=e785]: Caring Heart
+              - link "James, Johnny" [ref=e789] [cursor=pointer]:
+                - /url: /cases/details/4617284
+              - generic [ref=e793]: Health Partners MCD
+              - generic [ref=e797]: "240.54"
+              - generic [ref=e801]:
+                - img [ref=e804]
+                - generic [ref=e806]: DD Enrolled
+              - generic [ref=e810]: 10/30/2025
+              - generic [ref=e815]: Not Started
+              - generic [ref=e819]:
+                - generic [ref=e824]: VG
+                - generic [ref=e825]: Vikesh Gaikawad
+              - generic [ref=e829]: Unknown
+            - generic [ref=e831]:
+              - link "Task" [ref=e835] [cursor=pointer]
+              - generic [ref=e839]: Caring Heart
+              - link "Perkins, Thomas" [ref=e843] [cursor=pointer]:
+                - /url: /cases/details/4599588
+              - generic [ref=e847]: Pension
+              - generic [ref=e851]: "1.00"
+              - generic [ref=e855]:
+                - img [ref=e858]
+                - generic [ref=e860]: Unworked
+              - generic [ref=e864]: 10/30/2025
+              - generic [ref=e869]: Not Started
+              - generic [ref=e873]:
+                - generic [ref=e878]: MF
+                - generic [ref=e879]: Malki Feinroth
+              - generic [ref=e883]: Unknown
+            - generic [ref=e885]:
+              - link "Task" [ref=e889] [cursor=pointer]
+              - generic [ref=e893]: Caring Heart
+              - link "Leake, Sharon" [ref=e897] [cursor=pointer]:
+                - /url: /cases/details/4592832
+              - generic [ref=e901]: Keystone First CHC
+              - generic [ref=e905]: (27.00)
+              - generic [ref=e909]:
+                - img [ref=e912]
+                - generic [ref=e914]: DD Enrolled
+              - generic [ref=e918]: 10/30/2025
+              - generic [ref=e923]: Canceled
+              - generic [ref=e927]:
+                - generic [ref=e932]: MF
+                - generic [ref=e933]: Malki Feinroth
+              - generic [ref=e937]: Unknown
+            - generic [ref=e939]:
+              - link "Task" [ref=e943] [cursor=pointer]
+              - generic [ref=e947]: Caring Heart
+              - link "Brown, Edna" [ref=e951] [cursor=pointer]:
+                - /url: /cases/details/4589422
+              - generic [ref=e955]: IBC Commercial
+              - generic [ref=e959]: (102.00)
+              - generic [ref=e963]:
+                - img [ref=e966]
+                - generic [ref=e968]: DD Enrolled
+              - generic [ref=e972]: 10/30/2025
+              - generic [ref=e977]: Not Started
+              - generic [ref=e981]:
+                - generic [ref=e986]: VG
+                - generic [ref=e987]: Vikesh Gaikawad
+              - generic [ref=e991]: Unknown
+            - generic [ref=e993]:
+              - link "Task" [ref=e997] [cursor=pointer]
+              - generic [ref=e1001]: Caring Heart
+              - link "Ondarza, Claire" [ref=e1005] [cursor=pointer]:
+                - /url: /cases/details/4585473
+              - generic [ref=e1009]: PA Medicaid
+              - generic [ref=e1013]: "0.00"
+              - generic [ref=e1017]:
+                - img [ref=e1020]
+                - generic [ref=e1022]: DD Enrolled
+              - generic [ref=e1026]: 10/30/2025
+              - generic [ref=e1031]: Completed
+              - generic [ref=e1035]:
+                - generic [ref=e1040]: MF
+                - generic [ref=e1041]: Malki Feinroth
+              - generic [ref=e1045]: Unknown
+            - generic [ref=e1047]:
+              - link "Task" [ref=e1051] [cursor=pointer]
+              - generic [ref=e1055]: Caring Heart
+              - link "Ondarza, Claire" [ref=e1059] [cursor=pointer]:
+                - /url: /cases/details/4585473
+              - generic [ref=e1063]: PA Medicaid
+              - generic [ref=e1067]: "838.00"
+              - generic [ref=e1071]:
+                - img [ref=e1074]
+                - generic [ref=e1076]: DD Enrolled
+              - generic [ref=e1080]: 10/30/2025
+              - generic [ref=e1085]: Not Started
+              - generic [ref=e1089]:
+                - generic [ref=e1094]: MF
+                - generic [ref=e1095]: Malki Feinroth
+              - generic [ref=e1099]: Unknown
+            - generic [ref=e1101]:
+              - link "Task" [ref=e1105] [cursor=pointer]
+              - generic [ref=e1109]: Caring Heart
+              - link "Hicks, Beulah" [ref=e1113] [cursor=pointer]:
+                - /url: /cases/details/4576667
+              - generic [ref=e1117]: Keystone First CHC
+              - generic [ref=e1121]: "0.00"
+              - generic [ref=e1125]:
+                - img [ref=e1128]
+                - generic [ref=e1130]: DD Enrolled
+              - generic [ref=e1134]: 10/30/2025
+              - generic [ref=e1139]: Canceled
+              - generic [ref=e1143]:
+                - generic [ref=e1148]: MF
+                - generic [ref=e1149]: Malki Feinroth
+              - generic [ref=e1153]: Unknown
+            - generic [ref=e1155]:
+              - link "Task" [ref=e1159] [cursor=pointer]
+              - generic [ref=e1163]: Caring Heart
+              - link "Jackson, Troy" [ref=e1167] [cursor=pointer]:
+                - /url: /cases/details/4565380
+              - generic [ref=e1171]: Health Partners MCD
+              - generic [ref=e1175]: 1,025.00
+              - generic [ref=e1179]:
+                - img [ref=e1182]
+                - generic [ref=e1184]: DD Enrolled
+              - generic [ref=e1188]: 10/30/2025
+              - generic [ref=e1193]: Not Started
+              - generic [ref=e1197]:
+                - generic [ref=e1202]: VG
+                - generic [ref=e1203]: Vikesh Gaikawad
+              - generic [ref=e1207]: Unknown
+            - generic [ref=e1209]:
+              - link "Task" [ref=e1213] [cursor=pointer]
+              - generic [ref=e1217]: Caring Heart
+              - link "Addison, John" [ref=e1221] [cursor=pointer]:
+                - /url: /cases/details/4564743
+              - generic [ref=e1225]: IBC Medicare
+              - generic [ref=e1229]: (153.00)
+              - generic [ref=e1233]:
+                - img [ref=e1236]
+                - generic [ref=e1238]: DD Enrolled
+              - generic [ref=e1242]: 10/30/2025
+              - generic [ref=e1247]: Not Started
+              - generic [ref=e1251]:
+                - generic [ref=e1256]: VG
+                - generic [ref=e1257]: Vikesh Gaikawad
+              - generic [ref=e1261]: Unknown
+            - generic [ref=e1263]:
+              - link "Task" [ref=e1267] [cursor=pointer]
+              - generic [ref=e1271]: Caring Heart
+              - link "Addison, John" [ref=e1275] [cursor=pointer]:
+                - /url: /cases/details/4564743
+              - generic [ref=e1279]: PA Medicaid
+              - generic [ref=e1283]: "0.00"
+              - generic [ref=e1287]:
+                - img [ref=e1290]
+                - generic [ref=e1292]: DD Enrolled
+              - generic [ref=e1296]: 10/30/2025
+              - generic [ref=e1301]: Canceled
+              - generic [ref=e1305]:
+                - generic [ref=e1310]: MF
+                - generic [ref=e1311]: Malki Feinroth
+              - generic [ref=e1315]: Unknown
+            - generic [ref=e1317]:
+              - link "Task" [ref=e1321] [cursor=pointer]
+              - generic [ref=e1325]: Caring Heart
+              - link "Royster, Melvin" [ref=e1329] [cursor=pointer]:
+                - /url: /cases/details/4564639
+              - generic [ref=e1333]: Humana MCR
+              - generic [ref=e1337]: (1,087.89)
+              - generic [ref=e1341]:
+                - img [ref=e1344]
+                - generic [ref=e1346]: DD Enrolled
+              - generic [ref=e1350]: 10/30/2025
+              - generic [ref=e1355]: Not Started
+              - generic [ref=e1359]:
+                - generic [ref=e1364]: VG
+                - generic [ref=e1365]: Vikesh Gaikawad
+              - generic [ref=e1369]: Unknown
+            - generic [ref=e1371]:
+              - link "Task" [ref=e1375] [cursor=pointer]
+              - generic [ref=e1379]: Caring Heart
+              - link "Baylor, Robyn" [ref=e1383] [cursor=pointer]:
+                - /url: /cases/details/4550592
+              - generic [ref=e1387]: Bravo MCR
+              - generic [ref=e1391]: (57.75)
+              - generic [ref=e1395]:
+                - img [ref=e1398]
+                - generic [ref=e1400]: DD Enrolled
+              - generic [ref=e1404]: 10/30/2025
+              - generic [ref=e1409]: Not Started
+              - generic [ref=e1413]:
+                - generic [ref=e1418]: VG
+                - generic [ref=e1419]: Vikesh Gaikawad
+              - generic [ref=e1423]: Unknown
+            - generic [ref=e1425]:
+              - link "Task" [ref=e1429] [cursor=pointer]
+              - generic [ref=e1433]: Caring Heart
+              - link "Larizzio, Katherine" [ref=e1437] [cursor=pointer]:
+                - /url: /cases/details/4549270
+              - generic [ref=e1441]: PA Medicaid Pending
+              - generic [ref=e1445]: "0.00"
+              - generic [ref=e1449]:
+                - img [ref=e1452]
+                - generic [ref=e1454]: DD Enrolled
+              - generic [ref=e1458]: 10/30/2025
+              - generic [ref=e1463]: Canceled
+              - generic [ref=e1467]:
+                - generic [ref=e1472]: MF
+                - generic [ref=e1473]: Malki Feinroth
+              - generic [ref=e1477]: Unknown
+            - generic [ref=e1479]:
+              - link "DailyTaskCreation(15-09-2025)Task-2for955" [ref=e1483] [cursor=pointer]
+              - generic [ref=e1487]: Highland Care
+              - link "Case, George" [ref=e1491] [cursor=pointer]:
+                - /url: /cases/details/4647706
+              - generic [ref=e1495]: Medicare
+              - generic [ref=e1499]: "0.00"
+              - generic [ref=e1503]:
+                - img [ref=e1506]
+                - generic [ref=e1508]: Bleeding Issue
+              - generic [ref=e1512]: 9/30/2025
+              - generic [ref=e1517]: Canceled
+              - generic [ref=e1521]:
+                - generic [ref=e1526]: VG
+                - generic [ref=e1527]: Vikesh Gaikawad
+              - generic [ref=e1531]: Unknown
+            - generic [ref=e1533]:
+              - link "Task_2025-09-15T12:00" [ref=e1537] [cursor=pointer]
+              - generic [ref=e1541]: Mountain Ridge
+              - link "Bertram, Paul Dean" [ref=e1545] [cursor=pointer]:
+                - /url: /cases/details/4563274
+              - generic [ref=e1549]: Humana Levels
+              - generic [ref=e1553]: 1,392.64
+              - generic [ref=e1557]:
+                - img [ref=e1560]
+                - generic [ref=e1562]: Rejected
+              - generic [ref=e1566]: 9/16/2025
+              - generic [ref=e1571]: In Progress
+              - generic [ref=e1575]:
+                - generic [ref=e1580]: VG
+                - generic [ref=e1581]: Vikesh Gaikawad
+              - generic [ref=e1585]: Unknown
+            - generic [ref=e1587]:
+              - link "Task_2025-09-11T08:14" [ref=e1591] [cursor=pointer]
+              - generic [ref=e1595]: Gulfport
+              - link "Wood, Audrey" [ref=e1599] [cursor=pointer]:
+                - /url: /cases/details/4626330
+              - generic [ref=e1603]: Ambetter Sunshine Commerci
+              - generic [ref=e1607]: "171.51"
+              - generic [ref=e1611]:
+                - img [ref=e1614]
+                - generic [ref=e1616]: Rejected
+              - generic [ref=e1620]: 9/12/2025
+              - generic [ref=e1625]: In Progress
+              - generic [ref=e1629]:
+                - generic [ref=e1634]: VG
+                - generic [ref=e1635]: Vikesh Gaikawad
+              - generic [ref=e1639]: Unknown
+          - button "Scroll to top" [ref=e1651] [cursor=pointer]:
+            - img [ref=e1654] [cursor=pointer]
+  - generic [ref=e1656]: Jira Service Management Widget
+  - iframe [ref=e1657]:
+    - main "Help Center Widget Content" [ref=f1e2]:
+      - button "?" [ref=f1e5] [cursor=pointer]:
+        - paragraph [ref=f1e6] [cursor=pointer]: "?"
+```

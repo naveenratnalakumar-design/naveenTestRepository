@@ -14,7 +14,7 @@ test.describe("Assign Primary to Any User and Validate New Primary User", () => 
             [process.env.password]
         );
     });
-    test("@regression Verify Change Primary To Any User", async () => {
+    test("@smoke Verify Change Primary To Any User", async () => {
         const userManagementPage = new sections.UserManagementPage(test, page);
         // await page.pause()
         // await userManagementPage.verifyingChangePrimaryUser();

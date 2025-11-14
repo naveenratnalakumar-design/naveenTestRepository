@@ -14,7 +14,7 @@ test.describe("Verify renaming file attachment and updating document type", () =
       [process.env.password]
     );
   });
-  test("@regression Verify renaming file attachment and updating document type", async () => {
+  test("@smoke Verify renaming file attachment and updating document type", async () => {
     const createTaskPage = new sections.CreateTaskPage(test, page);
     await createTaskPage.renameAttachedFile();
   });

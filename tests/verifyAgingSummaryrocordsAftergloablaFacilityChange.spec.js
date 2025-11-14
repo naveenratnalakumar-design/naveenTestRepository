@@ -14,7 +14,7 @@ test.describe("Verify the summary after selecting the facilities from the search
       [process.env.password]
     );
   });
-  test("@regression Verify the summary after selecting the facilities from the search.", async () => {
+  test("@smoke Verify the summary after selecting the facilities from the search.", async () => {
     const agingPage = new sections.AgingPage(test, page)
     await agingPage.GetSearchResultSummary()
 

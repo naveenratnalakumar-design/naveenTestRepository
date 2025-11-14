@@ -15,11 +15,11 @@ test.describe("Verify that the resident name is correctly displayed for the sear
     );
   });
 
-  test("@regression Verify that the resident name is correctly displayed for the searched name", async () => {
+  test("@smoke Verify that the resident name is correctly displayed for the searched name", async () => {
     const tasklistPage = new sections.TaskListPage(test, page);
     await tasklistPage.validateCaseDetailsUsingCaseSearch();
   });
-  test("@regression Verify the resident name is correctly displayed after searching a case using the Global Facility filter", async () => {
+  test("@smoke Verify the resident name is correctly displayed after searching a case using the Global Facility filter", async () => {
     const tasklistPage = new sections.TaskListPage(test, page);
     const createTaskpage = new sections.CreateTaskPage(test, page);
     await createTaskpage.clickOnTaskList();

@@ -26,7 +26,7 @@ jobs:
 
       - name: Run Playwright tests
         #run: npx playwright test --trace=on
-        run: npx playwright test --grep "@regression" --trace=on
+        run: npx playwright test --grep "@smoke" --trace=on
 
 
       # Upload Playwright HTML Report

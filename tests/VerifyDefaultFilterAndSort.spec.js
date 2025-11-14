@@ -14,7 +14,7 @@ test.describe("Verify default filters & sorting On Task List Page", () => {
       [process.env.password]
     );
   });
-  test("@regression Verify default filters & sorting", async () => {
+  test("@smoke Verify default filters & sorting", async () => {
     await page.waitForTimeout(parseInt(process.env.smallWait));
     const createTaskPage = new sections.CreateTaskPage(test, page);
     await createTaskPage.clickOnTaskList();

@@ -17,7 +17,7 @@ test.describe("Verify resident & Facility filters applied correctly on ViewTask 
     );
   });
 
-  test("@regression Validate Resident & Facility filters", async () => {
+  test("@smoke Validate Resident & Facility filters", async () => {
     const createTaskPage = new sections.CreateTaskPage(test, page);
     await createTaskPage.clickOnTaskList();
     await createTaskPage.clickOnCustomSortFilter();

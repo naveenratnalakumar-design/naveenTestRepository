@@ -14,7 +14,7 @@ test.describe("Verify Reset to Default functionality on TaskList", () => {
       [process.env.password]
     );
   });
-  test("@regression Verify Reset to Default functionality on TaskList", async () => {
+  test("@smoke Verify Reset to Default functionality on TaskList", async () => {
     await page.waitForTimeout(parseInt(process.env.largeWait));
     const createTaskPage = new sections.CreateTaskPage(test, page);
     const taskListPage = new sections.TaskListPage(test,page);

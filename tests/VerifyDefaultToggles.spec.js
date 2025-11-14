@@ -14,7 +14,7 @@ test.describe("Verify data when toggles are on and off", () => {
       [process.env.password]
     );
   });
-  test("@regression Verify default toggles", async () => {
+  test("@smoke Verify default toggles", async () => {
     const createTaskPage = new sections.CreateTaskPage(test, page);
     await createTaskPage.clickOnArAgingBtn();
     const agingPage = new sections.AgingPage(test, page);

@@ -14,7 +14,7 @@ test.describe("Verify update existing task auditLog", () => {
       [process.env.password]
     );
   });
-  test("@regression Validate details (Balance, Payer, Balance Status, Root Issue, Due Date, Charges) match Task List view; Update fields in Task View", async () => {
+  test("Validate details (Balance, Payer, Balance Status, Root Issue, Due Date, Charges) match Task List view; Update fields in Task View", async () => {
      await test.step("The Page is loading, please wait", async () => {
       await page.waitForTimeout(parseInt(process.env.largeWait));
     });

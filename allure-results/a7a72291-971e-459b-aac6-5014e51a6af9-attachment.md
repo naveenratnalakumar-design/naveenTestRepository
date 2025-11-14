@@ -1,0 +1,680 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Revflow logo" [ref=e7] [cursor=pointer]
+        - img "Revflow" [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link "Task List" [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link "AR Aging" [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - link "Settings" [ref=e34] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e37] [cursor=pointer]
+          - generic [ref=e40] [cursor=pointer]: Settings
+          - img [ref=e43] [cursor=pointer]
+      - button [ref=e49] [cursor=pointer]:
+        - img [ref=e53] [cursor=pointer]
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - generic [ref=e61]:
+          - img [ref=e64]
+          - textbox "Search for a Case" [ref=e66]
+        - generic [ref=e67]:
+          - button "Selected Facilities (35)" [ref=e69] [cursor=pointer]:
+            - text: Selected Facilities (35)
+            - img [ref=e72] [cursor=pointer]
+          - img [ref=e78]
+          - button "AT" [ref=e81] [cursor=pointer]:
+            - generic [ref=e84] [cursor=pointer]: AT
+            - img [ref=e87] [cursor=pointer]
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - heading "Tasks" [level=2] [ref=e94]
+          - generic [ref=e96]:
+            - button "Sort" [ref=e98] [cursor=pointer]:
+              - generic [ref=e99] [cursor=pointer]: Sort
+              - img [ref=e102] [cursor=pointer]
+            - button "Filters 1" [ref=e105] [cursor=pointer]:
+              - img [ref=e108] [cursor=pointer]
+              - generic [ref=e110] [cursor=pointer]:
+                - text: Filters
+                - generic [ref=e111] [cursor=pointer]: "1"
+            - button "Reset to Default" [ref=e113] [cursor=pointer]:
+              - generic [ref=e114] [cursor=pointer]:
+                - text: Reset to Default
+                - img [ref=e117] [cursor=pointer]
+        - generic [ref=e121]:
+          - generic [ref=e124]:
+            - generic [ref=e125]: "58"
+            - text: Results
+          - generic [ref=e127]:
+            - generic [ref=e131] [cursor=pointer]: Task
+            - generic [ref=e136] [cursor=pointer]: Facility
+            - generic [ref=e141] [cursor=pointer]: Resident
+            - generic [ref=e146] [cursor=pointer]: Payer
+            - generic [ref=e151] [cursor=pointer]: Balance
+            - generic [ref=e156] [cursor=pointer]: Balance Status
+            - generic [ref=e160] [cursor=pointer]:
+              - generic [ref=e161] [cursor=pointer]: Due Date
+              - generic [ref=e162] [cursor=pointer]:
+                - button [ref=e163] [cursor=pointer]:
+                  - img [ref=e166] [cursor=pointer]
+                - button [ref=e168] [cursor=pointer]:
+                  - img [ref=e171] [cursor=pointer]
+            - generic [ref=e177] [cursor=pointer]: Task Status
+            - generic [ref=e182] [cursor=pointer]: Assigned To
+            - generic [ref=e187] [cursor=pointer]: Root Issue
+          - generic [ref=e193]:
+            - generic [ref=e195]:
+              - link "DailyTaskCreation(13-11-2025)-Task-1-1961Story" [ref=e199] [cursor=pointer]
+              - generic [ref=e203]: Aventura
+              - link "Romain, Yvon" [ref=e207] [cursor=pointer]:
+                - /url: /cases/details/4186873
+              - generic [ref=e211]: Compassionate Care Hospic
+              - generic [ref=e215]: (303.85)
+              - generic [ref=e219]:
+                - img [ref=e222]
+                - generic [ref=e224]: Rejected
+              - generic [ref=e228]: 11/14/2025
+              - generic [ref=e233]: In Progress
+              - generic [ref=e237]:
+                - generic [ref=e242]: VG
+                - generic [ref=e243]: Vikesh Gaikawad
+              - generic [ref=e247]: Payer Processed Incorrectly
+            - generic [ref=e249]:
+              - link "DailyTaskCreation(11-11-2025)-Task-2-RTU" [ref=e253] [cursor=pointer]
+              - generic [ref=e257]: Citrus
+              - link "Allen, Beverly" [ref=e261] [cursor=pointer]:
+                - /url: /cases/details/4244807
+              - generic [ref=e265]: Social Security
+              - generic [ref=e269]: "185.00"
+              - generic [ref=e273]:
+                - img [ref=e276]
+                - generic [ref=e278]: Follow-Up Needed
+              - generic [ref=e282]: 11/18/2025
+              - generic [ref=e287]: In Progress
+              - generic [ref=e291]:
+                - generic [ref=e296]: VG
+                - generic [ref=e297]: Vikesh Gaikawad
+              - generic [ref=e301]: EOM Check/ACH
+            - generic [ref=e303]:
+              - link "DailyTaskCreation(11-11-2025)-Task-1-RTU" [ref=e307] [cursor=pointer]
+              - generic [ref=e311]: Citrus
+              - link "Allen, Beverly" [ref=e315] [cursor=pointer]:
+                - /url: /cases/details/4244807
+              - generic [ref=e319]: Social Security
+              - generic [ref=e323]: 1,292.00
+              - generic [ref=e327]:
+                - img [ref=e330]
+                - generic [ref=e332]: ACH/CC processing
+              - generic [ref=e336]: 11/16/2025
+              - generic [ref=e341]: In Progress
+              - generic [ref=e345]:
+                - generic [ref=e350]: VG
+                - generic [ref=e351]: Vikesh Gaikawad
+              - generic [ref=e355]: Bad Debt
+            - generic [ref=e357]:
+              - link "MEDICARECHECK" [ref=e361] [cursor=pointer]
+              - generic [ref=e365]: Beacon
+              - link "Bosmond, Louise" [ref=e369] [cursor=pointer]:
+                - /url: /cases/details/4581019
+              - generic [ref=e373]: Medicare
+              - generic [ref=e377]: "0.00"
+              - generic [ref=e381]:
+                - img [ref=e384]
+                - generic [ref=e386]: Sequence
+              - generic [ref=e390]: 11/14/2025
+              - generic [ref=e395]: Canceled
+              - generic [ref=e399]:
+                - generic [ref=e404]: AR
+                - generic [ref=e405]: Aditya Ravulkar
+              - generic [ref=e409]: Unknown
+            - generic [ref=e411]:
+              - link "createTaskWithPayerCet-7AndBalastone-4" [ref=e415] [cursor=pointer]
+              - generic [ref=e419]: North Campus
+              - link "Guthrie, Charles" [ref=e423] [cursor=pointer]:
+                - /url: /cases/details/4432036
+              - generic [ref=e427]: Veterans Insurance
+              - generic [ref=e431]: 7,147.42
+              - generic [ref=e435]:
+                - img [ref=e438]
+                - generic [ref=e440]: Unworked
+              - generic [ref=e444]: 11/14/2025
+              - generic [ref=e449]: In Progress
+              - generic [ref=e453]:
+                - generic [ref=e458]: VG
+                - generic [ref=e459]: Vikesh Gaikawad
+              - generic [ref=e463]: Additional Info Needed
+            - generic [ref=e465]:
+              - link "createTaskWithPayerCet-5AndBalastone-4" [ref=e469] [cursor=pointer]
+              - generic [ref=e473]: North Campus
+              - link "Fletcher, Zadia" [ref=e477] [cursor=pointer]:
+                - /url: /cases/details/3608533
+              - generic [ref=e481]: Vitas Hospice Respite
+              - generic [ref=e485]: 2,517.70
+              - generic [ref=e489]:
+                - img [ref=e492]
+                - generic [ref=e494]: Unworked
+              - generic [ref=e498]: 11/14/2025
+              - generic [ref=e503]: In Progress
+              - generic [ref=e507]:
+                - generic [ref=e512]: VG
+                - generic [ref=e513]: Vikesh Gaikawad
+              - generic [ref=e517]: Additional Info Needed
+            - generic [ref=e519]:
+              - link "createTaskWithPayerCet-5AndBalastone-3" [ref=e523] [cursor=pointer]
+              - generic [ref=e527]: North Campus
+              - link "Rowe, Donald" [ref=e531] [cursor=pointer]:
+                - /url: /cases/details/5626737
+              - generic [ref=e535]: Vitas Hospice Respite
+              - generic [ref=e539]: 2,466.25
+              - generic [ref=e543]:
+                - img [ref=e546]
+                - generic [ref=e548]: Unworked
+              - generic [ref=e552]: 11/14/2025
+              - generic [ref=e557]: In Progress
+              - generic [ref=e561]:
+                - generic [ref=e566]: VG
+                - generic [ref=e567]: Vikesh Gaikawad
+              - generic [ref=e571]: ADR
+            - generic [ref=e573]:
+              - link "createTaskWithPayerCet-5AndBalastone-3" [ref=e577] [cursor=pointer]
+              - generic [ref=e581]: Test Winston Salem
+              - link "Suggs, William" [ref=e585] [cursor=pointer]:
+                - /url: /cases/details/4484383
+              - generic [ref=e589]: PACE
+              - generic [ref=e593]: 8,646.83
+              - generic [ref=e597]:
+                - img [ref=e600]
+                - generic [ref=e602]: Unworked
+              - generic [ref=e606]: 11/14/2025
+              - generic [ref=e611]: In Progress
+              - generic [ref=e615]:
+                - generic [ref=e620]: VG
+                - generic [ref=e621]: Vikesh Gaikawad
+              - generic [ref=e625]: Additional Info Needed
+            - generic [ref=e627]:
+              - link "createTaskWithPayerCetTwoAndBalastone" [ref=e631] [cursor=pointer]
+              - generic [ref=e635]: Windsor
+              - link "Endres, Mary" [ref=e639] [cursor=pointer]:
+                - /url: /cases/details/4221386
+              - generic [ref=e643]: FL Community Care Medicaid
+              - generic [ref=e647]: "0.00"
+              - generic [ref=e651]:
+                - img [ref=e654]
+                - generic [ref=e656]: Rejected
+              - generic [ref=e660]: 11/14/2025
+              - generic [ref=e665]: Completed
+              - generic [ref=e669]:
+                - generic [ref=e674]: KK
+                - generic [ref=e675]: Kesavarao Karri
+              - generic [ref=e679]: Unknown
+            - generic [ref=e681]:
+              - link "createTaskWithPayerCet-5AndBalastone-8" [ref=e685] [cursor=pointer]
+              - generic [ref=e689]: Test Riverdale
+              - link "Schwarz, Edith" [ref=e693] [cursor=pointer]:
+                - /url: /cases/details/4098896
+              - generic [ref=e697]: Calvary Hospice
+              - generic [ref=e701]: (9,886.52)
+              - generic [ref=e705]:
+                - img [ref=e708]
+                - generic [ref=e710]: Unworked
+              - generic [ref=e714]: 11/14/2025
+              - generic [ref=e719]: In Progress
+              - generic [ref=e723]:
+                - generic [ref=e728]: VG
+                - generic [ref=e729]: Vikesh Gaikawad
+              - generic [ref=e733]: ADR
+            - generic [ref=e735]:
+              - link "createTaskWithPayerCet-5AndBalastone-8" [ref=e739] [cursor=pointer]
+              - generic [ref=e743]: Test Riverdale
+              - link "Schwarz, Edith" [ref=e747] [cursor=pointer]:
+                - /url: /cases/details/4098896
+              - generic [ref=e751]: Calvary Hospice
+              - generic [ref=e755]: (10,244.78)
+              - generic [ref=e759]:
+                - img [ref=e762]
+                - generic [ref=e764]: Unworked
+              - generic [ref=e768]: 11/14/2025
+              - generic [ref=e773]: In Progress
+              - generic [ref=e777]:
+                - generic [ref=e782]: VG
+                - generic [ref=e783]: Vikesh Gaikawad
+              - generic [ref=e787]: No Coverage
+            - generic [ref=e789]:
+              - link "createTaskWithPayerCet-5AndBalastone-4" [ref=e793] [cursor=pointer]
+              - generic [ref=e797]: Test Riverdale
+              - link "Young, Doris" [ref=e801] [cursor=pointer]:
+                - /url: /cases/details/4153317
+              - generic [ref=e805]: Calvary Hospice
+              - generic [ref=e809]: 6,129.86
+              - generic [ref=e813]:
+                - img [ref=e816]
+                - generic [ref=e818]: Unworked
+              - generic [ref=e822]: 11/14/2025
+              - generic [ref=e827]: In Progress
+              - generic [ref=e831]:
+                - generic [ref=e836]: VG
+                - generic [ref=e837]: Vikesh Gaikawad
+              - generic [ref=e841]: ADR
+            - generic [ref=e843]:
+              - link "createTaskWithPayerCet-5AndBalastone-3" [ref=e847] [cursor=pointer]
+              - generic [ref=e851]: Test Riverdale
+              - link "Nunez, Dinorah" [ref=e855] [cursor=pointer]:
+                - /url: /cases/details/4382380
+              - generic [ref=e859]: Calvary Hospice
+              - generic [ref=e863]: 3,410.32
+              - generic [ref=e867]:
+                - img [ref=e870]
+                - generic [ref=e872]: Unworked
+              - generic [ref=e876]: 11/14/2025
+              - generic [ref=e881]: In Progress
+              - generic [ref=e885]:
+                - generic [ref=e890]: VG
+                - generic [ref=e891]: Vikesh Gaikawad
+              - generic [ref=e895]: Additional Info Needed
+            - generic [ref=e897]:
+              - link "Task" [ref=e901] [cursor=pointer]
+              - generic [ref=e905]: Test Aberdeen
+              - link "Ledbetter, Margaret" [ref=e909] [cursor=pointer]:
+                - /url: /cases/details/4466101
+              - generic [ref=e913]: AMEDISYS HOSPICE
+              - generic [ref=e917]: (1,049.70)
+              - generic [ref=e921]:
+                - img [ref=e924]
+                - generic [ref=e926]: Unworked
+              - generic [ref=e930]: 11/14/2025
+              - generic [ref=e935]: In Progress
+              - generic [ref=e939]:
+                - generic [ref=e944]: VG
+                - generic [ref=e945]: Vikesh Gaikawad
+              - generic [ref=e949]: Awaiting Primary Payment
+            - generic [ref=e951]:
+              - link "Task" [ref=e955] [cursor=pointer]
+              - generic [ref=e959]: Beacon
+              - link "Alexandre, Francois" [ref=e963] [cursor=pointer]:
+                - /url: /cases/details/4208726
+              - generic [ref=e967]: Medicare
+              - generic [ref=e971]: 2,840.80
+              - generic [ref=e975]:
+                - img [ref=e978]
+                - generic [ref=e980]: Sequence
+              - generic [ref=e984]: 11/14/2025
+              - generic [ref=e989]: In Progress
+              - generic [ref=e993]:
+                - generic [ref=e998]: VG
+                - generic [ref=e999]: Vikesh Gaikawad
+              - generic [ref=e1003]: Unknown
+            - generic [ref=e1005]:
+              - link "Santosh-1900Task-For(Respite)-Task-1" [ref=e1009] [cursor=pointer]
+              - generic [ref=e1013]: Test Lexington
+              - link "Byrd, Katherine" [ref=e1017] [cursor=pointer]:
+                - /url: /cases/details/4159283
+              - generic [ref=e1021]: Respite
+              - generic [ref=e1025]: (3,720.00)
+              - generic [ref=e1029]:
+                - img [ref=e1032]
+                - generic [ref=e1034]: Unworked
+              - generic [ref=e1038]: Today
+              - generic [ref=e1043]: In Progress
+              - generic [ref=e1047]:
+                - generic [ref=e1052]: SR
+                - generic [ref=e1053]: Santosh Rongali
+              - generic [ref=e1057]: Unknown
+            - generic [ref=e1059]:
+              - link "1900Task-For(Respite)-Task-17" [ref=e1063] [cursor=pointer]
+              - generic [ref=e1067]: Test Lexington
+              - link "Shields, Linda" [ref=e1071] [cursor=pointer]:
+                - /url: /cases/details/4289132
+              - generic [ref=e1075]: Respite
+              - generic [ref=e1079]: (1,028.86)
+              - generic [ref=e1083]:
+                - img [ref=e1086]
+                - generic [ref=e1088]: Unworked
+              - generic [ref=e1092]: Today
+              - generic [ref=e1097]: In Progress
+              - generic [ref=e1101]:
+                - generic [ref=e1106]: SR
+                - generic [ref=e1107]: Santosh Rongali
+              - generic [ref=e1111]: Unknown
+            - generic [ref=e1113]:
+              - link "Taskmanualfalse" [ref=e1117] [cursor=pointer]
+              - generic [ref=e1121]: Beacon
+              - link "Logan, Florence" [ref=e1125] [cursor=pointer]:
+                - /url: /cases/details/3610615
+              - generic [ref=e1129]: AARP
+              - generic [ref=e1133]: 4,190.00
+              - generic [ref=e1137]:
+                - img [ref=e1140]
+                - generic [ref=e1142]: Needs Research
+              - generic [ref=e1146]: 11/19/2025
+              - generic [ref=e1151]: In Progress
+              - generic [ref=e1155]:
+                - generic [ref=e1160]: VG
+                - generic [ref=e1161]: Vikesh Gaikawad
+              - generic [ref=e1165]: Unknown
+            - generic [ref=e1167]:
+              - link "DailyTaskCreation(22-10-2025)-Task-3-RTU" [ref=e1171] [cursor=pointer]
+              - generic [ref=e1175]: Windsor
+              - link "Strickland, Beathres" [ref=e1179] [cursor=pointer]:
+                - /url: /cases/details/4712598
+              - generic [ref=e1183]: United Commercial Medicare
+              - generic [ref=e1187]: (1,602.00)
+              - generic [ref=e1191]:
+                - img [ref=e1194]
+                - generic [ref=e1196]: Sent for Reprocessing
+              - generic [ref=e1200]: 11/16/2025
+              - generic [ref=e1205]: In Progress
+              - generic [ref=e1209]:
+                - generic [ref=e1214]: VG
+                - generic [ref=e1215]: Vikesh Gaikawad
+              - generic [ref=e1219]: Unknown
+            - generic [ref=e1221]:
+              - link "DailyTaskCreation(16-10-2025)-Task-1-RTAPI" [ref=e1225] [cursor=pointer]
+              - generic [ref=e1229]: Mountain Ridge
+              - link "Corder, Thelma" [ref=e1233] [cursor=pointer]:
+                - /url: /cases/details/4314175
+              - generic [ref=e1237]: Medicare
+              - generic [ref=e1241]: "0.00"
+              - generic [ref=e1245]:
+                - img [ref=e1248]
+                - generic [ref=e1250]: Unworked
+              - generic [ref=e1254]: 11/15/2025
+              - generic [ref=e1259]: Completed
+              - generic [ref=e1263]:
+                - generic [ref=e1268]: SR
+                - generic [ref=e1269]: Santosh Rongali
+              - generic [ref=e1273]: Unknown
+  - generic [ref=e1285]: Jira Service Management Widget
+  - iframe [ref=e1286]:
+    - main "Help Center Widget Content" [ref=f1e2]:
+      - button "?" [ref=f1e5] [cursor=pointer]:
+        - paragraph [ref=f1e6] [cursor=pointer]: "?"
+  - generic:
+    - generic [ref=e1293]:
+      - generic [ref=e1294]:
+        - textbox [ref=e1298]: DailyTaskCreation(13-11-2025)-Task-1-1961Story
+        - generic [ref=e1299]:
+          - button [ref=e1301] [cursor=pointer]:
+            - img [ref=e1305] [cursor=pointer]
+          - link "Open Task" [ref=e1307] [cursor=pointer]:
+            - /url: /tasks/details/24238
+            - button "Open Task" [ref=e1309] [cursor=pointer]:
+              - generic [ref=e1310] [cursor=pointer]:
+                - text: Open Task
+                - img [ref=e1313] [cursor=pointer]
+          - button [ref=e1316] [cursor=pointer]:
+            - img [ref=e1320] [cursor=pointer]
+      - generic [ref=e1322]:
+        - generic [ref=e1326]:
+          - generic [ref=e1327]:
+            - generic [ref=e1331] [cursor=pointer]: Facility
+            - text: Aventura
+          - generic [ref=e1332]:
+            - generic [ref=e1336] [cursor=pointer]: Resident
+            - link "Romain, Yvon" [ref=e1337] [cursor=pointer]:
+              - /url: /cases/details/4186873
+          - generic [ref=e1338]:
+            - generic [ref=e1342] [cursor=pointer]: Balance
+            - generic [ref=e1343]:
+              - generic [ref=e1344]: (303.85)
+              - button "(1 Charge)" [ref=e1346] [cursor=pointer]:
+                - generic [ref=e1347] [cursor=pointer]: (1 Charge)
+          - generic [ref=e1348]:
+            - generic [ref=e1352] [cursor=pointer]: Payer
+            - text: Compassionate Care Hospic
+          - generic [ref=e1356]:
+            - toolbar:
+              - generic [ref=e1357]:
+                - button "bold" [ref=e1358] [cursor=pointer]:
+                  - img [ref=e1359] [cursor=pointer]
+                - button "italic" [ref=e1361] [cursor=pointer]:
+                  - img [ref=e1362] [cursor=pointer]
+                - button "underline" [ref=e1364] [cursor=pointer]:
+                  - img [ref=e1365] [cursor=pointer]
+                - button "strike" [ref=e1367] [cursor=pointer]:
+                  - img [ref=e1368] [cursor=pointer]
+              - generic [ref=e1370]:
+                - 'button "list: bullet" [ref=e1371] [cursor=pointer]':
+                  - img [ref=e1372] [cursor=pointer]
+                - 'button "list: ordered" [ref=e1374] [cursor=pointer]':
+                  - img [ref=e1375] [cursor=pointer]
+              - button "link" [ref=e1379] [cursor=pointer]:
+                - img [ref=e1380] [cursor=pointer]
+            - generic [ref=e1382]:
+              - generic [ref=e1383]:
+                - text: Add a description...
+                - paragraph [ref=e1384]
+              - text: "Visit URL: EditRemove"
+          - generic [ref=e1386]:
+            - generic [ref=e1389] [cursor=pointer]:
+              - generic [ref=e1390] [cursor=pointer]: Balance Status
+              - generic [ref=e1391] [cursor=pointer]: "*"
+            - combobox "Rejected" [ref=e1393]:
+              - generic [ref=e1400] [cursor=pointer]:
+                - img [ref=e1403] [cursor=pointer]
+                - generic [ref=e1405] [cursor=pointer]: Rejected
+          - generic [ref=e1407]:
+            - generic [ref=e1410] [cursor=pointer]:
+              - generic [ref=e1411] [cursor=pointer]: Root Issue
+              - generic [ref=e1412] [cursor=pointer]: "*"
+            - combobox "Payer Processed Incorrectly" [ref=e1414]:
+              - generic [ref=e1420] [cursor=pointer]: Payer Processed Incorrectly
+          - generic [ref=e1422]:
+            - generic [ref=e1426] [cursor=pointer]: Assigned To
+            - combobox "VG Vikesh Gaikawad" [ref=e1428]:
+              - button "VG Vikesh Gaikawad" [ref=e1436] [cursor=pointer]:
+                - generic [ref=e1441] [cursor=pointer]: VG
+                - generic [ref=e1442] [cursor=pointer]: Vikesh Gaikawad
+          - generic [ref=e1444]:
+            - generic [ref=e1447] [cursor=pointer]:
+              - generic [ref=e1448] [cursor=pointer]: Due Date
+              - generic [ref=e1449] [cursor=pointer]: "*"
+            - textbox "Due Date *" [ref=e1452]:
+              - text: 11/14/2025
+              - generic [ref=e1453]:
+                - generic [ref=e1456]:
+                  - generic [ref=e1457]: NOV 2025
+                  - button "Choose month and year" [ref=e1458] [cursor=pointer]:
+                    - generic [ref=e1459] [cursor=pointer]:
+                      - generic [ref=e1460] [cursor=pointer]: NOV 2025
+                      - img [ref=e1461] [cursor=pointer]
+                  - button "Previous month" [ref=e1465] [cursor=pointer]:
+                    - img [ref=e1466] [cursor=pointer]
+                  - button "Next month" [ref=e1470] [cursor=pointer]:
+                    - img [ref=e1471] [cursor=pointer]
+                - grid [ref=e1477]:
+                  - rowgroup [ref=e1478]:
+                    - row "Sunday Monday Tuesday Wednesday Thursday Friday Saturday" [ref=e1479]:
+                      - columnheader "Sunday" [ref=e1480]:
+                        - generic [ref=e1481]: Sunday
+                        - generic [ref=e1482]: Su
+                      - columnheader "Monday" [ref=e1483]:
+                        - generic [ref=e1484]: Monday
+                        - generic [ref=e1485]: Mo
+                      - columnheader "Tuesday" [ref=e1486]:
+                        - generic [ref=e1487]: Tuesday
+                        - generic [ref=e1488]: Tu
+                      - columnheader "Wednesday" [ref=e1489]:
+                        - generic [ref=e1490]: Wednesday
+                        - generic [ref=e1491]: We
+                      - columnheader "Thursday" [ref=e1492]:
+                        - generic [ref=e1493]: Thursday
+                        - generic [ref=e1494]: Th
+                      - columnheader "Friday" [ref=e1495]:
+                        - generic [ref=e1496]: Friday
+                        - generic [ref=e1497]: Fr
+                      - columnheader "Saturday" [ref=e1498]:
+                        - generic [ref=e1499]: Saturday
+                        - generic [ref=e1500]: Sa
+                    - row [ref=e1501]:
+                      - gridcell [ref=e1502]
+                  - rowgroup [ref=e1503]:
+                    - row "NOV November 1, 2025" [ref=e1504]:
+                      - gridcell "NOV" [ref=e1505]
+                      - gridcell "November 1, 2025" [ref=e1506]:
+                        - button "November 1, 2025" [disabled] [ref=e1507]:
+                          - generic [ref=e1508]: "1"
+                    - row "November 2, 2025 November 3, 2025 November 4, 2025 November 5, 2025 November 6, 2025 November 7, 2025 November 8, 2025" [ref=e1510]:
+                      - gridcell "November 2, 2025" [ref=e1511]:
+                        - button "November 2, 2025" [disabled] [ref=e1512]:
+                          - generic [ref=e1513]: "2"
+                      - gridcell "November 3, 2025" [ref=e1515]:
+                        - button "November 3, 2025" [disabled] [ref=e1516]:
+                          - generic [ref=e1517]: "3"
+                      - gridcell "November 4, 2025" [ref=e1519]:
+                        - button "November 4, 2025" [disabled] [ref=e1520]:
+                          - generic [ref=e1521]: "4"
+                      - gridcell "November 5, 2025" [ref=e1523]:
+                        - button "November 5, 2025" [disabled] [ref=e1524]:
+                          - generic [ref=e1525]: "5"
+                      - gridcell "November 6, 2025" [ref=e1527]:
+                        - button "November 6, 2025" [disabled] [ref=e1528]:
+                          - generic [ref=e1529]: "6"
+                      - gridcell "November 7, 2025" [ref=e1531]:
+                        - button "November 7, 2025" [disabled] [ref=e1532]:
+                          - generic [ref=e1533]: "7"
+                      - gridcell "November 8, 2025" [ref=e1535]:
+                        - button "November 8, 2025" [disabled] [ref=e1536]:
+                          - generic [ref=e1537]: "8"
+                    - row "November 9, 2025 November 10, 2025 November 11, 2025 November 12, 2025 November 13, 2025 November 14, 2025 November 15, 2025" [ref=e1539]:
+                      - gridcell "November 9, 2025" [ref=e1540]:
+                        - button "November 9, 2025" [disabled] [ref=e1541]:
+                          - generic [ref=e1542]: "9"
+                      - gridcell "November 10, 2025" [ref=e1544]:
+                        - button "November 10, 2025" [disabled] [ref=e1545]:
+                          - generic [ref=e1546]: "10"
+                      - gridcell "November 11, 2025" [ref=e1548]:
+                        - button "November 11, 2025" [disabled] [ref=e1549]:
+                          - generic [ref=e1550]: "11"
+                      - gridcell "November 12, 2025" [ref=e1552]:
+                        - button "November 12, 2025" [disabled] [ref=e1553]:
+                          - generic [ref=e1554]: "12"
+                      - gridcell "November 13, 2025" [ref=e1556]:
+                        - button "November 13, 2025" [ref=e1557] [cursor=pointer]:
+                          - generic [ref=e1558] [cursor=pointer]: "13"
+                      - gridcell "November 14, 2025" [ref=e1560]:
+                        - button "November 14, 2025" [active] [pressed] [ref=e1561] [cursor=pointer]:
+                          - generic [ref=e1562] [cursor=pointer]: "14"
+                      - gridcell "November 15, 2025" [ref=e1564]:
+                        - button "November 15, 2025" [disabled] [ref=e1565]:
+                          - generic [ref=e1566]: "15"
+                    - row "November 16, 2025 November 17, 2025 November 18, 2025 November 19, 2025 November 20, 2025 November 21, 2025 November 22, 2025" [ref=e1568]:
+                      - gridcell "November 16, 2025" [ref=e1569]:
+                        - button "November 16, 2025" [disabled] [ref=e1570]:
+                          - generic [ref=e1571]: "16"
+                      - gridcell "November 17, 2025" [ref=e1573]:
+                        - button "November 17, 2025" [disabled] [ref=e1574]:
+                          - generic [ref=e1575]: "17"
+                      - gridcell "November 18, 2025" [ref=e1577]:
+                        - button "November 18, 2025" [disabled] [ref=e1578]:
+                          - generic [ref=e1579]: "18"
+                      - gridcell "November 19, 2025" [ref=e1581]:
+                        - button "November 19, 2025" [disabled] [ref=e1582]:
+                          - generic [ref=e1583]: "19"
+                      - gridcell "November 20, 2025" [ref=e1585]:
+                        - button "November 20, 2025" [disabled] [ref=e1586]:
+                          - generic [ref=e1587]: "20"
+                      - gridcell "November 21, 2025" [ref=e1589]:
+                        - button "November 21, 2025" [disabled] [ref=e1590]:
+                          - generic [ref=e1591]: "21"
+                      - gridcell "November 22, 2025" [ref=e1593]:
+                        - button "November 22, 2025" [disabled] [ref=e1594]:
+                          - generic [ref=e1595]: "22"
+                    - row "November 23, 2025 November 24, 2025 November 25, 2025 November 26, 2025 November 27, 2025 November 28, 2025 November 29, 2025" [ref=e1597]:
+                      - gridcell "November 23, 2025" [ref=e1598]:
+                        - button "November 23, 2025" [disabled] [ref=e1599]:
+                          - generic [ref=e1600]: "23"
+                      - gridcell "November 24, 2025" [ref=e1602]:
+                        - button "November 24, 2025" [disabled] [ref=e1603]:
+                          - generic [ref=e1604]: "24"
+                      - gridcell "November 25, 2025" [ref=e1606]:
+                        - button "November 25, 2025" [disabled] [ref=e1607]:
+                          - generic [ref=e1608]: "25"
+                      - gridcell "November 26, 2025" [ref=e1610]:
+                        - button "November 26, 2025" [disabled] [ref=e1611]:
+                          - generic [ref=e1612]: "26"
+                      - gridcell "November 27, 2025" [ref=e1614]:
+                        - button "November 27, 2025" [disabled] [ref=e1615]:
+                          - generic [ref=e1616]: "27"
+                      - gridcell "November 28, 2025" [ref=e1618]:
+                        - button "November 28, 2025" [disabled] [ref=e1619]:
+                          - generic [ref=e1620]: "28"
+                      - gridcell "November 29, 2025" [ref=e1622]:
+                        - button "November 29, 2025" [disabled] [ref=e1623]:
+                          - generic [ref=e1624]: "29"
+                    - row "November 30, 2025" [ref=e1626]:
+                      - gridcell "November 30, 2025" [ref=e1627]:
+                        - button "November 30, 2025" [disabled] [ref=e1628]:
+                          - generic [ref=e1629]: "30"
+          - generic [ref=e1631]:
+            - generic [ref=e1635] [cursor=pointer]: Task Status
+            - combobox "In Progress" [disabled] [ref=e1637]:
+              - generic [ref=e1645]: In Progress
+        - generic [ref=e1652]:
+          - tablist [ref=e1655]:
+            - generic [ref=e1656]:
+              - tab "Comments 0" [selected] [ref=e1657] [cursor=pointer]:
+                - generic [ref=e1659] [cursor=pointer]:
+                  - text: Comments
+                  - generic [ref=e1660] [cursor=pointer]: "0"
+              - tab "Charges 1" [ref=e1661] [cursor=pointer]:
+                - generic [ref=e1663] [cursor=pointer]:
+                  - text: Charges
+                  - generic [ref=e1664] [cursor=pointer]: "1"
+              - tab "Activity 1" [ref=e1665] [cursor=pointer]:
+                - generic [ref=e1667] [cursor=pointer]:
+                  - text: Activity
+                  - generic [ref=e1668] [cursor=pointer]: "1"
+              - tab "Files 0" [ref=e1669] [cursor=pointer]:
+                - generic [ref=e1671] [cursor=pointer]:
+                  - text: Files
+                  - generic [ref=e1672] [cursor=pointer]: "0"
+          - generic [ref=e1673]:
+            - tabpanel "Comments 0" [ref=e1674]:
+              - generic [ref=e1682]:
+                - generic [ref=e1684]:
+                  - toolbar:
+                    - generic [ref=e1685]:
+                      - button "bold" [ref=e1686] [cursor=pointer]:
+                        - img [ref=e1687] [cursor=pointer]
+                      - button "italic" [ref=e1689] [cursor=pointer]:
+                        - img [ref=e1690] [cursor=pointer]
+                      - button "underline" [ref=e1692] [cursor=pointer]:
+                        - img [ref=e1693] [cursor=pointer]
+                      - button "strike" [ref=e1695] [cursor=pointer]:
+                        - img [ref=e1696] [cursor=pointer]
+                    - generic [ref=e1698]:
+                      - 'button "list: bullet" [ref=e1699] [cursor=pointer]':
+                        - img [ref=e1700] [cursor=pointer]
+                      - 'button "list: ordered" [ref=e1702] [cursor=pointer]':
+                        - img [ref=e1703] [cursor=pointer]
+                    - button "link" [ref=e1707] [cursor=pointer]:
+                      - img [ref=e1708] [cursor=pointer]
+                  - generic [ref=e1710]:
+                    - generic [ref=e1711]:
+                      - text: Add comment...
+                      - paragraph [ref=e1712]
+                    - text: "Visit URL: EditRemove"
+                - generic [ref=e1713]: Max number of characters allowed 500
+            - tabpanel [ref=e1715]
+            - tabpanel [ref=e1716]
+            - tabpanel [ref=e1717]
+    - dialog [ref=e1723]:
+      - button "Close calendar" [ref=e1724] [cursor=pointer]:
+        - generic [ref=e1725] [cursor=pointer]: Close calendar
+```

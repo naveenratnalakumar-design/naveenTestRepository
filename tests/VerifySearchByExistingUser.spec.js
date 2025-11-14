@@ -14,7 +14,7 @@ test.describe("Verify that the In-RevFlow flag is displayed when searching for a
       [process.env.password]
     );
   });
-  test("@regression Verify search by existing user", async () => {
+  test("@smoke Verify search by existing user", async () => {
     const userManagementPage = new sections.UserManagementPage(test, page);
     await userManagementPage.verifySearchByExistingUser();
   });

@@ -14,11 +14,11 @@ test.describe("Verify LinkAndUnlinkFileFromTask from Case", () => {
       [process.env.password]
     );
   });
-  test("@regression Verify adding a file to Task from Case", async () => {
+  test("@smoke Verify adding a file to Task from Case", async () => {
     const createTaskPage = new sections.CreateTaskPage(test, page);
     await createTaskPage.linkFiles();
   });
-  test("@regression Verify the file can be unlinked from Task", async () => {
+  test("@smoke Verify the file can be unlinked from Task", async () => {
     const createTaskPage = new sections.CreateTaskPage(test, page);
     await createTaskPage.unlinkFile();
   });

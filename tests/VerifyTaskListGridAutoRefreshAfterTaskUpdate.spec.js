@@ -14,7 +14,7 @@ test.describe("Verify task list opens in slide out and updating any field refres
       [process.env.password]
     );
   });
-  test("@regression Verify task list opens in slide out and updating any field refreshes the tasklist grid", async () => {
+  test("@smoke Verify task list opens in slide out and updating any field refreshes the tasklist grid", async () => {
      const createTaskPage= new sections.CreateTaskPage(test,page);
       await createTaskPage.clickOnTaskList();
       const taskListPage = new sections.TaskListPage(test,page);

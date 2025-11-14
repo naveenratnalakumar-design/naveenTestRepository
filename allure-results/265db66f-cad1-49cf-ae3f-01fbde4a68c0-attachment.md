@@ -1,0 +1,550 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Revflow logo" [ref=e7] [cursor=pointer]
+        - img "Revflow" [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link "Task List" [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link "AR Aging" [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - link "Settings" [ref=e34] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e37] [cursor=pointer]
+          - generic [ref=e40] [cursor=pointer]: Settings
+          - img [ref=e43] [cursor=pointer]
+      - button [ref=e49] [cursor=pointer]:
+        - img [ref=e53] [cursor=pointer]
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - generic [ref=e61]:
+          - img [ref=e64]
+          - textbox "Search for a Case" [ref=e66]
+        - generic [ref=e67]:
+          - button "Selected Facilities (35)" [ref=e69] [cursor=pointer]:
+            - text: Selected Facilities (35)
+            - img [ref=e72] [cursor=pointer]
+          - img [ref=e78]
+          - button "AT" [ref=e81] [cursor=pointer]:
+            - generic [ref=e84] [cursor=pointer]: AT
+            - img [ref=e87] [cursor=pointer]
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - heading "Tasks" [level=2] [ref=e94]
+          - generic [ref=e96]:
+            - button "Sort" [ref=e98] [cursor=pointer]:
+              - generic [ref=e99] [cursor=pointer]: Sort
+              - img [ref=e102] [cursor=pointer]
+            - button "Filters 1" [ref=e105] [cursor=pointer]:
+              - img [ref=e108] [cursor=pointer]
+              - generic [ref=e110] [cursor=pointer]:
+                - text: Filters
+                - generic [ref=e111] [cursor=pointer]: "1"
+            - button "Reset to Default" [ref=e113] [cursor=pointer]:
+              - generic [ref=e114] [cursor=pointer]:
+                - text: Reset to Default
+                - img [ref=e117] [cursor=pointer]
+        - generic [ref=e121]:
+          - generic [ref=e124]:
+            - generic [ref=e125]: "57"
+            - text: Results
+          - generic [ref=e127]:
+            - generic [ref=e131] [cursor=pointer]: Task
+            - generic [ref=e136] [cursor=pointer]: Facility
+            - generic [ref=e141] [cursor=pointer]: Resident
+            - generic [ref=e146] [cursor=pointer]: Payer
+            - generic [ref=e151] [cursor=pointer]: Balance
+            - generic [ref=e156] [cursor=pointer]: Balance Status
+            - generic [ref=e160] [cursor=pointer]:
+              - generic [ref=e161] [cursor=pointer]: Due Date
+              - generic [ref=e162] [cursor=pointer]:
+                - button [ref=e163] [cursor=pointer]:
+                  - img [ref=e166] [cursor=pointer]
+                - button [ref=e168] [cursor=pointer]:
+                  - img [ref=e171] [cursor=pointer]
+            - generic [ref=e177] [cursor=pointer]: Task Status
+            - generic [ref=e182] [cursor=pointer]: Assigned To
+            - generic [ref=e187] [cursor=pointer]: Root Issue
+          - generic [ref=e193]:
+            - generic [ref=e195]:
+              - link "DailyTaskCreation(11-11-2025)-Task-2-RTU" [active] [ref=e199] [cursor=pointer]
+              - generic [ref=e203]: Citrus
+              - link "Allen, Beverly" [ref=e207] [cursor=pointer]:
+                - /url: /cases/details/4244807
+              - generic [ref=e211]: Social Security
+              - generic [ref=e215]: "185.00"
+              - generic [ref=e219]:
+                - img [ref=e222]
+                - generic [ref=e224]: Follow-Up Needed
+              - generic [ref=e228]: 11/18/2025
+              - generic [ref=e233]: In Progress
+              - generic [ref=e237]:
+                - generic [ref=e242]: VG
+                - generic [ref=e243]: Vikesh Gaikawad
+              - generic [ref=e247]: EOM Check/ACH
+            - generic [ref=e249]:
+              - link "DailyTaskCreation(11-11-2025)-Task-1-RTU" [ref=e253] [cursor=pointer]
+              - generic [ref=e257]: Citrus
+              - link "Allen, Beverly" [ref=e261] [cursor=pointer]:
+                - /url: /cases/details/4244807
+              - generic [ref=e265]: Social Security
+              - generic [ref=e269]: 1,292.00
+              - generic [ref=e273]:
+                - img [ref=e276]
+                - generic [ref=e278]: ACH/CC processing
+              - generic [ref=e282]: 11/16/2025
+              - generic [ref=e287]: In Progress
+              - generic [ref=e291]:
+                - generic [ref=e296]: VG
+                - generic [ref=e297]: Vikesh Gaikawad
+              - generic [ref=e301]: Bad Debt
+            - generic [ref=e303]:
+              - link "MEDICARECHECK" [ref=e307] [cursor=pointer]
+              - generic [ref=e311]: Beacon
+              - link "Bosmond, Louise" [ref=e315] [cursor=pointer]:
+                - /url: /cases/details/4581019
+              - generic [ref=e319]: Medicare
+              - generic [ref=e323]: "0.00"
+              - generic [ref=e327]:
+                - img [ref=e330]
+                - generic [ref=e332]: Sequence
+              - generic [ref=e336]: 11/14/2025
+              - generic [ref=e341]: Canceled
+              - generic [ref=e345]:
+                - generic [ref=e350]: AR
+                - generic [ref=e351]: Aditya Ravulkar
+              - generic [ref=e355]: Unknown
+            - generic [ref=e357]:
+              - link "createTaskWithPayerCet-7AndBalastone-4" [ref=e361] [cursor=pointer]
+              - generic [ref=e365]: North Campus
+              - link "Guthrie, Charles" [ref=e369] [cursor=pointer]:
+                - /url: /cases/details/4432036
+              - generic [ref=e373]: Veterans Insurance
+              - generic [ref=e377]: 7,147.42
+              - generic [ref=e381]:
+                - img [ref=e384]
+                - generic [ref=e386]: Unworked
+              - generic [ref=e390]: 11/14/2025
+              - generic [ref=e395]: In Progress
+              - generic [ref=e399]:
+                - generic [ref=e404]: VG
+                - generic [ref=e405]: Vikesh Gaikawad
+              - generic [ref=e409]: Additional Info Needed
+            - generic [ref=e411]:
+              - link "createTaskWithPayerCet-5AndBalastone-4" [ref=e415] [cursor=pointer]
+              - generic [ref=e419]: North Campus
+              - link "Fletcher, Zadia" [ref=e423] [cursor=pointer]:
+                - /url: /cases/details/3608533
+              - generic [ref=e427]: Vitas Hospice Respite
+              - generic [ref=e431]: 2,517.70
+              - generic [ref=e435]:
+                - img [ref=e438]
+                - generic [ref=e440]: Unworked
+              - generic [ref=e444]: 11/14/2025
+              - generic [ref=e449]: In Progress
+              - generic [ref=e453]:
+                - generic [ref=e458]: VG
+                - generic [ref=e459]: Vikesh Gaikawad
+              - generic [ref=e463]: Additional Info Needed
+            - generic [ref=e465]:
+              - link "createTaskWithPayerCet-5AndBalastone-3" [ref=e469] [cursor=pointer]
+              - generic [ref=e473]: North Campus
+              - link "Rowe, Donald" [ref=e477] [cursor=pointer]:
+                - /url: /cases/details/5626737
+              - generic [ref=e481]: Vitas Hospice Respite
+              - generic [ref=e485]: 2,466.25
+              - generic [ref=e489]:
+                - img [ref=e492]
+                - generic [ref=e494]: Unworked
+              - generic [ref=e498]: 11/14/2025
+              - generic [ref=e503]: In Progress
+              - generic [ref=e507]:
+                - generic [ref=e512]: VG
+                - generic [ref=e513]: Vikesh Gaikawad
+              - generic [ref=e517]: ADR
+            - generic [ref=e519]:
+              - link "createTaskWithPayerCet-5AndBalastone-3" [ref=e523] [cursor=pointer]
+              - generic [ref=e527]: Test Winston Salem
+              - link "Suggs, William" [ref=e531] [cursor=pointer]:
+                - /url: /cases/details/4484383
+              - generic [ref=e535]: PACE
+              - generic [ref=e539]: 8,646.83
+              - generic [ref=e543]:
+                - img [ref=e546]
+                - generic [ref=e548]: Unworked
+              - generic [ref=e552]: 11/14/2025
+              - generic [ref=e557]: In Progress
+              - generic [ref=e561]:
+                - generic [ref=e566]: VG
+                - generic [ref=e567]: Vikesh Gaikawad
+              - generic [ref=e571]: Additional Info Needed
+            - generic [ref=e573]:
+              - link "createTaskWithPayerCetTwoAndBalastone" [ref=e577] [cursor=pointer]
+              - generic [ref=e581]: Windsor
+              - link "Endres, Mary" [ref=e585] [cursor=pointer]:
+                - /url: /cases/details/4221386
+              - generic [ref=e589]: FL Community Care Medicaid
+              - generic [ref=e593]: "0.00"
+              - generic [ref=e597]:
+                - img [ref=e600]
+                - generic [ref=e602]: Rejected
+              - generic [ref=e606]: 11/14/2025
+              - generic [ref=e611]: Completed
+              - generic [ref=e615]:
+                - generic [ref=e620]: KK
+                - generic [ref=e621]: Kesavarao Karri
+              - generic [ref=e625]: Unknown
+            - generic [ref=e627]:
+              - link "createTaskWithPayerCet-5AndBalastone-8" [ref=e631] [cursor=pointer]
+              - generic [ref=e635]: Test Riverdale
+              - link "Schwarz, Edith" [ref=e639] [cursor=pointer]:
+                - /url: /cases/details/4098896
+              - generic [ref=e643]: Calvary Hospice
+              - generic [ref=e647]: (9,886.52)
+              - generic [ref=e651]:
+                - img [ref=e654]
+                - generic [ref=e656]: Unworked
+              - generic [ref=e660]: 11/14/2025
+              - generic [ref=e665]: In Progress
+              - generic [ref=e669]:
+                - generic [ref=e674]: VG
+                - generic [ref=e675]: Vikesh Gaikawad
+              - generic [ref=e679]: ADR
+            - generic [ref=e681]:
+              - link "createTaskWithPayerCet-5AndBalastone-8" [ref=e685] [cursor=pointer]
+              - generic [ref=e689]: Test Riverdale
+              - link "Schwarz, Edith" [ref=e693] [cursor=pointer]:
+                - /url: /cases/details/4098896
+              - generic [ref=e697]: Calvary Hospice
+              - generic [ref=e701]: (10,244.78)
+              - generic [ref=e705]:
+                - img [ref=e708]
+                - generic [ref=e710]: Unworked
+              - generic [ref=e714]: 11/14/2025
+              - generic [ref=e719]: In Progress
+              - generic [ref=e723]:
+                - generic [ref=e728]: VG
+                - generic [ref=e729]: Vikesh Gaikawad
+              - generic [ref=e733]: No Coverage
+            - generic [ref=e735]:
+              - link "createTaskWithPayerCet-5AndBalastone-4" [ref=e739] [cursor=pointer]
+              - generic [ref=e743]: Test Riverdale
+              - link "Young, Doris" [ref=e747] [cursor=pointer]:
+                - /url: /cases/details/4153317
+              - generic [ref=e751]: Calvary Hospice
+              - generic [ref=e755]: 6,129.86
+              - generic [ref=e759]:
+                - img [ref=e762]
+                - generic [ref=e764]: Unworked
+              - generic [ref=e768]: 11/14/2025
+              - generic [ref=e773]: In Progress
+              - generic [ref=e777]:
+                - generic [ref=e782]: VG
+                - generic [ref=e783]: Vikesh Gaikawad
+              - generic [ref=e787]: ADR
+            - generic [ref=e789]:
+              - link "createTaskWithPayerCet-5AndBalastone-3" [ref=e793] [cursor=pointer]
+              - generic [ref=e797]: Test Riverdale
+              - link "Nunez, Dinorah" [ref=e801] [cursor=pointer]:
+                - /url: /cases/details/4382380
+              - generic [ref=e805]: Calvary Hospice
+              - generic [ref=e809]: 3,410.32
+              - generic [ref=e813]:
+                - img [ref=e816]
+                - generic [ref=e818]: Unworked
+              - generic [ref=e822]: 11/14/2025
+              - generic [ref=e827]: In Progress
+              - generic [ref=e831]:
+                - generic [ref=e836]: VG
+                - generic [ref=e837]: Vikesh Gaikawad
+              - generic [ref=e841]: Additional Info Needed
+            - generic [ref=e843]:
+              - link "Task" [ref=e847] [cursor=pointer]
+              - generic [ref=e851]: Test Aberdeen
+              - link "Ledbetter, Margaret" [ref=e855] [cursor=pointer]:
+                - /url: /cases/details/4466101
+              - generic [ref=e859]: AMEDISYS HOSPICE
+              - generic [ref=e863]: (1,049.70)
+              - generic [ref=e867]:
+                - img [ref=e870]
+                - generic [ref=e872]: Unworked
+              - generic [ref=e876]: 11/14/2025
+              - generic [ref=e881]: In Progress
+              - generic [ref=e885]:
+                - generic [ref=e890]: VG
+                - generic [ref=e891]: Vikesh Gaikawad
+              - generic [ref=e895]: Awaiting Primary Payment
+            - generic [ref=e897]:
+              - link "Task" [ref=e901] [cursor=pointer]
+              - generic [ref=e905]: Beacon
+              - link "Alexandre, Francois" [ref=e909] [cursor=pointer]:
+                - /url: /cases/details/4208726
+              - generic [ref=e913]: Medicare
+              - generic [ref=e917]: 2,840.80
+              - generic [ref=e921]:
+                - img [ref=e924]
+                - generic [ref=e926]: Sequence
+              - generic [ref=e930]: 11/14/2025
+              - generic [ref=e935]: In Progress
+              - generic [ref=e939]:
+                - generic [ref=e944]: VG
+                - generic [ref=e945]: Vikesh Gaikawad
+              - generic [ref=e949]: Unknown
+            - generic [ref=e951]:
+              - link "Santosh-1900Task-For(Respite)-Task-1" [ref=e955] [cursor=pointer]
+              - generic [ref=e959]: Test Lexington
+              - link "Byrd, Katherine" [ref=e963] [cursor=pointer]:
+                - /url: /cases/details/4159283
+              - generic [ref=e967]: Respite
+              - generic [ref=e971]: (3,720.00)
+              - generic [ref=e975]:
+                - img [ref=e978]
+                - generic [ref=e980]: Unworked
+              - generic [ref=e984]: Today
+              - generic [ref=e989]: In Progress
+              - generic [ref=e993]:
+                - generic [ref=e998]: SR
+                - generic [ref=e999]: Santosh Rongali
+              - generic [ref=e1003]: Unknown
+            - generic [ref=e1005]:
+              - link "1900Task-For(Respite)-Task-17" [ref=e1009] [cursor=pointer]
+              - generic [ref=e1013]: Test Lexington
+              - link "Shields, Linda" [ref=e1017] [cursor=pointer]:
+                - /url: /cases/details/4289132
+              - generic [ref=e1021]: Respite
+              - generic [ref=e1025]: (1,028.86)
+              - generic [ref=e1029]:
+                - img [ref=e1032]
+                - generic [ref=e1034]: Unworked
+              - generic [ref=e1038]: Today
+              - generic [ref=e1043]: In Progress
+              - generic [ref=e1047]:
+                - generic [ref=e1052]: SR
+                - generic [ref=e1053]: Santosh Rongali
+              - generic [ref=e1057]: Unknown
+            - generic [ref=e1059]:
+              - link "Taskmanualfalse" [ref=e1063] [cursor=pointer]
+              - generic [ref=e1067]: Beacon
+              - link "Logan, Florence" [ref=e1071] [cursor=pointer]:
+                - /url: /cases/details/3610615
+              - generic [ref=e1075]: AARP
+              - generic [ref=e1079]: 4,190.00
+              - generic [ref=e1083]:
+                - img [ref=e1086]
+                - generic [ref=e1088]: Needs Research
+              - generic [ref=e1092]: 11/19/2025
+              - generic [ref=e1097]: In Progress
+              - generic [ref=e1101]:
+                - generic [ref=e1106]: VG
+                - generic [ref=e1107]: Vikesh Gaikawad
+              - generic [ref=e1111]: Unknown
+            - generic [ref=e1113]:
+              - link "DailyTaskCreation(22-10-2025)-Task-3-RTU" [ref=e1117] [cursor=pointer]
+              - generic [ref=e1121]: Windsor
+              - link "Strickland, Beathres" [ref=e1125] [cursor=pointer]:
+                - /url: /cases/details/4712598
+              - generic [ref=e1129]: United Commercial Medicare
+              - generic [ref=e1133]: (1,602.00)
+              - generic [ref=e1137]:
+                - img [ref=e1140]
+                - generic [ref=e1142]: Sent for Reprocessing
+              - generic [ref=e1146]: 11/16/2025
+              - generic [ref=e1151]: In Progress
+              - generic [ref=e1155]:
+                - generic [ref=e1160]: VG
+                - generic [ref=e1161]: Vikesh Gaikawad
+              - generic [ref=e1165]: Unknown
+            - generic [ref=e1167]:
+              - link "DailyTaskCreation(16-10-2025)-Task-1-RTAPI" [ref=e1171] [cursor=pointer]
+              - generic [ref=e1175]: Mountain Ridge
+              - link "Corder, Thelma" [ref=e1179] [cursor=pointer]:
+                - /url: /cases/details/4314175
+              - generic [ref=e1183]: Medicare
+              - generic [ref=e1187]: "0.00"
+              - generic [ref=e1191]:
+                - img [ref=e1194]
+                - generic [ref=e1196]: Unworked
+              - generic [ref=e1200]: 11/15/2025
+              - generic [ref=e1205]: Completed
+              - generic [ref=e1209]:
+                - generic [ref=e1214]: SR
+                - generic [ref=e1215]: Santosh Rongali
+              - generic [ref=e1219]: Unknown
+            - generic [ref=e1221]:
+              - link "DailyTaskCreation(16-10-2025)-Task-2-RTU" [ref=e1225] [cursor=pointer]
+              - generic [ref=e1229]: Mountain Ridge
+              - link "Corder, Thelma" [ref=e1233] [cursor=pointer]:
+                - /url: /cases/details/4314175
+              - generic [ref=e1237]: Medicare
+              - generic [ref=e1241]: "0.00"
+              - generic [ref=e1245]:
+                - img [ref=e1248]
+                - generic [ref=e1250]: Unworked
+              - generic [ref=e1254]: 11/15/2025
+              - generic [ref=e1259]: Completed
+              - generic [ref=e1263]:
+                - generic [ref=e1268]: VG
+                - generic [ref=e1269]: Vikesh Gaikawad
+              - generic [ref=e1273]: Unknown
+  - generic [ref=e1285]: Jira Service Management Widget
+  - iframe [ref=e1286]:
+    - main "Help Center Widget Content" [ref=f1e2]:
+      - button "?" [ref=f1e5] [cursor=pointer]:
+        - paragraph [ref=f1e6] [cursor=pointer]: "?"
+  - generic [ref=e1293]:
+    - generic [ref=e1294]:
+      - textbox [ref=e1298]: DailyTaskCreation(11-11-2025)-Task-2-RTU
+      - generic [ref=e1299]:
+        - button [ref=e1301] [cursor=pointer]:
+          - img [ref=e1305] [cursor=pointer]
+        - link "Open Task" [ref=e1307] [cursor=pointer]:
+          - /url: /tasks/details/24147
+          - button "Open Task" [ref=e1309] [cursor=pointer]:
+            - generic [ref=e1310] [cursor=pointer]:
+              - text: Open Task
+              - img [ref=e1313] [cursor=pointer]
+        - button [ref=e1316] [cursor=pointer]:
+          - img [ref=e1320] [cursor=pointer]
+    - generic [ref=e1322]:
+      - generic [ref=e1326]:
+        - generic [ref=e1327]:
+          - generic [ref=e1331] [cursor=pointer]: Facility
+          - text: Citrus
+        - generic [ref=e1332]:
+          - generic [ref=e1336] [cursor=pointer]: Resident
+          - link "Allen, Beverly" [ref=e1337] [cursor=pointer]:
+            - /url: /cases/details/4244807
+        - generic [ref=e1338]:
+          - generic [ref=e1342] [cursor=pointer]: Balance
+          - generic [ref=e1343]:
+            - generic [ref=e1344]: "185.00"
+            - button "(1 Charge)" [ref=e1346] [cursor=pointer]:
+              - generic [ref=e1347] [cursor=pointer]: (1 Charge)
+        - generic [ref=e1348]:
+          - generic [ref=e1352] [cursor=pointer]: Payer
+          - text: Social Security
+        - generic [ref=e1356]:
+          - toolbar:
+            - generic [ref=e1357]:
+              - button "bold" [ref=e1358] [cursor=pointer]:
+                - img [ref=e1359] [cursor=pointer]
+              - button "italic" [ref=e1361] [cursor=pointer]:
+                - img [ref=e1362] [cursor=pointer]
+              - button "underline" [ref=e1364] [cursor=pointer]:
+                - img [ref=e1365] [cursor=pointer]
+              - button "strike" [ref=e1367] [cursor=pointer]:
+                - img [ref=e1368] [cursor=pointer]
+            - generic [ref=e1370]:
+              - 'button "list: bullet" [ref=e1371] [cursor=pointer]':
+                - img [ref=e1372] [cursor=pointer]
+              - 'button "list: ordered" [ref=e1374] [cursor=pointer]':
+                - img [ref=e1375] [cursor=pointer]
+            - button "link" [ref=e1379] [cursor=pointer]:
+              - img [ref=e1380] [cursor=pointer]
+          - generic [ref=e1382]:
+            - paragraph [ref=e1384]: The U.S. is a country of 50 states covering a vast swath of North America, with Alaska in the northwest and Hawaii extending the nation’s presence into the Pacific Ocean. Major Atlantic Coast cities are New York, a global finance and culture center, and capital Washington, DC. Midwestern metropolis Chicago is known for influential architecture and on the west coast, Los Angeles' Hollywood is famed for filmmaking. Midwestern metropolis Chicago is known for architecture architecture architec.
+            - text: "Visit URL: EditRemove"
+        - generic [ref=e1386]:
+          - generic [ref=e1389] [cursor=pointer]:
+            - generic [ref=e1390] [cursor=pointer]: Balance Status
+            - generic [ref=e1391] [cursor=pointer]: "*"
+          - combobox "Follow-Up Needed" [ref=e1393]:
+            - generic [ref=e1400] [cursor=pointer]:
+              - img [ref=e1403] [cursor=pointer]
+              - generic [ref=e1405] [cursor=pointer]: Follow-Up Needed
+        - generic [ref=e1407]:
+          - generic [ref=e1410] [cursor=pointer]:
+            - generic [ref=e1411] [cursor=pointer]: Root Issue
+            - generic [ref=e1412] [cursor=pointer]: "*"
+          - combobox "EOM Check/ACH" [ref=e1414]:
+            - generic [ref=e1420] [cursor=pointer]: EOM Check/ACH
+        - generic [ref=e1422]:
+          - generic [ref=e1426] [cursor=pointer]: Assigned To
+          - combobox "VG Vikesh Gaikawad" [ref=e1428]:
+            - button "VG Vikesh Gaikawad" [ref=e1436] [cursor=pointer]:
+              - generic [ref=e1441] [cursor=pointer]: VG
+              - generic [ref=e1442] [cursor=pointer]: Vikesh Gaikawad
+        - generic [ref=e1444]:
+          - generic [ref=e1447] [cursor=pointer]:
+            - generic [ref=e1448] [cursor=pointer]: Due Date
+            - generic [ref=e1449] [cursor=pointer]: "*"
+          - textbox "Due Date *" [ref=e1452]: 11/18/2025
+        - generic [ref=e1453]:
+          - generic [ref=e1457] [cursor=pointer]: Task Status
+          - combobox "In Progress" [disabled] [ref=e1459]:
+            - generic [ref=e1467]: In Progress
+      - generic [ref=e1474]:
+        - tablist [ref=e1477]:
+          - generic [ref=e1478]:
+            - tab "Comments 1" [selected] [ref=e1479] [cursor=pointer]:
+              - generic [ref=e1481] [cursor=pointer]:
+                - text: Comments
+                - generic [ref=e1482] [cursor=pointer]: "1"
+            - tab "Charges 1" [ref=e1483] [cursor=pointer]:
+              - generic [ref=e1485] [cursor=pointer]:
+                - text: Charges
+                - generic [ref=e1486] [cursor=pointer]: "1"
+            - tab "Activity 1" [ref=e1487] [cursor=pointer]:
+              - generic [ref=e1489] [cursor=pointer]:
+                - text: Activity
+                - generic [ref=e1490] [cursor=pointer]: "1"
+            - tab "Files 2" [ref=e1491] [cursor=pointer]:
+              - generic [ref=e1493] [cursor=pointer]:
+                - text: Files
+                - generic [ref=e1494] [cursor=pointer]: "2"
+        - generic [ref=e1495]:
+          - tabpanel "Comments 1" [ref=e1496]:
+            - generic [ref=e1498]:
+              - generic [ref=e1502]:
+                - generic [ref=e1507]: VG
+                - generic [ref=e1508]:
+                  - generic [ref=e1509]:
+                    - generic [ref=e1510]: Vikesh Gaikawad
+                    - generic [ref=e1511]: 11/11/2025 12:57 PM
+                  - paragraph [ref=e1515]:
+                    - text: The U.S. is a country of 50 states covering a vast swath of North America, with Alaska in the northwest and Hawaii extending the nation’s presence into the Pacific Ocean. Major Atlantic Coast cities are New York, a global finance and culture center, and capital Washington, DC. Midwestern metropolis Chicago is known for influential architecture and on the west coast, Los Angeles' Hollywood is famed for filmmaking. Midwestern metropolis Chicago is known for architecture architecture architec.1234
+                    - generic [ref=e1517]: "@Vikesh Gaikawad"
+                  - button "Reply" [ref=e1520] [cursor=pointer]:
+                    - generic [ref=e1521] [cursor=pointer]: Reply
+              - generic [ref=e1524]:
+                - generic [ref=e1526]:
+                  - toolbar:
+                    - generic [ref=e1527]:
+                      - button "bold" [ref=e1528] [cursor=pointer]:
+                        - img [ref=e1529] [cursor=pointer]
+                      - button "italic" [ref=e1531] [cursor=pointer]:
+                        - img [ref=e1532] [cursor=pointer]
+                      - button "underline" [ref=e1534] [cursor=pointer]:
+                        - img [ref=e1535] [cursor=pointer]
+                      - button "strike" [ref=e1537] [cursor=pointer]:
+                        - img [ref=e1538] [cursor=pointer]
+                    - generic [ref=e1540]:
+                      - 'button "list: bullet" [ref=e1541] [cursor=pointer]':
+                        - img [ref=e1542] [cursor=pointer]
+                      - 'button "list: ordered" [ref=e1544] [cursor=pointer]':
+                        - img [ref=e1545] [cursor=pointer]
+                    - button "link" [ref=e1549] [cursor=pointer]:
+                      - img [ref=e1550] [cursor=pointer]
+                  - generic [ref=e1552]:
+                    - generic [ref=e1553]:
+                      - text: Add comment...
+                      - paragraph [ref=e1554]
+                    - text: "Visit URL: EditRemove"
+                - generic [ref=e1555]: Max number of characters allowed 500
+          - tabpanel [ref=e1557]
+          - tabpanel [ref=e1558]
+          - tabpanel [ref=e1559]
+```

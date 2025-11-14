@@ -17,7 +17,7 @@ test.describe("Navigate to View Aging and validate Resident and Facility Name", 
     );
   });
 
-  test("@regression Validating Details in View Aging", async () => {
+  test("@smoke Validating Details in View Aging", async () => {
     const createTaskPage = new sections.CreateTaskPage(test, page);
     await createTaskPage.clickOnTaskList();
       await test.step("The page is loading, please wait", async () => {

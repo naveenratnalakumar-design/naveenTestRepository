@@ -1,0 +1,446 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Revflow logo" [ref=e7] [cursor=pointer]
+        - img "Revflow" [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link "Task List" [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link "AR Aging" [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - link "Settings" [ref=e34] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e37] [cursor=pointer]
+          - generic [ref=e40] [cursor=pointer]: Settings
+          - img [ref=e43] [cursor=pointer]
+      - button [ref=e49] [cursor=pointer]:
+        - img [ref=e53] [cursor=pointer]
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - generic [ref=e61]:
+          - img [ref=e64]
+          - textbox "Search for a Case" [ref=e66]
+        - generic [ref=e67]:
+          - button "Selected Facilities (35)" [ref=e69] [cursor=pointer]:
+            - text: Selected Facilities (35)
+            - img [ref=e72] [cursor=pointer]
+          - img [ref=e78]
+          - button "AT" [ref=e81] [cursor=pointer]:
+            - generic [ref=e84] [cursor=pointer]: AT
+            - img [ref=e87] [cursor=pointer]
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - heading "Tasks" [level=2] [ref=e94]
+          - generic [ref=e96]:
+            - button "Sort" [ref=e98] [cursor=pointer]:
+              - generic [ref=e99] [cursor=pointer]: Sort
+              - img [ref=e102] [cursor=pointer]
+            - button "Filters" [expanded] [ref=e105] [cursor=pointer]:
+              - img [ref=e108] [cursor=pointer]
+              - generic [ref=e110] [cursor=pointer]: Filters
+            - button "Reset to Default" [ref=e112] [cursor=pointer]:
+              - generic [ref=e113] [cursor=pointer]:
+                - text: Reset to Default
+                - img [ref=e116] [cursor=pointer]
+        - generic [ref=e120]:
+          - generic [ref=e123]:
+            - generic [ref=e124]: "9030"
+            - text: Results
+          - generic [ref=e126]:
+            - generic [ref=e130] [cursor=pointer]: Task
+            - generic [ref=e135] [cursor=pointer]: Facility
+            - generic [ref=e140] [cursor=pointer]: Resident
+            - generic [ref=e145] [cursor=pointer]: Payer
+            - generic [ref=e150] [cursor=pointer]: Balance
+            - generic [ref=e155] [cursor=pointer]: Balance Status
+            - generic [ref=e160] [cursor=pointer]: Due Date
+            - generic [ref=e165] [cursor=pointer]: Task Status
+            - generic [ref=e170] [cursor=pointer]: Assigned To
+            - generic [ref=e175] [cursor=pointer]: Root Issue
+          - generic [ref=e181]:
+            - generic [ref=e183]:
+              - link "DailyTaskCreation(08-09-2025)-Task-2story(1144)" [ref=e187] [cursor=pointer]
+              - generic [ref=e191]: Gulfport
+              - link "Sanders, Velinda" [ref=e195] [cursor=pointer]:
+                - /url: /cases/details/3881366
+              - generic [ref=e199]: Wellmed
+              - generic [ref=e203]: (220.00)
+              - generic [ref=e207]:
+                - img [ref=e210]
+                - generic [ref=e212]: Rejected
+              - generic [ref=e216]: 9/9/2025
+              - generic [ref=e221]: In Progress
+              - generic [ref=e225]:
+                - generic [ref=e230]: KK
+                - generic [ref=e231]: Kesavarao Karri
+              - generic [ref=e235]: ADR - Pre Pay
+            - generic [ref=e237]:
+              - link "5461" [ref=e241] [cursor=pointer]
+              - generic [ref=e245]: Gulfport
+              - link "Sanders, Velinda" [ref=e249] [cursor=pointer]:
+                - /url: /cases/details/3881366
+              - generic [ref=e253]: Wellmed
+              - generic [ref=e257]: "161.86"
+              - generic [ref=e261]:
+                - img [ref=e264]
+                - generic [ref=e266]: Rejected
+              - generic [ref=e270]: 9/9/2025
+              - generic [ref=e275]: In Progress
+              - generic [ref=e279]:
+                - generic [ref=e284]: KK
+                - generic [ref=e285]: Kesavarao Karri
+              - generic [ref=e289]: Unknown
+            - generic [ref=e291]:
+              - link "CreateTaskARW-1292" [ref=e295] [cursor=pointer]
+              - generic [ref=e299]: Highland Care
+              - link "Halstead, Carolyn" [ref=e303] [cursor=pointer]:
+                - /url: /cases/details/3574404
+              - generic [ref=e307]: Americhoice
+              - generic [ref=e311]: "0.00"
+              - generic [ref=e315]:
+                - img [ref=e318]
+                - generic [ref=e320]: Rejected
+              - generic [ref=e324]: 9/9/2025
+              - generic [ref=e329]: Canceled
+              - generic [ref=e333]:
+                - generic [ref=e338]: KK
+                - generic [ref=e339]: Keshava Karri
+              - generic [ref=e343]: Unknown
+            - generic [ref=e345]:
+              - link "CreateTaskARW-1292" [ref=e349] [cursor=pointer]
+              - generic [ref=e353]: Caring Heart
+              - link "Halstead, Carolyn" [ref=e357] [cursor=pointer]:
+                - /url: /cases/details/3574404
+              - generic [ref=e361]: Medicare
+              - generic [ref=e365]: "0.00"
+              - generic [ref=e369]:
+                - img [ref=e372]
+                - generic [ref=e374]: Recently Billed
+              - generic [ref=e378]: 10/3/2025
+              - generic [ref=e383]: Canceled
+              - generic [ref=e387]:
+                - generic [ref=e392]: KK
+                - generic [ref=e393]: Keshava Karri
+              - generic [ref=e397]: Unknown
+            - generic [ref=e399]:
+              - link "CreateTaskARW-1292" [ref=e403] [cursor=pointer]
+              - generic [ref=e407]: Caring Heart
+              - link "Halstead, Carolyn" [ref=e411] [cursor=pointer]:
+                - /url: /cases/details/3574404
+              - generic [ref=e415]: Medicare
+              - generic [ref=e419]: "0.00"
+              - generic [ref=e423]:
+                - img [ref=e426]
+                - generic [ref=e428]: Paid Status
+              - generic [ref=e432]: 10/23/2025
+              - generic [ref=e437]: Canceled
+              - generic [ref=e441]:
+                - generic [ref=e446]: KK
+                - generic [ref=e447]: Keshava Karri
+              - generic [ref=e451]: Unknown
+            - generic [ref=e453]:
+              - link "CreateTaskARW-1292" [ref=e457] [cursor=pointer]
+              - generic [ref=e461]: Caring Heart
+              - link "Halstead, Carolyn" [ref=e465] [cursor=pointer]:
+                - /url: /cases/details/3574404
+              - generic [ref=e469]: Medicare
+              - generic [ref=e473]: "0.00"
+              - generic [ref=e477]:
+                - img [ref=e480]
+                - generic [ref=e482]: Rejected
+              - generic [ref=e486]: 9/10/2025
+              - generic [ref=e491]: Canceled
+              - generic [ref=e495]:
+                - generic [ref=e500]: KK
+                - generic [ref=e501]: Keshava Karri
+              - generic [ref=e505]: Unknown
+            - generic [ref=e507]:
+              - link "testrie" [ref=e511] [cursor=pointer]
+              - generic [ref=e515]: Gulfport
+              - link "Hamilton, Brian" [ref=e519] [cursor=pointer]:
+                - /url: /cases/details/3916825
+              - generic [ref=e523]: AARP
+              - generic [ref=e527]: "0.00"
+              - generic [ref=e531]:
+                - img [ref=e534]
+                - generic [ref=e536]: Unworked
+              - generic [ref=e540]: 10/19/2025
+              - generic [ref=e545]: Canceled
+              - generic [ref=e549]:
+                - generic [ref=e554]: VG
+                - generic [ref=e555]: Vikesh Gaikawad
+              - generic [ref=e559]: Unknown
+            - generic [ref=e561]:
+              - link "TaskBalChangeUI" [ref=e565] [cursor=pointer]
+              - generic [ref=e569]: Gulfport
+              - link "Hamilton, Brian" [ref=e573] [cursor=pointer]:
+                - /url: /cases/details/3916825
+              - generic [ref=e577]: Social Security
+              - generic [ref=e581]: "0.00"
+              - generic [ref=e585]:
+                - img [ref=e588]
+                - generic [ref=e590]: Unworked
+              - generic [ref=e594]: 9/30/2025
+              - generic [ref=e599]: Not Started
+              - generic [ref=e603]:
+                - generic [ref=e608]: EF
+                - generic [ref=e609]: Esther Furst
+              - generic [ref=e613]: Payment Plan
+            - generic [ref=e615]:
+              - link "CreateTaskBalUI" [ref=e619] [cursor=pointer]
+              - generic [ref=e623]: Gulfport
+              - link "Hamilton, Brian" [ref=e627] [cursor=pointer]:
+                - /url: /cases/details/3916825
+              - generic [ref=e631]: Social Security
+              - generic [ref=e635]: "0.00"
+              - generic [ref=e639]:
+                - img [ref=e642]
+                - generic [ref=e644]: Unworked
+              - generic [ref=e648]: 9/21/2025
+              - generic [ref=e653]: In Progress
+              - generic [ref=e657]:
+                - generic [ref=e662]: VG
+                - generic [ref=e663]: Vikesh Gaikawad
+              - generic [ref=e667]: Silver Key Retained
+            - generic [ref=e669]:
+              - link "TaskChangeBal-6" [ref=e673] [cursor=pointer]
+              - generic [ref=e677]: Gulfport
+              - link "Wilson, Gloria" [ref=e681] [cursor=pointer]:
+                - /url: /cases/details/3907067
+              - generic [ref=e685]: Suncoast Hospice
+              - generic [ref=e689]: "0.00"
+              - generic [ref=e693]:
+                - img [ref=e696]
+                - generic [ref=e698]: Denied
+              - generic [ref=e702]: 11/26/2025
+              - generic [ref=e707]: Canceled
+              - generic [ref=e711]:
+                - generic [ref=e716]: VG
+                - generic [ref=e717]: Vikesh Gaikawad
+              - generic [ref=e721]: Additional Info Needed
+            - generic [ref=e723]:
+              - link "test" [ref=e727] [cursor=pointer]
+              - generic [ref=e731]: Gulfport
+              - link "Hamilton, Brian" [ref=e735] [cursor=pointer]:
+                - /url: /cases/details/3916825
+              - generic [ref=e739]: AARP
+              - generic [ref=e743]: "0.00"
+              - generic [ref=e747]:
+                - img [ref=e750]
+                - generic [ref=e752]: Unworked
+              - generic [ref=e756]: 8/26/2025
+              - generic [ref=e761]: Canceled
+              - generic [ref=e765]:
+                - generic [ref=e770]: RM
+                - generic [ref=e771]: Rivky Meguira
+              - generic [ref=e775]: Unknown
+            - generic [ref=e777]:
+              - link "test" [ref=e781] [cursor=pointer]
+              - generic [ref=e785]: Gulfport
+              - link "Hamilton, Brian" [ref=e789] [cursor=pointer]:
+                - /url: /cases/details/3916825
+              - generic [ref=e793]: AARP
+              - generic [ref=e797]: "0.00"
+              - generic [ref=e801]:
+                - img [ref=e804]
+                - generic [ref=e806]: Unbilled
+              - generic [ref=e810]: 11/4/2025
+              - generic [ref=e815]: Canceled
+              - generic [ref=e819]:
+                - generic [ref=e824]: RM
+                - generic [ref=e825]: Rivky Meguira
+              - generic [ref=e829]: Unknown
+            - generic [ref=e831]:
+              - link "inni" [ref=e835] [cursor=pointer]
+              - generic [ref=e839]: Caring Heart
+              - link "Butler, Loretta" [ref=e843] [cursor=pointer]:
+                - /url: /cases/details/3578604
+              - generic [ref=e847]: Humana MCR
+              - generic [ref=e851]: (711.57)
+              - generic [ref=e855]:
+                - img [ref=e858]
+                - generic [ref=e860]: Needs Research
+              - generic [ref=e864]: 11/17/2025
+              - generic [ref=e869]: In Progress
+              - generic [ref=e873]:
+                - generic [ref=e878]: VG
+                - generic [ref=e879]: Vikesh Gaikawad
+              - generic [ref=e883]: Unknown
+            - generic [ref=e885]:
+              - link "TaskBalActivity" [ref=e889] [cursor=pointer]
+              - generic [ref=e893]: Gulfport
+              - link "Burik, Richard" [ref=e897] [cursor=pointer]:
+                - /url: /cases/details/3928177
+              - generic [ref=e901]: Social Security
+              - generic [ref=e905]: 2,210.00
+              - generic [ref=e909]:
+                - img [ref=e912]
+                - generic [ref=e914]: Follow-Up Needed
+              - generic [ref=e918]: 11/14/2025
+              - generic [ref=e923]: In Progress
+              - generic [ref=e927]:
+                - generic [ref=e932]: U3
+                - generic [ref=e933]: User 3 user 3
+              - generic [ref=e937]: Attorney Case
+            - generic [ref=e939]:
+              - link "Tasknew" [ref=e943] [cursor=pointer]
+              - generic [ref=e947]: Gulfport
+              - link "Cormier, Christine" [ref=e951] [cursor=pointer]:
+                - /url: /cases/details/2073408
+              - generic [ref=e955]: AARP
+              - generic [ref=e959]: "0.00"
+              - generic [ref=e963]:
+                - img [ref=e966]
+                - generic [ref=e968]: Unworked
+              - generic [ref=e972]: 8/31/2025
+              - generic [ref=e977]: Completed
+              - generic [ref=e981]:
+                - generic [ref=e986]: VG
+                - generic [ref=e987]: Vikesh Gaikawad
+              - generic [ref=e991]: Unknown
+            - generic [ref=e993]:
+              - link "TaskPayerFixed" [ref=e997] [cursor=pointer]
+              - generic [ref=e1001]: Gulfport
+              - link "Burik, Richard" [ref=e1005] [cursor=pointer]:
+                - /url: /cases/details/3928177
+              - generic [ref=e1009]: Social Security
+              - generic [ref=e1013]: 2,210.00
+              - generic [ref=e1017]:
+                - img [ref=e1020]
+                - generic [ref=e1022]: Unworked
+              - generic [ref=e1026]: 8/31/2025
+              - generic [ref=e1031]: In Progress
+              - generic [ref=e1035]:
+                - generic [ref=e1040]: VG
+                - generic [ref=e1041]: Vikesh Gaikawad
+              - generic [ref=e1045]: Retro Payer Change
+            - generic [ref=e1047]:
+              - link "TaskPrivatePa" [ref=e1051] [cursor=pointer]
+              - generic [ref=e1055]: Beacon
+              - link "Goldstein, Aviva" [ref=e1059] [cursor=pointer]:
+                - /url: /cases/details/3600390
+              - generic [ref=e1063]: Private Pay
+              - generic [ref=e1067]: "0.00"
+              - generic [ref=e1071]:
+                - img [ref=e1074]
+                - generic [ref=e1076]: Unworked
+              - generic [ref=e1080]: 9/26/2025
+              - generic [ref=e1085]: Canceled
+              - generic [ref=e1089]:
+                - generic [ref=e1094]: VG
+                - generic [ref=e1095]: Vikesh Gaikawad
+              - generic [ref=e1099]: Retro Payer Change
+            - generic [ref=e1101]:
+              - link "TaskCreationDaily(14-08-2025)-Task-2" [ref=e1105] [cursor=pointer]
+              - generic [ref=e1109]: Gulfport
+              - link "Cannon Iii, John" [ref=e1113] [cursor=pointer]:
+                - /url: /cases/details/3916564
+              - generic [ref=e1117]: Simply Medicare
+              - generic [ref=e1121]: (1,540.77)
+              - generic [ref=e1125]:
+                - img [ref=e1128]
+                - generic [ref=e1130]: Corrected Claim
+              - generic [ref=e1134]: 8/31/2025
+              - generic [ref=e1139]: In Progress
+              - generic [ref=e1143]:
+                - generic [ref=e1148]: VG
+                - generic [ref=e1149]: Vikesh Gaikawad
+              - generic [ref=e1153]: Unknown
+            - generic [ref=e1155]:
+              - link "TaskCreationDaliy(14-8-2025)-Task-1" [ref=e1159] [cursor=pointer]
+              - generic [ref=e1163]: Gulfport
+              - link "Cannon Iii, John" [ref=e1167] [cursor=pointer]:
+                - /url: /cases/details/3916564
+              - generic [ref=e1171]: Simply Medicare
+              - generic [ref=e1175]: (561.22)
+              - generic [ref=e1179]:
+                - img [ref=e1182]
+                - generic [ref=e1184]: Sent for Reprocessing
+              - generic [ref=e1188]: 10/31/2025
+              - generic [ref=e1193]: In Progress
+              - generic [ref=e1197]:
+                - generic [ref=e1202]: VG
+                - generic [ref=e1203]: Vikesh Gaikawad
+              - generic [ref=e1207]: Unknown
+            - generic [ref=e1209]:
+              - link "Task A" [ref=e1213] [cursor=pointer]
+              - generic [ref=e1217]: Gulfport
+              - link "Fellman, Carolyn" [ref=e1221] [cursor=pointer]:
+                - /url: /cases/details/3928181
+              - generic [ref=e1225]: United American
+              - generic [ref=e1229]: "0.00"
+              - generic [ref=e1233]:
+                - img [ref=e1236]
+                - generic [ref=e1238]: Paid Status
+              - generic [ref=e1242]: 8/31/2025
+              - generic [ref=e1247]: Completed
+              - generic [ref=e1251]:
+                - generic [ref=e1256]: VG
+                - generic [ref=e1257]: Vikesh Gaikawad
+              - generic [ref=e1261]: Unknown
+  - generic [ref=e1273]: Jira Service Management Widget
+  - iframe [ref=e1274]:
+    - main "Help Center Widget Content" [ref=f1e2]:
+      - button "?" [ref=f1e5] [cursor=pointer]:
+        - paragraph [ref=f1e6] [cursor=pointer]: "?"
+  - generic:
+    - menu [ref=e1278]:
+      - generic [ref=e1280]:
+        - generic [ref=e1281]:
+          - generic [ref=e1282]: Filter by
+          - button "Clear Filter" [disabled] [ref=e1284]:
+            - generic [ref=e1285]: Clear Filter
+        - generic [ref=e1289]:
+          - generic [ref=e1290]:
+            - combobox "Assigned To" [ref=e1293]:
+              - generic [ref=e1299] [cursor=pointer]: Assigned To
+            - button "Select Assigned To" [expanded] [ref=e1304] [cursor=pointer]:
+              - generic [ref=e1305] [cursor=pointer]: Select Assigned To
+              - img [ref=e1309] [cursor=pointer]
+          - button [ref=e1312] [cursor=pointer]:
+            - img [ref=e1316] [cursor=pointer]
+        - generic [ref=e1318]:
+          - button "Add Filter" [disabled] [ref=e1320]:
+            - generic [ref=e1321]:
+              - img [ref=e1324]
+              - text: Add Filter
+          - button "Apply Filter" [disabled] [ref=e1327]:
+            - generic [ref=e1328]: Apply Filter
+    - menu [ref=e1331]:
+      - generic [ref=e1333]:
+        - generic [ref=e1337]:
+          - img [ref=e1340] [cursor=pointer]
+          - textbox "Search" [active] [ref=e1342]: Amanda Lowe
+        - generic [ref=e1345]:
+          - generic [ref=e1346] [cursor=pointer]:
+            - checkbox "All (1 Match)" [ref=e1347] [cursor=pointer]
+            - generic:
+              - img
+          - generic [ref=e1348] [cursor=pointer]: All (1 Match)
+        - generic [ref=e1353] [cursor=pointer]:
+          - generic [ref=e1356] [cursor=pointer]:
+            - checkbox [ref=e1357] [cursor=pointer]
+            - generic:
+              - img
+          - button "AL Amanda Lowe" [ref=e1360] [cursor=pointer]:
+            - generic [ref=e1365] [cursor=pointer]: AL
+            - generic [ref=e1366] [cursor=pointer]: Amanda Lowe
+        - generic [ref=e1368]:
+          - button "Clear Selection" [disabled] [ref=e1370]:
+            - generic [ref=e1371]: Clear Selection
+          - button "Apply" [disabled] [ref=e1373]:
+            - generic [ref=e1374]: Apply
+```
