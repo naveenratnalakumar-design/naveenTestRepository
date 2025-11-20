@@ -16,7 +16,6 @@ test.describe("Verify Sort behavior for all applicable columns on FacilityRole V
   });
   test("@smoke Verify Sort behavior for all applicable columns on FacilityRole View", async () => {
     const userManagementPage = new sections.UserManagementPage(test,page);
-    // await page.pause()
     await userManagementPage.verifyFacilitySortFunctionality()
     await userManagementPage.verifyLastNameSortFunctunality()
     await userManagementPage.verifyFirstNameSortFunctunalityOnFacilityRow()

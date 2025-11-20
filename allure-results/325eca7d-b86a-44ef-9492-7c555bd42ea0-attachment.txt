@@ -1,0 +1,4 @@
+currentMonthSummary== 4394641.54
+totalBeforeNum= 29697062.29
+priorbalance== 29697062.29
+AfterCurrentMonthToggleOff== 29697062.29

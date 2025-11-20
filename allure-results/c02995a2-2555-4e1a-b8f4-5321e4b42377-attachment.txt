@@ -1,0 +1,4 @@
+Trying resident: Abplanalp, Mary
+Exact match found: Abplanalp, Mary
+Selected resident: Abplanalp, Mary
+ Resident displayed on tabel: Medicaid

@@ -17,6 +17,7 @@ test.describe("Verify filtering on Aging (Payer, Resident, Resident Balance, Bal
   });
   test("@smoke Verify filtering on Aging (Payer, Resident, Resident Balance, Balance Status)", async () => {
     const agingPage = new sections.AgingPage(test, page);
+    // await page.pause()
     await agingPage.GetResidentFilter()
     await agingPage.GetPayerFilter()
     await agingPage.GetResidentBalanceFilter()

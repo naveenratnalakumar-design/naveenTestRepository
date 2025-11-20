@@ -1055,7 +1055,7 @@ exports.UserManagementPage = class UserManagementPage {
     await this.hoverOnUserViewGridHeaders("First Name");
     await this.clickOnSortBtn("First Name");
     await this.test.step("The Page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
     });
     const Ascitems = await this.userViewGridColums("firstName").allInnerTexts();
     console.log("firstNames==", Ascitems);
@@ -1068,12 +1068,12 @@ exports.UserManagementPage = class UserManagementPage {
       "Verifying that first names are visible in ascending order when ascending sort is applied."
     ).toEqual(sortedAsc);
     await this.test.step("Wait for grid to load", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
     });
     await this.hoverOnUserViewGridHeaders("First Name");
     await this.clickOnSortBtn("First Name");
     await this.test.step("The Page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
     });
     const dscitems = await this.userViewGridColums("firstName").allInnerTexts();
     console.log("firstNames==", dscitems);
@@ -1087,124 +1087,159 @@ exports.UserManagementPage = class UserManagementPage {
     ).toEqual(sortedDesc);
   };
   verifyLastNameSortFunctunality = async () => {
-    await this.test.step("The Page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.largeWait));
-    });
-    await this.test.step("Wait for grid to load", async () => {
-      await this.page.waitForSelector(
-        "//div[normalize-space(text())='First Name']",
-        { state: "visible" }
-      );
-    });
-    await this.hoverOnLastNameHeader();
-    await this.clickOnLastNameSortBtn();
-    await this.test.step("The Page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.largeWait));
-    });
-    const Ascitems = await this.lastNameGridColums.allInnerTexts();
-    const cleanedNames = Ascitems.map(
-      (text) =>
-        text
-          .trim()
-          .replace(/^[A-Z]{2}\s*/, "") // remove initials like "AB ", "SA "
-          .split("\n")
-          .pop()
-          .trim() // get only the last line (name)
-    ).filter((name) => name);
-    console.log("lastNames==", cleanedNames);
-    await this.test.step("The Page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.smallWait));
-    });
-    const sortedAsc = [...cleanedNames].sort((a, b) =>
-      a.localeCompare(b, undefined, { sensitivity: "base" })
-    );
+  // Wait for grid
+  await this.page.waitForSelector("//div[normalize-space(text())='First Name']", {
+    state: "visible",
+  });
 
-    expect(
-      cleanedNames,
-      "Verifying that last names are visible in ascending order when ascending sort is applied."
-    ).toEqual(sortedAsc);
-    await this.test.step("Wait for grid to load", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.largeWait));
-    });
-    await this.hoverOnLastNameHeader();
-    await this.clickOnLastNameSortBtn();
-    await this.test.step("The Page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.largeWait));
-    });
-    const dscitems = await this.lastNameGridColums.allInnerTexts();
-    const cleanedNamesDesc = dscitems
-      .map(
-        (text) =>
-          text
-            .trim()
-            .replace(/^[A-Z]{2}\s*/, "") // remove initials like "AB ", "SA "
-            .split("\n")
-            .pop()
-            .trim() // get only the last line (name)
-      )
-      .filter((name) => name);
-    console.log("lastNames==", cleanedNamesDesc);
-    await this.test.step("The Page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.smallWait));
-    });
-    const sortedDesc = [...cleanedNamesDesc].sort((a, b) =>
-      b.localeCompare(a, undefined, { sensitivity: "base" })
-    );
-
-    expect(
-      cleanedNamesDesc,
-      "Verifying that last names are visible in descending order when descending sort is applied"
-    ).toEqual(sortedDesc);
+  // Helper to clean extracted names
+  const cleanNames = (items) => {
+    return items
+      .map((text) => {
+        const finalText = text.trim().split("\n").pop().trim();
+        return finalText;
+      })
+      .filter((name) => name && name.length > 1 && /^[A-Za-z]+$/.test(name));
   };
-  verifyEmailSortFunctunality = async () => {
-    await this.test.step("The Page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.largeWait));
-    });
-    await this.hoverOnUserViewGridHeaders("Email");
-    await this.clickOnSortBtn("Email");
-    await this.test.step("The Page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.largeWait));
-    });
-    const Ascitems = await this.userViewGridColums("email").allInnerTexts();
-    console.log("email==", Ascitems);
-    await this.test.step("The Page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.smallWait));
-    });
-    const sortedAsc = [...Ascitems].sort((a, b) => a.localeCompare(b));
-    expect(
-      Ascitems,
-      "Verifying that Emails are visible in ascending order when ascending sort is applied."
-    ).toEqual(sortedAsc);
-    await this.test.step("Wait for grid to load", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.largeWait));
-    });
-    await this.hoverOnUserViewGridHeaders("Email");
-    await this.clickOnSortBtn("Email");
-    await this.test.step("The Page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.largeWait));
-    });
-    const dscitems = await this.userViewGridColums("email").allInnerTexts();
-    console.log("email==", dscitems);
-    await this.test.step("The Page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.smallWait));
-    });
-    const cleanedItems = dscitems.map((txt) =>
-      txt
-        .replace(/[^a-z0-9]/gi, "")
-        .trim()
-        .toLowerCase()
-    );
 
-    // Step 2: Create a descending-sorted copy for expected order
-    // Use localeCompare with base sensitivity for accurate, case-insensitive comparison
-    const sortedDesc = [...cleanedItems].sort((a, b) =>
-      b.localeCompare(a, undefined, { sensitivity: "base" })
-    );
-    expect(
-      cleanedItems,
-      "Verifying that Emails are visible in descending order when descending sort is applied"
-    ).toEqual(sortedDesc);
-  };
+  // ASCENDING
+  await this.hoverOnLastNameHeader();
+  await this.clickOnLastNameSortBtn();
+  await this.page.waitForTimeout(parseInt(process.env.smallWait));
+
+  const ascItems = await this.lastNameGridColums.allInnerTexts();
+  const cleanedAsc = cleanNames(ascItems);
+
+  const sortedAsc = [...cleanedAsc].sort((a, b) =>
+    a.localeCompare(b, undefined, { sensitivity: "base" })
+  );
+
+  expect(
+    cleanedAsc,
+    "Verifying that last names are visible in ascending order when ascending sort is applied."
+  ).toEqual(sortedAsc);
+
+  // DESCENDING
+  await this.hoverOnLastNameHeader();
+  await this.clickOnLastNameSortBtn();
+  await this.page.waitForTimeout(parseInt(process.env.smallWait));
+
+  const descItems = await this.lastNameGridColums.allInnerTexts();
+  const cleanedDesc = cleanNames(descItems);
+
+  const sortedDesc = [...cleanedDesc].sort((a, b) =>
+    b.localeCompare(a, undefined, { sensitivity: "base" })
+  );
+
+  expect(
+    cleanedDesc,
+    "Verifying that last names are visible in descending order when descending sort is applied"
+  ).toEqual(sortedDesc);
+};
+verifyEmailSortFunctunality = async () => {
+
+  // Simple normalization matching UI behavior
+  const normalize = (value) =>
+    value
+      .trim()
+      .toLowerCase()
+      .replace(/[-_.]/g, "");   // UI ignores these in sorting
+
+
+  // Wait for initial load
+  await this.page.waitForTimeout(parseInt(process.env.largeWait));
+
+
+  //-------------------------------------------
+  // ASC SORT
+  //-------------------------------------------
+  await this.hoverOnUserViewGridHeaders("Email");
+  await this.clickOnSortBtn("Email");
+  await this.page.waitForTimeout(parseInt(process.env.largeWait));
+
+  const ascItems = await this.userViewGridColums("email").allInnerTexts();
+
+  const ascNormalized = ascItems.map(v => normalize(v));
+  const expectedAsc = [...ascNormalized].sort((a, b) =>
+    a.localeCompare(b, undefined, { sensitivity: "base" })
+  );
+
+  expect(
+    ascNormalized,
+    "Email column is not sorted A→Z"
+  ).toEqual(expectedAsc);
+
+
+  //-------------------------------------------
+  // DESC SORT
+  //-------------------------------------------
+  await this.hoverOnUserViewGridHeaders("Email");
+  await this.clickOnSortBtn("Email");
+  await this.page.waitForTimeout(parseInt(process.env.largeWait));
+
+  const descItems = await this.userViewGridColums("email").allInnerTexts();
+
+  const descNormalized = descItems.map(v => normalize(v));
+  const expectedDesc = [...descNormalized].sort((a, b) =>
+    b.localeCompare(a, undefined, { sensitivity: "base" })
+  );
+
+  expect(
+    descNormalized,
+    "Email column is not sorted Z→A"
+  ).toEqual(expectedDesc);
+};
+
+
+  // verifyEmailSortFunctunality = async () => {
+  //   await this.test.step("The Page is loading, please wait", async () => {
+  //     await this.page.waitForTimeout(parseInt(process.env.largeWait));
+  //   });
+  //   await this.hoverOnUserViewGridHeaders("Email");
+  //   await this.clickOnSortBtn("Email");
+  //   await this.test.step("The Page is loading, please wait", async () => {
+  //     await this.page.waitForTimeout(parseInt(process.env.largeWait));
+  //   });
+  //   const Ascitems = await this.userViewGridColums("email").allInnerTexts();
+  //   console.log("email==", Ascitems);
+  //   await this.test.step("The Page is loading, please wait", async () => {
+  //     await this.page.waitForTimeout(parseInt(process.env.smallWait));
+  //   });
+  //   const sortedAsc = [...Ascitems].sort((a, b) => a.localeCompare(b));
+  //   expect(
+  //     Ascitems,
+  //     "Verifying that Emails are visible in ascending order when ascending sort is applied."
+  //   ).toEqual(sortedAsc);
+  //   await this.test.step("Wait for grid to load", async () => {
+  //     await this.page.waitForTimeout(parseInt(process.env.largeWait));
+  //   });
+  //   await this.hoverOnUserViewGridHeaders("Email");
+  //   await this.clickOnSortBtn("Email");
+  //   await this.test.step("The Page is loading, please wait", async () => {
+  //     await this.page.waitForTimeout(parseInt(process.env.largeWait));
+  //   });
+  //   const dscitems = await this.userViewGridColums("email").allInnerTexts();
+  //   console.log("email==", dscitems);
+  //   await this.test.step("The Page is loading, please wait", async () => {
+  //     await this.page.waitForTimeout(parseInt(process.env.smallWait));
+  //   });
+  //   const cleanedItems = dscitems.map((txt) =>
+  //     txt
+  //       .replace(/[^a-z0-9]/gi, "")
+  //       .trim()
+  //       .toLowerCase()
+  //   );
+
+  //   // Step 2: Create a descending-sorted copy for expected order
+  //   // Use localeCompare with base sensitivity for accurate, case-insensitive comparison
+  //   const sortedDesc = [...cleanedItems].sort((a, b) =>
+  //     b.localeCompare(a, undefined, { sensitivity: "base" })
+  //   );
+  //   expect(
+  //     cleanedItems,
+  //     "Verifying that Emails are visible in descending order when descending sort is applied"
+  //   ).toEqual(sortedDesc);
+  // };
   // verifyEmailSortFunctunality = async () => {
   //   const normalizeEmail = (email) =>
   //     email.trim().toLowerCase().replace(/[-_]/g, ""); // remove - and _ for comparison

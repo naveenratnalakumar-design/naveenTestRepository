@@ -1,10 +1,17 @@
 const { expect } = require("@playwright/test");
 const { excuteSteps } = require("../../utilities/actions");
 const testData = require("../../test_Data/testData.json");
+const { parse } = require("path");
 const randomFacilityNames =
   testData.RevflowData.TaskListPage.facilityOptions[
     Math.floor(
       Math.random() * testData.RevflowData.TaskListPage.facilityOptions.length
+    )
+  ];
+const randomPayerCategory =
+  testData.RevflowData.OverridePayerCategories[
+    Math.floor(
+      Math.random() * testData.RevflowData.OverridePayerCategories.length
     )
   ];
 exports.AgingPage = class AgingPage {
@@ -67,7 +74,7 @@ exports.AgingPage = class AgingPage {
     this.globalFacilityDropdown = page.locator(
       "//arw-facilities-dropdown[@class='flex justify-end grow']//button"
     );
-     this.selectAllBtn = page.locator("//label[contains(text(),'All')]");
+    this.selectAllBtn = page.locator("//label[contains(text(),'All')]");
     this.allCheckBox = page.locator(
       "//label[contains(text(),'All')]/preceding-sibling::div"
     );
@@ -79,25 +86,24 @@ exports.AgingPage = class AgingPage {
       "//button[@class='arw-button arw-button--accent arw-button--big arw-button--tertiary']"
     );
     this.SelectResident = page.locator(
-      "//div[@class='mat-mdc-select-trigger']"
+      "//div[normalize-space(text())='Resident']"
     );
-    this.ResidentOption = page.locator(
-      "//mat-option[@role='option' and normalize-space(.)='Resident']"
-    );
+    this.ResidentOption = page.locator("//span[text()='Select Resident']");
     this.ResidentInputBox = page.locator(
       "//button[@class='mat-mdc-menu-trigger arw-input bg-background-surface border border-complementary-grey-200 disabled:bg-complementary-grey-50 disabled:border-complementary-grey-200 disabled:text-foreground-medium flex focus:border-primary-blue-accent focus:outline-0 gap-8 hover:border-primary-blue-accent items-center justify-between min-h-btn-big placeholder:text-foreground-light px-12 rounded-sm text-foreground-high transition-colors w-full ng-star-inserted']"
     );
-    this.FillResident = page.locator(
-      "//input[@placeholder='Search' or @id='mat-input-23']"
-    );
-    this.noResultsLabel = this.page.locator(
+    this.FillResident = page.locator("//input[@placeholder='Search']");
+    this.noResultsLabel = page.locator(
       "//label[contains(normalize-space(.), 'All (0 Matches)')]"
+    );
+    this.filterApplyBtn = page.locator(
+      "//span[contains(text(),'Apply Filter')]"
     );
     this.checkboxVisible = page.locator("(//input[@type='checkbox'])[2]");
     this.ApplyFilterBtn1 = page.locator(
       "//button[@class='arw-button arw-button--accent arw-button--big arw-button--primary']"
     );
-    this.ArwBtn = page.locator("(//div[@class='w-full'])[16]");
+    this.ArwBtn = page.locator("(//arw-icon[@name='arrowNarrowDown'])[1]");
     this.PayerOption = page.locator(
       "//mat-option[@role='option' and normalize-space(.)='Payer']"
     );
@@ -136,17 +142,103 @@ exports.AgingPage = class AgingPage {
     this.filtersDropdownListCount = page.locator(
       "(//mat-checkbox//label[@class='mdc-label'])[1]"
     );
-      this.deleteSortIcon = page.locator(
+    this.deleteSortIcon = page.locator(
       "(//arw-button[@icon='trash03']//button[contains(@class,'arw-button--small arw-button--tertiary')])[1]"
     );
-    this.noTasksFound = page.locator(`//div[text()="You don't have any ar aging yet"]`)
+    this.noTasksFound = page.locator(
+      `//div[text()="You don't have any ar aging yet"]`
+    );
     this.noMatchesFoundLabel = page.locator(
       "//label[normalize-space(text())='All (0 Matches)']"
     );
     this.closeBtn = page.locator("//arw-icon[@name='x']");
-      this.globalFacilityfilterApplyBtn = page.locator(
+    this.globalFacilityfilterApplyBtn = page.locator(
       "//span[normalize-space(text())='Apply']"
     );
+    this.clearFilerDisableFlag = page.locator(
+      "//span[normalize-space(text())='Clear Filter']/parent::button"
+    );
+    this.Settings = this.page.locator(
+      " //span[normalize-space(text())='Settings']"
+    );
+    this.FacilityPayers = this.page.locator(
+      "//span[normalize-space(text())='Facility Payers']"
+    );
+    this.SelectFacility1 = this.page.locator(
+      "(//arw-grid-header[@class='flex flex-col px-20 pt-20 pb-12 gap-16 bg-background-surface border-b border-complementary-grey-200 ng-star-inserted']//button)[1]"
+    );
+    this.GlobalFacility = this.page.locator("(//input[@type='checkbox'])[2]");
+    this.GroupingAraging = this.page.locator(
+      "(//arw-ar-aging[@class='arw-page ng-star-inserted']//arw-grid-header//button//span)[1]"
+    );
+    this.CustomGrouping = this.page.locator(
+      "//div[@class='flex justify-end shrink-0 ng-star-inserted']//button//span[normalize-space(text())='Custom Grouping']"
+    );
+    this.ClearAll = this.page.locator(
+      "//span[normalize-space(text())='Clear All']"
+    );
+    this.AddGrouping = this.page.locator(
+      "//span[normalize-space(text())='Add Grouping']"
+    );
+    this.GroupingInputbox = this.page.locator(
+      "(//mat-select[@role='combobox']//div)[1]"
+    );
+    this.SecondGroupingInputbox = this.page.locator(
+      "(//div[@class='arw-control__content']//mat-select//div)[9]"
+    );
+    this.ThirdGroupingInputbox = this.page.locator(
+      "(//div[@class='arw-control__content']//mat-select//div)[17]"
+    );
+    this.AddGrouping = this.page.locator(
+      "//span[normalize-space(text())='Add Grouping']"
+    );
+    this.ApplyGrouping = this.page.locator(
+      "//span[normalize-space(text())='Apply Grouping']"
+    );
+    this.groupingName = (optionName) =>
+      this.page.locator(
+        `//mat-option[@role='option']//div//div[normalize-space(.)='${optionName}']`
+      );
+    this.FacilityArwBtn = this.page.locator(
+      "//div[@class='flex items-center px-8 gap-4 relative bg-background-surface rounded-l-sm h-full ng-star-inserted']//div//arw-button"
+    );
+    this.agingGrid = (PayerCategory) =>
+      this.page.locator(
+        `//span[normalize-space(text())='${PayerCategory}']/ancestor::div[contains(@class,'flex items-center')][1]//arw-button`
+      );
+    this.payers = this.page.locator(
+      '//div[contains(@data-column-definition-name, "_groupColumn")][not(.//arw-button)]'
+    );
+    this.TotalGrid = this.page.locator(
+      "//div[@class='cdk-virtual-scroll-content-wrapper']"
+    );
+    this.SaveBtn = this.page.locator(
+      "//div[@class='flex justify-center gap-16 ng-star-inserted']//button//span[normalize-space(text())='Save']"
+    );
+    this.EditBtn = this.page.locator(
+      "(//div[@class='shadow-m arw-grid-table__row bg-background-surface ng-star-inserted']//arw-button)[1]"
+    );
+    this.PayerCategoryDropDown = this.page.locator(
+      "//mat-select[@role='combobox']"
+    );
+    this.searchCategory = this.page.locator("//div[@role='listbox']//input");
+    this.Facility = this.page.locator(
+      "(//div[@class='shadow-m arw-grid-table__row bg-background-surface ng-star-inserted']//div[@data-column-definition-name='facilityHierarchyId'])[1]"
+    );
+
+    this.PayerCategoryName = this.page.locator(
+      "(//div[@class='shadow-m arw-grid-table__row bg-background-surface ng-star-inserted']//div[@data-column-definition-name='overridePayerCategoryName'])[1]"
+    );
+    this.facilitySearchInput = page.locator(
+      "//arw-input[@icon='searchLg']//input"
+    );
+    this.agingFilterDropdown = page.locator(
+      `//span[normalize-space(text())='Select']`
+    );
+    this.selectAgingFilterOption = (txt) =>
+      page.locator(`//div[normalize-space(text())='${txt}']`);
+    this.selectAgingFilterSubOptions = (txt) =>
+      page.locator(`//span[normalize-space(text())='${txt}']`);
   }
 
   clickOnCurrentMonthToggle = async () => {
@@ -173,7 +265,40 @@ exports.AgingPage = class AgingPage {
       "Click on add task button"
     );
   };
-    clickOnCloseBtn = async () => {
+  searchFacilityOptions = async (txt) => {
+    await excuteSteps(
+      this.test,
+      this.facilitySearchInput,
+      "fill",
+      "Search facilityOption",
+      txt
+    );
+  };
+  clickSelectAgingFilterDropdown = async () => {
+    await excuteSteps(
+      this.test,
+      this.agingFilterDropdown,
+      "click",
+      "Click on filter dropdown"
+    );
+  };
+  selectAgingFilterOptionFromList = async (txt) => {
+    await excuteSteps(
+      this.test,
+      this.selectAgingFilterOption(txt),
+      "click",
+      "SelSelect the filter option from the dropdown listect"
+    );
+  };
+  clickOnSeleAgingFiltersSubOptionDropdown = async (txt) => {
+    await excuteSteps(
+      this.test,
+      this.selectAgingFilterSubOptions(txt),
+      "click",
+      "Click on the filters sub-options dropdown"
+    );
+  };
+  clickOnCloseBtn = async () => {
     await excuteSteps(this.test, this.closeBtn, "click", "Click on close Icon");
   };
   searchTextInSearchBox = async (text) => {
@@ -347,13 +472,12 @@ exports.AgingPage = class AgingPage {
       text
     );
   };
-  SelectBetweenOptionFromDropdown = async (text) => {
+  SelectBetweenOptionFromDropdown = async () => {
     await excuteSteps(
       this.test,
       this.BetweenOption,
       "click",
       `Select Between option from Dropdown`,
-      text
     );
   };
   EnterInputInFrom = async (text) => {
@@ -390,31 +514,28 @@ exports.AgingPage = class AgingPage {
     const typedValue = await input.inputValue();
     console.log(`Entered value in TO field: ${typedValue}`);
   };
-  SelectEqualsOptionFromDropdown = async (text) => {
+  SelectEqualsOptionFromDropdown = async () => {
     await excuteSteps(
       this.test,
       this.EqualsOption,
       "click",
       `Select Between option from Dropdown`,
-      text
     );
   };
-  SelectGreaterthanOptionFromDropdown = async (text) => {
+  SelectGreaterthanOptionFromDropdown = async () => {
     await excuteSteps(
       this.test,
       this.GreaterthanOption,
       "click",
       `Select Between option from Dropdown`,
-      text
     );
   };
-  SelectLessthanOptionFromDropdown = async (text) => {
+  SelectLessthanOptionFromDropdown = async () => {
     await excuteSteps(
       this.test,
       this.LessthanOption,
       "click",
       `Select  Less than  option from Dropdown`,
-      text
     );
   };
   clickOnAddFilterBtn = async () => {
@@ -450,7 +571,7 @@ exports.AgingPage = class AgingPage {
       `Click on the dropdown to select a facility filter sub-option`
     );
   };
-    clickOnDeleteDuedateInSortIcon = async () => {
+  clickOnDeleteDuedateInSortIcon = async () => {
     await excuteSteps(
       this.test,
       this.deleteSortIcon,
@@ -458,7 +579,7 @@ exports.AgingPage = class AgingPage {
       `Clear all sorting filters`
     );
   };
-    clickOnApplyFilterButton = async () => {
+  clickOnApplyFilterButton = async () => {
     await excuteSteps(
       this.test,
       this.applyFilterBtn,
@@ -466,7 +587,7 @@ exports.AgingPage = class AgingPage {
       `Click on Apply Filter`
     );
   };
-    clickOnGlobalSearchdropdown = async () => {
+  clickOnGlobalSearchdropdown = async () => {
     await excuteSteps(
       this.test,
       this.globalFacilityDropdown,
@@ -474,7 +595,7 @@ exports.AgingPage = class AgingPage {
       `Click on global facility dropdown`
     );
   };
-    deselectAllFacilities = async () => {
+  deselectAllFacilities = async () => {
     await excuteSteps(
       this.test,
       this.selectAllBtn,
@@ -482,7 +603,7 @@ exports.AgingPage = class AgingPage {
       `Deselect all facilities in the global facility dropdown`
     );
   };
-    searchGlobalFacilty = async (txt) => {
+  searchGlobalFacilty = async (txt) => {
     await excuteSteps(
       this.test,
       this.globalSearchInput,
@@ -491,7 +612,7 @@ exports.AgingPage = class AgingPage {
       txt
     );
   };
-    clickOnGloabalFacilityApplyBtn = async () => {
+  clickOnGloabalFacilityApplyBtn = async () => {
     await excuteSteps(
       this.test,
       this.globalFacilityfilterApplyBtn,
@@ -506,6 +627,196 @@ exports.AgingPage = class AgingPage {
       "click",
       `Select the desired filter from the dropdown list`
     );
+  };
+  selectAllFacilities = async () => {
+    await excuteSteps(
+      this.test,
+      this.selectAllBtn,
+      "click",
+      `Select all facilities in the global facility dropdown`
+    );
+  };
+  clickOnApplyBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.applyButton,
+      "click",
+      `Click on Apply Button below`
+    );
+  };
+  clickOnFilterApplyBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.filterApplyBtn,
+      "click",
+      `Click on Apply Filter`
+    );
+  };
+  ClickOnSettings = async () => {
+    await excuteSteps(
+      this.test,
+      this.Settings,
+      "click",
+      `Clcik on Settings Button`
+    );
+  };
+  ClickOnFacilityPayers = async () => {
+    await excuteSteps(
+      this.test,
+      this.FacilityPayers,
+      "click",
+      `Clcik on Facility Payers Button`
+    );
+  };
+  ClickOnSelectFacilityDropDownInFacilityPayers = async () => {
+    await excuteSteps(
+      this.test,
+      this.SelectFacility1,
+      "click",
+      `Clcik on Facility dropdown Button`
+    );
+  };
+  SelectGlobalFacility = async () => {
+    await excuteSteps(
+      this.test,
+      this.GlobalFacility,
+      "click",
+      `Select Global Facility`
+    );
+  };
+  ClickOnGroupingBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.GroupingAraging,
+      "click",
+      `Clcik on Grouping Button`
+    );
+  };
+
+  ClickOnCustomGroupingBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.CustomGrouping,
+      "click",
+      `Clcik on Custom Grouping Button`
+    );
+  };
+  ClickOnClearAllBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.ClearAll,
+      "click",
+      `Clcik on Clear All Button`
+    );
+  };
+  ClickOnAddGroupingBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.AddGrouping,
+      "click",
+      `Clcik on Add Grouping Btn  `
+    );
+  };
+  ClickOnGroupingInputBox = async () => {
+    await excuteSteps(
+      this.test,
+      this.GroupingInputbox,
+      "click",
+      `Clcik on Grouping input box `
+    );
+  };
+  selectOption = async (optionName) => {
+    await excuteSteps(
+      this.test,
+      this.groupingName(optionName),
+      "click",
+      "Click on the grouping options"
+    );
+  };
+  ClickOnSecondGroupingInputBox = async () => {
+    await excuteSteps(
+      this.test,
+      this.SecondGroupingInputbox,
+      "click",
+      `Clcik on second Grouping input box `
+    );
+  };
+  ClickOnThirdGroupingInputBox = async () => {
+    await excuteSteps(
+      this.test,
+      this.ThirdGroupingInputbox,
+      "click",
+      `Clcik on Third Grouping input box `
+    );
+  };
+  ClickOnApplyGroupingBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.ApplyGrouping,
+      "click",
+      `Clcik on Apply Grouping Btn  `
+    );
+  };
+  ClickOnFacilityArrowBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.FacilityArwBtn,
+      "click",
+      `Clcik on Facility Arw  Btn  `
+    );
+  };
+  ClickExpandBtn = async (PayerCategory) => {
+    await excuteSteps(
+      this.test,
+      this.agingGrid(PayerCategory),
+      "click",
+      "Click on the payer category expand button"
+    );
+  };
+  ClickOnSaveBtn = async () => {
+    await excuteSteps(this.test, this.SaveBtn, "click", `Clcik on Save Button`);
+  };
+
+  ClickOnEditPayerCategoryBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.EditBtn,
+      "click",
+      `Clcik on Edit Payer Category Button`
+    );
+  };
+  ClickOnPayerCategoryDropDown = async () => {
+    await excuteSteps(
+      this.test,
+      this.PayerCategoryDropDown,
+      "click",
+      `Clcik on Payer Category dropdown`
+    );
+  };
+  EnterCategoryName = async (text) => {
+    await excuteSteps(
+      this.test,
+      this.searchCategory,
+      "fill",
+      `Enter CategoryName`,
+      text
+    );
+  };
+  getFieldValue = async (containerLocator, labelText) => {
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    const rawText = await containerLocator.innerText();
+    const cleanValue = rawText
+      .replace(new RegExp(`^${labelText}\\s*`, "i"), "")
+      .trim();
+
+    if (!cleanValue) {
+      console.warn(` No value found for ${labelText}. Raw text: "${rawText}"`);
+    }
+
+    // console.log(` Extracted ${labelText}: ${cleanValue}`);
+    return cleanValue;
   };
   createTaskWithAttachment = async () => {
     await this.clickOnAgingBtn();
@@ -744,80 +1055,118 @@ exports.AgingPage = class AgingPage {
     await this.verifyToggleStatusWhenOn();
     await this.verifyToggleStatusWhenOff();
   };
+  parseAmount = async (text) => {
+    if (typeof text !== "string") {
+      throw new Error(
+        "parseAmount expected string, got: " + JSON.stringify(text)
+      );
+    }
+
+    text = text.trim();
+
+    const isParens = text.startsWith("(") && text.endsWith(")");
+    if (isParens) {
+      text = text.slice(1, -1);
+    }
+
+    const cleaned = text.replace(/[^0-9.-]+/g, "").replace(/(?!^)-/g, "");
+    const num = Number(cleaned);
+
+    if (isNaN(num)) {
+      throw new Error("parseAmount failed to convert: " + text);
+    }
+
+    return isParens ? -Math.abs(num) : num;
+  };
+
   VerifyAgingGridDataWhenTogglesOnAndOff = async () => {
-    let currentMonthBalanceTotalSummary = await this.page
-      .locator(
-        "(//div[@data-column-definition-name='currentMonth']//div[@class='overflow-hidden text-ellipsis'])[last()]"
-      )
-      .innerText();
-    let currentMonthBalanceNum = parseFloat(
-      currentMonthBalanceTotalSummary.replace(/[^0-9.-]+/g, "")
-    );
-    console.log("currentMonthSummary==", currentMonthBalanceNum);
-    let totalDisplayBalanceSummary = await this.page
-      .locator(
-        "(//div[@data-column-definition-name='totalBalance']//div[@class='overflow-hidden text-ellipsis'])[last()]"
-      )
-      .innerText();
-    let totalBeforeNum = parseFloat(
-      totalDisplayBalanceSummary.replace(/[^0-9.-]+/g, "")
-    );
-    console.log("totalBeforeNum=", totalBeforeNum);
-    let priorBalanceSummary = await this.page
-      .locator(
-        "(//div[@data-column-definition-name='priorBalances']//div[@class='overflow-hidden text-ellipsis'])[last()]"
-      )
-      .innerText();
-    let priorBalanceNum = parseFloat(
-      priorBalanceSummary.replace(/[^0-9.-]+/g, "")
-    );
-    console.log("priorbalance==", priorBalanceNum);
-    await this.clickOnCurrentMonthToggle();
     await this.test.step("Wait for grid to load", async () => {
       await this.page.waitForTimeout(parseInt(process.env.largeWait));
     });
-    let totalAfter = await this.page
+
+    // Current month
+    const currentMonthBalanceTotalSummary = await this.page
       .locator(
-        "(//div[@data-column-definition-name='totalBalance']//div[@class='overflow-hidden text-ellipsis'])[last()]"
+        "(//div[@data-column-definition-name='currentMonth']//arw-template-renderer//arw-ar-aging-cell//div[contains(@class,'overflow-hidden')])[last()]"
       )
-      .innerText();
-    let totalDisplaySummaryAfterCurrentMonthToggleOff = parseFloat(
-      totalAfter.replace(/[^0-9.-]+/g, "")
+      .textContent();
+
+    const currentMonthBalanceNum = await this.parseAmount(
+      currentMonthBalanceTotalSummary
     );
+    console.log("currentMonthSummary==", currentMonthBalanceNum);
+
+    // Total before toggle
+    const totalDisplayBalanceSummary = await this.page
+      .locator(
+        "(//div[@data-column-definition-name='totalBalance']//arw-template-renderer//arw-ar-aging-cell//div[contains(@class,'overflow-hidden')])[last()]"
+      )
+      .textContent();
+
+    const totalBeforeNum = await this.parseAmount(totalDisplayBalanceSummary);
+    console.log("totalBeforeNum=", totalBeforeNum);
+
+    // Prior balance
+    const priorBalanceSummary = await this.page
+      .locator(
+        "(//div[@data-column-definition-name='priorBalances']//arw-template-renderer//arw-ar-aging-cell//div[contains(@class,'overflow-hidden')])[last()]"
+      )
+      .textContent();
+
+    const priorBalanceNum = await this.parseAmount(priorBalanceSummary);
+    console.log("priorbalance==", priorBalanceNum);
+
+    // Toggle current month OFF
+    await this.clickOnCurrentMonthToggle();
+    await this.page.waitForTimeout(parseInt(process.env.largeWait));
+
+    const totalAfter = await this.page
+      .locator(
+        "(//div[@data-column-definition-name='totalBalance']//arw-template-renderer//arw-ar-aging-cell//div[contains(@class,'overflow-hidden')])[last()]"
+      )
+      .textContent();
+
+    const totalDisplaySummaryAfterCurrentMonthToggleOff =
+      await this.parseAmount(totalAfter);
     console.log(
       "AfterCurrentMonthToggleOff==",
       totalDisplaySummaryAfterCurrentMonthToggleOff
     );
+
     const expectedTotal = totalBeforeNum - currentMonthBalanceNum;
+
     await expect(
       totalDisplaySummaryAfterCurrentMonthToggleOff,
       "Verify the total display balance is shown correctly when the current month toggle is off"
     ).toBeCloseTo(expectedTotal, 2);
+
+    // Toggle back ON, then prior balances OFF
     await this.clickOnCurrentMonthToggle();
-    await this.test.step("Wait for grid to load", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.largeWait));
-    });
+    await this.page.waitForTimeout(parseInt(process.env.largeWait));
+
     await this.clickOnAllPriorBalancesToggle();
-    await this.test.step("Wait for grid to load", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.largeWait));
-    });
-    let totalBalanceSummaryAfterPriorToggleOff = await this.page
+    await this.page.waitForTimeout(parseInt(process.env.largeWait));
+
+    const totalBalanceSummaryAfterPriorToggleOff = await this.page
       .locator(
-        "(//div[@data-column-definition-name='totalBalance']//div[@class='overflow-hidden text-ellipsis'])[last()]"
+        "(//div[@data-column-definition-name='totalBalance']//arw-template-renderer//arw-ar-aging-cell//div[contains(@class,'overflow-hidden')])[last()]"
       )
-      .innerText();
-    let afterPriorToggleOffTotalDisplaybalNm = parseFloat(
-      totalBalanceSummaryAfterPriorToggleOff.replace(/[^0-9.-]+/g, "")
+      .textContent();
+
+    const afterPriorToggleOffTotalDisplaybalNm = await this.parseAmount(
+      totalBalanceSummaryAfterPriorToggleOff
     );
     console.log(
       "AfterPriorToggle Off TotalDisplayed Balance==",
       afterPriorToggleOffTotalDisplaybalNm
     );
-    const expectedTatalDisplayedAmount = totalBeforeNum - priorBalanceNum;
+
+    const expectedTotalDisplayedAmount = totalBeforeNum - priorBalanceNum;
+
     await expect(
       afterPriorToggleOffTotalDisplaybalNm,
       "Verify the total display balance is shown correctly when the prior balance toggle is off"
-    ).toBeCloseTo(expectedTatalDisplayedAmount, 2);
+    ).toBeCloseTo(expectedTotalDisplayedAmount, 2);
   };
 
   GetSearchResultSummary = async () => {
@@ -845,7 +1194,9 @@ exports.AgingPage = class AgingPage {
     await this.page.keyboard.press("Enter");
     await this.clickOnApplyBtn();
     // await this.page.reload({ waitUntil: "networkidle" });
-    await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
 
     //  Get selected facility summary after reload
     const SelectedFacilitySummary = await this.page
@@ -1195,15 +1546,15 @@ exports.AgingPage = class AgingPage {
     );
     await this.AgingFilterBtn.waitFor({ state: "visible" });
     await this.clickOnAgingFilterBtn();
-
-    await this.ResidentAddFilter();
-    await this.SelectResidentDropBown();
-    await this.SelectResidentFromDropdown();
+    await this.clickOnAddFilterBtn();
+    await this.clickSelectAgingFilterDropdown();
+    await this.selectAgingFilterOptionFromList("Resident");
+    await this.clickOnSeleAgingFiltersSubOptionDropdown("Select Resident");
     const ResidentNames = testData.RevflowData.TaskListPage.residentOptions;
     let selectedResident = null;
     for (const resident of ResidentNames) {
       console.log(`Trying resident: ${resident}`);
-      await this.ClickOnsearchPayersField();
+      // await this.ClickOnsearchPayersField();
       await this.EnterResident([resident]);
       // Wait dropdown to show options
       await this.page.waitForTimeout(800);
@@ -1270,11 +1621,10 @@ exports.AgingPage = class AgingPage {
 
     await this.AgingFilterBtn.waitFor({ state: "visible" });
     await this.clickOnAgingFilterBtn();
-
-    // Add payer filter
-    await this.ResidentAddFilter();
-    await this.SelectResidentDropBown();
-    await this.SelectPayerFromDropdown();
+    await this.clickOnAddFilterBtn();
+    await this.clickSelectAgingFilterDropdown();
+    await this.selectAgingFilterOptionFromList("Payer");
+    await this.clickOnSeleAgingFiltersSubOptionDropdown("Select Payer");
 
     const payerNames = testData.RevflowData.TaskListPage.payenameList;
     let selectedPayer = null;
@@ -1283,7 +1633,7 @@ exports.AgingPage = class AgingPage {
     for (const payer of payerNames) {
       console.log(`Trying payer: ${payer}`);
 
-      await this.ClickOnsearchPayersField();
+      // await this.ClickOnsearchPayersField();
       await this.EnterResident([payer]); // typing
       await this.page.waitForTimeout(800);
 
@@ -1350,13 +1700,12 @@ exports.AgingPage = class AgingPage {
     // Open Aging filter
     await this.AgingFilterBtn.waitFor({ state: "visible" });
     await this.clickOnAgingFilterBtn();
-
-    await this.ResidentAddFilter();
-    await this.SelectResidentDropBown();
-    await this.SelectResidentBalanceFromDropdown();
-    await this.ClickOnConditionalInputBox();
-    await this.SelectBetweenOptionFromDropdown();
-
+    await this.clickOnAddFilterBtn();
+    await this.clickSelectAgingFilterDropdown();
+    await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    await this.selectAgingFilterOptionFromList('Resident Balance');
+    await this.clickOnSeleAgingFiltersSubOptionDropdown('Conditional');
+    await this.SelectBetweenOptionFromDropdown()
     // Wait for numeric inputs to appear
     await Promise.all([
       this.page
@@ -1424,13 +1773,12 @@ exports.AgingPage = class AgingPage {
     // Open Aging filter
     await this.AgingFilterBtn.waitFor({ state: "visible" });
     await this.clickOnAgingFilterBtn();
-
-    await this.ResidentAddFilter();
-    await this.SelectResidentDropBown();
-    await this.SelectResidentBalanceFromDropdown();
-    await this.ClickOnConditionalInputBox();
-    await this.SelectEqualsOptionFromDropdown();
-
+    await this.clickOnAddFilterBtn();
+    await this.clickSelectAgingFilterDropdown();
+    await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    await this.selectAgingFilterOptionFromList('Resident Balance');
+    await this.clickOnSeleAgingFiltersSubOptionDropdown('Conditional');
+    await this.SelectEqualsOptionFromDropdown()
     // Wait for numeric input
     await Promise.all([
       this.page
@@ -1505,15 +1853,12 @@ exports.AgingPage = class AgingPage {
     // Open Aging filter
     await this.AgingFilterBtn.waitFor({ state: "visible" });
     await this.clickOnAgingFilterBtn();
-
-    await this.ResidentAddFilter();
-    await this.SelectResidentDropBown();
-    await this.SelectResidentBalanceFromDropdown();
-    await this.ClickOnConditionalInputBox();
-
-    // Select the “Greater than” option
-    await this.SelectGreaterthanOptionFromDropdown();
-
+    await this.clickOnAddFilterBtn();
+    await this.clickSelectAgingFilterDropdown();
+    await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    await this.selectAgingFilterOptionFromList('Resident Balance');
+    await this.clickOnSeleAgingFiltersSubOptionDropdown('Conditional');
+    await this.SelectGreaterthanOptionFromDropdown()
     // Wait for numeric input to appear
     await Promise.all([
       this.page
@@ -1581,12 +1926,12 @@ exports.AgingPage = class AgingPage {
     // Open Aging filter
     await this.AgingFilterBtn.waitFor({ state: "visible" });
     await this.clickOnAgingFilterBtn();
-    await this.ResidentAddFilter();
-    await this.SelectResidentDropBown();
-    await this.SelectResidentBalanceFromDropdown();
-    await this.ClickOnConditionalInputBox();
-    // Select the “Less than” option
-    await this.SelectLessthanOptionFromDropdown();
+    await this.clickOnAddFilterBtn();
+    await this.clickSelectAgingFilterDropdown();
+    await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    await this.selectAgingFilterOptionFromList('Resident Balance');
+    await this.clickOnSeleAgingFiltersSubOptionDropdown('Conditional');
+    await this.SelectLessthanOptionFromDropdown()
     // Wait for numeric input to appear
     await Promise.all([
       this.page
@@ -1666,10 +2011,10 @@ exports.AgingPage = class AgingPage {
   };
   VerifyResidentPayerDropdownOptionsCountChangingGlobalFacilities =
     async () => {
-        await this.clickOnAgingBtn()
-          await this.test.step("The page is loading, please wait", async () => {
-          await this.page.waitForTimeout(parseInt(process.env.largeWait));
-        });
+      await this.clickOnAgingBtn();
+      await this.test.step("The page is loading, please wait", async () => {
+        await this.page.waitForTimeout(parseInt(process.env.largeWait));
+      });
       await this.clickOnFilterBtn();
       await this.clickOnClearFilterBtn();
       await this.test.step("The page is loading, please wait", async () => {
@@ -1679,7 +2024,7 @@ exports.AgingPage = class AgingPage {
       let afterChangeGlobalFacilityFiltercount = [];
       const filters = [
         { name: "Resident", selectOption: "Select Resident" },
-        { name: "Payer", selectOption: "Select Payer"}
+        { name: "Payer", selectOption: "Select Payer" },
       ];
       for (const element of filters) {
         await this.clickOnFilterBtn();
@@ -1703,7 +2048,7 @@ exports.AgingPage = class AgingPage {
         await this.clickOnApplyFilterButton();
       }
       console.log(dropdownCount);
-       await this.clickOnGlobalSearchdropdown();
+      await this.clickOnGlobalSearchdropdown();
       await this.deselectAllFacilities();
       for (let i = 0; i < 7; i++) {
         const randomFacilityNames =
@@ -1728,8 +2073,8 @@ exports.AgingPage = class AgingPage {
       await this.test.step("The page is loading, please wait", async () => {
         await this.page.waitForTimeout(parseInt(process.env.mediumWait));
       });
-       let noTasks = await this.noTasksFound.isVisible()
-       if (noTasks) {
+      let noTasks = await this.noTasksFound.isVisible();
+      if (noTasks) {
         await expect(
           this.noTasksFound,
           "verifying You don't have any ar aging yet  lable on aging screen"
@@ -1737,7 +2082,7 @@ exports.AgingPage = class AgingPage {
       } else {
         const AfterChangeGlobalFacilityfilterscount = [
           { name: "Resident", selectOption: "Select Resident" },
-          { name: "Payer", selectOption: "Select Payer"}
+          { name: "Payer", selectOption: "Select Payer" },
         ];
         for (const element of AfterChangeGlobalFacilityfilterscount) {
           await this.clickOnFilterBtn();
@@ -1767,4 +2112,171 @@ exports.AgingPage = class AgingPage {
         ).not.toEqual(afterChangeGlobalFacilityFiltercount);
       }
     };
+  verifyAgingFiltersResetGlobalFacilityChange = async () => {
+    await this.clickOnAgingBtn();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    await this.clickOnFilterBtn();
+    await this.clickOnAddFilterBtn();
+    await this.clickOAddFilterDropdown();
+    await this.searchFilterNames(["Resident"]);
+    await this.selectFilterOptionsFromDropdown("Resident");
+    await this.selectFacilitySubOptions("Select Resident");
+    await this.selectAllFacilities();
+    await this.clickOnApplyBtn();
+    await this.clickOnFilterApplyBtn();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
+    await this.clickOnGlobalSearchdropdown();
+    await this.deselectAllFacilities();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
+    await this.searchGlobalFacilty([randomFacilityNames]);
+    await this.page.keyboard.press("Enter");
+    await this.clickOnGloabalFacilityApplyBtn();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
+    });
+    await this.clickOnFilterBtn();
+    await expect(
+      this.clearFilerDisableFlag,
+      "Filters should clear after the global facility is changed"
+    ).toBeDisabled();
+    await this.test.step("Close the filter popup", async () => {
+      await this.page.keyboard.press("Escape");
+    });
+  };
+  verifyPayerUnderPayerCategory = async () => {
+    await this.ClickOnSettings();
+    await this.ClickOnFacilityPayers();
+    await this.test.step("waiting until grid is visible", async () => {
+      await this.TotalGrid.waitFor({ state: "visible", timeout: 10000 });
+    });
+    await this.ClickOnSelectFacilityDropDownInFacilityPayers();
+    await this.searchFacilityOptions([randomFacilityNames]);
+    await this.page.keyboard.press("Enter");
+    await this.clickOnApplyBtn();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    const facilityName = await this.page
+      .locator(
+        "(//div[@data-column-definition-name='facilityHierarchyId']//arw-template-renderer//span[@class='ng-star-inserted'])[1]"
+      )
+      .innerText();
+    const payerName = await this.page
+      .locator(
+        "(//div[@data-column-definition-name='payerName']//span[@class='ng-star-inserted'])[1]"
+      )
+      .innerText();
+    const BeforePayerCategoryName = await this.page
+      .locator(
+        "(//div[@data-column-definition-name='overridePayerCategoryName']//span)[1]"
+      )
+      .innerText();
+    console.log(`Facility Name: ${facilityName}`);
+    console.log(`Payer Name: ${payerName}`);
+    console.log(`Payer Category Name: ${BeforePayerCategoryName}`);
+    await this.ClickOnEditPayerCategoryBtn();
+    await this.ClickOnPayerCategoryDropDown();
+    await this.EnterCategoryName([randomPayerCategory]);
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    await this.test.step("close payer dropdown", async () => {
+      await this.page.keyboard.press("Enter");
+      await this.page.keyboard.press("Escape");
+    });
+    await this.ClickOnSaveBtn();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    const UpdatedPayerCategoryName = await this.page
+      .locator(
+        "(//div[@data-column-definition-name='overridePayerCategoryName']//span)[1]"
+      )
+      .innerText();
+    console.log(
+      `Payer Category Name after updating: ${UpdatedPayerCategoryName}`
+    );
+    await this.clickOnAgingBtn();
+    await this.page.waitForSelector(
+      "//div[@data-column-definition-name='currentMonth']//div[contains(@class,'overflow-hidden')]",
+      { timeout: 50000 }
+    );
+    await this.clickOnGlobalFacilityDropdown();
+    await this.selectAllCheckBox();
+    await this.searchGlobalFacilty([randomFacilityNames]);
+    await this.page.keyboard.press("Enter");
+    await this.clickOnApplyBtn();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    await this.ClickOnGroupingBtn();
+    await this.ClickOnCustomGroupingBtn();
+    await this.ClickOnClearAllBtn();
+    await this.ClickOnGroupingInputBox();
+    await this.selectOption("Facility");
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+    await this.test.step("waiting until element is visible", async () => {
+      await this.AddGrouping.waitFor({ state: "visible", timeout: 10000 });
+    });
+
+    await this.ClickOnAddGroupingBtn();
+    await this.ClickOnSecondGroupingInputBox();
+    await this.selectOption("Payer Category");
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
+
+    await this.test.step("waiting until element is visible", async () => {
+      await this.AddGrouping.waitFor({ state: "visible", timeout: 10000 });
+    });
+    await this.ClickOnAddGroupingBtn();
+    await this.ClickOnThirdGroupingInputBox();
+    await this.selectOption("Payer");
+    await this.page.waitForTimeout(2000);
+    await this.ClickOnApplyGroupingBtn();
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    await this.test.step("waiting until element is visible", async () => {
+      await this.FacilityArwBtn.waitFor({ state: "visible" });
+    });
+
+    await this.ClickOnFacilityArrowBtn();
+    await this.page.waitForTimeout(3000);
+    await this.ClickExpandBtn(UpdatedPayerCategoryName);
+    await this.test.step("The page is loading, please wait", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
+    });
+    const rows = this.payers;
+    const totalRows = await this.payers.count();
+    let matchFound = false;
+    for (let i = 0; i < totalRows; i++) {
+      const row = this.payers.nth(i);
+      // wait for that row to be visible (best practice)
+      await row.waitFor({ state: "visible", timeout: 5000 }).catch(() => {});
+      const rawText = (await row.innerText()).trim();
+      // clean: keep only alphabets, numbers, spaces
+      const currentPayer = rawText.replace(/[^a-zA-Z0-9 ]/g, "").trim();
+      if (currentPayer === payerName.trim()) {
+        matchFound = true;
+        console.log(`Excepted Payer: ${currentPayer}`);
+        break;
+      }
+    }
+    expect(
+      matchFound,
+      "Verify the updated override payer category is correctly reflected in the payerCategory hierarchy on the aging screen"
+    ).toBeTruthy();
+    console.log(
+      `${payerName} :Payer Is displayed in the updated Payer category`
+    );
+  };
 };

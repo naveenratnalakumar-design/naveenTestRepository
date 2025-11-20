@@ -1,0 +1,28 @@
+currentMonthSummary== {
+  root: '',
+  dir: '',
+  base: '4,504,591.62',
+  ext: '.62',
+  name: '4,504,591'
+}
+totalBeforeNum= {
+  root: '',
+  dir: '',
+  base: '(40,180,969.38)',
+  ext: '.38)',
+  name: '(40,180,969'
+}
+priorbalance== {
+  root: '',
+  dir: '',
+  base: '(40,992,909.59)',
+  ext: '.59)',
+  name: '(40,992,909'
+}
+AfterCurrentMonthToggleOff== {
+  root: '',
+  dir: '',
+  base: '(44,685,561.00)',
+  ext: '.00)',
+  name: '(44,685,561'
+}
