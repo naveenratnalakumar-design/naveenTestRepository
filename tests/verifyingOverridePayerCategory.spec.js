@@ -16,7 +16,6 @@ test.describe("Verify PayerCategory is overriden from Facility Payers page then 
   });
   test("@smoke Verify PayerCategory is overriden from Facility Payers page then on Aging that payer should display under the updated PayerCategory.", async () => {
     const agingPage = new sections.AgingPage(test, page);
-    // await page.pause()
     await agingPage.verifyPayerUnderPayerCategory();
   });
   test.afterAll(async () => {

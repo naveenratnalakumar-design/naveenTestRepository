@@ -14,7 +14,7 @@ test.describe("Verify clearing of specific filters on the Task List when changin
       [process.env.password]
     );
   });
-  test("Verify clearing of specific filters on the Task List when changing the Global Facility Filter(Resident,Facility,Payer)", async () => {
+  test("@smoke Verify clearing of specific filters on the Task List when changing the Global Facility Filter(Resident,Facility,Payer)", async () => {
     const createTaskPage = new sections.CreateTaskPage(test, page);
     await createTaskPage.clickOnTaskList();
     const taskListPage = new sections.TaskListPage(test, page);

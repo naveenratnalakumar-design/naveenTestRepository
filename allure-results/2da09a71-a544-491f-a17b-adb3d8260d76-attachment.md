@@ -1,0 +1,402 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Revflow logo" [ref=e7] [cursor=pointer]
+        - img "Revflow" [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link "Task List" [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link "AR Aging" [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - link "Settings" [ref=e34] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e37] [cursor=pointer]
+          - generic [ref=e40] [cursor=pointer]: Settings
+          - img [ref=e43] [cursor=pointer]
+      - button [ref=e49] [cursor=pointer]:
+        - img [ref=e53] [cursor=pointer]
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - generic [ref=e61]:
+          - img [ref=e64]
+          - textbox "Search for a Case" [ref=e66]
+        - generic [ref=e67]:
+          - button "Selected Facilities (35)" [ref=e69] [cursor=pointer]:
+            - text: Selected Facilities (35)
+            - img [ref=e72] [cursor=pointer]
+          - img [ref=e78]
+          - button "AT" [ref=e81] [cursor=pointer]:
+            - generic [ref=e84] [cursor=pointer]: AT
+            - img [ref=e87] [cursor=pointer]
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - heading "Tasks" [level=2] [ref=e94]
+          - generic [ref=e96]:
+            - button "Sort (1)" [active] [ref=e98] [cursor=pointer]:
+              - generic [ref=e99] [cursor=pointer]:
+                - text: Sort
+                - generic [ref=e100] [cursor=pointer]: (1)
+              - img [ref=e103] [cursor=pointer]
+            - button "Filters" [ref=e106] [cursor=pointer]:
+              - img [ref=e109] [cursor=pointer]
+              - generic [ref=e111] [cursor=pointer]: Filters
+            - button "Reset to Default" [ref=e113] [cursor=pointer]:
+              - generic [ref=e114] [cursor=pointer]:
+                - text: Reset to Default
+                - img [ref=e117] [cursor=pointer]
+        - generic [ref=e121]:
+          - generic [ref=e124]:
+            - generic [ref=e125]: "8637"
+            - text: Results
+          - generic [ref=e127]:
+            - generic [ref=e131] [cursor=pointer]: Task
+            - generic [ref=e136] [cursor=pointer]: Facility
+            - generic [ref=e141] [cursor=pointer]: Resident
+            - generic [ref=e146] [cursor=pointer]: Payer
+            - generic [ref=e150] [cursor=pointer]:
+              - generic [ref=e151] [cursor=pointer]: Balance
+              - button [ref=e153] [cursor=pointer]:
+                - img [ref=e156] [cursor=pointer]
+            - generic [ref=e162] [cursor=pointer]: Balance Status
+            - generic [ref=e167] [cursor=pointer]: Due Date
+            - generic [ref=e172] [cursor=pointer]: Task Status
+            - generic [ref=e177] [cursor=pointer]: Assigned To
+            - generic [ref=e182] [cursor=pointer]: Root Issue
+          - generic [ref=e188]:
+            - link "Story2(2026)-Task-2 Richboro Cerrato, Ninetta Private Pay Collection Letter sent 12/14/2025 In Progress SR Santosh Rongali Awaiting Estate" [ref=e190] [cursor=pointer]:
+              - generic [ref=e194] [cursor=pointer]: Story2(2026)-Task-2
+              - generic [ref=e198] [cursor=pointer]: Richboro
+              - link "Cerrato, Ninetta" [ref=e202] [cursor=pointer]:
+                - /url: /cases/details/5640517
+              - generic [ref=e206] [cursor=pointer]: Private Pay
+              - generic [ref=e212] [cursor=pointer]:
+                - img [ref=e215] [cursor=pointer]
+                - generic [ref=e217] [cursor=pointer]: Collection Letter sent
+              - generic [ref=e221] [cursor=pointer]: 12/14/2025
+              - generic [ref=e226] [cursor=pointer]: In Progress
+              - generic [ref=e230] [cursor=pointer]:
+                - generic [ref=e235] [cursor=pointer]: SR
+                - generic [ref=e236] [cursor=pointer]: Santosh Rongali
+              - generic [ref=e240] [cursor=pointer]: Awaiting Estate
+            - link "Das8 Richboro Cerrato, Ninetta Private Pay Follow-Up Needed Today In Progress VG Vikesh Gaikawad Awaiting Estate" [ref=e242] [cursor=pointer]:
+              - generic [ref=e246] [cursor=pointer]: Das8
+              - generic [ref=e250] [cursor=pointer]: Richboro
+              - link "Cerrato, Ninetta" [ref=e254] [cursor=pointer]:
+                - /url: /cases/details/5640517
+              - generic [ref=e258] [cursor=pointer]: Private Pay
+              - generic [ref=e264] [cursor=pointer]:
+                - img [ref=e267] [cursor=pointer]
+                - generic [ref=e269] [cursor=pointer]: Follow-Up Needed
+              - generic [ref=e273] [cursor=pointer]: Today
+              - generic [ref=e278] [cursor=pointer]: In Progress
+              - generic [ref=e282] [cursor=pointer]:
+                - generic [ref=e287] [cursor=pointer]: VG
+                - generic [ref=e288] [cursor=pointer]: Vikesh Gaikawad
+              - generic [ref=e292] [cursor=pointer]: Awaiting Estate
+            - link "Task Beacon Amato, Frank NY Medicaid (431,531.40) Unworked 10/27/2025 Not Started SR Santosh Rongali Unknown" [ref=e294] [cursor=pointer]:
+              - generic [ref=e298] [cursor=pointer]: Task
+              - generic [ref=e302] [cursor=pointer]: Beacon
+              - link "Amato, Frank" [ref=e306] [cursor=pointer]:
+                - /url: /cases/details/4242805
+              - generic [ref=e310] [cursor=pointer]: NY Medicaid
+              - generic [ref=e314] [cursor=pointer]: (431,531.40)
+              - generic [ref=e318] [cursor=pointer]:
+                - img [ref=e321] [cursor=pointer]
+                - generic [ref=e323] [cursor=pointer]: Unworked
+              - generic [ref=e327] [cursor=pointer]: 10/27/2025
+              - generic [ref=e332] [cursor=pointer]: Not Started
+              - generic [ref=e336] [cursor=pointer]:
+                - generic [ref=e341] [cursor=pointer]: SR
+                - generic [ref=e342] [cursor=pointer]: Santosh Rongali
+              - generic [ref=e346] [cursor=pointer]: Unknown
+            - link "DaliyTaskCreation(28-08-2025)-Task-Taskstatus-removed-1-Multiples Ft. Lauderdale White, Martha Aetna MCR (45,210.00) Follow-Up Needed 12/30/2025 In Progress KK Keshava Karri Unknown" [ref=e348] [cursor=pointer]:
+              - generic [ref=e352] [cursor=pointer]: DaliyTaskCreation(28-08-2025)-Task-Taskstatus-removed-1-Multiples
+              - generic [ref=e356] [cursor=pointer]: Ft. Lauderdale
+              - link "White, Martha" [ref=e360] [cursor=pointer]:
+                - /url: /cases/details/4264911
+              - generic [ref=e364] [cursor=pointer]: Aetna MCR
+              - generic [ref=e368] [cursor=pointer]: (45,210.00)
+              - generic [ref=e372] [cursor=pointer]:
+                - img [ref=e375] [cursor=pointer]
+                - generic [ref=e377] [cursor=pointer]: Follow-Up Needed
+              - generic [ref=e381] [cursor=pointer]: 12/30/2025
+              - generic [ref=e386] [cursor=pointer]: In Progress
+              - generic [ref=e390] [cursor=pointer]:
+                - generic [ref=e395] [cursor=pointer]: KK
+                - generic [ref=e396] [cursor=pointer]: Keshava Karri
+              - generic [ref=e400] [cursor=pointer]: Unknown
+            - link "Task Plaza WELCH, BRYAN BC BS Network Blue Select (5 Levels) COMMERCIAL (30,940.00) Follow-Up Needed 11/20/2025 In Progress RM Rivky Meguira ADR - Recouped - Records Not Received" [ref=e402] [cursor=pointer]:
+              - generic [ref=e406] [cursor=pointer]: Task
+              - generic [ref=e410] [cursor=pointer]: Plaza
+              - link "WELCH, BRYAN" [ref=e414] [cursor=pointer]:
+                - /url: /cases/details/5616416
+              - generic [ref=e418] [cursor=pointer]: BC BS Network Blue Select (5 Levels) COMMERCIAL
+              - generic [ref=e422] [cursor=pointer]: (30,940.00)
+              - generic [ref=e426] [cursor=pointer]:
+                - img [ref=e429] [cursor=pointer]
+                - generic [ref=e431] [cursor=pointer]: Follow-Up Needed
+              - generic [ref=e435] [cursor=pointer]: 11/20/2025
+              - generic [ref=e440] [cursor=pointer]: In Progress
+              - generic [ref=e444] [cursor=pointer]:
+                - generic [ref=e449] [cursor=pointer]: RM
+                - generic [ref=e450] [cursor=pointer]: Rivky Meguira
+              - generic [ref=e454] [cursor=pointer]: ADR - Recouped - Records Not Received
+            - link "Task Highland Care Bonner, Kenneth Health First LT (24,033.30) Unworked 10/27/2025 Not Started VG Vikesh Gaikawad Unknown" [ref=e456] [cursor=pointer]:
+              - generic [ref=e460] [cursor=pointer]: Task
+              - generic [ref=e464] [cursor=pointer]: Highland Care
+              - link "Bonner, Kenneth" [ref=e468] [cursor=pointer]:
+                - /url: /cases/details/4294378
+              - generic [ref=e472] [cursor=pointer]: Health First LT
+              - generic [ref=e476] [cursor=pointer]: (24,033.30)
+              - generic [ref=e480] [cursor=pointer]:
+                - img [ref=e483] [cursor=pointer]
+                - generic [ref=e485] [cursor=pointer]: Unworked
+              - generic [ref=e489] [cursor=pointer]: 10/27/2025
+              - generic [ref=e494] [cursor=pointer]: Not Started
+              - generic [ref=e498] [cursor=pointer]:
+                - generic [ref=e503] [cursor=pointer]: VG
+                - generic [ref=e504] [cursor=pointer]: Vikesh Gaikawad
+              - generic [ref=e508] [cursor=pointer]: Unknown
+            - link "Task Highland Care Martinez de Cerda, Santa Workers Comp (21,700.00) Unworked 10/27/2025 Not Started VG Vikesh Gaikawad Unknown" [ref=e510] [cursor=pointer]:
+              - generic [ref=e514] [cursor=pointer]: Task
+              - generic [ref=e518] [cursor=pointer]: Highland Care
+              - link "Martinez de Cerda, Santa" [ref=e522] [cursor=pointer]:
+                - /url: /cases/details/4406707
+              - generic [ref=e526] [cursor=pointer]: Workers Comp
+              - generic [ref=e530] [cursor=pointer]: (21,700.00)
+              - generic [ref=e534] [cursor=pointer]:
+                - img [ref=e537] [cursor=pointer]
+                - generic [ref=e539] [cursor=pointer]: Unworked
+              - generic [ref=e543] [cursor=pointer]: 10/27/2025
+              - generic [ref=e548] [cursor=pointer]: Not Started
+              - generic [ref=e552] [cursor=pointer]:
+                - generic [ref=e557] [cursor=pointer]: VG
+                - generic [ref=e558] [cursor=pointer]: Vikesh Gaikawad
+              - generic [ref=e562] [cursor=pointer]: Unknown
+            - link "Task Highland Care Toomasi, Lida Medicare (20,808.03) Unworked 11/19/2025 Not Started VG Vikesh Gaikawad Unknown" [ref=e564] [cursor=pointer]:
+              - generic [ref=e568] [cursor=pointer]: Task
+              - generic [ref=e572] [cursor=pointer]: Highland Care
+              - link "Toomasi, Lida" [ref=e576] [cursor=pointer]:
+                - /url: /cases/details/4275637
+              - generic [ref=e580] [cursor=pointer]: Medicare
+              - generic [ref=e584] [cursor=pointer]: (20,808.03)
+              - generic [ref=e588] [cursor=pointer]:
+                - img [ref=e591] [cursor=pointer]
+                - generic [ref=e593] [cursor=pointer]: Unworked
+              - generic [ref=e597] [cursor=pointer]: 11/19/2025
+              - generic [ref=e602] [cursor=pointer]: Not Started
+              - generic [ref=e606] [cursor=pointer]:
+                - generic [ref=e611] [cursor=pointer]: VG
+                - generic [ref=e612] [cursor=pointer]: Vikesh Gaikawad
+              - generic [ref=e616] [cursor=pointer]: Unknown
+            - link "Task Highland Care Fox, Diane Elderserve ST (20,532.00) Unworked 10/27/2025 Not Started VG Vikesh Gaikawad Unknown" [ref=e618] [cursor=pointer]:
+              - generic [ref=e622] [cursor=pointer]: Task
+              - generic [ref=e626] [cursor=pointer]: Highland Care
+              - link "Fox, Diane" [ref=e630] [cursor=pointer]:
+                - /url: /cases/details/4156360
+              - generic [ref=e634] [cursor=pointer]: Elderserve ST
+              - generic [ref=e638] [cursor=pointer]: (20,532.00)
+              - generic [ref=e642] [cursor=pointer]:
+                - img [ref=e645] [cursor=pointer]
+                - generic [ref=e647] [cursor=pointer]: Unworked
+              - generic [ref=e651] [cursor=pointer]: 10/27/2025
+              - generic [ref=e656] [cursor=pointer]: Not Started
+              - generic [ref=e660] [cursor=pointer]:
+                - generic [ref=e665] [cursor=pointer]: VG
+                - generic [ref=e666] [cursor=pointer]: Vikesh Gaikawad
+              - generic [ref=e670] [cursor=pointer]: Unknown
+            - link "Task Highland Care Laws, Jerry Workers Comp (20,359.71) Unworked 10/28/2025 Not Started VG Vikesh Gaikawad Unknown" [ref=e672] [cursor=pointer]:
+              - generic [ref=e676] [cursor=pointer]: Task
+              - generic [ref=e680] [cursor=pointer]: Highland Care
+              - link "Laws, Jerry" [ref=e684] [cursor=pointer]:
+                - /url: /cases/details/4485880
+              - generic [ref=e688] [cursor=pointer]: Workers Comp
+              - generic [ref=e692] [cursor=pointer]: (20,359.71)
+              - generic [ref=e696] [cursor=pointer]:
+                - img [ref=e699] [cursor=pointer]
+                - generic [ref=e701] [cursor=pointer]: Unworked
+              - generic [ref=e705] [cursor=pointer]: 10/28/2025
+              - generic [ref=e710] [cursor=pointer]: Not Started
+              - generic [ref=e714] [cursor=pointer]:
+                - generic [ref=e719] [cursor=pointer]: VG
+                - generic [ref=e720] [cursor=pointer]: Vikesh Gaikawad
+              - generic [ref=e724] [cursor=pointer]: Unknown
+            - link "Task Highland Care Campoverde, Brucel NYS Insurance Fund (19,500.00) Unworked 10/27/2025 Not Started VG Vikesh Gaikawad Unknown" [ref=e726] [cursor=pointer]:
+              - generic [ref=e730] [cursor=pointer]: Task
+              - generic [ref=e734] [cursor=pointer]: Highland Care
+              - link "Campoverde, Brucel" [ref=e738] [cursor=pointer]:
+                - /url: /cases/details/4469243
+              - generic [ref=e742] [cursor=pointer]: NYS Insurance Fund
+              - generic [ref=e746] [cursor=pointer]: (19,500.00)
+              - generic [ref=e750] [cursor=pointer]:
+                - img [ref=e753] [cursor=pointer]
+                - generic [ref=e755] [cursor=pointer]: Unworked
+              - generic [ref=e759] [cursor=pointer]: 10/27/2025
+              - generic [ref=e764] [cursor=pointer]: Not Started
+              - generic [ref=e768] [cursor=pointer]:
+                - generic [ref=e773] [cursor=pointer]: VG
+                - generic [ref=e774] [cursor=pointer]: Vikesh Gaikawad
+              - generic [ref=e778] [cursor=pointer]: Unknown
+            - link "Task Highland Care Valentine, Johnnie Medicare (16,009.92) Unworked 11/18/2025 Not Started VG Vikesh Gaikawad Unknown" [ref=e780] [cursor=pointer]:
+              - generic [ref=e784] [cursor=pointer]: Task
+              - generic [ref=e788] [cursor=pointer]: Highland Care
+              - link "Valentine, Johnnie" [ref=e792] [cursor=pointer]:
+                - /url: /cases/details/4118042
+              - generic [ref=e796] [cursor=pointer]: Medicare
+              - generic [ref=e800] [cursor=pointer]: (16,009.92)
+              - generic [ref=e804] [cursor=pointer]:
+                - img [ref=e807] [cursor=pointer]
+                - generic [ref=e809] [cursor=pointer]: Unworked
+              - generic [ref=e813] [cursor=pointer]: 11/18/2025
+              - generic [ref=e818] [cursor=pointer]: Not Started
+              - generic [ref=e822] [cursor=pointer]:
+                - generic [ref=e827] [cursor=pointer]: VG
+                - generic [ref=e828] [cursor=pointer]: Vikesh Gaikawad
+              - generic [ref=e832] [cursor=pointer]: Unknown
+            - link "Task Highland Care Siddiqui, Fouzia Empire BCBS MCR (14,710.17) Unworked 10/27/2025 Not Started VG Vikesh Gaikawad Unknown" [ref=e834] [cursor=pointer]:
+              - generic [ref=e838] [cursor=pointer]: Task
+              - generic [ref=e842] [cursor=pointer]: Highland Care
+              - link "Siddiqui, Fouzia" [ref=e846] [cursor=pointer]:
+                - /url: /cases/details/4186367
+              - generic [ref=e850] [cursor=pointer]: Empire BCBS MCR
+              - generic [ref=e854] [cursor=pointer]: (14,710.17)
+              - generic [ref=e858] [cursor=pointer]:
+                - img [ref=e861] [cursor=pointer]
+                - generic [ref=e863] [cursor=pointer]: Unworked
+              - generic [ref=e867] [cursor=pointer]: 10/27/2025
+              - generic [ref=e872] [cursor=pointer]: Not Started
+              - generic [ref=e876] [cursor=pointer]:
+                - generic [ref=e881] [cursor=pointer]: VG
+                - generic [ref=e882] [cursor=pointer]: Vikesh Gaikawad
+              - generic [ref=e886] [cursor=pointer]: Unknown
+            - link "Task North Campus Jewell, Debbie United Health Care (12,811.16) Unworked 10/27/2025 Not Started VG Vikesh Gaikawad Unknown" [ref=e888] [cursor=pointer]:
+              - generic [ref=e892] [cursor=pointer]: Task
+              - generic [ref=e896] [cursor=pointer]: North Campus
+              - link "Jewell, Debbie" [ref=e900] [cursor=pointer]:
+                - /url: /cases/details/4345619
+              - generic [ref=e904] [cursor=pointer]: United Health Care
+              - generic [ref=e908] [cursor=pointer]: (12,811.16)
+              - generic [ref=e912] [cursor=pointer]:
+                - img [ref=e915] [cursor=pointer]
+                - generic [ref=e917] [cursor=pointer]: Unworked
+              - generic [ref=e921] [cursor=pointer]: 10/27/2025
+              - generic [ref=e926] [cursor=pointer]: Not Started
+              - generic [ref=e930] [cursor=pointer]:
+                - generic [ref=e935] [cursor=pointer]: VG
+                - generic [ref=e936] [cursor=pointer]: Vikesh Gaikawad
+              - generic [ref=e940] [cursor=pointer]: Unknown
+            - link "Task Beacon Sidz Cebula, Irena Elderplan LT NAMI (12,411.12) Unworked 10/27/2025 Not Started VG Vikesh Gaikawad Unknown" [ref=e942] [cursor=pointer]:
+              - generic [ref=e946] [cursor=pointer]: Task
+              - generic [ref=e950] [cursor=pointer]: Beacon
+              - link "Sidz Cebula, Irena" [ref=e954] [cursor=pointer]:
+                - /url: /cases/details/4406520
+              - generic [ref=e958] [cursor=pointer]: Elderplan LT NAMI
+              - generic [ref=e962] [cursor=pointer]: (12,411.12)
+              - generic [ref=e966] [cursor=pointer]:
+                - img [ref=e969] [cursor=pointer]
+                - generic [ref=e971] [cursor=pointer]: Unworked
+              - generic [ref=e975] [cursor=pointer]: 10/27/2025
+              - generic [ref=e980] [cursor=pointer]: Not Started
+              - generic [ref=e984] [cursor=pointer]:
+                - generic [ref=e989] [cursor=pointer]: VG
+                - generic [ref=e990] [cursor=pointer]: Vikesh Gaikawad
+              - generic [ref=e994] [cursor=pointer]: Unknown
+            - link "test Caring Heart Pollack, Vickie Health Partners MCD (12,260.00) Unbilled 9/13/2025 In Progress AW Adina Wilhelm Unknown" [ref=e996] [cursor=pointer]:
+              - generic [ref=e1000] [cursor=pointer]: test
+              - generic [ref=e1004] [cursor=pointer]: Caring Heart
+              - link "Pollack, Vickie" [ref=e1008] [cursor=pointer]:
+                - /url: /cases/details/4295255
+              - generic [ref=e1012] [cursor=pointer]: Health Partners MCD
+              - generic [ref=e1016] [cursor=pointer]: (12,260.00)
+              - generic [ref=e1020] [cursor=pointer]:
+                - img [ref=e1023] [cursor=pointer]
+                - generic [ref=e1025] [cursor=pointer]: Unbilled
+              - generic [ref=e1029] [cursor=pointer]: 9/13/2025
+              - generic [ref=e1034] [cursor=pointer]: In Progress
+              - generic [ref=e1038] [cursor=pointer]:
+                - generic [ref=e1043] [cursor=pointer]: AW
+                - generic [ref=e1044] [cursor=pointer]: Adina Wilhelm
+              - generic [ref=e1048] [cursor=pointer]: Unknown
+            - link "Task Highland Care Chavis, George Medicare (11,974.70) Unworked 1/4/2026 Not Started VG Vikesh Gaikawad Unknown" [ref=e1050] [cursor=pointer]:
+              - generic [ref=e1054] [cursor=pointer]: Task
+              - generic [ref=e1058] [cursor=pointer]: Highland Care
+              - link "Chavis, George" [ref=e1062] [cursor=pointer]:
+                - /url: /cases/details/4230427
+              - generic [ref=e1066] [cursor=pointer]: Medicare
+              - generic [ref=e1070] [cursor=pointer]: (11,974.70)
+              - generic [ref=e1074] [cursor=pointer]:
+                - img [ref=e1077] [cursor=pointer]
+                - generic [ref=e1079] [cursor=pointer]: Unworked
+              - generic [ref=e1083] [cursor=pointer]: 1/4/2026
+              - generic [ref=e1088] [cursor=pointer]: Not Started
+              - generic [ref=e1092] [cursor=pointer]:
+                - generic [ref=e1097] [cursor=pointer]: VG
+                - generic [ref=e1098] [cursor=pointer]: Vikesh Gaikawad
+              - generic [ref=e1102] [cursor=pointer]: Unknown
+            - link "Task Caring Heart Levingstone, Huey IBC Commercial (11,875.00) Unworked 10/27/2025 Not Started VG Vikesh Gaikawad Unknown" [ref=e1104] [cursor=pointer]:
+              - generic [ref=e1108] [cursor=pointer]: Task
+              - generic [ref=e1112] [cursor=pointer]: Caring Heart
+              - link "Levingstone, Huey" [ref=e1116] [cursor=pointer]:
+                - /url: /cases/details/4062542
+              - generic [ref=e1120] [cursor=pointer]: IBC Commercial
+              - generic [ref=e1124] [cursor=pointer]: (11,875.00)
+              - generic [ref=e1128] [cursor=pointer]:
+                - img [ref=e1131] [cursor=pointer]
+                - generic [ref=e1133] [cursor=pointer]: Unworked
+              - generic [ref=e1137] [cursor=pointer]: 10/27/2025
+              - generic [ref=e1142] [cursor=pointer]: Not Started
+              - generic [ref=e1146] [cursor=pointer]:
+                - generic [ref=e1151] [cursor=pointer]: VG
+                - generic [ref=e1152] [cursor=pointer]: Vikesh Gaikawad
+              - generic [ref=e1156] [cursor=pointer]: Unknown
+            - link "Task Highland Care Gardner, Richard Medicare (11,605.17) Unworked 11/17/2025 Not Started VG Vikesh Gaikawad Unknown" [ref=e1158] [cursor=pointer]:
+              - generic [ref=e1162] [cursor=pointer]: Task
+              - generic [ref=e1166] [cursor=pointer]: Highland Care
+              - link "Gardner, Richard" [ref=e1170] [cursor=pointer]:
+                - /url: /cases/details/4478704
+              - generic [ref=e1174] [cursor=pointer]: Medicare
+              - generic [ref=e1178] [cursor=pointer]: (11,605.17)
+              - generic [ref=e1182] [cursor=pointer]:
+                - img [ref=e1185] [cursor=pointer]
+                - generic [ref=e1187] [cursor=pointer]: Unworked
+              - generic [ref=e1191] [cursor=pointer]: 11/17/2025
+              - generic [ref=e1196] [cursor=pointer]: Not Started
+              - generic [ref=e1200] [cursor=pointer]:
+                - generic [ref=e1205] [cursor=pointer]: VG
+                - generic [ref=e1206] [cursor=pointer]: Vikesh Gaikawad
+              - generic [ref=e1210] [cursor=pointer]: Unknown
+            - link "Task Highland Care Simms, Angela Cigna Commercial (11,550.00) Unworked 10/27/2025 Not Started VG Vikesh Gaikawad Unknown" [ref=e1212] [cursor=pointer]:
+              - generic [ref=e1216] [cursor=pointer]: Task
+              - generic [ref=e1220] [cursor=pointer]: Highland Care
+              - link "Simms, Angela" [ref=e1224] [cursor=pointer]:
+                - /url: /cases/details/4188346
+              - generic [ref=e1228] [cursor=pointer]: Cigna Commercial
+              - generic [ref=e1232] [cursor=pointer]: (11,550.00)
+              - generic [ref=e1236] [cursor=pointer]:
+                - img [ref=e1239] [cursor=pointer]
+                - generic [ref=e1241] [cursor=pointer]: Unworked
+              - generic [ref=e1245] [cursor=pointer]: 10/27/2025
+              - generic [ref=e1250] [cursor=pointer]: Not Started
+              - generic [ref=e1254] [cursor=pointer]:
+                - generic [ref=e1259] [cursor=pointer]: VG
+                - generic [ref=e1260] [cursor=pointer]: Vikesh Gaikawad
+              - generic [ref=e1264] [cursor=pointer]: Unknown
+  - generic [ref=e1276]: Jira Service Management Widget
+  - iframe [ref=e1277]:
+    - main "Help Center Widget Content" [ref=f1e2]:
+      - button "?" [ref=f1e5] [cursor=pointer]:
+        - paragraph [ref=f1e6] [cursor=pointer]: "?"
+```

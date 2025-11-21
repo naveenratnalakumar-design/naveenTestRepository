@@ -1,0 +1,34 @@
+Ascending Values: [
+  '1900Task-For(HMO)-Task-1',
+  '1900Task-For(HMO)-Task-2',
+  '1900Task-For(HMO)-Task-3',
+  '1900Task-For(HMO)-Task-5',
+  '1900Task-For(Income)-Task-8',
+  '1900Task-For(Income)-Task-9',
+  '1900Task-For(Medicare)-Task-12',
+  '1900Task-For(Medicare)-Task-13',
+  '1900Task-For(Private Pay)-Task-14',
+  '1900Task-For(Private Pay)-Task-15',
+  '1900Task-For(Respite)-Task-16',
+  '1900Task-For(Respite)-Task-17',
+  '3',
+  '4875',
+  '500 Error task',
+  '8745a',
+  '8794',
+  'Address Denial',
+  'adityaa',
+  'Adityas'
+]
+Descending Values: [
+  'VIJ',              'Unpaid Claim',
+  'Unpaid Claim',     'Unpaid Claim',
+  'Unpaid Claim',     'Unpaid Claim',
+  'Unpaid Claim',     'Unpaid Claim',
+  'Unpaid Claim',     'Unpaid Claim',
+  'Unpaid Claim',     'Unpaid Claim',
+  'Unknown/Unworked', 'Underpaid Claim',
+  'Underpaid Claim',  'Underpaid Claim',
+  'Underpaid Claim',  'Underpaid Claim',
+  'Underpaid Claim',  'Underpaid Claim'
+]

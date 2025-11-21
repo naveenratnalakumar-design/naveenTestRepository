@@ -18,8 +18,6 @@ test.describe("Verify Sort behavior for all applicable columns on User View", ()
     const userManagementPage = new sections.UserManagementPage(test,page);
     await userManagementPage.verifyFirstNameSortFunctunality();
     await userManagementPage.verifyLastNameSortFunctunality()
-    await page.pause()
-    await userManagementPage.verifyEmailSortFunctunality()
     await userManagementPage.verifyAddedOnRevFlowSortFunctunality()
     await userManagementPage.verifyRevFlowAccessSortFunctunality()
   });

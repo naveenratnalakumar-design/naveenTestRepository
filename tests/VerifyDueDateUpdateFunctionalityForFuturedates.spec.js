@@ -14,7 +14,7 @@ test.describe("Verify Due Date update functionality for Future dates", () => {
       [process.env.password]
     );
   });
-  test("Verify Due Date update functionality for Future dates", async () => {
+  test("@smoke Verify Due Date update functionality for Future dates", async () => {
     const taskListPage = new sections.TaskListPage(test, page);
     const createTaskPage = new sections.CreateTaskPage(test, page);
     await createTaskPage.clickOnTaskList();

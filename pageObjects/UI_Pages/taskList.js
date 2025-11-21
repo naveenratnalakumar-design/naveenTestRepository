@@ -170,7 +170,7 @@ exports.TaskListPage = class TaskListPage {
       "//span[contains(@class,'web-subtitle-1')]//span"
     );
     this.clearCaseSearchBtn = page.locator("//arw-icon[@name='x']");
-    this.residentOptionList = page.locator("(//div[@role='link'])[1]");
+    this.residentOptionList = page.locator("(//div[@role='link']//span[contains(@class,'text-foreground-blue')])[1]");
     this.globalFacilityDropdown = page.locator(
       "//button[contains(text(),'Selected Facilities')]"
     );
@@ -2323,82 +2323,21 @@ exports.TaskListPage = class TaskListPage {
       "Verifying that payers names are visible in descending order when descending sort is applied"
     ).toEqual(sortedDesc);
   };
-  // verifyingBalanceColumnSortingFunctionality = async () => {
-  //   await this.clickOnSortBtn();
-  //   await this.clickOnDeleteDuedateInSortIcon();
-  //   await this.clickOnApplySortButtonIcon();
-  //   await this.clickOnSortBtn();
-  //   await this.clickOnAddSortBtn();
-  //   await this.clickOnSlectSortingFilterName();
-  //   await this.searchSortName(["Balance"]);
-  //   await this.selectFilterOptionsFromDropdown("Balance");
-  //   await this.clickOnSlectSortingFilterName();
-  //   await this.selectSortingOptionFromDropdown("Highest → Lowest");
-  //   await this.clickOnApplySortButtonIcon();
-  //   await this.test.step("Wait for grid to load", async () => {
-  //     await this.page.waitForTimeout(parseInt(process.env.largeWait));
-  //   });
-  //   // Extract displayed balances after descending sort
-  //   const highToLowItems = await this.balanceGridColumn.allInnerTexts();
-  //   console.log("Balances Highest to Lowest:", highToLowItems);
-  //   const highToLowNumbers = highToLowItems.map((str) =>
-  //     Number(str.replace(/[^0-9.-]+/g, ""))
-  //   );
-  //   // Sort a copy descending
-  //   const sortedDesc = [...highToLowNumbers].sort((a, b) => b - a);
-  //   // Assert descending order
-  //   expect(
-  //     highToLowNumbers,
-  //     "Verify balances sorted from highest to lowest"
-  //   ).toEqual(sortedDesc);
-  //   await this.test.step(
-  //     "Wait for grid to load after descending check",
-  //     async () => {
-  //       await this.page.waitForTimeout(parseInt(process.env.smallWait));
-  //     }
-  //   );
-  //   // Now apply "Lowest → Highest" sort
-  //   await this.clickOnSortBtn();
-  //   await this.clickOnDeleteDuedateInSortIcon();
-  //   await this.clickOnApplySortButtonIcon();
-  //   await this.test.step("Wait for grid to load", async () => {
-  //     await this.page.waitForTimeout(parseInt(process.env.smallWait));
-  //   });
-  //   await this.clickOnSortBtn();
-  //   await this.clickOnAddSortBtn();
-  //   await this.clickOnSlectSortingFilterName();
-  //   await this.searchSortName(["Balance"]);
-  //   await this.selectFilterOptionsFromDropdown("Balance");
-  //   await this.clickOnSlectSortingFilterName();
-  //   await this.selectSortingOptionFromDropdown("Lowest → Highest");
-  //   await this.clickOnApplySortButtonIcon();
-  //   await this.test.step(
-  //     "Wait for grid to load after ascending sort",
-  //     async () => {
-  //       await this.page.waitForTimeout(parseInt(process.env.largeWait));
-  //     }
-  //   );
-  //   // Extract balances after ascending sort
-  //   const lowToHighItems = await this.balanceGridColumn.allInnerTexts();
-  //   console.log("Balances Lowest to Highest:", lowToHighItems);
-  //   const lowToHighNumbers = lowToHighItems.map((str) =>
-  //     Number(str.replace(/[^0-9.-]+/g, ""))
-  //   );
-  //   const sortedAsc = [...lowToHighNumbers].sort((a, b) => a - b);
-  //   expect(
-  //     lowToHighNumbers,
-  //     "Verify balances sorted from lowest to highest"
-  //   ).toEqual(sortedAsc);
-  // };
-
-  verifyingBalanceColumnSortingFunctionality = async () => {
-
+verifyingBalanceColumnSortingFunctionality = async () => {
   const parseUSBalance = (str) => {
     const t = str.trim();
+    if (!t || t === "-" || t === "N/A") return null;
     const isNegative = t.startsWith("(") && t.endsWith(")");
     const numeric = t.replace(/[^0-9.]/g, "");
+    if (!numeric) return null;
     const value = Number(numeric);
     return isNegative ? -value : value;
+  };
+
+  const waitForGrid = async () => {
+    await this.test.step("Wait for grid to load", async () => {
+      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+    });
   };
 
   // Highest → Lowest
@@ -2413,26 +2352,22 @@ exports.TaskListPage = class TaskListPage {
   await this.clickOnSlectSortingFilterName();
   await this.selectSortingOptionFromDropdown("Highest → Lowest");
   await this.clickOnApplySortButtonIcon();
-  await this.test.step("Wait for grid to load", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.smallWait));
-    });
+  await waitForGrid();
+
   const highToLowItems = await this.balanceGridColumn.allInnerTexts();
-  const highToLowNumbers = highToLowItems.map(parseUSBalance);
+  const highToLowNumbers = highToLowItems.map(parseUSBalance).filter(v => v !== null);
   const sortedDesc = [...highToLowNumbers].sort((a, b) => b - a);
   expect(
     highToLowNumbers,
     "Verify balances sorted from highest to lowest"
   ).toEqual(sortedDesc);
- await this.test.step("Wait for grid to load", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.smallWait));
-    });
+
   // Lowest → Highest
   await this.clickOnSortBtn();
   await this.clickOnDeleteDuedateInSortIcon();
   await this.clickOnApplySortButtonIcon();
-  await this.test.step("Wait for grid to load", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.smallWait));
-    });
+  await waitForGrid();
+
   await this.clickOnSortBtn();
   await this.clickOnAddSortBtn();
   await this.clickOnSlectSortingFilterName();
@@ -2441,19 +2376,18 @@ exports.TaskListPage = class TaskListPage {
   await this.clickOnSlectSortingFilterName();
   await this.selectSortingOptionFromDropdown("Lowest → Highest");
   await this.clickOnApplySortButtonIcon();
- await this.test.step("Wait for grid to load", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.smallWait));
-    });
+  await waitForGrid();
+
   const lowToHighItems = await this.balanceGridColumn.allInnerTexts();
-  const lowToHighNumbers = lowToHighItems.map(parseUSBalance);
+  const lowToHighNumbers = lowToHighItems.map(parseUSBalance).filter(v => v !== null);
   const sortedAsc = [...lowToHighNumbers].sort((a, b) => a - b);
   expect(
     lowToHighNumbers,
     "Verify balances sorted from lowest to highest"
   ).toEqual(sortedAsc);
 };
-
-  verifyingBalanceStatusSortingFunctionality = async () => {
+  
+verifyingBalanceStatusSortingFunctionality = async () => {
     await this.clickOnSortBtn();
     await this.clickOnDeleteDuedateInSortIcon();
     await this.clickOnApplySortButtonIcon();

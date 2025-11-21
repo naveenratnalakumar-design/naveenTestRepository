@@ -1,0 +1,87 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Revflow logo" [ref=e7] [cursor=pointer]
+        - img "Revflow" [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link "Task List" [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link "AR Aging" [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+      - button [ref=e37] [cursor=pointer]:
+        - img [ref=e41] [cursor=pointer]
+    - generic [ref=e43]:
+      - generic [ref=e44]:
+        - generic [ref=e49]:
+          - img [ref=e52]
+          - textbox "Search for a Case" [ref=e54]
+        - generic [ref=e55]:
+          - button "Selected Facilities (0)" [ref=e57] [cursor=pointer]:
+            - text: Selected Facilities (0)
+            - img [ref=e60] [cursor=pointer]
+          - img [ref=e66]
+          - button "AT" [ref=e69] [cursor=pointer]:
+            - generic [ref=e72] [cursor=pointer]: AT
+            - img [ref=e75] [cursor=pointer]
+      - generic [ref=e78]:
+        - generic [ref=e79]:
+          - heading "Tasks" [level=2] [ref=e82]
+          - generic [ref=e84]:
+            - button "Sort" [ref=e86] [cursor=pointer]:
+              - generic [ref=e87] [cursor=pointer]: Sort
+              - img [ref=e90] [cursor=pointer]
+            - button "Filters" [expanded] [ref=e93] [cursor=pointer]:
+              - img [ref=e96] [cursor=pointer]
+              - generic [ref=e98] [cursor=pointer]: Filters
+            - button "Reset to Default" [ref=e100] [cursor=pointer]:
+              - generic [ref=e101] [cursor=pointer]:
+                - text: Reset to Default
+                - img [ref=e104] [cursor=pointer]
+        - generic [ref=e116]:
+          - img [ref=e119]
+          - generic [ref=e121]: You don't have any tasks yet
+          - generic [ref=e122]: Add new one to get started.
+  - generic [ref=e123]: Jira Service Management Widget
+  - iframe [ref=e124]:
+    - main "Help Center Widget Content" [ref=f1e2]:
+      - button "?" [ref=f1e5] [cursor=pointer]:
+        - paragraph [ref=f1e6] [cursor=pointer]: "?"
+  - generic:
+    - menu [ref=e128]:
+      - generic [ref=e130]:
+        - generic [ref=e131]:
+          - generic [ref=e132]: Filter by
+          - button "Clear Filter" [disabled] [ref=e134]:
+            - generic [ref=e135]: Clear Filter
+        - generic [ref=e139]:
+          - combobox "Select" [expanded] [ref=e143]:
+            - generic [ref=e146] [cursor=pointer]: Select
+          - button [ref=e149] [cursor=pointer]:
+            - img [ref=e153] [cursor=pointer]
+        - generic [ref=e155]:
+          - button "Add Filter" [disabled] [ref=e157]:
+            - generic [ref=e158]:
+              - img [ref=e161]
+              - text: Add Filter
+          - button "Apply Filter" [disabled] [ref=e164]:
+            - generic [ref=e165]: Apply Filter
+    - listbox [ref=e168]:
+      - generic [ref=e172]:
+        - img [ref=e175]
+        - textbox "Search" [active] [ref=e177]: Resident
+      - option "Resident" [ref=e181] [cursor=pointer]:
+        - generic [ref=e183] [cursor=pointer]: Resident
+```

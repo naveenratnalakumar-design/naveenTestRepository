@@ -14,7 +14,7 @@ test.describe("Verify filtering columns on TaskList", () => {
       [process.env.password]
     );
   });
-  test("Verify filtering columns on TaskList", async () => {
+  test("@smoke Verify filtering columns on TaskList", async () => {
     const taskListPage = new sections.TaskListPage(test, page);
     const createTaskPage = new sections.CreateTaskPage(test, page);
     await createTaskPage.clickOnTaskList();

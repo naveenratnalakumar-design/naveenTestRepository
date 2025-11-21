@@ -1,0 +1,104 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Revflow logo" [ref=e7] [cursor=pointer]
+        - img "Revflow" [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link "Task List" [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link "AR Aging" [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - link "Settings" [ref=e34] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e37] [cursor=pointer]
+          - generic [ref=e40] [cursor=pointer]: Settings
+          - img [ref=e43] [cursor=pointer]
+      - button [ref=e49] [cursor=pointer]:
+        - img [ref=e53] [cursor=pointer]
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - generic [ref=e61]:
+          - img [ref=e64]
+          - textbox "Search for a Case" [ref=e66]
+        - generic [ref=e67]:
+          - button "Selected Facilities (1)" [ref=e69] [cursor=pointer]:
+            - text: Selected Facilities (1)
+            - img [ref=e72] [cursor=pointer]
+          - img [ref=e78]
+          - button "AT" [ref=e81] [cursor=pointer]:
+            - generic [ref=e84] [cursor=pointer]: AT
+            - img [ref=e87] [cursor=pointer]
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - generic [ref=e92]:
+            - button [ref=e94] [cursor=pointer]:
+              - img [ref=e98] [cursor=pointer]
+            - generic [ref=e100]: Sanchez Garcia, Domitila
+          - generic [ref=e101]:
+            - img [ref=e104]
+            - text: Test Leewood
+          - generic [ref=e106]:
+            - button "View Aging" [ref=e108] [cursor=pointer]:
+              - generic [ref=e109] [cursor=pointer]: View Aging
+            - button "View Task List" [ref=e111] [cursor=pointer]:
+              - generic [ref=e112] [cursor=pointer]: View Task List
+        - generic [ref=e117]:
+          - generic [ref=e118]:
+            - generic [ref=e119]:
+              - generic [ref=e123] [cursor=pointer]: Resident Status
+              - generic [ref=e125]: Discharged
+            - generic [ref=e130] [cursor=pointer]: Medicare
+            - generic [ref=e131]:
+              - generic [ref=e135] [cursor=pointer]: Original Admission Date
+              - text: 9/16/2022
+            - generic [ref=e136]:
+              - generic [ref=e140] [cursor=pointer]: Billing System ID
+              - text: "512"
+              - generic [ref=e141]: DKS
+            - generic [ref=e146] [cursor=pointer]: Medicaid
+            - generic [ref=e147]:
+              - generic [ref=e151] [cursor=pointer]: Current Admission Date
+              - text: 9/16/2022
+            - generic [ref=e152]:
+              - generic [ref=e156] [cursor=pointer]: DOB
+              - text: 5/20/1945
+            - generic [ref=e157]:
+              - generic [ref=e161] [cursor=pointer]: SSN
+              - text: 609-39-0894
+            - generic [ref=e162]:
+              - generic [ref=e166] [cursor=pointer]: Current Discharge Date
+              - text: 9/30/2022
+            - generic [ref=e167]:
+              - generic [ref=e171] [cursor=pointer]: DOD
+              - text: "-"
+            - generic [ref=e172]:
+              - generic [ref=e176] [cursor=pointer]: Bedhold Days
+              - text: "0"
+          - generic [ref=e178]:
+            - generic [ref=e179]:
+              - img [ref=e182]
+              - generic [ref=e184]: Files
+              - text: (0)
+            - button "Add File" [ref=e188] [cursor=pointer]:
+              - generic [ref=e189] [cursor=pointer]:
+                - text: Add File
+                - img [ref=e192] [cursor=pointer]
+  - generic [ref=e194]: Jira Service Management Widget
+  - iframe [ref=e195]:
+    - main "Help Center Widget Content" [ref=f1e2]:
+      - button "?" [ref=f1e5] [cursor=pointer]:
+        - paragraph [ref=f1e6] [cursor=pointer]: "?"
+```
