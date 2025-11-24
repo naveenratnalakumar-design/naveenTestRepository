@@ -1,0 +1,8 @@
+Rows found for between: 20
+Parsed Value: 551.46 from "551.46"
+Rows found for equals: 4
+Parsed Value: 2000 from "2,000.00"
+Rows found for greater: 20
+Parsed Value: 4263.89 from "4,263.89"
+Rows found for less: 20
+Parsed Value: 30.07 from "30.07"

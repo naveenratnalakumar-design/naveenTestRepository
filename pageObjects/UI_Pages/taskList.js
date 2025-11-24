@@ -1192,7 +1192,7 @@ exports.TaskListPage = class TaskListPage {
     await this.selectFacilitySubOptions("Select Payer");
     await this.searchTaskName([randomPayerNames]);
     await this.test.step("Wait for dropdown search results", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+      await this.page.waitForTimeout(parseInt(process.env.largeWait));
     });
     const exactPayerLocator = this.page.locator(
       `//span[normalize-space(.)='${randomPayerNames}']`
@@ -1409,7 +1409,7 @@ exports.TaskListPage = class TaskListPage {
     await this.searchFilterNames(["Root Issue"]);
     await this.selectFilterOptionsFromDropdown("Root Issue");
     await this.selectFacilitySubOptions("Select Root Issue");
-    await this.searchTaskName([randomAssignedUsers]);
+    await this.searchTaskName([randomRootIssues]);
 
     await this.test.step("Wait for search results to load", async () => {
       await this.page.waitForTimeout(parseInt(process.env.smallWait));
@@ -1945,7 +1945,7 @@ exports.TaskListPage = class TaskListPage {
     await this.selectFilterOptionsFromDropdown(["Task Status"]);
     await this.selectFacilitySubOptions(["Select Task Status"]);
     await this.test.step("The page is loading, please wait", async () => {
-      await this.page.waitForTimeout(parseInt(process.env.smallWait));
+      await this.page.waitForTimeout(parseInt(process.env.mediumWait));
     });
     await this.selectTasstatusOptions(randomTaskStatus);
     await this.clickOnApplyButton();

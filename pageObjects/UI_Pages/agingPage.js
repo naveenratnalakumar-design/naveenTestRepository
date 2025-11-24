@@ -239,6 +239,63 @@ exports.AgingPage = class AgingPage {
       page.locator(`//div[normalize-space(text())='${txt}']`);
     this.selectAgingFilterSubOptions = (txt) =>
       page.locator(`//span[normalize-space(text())='${txt}']`);
+    this.tasklistBtn = page.locator("//span[normalize-space(text())='Task List']")
+    this.TaskHeader = this.page.locator("//h2[normalize-space(text())='Tasks']");
+     this.gridTable = this.page.locator("//div[@class='arw-grid-table ng-star-inserted']");
+     this.TaskNameCell = this.page.locator(
+      "//div[@class='cdk-virtual-scroll-content-wrapper']//div[contains(@data-row-id,'')]//div[@data-column-definition-name='name']"
+    );
+    this.ChargesLabel = this.page.locator(
+      '//div[@class="mat-mdc-tab-labels"]//span[normalize-space(text())="Charges"]'
+    );
+    this.NoChargersAvailableText = this.page.locator(
+      '//div[normalize-space(text())="No available charges to link"]'
+    );
+     this.ChargeLinkedIcon = this.page.locator(
+      "(//arw-button[@icon='checkFormFilled']//button)[1]"
+    )
+
+    this.LinkChargeIcon = this.page.locator(
+      "(//arw-button[@icon='link01']//button)[1]"
+    )
+
+    this.LinkBrokenIcon = this.page.locator(
+      "(//arw-button[@icon='linkBroken02']//button[@disabled])[1]"
+    )
+
+    this.UnlinkChargeIcon = this.page.locator(
+      "(//arw-button[@icon='linkBroken02']//button[not(@disabled)])[1]"
+    )
+    this.tooltip = this.page.locator(
+      "//arw-tooltip-overlay//div[contains(@class,'arw-tooltip-overlay')]"
+    );
+    this.TaskCount = this.page.locator(
+      "//div[@class='flex justify-between']//div//span"
+    )
+
+    this.DeleteTaskIcon = this.page.locator(
+      "//arw-button[@icon='trash03']//button"
+    )
+
+    this.DeleteInput = this.page.locator(
+      "//div[@class='mat-mdc-dialog-surface mdc-dialog__surface']//input"
+    )
+
+    this.DisabledDeleteBtn = this.page.locator(
+      "//button[@class='arw-button arw-button--big arw-button--primary arw-button--warning'][@disabled]"
+    )
+
+    this.DeleteTaskBtn = this.page.locator(
+      "//button[@class='arw-button arw-button--big arw-button--primary arw-button--warning'][not(@disabled)]"
+    )
+
+    this.CrossIcon = this.page.locator(
+      "//div[@class='mat-mdc-dialog-surface mdc-dialog__surface']//arw-button[@icon='x']"
+    )
+
+    this.CancelBtn = this.page.locator(
+      "//div[@class='mat-mdc-dialog-surface mdc-dialog__surface']//arw-button[@class='ng-star-inserted']"
+    )
   }
 
   clickOnCurrentMonthToggle = async () => {
@@ -563,6 +620,47 @@ exports.AgingPage = class AgingPage {
       txt
     );
   };
+   clickOntasklistBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.tasklistBtn,
+      "click",
+      "Click on the TaskList button"
+    );
+  };
+  ClickOnChargesLabel = async () => {
+    await excuteSteps(
+      this.test,
+      this.ChargesLabel,
+      "click",
+      `Clcik on ChargesLabel on grid `
+    );
+  }
+  ClickOnDeleteTaskIcon = async () => {
+    await excuteSteps(
+      this.test,
+      this.DeleteTaskIcon,
+      "click",
+      `Clcik on Delete Task icon on Task page `
+    );
+  }
+  
+  ClickOnCrossIcon = async () => {
+    await excuteSteps(
+      this.test,
+      this.CrossIcon,
+      "click",
+      `Clcik on Cross icon on Delete Task dialog `
+    );
+  }
+  ClickOnCancelBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.CancelBtn,
+      "click",
+      `Clcik on Cancel Btn on Delete Task dialog `
+    );
+  }
   selectFacilitySubOptions = async (txt) => {
     await excuteSteps(
       this.test,
@@ -802,6 +900,32 @@ exports.AgingPage = class AgingPage {
       text
     );
   };
+  EnterInputValue = async (locator, value) => {
+    const cleanValue = value.toString().trim();
+    // Allow passing a raw selector or a locator
+    const input = typeof locator === "string"
+      ? this.page.locator(locator)
+      : locator;
+    await input.waitFor({ state: "visible", timeout: 10000 });
+    await input.scrollIntoViewIfNeeded();
+    // Clear existing text
+    await input.click({ clickCount: 3 });
+    await this.page.keyboard.press("Backspace");
+    await this.page.waitForTimeout(200);
+    // Type new value
+    await this.page.keyboard.type(cleanValue, { delay: 100 });
+    // Confirm value
+    const typedValue = await input.inputValue();
+    console.log(`Entered "${typedValue}" into field`);
+  };
+  ClickOnDeleteTaskBtn = async () => {
+    await excuteSteps(
+      this.test,
+      this.DeleteTaskBtn,
+      "click",
+      `Clcik on Delete Btn on Delete Task dialog `
+    );
+  }
   getFieldValue = async (containerLocator, labelText) => {
     await this.test.step("The page is loading, please wait", async () => {
       await this.page.waitForTimeout(parseInt(process.env.largeWait));
@@ -2279,4 +2403,226 @@ exports.AgingPage = class AgingPage {
       `${payerName} :Payer Is displayed in the updated Payer category`
     );
   };
+   GetTooltipsOnCharges = async () => {
+    console.log("-------------- Starting: Verifying tooltips on Charges ------------");
+    // EXPECTED TOOLTIP VALUES
+    const expectedLinked = testData.RevflowData.toolTipData.linked;
+    const expectedLink = testData.RevflowData.toolTipData.link;
+    const expectedUnlink = testData.RevflowData.toolTipData.unlink;
+    const expectedBroken = testData.RevflowData.toolTipData.broken;
+    await this.clickOntasklistBtn();
+    await this.TaskHeader.waitFor({ state: "visible" });
+    await this.gridTable.waitFor();
+    const rowCount = await this.TaskNameCell.count();
+    let validRowFound = false;
+    //  Find a valid row that has both charge icons
+    for (let i = 0; i < rowCount; i++) {
+      const rowCell = this.TaskNameCell.nth(i);
+      const taskName = await rowCell.innerText();
+      console.log(`Row ${i + 1} → TaskName: ${taskName}`);
+      await rowCell.click({ force: true });
+      await this.page.waitForTimeout(300);
+      await this.ClickOnChargesLabel();
+      await this.page.waitForTimeout(300);
+      if (await this.NoChargersAvailableText.isVisible().catch(() => false)) {
+        console.log(`No charges for row ${i + 1} → Skipping`);
+        await this.page.keyboard.press("Escape").catch(() => { });
+        continue;
+      }
+      const hasLinked = await this.ChargeLinkedIcon.first().isVisible().catch(() => false);
+      const hasLink = await this.LinkChargeIcon.first().isVisible().catch(() => false);
+      if (!hasLinked || !hasLink) {
+        console.log(`Icons not found for row ${i + 1} → Skipping`);
+        await this.page.keyboard.press("Escape").catch(() => { });
+        continue;
+      }
+      console.log("Valid row found → extracting tooltips");
+      validRowFound = true;
+      break;
+    }
+    if (!validRowFound) {
+      throw new Error("No valid row found with both icons → Test cannot continue.");
+    }
+    // Tooltip: ChargeLinkedIcon
+    await this.ChargeLinkedIcon.first().scrollIntoViewIfNeeded();
+    await this.ChargeLinkedIcon.first().hover();
+    await this.tooltip.first().waitFor({ state: "visible", timeout: 5000 });
+    let linkedChargeTooltipText = await this.tooltip.first().innerText();
+    console.log("Linked Charge Tooltip:", linkedChargeTooltipText);
+    // Tooltip: LinkChargeIcon
+    await this.LinkChargeIcon.first().scrollIntoViewIfNeeded();
+    await this.LinkChargeIcon.first().hover();
+    await this.tooltip.first().waitFor({ state: "visible", timeout: 5000 });
+    let linkChargeTooltipText = await this.tooltip.first().innerText();
+    console.log("Link Charge Tooltip:", linkChargeTooltipText);
+    const isBrokenVisible = await this.LinkBrokenIcon.first().isVisible().catch(() => false);
+    let unlinkChargeTooltipText = "";
+    let linkBrokenTooltipText = "";
+    if (isBrokenVisible) {
+      //LinkBrokenIcon IS visible
+      console.log("LinkBrokenIcon is visible → Getting tooltip");
+      await this.LinkBrokenIcon.first().scrollIntoViewIfNeeded();
+      await this.LinkBrokenIcon.first().hover();
+      await this.tooltip.first().waitFor({ state: "visible", timeout: 5000 });
+      linkBrokenTooltipText = await this.tooltip.first().innerText();
+      console.log("LinkBrokenIcon Tooltip:", linkBrokenTooltipText);
+      // Click LinkChargeIcon → get UnlinkCharge tooltip
+      console.log("Clicking LinkChargeIcon to show UnlinkChargeIcon tooltip...");
+      await this.LinkChargeIcon.click();
+      await this.page.waitForTimeout(600);
+      await this.UnlinkChargeIcon.first().scrollIntoViewIfNeeded();
+      await this.UnlinkChargeIcon.first().hover();
+      await this.tooltip.first().waitFor({ state: "visible", timeout: 5000 });
+      unlinkChargeTooltipText = await this.tooltip.first().innerText();
+      console.log("UnlinkCharge Tooltip:", unlinkChargeTooltipText);
+
+    } else {
+      // LinkBrokenIcon NOT visible
+      console.log("LinkBrokenIcon NOT visible → Getting UnlinkCharge tooltip first");
+      await this.UnlinkChargeIcon.first().scrollIntoViewIfNeeded();
+      await this.UnlinkChargeIcon.first().hover();
+      await this.tooltip.first().waitFor({ state: "visible", timeout: 5000 });
+      unlinkChargeTooltipText = await this.tooltip.first().innerText();
+      console.log("UnlinkCharge Tooltip:", unlinkChargeTooltipText);
+      // Click UnlinkChargeIcon → LinkBroken should appear
+      console.log("Clicking UnlinkChargeIcon to show LinkBrokenIcon...");
+      await this.UnlinkChargeIcon.click();
+      await this.page.waitForTimeout(600);
+      const brokenVisibleAfter = await this.LinkBrokenIcon.first().isVisible().catch(() => false);
+      if (!brokenVisibleAfter) {
+        throw new Error("LinkBrokenIcon did not appear after clicking UnlinkChargeIcon.");
+      }
+      await this.LinkBrokenIcon.first().scrollIntoViewIfNeeded();
+      await this.LinkBrokenIcon.first().hover();
+      await this.tooltip.first().waitFor({ state: "visible", timeout: 5000 });
+      linkBrokenTooltipText = await this.tooltip.first().innerText();
+      console.log("LinkBrokenIcon Tooltip (after click):", linkBrokenTooltipText);
+    }
+    // TOOLTIP VALIDATION
+    console.log("\n========== TOOLTIP VALIDATION ==========\n");
+    // --- Linked Charge Tooltip ---
+    if (expectedLinked.trim() === linkedChargeTooltipText.trim()) {
+      console.log("Linked tooltip matched");
+    } else {
+      console.log("Linked tooltip mismatch");
+      console.log("Expected:", expectedLinked);
+      console.log("Actual:", linkedChargeTooltipText);
+    }
+    // --- Link Charge Tooltip ---
+    if (expectedLink.trim() === linkChargeTooltipText.trim()) {
+      console.log("Link Charge tooltip matched");
+    } else {
+      console.log("Link Charge tooltip mismatch");
+      console.log("Expected:", expectedLink);
+      console.log("Actual:", linkChargeTooltipText);
+
+    }
+    // --- Unlink Charge Tooltip ---
+    if (expectedUnlink.trim() === unlinkChargeTooltipText.trim()) {
+      console.log("Unlink Charge tooltip matched");
+    } else {
+      console.log("Unlink Charge tooltip mismatch");
+      console.log("Expected:", expectedUnlink);
+      console.log("Actual:", unlinkChargeTooltipText);
+    }
+    // --- Link Broken Tooltip ---
+    if (expectedBroken.trim() === linkBrokenTooltipText.trim()) {
+      console.log("Broken tooltip matched");
+    } else {
+      console.log("Broken tooltip mismatch");
+      console.log("Expected:", expectedBroken);
+      console.log("Actual:", linkBrokenTooltipText);
+
+    }
+    console.log("Verification complete: ALL TOOLTIP TEXTS MATCHED SUCCESSFULLY");
+    await this.page.keyboard.press("Escape");
+  };
+  GetCountAfterDeleteingTask = async () => {
+    await this.clickOntasklistBtn();
+    await this.TaskHeader.waitFor({ state: "visible" });
+    await this.gridTable.waitFor();
+    let taskCountBeforeDelete = parseInt(await this.TaskCount.innerText())
+    console.log("Total Task count before delete: ", taskCountBeforeDelete)
+    const rowCell = this.TaskNameCell.nth(1);
+    const taskName = await rowCell.innerText();
+    console.log(`Row-1 → TaskName: ${taskName}`);
+    await rowCell.click({ force: true });
+    await this.page.waitForTimeout(300);
+    // Check if Cross Icon is working
+    await this.ClickOnDeleteTaskIcon();  // Open the delete dialog
+    const crossVisible = await this.CrossIcon.isVisible();
+    if (crossVisible) {
+      console.log("Cross icon is visible → Clicking it");
+      await this.ClickOnCrossIcon();
+      await this.page.waitForTimeout(300);
+      // After clicking Cross, dialog must close → DeleteTaskIcon must be visible
+      const deleteIconReVisible = await this.DeleteTaskIcon.isVisible();
+      if (deleteIconReVisible) {
+        console.log("PASS → Cross icon closed the dialog successfully");
+      } else {
+        console.log("FAIL → Cross icon was clicked but delete dialog did NOT close");
+        throw new Error("Cross icon failed — DeleteTaskIcon not visible after closing dialog");
+      }
+    } else {
+      console.log("FAIL → Cross icon is NOT visible in delete dialog");
+      throw new Error("Cross icon not found");
+    }
+    // Check if Cancel Button is working
+    await this.ClickOnDeleteTaskIcon();  // Reopen the delete dialog
+    const cancelVisible = await this.CancelBtn.isVisible();
+    if (cancelVisible) {
+      console.log("Cancel button is visible → Clicking it");
+      await this.ClickOnCancelBtn();
+      await this.page.waitForTimeout(300);
+
+      // After clicking Cancel, dialog must close → DeleteTaskIcon visible
+      const deleteIconVisibleAfterCancel = await this.DeleteTaskIcon.isVisible();
+
+      if (deleteIconVisibleAfterCancel) {
+        console.log("PASS → Cancel button closed the dialog successfully");
+      } else {
+        console.log("FAIL → Cancel button was clicked but delete dialog did NOT close");
+        throw new Error("Cancel button failed — DeleteTaskIcon not visible after closing dialog");
+      }
+
+    } else {
+      console.log("FAIL → Cancel button is NOT visible in delete dialog");
+      throw new Error("Cancel button not found");
+    }
+    //Delete button must be disabled
+    await this.ClickOnDeleteTaskIcon()
+    const validDeleteTexts = ["Delete", "delete", "DELETE", "DElete", "dElEtE"];
+    const invalidDeleteTexts = ["Del", "deletee", "deleted", "dlete", " ", "abc", "DELETE!", "Delete123"];
+    for (const wrongTxt of invalidDeleteTexts) {
+      await this.DeleteInput.fill("");   // CLEAR input 
+      await this.EnterInputValue(this.DeleteInput, wrongTxt);
+      const isDisabled = await this.DisabledDeleteBtn.isVisible();
+      if (isDisabled) {
+        console.log(`Correct: Delete button is DISABLED for invalid text '${wrongTxt}'`);
+      } else {
+        console.log(`FAILED: Delete button is ENABLED for invalid text '${wrongTxt}'`);
+      }
+    }
+    // Delete button must be enabled
+    for (const rightTxt of validDeleteTexts) {
+      await this.DeleteInput.fill("");   // CLEAR before typing new value
+      await this.EnterInputValue(this.DeleteInput, rightTxt);
+      const isEnabled = await this.DeleteTaskBtn.isVisible();
+      if (isEnabled) {
+        console.log(`Correct: Delete button is ENABLED for valid text '${rightTxt}'`);
+      } else {
+        console.log(`FAILED: Delete button is DISABLED for valid text '${rightTxt}'`);
+      }
+    }
+    await this.ClickOnDeleteTaskBtn()
+    await this.page.waitForTimeout(2000)
+
+    let taskCountAfterDelete = parseInt(await this.TaskCount.innerText())
+    console.log("Total Task count After Delete : ", taskCountAfterDelete)
+
+    expect(taskCountAfterDelete, {
+      message: `Task count did NOT decrease by 1. Expected: ${taskCountBeforeDelete - 1}, Actual: ${taskCountAfterDelete}`
+    }).toBe(taskCountBeforeDelete - 1);
+  }
+
 };

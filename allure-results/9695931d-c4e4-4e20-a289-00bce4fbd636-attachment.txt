@@ -1,0 +1,17 @@
+-------------- Starting: Verifying tooltips on Charges ------------
+Row 1 → TaskName: Task 2508
+Valid row found → extracting tooltips
+Linked Charge Tooltip: Charge linked to another task
+Link Charge Tooltip: Link Charge
+LinkBrokenIcon is visible → Getting tooltip
+LinkBrokenIcon Tooltip: At least one charge must remain linked
+Clicking LinkChargeIcon to show UnlinkChargeIcon tooltip...
+UnlinkCharge Tooltip: Unlink Charge
+
+========== TOOLTIP VALIDATION ==========
+
+Linked tooltip matched
+Link Charge tooltip matched
+Unlink Charge tooltip matched
+Broken tooltip matched
+Verification complete: ALL TOOLTIP TEXTS MATCHED SUCCESSFULLY

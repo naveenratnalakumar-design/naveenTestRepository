@@ -1,0 +1,454 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - navigation [ref=e5]:
+      - link "Revflow logo Revflow" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Revflow logo" [ref=e7] [cursor=pointer]
+        - img "Revflow" [ref=e9] [cursor=pointer]
+      - generic [ref=e11]:
+        - link "Dashboard" [ref=e13] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e16] [cursor=pointer]
+          - generic [ref=e18] [cursor=pointer]: Dashboard
+        - link "Task List" [ref=e20] [cursor=pointer]:
+          - /url: /tasks
+          - img [ref=e23] [cursor=pointer]
+          - generic [ref=e25] [cursor=pointer]: Task List
+        - link "AR Aging" [ref=e27] [cursor=pointer]:
+          - /url: /ar-aging
+          - img [ref=e30] [cursor=pointer]
+          - generic [ref=e32] [cursor=pointer]: AR Aging
+        - link "Settings" [ref=e34] [cursor=pointer]:
+          - /url: /settings
+          - img [ref=e37] [cursor=pointer]
+          - generic [ref=e40] [cursor=pointer]: Settings
+          - img [ref=e43] [cursor=pointer]
+      - button [ref=e49] [cursor=pointer]:
+        - img [ref=e53] [cursor=pointer]
+    - generic [ref=e55]:
+      - generic [ref=e56]:
+        - generic [ref=e61]:
+          - img [ref=e64]
+          - textbox "Search for a Case" [ref=e66]
+        - generic [ref=e67]:
+          - button "Selected Facilities (35)" [ref=e69] [cursor=pointer]:
+            - text: Selected Facilities (35)
+            - img [ref=e72] [cursor=pointer]
+          - img [ref=e78]
+          - button "AT" [ref=e81] [cursor=pointer]:
+            - generic [ref=e84] [cursor=pointer]: AT
+            - img [ref=e87] [cursor=pointer]
+      - generic [ref=e90]:
+        - generic [ref=e91]:
+          - heading "Tasks" [level=2] [ref=e94]
+          - generic [ref=e96]:
+            - button "Sort" [ref=e98] [cursor=pointer]:
+              - generic [ref=e99] [cursor=pointer]: Sort
+              - img [ref=e102] [cursor=pointer]
+            - button "Filters" [expanded] [ref=e105] [cursor=pointer]:
+              - img [ref=e108] [cursor=pointer]
+              - generic [ref=e110] [cursor=pointer]: Filters
+            - button "Reset to Default" [ref=e112] [cursor=pointer]:
+              - generic [ref=e113] [cursor=pointer]:
+                - text: Reset to Default
+                - img [ref=e116] [cursor=pointer]
+        - generic [ref=e120]:
+          - generic [ref=e123]:
+            - generic [ref=e124]: "9644"
+            - text: Results
+          - generic [ref=e126]:
+            - generic [ref=e130] [cursor=pointer]: Task
+            - generic [ref=e135] [cursor=pointer]: Facility
+            - generic [ref=e140] [cursor=pointer]: Resident
+            - generic [ref=e145] [cursor=pointer]: Payer
+            - generic [ref=e150] [cursor=pointer]: Balance
+            - generic [ref=e155] [cursor=pointer]: Balance Status
+            - generic [ref=e160] [cursor=pointer]: Due Date
+            - generic [ref=e165] [cursor=pointer]: Task Status
+            - generic [ref=e170] [cursor=pointer]: Assigned To
+            - generic [ref=e175] [cursor=pointer]: Root Issue
+          - generic [ref=e181]:
+            - link "DailyTaskCreation(11-09-2025)-Task-1story(1144) Caring Heart Washington, Ruby Social Security 0.00 Unworked 10/16/2025 Canceled KK Kesavarao Karri Attorney Case" [ref=e183] [cursor=pointer]:
+              - generic [ref=e187] [cursor=pointer]: DailyTaskCreation(11-09-2025)-Task-1story(1144)
+              - generic [ref=e191] [cursor=pointer]: Caring Heart
+              - link "Washington, Ruby" [ref=e195] [cursor=pointer]:
+                - /url: /cases/details/3574400
+              - generic [ref=e199] [cursor=pointer]: Social Security
+              - generic [ref=e203] [cursor=pointer]: "0.00"
+              - generic [ref=e207] [cursor=pointer]:
+                - img [ref=e210] [cursor=pointer]
+                - generic [ref=e212] [cursor=pointer]: Unworked
+              - generic [ref=e216] [cursor=pointer]: 10/16/2025
+              - generic [ref=e221] [cursor=pointer]: Canceled
+              - generic [ref=e225] [cursor=pointer]:
+                - generic [ref=e230] [cursor=pointer]: KK
+                - generic [ref=e231] [cursor=pointer]: Kesavarao Karri
+              - generic [ref=e235] [cursor=pointer]: Attorney Case
+            - link "CreateTaskARW-1292 Caring Heart Halstead, Carolyn Medicare 0.00 Paid Status 10/23/2025 Canceled KK Keshava Karri Unknown" [ref=e237] [cursor=pointer]:
+              - generic [ref=e241] [cursor=pointer]: CreateTaskARW-1292
+              - generic [ref=e245] [cursor=pointer]: Caring Heart
+              - link "Halstead, Carolyn" [ref=e249] [cursor=pointer]:
+                - /url: /cases/details/3574404
+              - generic [ref=e253] [cursor=pointer]: Medicare
+              - generic [ref=e257] [cursor=pointer]: "0.00"
+              - generic [ref=e261] [cursor=pointer]:
+                - img [ref=e264] [cursor=pointer]
+                - generic [ref=e266] [cursor=pointer]: Paid Status
+              - generic [ref=e270] [cursor=pointer]: 10/23/2025
+              - generic [ref=e275] [cursor=pointer]: Canceled
+              - generic [ref=e279] [cursor=pointer]:
+                - generic [ref=e284] [cursor=pointer]: KK
+                - generic [ref=e285] [cursor=pointer]: Keshava Karri
+              - generic [ref=e289] [cursor=pointer]: Unknown
+            - link "CreateTaskARW-1292 Caring Heart Halstead, Carolyn Medicare 0.00 Rejected 9/10/2025 Canceled KK Keshava Karri Unknown" [ref=e291] [cursor=pointer]:
+              - generic [ref=e295] [cursor=pointer]: CreateTaskARW-1292
+              - generic [ref=e299] [cursor=pointer]: Caring Heart
+              - link "Halstead, Carolyn" [ref=e303] [cursor=pointer]:
+                - /url: /cases/details/3574404
+              - generic [ref=e307] [cursor=pointer]: Medicare
+              - generic [ref=e311] [cursor=pointer]: "0.00"
+              - generic [ref=e315] [cursor=pointer]:
+                - img [ref=e318] [cursor=pointer]
+                - generic [ref=e320] [cursor=pointer]: Rejected
+              - generic [ref=e324] [cursor=pointer]: 9/10/2025
+              - generic [ref=e329] [cursor=pointer]: Canceled
+              - generic [ref=e333] [cursor=pointer]:
+                - generic [ref=e338] [cursor=pointer]: KK
+                - generic [ref=e339] [cursor=pointer]: Keshava Karri
+              - generic [ref=e343] [cursor=pointer]: Unknown
+            - link "Tasknew Gulfport Cormier, Christine AARP 0.00 Unworked 8/31/2025 Completed VG Vikesh Gaikawad Unknown" [ref=e345] [cursor=pointer]:
+              - generic [ref=e349] [cursor=pointer]: Tasknew
+              - generic [ref=e353] [cursor=pointer]: Gulfport
+              - link "Cormier, Christine" [ref=e357] [cursor=pointer]:
+                - /url: /cases/details/2073408
+              - generic [ref=e361] [cursor=pointer]: AARP
+              - generic [ref=e365] [cursor=pointer]: "0.00"
+              - generic [ref=e369] [cursor=pointer]:
+                - img [ref=e372] [cursor=pointer]
+                - generic [ref=e374] [cursor=pointer]: Unworked
+              - generic [ref=e378] [cursor=pointer]: 8/31/2025
+              - generic [ref=e383] [cursor=pointer]: Completed
+              - generic [ref=e387] [cursor=pointer]:
+                - generic [ref=e392] [cursor=pointer]: VG
+                - generic [ref=e393] [cursor=pointer]: Vikesh Gaikawad
+              - generic [ref=e397] [cursor=pointer]: Unknown
+            - link "Task_2025-08-11T15:05 Ivy at Davenport-St Mary Koberg, Nancy Blue Cross Illinois 0.00 Unbilled 10/17/2028 Canceled KK Keshava Karri Unknown" [ref=e399] [cursor=pointer]:
+              - generic [ref=e403] [cursor=pointer]: Task_2025-08-11T15:05
+              - generic [ref=e407] [cursor=pointer]: Ivy at Davenport-St Mary
+              - link "Koberg, Nancy" [ref=e411] [cursor=pointer]:
+                - /url: /cases/details/4705232
+              - generic [ref=e415] [cursor=pointer]: Blue Cross Illinois
+              - generic [ref=e419] [cursor=pointer]: "0.00"
+              - generic [ref=e423] [cursor=pointer]:
+                - img [ref=e426] [cursor=pointer]
+                - generic [ref=e428] [cursor=pointer]: Unbilled
+              - generic [ref=e432] [cursor=pointer]: 10/17/2028
+              - generic [ref=e437] [cursor=pointer]: Canceled
+              - generic [ref=e441] [cursor=pointer]:
+                - generic [ref=e446] [cursor=pointer]: KK
+                - generic [ref=e447] [cursor=pointer]: Keshava Karri
+              - generic [ref=e451] [cursor=pointer]: Unknown
+            - link "Task_2025-08-11T14:35 Ivy at Davenport-St Mary Kelly, Walter United Healthcare MCR 0.00 Unworked 10/17/2028 Completed KK Keshava Karri Unknown" [ref=e453] [cursor=pointer]:
+              - generic [ref=e457] [cursor=pointer]: Task_2025-08-11T14:35
+              - generic [ref=e461] [cursor=pointer]: Ivy at Davenport-St Mary
+              - link "Kelly, Walter" [ref=e465] [cursor=pointer]:
+                - /url: /cases/details/4709280
+              - generic [ref=e469] [cursor=pointer]: United Healthcare MCR
+              - generic [ref=e473] [cursor=pointer]: "0.00"
+              - generic [ref=e477] [cursor=pointer]:
+                - img [ref=e480] [cursor=pointer]
+                - generic [ref=e482] [cursor=pointer]: Unworked
+              - generic [ref=e486] [cursor=pointer]: 10/17/2028
+              - generic [ref=e491] [cursor=pointer]: Completed
+              - generic [ref=e495] [cursor=pointer]:
+                - generic [ref=e500] [cursor=pointer]: KK
+                - generic [ref=e501] [cursor=pointer]: Keshava Karri
+              - generic [ref=e505] [cursor=pointer]: Unknown
+            - link "eter Achieve Fisher, Caroline Cigna 0.00 Rejected 8/28/2025 Canceled AW Adina Wilhelm Unknown" [ref=e507] [cursor=pointer]:
+              - generic [ref=e511] [cursor=pointer]: eter
+              - generic [ref=e515] [cursor=pointer]: Achieve
+              - link "Fisher, Caroline" [ref=e519] [cursor=pointer]:
+                - /url: /cases/details/3571775
+              - generic [ref=e523] [cursor=pointer]: Cigna
+              - generic [ref=e527] [cursor=pointer]: "0.00"
+              - generic [ref=e531] [cursor=pointer]:
+                - img [ref=e534] [cursor=pointer]
+                - generic [ref=e536] [cursor=pointer]: Rejected
+              - generic [ref=e540] [cursor=pointer]: 8/28/2025
+              - generic [ref=e545] [cursor=pointer]: Canceled
+              - generic [ref=e549] [cursor=pointer]:
+                - generic [ref=e554] [cursor=pointer]: AW
+                - generic [ref=e555] [cursor=pointer]: Adina Wilhelm
+              - generic [ref=e559] [cursor=pointer]: Unknown
+            - link "Sergey's Test Achieve Alli, Mary AARP Health Care Options 0.00 Rejected 8/28/2025 Canceled SA Sergey Andreyev Unknown" [ref=e561] [cursor=pointer]:
+              - generic [ref=e565] [cursor=pointer]: Sergey's Test
+              - generic [ref=e569] [cursor=pointer]: Achieve
+              - link "Alli, Mary" [ref=e573] [cursor=pointer]:
+                - /url: /cases/details/4649876
+              - generic [ref=e577] [cursor=pointer]: AARP Health Care Options
+              - generic [ref=e581] [cursor=pointer]: "0.00"
+              - generic [ref=e585] [cursor=pointer]:
+                - img [ref=e588] [cursor=pointer]
+                - generic [ref=e590] [cursor=pointer]: Rejected
+              - generic [ref=e594] [cursor=pointer]: 8/28/2025
+              - generic [ref=e599] [cursor=pointer]: Canceled
+              - generic [ref=e603] [cursor=pointer]:
+                - generic [ref=e608] [cursor=pointer]: SA
+                - generic [ref=e609] [cursor=pointer]: Sergey Andreyev
+              - generic [ref=e613] [cursor=pointer]: Unknown
+            - link "3 Mountain Ridge Criswell, Herman Anthem BCBS 0.00 DD Enrolled 8/27/2025 Completed SR Santosh Rongali Unknown" [ref=e615] [cursor=pointer]:
+              - generic [ref=e619] [cursor=pointer]: "3"
+              - generic [ref=e623] [cursor=pointer]: Mountain Ridge
+              - link "Criswell, Herman" [ref=e627] [cursor=pointer]:
+                - /url: /cases/details/4487595
+              - generic [ref=e631] [cursor=pointer]: Anthem BCBS
+              - generic [ref=e635] [cursor=pointer]: "0.00"
+              - generic [ref=e639] [cursor=pointer]:
+                - img [ref=e642] [cursor=pointer]
+                - generic [ref=e644] [cursor=pointer]: DD Enrolled
+              - generic [ref=e648] [cursor=pointer]: 8/27/2025
+              - generic [ref=e653] [cursor=pointer]: Completed
+              - generic [ref=e657] [cursor=pointer]:
+                - generic [ref=e662] [cursor=pointer]: SR
+                - generic [ref=e663] [cursor=pointer]: Santosh Rongali
+              - generic [ref=e667] [cursor=pointer]: Unknown
+            - link "Second task Mountain Ridge Criswell, Herman Anthem BCBS 0.00 Denied 10/30/2025 Canceled AW Adina Wilhelm Unknown" [ref=e669] [cursor=pointer]:
+              - generic [ref=e673] [cursor=pointer]: Second task
+              - generic [ref=e677] [cursor=pointer]: Mountain Ridge
+              - link "Criswell, Herman" [ref=e681] [cursor=pointer]:
+                - /url: /cases/details/4487595
+              - generic [ref=e685] [cursor=pointer]: Anthem BCBS
+              - generic [ref=e689] [cursor=pointer]: "0.00"
+              - generic [ref=e693] [cursor=pointer]:
+                - img [ref=e696] [cursor=pointer]
+                - generic [ref=e698] [cursor=pointer]: Denied
+              - generic [ref=e702] [cursor=pointer]: 10/30/2025
+              - generic [ref=e707] [cursor=pointer]: Canceled
+              - generic [ref=e711] [cursor=pointer]:
+                - generic [ref=e716] [cursor=pointer]: AW
+                - generic [ref=e717] [cursor=pointer]: Adina Wilhelm
+              - generic [ref=e721] [cursor=pointer]: Unknown
+            - link "Test 2 Citrus Smith, Joseph BC BS PPO HMO (5 Levels) COMMERCIAL 0.00 Follow-Up Needed 10/31/2025 Completed AW Adina Wilhelm Unknown" [ref=e723] [cursor=pointer]:
+              - generic [ref=e727] [cursor=pointer]: Test 2
+              - generic [ref=e731] [cursor=pointer]: Citrus
+              - link "Smith, Joseph" [ref=e735] [cursor=pointer]:
+                - /url: /cases/details/4658615
+              - generic [ref=e739] [cursor=pointer]: BC BS PPO HMO (5 Levels) COMMERCIAL
+              - generic [ref=e743] [cursor=pointer]: "0.00"
+              - generic [ref=e747] [cursor=pointer]:
+                - img [ref=e750] [cursor=pointer]
+                - generic [ref=e752] [cursor=pointer]: Follow-Up Needed
+              - generic [ref=e756] [cursor=pointer]: 10/31/2025
+              - generic [ref=e761] [cursor=pointer]: Completed
+              - generic [ref=e765] [cursor=pointer]:
+                - generic [ref=e770] [cursor=pointer]: AW
+                - generic [ref=e771] [cursor=pointer]: Adina Wilhelm
+              - generic [ref=e775] [cursor=pointer]: Unknown
+            - link "Need retro auth Achieve Stanton, Victoria Fidelis LT 3,704.04 Needs Research 11/5/2025 In Progress EF Esther Furst Unknown" [ref=e777] [cursor=pointer]:
+              - generic [ref=e781] [cursor=pointer]: Need retro auth
+              - generic [ref=e785] [cursor=pointer]: Achieve
+              - link "Stanton, Victoria" [ref=e789] [cursor=pointer]:
+                - /url: /cases/details/4392129
+              - generic [ref=e793] [cursor=pointer]: Fidelis LT
+              - generic [ref=e797] [cursor=pointer]: 3,704.04
+              - generic [ref=e801] [cursor=pointer]:
+                - img [ref=e804] [cursor=pointer]
+                - generic [ref=e806] [cursor=pointer]: Needs Research
+              - generic [ref=e810] [cursor=pointer]: 11/5/2025
+              - generic [ref=e815] [cursor=pointer]: In Progress
+              - generic [ref=e819] [cursor=pointer]:
+                - generic [ref=e824] [cursor=pointer]: EF
+                - generic [ref=e825] [cursor=pointer]: Esther Furst
+              - generic [ref=e829] [cursor=pointer]: Unknown
+            - link "Demo 2 Achieve Langer, Ilona AARP Health Care Options 0.00 Sent for Reprocessing 10/14/2025 Canceled RM Rivky Meguira Unknown" [ref=e831] [cursor=pointer]:
+              - generic [ref=e835] [cursor=pointer]: Demo 2
+              - generic [ref=e839] [cursor=pointer]: Achieve
+              - link "Langer, Ilona" [ref=e843] [cursor=pointer]:
+                - /url: /cases/details/4559672
+              - generic [ref=e847] [cursor=pointer]: AARP Health Care Options
+              - generic [ref=e851] [cursor=pointer]: "0.00"
+              - generic [ref=e855] [cursor=pointer]:
+                - img [ref=e858] [cursor=pointer]
+                - generic [ref=e860] [cursor=pointer]: Sent for Reprocessing
+              - generic [ref=e864] [cursor=pointer]: 10/14/2025
+              - generic [ref=e869] [cursor=pointer]: Canceled
+              - generic [ref=e873] [cursor=pointer]:
+                - generic [ref=e878] [cursor=pointer]: RM
+                - generic [ref=e879] [cursor=pointer]: Rivky Meguira
+              - generic [ref=e883] [cursor=pointer]: Unknown
+            - link "Correct claim with valid auth# Achieve Spicka, Helen AARP Health Care Options 0.00 Underpaid 11/6/2025 Canceled RM Rivky Meguira Unknown" [ref=e885] [cursor=pointer]:
+              - generic [ref=e889] [cursor=pointer]: Correct claim with valid auth#
+              - generic [ref=e893] [cursor=pointer]: Achieve
+              - link "Spicka, Helen" [ref=e897] [cursor=pointer]:
+                - /url: /cases/details/4598293
+              - generic [ref=e901] [cursor=pointer]: AARP Health Care Options
+              - generic [ref=e905] [cursor=pointer]: "0.00"
+              - generic [ref=e909] [cursor=pointer]:
+                - img [ref=e912] [cursor=pointer]
+                - generic [ref=e914] [cursor=pointer]: Underpaid
+              - generic [ref=e918] [cursor=pointer]: 11/6/2025
+              - generic [ref=e923] [cursor=pointer]: Canceled
+              - generic [ref=e927] [cursor=pointer]:
+                - generic [ref=e932] [cursor=pointer]: RM
+                - generic [ref=e933] [cursor=pointer]: Rivky Meguira
+              - generic [ref=e937] [cursor=pointer]: Unknown
+            - link "test Achieve Mann, Elinore Fidelis LT (163.06) Denied 10/25/2025 In Progress RM Rivky Meguira Unknown" [ref=e939] [cursor=pointer]:
+              - generic [ref=e943] [cursor=pointer]: test
+              - generic [ref=e947] [cursor=pointer]: Achieve
+              - link "Mann, Elinore" [ref=e951] [cursor=pointer]:
+                - /url: /cases/details/4557286
+              - generic [ref=e955] [cursor=pointer]: Fidelis LT
+              - generic [ref=e959] [cursor=pointer]: (163.06)
+              - generic [ref=e963] [cursor=pointer]:
+                - img [ref=e966] [cursor=pointer]
+                - generic [ref=e968] [cursor=pointer]: Denied
+              - generic [ref=e972] [cursor=pointer]: 10/25/2025
+              - generic [ref=e977] [cursor=pointer]: In Progress
+              - generic [ref=e981] [cursor=pointer]:
+                - generic [ref=e986] [cursor=pointer]: RM
+                - generic [ref=e987] [cursor=pointer]: Rivky Meguira
+              - generic [ref=e991] [cursor=pointer]: Unknown
+            - link "jfiuyfg Caring Heart Carter, Bryan Aetna ADV MCR 0.00 Follow-Up Needed 10/29/2025 Completed SA Sergey Andreyev Unknown" [ref=e993] [cursor=pointer]:
+              - generic [ref=e997] [cursor=pointer]: jfiuyfg
+              - generic [ref=e1001] [cursor=pointer]: Caring Heart
+              - link "Carter, Bryan" [ref=e1005] [cursor=pointer]:
+                - /url: /cases/details/5584424
+              - generic [ref=e1009] [cursor=pointer]: Aetna ADV MCR
+              - generic [ref=e1013] [cursor=pointer]: "0.00"
+              - generic [ref=e1017] [cursor=pointer]:
+                - img [ref=e1020] [cursor=pointer]
+                - generic [ref=e1022] [cursor=pointer]: Follow-Up Needed
+              - generic [ref=e1026] [cursor=pointer]: 10/29/2025
+              - generic [ref=e1031] [cursor=pointer]: Completed
+              - generic [ref=e1035] [cursor=pointer]:
+                - generic [ref=e1040] [cursor=pointer]: SA
+                - generic [ref=e1041] [cursor=pointer]: Sergey Andreyev
+              - generic [ref=e1045] [cursor=pointer]: Unknown
+            - link "test Achieve Hobson, Elizabeth Empire BCBS MCR 0.00 Rejected 10/22/2025 Canceled RM Rivky Meguira Unknown" [ref=e1047] [cursor=pointer]:
+              - generic [ref=e1051] [cursor=pointer]: test
+              - generic [ref=e1055] [cursor=pointer]: Achieve
+              - link "Hobson, Elizabeth" [ref=e1059] [cursor=pointer]:
+                - /url: /cases/details/4648507
+              - generic [ref=e1063] [cursor=pointer]: Empire BCBS MCR
+              - generic [ref=e1067] [cursor=pointer]: "0.00"
+              - generic [ref=e1071] [cursor=pointer]:
+                - img [ref=e1074] [cursor=pointer]
+                - generic [ref=e1076] [cursor=pointer]: Rejected
+              - generic [ref=e1080] [cursor=pointer]: 10/22/2025
+              - generic [ref=e1085] [cursor=pointer]: Canceled
+              - generic [ref=e1089] [cursor=pointer]:
+                - generic [ref=e1094] [cursor=pointer]: RM
+                - generic [ref=e1095] [cursor=pointer]: Rivky Meguira
+              - generic [ref=e1099] [cursor=pointer]: Unknown
+            - link "test Achieve Wells, Eleanor Empire BCBS MCR 0.00 Needs Research 9/16/2025 Completed KK Keshava Karri Unknown" [ref=e1101] [cursor=pointer]:
+              - generic [ref=e1105] [cursor=pointer]: test
+              - generic [ref=e1109] [cursor=pointer]: Achieve
+              - link "Wells, Eleanor" [ref=e1113] [cursor=pointer]:
+                - /url: /cases/details/3671096
+              - generic [ref=e1117] [cursor=pointer]: Empire BCBS MCR
+              - generic [ref=e1121] [cursor=pointer]: "0.00"
+              - generic [ref=e1125] [cursor=pointer]:
+                - img [ref=e1128] [cursor=pointer]
+                - generic [ref=e1130] [cursor=pointer]: Needs Research
+              - generic [ref=e1134] [cursor=pointer]: 9/16/2025
+              - generic [ref=e1139] [cursor=pointer]: Completed
+              - generic [ref=e1143] [cursor=pointer]:
+                - generic [ref=e1148] [cursor=pointer]: KK
+                - generic [ref=e1149] [cursor=pointer]: Keshava Karri
+              - generic [ref=e1153] [cursor=pointer]: Unknown
+            - link "test Achieve Lewis, Janice AARP Health Care Options 0.00 Denied 10/30/2025 Canceled RM Rivky Meguira Unknown" [ref=e1155] [cursor=pointer]:
+              - generic [ref=e1159] [cursor=pointer]: test
+              - generic [ref=e1163] [cursor=pointer]: Achieve
+              - link "Lewis, Janice" [ref=e1167] [cursor=pointer]:
+                - /url: /cases/details/4615574
+              - generic [ref=e1171] [cursor=pointer]: AARP Health Care Options
+              - generic [ref=e1175] [cursor=pointer]: "0.00"
+              - generic [ref=e1179] [cursor=pointer]:
+                - img [ref=e1182] [cursor=pointer]
+                - generic [ref=e1184] [cursor=pointer]: Denied
+              - generic [ref=e1188] [cursor=pointer]: 10/30/2025
+              - generic [ref=e1193] [cursor=pointer]: Canceled
+              - generic [ref=e1197] [cursor=pointer]:
+                - generic [ref=e1202] [cursor=pointer]: RM
+                - generic [ref=e1203] [cursor=pointer]: Rivky Meguira
+              - generic [ref=e1207] [cursor=pointer]: Unknown
+            - link "test Caring Heart Ross, Darlene Aetna ADV MCR 0.00 Denied 10/25/2025 Canceled RM Rivky Meguira Unknown" [ref=e1209] [cursor=pointer]:
+              - generic [ref=e1213] [cursor=pointer]: test
+              - generic [ref=e1217] [cursor=pointer]: Caring Heart
+              - link "Ross, Darlene" [ref=e1221] [cursor=pointer]:
+                - /url: /cases/details/5564936
+              - generic [ref=e1225] [cursor=pointer]: Aetna ADV MCR
+              - generic [ref=e1229] [cursor=pointer]: "0.00"
+              - generic [ref=e1233] [cursor=pointer]:
+                - img [ref=e1236] [cursor=pointer]
+                - generic [ref=e1238] [cursor=pointer]: Denied
+              - generic [ref=e1242] [cursor=pointer]: 10/25/2025
+              - generic [ref=e1247] [cursor=pointer]: Canceled
+              - generic [ref=e1251] [cursor=pointer]:
+                - generic [ref=e1256] [cursor=pointer]: RM
+                - generic [ref=e1257] [cursor=pointer]: Rivky Meguira
+              - generic [ref=e1261] [cursor=pointer]: Unknown
+  - generic [ref=e1273]: Jira Service Management Widget
+  - iframe [ref=e1274]:
+    - main "Help Center Widget Content" [ref=f1e2]:
+      - button "?" [ref=f1e5] [cursor=pointer]:
+        - paragraph [ref=f1e6] [cursor=pointer]: "?"
+  - generic:
+    - menu [ref=e1278]:
+      - generic [ref=e1280]:
+        - generic [ref=e1281]:
+          - generic [ref=e1282]: Filter by
+          - button "Clear Filter" [disabled] [ref=e1284]:
+            - generic [ref=e1285]: Clear Filter
+        - generic [ref=e1289]:
+          - generic [ref=e1290]:
+            - combobox "Task Status" [ref=e1293]:
+              - generic [ref=e1299] [cursor=pointer]: Task Status
+            - button "Select Task Status" [expanded] [active] [ref=e1304] [cursor=pointer]:
+              - generic [ref=e1305] [cursor=pointer]: Select Task Status
+              - img [ref=e1309] [cursor=pointer]
+          - button [ref=e1312] [cursor=pointer]:
+            - img [ref=e1316] [cursor=pointer]
+        - generic [ref=e1318]:
+          - button "Add Filter" [disabled] [ref=e1320]:
+            - generic [ref=e1321]:
+              - img [ref=e1324]
+              - text: Add Filter
+          - button "Apply Filter" [disabled] [ref=e1327]:
+            - generic [ref=e1328]: Apply Filter
+    - menu [ref=e1331]:
+      - generic [ref=e1333]:
+        - generic [ref=e1336]:
+          - generic [ref=e1338] [cursor=pointer]:
+            - generic [ref=e1341] [cursor=pointer]:
+              - checkbox [ref=e1342] [cursor=pointer]
+              - generic:
+                - img
+            - generic [ref=e1345] [cursor=pointer]: Not Started
+          - generic [ref=e1347] [cursor=pointer]:
+            - generic [ref=e1350] [cursor=pointer]:
+              - checkbox [ref=e1351] [cursor=pointer]
+              - generic:
+                - img
+            - generic [ref=e1354] [cursor=pointer]: In Progress
+          - generic [ref=e1356] [cursor=pointer]:
+            - generic [ref=e1359] [cursor=pointer]:
+              - checkbox [ref=e1360] [cursor=pointer]
+              - generic:
+                - img
+            - generic [ref=e1363] [cursor=pointer]: Completed
+          - generic [ref=e1365] [cursor=pointer]:
+            - generic [ref=e1368] [cursor=pointer]:
+              - checkbox [ref=e1369] [cursor=pointer]
+              - generic:
+                - img
+            - generic [ref=e1372] [cursor=pointer]: Canceled
+        - generic [ref=e1374]:
+          - button "Clear Selection" [disabled] [ref=e1376]:
+            - generic [ref=e1377]: Clear Selection
+          - button "Apply" [disabled] [ref=e1379]:
+            - generic [ref=e1380]: Apply
+```
