@@ -2,14 +2,14 @@ name: Apex Automated Tests
 
 on:
   workflow_dispatch:
-# on:
-#   schedule:
-#     # Run every day at 8:00 AM UTC
-#     - cron: '0 8 * * *'
+  # schedule:
+  #   # Run every day at 8:00 AM UTC
+  #   - cron: '0 8 * * *'
 
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -26,8 +26,11 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        #run: npx playwright test --trace=on
-        run: npx playwright test --grep "@smoke" --trace=on --reporter=json > playwright-report.json
+        run: |
+          npx playwright test ./tests/dashboardAndTaskListValidation.spec.js \
+            --trace=on \
+            --reporter=json \
+            --reporter-options=outputFile=playwright-report.json
 
       - name: Generate Test Summary Table
         if: always()
@@ -38,14 +41,18 @@ jobs:
           echo "| -------------- | ------ | -------------- |" >> $GITHUB_STEP_SUMMARY
           node <<'EOF' >> $GITHUB_STEP_SUMMARY
           const fs = require('fs');
+
           if (!fs.existsSync('playwright-report.json')) {
             console.log('| No report found | ❌ | 0 |');
             process.exit(0);
           }
+
           const report = JSON.parse(fs.readFileSync('playwright-report.json', 'utf8'));
+
           function capitalize(word = 'unknown') {
             return word.charAt(0).toUpperCase() + word.slice(1);
           }
+
           function walkSuites(suites = []) {
             for (const suite of suites) {
               if (suite.specs) {
@@ -56,9 +63,8 @@ jobs:
                     const duration = result
                       ? (result.duration / 1000).toFixed(2)
                       : '0.00';
-                    console.log(
-                      `| ${spec.title} | ${status} | ${duration} |`
-                    );
+
+                    console.log(`| ${spec.title} | ${status} | ${duration} |`);
                   }
                 }
               }
@@ -67,10 +73,10 @@ jobs:
               }
             }
           }
+
           walkSuites(report.suites);
           EOF
 
-      # Upload Playwright HTML Report
       - name: Upload Playwright HTML Report
         if: always()
         uses: actions/upload-artifact@v4
@@ -78,7 +84,6 @@ jobs:
           name: playwright-report
           path: playwright-report/
 
-      # Upload raw test results (screenshots/videos)
       - name: Upload Test Results
         if: always()
         uses: actions/upload-artifact@v4
