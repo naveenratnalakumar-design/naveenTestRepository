@@ -33,16 +33,8 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
     [
-      "html",
-      {
-        outputFolder: path.join(
-          __dirname,
-          "playwright-report",
-          `html-report-${timestamp}`
-        ),
-        open: "always",
-      },
-    ],
+       ['json', { outputFile: 'playwright-report.json' }],
+    ['html'],
     ["allure-playwright"],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
