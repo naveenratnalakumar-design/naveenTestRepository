@@ -29,8 +29,7 @@ jobs:
         run: |
           npx playwright test ./tests/dashboardAndTaskListValidation.spec.js \
             --trace=on \
-            --reporter=json \
-            --reporter-options=outputFile=playwright-report.json
+            --reporter=json > playwright-report.json
 
       - name: Generate Test Summary Table
         if: always()
