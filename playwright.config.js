@@ -11,10 +11,10 @@ module.exports = defineConfig({
   timeout: 300 * 1000,
   expect: { timeout: 20 * 1000 },
 
-  fullyParallel: true,
+  fullyParallel: false,
   forbidOnly: !!process.env.CI,
   retries: 1,
-  workers: 4,
+  workers: 1,
 
   /* Reporter configuration */
   reporter: [
