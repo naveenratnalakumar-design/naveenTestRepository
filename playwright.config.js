@@ -1,57 +1,38 @@
 // @ts-check
-import { defineConfig, devices } from "@playwright/test";
-const path = require("path");
-/**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
-// import dotenv from 'dotenv';
-// import path from 'path';
-// dotenv.config({ path: path.resolve(__dirname, '.env') });
-const timestamp = new Date()
-  .toLocaleString("en-GB", { timeZone: "Asia/Kolkata" }) // Get local time in 'en-GB' format
-  .replace(/[/, ]/g, "-") // Replace slashes and spaces with dashes
-  .replace(/:/g, "-");
+const { defineConfig, devices } = require('@playwright/test');
+const path = require('path');
+
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
-export default defineConfig({
-  testDir: "./tests",
+module.exports = defineConfig({
+  testDir: './tests',
+
   timeout: 300 * 1000,
-  expect: { timeout: 20 * 1000 }, // expect() default (10s)
-  /* Run tests in files in parallel */
-  fullyParallel: false,
-  /* Fail the build on CI if you accidentally left test.only in the source code. */
+  expect: { timeout: 20 * 1000 },
+
+  fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: 1,
-  workers: 1, //  only 1 worker → 1 browser instance at a time
-  // forbidOnly: !!process.env.CI,
-  // /* Retry on CI only */
-  // retries: process.env.CI ? 2 : 0,
-  // /* Opt out of parallel tests on CI. */
-  // workers: process.env.CI ? 1 : undefined,
-  /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [
-    [
-      ['json', { outputFile: 'playwright-report.json' }],
-    ['html'],
-    ["allure-playwright"],
-  ],
-  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
-  use: {
-    /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'http://localhost:3000',
+  workers: 4,
 
-    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    // viewport: { width: 1366, height: 768 },
-    actionTimeout: 30 * 1000, // default timeout for page actions (30s)
-    navigationTimeout: 100 * 1000, // default navigation timeout (60s)
-    trace: "on-first-retry",
+  /* Reporter configuration */
+  reporter: [
+    ['json', { outputFile: 'playwright-report.json' }],
+    ['html'],
+    ['allure-playwright'],
+  ],
+  /* Shared settings for all the projects below */
+  use: {
+    actionTimeout: 30 * 1000,
+    navigationTimeout: 100 * 1000,
+    trace: 'on-first-retry',
     headless: true,
-    screenshot: "only-on-failure",
-    video: "retain-on-failure",
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure',
   },
-  outputDir: "test-results/",
+
+  outputDir: 'test-results/',
   /* Configure projects for major browsers */
   projects: [
     {
